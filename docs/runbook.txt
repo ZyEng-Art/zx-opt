@@ -16,6 +16,12 @@ $PYTHON -m zxopt.complete catalog
 $PYTHON tools/verify_complete.py runs/jpv-verification
 详见 docs/clifford-t-completeness.txt：完整模板、双向上下文改写、导入/导出和重放。
 
+已接入的一般图 PPO（包含原宏动作、完整公理的有限候选及不可提取中间状态）
+$PYTHON -m zxopt.general_search runs/general-online --jpv --policy online --seconds 1200
+$PYTHON -m zxopt.general_campaign runs/general-campaign --seconds 1200 --workers 18
+$PYTHON tools/audit_general.py runs/general-campaign runs/general-audit --workers 3
+详见 docs/general-search.txt。省略 --jpv 时用于相同一般图接口下的宏动作对照。
+
 单次运行，输出目录须不存在
 $PYTHON -m zxopt.search runs/example --expanded --dedup --policy online --seconds 180 --seed 11
 

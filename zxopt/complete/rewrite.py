@@ -43,21 +43,47 @@ def _parts(pattern):
     return internal, ii, ip, pp
 
 
-def matches(host, pattern):
+class MatchLimit(RuntimeError):
+    """Optional caller-selected deterministic matching work budget exhausted."""
+
+
+def matches(host, pattern, ignore_phases=False, work_limit=None):
     """Enumerate every finite embedding of an instantiated registry pattern.
 
     A concrete pattern has finitely many matches in a finite host. In contrast,
     the axiom schema has unbounded arity; use actions_at(rank) for fair stages.
     """
     host.validate(); pattern.validate()
+    work = 0
+    def tick():
+        nonlocal work
+        work += 1
+        if work_limit is not None and work > work_limit:
+            raise MatchLimit("Pattern matching work budget exhausted")
     if host.loops < pattern.loops:
         return
     internal, ii, ip, pp = _parts(pattern)
     if pp and (internal or len(pp) != 1):
         raise ValueError("Mixed/free multiwire custom patterns need further wire subdivision; not a JPV registry pattern")
-    choices = {v: [w for w, n in host.nodes.items() if n == pattern.nodes[v]
-                   and n.kind != "B" and host.degree(w) == pattern.degree(v)] for v in internal}
-    order = sorted(internal, key=lambda v: (len(choices[v]), -pattern.degree(v), v))
+    hd = {v: 0 for v in host.nodes}
+    pd = {v: 0 for v in pattern.nodes}
+    for a, b in host.edges:
+        hd[a] += 1; hd[b] += 1
+    for a, b in pattern.edges:
+        pd[a] += 1; pd[b] += 1
+    host_edges = {}
+    pattern_edges = {}
+    for i, edge in enumerate(host.edges):
+        host_edges.setdefault(tuple(sorted(edge)), []).append(i)
+    for i in ii:
+        pair = tuple(sorted(pattern.edges[i])); pattern_edges[pair] = pattern_edges.get(pair, 0)+1
+    labels = {}
+    for w, n in host.nodes.items():
+        if n.kind != "B":
+            labels.setdefault((n.kind, None if ignore_phases else n.phase, hd[w]), []).append(w)
+    choices = {v: labels.get((pattern.nodes[v].kind,
+                             None if ignore_phases else pattern.nodes[v].phase, pd[v]), []) for v in internal}
+    order = sorted(internal, key=lambda v: (len(choices[v]), -pd[v], v))
     mapping = {}
 
     def vertex_assign(k):
@@ -66,12 +92,13 @@ def matches(host, pattern):
             return
         v = order[k]
         for w in choices[v]:
+            tick()
             if w in mapping.values():
                 continue
             ok = True
             for u, target in mapping.items():
-                needed = sum(i in ii and {a, b} == {u, v} for i, (a, b) in enumerate(pattern.edges))
-                actual = sum({a, b} == {target, w} for a, b in host.edges)
+                needed = pattern_edges.get(tuple(sorted((u, v))), 0)
+                actual = len(host_edges.get(tuple(sorted((target, w))), ()))
                 if actual < needed:
                     ok = False; break
             if ok:
@@ -88,8 +115,9 @@ def matches(host, pattern):
             return
         edge = ii[k]
         a, b = pattern.edges[edge]
-        for j, (c, d) in enumerate(host.edges):
-            if j not in used and sorted((c, d)) == sorted((mapping[a], mapping[b])):
+        for j in host_edges.get(tuple(sorted((mapping[a], mapping[b]))), ()):
+            tick()
+            if j not in used:
                 selected[edge] = j
                 yield from edge_assign(k+1, selected, used | {j})
                 del selected[edge]
@@ -105,6 +133,7 @@ def matches(host, pattern):
         if len(halves) != len(ports):
             return
         for assignment in permutations(halves):
+            tick()
             bindings.update(zip(ports, assignment))
             yield from port_assign(groups, k+1, selected, used, bindings)
             for port in ports:
@@ -118,6 +147,7 @@ def matches(host, pattern):
             return
         p = pp[k]
         for i, (a, b) in enumerate(host.edges):
+            tick()
             if i in excluded or a in mapping.values() or b in mapping.values():
                 continue
             for reversal in (0, 1):

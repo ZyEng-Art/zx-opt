@@ -28,10 +28,18 @@ def from_pyzx(graph):
         raise ValueError("Cannot import an unknown scalar")
 
     def root2(power):
-        for _ in range(abs(power)):
+        # Positive even powers use isolated Z_0 = 2. All negative powers fit in
+        # one Z_0--X_0 parallel-wire component: m odd gives sqrt(2)^(2-m),
+        # m even gives sqrt(2)^(4-m). This avoids counting 2*abs(power) nodes.
+        if power < 0:
             a, b = d.node("Z"), d.node("X")
-            for _ in range(1 if power > 0 else 3):
+            for _ in range((2 if power % 2 else 4)-power):
                 d.edge(a, b)
+        else:
+            for _ in range(power//2):
+                d.node("Z")
+            if power % 2:
+                a, b = d.node("Z"), d.node("X"); d.edge(a, b)
 
     def phase(p):
         if not p:
@@ -69,13 +77,20 @@ def to_pyzx(diagram, num_inputs):
     g = zx.Graph()
     mapping = {v: g.add_vertex(V.BOUNDARY if n.kind == "B" else V.Z,
                               -1, 1, n.phase) for v, n in vertices.items()}
+    existing = set()
     for a, b, parity in edges:
-        # Two fresh Z identities also work for self loops, unlike a single
-        # subdivision, which would create duplicate edges in a simple backend.
-        u, v = g.add_vertex(V.Z), g.add_vertex(V.Z)
-        g.add_edge(g.edge(mapping[a], u), E.HADAMARD if parity else E.SIMPLE)
-        g.add_edge(g.edge(u, v), E.SIMPLE)
-        g.add_edge(g.edge(v, mapping[b]), E.SIMPLE)
+        pair = tuple(sorted((a, b)))
+        if a != b and pair not in existing:
+            g.add_edge(g.edge(mapping[a], mapping[b]), E.HADAMARD if parity else E.SIMPLE)
+            existing.add(pair)
+        else:
+            # Only repeated wires/self loops need subdivisions in PyZX's simple
+            # backend. Two identities preserve a self loop without parallel
+            # collisions; unique wires keep their original compact form.
+            u, v = g.add_vertex(V.Z), g.add_vertex(V.Z)
+            g.add_edge(g.edge(mapping[a], u), E.HADAMARD if parity else E.SIMPLE)
+            g.add_edge(g.edge(u, v), E.SIMPLE)
+            g.add_edge(g.edge(v, mapping[b]), E.SIMPLE)
     g.set_inputs(tuple(mapping[v] for v in diagram.ports[:num_inputs]))
     g.set_outputs(tuple(mapping[v] for v in diagram.ports[num_inputs:]))
     # PyZX's tensorfy follows drawing rows. Grouping all fresh identities before

@@ -20,7 +20,7 @@ def main():
     p.add_argument("--python", default="/workspace/env310/bin/python")
     p.add_argument("--seconds", type=int, default=180)
     p.add_argument("--workers", type=int, default=6)
-    p.add_argument("--suite", choices=["expansion", "representation", "frontier"], default="expansion")
+    p.add_argument("--suite", choices=["expansion", "representation", "frontier", "jpv"], default="expansion")
     args = p.parse_args()
     if not args.task_root.is_absolute() or not all(c in "0123456789abcdef" for c in args.commit):
         raise ValueError("Expected absolute task directory and hexadecimal commit")
@@ -54,18 +54,28 @@ def main():
     status = "failed"
     try:
         run(*base,"-m","unittest","discover","-s","tests","-v")
-        preflight = ["--expanded"] if args.suite == "expansion" else ["--dedup-scope", "serialized"]
-        run(*base,"-m","zxopt.search","runs/preflight","--dedup",*preflight,
-            "--policy","online","--seconds","30","--max-steps","128")
-        run(*base,"-m","zxopt.campaign","runs/pilot","--seconds",str(args.seconds),
-            "--workers",str(args.workers),"--suite",args.suite)
+        if args.suite == "jpv":
+            run(*base,"-m","zxopt.general_search","runs/preflight","--jpv",
+                "--policy","online","--seconds","180","--max-steps","256")
+            run(*base,"-m","zxopt.general_campaign","runs/pilot","--seconds",str(args.seconds),
+                "--workers",str(args.workers))
+            run(*base,"tools/audit_general.py","runs/pilot","runs/audit","--workers","6")
+            run(*base,"tools/audit_sources.py","runs/pilot","runs/source-audit.json")
+        else:
+            preflight = ["--expanded"] if args.suite == "expansion" else ["--dedup-scope", "serialized"]
+            run(*base,"-m","zxopt.search","runs/preflight","--dedup",*preflight,
+                "--policy","online","--seconds","30","--max-steps","128")
+            run(*base,"-m","zxopt.campaign","runs/pilot","--seconds",str(args.seconds),
+                "--workers",str(args.workers),"--suite",args.suite)
         status = "passed"
     finally:
         latest = inspect(); restored = False
         if latest["Id"] == args.container_id and latest["State"]["Running"] and latest["State"]["StartedAt"] == started:
             run("docker","stop","--timeout","20",args.container); restored=True
         record(status=status,commit=commit,container=args.container_id,gpu=False,
-               restored_stopped=restored,output=str(dest/"runs/pilot"))
+               restored_stopped=restored,output=str(dest/"runs/pilot"),suite=args.suite,
+               seconds_per_run=args.seconds,workers=args.workers,trials=(4 if args.suite == "frontier" else 6)*3,
+               bundle_sha256=hashlib.sha256(bundle.read_bytes()).hexdigest())
 
 
 if __name__ == "__main__": main()
