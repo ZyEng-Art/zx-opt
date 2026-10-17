@@ -1,0 +1,144 @@
+{
+  "time": "2026-10-18T02:13:57.485446+08:00",
+  "source": "d4a9147e278ef89dc1b9619b4e3314880663b233",
+  "controller": {
+    "phase": "failed",
+    "commit": "d4a9147e278ef89dc1b9619b4e3314880663b233",
+    "container_id": "6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9",
+    "time": "2026-10-18T02:11:54.780953+08:00",
+    "error": "CalledProcessError(1, ['docker', 'exec', '-w', '/workspace/task/source', '-e', 'PYTHONPATH=/workspace/pin:/workspace/offline', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'OPENBLAS_NUM_THREADS=1', '6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9', '/root/miniconda/envs/python310_torch29_cuda/bin/python', 'tools/anchor_campaign.py', 'runs/comparison', '--seconds', '600.0', '--workers', '8', '--audit-workers', '2', '--circuits', 'barenco_tof_3', '--seeds', '11', '29', '47', '71', '101', '--modes', 'anchor8', 'anchor8_resource', 'anchor8_nodes', 'anchor8_nodes_resource', '--policies', 'frozen', 'online'])",
+    "artifacts_retained": true
+  },
+  "failed": [
+    {
+      "folder": "barenco_tof_3/anchor8_resource_frozen_s101",
+      "failure": {
+        "type": "RuntimeError",
+        "message": "xvllm import hook failed for general_angles: candidate operation exceeded deadline",
+        "transition": 9129,
+        "last_proposal": {
+          "transition": 9129,
+          "trajectory": 368,
+          "trajectory_step": 35,
+          "parent_graph_key": "9c121182d8d885f2408f92f910a9e8b9d9de53454c743214cbe8d993e0e93644",
+          "restart_graph_key": "31983b7d496c0ac4ac8b4eafe168c30f9b6bad7f31422579af3a17ab366326c2",
+          "restart_source": "root",
+          "action": {
+            "mode": "jpv",
+            "family": "I:backward",
+            "action": {
+              "axiom": {
+                "name": "I",
+                "parameters": {
+                  "color": "Z"
+                }
+              },
+              "direction": "backward",
+              "match": {
+                "vertices": [],
+                "internal_edges": [],
+                "port_halves": [],
+                "wire_edges": [
+                  [
+                    0,
+                    112,
+                    0
+                  ]
+                ]
+              },
+              "parent_sha256": "9c121182d8d885f2408f92f910a9e8b9d9de53454c743214cbe8d993e0e93644"
+            },
+            "identifier": null,
+            "parent_view_key": null
+          },
+          "available": 1,
+          "candidate_sha256": "10820fd4e0d95192037c3b164972982f3799f22b4b804559fe3875d20d2d5f98",
+          "selection": {
+            "slot": 0,
+            "log_probability": -6.240301609039307,
+            "value": -0.0386335626244545,
+            "anchor_slot": 311,
+            "anchors": 513,
+            "anchor_log_probability": -6.240301609039307,
+            "conditional_log_probability": 0.0
+          },
+          "context": [
+            0.15,
+            -0.1,
+            0.4857142857142857,
+            0.0,
+            1.0,
+            1.0,
+            0.96875,
+            0.0
+          ],
+          "parent_cost": {
+            "gates": 46,
+            "cx": 24,
+            "depth": 42
+          },
+          "last_scored_cost": {
+            "gates": 46,
+            "cx": 24,
+            "depth": 42
+          },
+          "unscored_depth_before": 0,
+          "deadline_seconds": 600.0,
+          "anchor": {
+            "space": "raw",
+            "kind": "edge",
+            "position": 112
+          },
+          "completion_branch": "clifford_repair",
+          "completion_failures": [
+            {
+              "branch": "primary",
+              "reason": "Exception: No extractable vertex found. Something went wrong"
+            }
+          ],
+          "graph_key": "e653569478324f6bb28aaf1b52e4ac8c23eb0527ebb384fdfa772ea8f5cd42de",
+          "cost": {
+            "gates": 46,
+            "cx": 24,
+            "depth": 42
+          },
+          "auxiliary": [],
+          "score_failure": null,
+          "cache_hit": false,
+          "view_key": "748ffc32585e5a6743abe7b875ad9dbd16de504571707c18ce9707822fefde56",
+          "raw_operator_error": 8.99527927063093e-15,
+          "vertices": 210,
+          "edges": 218,
+          "sha256": "168f994196e9a03fab977c23503bb3e401d2aa49a3bc14ba33a6815c954aeb1c",
+          "seconds": 599.9876184859968,
+          "status": "accepted",
+          "admitted": false,
+          "unscored_depth": 0,
+          "reward": 0.0,
+          "terminal": false,
+          "best": {
+            "gates": 36,
+            "cx": 14,
+            "depth": 34
+          },
+          "buffer": {
+            "scored_size": 64,
+            "scored_capacity": 64,
+            "latent_size": 0,
+            "latent_capacity": 128,
+            "insertions": 1973,
+            "evictions": 1910,
+            "latent_insertions": 0,
+            "latent_evictions": 0,
+            "latent_restarts": 0,
+            "best": [
+              36,
+              14
+            ]
+          }
+        }
+      },
+      "log_tail": "XCCL /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/torch_xmlir/libbkcl.so loaded\n\u001b[35mSYMBOL_REWRITE \u001b[0m\u001b[32mtorch success\u001b[0m\n\u001b[33m[WARNING]\u001b[0m import hook error: candidate operation exceeded deadline\nTraceback (most recent call last):\n  File \"/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py\", line 65, in _custom_import\n    real_module_name = get_real_module_name(module_name, globals or {}, level)\n  File \"/workspace/task/source/zxopt/search.py\", line 45, in alarm\n    raise TimeoutError(\"candidate operation exceeded deadline\")\nTimeoutError: candidate operation exceeded deadline\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/workspace/task/source/zxopt/general_search.py\", line 648, in <module>\n    run(parser().parse_args())\n  File \"/workspace/task/source/zxopt/general_search.py\", line 362, in run\n    available = kernel.prepare(state.diagram, view, view_limit,\n  File \"/workspace/task/source/zxopt/general_kernel.py\", line 145, in prepare\n    for action in self.jpv.build(raw, None if anchor is None else (anchor[1], anchor[2])):\n  File \"/workspace/task/source/zxopt/jpv_actions.py\", line 256, in build\n    from .general_angles import compiled as general_compiled, inferred_rules\n  File \"/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py\", line 141, in _custom_import\n    module = builtins.__origin__import__(\n  File \"/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py\", line 446, in _custom_import\n    raise RuntimeError(f\"xvllm import hook failed for {module_name}: {e}\") from e\nRuntimeError: xvllm import hook failed for general_angles: candidate operation exceeded deadline\nfail to import general_angles\n"
+    }
+  ]
+}
