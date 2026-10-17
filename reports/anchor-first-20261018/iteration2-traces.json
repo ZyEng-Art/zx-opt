@@ -1,0 +1,28 @@
+{
+  "time": "2026-10-18T00:51:21.930243+08:00",
+  "event": "indexed_verifier_identical_fixed_step_traces",
+  "source_before": "b82ec47",
+  "source_after": "64e61de",
+  "steps_per_arm": 256,
+  "arms": [
+    "frozen",
+    "online"
+  ],
+  "sampled_actions_rewards_buffers_and_model_tensors": "bitwise identical",
+  "frozen_speedup": 1.66806133194552,
+  "online_speedup": 1.420011883448734,
+  "online_updates": 8,
+  "tests": 76,
+  "remote_comparisons": {
+    "node22": "e3a47f2",
+    "node23": "64e61de",
+    "trials_per_node": 54,
+    "seconds": 300,
+    "workers_per_node": 6,
+    "status": "running"
+  },
+  "existing26_preserved": true,
+  "collector_pid": 57007,
+  "deadline_assumption": "2026-10-18T09:00:00+08:00; optional date clarification unanswered",
+  "next": "Finish audited multi-seed studies and investigate anchor selection/learning from actual traces"
+}
