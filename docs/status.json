@@ -1,13 +1,13 @@
 {
-  "phase": "other_circuits_running",
+  "phase": "other_circuits_study_complete",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "scope": "independent target-wise training/search on tof_3, mod5_4, tof_4; total NAM gates; prior barenco results retained",
   "resources": {
-    "node44_owned_cpu_container": "running_for_other_circuits_cpu_study",
+    "node44_owned_cpu_container": "stopped",
     "new_gpu_tasks": 0,
     "persistent_ssh": "retained",
-    "background_jobs": "owned controller PID 3477129; no GPU"
+    "background_jobs": "none; all 36 trials, audits, archive transfer and reports complete"
   },
   "github": {
     "push": "completed",
@@ -28,7 +28,7 @@
     "Improve discovery of lower total-gate records rather than fitting zero-reward loops",
     "Study which bounded JPV rewrite paths yield useful extractable states"
   ],
-  "active_work": "Node44 3-target preflight then 36 trials x 1200s, full operator/replay/source/model audits, archive and reports",
+  "active_work": null,
   "completed_followups": [
     {
       "suite": "representation",
@@ -50,6 +50,13 @@
       "budget_seconds": 600,
       "report": "reports/frontier-20261017/interpretation.txt",
       "experiment_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64"
+    },
+    {
+      "suite": "other_circuits",
+      "trials": 36,
+      "budget_seconds": 1200,
+      "report": "reports/other-circuits-20261017/interpretation.txt",
+      "experiment_commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270"
     }
   ],
   "initial_pilot_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
@@ -69,25 +76,31 @@
     "raw_data": "runs/download-20261017/extracted/runs/pilot",
     "raw_archive_sha256": "10f5f0a0f217ac66d3c23b787ef449d7ceca8c5c63bae00eb9350d2275103e24"
   },
-  "latest_experiment_commit": "a184ab519a83d75c76faaf9812b9226fc72888e2",
-  "latest_report": "reports/jpv-mask-20261017/interpretation.txt",
+  "latest_experiment_commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270",
+  "latest_report": "reports/other-circuits-20261017/interpretation.txt",
   "current_findings": {
-    "best_total_gates": 36,
-    "main_total_proposals": 240477,
-    "formal_replayed_rewrites_this_turn": 164642,
-    "formal_saved_qasm_verified_this_turn": 49699,
-    "online_policy_preferences_changed": true,
-    "stable_online_search_advantage": false,
-    "jpv_frozen_vs_online_anytime_gates": [
-      37.47702116857996,
-      37.56108461399139
-    ],
-    "macro_frozen_vs_online_anytime_gates": [
-      36.99956117306134,
-      37.200764962991464
-    ],
-    "masked_resource_rejections": 0,
-    "caveat": "Mask followup is selected seed29 diagnostic, not independent efficacy evidence"
+    "scope": "three independent target-wise training studies",
+    "best_total_gates": {
+      "tof_3": 33,
+      "mod5_4": 22,
+      "tof_4": 52
+    },
+    "common_baseline_gates": {
+      "tof_3": 35,
+      "mod5_4": 41,
+      "tof_4": 55
+    },
+    "verified_saved_qasm": 39190,
+    "replayed_accepted_rewrites": 98954,
+    "paired_online_vs_frozen_final": {
+      "win": 3,
+      "tie": 5,
+      "loss": 1
+    },
+    "all_three_mean_online_anytime_curves_better_than_frozen": true,
+    "stable_online_search_advantage_established": false,
+    "policy_preference_changes_small": true,
+    "source_input_snapshot_and_arity_audits_passed": true
   },
   "rule_completeness": {
     "fragment": "Clifford+T (pi/4)",
@@ -142,33 +155,46 @@
     "finite_proposals": true,
     "legal_unscored_bridges": true,
     "resource_mask_default": true,
-    "unit_tests": 38,
+    "unit_tests": 41,
     "implementation_commit": "c645d8a6afb3f73b20815558c96ec0cd28c6417c",
     "feasibility_fix_commit": "a184ab519a83d75c76faaf9812b9226fc72888e2"
   },
-  "ongoing_experiment": {
-    "time": "2026-10-17T19:18:34.867819+08:00",
-    "event": "other_circuits_node44_launched",
+  "other_circuits": {
+    "time": "2026-10-17T19:49:07.382390+08:00",
+    "event": "other_circuits_study_complete",
     "source_commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270",
-    "controller_pid": 3477129,
-    "bundle_sha256": "72de115c372a3407df4eb5179b4cfb11ef9632940554fa9155a9e3eafd7de80f",
-    "trials": 36,
-    "seconds_per_trial": 1200,
-    "cpu_workers": 36,
-    "gpu": false,
-    "local_unit_tests": 41,
-    "local_checked_rewrites": 24,
-    "local_checked_qasm": 12,
-    "input_gates": [
-      39,
-      51,
-      63
+    "targets": [
+      "tof_3",
+      "mod5_4",
+      "tof_4"
     ],
-    "common_baseline_gates": [
+    "trials": 36,
+    "seconds": 1200,
+    "unit_tests": 41,
+    "accepted_rewrites_replayed": 98954,
+    "saved_qasm_verified": 39190,
+    "independent_final_qasm_verified": 36,
+    "baseline_gates": [
       35,
       41,
       55
     ],
-    "transport": "existing persistent socket; no interactive authentication"
+    "best_gates": [
+      33,
+      22,
+      52
+    ],
+    "paired_online_vs_frozen_final": {
+      "win": 3,
+      "tie": 5,
+      "loss": 1
+    },
+    "report": "reports/other-circuits-20261017",
+    "archive_sha256": "8d29ed97f9fe48bfd9555bbce496378c7a158dfa9e31200da954354ec1510766",
+    "controller_status": "passed",
+    "node44_container_stopped": true,
+    "gpu_used": false,
+    "model_transfer": false,
+    "scope": "small positive on-target online signal, no convergence or stable-learning/generalization claim"
   }
 }

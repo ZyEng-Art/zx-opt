@@ -1,0 +1,439 @@
+{
+  "status": "passed",
+  "circuits": 36,
+  "max_operator_error": 5.900916318210353e-16,
+  "records": [
+    {
+      "target": "tof_3",
+      "arm": "jpv_frozen",
+      "seed": 11,
+      "cost": {
+        "gates": 33,
+        "cx": 12,
+        "depth": 26
+      },
+      "sha256": "5123c5daa5a321b424001b7303e675eb533cfbe77eec262414f6c9d60d205181",
+      "operator_error": 3.376611507232129e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "jpv_frozen",
+      "seed": 29,
+      "cost": {
+        "gates": 34,
+        "cx": 13,
+        "depth": 24
+      },
+      "sha256": "2cb84c4fd5aec05d839cda09bc235daea9808e15433cdd4bc8f590b1e1074736",
+      "operator_error": 3.376611507232129e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "jpv_frozen",
+      "seed": 47,
+      "cost": {
+        "gates": 33,
+        "cx": 12,
+        "depth": 26
+      },
+      "sha256": "001ffa552791def0016ac600dd931564d3e4b89de3849905a7e417713f0797ef",
+      "operator_error": 2.7755575615628914e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "jpv_online",
+      "seed": 11,
+      "cost": {
+        "gates": 33,
+        "cx": 12,
+        "depth": 26
+      },
+      "sha256": "46b61717bec3bd3a625177f4f9c06e488dc986b7e77406d4dfe667ca7889375e",
+      "operator_error": 3.1401849173675503e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "jpv_online",
+      "seed": 29,
+      "cost": {
+        "gates": 33,
+        "cx": 12,
+        "depth": 27
+      },
+      "sha256": "cfa86ff2d75869ff9a1efccfa78a381e814cd848ed352fbbe8335d6b6a34dcb5",
+      "operator_error": 3.1401849173675503e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "jpv_online",
+      "seed": 47,
+      "cost": {
+        "gates": 33,
+        "cx": 12,
+        "depth": 26
+      },
+      "sha256": "001ffa552791def0016ac600dd931564d3e4b89de3849905a7e417713f0797ef",
+      "operator_error": 2.7755575615628914e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "jpv_uniform",
+      "seed": 11,
+      "cost": {
+        "gates": 35,
+        "cx": 14,
+        "depth": 29
+      },
+      "sha256": "6440376383de678851669db9df175e6725367bfc1893277e1048c70004ae60aa",
+      "operator_error": 3.510833468576701e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "jpv_uniform",
+      "seed": 29,
+      "cost": {
+        "gates": 34,
+        "cx": 13,
+        "depth": 25
+      },
+      "sha256": "92d3f0e63b77f4a435e2e64c4d91a840cd99f757770ce4d84e46c0067fe40e8c",
+      "operator_error": 4.47545209131181e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "jpv_uniform",
+      "seed": 47,
+      "cost": {
+        "gates": 33,
+        "cx": 12,
+        "depth": 24
+      },
+      "sha256": "86b00142f06c305f6f7f661cf8eb2cfb34faab715cd64e9694b3ca52ac0a4ab8",
+      "operator_error": 3.510833468576701e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "macros_uniform",
+      "seed": 11,
+      "cost": {
+        "gates": 34,
+        "cx": 13,
+        "depth": 27
+      },
+      "sha256": "76da366ce5dad89a43ea8b0ecb93df4fdb4580b8fa1984a4d3b2a72ccfe285b4",
+      "operator_error": 2.482534153247273e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "macros_uniform",
+      "seed": 29,
+      "cost": {
+        "gates": 33,
+        "cx": 12,
+        "depth": 25
+      },
+      "sha256": "1fcc56662fedd08b641839327b887ecf72f2071759c62b5bcc3013f3087279ad",
+      "operator_error": 3.510833468576701e-16
+    },
+    {
+      "target": "tof_3",
+      "arm": "macros_uniform",
+      "seed": 47,
+      "cost": {
+        "gates": 33,
+        "cx": 12,
+        "depth": 26
+      },
+      "sha256": "1291d1eb89f485930dac8ded8e6b1ef9b10f5d68bd70f96df3cf111b90fd6822",
+      "operator_error": 2.482534153247273e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_frozen",
+      "seed": 11,
+      "cost": {
+        "gates": 23,
+        "cx": 13,
+        "depth": 11
+      },
+      "sha256": "51d012281575738e37642a348fe054b64143b0729b391bbc6f5eee154ae35d7d",
+      "operator_error": 5.801744602055759e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_frozen",
+      "seed": 29,
+      "cost": {
+        "gates": 22,
+        "cx": 12,
+        "depth": 12
+      },
+      "sha256": "bbbf4cbce0751f5d82907f7a1acebbec09807af21a2c2f1ee09b80460add2c26",
+      "operator_error": 5.801744602055759e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_frozen",
+      "seed": 47,
+      "cost": {
+        "gates": 23,
+        "cx": 13,
+        "depth": 14
+      },
+      "sha256": "841276ec02255f50df5ec27a092a31531010670bbf0b191503b7a142e704f509",
+      "operator_error": 5.551206932701384e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_online",
+      "seed": 11,
+      "cost": {
+        "gates": 22,
+        "cx": 12,
+        "depth": 12
+      },
+      "sha256": "f684c83f281e2e2cc37c97793aaa913d9909b47bb99d65fb92f9f5ac5400c5ff",
+      "operator_error": 5.665361213738932e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_online",
+      "seed": 29,
+      "cost": {
+        "gates": 22,
+        "cx": 12,
+        "depth": 12
+      },
+      "sha256": "bbbf4cbce0751f5d82907f7a1acebbec09807af21a2c2f1ee09b80460add2c26",
+      "operator_error": 5.801744602055759e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_online",
+      "seed": 47,
+      "cost": {
+        "gates": 23,
+        "cx": 13,
+        "depth": 14
+      },
+      "sha256": "482d047e1a6ca14c512aeabc2913932dd21d23fda5cb0e8a5fd5c48478c2074e",
+      "operator_error": 5.665361213738932e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_uniform",
+      "seed": 11,
+      "cost": {
+        "gates": 23,
+        "cx": 12,
+        "depth": 12
+      },
+      "sha256": "4678ac206813bf607238cccc4518345469cbd5d2de15296792a181a8f74fc3a5",
+      "operator_error": 5.801744602055759e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_uniform",
+      "seed": 29,
+      "cost": {
+        "gates": 23,
+        "cx": 13,
+        "depth": 11
+      },
+      "sha256": "3dcf50405c2323775bad4d9b654cc605e68f928b1c4822f3ee5f5ac0c3185cc6",
+      "operator_error": 5.673955397073107e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "jpv_uniform",
+      "seed": 47,
+      "cost": {
+        "gates": 23,
+        "cx": 12,
+        "depth": 12
+      },
+      "sha256": "4678ac206813bf607238cccc4518345469cbd5d2de15296792a181a8f74fc3a5",
+      "operator_error": 5.801744602055759e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "macros_uniform",
+      "seed": 11,
+      "cost": {
+        "gates": 22,
+        "cx": 12,
+        "depth": 12
+      },
+      "sha256": "bbbf4cbce0751f5d82907f7a1acebbec09807af21a2c2f1ee09b80460add2c26",
+      "operator_error": 5.801744602055759e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "macros_uniform",
+      "seed": 29,
+      "cost": {
+        "gates": 24,
+        "cx": 13,
+        "depth": 15
+      },
+      "sha256": "fc81a4ba0580e9fd86913e30af867ae64dcf80a46aee17736180fceb1e8d6728",
+      "operator_error": 5.667671507977333e-16
+    },
+    {
+      "target": "mod5_4",
+      "arm": "macros_uniform",
+      "seed": 47,
+      "cost": {
+        "gates": 22,
+        "cx": 12,
+        "depth": 12
+      },
+      "sha256": "f684c83f281e2e2cc37c97793aaa913d9909b47bb99d65fb92f9f5ac5400c5ff",
+      "operator_error": 5.665361213738932e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_frozen",
+      "seed": 11,
+      "cost": {
+        "gates": 53,
+        "cx": 20,
+        "depth": 36
+      },
+      "sha256": "4e2fb3a1738aba9fccb7dc1ba32ed48918994d14ae8aa08442e1fe4b4f8cbff3",
+      "operator_error": 5.551115123125783e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_frozen",
+      "seed": 29,
+      "cost": {
+        "gates": 54,
+        "cx": 21,
+        "depth": 39
+      },
+      "sha256": "5fb63393119803f9e660549d1ad99c350160b19a9ee2305e6fe8e10fad36c014",
+      "operator_error": 5.578801654593729e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_frozen",
+      "seed": 47,
+      "cost": {
+        "gates": 54,
+        "cx": 21,
+        "depth": 37
+      },
+      "sha256": "2e34ff5e1c93e64402e44f488211abbb7f11c723f3450bb4b5a07b087b01b352",
+      "operator_error": 4.0029660424867215e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_online",
+      "seed": 11,
+      "cost": {
+        "gates": 54,
+        "cx": 21,
+        "depth": 43
+      },
+      "sha256": "57d5b3b8b4913014ad428173661ac0a583350a771be2fb271ac6b41cadae86e8",
+      "operator_error": 4.965068306494546e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_online",
+      "seed": 29,
+      "cost": {
+        "gates": 54,
+        "cx": 21,
+        "depth": 42
+      },
+      "sha256": "92c7b9d927f5baf12f42e124300dc58fe42ee1e17f4d4234c09e9c01950d516e",
+      "operator_error": 4.440892098500626e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_online",
+      "seed": 47,
+      "cost": {
+        "gates": 53,
+        "cx": 20,
+        "depth": 37
+      },
+      "sha256": "981b3aa563a233aea0d2287f7c2ce2752f51054df36c1927d711bd832651199a",
+      "operator_error": 4.335559509131367e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_uniform",
+      "seed": 11,
+      "cost": {
+        "gates": 54,
+        "cx": 21,
+        "depth": 37
+      },
+      "sha256": "a4a9f65a51a158c384edb7f15e924b4e8ac66c33615a04e2fe4475cc3f298ec0",
+      "operator_error": 3.376611507232129e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_uniform",
+      "seed": 29,
+      "cost": {
+        "gates": 53,
+        "cx": 20,
+        "depth": 37
+      },
+      "sha256": "0e88c5e05ef11c5c2e771e5f974b77a4c9804b619d2f51456c924c12acb1a6f5",
+      "operator_error": 5.900916318210353e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "jpv_uniform",
+      "seed": 47,
+      "cost": {
+        "gates": 54,
+        "cx": 21,
+        "depth": 43
+      },
+      "sha256": "57d5b3b8b4913014ad428173661ac0a583350a771be2fb271ac6b41cadae86e8",
+      "operator_error": 4.965068306494546e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "macros_uniform",
+      "seed": 11,
+      "cost": {
+        "gates": 52,
+        "cx": 19,
+        "depth": 34
+      },
+      "sha256": "3ad905e3fa080c5ca6090adfc2d86cab559db5ef6030a1327028f2d63220d473",
+      "operator_error": 5.661048867003677e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "macros_uniform",
+      "seed": 29,
+      "cost": {
+        "gates": 52,
+        "cx": 19,
+        "depth": 37
+      },
+      "sha256": "846ae69d882f5e6410b7e39de0e44f536eb93fae52074297c4abf79b422028e1",
+      "operator_error": 4.710277376051326e-16
+    },
+    {
+      "target": "tof_4",
+      "arm": "macros_uniform",
+      "seed": 47,
+      "cost": {
+        "gates": 55,
+        "cx": 22,
+        "depth": 45
+      },
+      "sha256": "40026b80b3d09a41f79d9579acecc0d38af9b6f5e7711e459cd811fda56d2ca6",
+      "operator_error": 5.117875266520904e-16
+    }
+  ]
+}

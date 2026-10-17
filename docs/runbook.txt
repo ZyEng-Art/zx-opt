@@ -25,6 +25,12 @@ $PYTHON tools/audit_general.py runs/general-campaign runs/general-audit --worker
 修复诊断：
 $PYTHON -m zxopt.general_campaign runs/general-mask --seconds 600 --workers 4 --arms macros_frozen macros_online jpv_frozen jpv_online --seeds 29
 
+其他电路的独立从头训练搜索（不迁移模型或状态池）：
+$PYTHON -m zxopt.target_campaign runs/targets --inputs inputs/tof_3.qasm inputs/mod5_4.qasm inputs/tof_4.qasm --seconds 1200 --workers-per-target 12
+$PYTHON tools/audit_target_study.py runs/targets runs/targets-audit --workers-per-target 12
+$PYTHON tools/summarize_target_study.py runs/targets runs/targets-audit reports/targets
+输入快照、SHA、量子位数和原始门数写入每次运行；正式配置见 other-circuits.txt。
+
 单次运行，输出目录须不存在
 $PYTHON -m zxopt.search runs/example --expanded --dedup --policy online --seconds 180 --seed 11
 

@@ -1,0 +1,18 @@
+{
+  "status": "launched",
+  "commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270",
+  "bundle_sha256": "72de115c372a3407df4eb5179b4cfb11ef9632940554fa9155a9e3eafd7de80f",
+  "bundle_bytes": 2580701,
+  "launch": {
+    "pid": 3477129,
+    "commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270",
+    "suite": "targets",
+    "trials": 36,
+    "seconds": 1200,
+    "cpu_workers": 36,
+    "gpu": false,
+    "bundle_sha256": "72de115c372a3407df4eb5179b4cfb11ef9632940554fa9155a9e3eafd7de80f",
+    "time": "2026-10-17T19:16:33.257848+08:00"
+  },
+  "existing_persistent_socket": true
+}

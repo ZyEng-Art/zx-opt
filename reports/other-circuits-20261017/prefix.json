@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "pairs": 9,
+  "records": [
+    {
+      "target": "tof_3",
+      "seed": 11,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    },
+    {
+      "target": "tof_3",
+      "seed": 29,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    },
+    {
+      "target": "tof_3",
+      "seed": 47,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    },
+    {
+      "target": "mod5_4",
+      "seed": 11,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    },
+    {
+      "target": "mod5_4",
+      "seed": 29,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    },
+    {
+      "target": "mod5_4",
+      "seed": 47,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    },
+    {
+      "target": "tof_4",
+      "seed": 11,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    },
+    {
+      "target": "tof_4",
+      "seed": 29,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    },
+    {
+      "target": "tof_4",
+      "seed": 47,
+      "prefix": 128,
+      "same_initialization": true,
+      "status": "passed"
+    }
+  ]
+}

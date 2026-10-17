@@ -1,0 +1,6 @@
+All arms and seeds retained; lower mean anytime gates is better.
+jpv_frozen: gates=[23, 22, 23], CX=[13, 12, 13], anytime=23.650286, updates=[0, 0, 0], unscored=0, recovered=0
+jpv_online: gates=[22, 22, 23], CX=[12, 12, 13], anytime=23.189393, updates=[16, 16, 15], unscored=0, recovered=0
+jpv_uniform: gates=[23, 23, 23], CX=[12, 13, 12], anytime=23.785157, updates=[0, 0, 0], unscored=0, recovered=0
+macros_uniform: gates=[22, 24, 22], CX=[12, 13, 12], anytime=24.349791, updates=[0, 0, 0], unscored=0, recovered=0
+Loss/EV/entropy and fixed-state policy probes diagnose learning; only paired search outcomes assess search benefit.

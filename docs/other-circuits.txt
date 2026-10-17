@@ -23,3 +23,9 @@
 评分、审计和探针从真实输入确定量子位数，不再假定 barenco 的 5 位或固定参考矩阵。
 源码审计同时对已提交输入进行 Git 对象检查；旧实验仍按原 barenco 输入核验。
 报告按电路分别绘图、计数和比较，不将不同规模电路的绝对门数混成一条平均曲线。
+
+复现命令（沿用 runbook.txt 的固定依赖，从仓库根目录运行）
+$PYTHON -m zxopt.target_campaign runs/targets --inputs inputs/tof_3.qasm inputs/mod5_4.qasm inputs/tof_4.qasm --seconds 1200 --workers-per-target 12
+$PYTHON tools/audit_target_study.py runs/targets runs/targets-audit --workers-per-target 12
+$PYTHON tools/summarize_target_study.py runs/targets runs/targets-audit reports/targets
+单电路也可用 general_campaign 的 --input 参数，或 general_search 的 --input 参数。

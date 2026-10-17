@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "circuit": "tof_3",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 45.58033148100367,
+      "status": "passed"
+    },
+    {
+      "circuit": "mod5_4",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 64.6148450220353,
+      "status": "passed"
+    },
+    {
+      "circuit": "tof_4",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 77.99956894002389,
+      "status": "passed"
+    }
+  ]
+}

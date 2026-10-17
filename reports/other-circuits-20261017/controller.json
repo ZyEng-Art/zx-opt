@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270",
+  "container": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+  "gpu": false,
+  "restored_stopped": true,
+  "output": "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-282005ba2c9c/runs/pilot",
+  "suite": "targets",
+  "seconds_per_run": 1200,
+  "workers": 36,
+  "trials": 36,
+  "bundle_sha256": "72de115c372a3407df4eb5179b4cfb11ef9632940554fa9155a9e3eafd7de80f",
+  "time": "2026-10-17T19:43:20.405634+08:00"
+}

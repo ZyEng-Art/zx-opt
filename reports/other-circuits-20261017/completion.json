@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "time": "2026-10-17T19:46:34.777894+08:00",
+  "experiment_commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270",
+  "trials": 36,
+  "node_semantic_source_model_and_probe_audits_passed": true,
+  "independent_downloaded_final_circuits": 36,
+  "container_restored_stopped": true,
+  "gpu_used": false,
+  "archive_sha256": "8d29ed97f9fe48bfd9555bbce496378c7a158dfa9e31200da954354ec1510766"
+}

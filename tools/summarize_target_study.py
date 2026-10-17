@@ -32,6 +32,8 @@ def main():
         a = json.loads((out/"analysis.json").read_text())
         first = a["trials"][0]
         protocol = json.loads((folder/first["folder"]/"protocol.json").read_text())
+        assert protocol["circuit"] == name and protocol["input_sha256"] == target["sha256"]
+        assert all(r["root_cost"] == protocol["root_cost"] for r in a["trials"]), "Report varying preprocessing baselines separately"
         baseline = protocol["root_cost"]["gates"]
         records = []
         for row in a["aggregate"]:

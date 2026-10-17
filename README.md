@@ -1,6 +1,6 @@
 # zx-opt
 
-ZX 图改写与单电路学习搜索研究。当前唯一搜索目标是 `barenco_tof_3`，优化提取和后处理后的 H/RZ/X/CX 总门数，CX 数作为同门数时的比较项。
+ZX 图改写与逐电路学习搜索研究。每条电路独立从头训练和搜索，优化提取和后处理后的 H/RZ/X/CX 总门数，CX 数作为同门数时的比较项。已有 `barenco_tof_3` 的多轮对照，并已支持 `tof_3`、`mod5_4` 和 `tof_4` 的独立实验。
 
 当前入口 `zxopt.general_search` 已将 JPV 的 11 类 Clifford+T 公理接入一般 ZX 图搜索和 PPO。状态保留红绿蜘蛛、H、平行线与标量；评分在独立副本进行。合法但不可提取的中间图可以继续改写，进入单独的潜在图池，真实成本保留为未知。策略观察一般图、评分图与动作，目标仍是提取后总 NAM 门数。
 
@@ -43,6 +43,8 @@ python -m venv .venv
 完整命令与输出说明见 [docs/runbook.txt](docs/runbook.txt)，已实现的规则和剩余缺口见 [docs/rule-coverage.txt](docs/rule-coverage.txt)。
 
 损失下降和策略分布变化用于诊断训练；是否改善搜索要看相同预算下随机、冻结和在线的全部种子结果。
+
+其他电路对照已完成：`tof_3`、`mod5_4`、`tof_4` 各四方法×三种子×1200秒，共36次，全部独立从头训练。共同预处理后的35/41/55门分别降到33/22/52门；这些最好成绩宏动作随机组也能达到。JPV在线相对冻结的最终成本为3胜5平1负，三条平均搜索曲线略好，但策略变化小，尚未证明稳定学习收益。98,954次接受改写和39,190份电路核验通过。详见[完整报告](reports/other-circuits-20261017/interpretation.txt)、[mod5_4曲线](reports/other-circuits-20261017/mod5_4/anytime.png)、[tof_4曲线](reports/other-circuits-20261017/tof_4/anytime.png)和[复现配置](docs/other-circuits.txt)。
 
 一般图 JPV 正式对照已完成：六组 × 三种子 × 1200 秒，最好仍为 36 门/14 CX。含 JPV 的在线组为 37/37/37 门，冻结组为 36/38/37 门，随机组为 38/36/37 门；value loss 下降和策略偏好变化尚未带来稳定搜索收益。159,998 次接受改写及 47,814 份电路全部通过重放和固定线序核验。原控制器在后续源码审计遇到 Git 所有权检查而退出，失败回执保留，源码审计和策略探针已在本地补完。详见[完整报告](reports/jpv-20261017/interpretation.txt)、[搜索曲线](reports/jpv-20261017/anytime.png)、[学习曲线](reports/jpv-20261017/learning.png)及[收尾回执](reports/jpv-20261017/postprocessing.json)。
 
