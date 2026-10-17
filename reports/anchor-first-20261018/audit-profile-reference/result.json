@@ -1,0 +1,52 @@
+{
+  "arm": "anchor8_resource_native_frozen",
+  "seed": 419,
+  "status": "passed",
+  "transitions": 11871,
+  "accepted_rewrites": 8934,
+  "replayed_auxiliary": 2054,
+  "legal_unscored": 0,
+  "recovered": 0,
+  "saved_qasm": 937,
+  "quarantined_invalid_qasm": 0,
+  "max_graph_operator_error": 1.1677436913363892e-14,
+  "max_qasm_operator_error": 1.34713467603612e-15,
+  "accepted_families": {
+    "PV": 159,
+    "EU:forward": 515,
+    "I:backward": 3301,
+    "H:backward": 1218,
+    "identity_insert": 487,
+    "H:forward": 1120,
+    "S:backward": 727,
+    "PVG": 110,
+    "phase_split": 210,
+    "I:forward": 421,
+    "ID": 97,
+    "PVB": 11,
+    "spider_split": 48,
+    "gadget_split": 15,
+    "GF": 1,
+    "S:forward": 462,
+    "EU:backward": 19,
+    "phase_transfer": 3,
+    "E:backward": 7,
+    "CP:backward": 2,
+    "LC": 1
+  },
+  "completion_branches": {
+    "primary": 347,
+    "clifford_repair": 7503,
+    "full_reduce_repair": 1084
+  },
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "model": {
+    "parameter_l2_delta": 0.0,
+    "actor_l2_delta": 0.0,
+    "finite": true
+  },
+  "events_sha256": "e261efbf2d1aad0114a019d82dc2dac91ee5b531c8e70fd6233567cb5b4c765b",
+  "report_sha256": "7426196f58594efc72c7aeaebd2608738051b8693f604e61f98a25191b30de93",
+  "profile_wall_seconds": 549.647397557972,
+  "auditor_source_sha256": "0e8f3d4fa08c93f519a6ce99795e852e1b7fbdc3bbfd0e7530894a032ac1a68a"
+}

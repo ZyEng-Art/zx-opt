@@ -1,0 +1,67 @@
+{
+  "status": "single_closed_trial_full_reference_audit_profile_passed",
+  "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+  "trial": "barenco_tof_3/anchor8_resource_native_frozen_s419",
+  "accepted_rewrites": 8934,
+  "profile_wall_seconds": 549.647397557972,
+  "functions": [
+    {
+      "file": "/workspace/source/zxopt/general_kernel.py",
+      "line": 38,
+      "function": "get",
+      "calls": 32675,
+      "exclusive_seconds": 0.5851904400000001,
+      "cumulative_seconds": 256.644628527
+    },
+    {
+      "file": "/workspace/source/zxopt/verify.py",
+      "line": 11,
+      "function": "graph_matrix",
+      "calls": 17992,
+      "exclusive_seconds": 24.913721253000002,
+      "cumulative_seconds": 106.67569701900001
+    },
+    {
+      "file": "/workspace/source/zxopt/complete/adapter.py",
+      "line": 67,
+      "function": "to_pyzx",
+      "calls": 8996,
+      "exclusive_seconds": 2.280706785,
+      "cumulative_seconds": 103.437787028
+    },
+    {
+      "file": "/workspace/source/zxopt/complete/ring.py",
+      "line": 70,
+      "function": "rational_phase",
+      "calls": 4911899,
+      "exclusive_seconds": 7.732946869,
+      "cumulative_seconds": 99.38565284100001
+    },
+    {
+      "file": "/workspace/source/zxopt/complete/diagram.py",
+      "line": 107,
+      "function": "digest",
+      "calls": 239468,
+      "exclusive_seconds": 2.9404056510000003,
+      "cumulative_seconds": 98.730150191
+    },
+    {
+      "file": "/workspace/source/zxopt/anchor_policy.py",
+      "line": 35,
+      "function": "catalog",
+      "calls": 11871,
+      "exclusive_seconds": 1.505591955,
+      "cumulative_seconds": 85.105927769
+    },
+    {
+      "file": "/workspace/source/zxopt/complete/adapter.py",
+      "line": 9,
+      "function": "from_pyzx",
+      "calls": 13013,
+      "exclusive_seconds": 5.224540467000001,
+      "cumulative_seconds": 77.31705586300001
+    }
+  ],
+  "raw_pstats_sha256": "3a724119520d93ed9d8750d969bef4c6473ed67bebbafefcd70cac484d1ba485",
+  "scope": "One CPU2 Linux cProfile run on a previously closed600s trial. Profiling adds overhead; cumulative timings overlap. No training/full-audit speedup claim. Hot spots motivate exact indexed export layout and avoiding repeated internal phase imports before any broad verifier changes."
+}

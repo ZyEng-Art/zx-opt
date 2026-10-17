@@ -1,0 +1,48 @@
+         1460396627 function calls (1459998608 primitive calls) in 539.805 seconds
+
+   Ordered by: cumulative time
+   List reduced from 15448 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    2.253    2.253  549.587  549.587 /workspace/source/tools/audit_general.py:21(audit_one)
+    32675    0.585    0.000  256.645    0.008 /workspace/source/zxopt/general_kernel.py:38(get)
+  2906896   21.015    0.000  119.863    0.000 {built-in method builtins.min}
+    17992    0.495    0.000  108.171    0.006 /workspace/source/zxopt/scalable_verify.py:94(check_graph)
+    17992   24.914    0.001  106.676    0.006 /workspace/source/zxopt/verify.py:11(graph_matrix)
+     8996    2.281    0.000  103.438    0.011 /workspace/source/zxopt/complete/adapter.py:67(to_pyzx)
+  4794053    4.105    0.000  102.720    0.000 /workspace/source/zxopt/complete/diagram.py:22(__post_init__)
+  4911899    7.733    0.000   99.386    0.000 /workspace/source/zxopt/complete/ring.py:70(rational_phase)
+   239468    2.940    0.000   98.730    0.000 /workspace/source/zxopt/complete/diagram.py:107(digest)
+    11871    1.506    0.000   85.106    0.007 /workspace/source/zxopt/anchor_policy.py:35(catalog)
+ 60620268   26.275    0.000   79.108    0.000 /workspace/source/zxopt/complete/adapter.py:112(<lambda>)
+    13013    5.225    0.000   77.317    0.006 /workspace/source/zxopt/complete/adapter.py:9(from_pyzx)
+5474111/5434334   18.611    0.000   77.262    0.000 /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py:17(_custom_import)
+  2992883    2.459    0.000   71.513    0.000 /workspace/source/zxopt/complete/diagram.py:39(node)
+   263210    0.797    0.000   69.933    0.000 /workspace/source/zxopt/complete/diagram.py:89(record)
+     8935    0.186    0.000   62.313    0.007 /workspace/source/tools/audit_general.py:45(graph)
+     8935    0.049    0.000   54.777    0.006 /workspace/source/zxopt/complete/diagram.py:99(from_record)
+     8935    1.609    0.000   53.837    0.006 /workspace/source/zxopt/complete/diagram.py:102(<dictcomp>)
+   149534    0.079    0.000   53.551    0.000 /workspace/source/zxopt/general_archive.py:18(key)
+     8934    0.039    0.000   46.639    0.005 /workspace/source/zxopt/general_archive.py:53(add)
+  3153269    4.324    0.000   45.526    0.000 {built-in method builtins.max}
+   263210   18.086    0.000   42.002    0.000 /workspace/source/zxopt/complete/diagram.py:91(<dictcomp>)
+   123614    0.092    0.000   41.084    0.000 /workspace/source/zxopt/general_archive.py:79(<genexpr>)
+ 60686803   20.149    0.000   38.806    0.000 {built-in method builtins.sum}
+5474111/5434345    9.870    0.000   36.430    0.000 /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py:61(_custom_import)
+   239469    0.456    0.000   34.626    0.000 /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/json/__init__.py:183(dumps)
+   239469    0.391    0.000   34.032    0.000 /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/json/encoder.py:182(encode)
+   239470   33.555    0.000   33.555    0.000 /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/json/encoder.py:204(iterencode)
+    11870    0.059    0.000   32.218    0.003 /workspace/source/zxopt/general_kernel.py:182(step)
+ 18261008   20.205    0.000   30.743    0.000 /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/fractions.py:62(__new__)
+   419708   20.085    0.000   29.866    0.000 /workspace/source/zxopt/complete/diagram.py:63(validate)
+  1826227   16.852    0.000   26.223    0.000 /workspace/source/zxopt/verify.py:39(multiply)
+    15587    0.091    0.000   24.624    0.002 /workspace/source/zxopt/complete/rewrite.py:288(apply)
+ 46420561   12.987    0.000   23.925    0.000 /workspace/source/zxopt/complete/angles.py:182(record)
+15774138/15771625    7.815    0.000   23.419    0.000 {built-in method builtins.any}
+ 96666489   15.230    0.000   19.325    0.000 /workspace/source/zxopt/verify.py:60(<lambda>)
+  6089022    3.021    0.000   18.733    0.000 /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/fractions.py:356(forward)
+206124240   18.172    0.000   18.172    0.000 /workspace/source/zxopt/complete/adapter.py:112(<genexpr>)
+5474758/5434345    8.641    0.000   16.777    0.000 {built-in method builtins.__import__}
+     8996    0.660    0.000   16.525    0.002 /workspace/pin/pyzx/simplify.py:485(to_graph_like)
+
+

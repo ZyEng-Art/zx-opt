@@ -1,0 +1,7 @@
+{
+  "container_id": "d51b8903f46e05b5637550028806a9ec688144e571536f0781a9f91bc9c1cf4b",
+  "started_at": "2026-10-17T19:33:41.483458649Z",
+  "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+  "mounts": "Source/pin/deps read-only; dedicated output only",
+  "gpu": false
+}
