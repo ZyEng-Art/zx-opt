@@ -1,0 +1,50 @@
+{
+  "node": 22,
+  "tag": "anchor_export_reference",
+  "source_commit": "d047dd2c856302ff67ed0167cfab0dcbb7ebf90c",
+  "seconds": 600.0,
+  "workers": 8,
+  "cpus": 16,
+  "memory_gib": 48,
+  "circuits": [
+    "barenco_tof_3"
+  ],
+  "seeds": [
+    "733",
+    "757",
+    "787",
+    "821"
+  ],
+  "modes": [
+    "anchor8_resource_lr1e4_native"
+  ],
+  "experiment": "search",
+  "probe_source_tag": null,
+  "training_seeds": [
+    "137",
+    "163",
+    "197"
+  ],
+  "audit_workers": 4,
+  "audit_native_replay": "rooted",
+  "audit_crosscheck_native_every": 101,
+  "build_native_flow": true,
+  "save_improvement_models": false,
+  "base": "/tmp/dengzengyong_rlzx_anchor_export_reference_node22_20261018",
+  "bundle_sha256": "bd7110bcf314994007ab75bc7ac30c08ec3f4e0708934c2eebb4d699ee4b8234",
+  "runtime": {
+    "container_name": "dengzengyong_rlzx_anchor_export_reference_node22_20261018",
+    "container_id": "f977055b1f928ca914b96a74dbb3cdb8d19acb95d6ccabf4698123e24ae23f37",
+    "started_at": "2026-10-17T19:55:12.966377776Z",
+    "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+    "source_commit": "d047dd2c856302ff67ed0167cfab0dcbb7ebf90c",
+    "cpus": 16,
+    "memory_gib": 48,
+    "workers": 8,
+    "gpu": false,
+    "node": 22,
+    "experiment": "search",
+    "probe_source": null,
+    "controller_pid": 2847479
+  }
+}

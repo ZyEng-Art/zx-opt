@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "trials": 54,
+  "accepted_rewrites": 63929,
+  "saved_qasm": 17391,
+  "rooted_native_replays": 6259,
+  "reference_native_crosschecks": 87,
+  "reference_receipt_sha256": "6a75b1e1984dd8dea677426603cc4fd80ea9fbf4e5e7a167fffa054100b6ff66",
+  "rooted_receipt_sha256": "4ff02e8fa31590469e4fa25e7893f4678344f65cdbbe10f985536cb310936290",
+  "auditor_commit": "2417fe2",
+  "scope": "All original54 sourcee3a47f2 trial report/event hashes and action/reward/archive/circuit/model audit counts agree with their retained full reference receipts. Every saved child and operator reverified; cross-platform operator error maxima compared against2e-8, model norm deltas with1e-9relative tolerance. Indexed54 cohort is still running."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "transport_verified_and_materialized",
+  "archive": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/native-final-archive-20261018/anchor-60e20456bb34-passed-records.tar.gz",
+  "metadata_sha256": "a9bb4f581b6604b8482130121aae9b0a1bbae9dcd4c87b0ae1d52df8a98d7ff6",
+  "archive_sha256": "89c62f4aebce8d36c421cd74c23341ebb1b97274eb3c986bc2566532b212a37a",
+  "bytes": 413369775,
+  "uncompressed_bytes": 912895413,
+  "members": 207095,
+  "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+  "recorded_study_status": "passed",
+  "scope": "Transport verification only; this receipt is not a claim that the study passed"
+}

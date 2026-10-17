@@ -1,0 +1,138 @@
+{
+  "status": "completed_audited_source_summary",
+  "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+  "trials": 24,
+  "matched_backend_pairs": [
+    {
+      "prior": "uniform",
+      "policy": "frozen",
+      "seed": 419,
+      "python_gates": 37,
+      "native_gates": 37,
+      "accepted_speedup": 1.0247772741877856
+    },
+    {
+      "prior": "uniform",
+      "policy": "frozen",
+      "seed": 443,
+      "python_gates": 37,
+      "native_gates": 37,
+      "accepted_speedup": 1.0615150798096962
+    },
+    {
+      "prior": "uniform",
+      "policy": "frozen",
+      "seed": 467,
+      "python_gates": 37,
+      "native_gates": 37,
+      "accepted_speedup": 1.0481764582572861
+    },
+    {
+      "prior": "uniform",
+      "policy": "online",
+      "seed": 419,
+      "python_gates": 36,
+      "native_gates": 36,
+      "accepted_speedup": 1.0379946361203716
+    },
+    {
+      "prior": "uniform",
+      "policy": "online",
+      "seed": 443,
+      "python_gates": 38,
+      "native_gates": 38,
+      "accepted_speedup": 1.0619070940243451
+    },
+    {
+      "prior": "uniform",
+      "policy": "online",
+      "seed": 467,
+      "python_gates": 38,
+      "native_gates": 38,
+      "accepted_speedup": 1.006911711295398
+    },
+    {
+      "prior": "nodes",
+      "policy": "frozen",
+      "seed": 419,
+      "python_gates": 38,
+      "native_gates": 37,
+      "accepted_speedup": 1.042421221897319
+    },
+    {
+      "prior": "nodes",
+      "policy": "frozen",
+      "seed": 443,
+      "python_gates": 37,
+      "native_gates": 37,
+      "accepted_speedup": 1.0681678220796667
+    },
+    {
+      "prior": "nodes",
+      "policy": "frozen",
+      "seed": 467,
+      "python_gates": 38,
+      "native_gates": 38,
+      "accepted_speedup": 1.0635772615476446
+    },
+    {
+      "prior": "nodes",
+      "policy": "online",
+      "seed": 419,
+      "python_gates": 38,
+      "native_gates": 38,
+      "accepted_speedup": 1.0202470853296035
+    },
+    {
+      "prior": "nodes",
+      "policy": "online",
+      "seed": 443,
+      "python_gates": 38,
+      "native_gates": 38,
+      "accepted_speedup": 1.0405062573263908
+    },
+    {
+      "prior": "nodes",
+      "policy": "online",
+      "seed": 467,
+      "python_gates": 37,
+      "native_gates": 37,
+      "accepted_speedup": 1.0424684361407122
+    }
+  ],
+  "by_prior_and_policy": {
+    "uniform_frozen": {
+      "median": 1.0481764582572861,
+      "min": 1.0247772741877856,
+      "max": 1.0615150798096962,
+      "native_gate_wins": 0,
+      "ties": 3,
+      "losses": 0
+    },
+    "uniform_online": {
+      "median": 1.0379946361203716,
+      "min": 1.006911711295398,
+      "max": 1.0619070940243451,
+      "native_gate_wins": 0,
+      "ties": 3,
+      "losses": 0
+    },
+    "nodes_frozen": {
+      "median": 1.0635772615476446,
+      "min": 1.042421221897319,
+      "max": 1.0681678220796667,
+      "native_gate_wins": 1,
+      "ties": 2,
+      "losses": 0
+    },
+    "nodes_online": {
+      "median": 1.0405062573263908,
+      "min": 1.0202470853296035,
+      "max": 1.0424684361407122,
+      "native_gate_wins": 0,
+      "ties": 3,
+      "losses": 0
+    }
+  },
+  "scope": "Same input/seed/prior/policy and600s wall budget. Accepted throughput includes neutral legal rewrites. Frozen controls across learning-rate aliases are correlated elsewhere; here each backend pair uses the same prior. This is a small three-seed controlled backend result, not learning/generalization evidence."
+}
