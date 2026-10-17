@@ -14,7 +14,7 @@ def state_dict_digest(values):
     return digest.hexdigest()
 
 
-def read_model_snapshot(path, input_sha256, selection, anchor_prior, anchor_resource_mask):
+def read_model_snapshot(path, input_sha256, selection, anchor_prior, anchor_resource_mask, neutral_stop_steps=0):
     """Hash and decode exactly the same bytes, before any state is installed."""
     payload = path.read_bytes()
     saved = torch.load(io.BytesIO(payload), map_location="cpu", weights_only=True)
@@ -26,6 +26,8 @@ def read_model_snapshot(path, input_sha256, selection, anchor_prior, anchor_reso
         raise ValueError("Resume model uses a different anchor prior")
     if saved.get("anchor_resource_mask", False) != anchor_resource_mask:
         raise ValueError("Resume model uses a different anchor resource mask")
+    if saved.get("neutral_stop_steps", 0) != neutral_stop_steps:
+        raise ValueError("Resume model uses a different neutral-stop context")
     if not saved.get("state_dict") or not all(
             isinstance(value, torch.Tensor) and bool(torch.isfinite(value).all())
             for value in saved["state_dict"].values()):

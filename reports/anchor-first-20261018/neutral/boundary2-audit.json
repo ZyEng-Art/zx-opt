@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "development_allow_dirty": true,
+  "trials": 1,
+  "records": [
+    {
+      "arm": "neutral2_online",
+      "seed": 197,
+      "status": "passed",
+      "transitions": 256,
+      "accepted_rewrites": 256,
+      "replayed_auxiliary": 23,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 32,
+      "quarantined_invalid_qasm": 0,
+      "max_graph_operator_error": 8.552027793820157e-15,
+      "max_qasm_operator_error": 9.992561695132968e-16,
+      "accepted_families": {
+        "phase_split": 15,
+        "I:backward": 109,
+        "I:forward": 2,
+        "EU:forward": 29,
+        "H:backward": 15,
+        "S:backward": 10,
+        "ID": 5,
+        "identity_insert": 43,
+        "H:forward": 17,
+        "spider_split": 3,
+        "PVG": 4,
+        "gadget_split": 1,
+        "PVB": 1,
+        "E:backward": 1,
+        "PV": 1
+      },
+      "completion_branches": {
+        "primary": 128,
+        "clifford_repair": 99,
+        "full_reduce_repair": 29
+      },
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "model": {
+        "parameter_l2_delta": 0.21922102243851554,
+        "actor_l2_delta": 0.08308959448283626,
+        "finite": true
+      },
+      "improvement_model_snapshots": 0,
+      "native_replay": "rooted",
+      "rooted_native_replays": 11,
+      "full_native_crosschecks": 11,
+      "protocol_sha256": "8fc6ce2576b6204b8752a6925219ac8e8929816b1b26e754c27caf800ce1c495",
+      "best_history_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "initial_model_sha256": "060d8df790f92793a9f004a0a986cd8a00c548569de9b64ff20137353ec7871c",
+      "final_model_sha256": "7028058f10d9f7f242084113dc087ff8530bc49bebf5767770a43a2fed770304",
+      "improvement_model_receipts": {},
+      "events_sha256": "c9ec53d6b2bd58145ebc7d18f411028dedee0dc5c5010e9660fbde6de3699c2e",
+      "report_sha256": "af28a211d5ddc3c1606a3f7ebe61b5840cce2454e08d35d3cd742d7865d07621"
+    }
+  ],
+  "model_pairs": [],
+  "native_replay": "rooted",
+  "crosscheck_native_every": 1,
+  "saved_qasm": 32,
+  "accepted_rewrites": 256,
+  "caveat": "Quarantined invalid extractions are excluded from candidates, rewards and best gate counts"
+}

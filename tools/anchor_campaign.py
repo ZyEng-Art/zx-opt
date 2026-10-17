@@ -27,16 +27,21 @@ def main():
                                                  "anchor8_qasm2", "anchor8_resource_qasm2",
                                                  "anchor8_resource_native", "anchor8_nodes_resource_native",
                                                  "anchor8_resource_lr1e4_native", "anchor8_resource_lr1e4_stop_native",
-                                                 "anchor8_resource_lr1e4_r128_native", "anchor8_resource_lr1e4_stop_r128_native"],
+                                                 "anchor8_resource_lr1e4_r128_native", "anchor8_resource_lr1e4_stop_r128_native",
+                                                 "anchor8_resource_lr1e4_neutral32_native"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--audit-workers", type=int, default=2)
+    p.add_argument("--audit-native-replay", choices=["reference", "rooted"], default="reference")
+    p.add_argument("--audit-crosscheck-native-every", type=int, default=0)
     p.add_argument("--max-steps", type=int)
     p.add_argument("--native-flow-module", type=Path)
     p.add_argument("--save-improvement-models", action="store_true")
     p.add_argument("--allow-dirty", action="store_true")
     a = p.parse_args()
+    if a.audit_crosscheck_native_every < 0 or (a.audit_crosscheck_native_every and a.audit_native_replay != "rooted"):
+        raise ValueError("Native crosschecks require rooted replay and a nonnegative interval")
     if any(mode.endswith("_native") for mode in a.modes) and a.native_flow_module is None:
         raise ValueError("Native comparison modes require --native-flow-module")
     out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
@@ -55,6 +60,8 @@ def main():
             for s in a.seeds for c in a.circuits for m in a.modes for pol in a.policies]
     atomic_json(out/"campaign.json", dict(source_commit=revision, tracked_dirty=bool(dirty),
                 cases=cases, plan=plan, seconds=a.seconds, workers=a.workers,
+                audit_workers=a.audit_workers, audit_native_replay=a.audit_native_replay,
+                audit_crosscheck_native_every=a.audit_crosscheck_native_every,
                 native_flow_module=None if a.native_flow_module is None else str(a.native_flow_module.resolve()),
                 scope="independent training/search on each target; no generalization claim; count noops separately",
                 started_unix=time.time()))
@@ -85,6 +92,8 @@ def main():
             command += ["--native-flow-module", str(a.native_flow_module.resolve())]
         if "_stop" in spec["mode"]:
             command += ["--anchor-noop-stop"]
+        if "_neutral32" in spec["mode"]:
+            command += ["--neutral-stop-steps", "32"]
         if a.save_improvement_models:
             command += ["--save-improvement-models"]
         try:
@@ -110,7 +119,8 @@ def main():
     rows = [dict(**r["report"], arm=r["arm"], seed=r["seed"], folder=r["folder"]) for r in records]
     atomic_json(out/"summary.json", dict(expected=len(plan), completed=len(records), rows=rows))
     command = [sys.executable, str(ROOT/"tools/audit_general.py"), str(out), str(out/"audit"),
-               "--workers", str(a.audit_workers)]
+               "--workers", str(a.audit_workers), "--native-replay", a.audit_native_replay,
+               "--crosscheck-native-every", str(a.audit_crosscheck_native_every)]
     if a.allow_dirty:
         command.append("--allow-dirty")
     with (out/"audit.log").open("x") as log:

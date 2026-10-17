@@ -218,3 +218,32 @@ and parameter comparisons are required before calling this computation-only.
   still the default. An alternating-order 200-rewrite component benchmark gave
   5.02x on one local host; loading, normalization and operator checks were outside
   that timer. This is not a training or complete-audit speedup measurement.
+
+2026-10-18 neutral trajectory allocation experiment
+  --neutral-stop-steps N is opt-in, default0. Count only accepted scored
+  rewrites or unchanged scored-state noops with exactly zero total-gate reward.
+  A cost-changing, unscored or rejected step resets the counter, as does an
+  archive restart. On the Nth neutral step record the actual unchanged reward
+  and normal archive handling, mark the transition terminal, then use the
+  existing restart distribution next step. No reward penalty or legal-rule
+  filter is added. CX-only improvements are neutral for this total-gate rule.
+
+  When enabled, context entry8 contains neutral_streak/N in place of the
+  redundant latent-depth indicator, keeping the stopping state visible to
+  actor and critic. The other depth/cost indicators remain available. Model
+  continuations must use the same limit; full checkpoints retain the counter.
+  The default context, policy schema and RNG path are unchanged.
+
+  Closed one-hour trajectories motivated an N32 comparison: all observed
+  strict gate-improvement trajectory prefixes had peak neutral runs below32
+  (maximum23). These are correlated on-target observations with full study
+  audits pending, not a guarantee. Useful longer plateaus can be discarded;
+  this bounded search heuristic carries no completeness/convergence claim.
+  Fresh seeds617/641/673/701 will compare native-CPU resource-masked low-LR
+  baseline versus neutral32, frozen/online, each3600s, preserving strict-gate
+  policy snapshots. The original26 three-hour-patience jobs remain separate.
+
+  New campaign/probe launchers accept --audit-native-replay rooted and
+  --audit-crosscheck-native-every 101. These
+  select the optional witness replay and periodic full-path crosschecks; the
+  default remains reference. Audit choice never changes search/training.

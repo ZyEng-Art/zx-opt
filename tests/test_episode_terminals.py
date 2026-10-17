@@ -22,3 +22,10 @@ class EpisodeTerminalTest(unittest.TestCase):
         for depth, expected in ((7, False), (8, True)):
             self.assertEqual(immediate_terminal(dict(status='accepted_unscored', trajectory_step=5,
                                                      unscored_depth=depth), config, 40), expected)
+
+    def test_neutral_boundary_is_separate_from_horizon_and_gate_cost(self):
+        config = dict(horizon=70, max_unscored=8, neutral_stop_steps=32)
+        for streak, expected in ((0, False), (31, False), (32, True)):
+            event = dict(status='accepted', trajectory_step=40, neutral_streak=streak, cost=dict(gates=37))
+            self.assertEqual(immediate_terminal(event, config, 40), expected)
+            self.assertFalse(immediate_terminal(event, dict(config, neutral_stop_steps=0), 40))

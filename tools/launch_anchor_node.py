@@ -23,6 +23,8 @@ def main():
     p.add_argument("--probe-source-tag", help="Completed owned study on the same host; mounted read-only")
     p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
     p.add_argument("--audit-workers", type=int, default=2)
+    p.add_argument("--audit-native-replay", choices=["reference", "rooted"], default="reference")
+    p.add_argument("--audit-crosscheck-native-every", type=int, default=0)
     p.add_argument("--build-native-flow", action="store_true")
     p.add_argument("--save-improvement-models", action="store_true")
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3"])
@@ -30,6 +32,8 @@ def main():
     p.add_argument("--modes", nargs="+", default=["global32", "anchor8", "anchor8_nodes",
                                                   "anchor8_lr1e3", "anchor8_nodes_lr1e3"])
     a = p.parse_args()
+    if a.audit_crosscheck_native_every < 0 or (a.audit_crosscheck_native_every and a.audit_native_replay != "rooted"):
+        raise ValueError("Native crosschecks require rooted replay and a nonnegative interval")
     if not re.fullmatch(r"[a-z0-9_]{1,32}", a.tag):
         raise ValueError("Use a short task tag")
     if a.experiment == "policy-probe" and (not a.probe_source_tag or
@@ -47,6 +51,8 @@ def main():
                 workers=a.workers, cpus=a.cpus, memory_gib=a.memory_gib, circuits=a.circuits, seeds=a.seeds, modes=a.modes,
                 experiment=a.experiment, probe_source_tag=a.probe_source_tag,
                 training_seeds=a.training_seeds, audit_workers=a.audit_workers,
+                audit_native_replay=a.audit_native_replay,
+                audit_crosscheck_native_every=a.audit_crosscheck_native_every,
                 build_native_flow=a.build_native_flow,
                 save_improvement_models=a.save_improvement_models,
                 base="/tmp/dengzengyong_rlzx_"+a.tag+"_node"+str(a.node)+"_20261018",
@@ -102,7 +108,9 @@ run(['docker','exec',cid,'git','config','--global','--add','safe.directory','/wo
 command=['python3',str(base/'source/tools/node_anchor_campaign.py'),str(base),'--container',name,
          '--commit',revision,'--seconds',str(spec['seconds']),'--workers',str(spec['workers']),
          '--circuits',*spec['circuits'],'--seeds',*spec['seeds'],'--modes',*spec['modes'],
-         '--experiment',spec['experiment'],'--audit-workers',str(spec['audit_workers'])]
+         '--experiment',spec['experiment'],'--audit-workers',str(spec['audit_workers']),
+         '--audit-native-replay',spec['audit_native_replay'],
+         '--audit-crosscheck-native-every',str(spec['audit_crosscheck_native_every'])]
 if probe_source is not None:
     command+=['--probe-source','/workspace/probe-source','--training-seeds',*spec['training_seeds']]
 if spec['build_native_flow']:

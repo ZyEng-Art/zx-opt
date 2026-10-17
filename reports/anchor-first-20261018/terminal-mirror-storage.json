@@ -1,0 +1,31 @@
+{
+  "time": "2026-10-18T03:34:09.847001+08:00",
+  "event": "pruned_redundant_terminal_live_mirrors",
+  "records": [
+    {
+      "removed": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs",
+      "retained_archive": "runs/anchor-prior-launch-20261018/mirror/node22/anchor-34a35c880b83-failed-records.tar.gz",
+      "archive_sha256": "1906ff1104c39dd0f8e9b825f265aa25bd1cf1b3d0fd55970f5b5c708dd65468",
+      "study_status": "failed"
+    },
+    {
+      "removed": "runs/anchor-resource-launch-20261018/mirror/node23/live-runs",
+      "retained_archive": "runs/anchor-resource-launch-20261018/mirror/node23/anchor-d4a9147e278e-failed-records.tar.gz",
+      "archive_sha256": "54cb3c8b4926eacd83062296a7b76732a8e8dea975daa12c0d128d50a098c7c9",
+      "study_status": "failed"
+    },
+    {
+      "removed": "runs/anchor-launch-20261018/mirror/node22/live-runs",
+      "retained_archive": "runs/anchor-launch-20261018/mirror/node22/anchor-e3a47f2fcba0-records.tar.gz",
+      "archive_sha256": "32a1a18a5261312113280b63a380caef26cea56e831f8a912fe7c3631abfbc26",
+      "study_status": "passed"
+    },
+    {
+      "removed": "runs/anchor-launch-20261018/mirror/node23/live-runs",
+      "retained_archive": "runs/anchor-launch-20261018/mirror/node23/anchor-64e61def1b92-records.tar.gz",
+      "archive_sha256": "dd77c57e9500cc89f138e7e3b5606d49337fe113a5cba2c9ab99317b032c8028",
+      "study_status": "passed"
+    }
+  ],
+  "scope": "Final archive SHA and size rechecked before removing only local monitoring duplicates. All trajectories remain in the retained archives and remote task directories; verified extracted datasets remain untouched."
+}

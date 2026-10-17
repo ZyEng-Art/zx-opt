@@ -29,9 +29,18 @@ class ModelSnapshotTest(unittest.TestCase):
 
     def test_other_input_and_policy_support_are_rejected(self):
         for key, value in [("input_sha256", "other"), ("selection", "global"),
-                           ("anchor_prior", "nodes"), ("anchor_resource_mask", False)]:
+                           ("anchor_prior", "nodes"), ("anchor_resource_mask", False),
+                           ("neutral_stop_steps", 32)]:
             with self.subTest(key=key), self.assertRaises(ValueError):
                 self.read(self.package(**{key: value}))
+
+    def test_neutral_context_capsules_accept_only_the_same_limit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/"model.pt"; torch.save(self.package(neutral_stop_steps=32), path)
+            saved, _, _ = read_model_snapshot(path, "input", "anchor", "uniform", True, 32)
+            self.assertEqual(saved["neutral_stop_steps"], 32)
+            with self.assertRaisesRegex(ValueError, "neutral-stop context"):
+                read_model_snapshot(path, "input", "anchor", "uniform", True, 64)
 
     def test_nan_weights_cannot_enter_search(self):
         with self.assertRaisesRegex(ValueError, "non-finite"):

@@ -1,0 +1,106 @@
+{
+  "status": "development_functional_checks_passed",
+  "tests": 115,
+  "trials": [
+    {
+      "trial": "anchor8_resource_lr1e4_native_frozen_s197",
+      "neutral_stop_steps": 0,
+      "transitions": 512,
+      "updates": 0,
+      "neutral_terminations": 0,
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "protocol_sha256": "677e3883ed8d24bec97d4f63508442b654dbb2103a61758f977932a54f10243b",
+      "report_sha256": "623221fb65e6f3031ad3d5a8605f397c062f4494277bd7732e116a5780033c82"
+    },
+    {
+      "trial": "anchor8_resource_lr1e4_native_online_s197",
+      "neutral_stop_steps": 0,
+      "transitions": 512,
+      "updates": 16,
+      "neutral_terminations": 0,
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "protocol_sha256": "34ad9cabded5c9d18db4525619c0a9e92986ab196a7cfbd4b117976d7beaada1",
+      "report_sha256": "c408d18a8058147627e941a415884817931f8d9344207d077a7f35db19a4de0a"
+    },
+    {
+      "trial": "anchor8_resource_lr1e4_neutral32_native_frozen_s137",
+      "neutral_stop_steps": 32,
+      "transitions": 512,
+      "updates": 0,
+      "neutral_terminations": 0,
+      "best": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "protocol_sha256": "6478fb3c713346ee39497a9c276bbc6d7e8e8e5402ef0d3cc1af95b4014cef54",
+      "report_sha256": "e5a85bc027d1d77ded10dc77a1b512b0587659b79cf48a754795330563839275"
+    },
+    {
+      "trial": "anchor8_resource_lr1e4_neutral32_native_frozen_s197",
+      "neutral_stop_steps": 32,
+      "transitions": 512,
+      "updates": 0,
+      "neutral_terminations": 0,
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "protocol_sha256": "a9ff3c04ba07d5488ee6cf21342a256ff6481f2fd511500585fe2392c09252e0",
+      "report_sha256": "625438280cd45686059966732cdedb3d9b94e38dc295c18067b34691e1652a6f"
+    },
+    {
+      "trial": "anchor8_resource_lr1e4_neutral32_native_online_s137",
+      "neutral_stop_steps": 32,
+      "transitions": 512,
+      "updates": 16,
+      "neutral_terminations": 0,
+      "best": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "protocol_sha256": "67fce4a69fcd0ca32a6671266c2628af0157a359d5ed3036757a74c4a49daefd",
+      "report_sha256": "0d7ab319e47deaa8b14bd1b67ed01e1812534aaef746fb0e4c48cc0cd88b887e"
+    },
+    {
+      "trial": "anchor8_resource_lr1e4_neutral32_native_online_s197",
+      "neutral_stop_steps": 32,
+      "transitions": 512,
+      "updates": 16,
+      "neutral_terminations": 0,
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "protocol_sha256": "fe9ec0d93f033c6a0c55a0ef3e00054c9c0fb1a62d7c8f889746f643778e122a",
+      "report_sha256": "e10a0ffc10af5aa35ec7318ba63b7b3fa949ac4113c57ca19f37899978d30829"
+    },
+    {
+      "trial": "neutral2_online_s197",
+      "neutral_stop_steps": 2,
+      "transitions": 256,
+      "updates": 8,
+      "neutral_terminations": 103,
+      "best": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "protocol_sha256": "8fc6ce2576b6204b8752a6925219ac8e8929816b1b26e754c27caf800ce1c495",
+      "report_sha256": "af28a211d5ddc3c1606a3f7ebe61b5840cce2454e08d35d3cd742d7865d07621"
+    }
+  ],
+  "saved_qasm": 870,
+  "scope": "Development smoke only, no efficacy claim. Four N32 x512 cases exercised the visible counter but had no N32 terminations; separate N2 x256 online run forced103 terminations and passed every native reference crosscheck plus checkpoint-counter checks. Two default512-step frozen/online traces and final tensors match the retained87bb830 development controls exactly; host-load-confounded timings are not a throughput comparison."
+}

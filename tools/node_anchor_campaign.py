@@ -47,6 +47,8 @@ def main():
     p.add_argument("--probe-source", type=Path)
     p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
     p.add_argument("--audit-workers", type=int, default=2)
+    p.add_argument("--audit-native-replay", choices=["reference", "rooted"], default="reference")
+    p.add_argument("--audit-crosscheck-native-every", type=int, default=0)
     p.add_argument("--build-native-flow", action="store_true")
     p.add_argument("--save-improvement-models", action="store_true")
     a = p.parse_args(); base = a.base.resolve()
@@ -99,7 +101,9 @@ def main():
                modes=a.modes, seconds=a.seconds, workers=a.workers)
         common = ["--seconds", str(a.seconds), "--workers", str(a.workers),
                   "--audit-workers", str(a.audit_workers), "--circuits", *a.circuits,
-                  "--seeds", *a.seeds, "--modes", *a.modes]
+                  "--seeds", *a.seeds, "--modes", *a.modes,
+                  "--audit-native-replay", a.audit_native_replay,
+                  "--audit-crosscheck-native-every", str(a.audit_crosscheck_native_every)]
         if a.experiment == "policy-probe":
             if a.probe_source is None:
                 raise ValueError("Model probes require a read-only training source")

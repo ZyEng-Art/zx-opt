@@ -47,13 +47,14 @@ def save_graph(folder, diagram):
     return key
 
 
-def context_for(state, start, best, step, args, root_gates, root_vertices):
+def context_for(state, start, best, step, args, root_gates, root_vertices, neutral_streak=0):
     return [(state.last_counts["gates"]-root_gates)/root_gates,
             (best["cost"]["gates"]-root_gates)/root_gates, step/args.horizon,
             state.unscored_depth/args.max_unscored, float(state.cost is not None),
             start.last_counts["gates"]/root_gates,
             (len(state.diagram.nodes)-root_vertices)/max(1, args.max_growth),
-            float(state.unscored_depth > 0)]
+            (neutral_streak/args.neutral_stop_steps if args.neutral_stop_steps
+             else float(state.unscored_depth > 0))]
 
 
 def run(args):
@@ -67,6 +68,7 @@ def run(args):
             or args.horizon < 1 or args.max_unscored < 1 or args.max_growth < 0
             or args.candidate_cap < 1 or args.matching_work < 1 or args.rewrite_timeout <= 0
             or args.anchor_candidate_cap < 1 or args.archive_qasm_cap < 0 or args.rollout < 1
+            or args.neutral_stop_steps < 0
             or args.learning_rate <= 0 or not np.isfinite(args.learning_rate)):
         raise ValueError("Invalid search bounds")
     if args.selection != "anchor" and args.anchor_prior != "uniform":
@@ -135,7 +137,7 @@ def run(args):
             raise ValueError("Model resume requires frozen/online policy")
         saved, payload, model_resume = read_model_snapshot(
             args.resume_model, hashlib.sha256(input_bytes).hexdigest(),
-            args.selection, args.anchor_prior, args.anchor_resource_mask)
+            args.selection, args.anchor_prior, args.anchor_resource_mask, args.neutral_stop_steps)
         net.load_state_dict(saved["state_dict"])
         (out/"resume-model.pt").write_bytes(payload)
         if optimizer is not None:
@@ -200,6 +202,11 @@ def run(args):
                                 resets_on="strict reduction in total gates only; CX/depth ties do not reset",
                                 overall_cap_seconds=args.seconds or None,
                                 checkpoint_seconds=args.checkpoint_seconds)
+    if args.neutral_stop_steps:
+        protocol["neutral_stop"] = dict(steps=args.neutral_stop_steps,
+            counter="Consecutive accepted scored rewrites or scored unchanged-state noops with zero total-gate reward; unscored/rejected steps and restarts reset",
+            context="The eighth context entry is neutral_streak/limit instead of the redundant latent-depth flag; checkpoints and model capsules retain the limit",
+            scope="Optional trajectory allocation heuristic; reward, legal actions and archive rules unchanged. It can discard useful longer plateaus; no completeness or convergence claim.")
     protocol["feasibility_mask"] = "When enabled, rewrite-only previews exclude node/wire-budget violations before categorical sampling; no extraction/cost lookahead. Exact-state/action LRU; all preview work inside budget."
     protocol["preview_native_prefix_sha256"] = kernel.preview_prefix_sha256
     protocol["angle_support"] = dict(
@@ -247,7 +254,7 @@ def run(args):
     invalid = Counter(); families = Counter(); accepted_families = Counter(); latent_families = Counter()
     timers = Counter(); rollout = []; anchor_stats = Counter()
     state = None; status = "budget_reached"; start = None
-    step = 0; restart_source = None; last_checkpoint = started
+    step = 0; restart_source = None; last_checkpoint = started; neutral_streak = 0
     first_best = {str(root_result["cost"]["gates"]-k): None for k in range(1, 6)}
 
     if args.resume_state:
@@ -261,11 +268,12 @@ def run(args):
                     "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout",
                     "selection", "anchor_candidate_cap"]
         semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask", "archive_qasm_cap",
-                     "native_flow_module", "verify_native_flow", "anchor_noop_stop"]
+                     "native_flow_module", "verify_native_flow", "anchor_noop_stop", "neutral_stop_steps"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
         step, restart_source = saved["step"], saved["restart_source"]
+        neutral_streak = saved["neutral_streak"]
         rollout = saved["rollout"]; best = saved["best"]; first_best = saved["first_best"]
         patience = GatePatience(args.no_improvement_seconds, best["cost"]["gates"], record=saved.get("patience"))
         deadline = min(budget_deadline, time.perf_counter()+patience.remaining())
@@ -301,6 +309,7 @@ def run(args):
                                          (transition, trajectory, accepted, unscored, recovered, updates),
                                          net, optimizer, kernel, rng, shared, patience)
         checkpoint["anchor_stats"] = dict(anchor_stats)
+        checkpoint["neutral_streak"] = neutral_streak
         torch.save(checkpoint, out/"search-state.pt.tmp")
         (out/"search-state.pt.tmp").replace(out/"search-state.pt")
         atomic_json(out/"checkpoint.json", dict(path="search-state.pt", transition=transition,
@@ -338,7 +347,7 @@ def run(args):
                         (out/"best.qasm").write_text(result["qasm"])
                         atomic_json(out/"best.json", best)
                 state = start
-                step = 0; trajectory += 1
+                step = 0; trajectory += 1; neutral_streak = 0
                 restart_file.write(json.dumps(dict(trajectory=trajectory, graph_key=start.key,
                                    source=restart_source, buffer=pool.summary()))+"\n")
             t = time.perf_counter()
@@ -347,7 +356,7 @@ def run(args):
             if anchored:
                 timers["views"] += time.perf_counter()-t
                 t = time.perf_counter()
-                context = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes))
+                context = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes), neutral_streak)
                 anchors = anchor_policy.catalog(state.diagram, view.graph, kernel.jpv is not None,
                                                 raw_limit if args.anchor_resource_mask else None,
                                                 wire_limit if args.anchor_resource_mask else None,
@@ -412,7 +421,7 @@ def run(args):
                     previous = list(rollout[-1]); previous[-1] = True; rollout[-1] = tuple(previous)
                 state = None
                 continue
-            context = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes))
+            context = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes), neutral_streak)
             t = time.perf_counter()
             obs = ((anchor_obs, *anchor_policy.conditional_observation(state.diagram, view.graph, available, context, anchor))
                    if anchored else observation(state.diagram, view.graph, available, context))
@@ -534,6 +543,7 @@ def run(args):
                                     selection=args.selection, anchor_prior=args.anchor_prior,
                                     anchor_resource_mask=args.anchor_resource_mask,
                                     anchor_noop_stop=args.anchor_noop_stop,
+                                    neutral_stop_steps=args.neutral_stop_steps,
                                     scope="Policy that generated this strict gate improvement, before this transition's PPO update; no active circuit/archive"), stream)
                             history["policy_snapshot"] = dict(path=str(snapshot.relative_to(out)),
                                 sha256=hashlib.sha256(snapshot.read_bytes()).hexdigest(), steps=transition, updates=updates)
@@ -545,6 +555,14 @@ def run(args):
                            unscored_depth=state.unscored_depth)
             else:
                 row.update(status="rejected", reason=rejected)
+            if args.neutral_stop_steps:
+                neutral_streak = (neutral_streak+1 if row["status"] in ("accepted", "anchor_noop")
+                                  and row["cost"] is not None and reward == 0 else 0)
+                neutral_stop = neutral_streak >= args.neutral_stop_steps
+                row.update(neutral_streak=neutral_streak, neutral_stop=neutral_stop)
+                if neutral_stop:
+                    done = True
+                    anchor_stats["neutral_terminations"] += 1
             row.update(reward=reward, terminal=done, best=best["cost"], buffer=pool.summary())
             events.write(json.dumps(row)+"\n")
             if optimizer is not None:
@@ -555,7 +573,7 @@ def run(args):
                 t = time.perf_counter(); bootstrap = 0.
                 if state is not None:
                     next_view = views.get(state.diagram)
-                    ctx = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes))
+                    ctx = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes), neutral_streak)
                     next_obs = observation(state.diagram, next_view.graph, [], ctx)
                     with torch.no_grad():
                         bootstrap = float(net.get_value(batch([next_obs])[1])[0])
@@ -600,6 +618,7 @@ def run(args):
                         anchor_prior=args.anchor_prior, learning_rate=args.learning_rate,
                         anchor_resource_mask=args.anchor_resource_mask,
                         anchor_noop_stop=args.anchor_noop_stop,
+                        neutral_stop_steps=args.neutral_stop_steps,
                         scope="model/Adam only, not a complete search checkpoint"), out/"final.pt")
     checkpoint_now()
     if shared is not None:
@@ -673,6 +692,8 @@ def parser():
                    help="Before sampling, remove only wire/scalar anchors whose insertion is provably over budget")
     p.add_argument("--anchor-noop-stop", action="store_true",
                    help="Opt-in terminal empty-anchor noop; record zero reward then restart next step")
+    p.add_argument("--neutral-stop-steps", type=int, default=0,
+                   help="Opt-in trajectory stop after N consecutive scored zero-reward rewrites/noops;0 disables")
     p.add_argument("--save-improvement-models", action="store_true",
                    help="Save policy/Adam on each strict total-gate improvement, before the next PPO update")
     p.add_argument("--native-flow-module", type=Path,

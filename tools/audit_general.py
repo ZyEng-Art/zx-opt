@@ -28,7 +28,8 @@ def immediate_terminal(event, config, root_gates):
         done = done or event["unscored_depth"] >= config["max_unscored"]
     elif event["status"] == "accepted":
         done = done or event["cost"]["gates"] > 1.5*root_gates
-    return done
+    limit = config.get("neutral_stop_steps", 0)
+    return done or bool(limit and event["neutral_streak"] >= limit)
 
 
 def replay_native_rooted(kernel, raw, view, action, anchor=None):
@@ -134,6 +135,7 @@ def audit_one(spec):
     restart_cursor = 0
     prior_event = None
     native_calls = native_crosschecks = 0
+    neutral_streak = neutral_terminations = 0
     def restart(record):
         nonlocal best
         key, source = record["graph_key"], record["source"]
@@ -175,6 +177,7 @@ def audit_one(spec):
         if event["trajectory"] != trajectory:
             assert event["trajectory_step"] == 1
             trajectory = event["trajectory"]
+            neutral_streak = 0
             if restart_rows:
                 while restart_cursor < len(restart_rows) and restart_rows[restart_cursor]["trajectory"] <= trajectory:
                     start = restart(restart_rows[restart_cursor]); restart_cursor += 1
@@ -201,6 +204,13 @@ def audit_one(spec):
         if event["status"] == "excluded_after_deadline":
             assert event["seconds"] > event.get("deadline_seconds", config["seconds"])
             continue
+        if config.get("neutral_stop_steps", 0):
+            assert abs(event["context"][-1]-neutral_streak/config["neutral_stop_steps"]) < 1e-12
+            neutral_streak = (neutral_streak+1 if event["status"] in ("accepted", "anchor_noop")
+                              and event["cost"] is not None and event["reward"] == 0 else 0)
+            neutral_stop = neutral_streak >= config["neutral_stop_steps"]
+            assert event["neutral_streak"] == neutral_streak and event["neutral_stop"] == neutral_stop
+            neutral_terminations += int(neutral_stop)
         assert event["terminal"] == immediate_terminal(event, config, root.cost["gates"])
         prior_event = event
         assert 0 <= event["seconds"] <= event.get("deadline_seconds", config["seconds"])
@@ -297,6 +307,8 @@ def audit_one(spec):
     assert archive.summary() == report["buffer"]
     if config.get("anchor_noop_stop"):
         assert report["anchor_stats"].get("noop_terminations", 0) == statuses["anchor_noop"]
+    if config.get("neutral_stop_steps", 0):
+        assert report["anchor_stats"].get("neutral_terminations", 0) == neutral_terminations
     best_circuit = qasm2.loads((folder/"best.qasm").read_text())
     assert check_qasm(reference, (folder/"best.qasm").read_text()) < 2e-8
     if (folder/"initial.pt").exists():
@@ -311,6 +323,7 @@ def audit_one(spec):
             assert sha(snapshot) == origin["sha256"]
             saved = torch.load(snapshot, map_location="cpu", weights_only=True)
             assert saved["input_sha256"] == protocol["input_sha256"] == origin["input_sha256"]
+            assert saved.get("neutral_stop_steps", 0) == config.get("neutral_stop_steps", 0)
             assert state_dict_digest(saved["state_dict"]) == origin["tensor_sha256"]
             assert origin["tensor_sha256"] == protocol["initial_tensor_sha256"]
             assert set(initial) == set(saved["state_dict"])
@@ -348,6 +361,7 @@ def audit_one(spec):
         assert saved["source_commit"] == protocol["git_commit"]
         assert saved["selection"] == config["selection"]
         assert saved["anchor_noop_stop"] == config.get("anchor_noop_stop", False)
+        assert saved.get("neutral_stop_steps", 0) == config.get("neutral_stop_steps", 0)
         assert saved["anchor_prior"] == config["anchor_prior"]
         assert saved["anchor_resource_mask"] == config["anchor_resource_mask"]
         assert set(saved["state_dict"]) == set(initial)

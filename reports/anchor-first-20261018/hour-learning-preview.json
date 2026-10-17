@@ -1,0 +1,3422 @@
+{
+  "status": "unaudited_descriptive_preview",
+  "study_audit_passed": false,
+  "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+  "study_audit_sha256": null,
+  "window_fraction": 0.2,
+  "records": [
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_frozen_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 34
+      },
+      "updates": 0,
+      "transitions": 17893,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 52,
+        "32": 2
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 202,
+          "gates": 39,
+          "trajectory_step": 45,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 4
+        },
+        {
+          "transition": 711,
+          "gates": 37,
+          "trajectory_step": 6,
+          "preceding_neutral_steps": 1,
+          "peak_neutral_steps_in_prefix": 1
+        },
+        {
+          "transition": 9908,
+          "gates": 36,
+          "trajectory_step": 47,
+          "preceding_neutral_steps": 3,
+          "peak_neutral_steps_in_prefix": 7
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 3696,
+            "accepted": 3696,
+            "positive_reward": 753,
+            "negative_reward": 1028,
+            "zero_reward": 1915,
+            "accepted_rewrite": 3696,
+            "repeated_raw_graph_in_trajectory": 13,
+            "repeated_completion_in_trajectory": 1872
+          },
+          "families": {
+            "PVG": 234,
+            "EU:forward": 201,
+            "I:forward": 289,
+            "E:backward": 194,
+            "PV": 246,
+            "I:backward": 226,
+            "H:backward": 281,
+            "S:backward": 266,
+            "gadget_split": 113,
+            "spider_split": 166,
+            "phase_split": 158,
+            "ID": 276,
+            "H:forward": 293,
+            "PVB": 131,
+            "S:forward": 59,
+            "identity_insert": 146,
+            "phase_transfer": 141,
+            "LC": 9,
+            "GF": 28,
+            "CP:backward": 160,
+            "EU:backward": 33,
+            "E:forward": 17,
+            "spider_nest": 14,
+            "B:backward": 3,
+            "CP:forward": 12
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 3400,
+            "accepted": 3400,
+            "positive_reward": 452,
+            "negative_reward": 695,
+            "zero_reward": 2253,
+            "accepted_rewrite": 3400,
+            "repeated_raw_graph_in_trajectory": 13,
+            "repeated_completion_in_trajectory": 2245
+          },
+          "families": {
+            "GF": 24,
+            "S:backward": 231,
+            "PV": 237,
+            "PVB": 121,
+            "E:backward": 196,
+            "ID": 258,
+            "H:forward": 277,
+            "spider_split": 167,
+            "phase_split": 130,
+            "PVG": 207,
+            "EU:forward": 190,
+            "I:backward": 246,
+            "phase_transfer": 138,
+            "identity_insert": 126,
+            "H:backward": 268,
+            "CP:backward": 68,
+            "S:forward": 53,
+            "I:forward": 247,
+            "CP:forward": 8,
+            "E:forward": 24,
+            "EU:backward": 38,
+            "gadget_split": 94,
+            "spider_nest": 42,
+            "LC": 7,
+            "B:backward": 3
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "7f38763565406ee4a9f7ea7b59198a1cb59cad602051f59e9aa7ab9c5060a5c8",
+        "report.json": "b23251b592bd1843f2a2c395589f3a1fb65ee056052bd21d81db6094a2b8b30e",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "3a0d101e73c83252255a4f0b02ee4a53cfb69a07c0b57d22df310c312965c2b8",
+        "best-history.jsonl": "9d364bf79fa1da07af050f114579236f75a9e342ed4c1d978915eb06cce7ea8a"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_frozen_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 34
+      },
+      "updates": 0,
+      "transitions": 19136,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 71,
+        "32": 7,
+        "64": 2
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 52,
+          "gates": 39,
+          "trajectory_step": 24,
+          "preceding_neutral_steps": 5,
+          "peak_neutral_steps_in_prefix": 6
+        },
+        {
+          "transition": 5271,
+          "gates": 38,
+          "trajectory_step": 61,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 19
+        },
+        {
+          "transition": 5606,
+          "gates": 37,
+          "trajectory_step": 7,
+          "preceding_neutral_steps": 2,
+          "peak_neutral_steps_in_prefix": 3
+        },
+        {
+          "transition": 8220,
+          "gates": 36,
+          "trajectory_step": 9,
+          "preceding_neutral_steps": 8,
+          "peak_neutral_steps_in_prefix": 8
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 3941,
+            "accepted": 3941,
+            "positive_reward": 475,
+            "negative_reward": 667,
+            "zero_reward": 2799,
+            "accepted_rewrite": 3941,
+            "repeated_raw_graph_in_trajectory": 8,
+            "repeated_completion_in_trajectory": 2845
+          },
+          "families": {
+            "EU:forward": 216,
+            "H:forward": 277,
+            "phase_split": 202,
+            "I:forward": 262,
+            "I:backward": 261,
+            "S:forward": 48,
+            "E:backward": 233,
+            "PVB": 131,
+            "S:backward": 271,
+            "ID": 272,
+            "gadget_split": 160,
+            "CP:backward": 111,
+            "identity_insert": 134,
+            "PV": 266,
+            "spider_split": 176,
+            "phase_transfer": 213,
+            "H:backward": 312,
+            "PVG": 233,
+            "spider_nest": 47,
+            "CP:forward": 15,
+            "GF": 38,
+            "EU:backward": 34,
+            "E:forward": 14,
+            "LC": 10,
+            "B:backward": 5
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 3731,
+            "accepted": 3731,
+            "positive_reward": 577,
+            "negative_reward": 885,
+            "zero_reward": 2269,
+            "accepted_rewrite": 3731,
+            "repeated_raw_graph_in_trajectory": 16,
+            "repeated_completion_in_trajectory": 2260
+          },
+          "families": {
+            "I:forward": 250,
+            "E:backward": 233,
+            "PVB": 127,
+            "gadget_split": 148,
+            "CP:backward": 81,
+            "I:backward": 249,
+            "spider_split": 178,
+            "H:backward": 268,
+            "H:forward": 261,
+            "EU:forward": 224,
+            "PV": 283,
+            "identity_insert": 186,
+            "GF": 44,
+            "E:forward": 21,
+            "PVG": 229,
+            "S:backward": 243,
+            "phase_transfer": 143,
+            "CP:forward": 9,
+            "ID": 248,
+            "EU:backward": 37,
+            "phase_split": 176,
+            "S:forward": 51,
+            "spider_nest": 22,
+            "LC": 18,
+            "B:backward": 1,
+            "B:forward": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "50ae97ab847f0c5bc762321b44b987ef2a9fce0f8f9b13989db2f1641dd3764f",
+        "report.json": "cc80e397a229315235ac4e5be716abea963e908ee2d49eebb48558d77105f23c",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "a889b1e3977f7efc053d2083b0a6fef01af4a9dd538fb2b737233849a0ba311e",
+        "best-history.jsonl": "b211773ad57d2bd32a0022c9cc951778b376803025ed2c3919603dbd9aae01b3"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_frozen_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0001,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "updates": 0,
+      "transitions": 49459,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 242,
+        "32": 40,
+        "64": 1
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 69,
+          "gates": 38,
+          "trajectory_step": 69,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 12
+        },
+        {
+          "transition": 11731,
+          "gates": 37,
+          "trajectory_step": 29,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 4
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 10749,
+            "accepted": 9225,
+            "positive_reward": 1222,
+            "negative_reward": 1917,
+            "zero_reward": 7610,
+            "accepted_rewrite": 9225,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 5997,
+            "anchor_noop": 1524
+          },
+          "families": {
+            "phase_split": 273,
+            "I:backward": 3276,
+            "identity_insert": 629,
+            "H:forward": 1420,
+            "EU:forward": 767,
+            "spider_split": 88,
+            "H:backward": 1101,
+            "anchor_noop": 1524,
+            "PV": 281,
+            "I:forward": 270,
+            "ID": 185,
+            "S:backward": 587,
+            "PVG": 229,
+            "S:forward": 58,
+            "EU:backward": 12,
+            "PVB": 17,
+            "E:backward": 14,
+            "E:forward": 1,
+            "CP:backward": 1,
+            "gadget_split": 16
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 8930,
+            "accepted": 7139,
+            "positive_reward": 963,
+            "negative_reward": 1472,
+            "zero_reward": 6495,
+            "accepted_rewrite": 7139,
+            "repeated_raw_graph_in_trajectory": 0,
+            "repeated_completion_in_trajectory": 4549,
+            "anchor_noop": 1791
+          },
+          "families": {
+            "I:backward": 2679,
+            "anchor_noop": 1791,
+            "S:forward": 137,
+            "phase_split": 188,
+            "identity_insert": 444,
+            "EU:forward": 527,
+            "H:backward": 908,
+            "H:forward": 1055,
+            "S:backward": 484,
+            "I:forward": 227,
+            "PVG": 98,
+            "spider_split": 67,
+            "PVB": 24,
+            "PV": 145,
+            "ID": 109,
+            "EU:backward": 18,
+            "spider_nest": 2,
+            "E:backward": 8,
+            "gadget_split": 11,
+            "phase_transfer": 3,
+            "GF": 3,
+            "LC": 2
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "cd5038358b49aebee5b6f1476dbbd010346a1e01394bd85affae9c6f3452b0cd",
+        "report.json": "98b09f6fbff11620610ba6f3ae1275032c37154afbfafa1cf5971983aafae0e2",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "3901d33cae51b315af6fb9c760786ae07d52bf1ec052be52097374c1f7213995",
+        "best-history.jsonl": "9202a55cf66eb410793dd513a83667994900491b26aacd1cdf678766deab2569"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_frozen_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0001,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "updates": 0,
+      "transitions": 53201,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 523,
+        "32": 128,
+        "64": 27
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 2282,
+          "gates": 39,
+          "trajectory_step": 11,
+          "preceding_neutral_steps": 2,
+          "peak_neutral_steps_in_prefix": 7
+        },
+        {
+          "transition": 24301,
+          "gates": 38,
+          "trajectory_step": 5,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 1
+        },
+        {
+          "transition": 25994,
+          "gates": 37,
+          "trajectory_step": 5,
+          "preceding_neutral_steps": 3,
+          "peak_neutral_steps_in_prefix": 3
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 12078,
+            "accepted": 8680,
+            "positive_reward": 578,
+            "negative_reward": 920,
+            "zero_reward": 10580,
+            "accepted_rewrite": 8680,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 7358,
+            "anchor_noop": 3398
+          },
+          "families": {
+            "S:backward": 709,
+            "PVG": 106,
+            "I:backward": 2997,
+            "H:backward": 988,
+            "identity_insert": 448,
+            "EU:forward": 510,
+            "spider_split": 73,
+            "H:forward": 773,
+            "phase_split": 243,
+            "anchor_noop": 3398,
+            "PV": 96,
+            "ID": 67,
+            "I:forward": 674,
+            "S:forward": 934,
+            "spider_nest": 4,
+            "PVB": 15,
+            "EU:backward": 12,
+            "phase_transfer": 1,
+            "gadget_split": 14,
+            "CP:backward": 3,
+            "E:backward": 10,
+            "GF": 2,
+            "CP:forward": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 9305,
+            "accepted": 7933,
+            "positive_reward": 946,
+            "negative_reward": 1402,
+            "zero_reward": 6957,
+            "accepted_rewrite": 7933,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 5474,
+            "anchor_noop": 1372
+          },
+          "families": {
+            "H:backward": 886,
+            "anchor_noop": 1372,
+            "I:backward": 3034,
+            "H:forward": 1148,
+            "EU:forward": 615,
+            "S:backward": 527,
+            "I:forward": 212,
+            "identity_insert": 562,
+            "ID": 142,
+            "PVB": 11,
+            "phase_split": 244,
+            "PVG": 125,
+            "spider_split": 77,
+            "EU:backward": 9,
+            "PV": 257,
+            "S:forward": 51,
+            "gadget_split": 13,
+            "GF": 2,
+            "E:backward": 12,
+            "CP:backward": 1,
+            "spider_nest": 2,
+            "phase_transfer": 2,
+            "E:forward": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "3de3e8fe77b4f271eaff5a28138c035071806c5b3a7a402927f2c22a9b5c659f",
+        "report.json": "304c64d6bd91d00886a1791732dc8cc2bc6a91d469b6c05fdf9025d3046c0f00",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "1874de4ddeabe54bf04bcd2acf8696ab86e5aa980c5f943cc490079fe2fcdaed",
+        "best-history.jsonl": "3a774484a3a7ee39f74b92a282b793c7d7c256e2e15a64ec5d523702fa7fc189"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_frozen_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0001,
+      "best": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "updates": 0,
+      "transitions": 55487,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 561,
+        "32": 83,
+        "64": 1
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 1406,
+          "gates": 39,
+          "trajectory_step": 18,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 7
+        },
+        {
+          "transition": 30438,
+          "gates": 38,
+          "trajectory_step": 63,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 23
+        },
+        {
+          "transition": 31219,
+          "gates": 37,
+          "trajectory_step": 3,
+          "preceding_neutral_steps": 2,
+          "peak_neutral_steps_in_prefix": 2
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 12973,
+            "accepted": 9220,
+            "positive_reward": 837,
+            "negative_reward": 1215,
+            "zero_reward": 10921,
+            "accepted_rewrite": 9220,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 7638,
+            "anchor_noop": 3753
+          },
+          "families": {
+            "EU:forward": 486,
+            "I:backward": 3269,
+            "phase_split": 169,
+            "identity_insert": 404,
+            "PVG": 83,
+            "H:forward": 912,
+            "H:backward": 1145,
+            "S:backward": 776,
+            "ID": 71,
+            "anchor_noop": 3753,
+            "E:backward": 10,
+            "I:forward": 813,
+            "PV": 86,
+            "spider_split": 48,
+            "S:forward": 897,
+            "gadget_split": 9,
+            "PVB": 10,
+            "EU:backward": 29,
+            "CP:backward": 2,
+            "spider_nest": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 8976,
+            "accepted": 7771,
+            "positive_reward": 967,
+            "negative_reward": 1619,
+            "zero_reward": 6390,
+            "accepted_rewrite": 7771,
+            "repeated_raw_graph_in_trajectory": 2,
+            "repeated_completion_in_trajectory": 5005,
+            "anchor_noop": 1205
+          },
+          "families": {
+            "PV": 291,
+            "PVG": 128,
+            "I:backward": 2809,
+            "I:forward": 164,
+            "identity_insert": 627,
+            "anchor_noop": 1205,
+            "H:forward": 1177,
+            "EU:forward": 665,
+            "H:backward": 860,
+            "S:backward": 465,
+            "phase_split": 294,
+            "spider_split": 76,
+            "S:forward": 45,
+            "ID": 120,
+            "PVB": 20,
+            "gadget_split": 12,
+            "phase_transfer": 1,
+            "E:backward": 12,
+            "EU:backward": 5
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "1e5e8d7294adc983f69d5a96766219c35870072dd5a8c70d98aefe707253c9ea",
+        "report.json": "b5339a1decfe96838a7eec16527d7fb73afabcbdb3c5d85859aa6d878a8e01d7",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "c4475eb32d0390d47ff7eea7955d6f30aa21d77165dfa91cbaba659698a9fda8",
+        "best-history.jsonl": "cbd597b32b15fabdeeb52e4b42ebd0a5c1f0df35b4d0fd2bebb064d16fc55461"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_frozen_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "updates": 0,
+      "transitions": 17420,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 31,
+        "32": 3
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 335,
+          "gates": 39,
+          "trajectory_step": 49,
+          "preceding_neutral_steps": 1,
+          "peak_neutral_steps_in_prefix": 2
+        },
+        {
+          "transition": 357,
+          "gates": 37,
+          "trajectory_step": 13,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 3
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 3525,
+            "accepted": 3525,
+            "positive_reward": 660,
+            "negative_reward": 842,
+            "zero_reward": 2023,
+            "accepted_rewrite": 3525,
+            "repeated_raw_graph_in_trajectory": 20,
+            "repeated_completion_in_trajectory": 2010
+          },
+          "families": {
+            "H:backward": 268,
+            "identity_insert": 124,
+            "E:backward": 194,
+            "S:backward": 230,
+            "I:backward": 266,
+            "PV": 227,
+            "PVG": 216,
+            "phase_split": 114,
+            "gadget_split": 138,
+            "EU:forward": 223,
+            "I:forward": 306,
+            "EU:backward": 45,
+            "CP:backward": 89,
+            "ID": 216,
+            "spider_split": 134,
+            "H:forward": 254,
+            "phase_transfer": 151,
+            "spider_nest": 43,
+            "GF": 51,
+            "PVB": 110,
+            "LC": 11,
+            "S:forward": 80,
+            "CP:forward": 9,
+            "E:forward": 22,
+            "B:backward": 4
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 3310,
+            "accepted": 3280,
+            "positive_reward": 575,
+            "negative_reward": 757,
+            "zero_reward": 1978,
+            "accepted_rewrite": 3310,
+            "repeated_raw_graph_in_trajectory": 14,
+            "repeated_completion_in_trajectory": 1947,
+            "accepted_unscored": 30
+          },
+          "families": {
+            "GF": 39,
+            "PVG": 180,
+            "H:forward": 276,
+            "H:backward": 271,
+            "PVB": 95,
+            "spider_split": 131,
+            "I:forward": 279,
+            "I:backward": 234,
+            "PV": 184,
+            "phase_split": 108,
+            "EU:forward": 173,
+            "S:backward": 256,
+            "EU:backward": 66,
+            "identity_insert": 120,
+            "ID": 172,
+            "phase_transfer": 111,
+            "spider_nest": 33,
+            "gadget_split": 115,
+            "E:backward": 193,
+            "CP:backward": 102,
+            "S:forward": 88,
+            "E:forward": 52,
+            "CP:forward": 21,
+            "LC": 8,
+            "B:backward": 2,
+            "B:forward": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "aa7b518a86f2bedb404b82665152bf018cbdf3b272b238293c6295c6ef9bc43f",
+        "report.json": "36618e930b0c11ba57da4468684b5c4da177c696e6cecc6a5b78254c66147dc0",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "9eea789ff3fd1a8f6251d2fb2afc73e35f030cf4ea7406c2b29c1ce6e50c54c0",
+        "best-history.jsonl": "c8088a8dd7002e673e3f8735cbd573b48bf4354ebce2b11b34f3b1ff25c6ab41"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_frozen_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "updates": 0,
+      "transitions": 50645,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 249,
+        "32": 41,
+        "64": 1
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 69,
+          "gates": 38,
+          "trajectory_step": 69,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 12
+        },
+        {
+          "transition": 11731,
+          "gates": 37,
+          "trajectory_step": 29,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 4
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 10974,
+            "accepted": 9416,
+            "positive_reward": 1246,
+            "negative_reward": 1967,
+            "zero_reward": 7761,
+            "accepted_rewrite": 9416,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 6117,
+            "anchor_noop": 1558
+          },
+          "families": {
+            "phase_split": 276,
+            "I:backward": 3345,
+            "identity_insert": 640,
+            "H:forward": 1452,
+            "EU:forward": 784,
+            "spider_split": 91,
+            "H:backward": 1121,
+            "anchor_noop": 1558,
+            "PV": 290,
+            "I:forward": 272,
+            "ID": 187,
+            "S:backward": 597,
+            "PVG": 240,
+            "S:forward": 59,
+            "EU:backward": 12,
+            "PVB": 18,
+            "E:backward": 14,
+            "E:forward": 1,
+            "CP:backward": 1,
+            "gadget_split": 16
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 9225,
+            "accepted": 7426,
+            "positive_reward": 981,
+            "negative_reward": 1511,
+            "zero_reward": 6733,
+            "accepted_rewrite": 7426,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 4775,
+            "anchor_noop": 1799
+          },
+          "families": {
+            "H:backward": 928,
+            "I:backward": 2776,
+            "identity_insert": 486,
+            "H:forward": 1103,
+            "S:backward": 496,
+            "anchor_noop": 1799,
+            "S:forward": 136,
+            "ID": 118,
+            "EU:forward": 541,
+            "I:forward": 245,
+            "PVG": 110,
+            "phase_split": 195,
+            "PV": 153,
+            "E:backward": 9,
+            "gadget_split": 13,
+            "spider_split": 67,
+            "phase_transfer": 3,
+            "PVB": 23,
+            "EU:backward": 17,
+            "GF": 3,
+            "LC": 3,
+            "CP:backward": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "738cb328872a2a23addc224e569075a64d37a04109cd84b518aa17121dadad64",
+        "report.json": "70ffd1b58b173d4d1ec591bf44fd973cdedb638f720a74ed96a11258daa86f11",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "d7f4187a326353e1fe1fad7e7cb3854d3de728975b8fa562fad56d0aaee45023",
+        "best-history.jsonl": "7f920a962cc2ada17ade596a8866cc31278f22935e5c1e2015cb7bbd14dbc888"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_frozen_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "updates": 0,
+      "transitions": 55435,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 561,
+        "32": 83,
+        "64": 1
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 1406,
+          "gates": 39,
+          "trajectory_step": 18,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 7
+        },
+        {
+          "transition": 30438,
+          "gates": 38,
+          "trajectory_step": 63,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 23
+        },
+        {
+          "transition": 31219,
+          "gates": 37,
+          "trajectory_step": 3,
+          "preceding_neutral_steps": 2,
+          "peak_neutral_steps_in_prefix": 2
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 12948,
+            "accepted": 9197,
+            "positive_reward": 835,
+            "negative_reward": 1213,
+            "zero_reward": 10900,
+            "accepted_rewrite": 9197,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 7618,
+            "anchor_noop": 3751
+          },
+          "families": {
+            "EU:forward": 485,
+            "I:backward": 3257,
+            "phase_split": 169,
+            "identity_insert": 402,
+            "PVG": 83,
+            "H:forward": 910,
+            "H:backward": 1144,
+            "S:backward": 776,
+            "ID": 70,
+            "anchor_noop": 3751,
+            "E:backward": 10,
+            "I:forward": 811,
+            "PV": 84,
+            "spider_split": 48,
+            "S:forward": 897,
+            "gadget_split": 9,
+            "PVB": 10,
+            "EU:backward": 29,
+            "CP:backward": 2,
+            "spider_nest": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 8969,
+            "accepted": 7761,
+            "positive_reward": 969,
+            "negative_reward": 1614,
+            "zero_reward": 6386,
+            "accepted_rewrite": 7761,
+            "repeated_raw_graph_in_trajectory": 2,
+            "repeated_completion_in_trajectory": 5003,
+            "anchor_noop": 1208
+          },
+          "families": {
+            "H:forward": 1179,
+            "I:backward": 2808,
+            "I:forward": 166,
+            "S:backward": 464,
+            "EU:forward": 661,
+            "PV": 292,
+            "spider_split": 77,
+            "H:backward": 856,
+            "identity_insert": 622,
+            "anchor_noop": 1208,
+            "PVG": 126,
+            "ID": 121,
+            "phase_split": 294,
+            "S:forward": 45,
+            "PVB": 20,
+            "gadget_split": 12,
+            "phase_transfer": 1,
+            "E:backward": 12,
+            "EU:backward": 5
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "801a2d6b1ccbf5c000ef466358c5f518415dda5c823eabbb069d239848ac23b4",
+        "report.json": "a2118e8c6e88ba8c1389a691fefabcddcfd806ce61c0406412a3388eae957f58",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "589ee363dd805cf7f3251b2166107e9a2e224a20cf3b26a28b6752de6e69d07b",
+        "best-history.jsonl": "0650e71a4a8f8c4afc8111b8608a8359539acf12c4446642dfe3b2d5e2b32c44"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_frozen_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "updates": 0,
+      "transitions": 52964,
+      "early_update_count": 0,
+      "late_update_count": 0,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 0,
+          "median": null
+        },
+        "value_explained_variance_after": {
+          "samples": 0,
+          "median": null
+        },
+        "post_approx_kl": {
+          "samples": 0,
+          "median": null
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "forced_action_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "positive_reward_fraction": {
+          "samples": 0,
+          "median": null
+        },
+        "return_std": {
+          "samples": 0,
+          "median": null
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 522,
+        "32": 128,
+        "64": 27
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 2282,
+          "gates": 39,
+          "trajectory_step": 11,
+          "preceding_neutral_steps": 2,
+          "peak_neutral_steps_in_prefix": 7
+        },
+        {
+          "transition": 24301,
+          "gates": 38,
+          "trajectory_step": 5,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 1
+        },
+        {
+          "transition": 25994,
+          "gates": 37,
+          "trajectory_step": 5,
+          "preceding_neutral_steps": 3,
+          "peak_neutral_steps_in_prefix": 3
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 12009,
+            "accepted": 8638,
+            "positive_reward": 574,
+            "negative_reward": 917,
+            "zero_reward": 10518,
+            "accepted_rewrite": 8638,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 7319,
+            "anchor_noop": 3371
+          },
+          "families": {
+            "S:backward": 705,
+            "PVG": 105,
+            "I:backward": 2982,
+            "H:backward": 980,
+            "identity_insert": 447,
+            "EU:forward": 509,
+            "spider_split": 73,
+            "H:forward": 769,
+            "phase_split": 242,
+            "anchor_noop": 3371,
+            "PV": 96,
+            "ID": 67,
+            "I:forward": 671,
+            "S:forward": 930,
+            "spider_nest": 4,
+            "PVB": 15,
+            "EU:backward": 12,
+            "phase_transfer": 1,
+            "gadget_split": 14,
+            "CP:backward": 3,
+            "E:backward": 10,
+            "GF": 2,
+            "CP:forward": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 9217,
+            "accepted": 7858,
+            "positive_reward": 940,
+            "negative_reward": 1399,
+            "zero_reward": 6878,
+            "accepted_rewrite": 7858,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 5410,
+            "anchor_noop": 1359
+          },
+          "families": {
+            "I:backward": 3015,
+            "PV": 257,
+            "EU:forward": 594,
+            "H:backward": 883,
+            "anchor_noop": 1359,
+            "H:forward": 1146,
+            "PVG": 124,
+            "phase_split": 243,
+            "S:backward": 524,
+            "identity_insert": 543,
+            "spider_split": 74,
+            "gadget_split": 13,
+            "I:forward": 211,
+            "ID": 140,
+            "S:forward": 52,
+            "PVB": 10,
+            "EU:backward": 9,
+            "GF": 2,
+            "E:backward": 12,
+            "CP:backward": 1,
+            "spider_nest": 2,
+            "phase_transfer": 2,
+            "E:forward": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "f5865bfe154e794368f29f79d6a9804be76909dcc9efa7572821b369150ab239",
+        "report.json": "2c35bc99dcb7f84f52c6e925578e04396f7452062f5002fef2cb1192805e76b3",
+        "updates.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "b47296775ad4e5fbc03c0b65cd7ba1526c89d14a86c675d4fb08820f896a7211",
+        "best-history.jsonl": "10c609689b95dbb89aee1a917177fb84a7b43c44e9ab877339e4a8227bb58d4c"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0001,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "updates": 1328,
+      "transitions": 42509,
+      "early_update_count": 280,
+      "late_update_count": 258,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 280,
+          "median": 0.2725522667169571
+        },
+        "value_explained_variance_after": {
+          "samples": 280,
+          "median": 0.10840402148011552
+        },
+        "post_approx_kl": {
+          "samples": 280,
+          "median": 6.987554216819605e-09
+        },
+        "normalized_anchor_entropy": {
+          "samples": 280,
+          "median": 0.9999998708441776
+        },
+        "conditional_normalized_entropy": {
+          "samples": 280,
+          "median": 0.9999943215288114
+        },
+        "forced_action_fraction": {
+          "samples": 280,
+          "median": 0.625
+        },
+        "positive_reward_fraction": {
+          "samples": 280,
+          "median": 0.09375
+        },
+        "return_std": {
+          "samples": 280,
+          "median": 0.46351592844569806
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 258,
+          "median": 0.09719864185899496
+        },
+        "value_explained_variance_after": {
+          "samples": 258,
+          "median": 0.5910471972489886
+        },
+        "post_approx_kl": {
+          "samples": 258,
+          "median": 0.0002009064666896577
+        },
+        "normalized_anchor_entropy": {
+          "samples": 258,
+          "median": 0.8912274131992375
+        },
+        "conditional_normalized_entropy": {
+          "samples": 258,
+          "median": 0.8346676560040143
+        },
+        "forced_action_fraction": {
+          "samples": 258,
+          "median": 0.78125
+        },
+        "positive_reward_fraction": {
+          "samples": 258,
+          "median": 0.0625
+        },
+        "return_std": {
+          "samples": 258,
+          "median": 0.4195220216510977
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 372,
+        "32": 94,
+        "64": 7
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 3633,
+          "gates": 37,
+          "trajectory_step": 7,
+          "preceding_neutral_steps": 2,
+          "peak_neutral_steps_in_prefix": 2
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 8982,
+            "accepted": 7631,
+            "positive_reward": 813,
+            "negative_reward": 1377,
+            "zero_reward": 6792,
+            "accepted_rewrite": 7631,
+            "repeated_raw_graph_in_trajectory": 0,
+            "repeated_completion_in_trajectory": 5331,
+            "anchor_noop": 1351
+          },
+          "families": {
+            "EU:forward": 640,
+            "I:backward": 2853,
+            "phase_split": 228,
+            "identity_insert": 522,
+            "PVG": 143,
+            "H:forward": 1123,
+            "H:backward": 817,
+            "S:backward": 479,
+            "ID": 118,
+            "anchor_noop": 1351,
+            "E:backward": 12,
+            "I:forward": 263,
+            "PV": 208,
+            "spider_split": 87,
+            "S:forward": 101,
+            "gadget_split": 10,
+            "PVB": 15,
+            "EU:backward": 7,
+            "CP:backward": 1,
+            "phase_transfer": 2,
+            "E:forward": 1,
+            "spider_nest": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 8265,
+            "accepted": 6732,
+            "positive_reward": 563,
+            "negative_reward": 824,
+            "zero_reward": 6878,
+            "accepted_rewrite": 6732,
+            "repeated_raw_graph_in_trajectory": 5,
+            "repeated_completion_in_trajectory": 5253,
+            "anchor_noop": 1533
+          },
+          "families": {
+            "identity_insert": 1072,
+            "spider_split": 12,
+            "anchor_noop": 1533,
+            "H:forward": 595,
+            "I:backward": 2814,
+            "PVG": 217,
+            "PV": 194,
+            "H:backward": 863,
+            "ID": 309,
+            "phase_split": 77,
+            "I:forward": 106,
+            "S:backward": 270,
+            "EU:forward": 57,
+            "E:backward": 35,
+            "PVB": 14,
+            "S:forward": 91,
+            "phase_transfer": 4,
+            "gadget_split": 1,
+            "EU:backward": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "3982688835ec3f3e287629aeed110684916a90aa3a106ff6b3e62397c22dd430",
+        "report.json": "3c478440162d14485b282ece20d67f7bfb50e385918741e77180a34b596da568",
+        "updates.jsonl": "d2bfc8c7d7936b22c0f37cf447b40d529a5aaf0f50c2db56add9daade5d937e9",
+        "events.jsonl": "638a2b366ef9dd75f9b05cc001c687ef0934da037f78cd9ec35c3c66bab1d887",
+        "best-history.jsonl": "3f516c77c9fcafdeb2499cf9e7b9c1ae443218f602c2670352e1541823dbfe13"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_online_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "updates": 1676,
+      "transitions": 53646,
+      "early_update_count": 304,
+      "late_update_count": 342,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 304,
+          "median": 0.13819023966789246
+        },
+        "value_explained_variance_after": {
+          "samples": 304,
+          "median": 0.1545532736856352
+        },
+        "post_approx_kl": {
+          "samples": 304,
+          "median": 2.10539044949938e-05
+        },
+        "normalized_anchor_entropy": {
+          "samples": 304,
+          "median": 0.9988906566086935
+        },
+        "conditional_normalized_entropy": {
+          "samples": 304,
+          "median": 0.9929594685515377
+        },
+        "forced_action_fraction": {
+          "samples": 304,
+          "median": 0.65625
+        },
+        "positive_reward_fraction": {
+          "samples": 304,
+          "median": 0.0625
+        },
+        "return_std": {
+          "samples": 304,
+          "median": 0.37193874831097984
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 342,
+          "median": 0.0007091851075529121
+        },
+        "value_explained_variance_after": {
+          "samples": 342,
+          "median": 0.13167082790929763
+        },
+        "post_approx_kl": {
+          "samples": 342,
+          "median": 0.00034795933155194595
+        },
+        "normalized_anchor_entropy": {
+          "samples": 342,
+          "median": 0.5481678922445901
+        },
+        "conditional_normalized_entropy": {
+          "samples": 342,
+          "median": 0.9999993609474271
+        },
+        "forced_action_fraction": {
+          "samples": 342,
+          "median": 0.4375
+        },
+        "positive_reward_fraction": {
+          "samples": 342,
+          "median": 0.0
+        },
+        "return_std": {
+          "samples": 342,
+          "median": 0.010560403112403385
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 799,
+        "32": 549,
+        "64": 412
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 397,
+          "gates": 39,
+          "trajectory_step": 18,
+          "preceding_neutral_steps": 8,
+          "peak_neutral_steps_in_prefix": 8
+        },
+        {
+          "transition": 3432,
+          "gates": 37,
+          "trajectory_step": 36,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 15
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 9748,
+            "accepted": 7855,
+            "positive_reward": 642,
+            "negative_reward": 1088,
+            "zero_reward": 8018,
+            "accepted_rewrite": 7855,
+            "repeated_raw_graph_in_trajectory": 2,
+            "repeated_completion_in_trajectory": 6326,
+            "anchor_noop": 1893
+          },
+          "families": {
+            "EU:forward": 372,
+            "I:backward": 3055,
+            "phase_split": 221,
+            "identity_insert": 578,
+            "PVG": 123,
+            "H:forward": 918,
+            "H:backward": 894,
+            "S:backward": 559,
+            "ID": 105,
+            "anchor_noop": 1893,
+            "E:backward": 6,
+            "I:forward": 384,
+            "PV": 139,
+            "spider_split": 67,
+            "S:forward": 395,
+            "EU:backward": 9,
+            "PVB": 14,
+            "gadget_split": 8,
+            "CP:backward": 4,
+            "spider_nest": 1,
+            "CP:forward": 2,
+            "phase_transfer": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 10957,
+            "accepted": 9107,
+            "positive_reward": 9,
+            "negative_reward": 42,
+            "zero_reward": 10906,
+            "accepted_rewrite": 9107,
+            "repeated_raw_graph_in_trajectory": 30,
+            "repeated_completion_in_trajectory": 8893,
+            "anchor_noop": 1850
+          },
+          "families": {
+            "H:forward": 2480,
+            "anchor_noop": 1850,
+            "H:backward": 2965,
+            "I:backward": 2262,
+            "I:forward": 193,
+            "identity_insert": 32,
+            "S:backward": 849,
+            "EU:forward": 3,
+            "phase_split": 35,
+            "S:forward": 271,
+            "CP:backward": 17
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "9aaba040ba3a9eee0f8e91e0a89f6857c06c0eae5044465676bc5cea1d52ad30",
+        "report.json": "e44c0d635e163eff50c96fb20ec30e526206dca1b1d3ef78b3488775fd6a8a31",
+        "updates.jsonl": "ba9aebf3da3d2b8c36d8a3f768482252a49ad304d08ee452ec3accf722644a3a",
+        "events.jsonl": "055c545fc98ce974e7f85af67289a8b93f2f59749950fada343d35d6c0cf4009",
+        "best-history.jsonl": "4a2ecf4568bb55f3408789cbec89681a235652149d5095c1f9999bf05af92f18"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0001,
+      "best": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 34
+      },
+      "updates": 1407,
+      "transitions": 45042,
+      "early_update_count": 271,
+      "late_update_count": 281,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 271,
+          "median": 0.3624460995197296
+        },
+        "value_explained_variance_after": {
+          "samples": 271,
+          "median": 0.01632191269364125
+        },
+        "post_approx_kl": {
+          "samples": 271,
+          "median": 2.725043247484692e-09
+        },
+        "normalized_anchor_entropy": {
+          "samples": 271,
+          "median": 0.9999999687627004
+        },
+        "conditional_normalized_entropy": {
+          "samples": 271,
+          "median": 0.9999985504086616
+        },
+        "forced_action_fraction": {
+          "samples": 271,
+          "median": 0.65625
+        },
+        "positive_reward_fraction": {
+          "samples": 271,
+          "median": 0.09375
+        },
+        "return_std": {
+          "samples": 271,
+          "median": 0.5167848085362928
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 281,
+          "median": 0.08477603457868099
+        },
+        "value_explained_variance_after": {
+          "samples": 281,
+          "median": 0.6170678203801971
+        },
+        "post_approx_kl": {
+          "samples": 281,
+          "median": 2.1638017307304483e-05
+        },
+        "normalized_anchor_entropy": {
+          "samples": 281,
+          "median": 0.9410023393793201
+        },
+        "conditional_normalized_entropy": {
+          "samples": 278,
+          "median": 0.9688951864547246
+        },
+        "forced_action_fraction": {
+          "samples": 281,
+          "median": 0.78125
+        },
+        "positive_reward_fraction": {
+          "samples": 281,
+          "median": 0.0625
+        },
+        "return_std": {
+          "samples": 281,
+          "median": 0.40176123514233564
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 370,
+        "32": 41,
+        "64": 1
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 69,
+          "gates": 38,
+          "trajectory_step": 69,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 12
+        },
+        {
+          "transition": 4306,
+          "gates": 37,
+          "trajectory_step": 22,
+          "preceding_neutral_steps": 4,
+          "peak_neutral_steps_in_prefix": 4
+        },
+        {
+          "transition": 14008,
+          "gates": 36,
+          "trajectory_step": 36,
+          "preceding_neutral_steps": 4,
+          "peak_neutral_steps_in_prefix": 14
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 8690,
+            "accepted": 6945,
+            "positive_reward": 952,
+            "negative_reward": 1488,
+            "zero_reward": 6250,
+            "accepted_rewrite": 6945,
+            "repeated_raw_graph_in_trajectory": 2,
+            "repeated_completion_in_trajectory": 4362,
+            "anchor_noop": 1745
+          },
+          "families": {
+            "phase_split": 169,
+            "I:backward": 2585,
+            "identity_insert": 376,
+            "H:forward": 1053,
+            "EU:forward": 503,
+            "spider_split": 49,
+            "H:backward": 894,
+            "anchor_noop": 1745,
+            "PV": 163,
+            "I:forward": 248,
+            "ID": 103,
+            "S:backward": 489,
+            "PVG": 142,
+            "EU:backward": 17,
+            "gadget_split": 13,
+            "S:forward": 118,
+            "PVB": 11,
+            "E:backward": 7,
+            "phase_transfer": 2,
+            "E:forward": 1,
+            "spider_nest": 2
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 9001,
+            "anchor_noop": 3952,
+            "positive_reward": 557,
+            "negative_reward": 793,
+            "zero_reward": 7651,
+            "accepted": 5049,
+            "accepted_rewrite": 5049,
+            "repeated_raw_graph_in_trajectory": 3,
+            "repeated_completion_in_trajectory": 3807
+          },
+          "families": {
+            "anchor_noop": 3952,
+            "H:forward": 516,
+            "I:backward": 1369,
+            "I:forward": 227,
+            "S:backward": 292,
+            "H:backward": 564,
+            "S:forward": 141,
+            "EU:forward": 93,
+            "identity_insert": 698,
+            "phase_split": 273,
+            "PVG": 189,
+            "PV": 335,
+            "ID": 199,
+            "spider_split": 72,
+            "EU:backward": 15,
+            "E:backward": 7,
+            "gadget_split": 19,
+            "phase_transfer": 17,
+            "GF": 8,
+            "PVB": 15
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "49f8ba02d5c4ff55b7fc33ebd096f15ac8df6200703707aeb3a795b4259fd3d4",
+        "report.json": "6d1a3738bf7eee3e483317b916291df342e6f1786c22637b10e7bbf9f66b6a82",
+        "updates.jsonl": "1c9191c67a5ecf0ff0023b1fa345762dfe4240acc1f01b4ca09781f7eba8558e",
+        "events.jsonl": "76871e6dd11443970c43f64539fc17e918dca0c39327cf67ce324ae2b9617f2b",
+        "best-history.jsonl": "78fe10eac42643f063581e016e1ef54f159f3cb5fd30204a767b974ace3ec7af"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_online_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "updates": 1650,
+      "transitions": 52800,
+      "early_update_count": 273,
+      "late_update_count": 347,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 273,
+          "median": 0.30124012380838394
+        },
+        "value_explained_variance_after": {
+          "samples": 273,
+          "median": 0.07973663165228317
+        },
+        "post_approx_kl": {
+          "samples": 273,
+          "median": 1.3926957769397214e-05
+        },
+        "normalized_anchor_entropy": {
+          "samples": 273,
+          "median": 0.9996695021210137
+        },
+        "conditional_normalized_entropy": {
+          "samples": 273,
+          "median": 0.9975966298491945
+        },
+        "forced_action_fraction": {
+          "samples": 273,
+          "median": 0.65625
+        },
+        "positive_reward_fraction": {
+          "samples": 273,
+          "median": 0.09375
+        },
+        "return_std": {
+          "samples": 273,
+          "median": 0.49033804477452597
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 347,
+          "median": 0.001636988075915724
+        },
+        "value_explained_variance_after": {
+          "samples": 347,
+          "median": 0.22965213944273533
+        },
+        "post_approx_kl": {
+          "samples": 347,
+          "median": 9.445650080736803e-09
+        },
+        "normalized_anchor_entropy": {
+          "samples": 347,
+          "median": 0.8329708537165872
+        },
+        "conditional_normalized_entropy": {
+          "samples": 191,
+          "median": 0.9011184857746171
+        },
+        "forced_action_fraction": {
+          "samples": 347,
+          "median": 0.9375
+        },
+        "positive_reward_fraction": {
+          "samples": 347,
+          "median": 0.0
+        },
+        "return_std": {
+          "samples": 347,
+          "median": 0.03896087450590715
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 730,
+        "32": 462,
+        "64": 291
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 69,
+          "gates": 38,
+          "trajectory_step": 69,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 12
+        },
+        {
+          "transition": 1333,
+          "gates": 37,
+          "trajectory_step": 25,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 6
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 8752,
+            "accepted": 6843,
+            "positive_reward": 982,
+            "negative_reward": 1473,
+            "zero_reward": 6297,
+            "accepted_rewrite": 6843,
+            "repeated_raw_graph_in_trajectory": 1,
+            "repeated_completion_in_trajectory": 4350,
+            "anchor_noop": 1909
+          },
+          "families": {
+            "phase_split": 238,
+            "I:backward": 2317,
+            "identity_insert": 531,
+            "H:forward": 1082,
+            "EU:forward": 422,
+            "spider_split": 66,
+            "H:backward": 784,
+            "anchor_noop": 1909,
+            "PV": 333,
+            "I:forward": 200,
+            "ID": 191,
+            "S:backward": 367,
+            "PVG": 215,
+            "S:forward": 45,
+            "PVB": 11,
+            "gadget_split": 12,
+            "spider_nest": 3,
+            "EU:backward": 8,
+            "CP:backward": 1,
+            "E:backward": 9,
+            "phase_transfer": 6,
+            "LC": 1,
+            "GF": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 11099,
+            "accepted": 4794,
+            "positive_reward": 113,
+            "negative_reward": 181,
+            "zero_reward": 10805,
+            "accepted_rewrite": 4794,
+            "repeated_raw_graph_in_trajectory": 5,
+            "repeated_completion_in_trajectory": 4404,
+            "anchor_noop": 6305
+          },
+          "families": {
+            "PV": 412,
+            "I:backward": 2315,
+            "identity_insert": 931,
+            "ID": 338,
+            "phase_split": 477,
+            "anchor_noop": 6305,
+            "PVG": 152,
+            "spider_split": 110,
+            "gadget_split": 34,
+            "phase_transfer": 17,
+            "H:backward": 2,
+            "PVB": 5,
+            "GF": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "ec50aba455e79d269333b698ce243c6f09b9f0ee825df4a82e86c55c41fcc226",
+        "report.json": "7fa31094f28a992cf79a1ee5034697cf609ccb5772bca161474314b92e2fd8f5",
+        "updates.jsonl": "a2de56509c188becf0b1bc3f0a8f8dea876c4427bed869bef63871ed709a803e",
+        "events.jsonl": "99de8d6b094d8d1b2f774f560547bf5f0eda5f9b0b1e3d2c6847f099878465c2",
+        "best-history.jsonl": "1addc32083298879549a77bdda3375f8527caed489a2eadd5d52569f8415cc87"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_online_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 31
+      },
+      "updates": 605,
+      "transitions": 19375,
+      "early_update_count": 115,
+      "late_update_count": 118,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 115,
+          "median": 0.2596680521965027
+        },
+        "value_explained_variance_after": {
+          "samples": 115,
+          "median": 0.035826136794045005
+        },
+        "post_approx_kl": {
+          "samples": 115,
+          "median": 6.204470992088318e-06
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 115,
+          "median": 0.999789733478682
+        },
+        "forced_action_fraction": {
+          "samples": 115,
+          "median": 0.0
+        },
+        "positive_reward_fraction": {
+          "samples": 115,
+          "median": 0.125
+        },
+        "return_std": {
+          "samples": 115,
+          "median": 0.43955802513176023
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 118,
+          "median": 0.035211555659770966
+        },
+        "value_explained_variance_after": {
+          "samples": 118,
+          "median": 0.29165473054198043
+        },
+        "post_approx_kl": {
+          "samples": 118,
+          "median": 0.0008791564032435417
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 118,
+          "median": 0.7099016409136152
+        },
+        "forced_action_fraction": {
+          "samples": 118,
+          "median": 0.0
+        },
+        "positive_reward_fraction": {
+          "samples": 118,
+          "median": 0.03125
+        },
+        "return_std": {
+          "samples": 118,
+          "median": 0.20206248118611414
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 215,
+        "32": 78,
+        "64": 34
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 52,
+          "gates": 39,
+          "trajectory_step": 24,
+          "preceding_neutral_steps": 5,
+          "peak_neutral_steps_in_prefix": 6
+        },
+        {
+          "transition": 12888,
+          "gates": 38,
+          "trajectory_step": 1,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 0
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 3680,
+            "accepted": 3680,
+            "positive_reward": 405,
+            "negative_reward": 595,
+            "zero_reward": 2680,
+            "accepted_rewrite": 3680,
+            "repeated_raw_graph_in_trajectory": 18,
+            "repeated_completion_in_trajectory": 2766
+          },
+          "families": {
+            "EU:forward": 163,
+            "H:forward": 240,
+            "phase_split": 164,
+            "I:forward": 301,
+            "I:backward": 297,
+            "S:forward": 50,
+            "E:backward": 278,
+            "PVB": 106,
+            "S:backward": 262,
+            "ID": 233,
+            "gadget_split": 137,
+            "CP:backward": 94,
+            "identity_insert": 122,
+            "PV": 201,
+            "spider_split": 156,
+            "phase_transfer": 185,
+            "H:backward": 298,
+            "PVG": 181,
+            "spider_nest": 53,
+            "CP:forward": 15,
+            "GF": 50,
+            "EU:backward": 30,
+            "E:forward": 30,
+            "LC": 3,
+            "B:backward": 28,
+            "B:forward": 3
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 3781,
+            "accepted": 3781,
+            "positive_reward": 204,
+            "negative_reward": 298,
+            "zero_reward": 3279,
+            "accepted_rewrite": 3781,
+            "repeated_raw_graph_in_trajectory": 14,
+            "repeated_completion_in_trajectory": 3326
+          },
+          "families": {
+            "S:backward": 146,
+            "I:forward": 1265,
+            "E:backward": 863,
+            "PVG": 11,
+            "spider_split": 277,
+            "gadget_split": 372,
+            "phase_split": 248,
+            "identity_insert": 52,
+            "PV": 15,
+            "I:backward": 280,
+            "B:backward": 61,
+            "EU:forward": 2,
+            "EU:backward": 1,
+            "S:forward": 6,
+            "CP:backward": 18,
+            "H:backward": 80,
+            "GF": 6,
+            "PVB": 1,
+            "H:forward": 10,
+            "E:forward": 23,
+            "ID": 33,
+            "phase_transfer": 7,
+            "CP:forward": 1,
+            "B:forward": 3
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "21deac299abe3f1d8eda334fa7184e56c346fd10fb2e6e053f6ad8b6bc9332e7",
+        "report.json": "eaaa9f2e60991f3aae7f36183a9d307bc786b758f5e482930c228a7481666265",
+        "updates.jsonl": "b1600e9e51568ee8e7327dcee6b2d36cca06b8334437b917c68e99f1dd27eb6a",
+        "events.jsonl": "efdce12c01b973b1c1eb42d073d871f2be8d5f1405a789ab8b0d7145dade9bef",
+        "best-history.jsonl": "1982cb532f2ad983d73e0e8ab75c9cc28ce3f66bcf3bf14136583764fc5a5a86"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_online_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "updates": 570,
+      "transitions": 18245,
+      "early_update_count": 112,
+      "late_update_count": 115,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 112,
+          "median": 0.2607383690774441
+        },
+        "value_explained_variance_after": {
+          "samples": 112,
+          "median": 0.02084586791793852
+        },
+        "post_approx_kl": {
+          "samples": 112,
+          "median": 9.201467037200928e-07
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 112,
+          "median": 0.9999606015920854
+        },
+        "forced_action_fraction": {
+          "samples": 112,
+          "median": 0.0
+        },
+        "positive_reward_fraction": {
+          "samples": 112,
+          "median": 0.15625
+        },
+        "return_std": {
+          "samples": 112,
+          "median": 0.47274547592854943
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 115,
+          "median": 0.07316808588802814
+        },
+        "value_explained_variance_after": {
+          "samples": 115,
+          "median": 0.4492957340514875
+        },
+        "post_approx_kl": {
+          "samples": 115,
+          "median": 0.0007367506623268127
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 115,
+          "median": 0.6872414603700947
+        },
+        "forced_action_fraction": {
+          "samples": 115,
+          "median": 0.0
+        },
+        "positive_reward_fraction": {
+          "samples": 115,
+          "median": 0.0625
+        },
+        "return_std": {
+          "samples": 115,
+          "median": 0.27893226673158283
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 111,
+        "32": 40,
+        "64": 17
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 202,
+          "gates": 39,
+          "trajectory_step": 45,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 4
+        },
+        {
+          "transition": 1350,
+          "gates": 38,
+          "trajectory_step": 11,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 2
+        },
+        {
+          "transition": 4712,
+          "gates": 37,
+          "trajectory_step": 68,
+          "preceding_neutral_steps": 2,
+          "peak_neutral_steps_in_prefix": 5
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 3591,
+            "accepted": 3591,
+            "positive_reward": 596,
+            "negative_reward": 819,
+            "zero_reward": 2176,
+            "accepted_rewrite": 3591,
+            "repeated_raw_graph_in_trajectory": 12,
+            "repeated_completion_in_trajectory": 2209
+          },
+          "families": {
+            "PVG": 198,
+            "EU:forward": 181,
+            "I:forward": 278,
+            "E:backward": 222,
+            "PV": 224,
+            "I:backward": 256,
+            "H:backward": 279,
+            "S:backward": 234,
+            "gadget_split": 121,
+            "spider_split": 157,
+            "phase_split": 163,
+            "ID": 256,
+            "H:forward": 274,
+            "PVB": 132,
+            "S:forward": 50,
+            "identity_insert": 166,
+            "phase_transfer": 123,
+            "LC": 17,
+            "GF": 39,
+            "CP:backward": 115,
+            "EU:backward": 38,
+            "E:forward": 23,
+            "spider_nest": 26,
+            "B:backward": 7,
+            "CP:forward": 12
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 3666,
+            "accepted": 3666,
+            "positive_reward": 304,
+            "negative_reward": 473,
+            "zero_reward": 2889,
+            "accepted_rewrite": 3666,
+            "repeated_raw_graph_in_trajectory": 4,
+            "repeated_completion_in_trajectory": 2925
+          },
+          "families": {
+            "gadget_split": 30,
+            "S:backward": 964,
+            "ID": 42,
+            "E:backward": 875,
+            "E:forward": 16,
+            "I:backward": 569,
+            "H:backward": 826,
+            "identity_insert": 55,
+            "phase_split": 14,
+            "spider_split": 15,
+            "PVG": 16,
+            "I:forward": 34,
+            "H:forward": 18,
+            "S:forward": 24,
+            "EU:backward": 18,
+            "PV": 16,
+            "GF": 15,
+            "PVB": 14,
+            "EU:forward": 14,
+            "phase_transfer": 11,
+            "CP:backward": 75,
+            "CP:forward": 4,
+            "spider_nest": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "501566e6d0c7aa44169152b177101c4adff5ec657f370a5742814134e64e78c5",
+        "report.json": "f8915f2852b74fcb4b122fb6bab0213d6e25714e71f70ca5c190581f43aadb68",
+        "updates.jsonl": "2b13f335573cdbcdd805000bf4d2fab8e07156b8a8fb50c67bbe0d7aa7c370a3",
+        "events.jsonl": "edba908b81c016f8020cfa4c856a01e4dfde3a982cdb968ab0668560bee246dd",
+        "best-history.jsonl": "ae141dd381722d862ba1be853beb06c96641eebc238d5b6bc97bf6a693b5362c"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0001,
+      "best": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "updates": 1396,
+      "transitions": 44672,
+      "early_update_count": 288,
+      "late_update_count": 261,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 288,
+          "median": 0.24240780621767044
+        },
+        "value_explained_variance_after": {
+          "samples": 288,
+          "median": 0.043005940581522184
+        },
+        "post_approx_kl": {
+          "samples": 288,
+          "median": 1.2318221434354386e-07
+        },
+        "normalized_anchor_entropy": {
+          "samples": 288,
+          "median": 0.999992954068198
+        },
+        "conditional_normalized_entropy": {
+          "samples": 288,
+          "median": 0.99997314887626
+        },
+        "forced_action_fraction": {
+          "samples": 288,
+          "median": 0.625
+        },
+        "positive_reward_fraction": {
+          "samples": 288,
+          "median": 0.0625
+        },
+        "return_std": {
+          "samples": 288,
+          "median": 0.4088558795005561
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 261,
+          "median": 0.08441763184964657
+        },
+        "value_explained_variance_after": {
+          "samples": 261,
+          "median": 0.39620088723493574
+        },
+        "post_approx_kl": {
+          "samples": 261,
+          "median": 5.601565063448444e-05
+        },
+        "normalized_anchor_entropy": {
+          "samples": 261,
+          "median": 0.9422640545363039
+        },
+        "conditional_normalized_entropy": {
+          "samples": 261,
+          "median": 0.9417818669164082
+        },
+        "forced_action_fraction": {
+          "samples": 261,
+          "median": 0.71875
+        },
+        "positive_reward_fraction": {
+          "samples": 261,
+          "median": 0.03125
+        },
+        "return_std": {
+          "samples": 261,
+          "median": 0.3251520649330391
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 478,
+        "32": 198,
+        "64": 43
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 514,
+          "gates": 39,
+          "trajectory_step": 1,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 0
+        },
+        {
+          "transition": 2807,
+          "gates": 38,
+          "trajectory_step": 64,
+          "preceding_neutral_steps": 0,
+          "peak_neutral_steps_in_prefix": 12
+        },
+        {
+          "transition": 17903,
+          "gates": 37,
+          "trajectory_step": 37,
+          "preceding_neutral_steps": 5,
+          "peak_neutral_steps_in_prefix": 9
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 9244,
+            "accepted": 7919,
+            "positive_reward": 758,
+            "negative_reward": 1282,
+            "zero_reward": 7204,
+            "accepted_rewrite": 7919,
+            "repeated_raw_graph_in_trajectory": 2,
+            "repeated_completion_in_trajectory": 5753,
+            "anchor_noop": 1325
+          },
+          "families": {
+            "S:backward": 562,
+            "PVG": 169,
+            "I:backward": 3024,
+            "H:backward": 822,
+            "identity_insert": 546,
+            "EU:forward": 638,
+            "spider_split": 73,
+            "H:forward": 1116,
+            "phase_split": 231,
+            "anchor_noop": 1325,
+            "PV": 213,
+            "ID": 152,
+            "EU:backward": 13,
+            "I:forward": 238,
+            "S:forward": 56,
+            "E:backward": 21,
+            "gadget_split": 17,
+            "PVB": 18,
+            "CP:backward": 3,
+            "phase_transfer": 3,
+            "LC": 2,
+            "E:forward": 1,
+            "GF": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 8341,
+            "accepted": 7797,
+            "positive_reward": 381,
+            "negative_reward": 607,
+            "zero_reward": 7353,
+            "accepted_rewrite": 7797,
+            "repeated_raw_graph_in_trajectory": 9,
+            "repeated_completion_in_trajectory": 6660,
+            "anchor_noop": 544
+          },
+          "families": {
+            "identity_insert": 1133,
+            "I:backward": 3941,
+            "PVG": 101,
+            "anchor_noop": 544,
+            "PV": 289,
+            "I:forward": 143,
+            "H:backward": 870,
+            "H:forward": 595,
+            "phase_split": 191,
+            "PVB": 11,
+            "ID": 308,
+            "EU:forward": 30,
+            "S:backward": 118,
+            "E:backward": 7,
+            "S:forward": 15,
+            "spider_split": 34,
+            "GF": 1,
+            "LC": 2,
+            "E:forward": 1,
+            "gadget_split": 7
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "8f8c8553d2081ec68bdb6bb3bf804180171fec486308db914c91dd571d6b71d5",
+        "report.json": "a82c6d327d3512e6671b11fa60787e96865da67f4d13e2e55f2bd50c15a4cc54",
+        "updates.jsonl": "1505ba056f0d7be49dc13e642000a8c10ee5d2510be4d415be09de1f0e8e0ab9",
+        "events.jsonl": "a3b10ad7363f1f43863574b73370114a3932295e416bd47021b6976b666e5d9f",
+        "best-history.jsonl": "7c8e9c8bc2f8a70237eaf7fb2f0b2d7b3ce393e5315b46217fdbacbc40509edf"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_online_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "updates": 600,
+      "transitions": 19213,
+      "early_update_count": 120,
+      "late_update_count": 120,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 120,
+          "median": 0.15628913417458534
+        },
+        "value_explained_variance_after": {
+          "samples": 120,
+          "median": 0.0860528682944115
+        },
+        "post_approx_kl": {
+          "samples": 120,
+          "median": 0.00011566933244466782
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 120,
+          "median": 0.9658463266665147
+        },
+        "forced_action_fraction": {
+          "samples": 120,
+          "median": 0.0
+        },
+        "positive_reward_fraction": {
+          "samples": 120,
+          "median": 0.109375
+        },
+        "return_std": {
+          "samples": 120,
+          "median": 0.3670759157874418
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 120,
+          "median": 0.03351750923320651
+        },
+        "value_explained_variance_after": {
+          "samples": 120,
+          "median": 0.6318943762177244
+        },
+        "post_approx_kl": {
+          "samples": 120,
+          "median": 0.0021078214049339294
+        },
+        "normalized_anchor_entropy": {
+          "samples": 0,
+          "median": null
+        },
+        "conditional_normalized_entropy": {
+          "samples": 120,
+          "median": 0.6297633519799097
+        },
+        "forced_action_fraction": {
+          "samples": 120,
+          "median": 0.0
+        },
+        "positive_reward_fraction": {
+          "samples": 120,
+          "median": 0.15625
+        },
+        "return_std": {
+          "samples": 120,
+          "median": 0.3248388421804532
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 116,
+        "32": 51,
+        "64": 23
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 3159,
+          "gates": 38,
+          "trajectory_step": 25,
+          "preceding_neutral_steps": 8,
+          "peak_neutral_steps_in_prefix": 13
+        },
+        {
+          "transition": 3609,
+          "gates": 37,
+          "trajectory_step": 65,
+          "preceding_neutral_steps": 2,
+          "peak_neutral_steps_in_prefix": 6
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 3848,
+            "accepted": 3848,
+            "positive_reward": 440,
+            "negative_reward": 608,
+            "zero_reward": 2800,
+            "accepted_rewrite": 3848,
+            "repeated_raw_graph_in_trajectory": 12,
+            "repeated_completion_in_trajectory": 2985
+          },
+          "families": {
+            "H:backward": 315,
+            "identity_insert": 138,
+            "E:backward": 223,
+            "S:backward": 212,
+            "I:backward": 264,
+            "PV": 255,
+            "PVG": 116,
+            "phase_split": 220,
+            "gadget_split": 184,
+            "EU:forward": 117,
+            "I:forward": 329,
+            "EU:backward": 17,
+            "CP:backward": 171,
+            "ID": 326,
+            "spider_split": 235,
+            "H:forward": 147,
+            "phase_transfer": 257,
+            "spider_nest": 29,
+            "GF": 36,
+            "PVB": 127,
+            "LC": 16,
+            "S:forward": 58,
+            "E:forward": 24,
+            "CP:forward": 21,
+            "B:backward": 9,
+            "B:forward": 2
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 3842,
+            "accepted": 3842,
+            "positive_reward": 552,
+            "negative_reward": 602,
+            "zero_reward": 2688,
+            "accepted_rewrite": 3842,
+            "repeated_raw_graph_in_trajectory": 0,
+            "repeated_completion_in_trajectory": 3189
+          },
+          "families": {
+            "H:backward": 1186,
+            "S:backward": 1073,
+            "I:forward": 700,
+            "phase_split": 259,
+            "CP:backward": 275,
+            "B:backward": 72,
+            "B:forward": 14,
+            "PVG": 3,
+            "S:forward": 16,
+            "PV": 16,
+            "gadget_split": 95,
+            "E:backward": 37,
+            "identity_insert": 4,
+            "EU:backward": 5,
+            "CP:forward": 2,
+            "phase_transfer": 39,
+            "H:forward": 2,
+            "I:backward": 26,
+            "PVB": 2,
+            "GF": 3,
+            "spider_split": 8,
+            "spider_nest": 2,
+            "E:forward": 1,
+            "K:forward": 1,
+            "ID": 1
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "463835c1c367b9e528b36f4fd9295b20372fe0497a67defc1e1ee22eae390826",
+        "report.json": "43e6f4265c513a61889373b3507174635f36e5f6240637e8a19aa9544a79578a",
+        "updates.jsonl": "d245a36af9c7a63a0a86b1a0ffaa9e450df06639dc7ab7b723c68a0185f3821c",
+        "events.jsonl": "8c463c1318257ebeaf982ade0c561e603bea4df4abf5055170e6d35230f72e6c",
+        "best-history.jsonl": "54b123ec751545ea5ee9b83271c3146ef2d6d9e5630008642e423bc33eb6b069"
+      }
+    },
+    {
+      "folder": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_online_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "learning_rate": 0.0003,
+      "best": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "updates": 1371,
+      "transitions": 43892,
+      "early_update_count": 293,
+      "late_update_count": 264,
+      "early_metrics": {
+        "value_loss": {
+          "samples": 293,
+          "median": 0.17485575750470161
+        },
+        "value_explained_variance_after": {
+          "samples": 293,
+          "median": 0.1018511187035479
+        },
+        "post_approx_kl": {
+          "samples": 293,
+          "median": 0.0001670419651620825
+        },
+        "normalized_anchor_entropy": {
+          "samples": 293,
+          "median": 0.971260157866448
+        },
+        "conditional_normalized_entropy": {
+          "samples": 293,
+          "median": 0.9067660550627329
+        },
+        "forced_action_fraction": {
+          "samples": 293,
+          "median": 0.65625
+        },
+        "positive_reward_fraction": {
+          "samples": 293,
+          "median": 0.0625
+        },
+        "return_std": {
+          "samples": 293,
+          "median": 0.38186676603390113
+        }
+      },
+      "late_metrics": {
+        "value_loss": {
+          "samples": 264,
+          "median": 0.04908744711428881
+        },
+        "value_explained_variance_after": {
+          "samples": 264,
+          "median": 0.47527808076484707
+        },
+        "post_approx_kl": {
+          "samples": 264,
+          "median": 0.00028345600571679245
+        },
+        "normalized_anchor_entropy": {
+          "samples": 264,
+          "median": 0.9031683907573347
+        },
+        "conditional_normalized_entropy": {
+          "samples": 195,
+          "median": 0.6926048765373979
+        },
+        "forced_action_fraction": {
+          "samples": 264,
+          "median": 0.9375
+        },
+        "positive_reward_fraction": {
+          "samples": 264,
+          "median": 0.0
+        },
+        "return_std": {
+          "samples": 264,
+          "median": 0.38702070920144427
+        }
+      },
+      "neutral_run_threshold_hits": {
+        "16": 415,
+        "32": 171,
+        "64": 69
+      },
+      "strict_gate_improvement_trajectory_prefixes": [
+        {
+          "transition": 673,
+          "gates": 39,
+          "trajectory_step": 32,
+          "preceding_neutral_steps": 14,
+          "peak_neutral_steps_in_prefix": 16
+        },
+        {
+          "transition": 3198,
+          "gates": 37,
+          "trajectory_step": 31,
+          "preceding_neutral_steps": 3,
+          "peak_neutral_steps_in_prefix": 11
+        }
+      ],
+      "trajectory_windows": {
+        "early": {
+          "counts": {
+            "transitions": 9397,
+            "accepted": 6672,
+            "positive_reward": 617,
+            "negative_reward": 985,
+            "zero_reward": 7795,
+            "accepted_rewrite": 6672,
+            "repeated_raw_graph_in_trajectory": 15,
+            "repeated_completion_in_trajectory": 5056,
+            "anchor_noop": 2725
+          },
+          "families": {
+            "S:backward": 276,
+            "PVG": 260,
+            "I:backward": 1870,
+            "H:backward": 1002,
+            "identity_insert": 701,
+            "EU:forward": 216,
+            "spider_split": 87,
+            "H:forward": 633,
+            "phase_split": 302,
+            "anchor_noop": 2725,
+            "PV": 422,
+            "ID": 248,
+            "I:forward": 225,
+            "PVB": 23,
+            "S:forward": 379,
+            "E:backward": 7,
+            "EU:backward": 5,
+            "spider_nest": 1,
+            "K:forward": 1,
+            "K:backward": 1,
+            "phase_transfer": 6,
+            "gadget_split": 5,
+            "LC": 1,
+            "GF": 1
+          }
+        },
+        "late": {
+          "counts": {
+            "transitions": 8446,
+            "accepted": 8023,
+            "positive_reward": 354,
+            "negative_reward": 647,
+            "zero_reward": 7445,
+            "accepted_rewrite": 8023,
+            "repeated_raw_graph_in_trajectory": 0,
+            "repeated_completion_in_trajectory": 6844,
+            "anchor_noop": 423
+          },
+          "families": {
+            "I:backward": 6135,
+            "identity_insert": 616,
+            "H:forward": 519,
+            "anchor_noop": 423,
+            "H:backward": 432,
+            "PVG": 63,
+            "S:forward": 23,
+            "PV": 105,
+            "ID": 72,
+            "EU:forward": 19,
+            "phase_split": 18,
+            "I:forward": 10,
+            "spider_split": 7,
+            "E:backward": 2,
+            "PVB": 2
+          }
+        }
+      },
+      "files": {
+        "protocol.json": "e2f053f30612f117b06303b1363047017cad5690069cae0efcbff36ca19a5df4",
+        "report.json": "9599290cbfc3d1a94f2d4915995f1a6789d6670acadc93ca049390aee5216352",
+        "updates.jsonl": "c4ea6b7331eaa22cb87c7714be607d5abfb9177cb24fbf46dbf80bec1723183f",
+        "events.jsonl": "95e8ea8b05605596789adaaa7db81586a5017b20f1ea7472cf0dc2f2862cf6ea",
+        "best-history.jsonl": "35f1e5ea1c708cac343bcf2490c3ee3ad61a63b58437c8b0d5879ff07b77189e"
+      }
+    }
+  ],
+  "scope": "Medians of logged PPO metrics in the first/last wall-time windows. Repetition counts use exact raw records or already verified completion hashes within each trajectory. Equal completions can enable different future rewrites; repetition alone is not a valid pruning rule. Lower loss or entropy is not evidence of useful learning or convergence. Frozen weight probes and gate-count controls remain necessary."
+}

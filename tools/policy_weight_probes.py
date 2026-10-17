@@ -70,7 +70,8 @@ def prepare_pair(source, circuit, mode, training_seed, output, allow_dirty=False
     if (trained["steps"] != report["transitions"] or trained["updates"] != report["updates"]
             or trained["input_sha256"] != protocol["input_sha256"]):
         raise ValueError("Final model does not belong to the selected completed report")
-    for key, default in (("selection", "global"), ("anchor_prior", "uniform"), ("anchor_resource_mask", False)):
+    for key, default in (("selection", "global"), ("anchor_prior", "uniform"), ("anchor_resource_mask", False),
+                         ("neutral_stop_steps", 0)):
         if trained.get(key, default) != config.get(key, default):
             raise ValueError("Final training model policy support differs: "+key)
     if set(initial["state_dict"]) != set(trained["state_dict"]):
@@ -94,6 +95,7 @@ def prepare_pair(source, circuit, mode, training_seed, output, allow_dirty=False
                        selection=config.get("selection", "global"),
                        anchor_prior=config.get("anchor_prior", "uniform"),
                        anchor_resource_mask=config.get("anchor_resource_mask", False),
+                       neutral_stop_steps=config.get("neutral_stop_steps", 0),
                        steps=0 if stage == "initial" else trained["steps"],
                        updates=0 if stage == "initial" else trained["updates"], probe_origin=origin,
                        scope="Frozen same-circuit weight probe; optimizer/archive/active circuit not transferred")
@@ -117,6 +119,7 @@ def command_for(spec, folder, seconds, max_steps=None):
                 "verification"):
         command += ["--"+key.replace("_", "-"), str(config[key])]
     command += ["--archive-qasm-cap", str(config.get("archive_qasm_cap", 0))]
+    command += ["--neutral-stop-steps", str(config.get("neutral_stop_steps", 0))]
     for key in ("general_zx", "jpv", "allow_arbitrary_angles", "anchor_resource_mask", "anchor_noop_stop"):
         if config.get(key):
             command += ["--"+key.replace("_", "-")]
@@ -139,9 +142,13 @@ def main():
     p.add_argument("--seconds", type=float, default=900)
     p.add_argument("--workers", type=int, default=12)
     p.add_argument("--audit-workers", type=int, default=4)
+    p.add_argument("--audit-native-replay", choices=["reference", "rooted"], default="reference")
+    p.add_argument("--audit-crosscheck-native-every", type=int, default=0)
     p.add_argument("--max-steps", type=int)
     p.add_argument("--allow-dirty", action="store_true", help="Development smoke only, retained in all provenance")
     a = p.parse_args()
+    if a.audit_crosscheck_native_every < 0 or (a.audit_crosscheck_native_every and a.audit_native_replay != "rooted"):
+        raise ValueError("Native crosschecks require rooted replay and a nonnegative interval")
     revision = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
     dirty = bool(subprocess.check_output(["git", "-C", str(ROOT), "status", "--porcelain", "--untracked-files=no"], text=True).strip())
     if dirty and not a.allow_dirty:
@@ -158,6 +165,8 @@ def main():
     atomic_json(out/"campaign.json", dict(source_commit=revision, tracked_dirty=dirty,
                 training_source=str(a.source.resolve()), models=models, plan=plan,
                 seconds=a.seconds, workers=a.workers, started_unix=time.time(),
+                audit_workers=a.audit_workers, audit_native_replay=a.audit_native_replay,
+                audit_crosscheck_native_every=a.audit_crosscheck_native_every,
                 scope="Same-circuit initial versus trained frozen weights. Fresh search RNG/pool from original input; no circuit transfer or cross-circuit generalization claim. Reused initial controls across learning-rate variants are correlated."))
     env = dict(os.environ, OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1", MKL_NUM_THREADS="1",
                PYTHONHASHSEED="0", CUDA_VISIBLE_DEVICES="", XPU_VISIBLE_DEVICES="")
@@ -191,7 +200,8 @@ def main():
     rows = [dict(**row["report"], arm=row["arm"], seed=row["seed"], folder=row["folder"]) for row in records]
     atomic_json(out/"summary.json", dict(expected=len(plan), completed=len(records), rows=rows))
     command = [sys.executable, str(ROOT/"tools/audit_general.py"), str(out), str(out/"audit"),
-               "--workers", str(a.audit_workers)]
+               "--workers", str(a.audit_workers), "--native-replay", a.audit_native_replay,
+               "--crosscheck-native-every", str(a.audit_crosscheck_native_every)]
     if a.allow_dirty:
         command.append("--allow-dirty")
     with (out/"audit.log").open("x") as stream:
