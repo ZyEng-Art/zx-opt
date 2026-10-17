@@ -1,0 +1,238 @@
+{
+  "time_unix": 1792259179.232034,
+  "nodes": [
+    {
+      "node": 22,
+      "time": "2026-10-18T01:46:18.541986+08:00",
+      "studies": [
+        {
+          "tag": "anchor",
+          "base": "/tmp/dengzengyong_rlzx_anchor_node22_20261018",
+          "expected_source": "e3a47f2fcba0fb80e322c51582ba6f53675e6409",
+          "controller_pid": 1795824,
+          "controller_live": true,
+          "container_id": "8c9b182d4efec105d5f228fe4043e7be85b288eb303489e114a2940631c5e74e",
+          "container_running": true,
+          "same_incarnation": true,
+          "search_processes": 0,
+          "audit_processes": 3,
+          "controller": {
+            "phase": "comparison",
+            "commit": "e3a47f2fcba0fb80e322c51582ba6f53675e6409",
+            "container_id": "8c9b182d4efec105d5f228fe4043e7be85b288eb303489e114a2940631c5e74e",
+            "time": "2026-10-18T00:40:46.170662+08:00",
+            "circuits": [
+              "barenco_tof_3",
+              "mod5_4",
+              "tof_5"
+            ],
+            "seeds": [
+              "11",
+              "29",
+              "47"
+            ],
+            "seconds": 300.0,
+            "workers": 6
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 54,
+            "completed": 54
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 16,
+            "expected": 54
+          }
+        },
+        {
+          "tag": "anchor_prior",
+          "base": "/tmp/dengzengyong_rlzx_anchor_prior_node22_20261018",
+          "expected_source": "34a35c880b83e074c8b3194fa0a93c8d303faee5",
+          "controller_pid": 1885805,
+          "controller_live": true,
+          "container_id": "117637e0ebe813934f7fcf30c83de5bfced7eb625d8a0ecb061a0f0db51b7f14",
+          "container_running": true,
+          "same_incarnation": true,
+          "search_processes": 10,
+          "audit_processes": 0,
+          "controller": {
+            "phase": "comparison",
+            "commit": "34a35c880b83e074c8b3194fa0a93c8d303faee5",
+            "container_id": "117637e0ebe813934f7fcf30c83de5bfced7eb625d8a0ecb061a0f0db51b7f14",
+            "time": "2026-10-18T00:57:56.648035+08:00",
+            "circuits": [
+              "barenco_tof_3"
+            ],
+            "seeds": [
+              "11",
+              "29",
+              "47",
+              "71",
+              "101"
+            ],
+            "modes": [
+              "global32",
+              "anchor8",
+              "anchor8_nodes",
+              "anchor8_lr1e3",
+              "anchor8_nodes_lr1e3"
+            ],
+            "seconds": 600.0,
+            "workers": 10
+          },
+          "case_failure_files": 2,
+          "summary.json": {
+            "expected": 50,
+            "completed": 40
+          },
+          "training_failures": 2
+        }
+      ],
+      "disk": {
+        "free_bytes": 45653012480,
+        "free_inodes": 11282413
+      },
+      "preserved_nam": {
+        "container_running": true,
+        "jobs": 13,
+        "finished": 0,
+        "failed": 0,
+        "search_processes": 13
+      }
+    },
+    {
+      "node": 23,
+      "time": "2026-10-18T01:46:19.154271+08:00",
+      "studies": [
+        {
+          "tag": "anchor",
+          "base": "/tmp/dengzengyong_rlzx_anchor_node23_20261018",
+          "expected_source": "64e61def1b92c53ca296677e1cc1f250e347b8d3",
+          "controller_pid": 2040777,
+          "controller_live": true,
+          "container_id": "6b620a2c8319521c569d45e1e605c699beccfbbca4a16dfeb35df57f5ac1ad29",
+          "container_running": true,
+          "same_incarnation": true,
+          "search_processes": 0,
+          "audit_processes": 3,
+          "controller": {
+            "phase": "comparison",
+            "commit": "64e61def1b92c53ca296677e1cc1f250e347b8d3",
+            "container_id": "6b620a2c8319521c569d45e1e605c699beccfbbca4a16dfeb35df57f5ac1ad29",
+            "time": "2026-10-18T00:48:53.470954+08:00",
+            "circuits": [
+              "barenco_tof_3",
+              "mod5_4",
+              "tof_5"
+            ],
+            "seeds": [
+              "11",
+              "29",
+              "47"
+            ],
+            "seconds": 300.0,
+            "workers": 6
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 54,
+            "completed": 54
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 15,
+            "expected": 54
+          }
+        },
+        {
+          "tag": "anchor_resource",
+          "base": "/tmp/dengzengyong_rlzx_anchor_resource_node23_20261018",
+          "expected_source": "d4a9147e278ef89dc1b9619b4e3314880663b233",
+          "controller_pid": 2155565,
+          "controller_live": true,
+          "container_id": "6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9",
+          "container_running": true,
+          "same_incarnation": true,
+          "search_processes": 8,
+          "audit_processes": 0,
+          "controller": {
+            "phase": "comparison",
+            "commit": "d4a9147e278ef89dc1b9619b4e3314880663b233",
+            "container_id": "6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9",
+            "time": "2026-10-18T01:21:23.597722+08:00",
+            "circuits": [
+              "barenco_tof_3"
+            ],
+            "seeds": [
+              "11",
+              "29",
+              "47",
+              "71",
+              "101"
+            ],
+            "modes": [
+              "anchor8",
+              "anchor8_resource",
+              "anchor8_nodes",
+              "anchor8_nodes_resource"
+            ],
+            "seconds": 600.0,
+            "workers": 8
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 40,
+            "completed": 16
+          },
+          "training_failures": 0
+        },
+        {
+          "tag": "anchor_long",
+          "base": "/tmp/dengzengyong_rlzx_anchor_long_node23_20261018",
+          "expected_source": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+          "controller_pid": 2247344,
+          "controller_live": true,
+          "container_id": "6f0ead90d5acaa69e71a37c7fbf535263a2e78ac8e5f758440956d52b70811d8",
+          "container_running": true,
+          "same_incarnation": true,
+          "search_processes": 18,
+          "audit_processes": 0,
+          "controller": {
+            "phase": "comparison",
+            "commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+            "container_id": "6f0ead90d5acaa69e71a37c7fbf535263a2e78ac8e5f758440956d52b70811d8",
+            "time": "2026-10-18T01:39:12.816016+08:00",
+            "circuits": [
+              "barenco_tof_3"
+            ],
+            "seeds": [
+              "137",
+              "163",
+              "197"
+            ],
+            "modes": [
+              "global32",
+              "anchor8_resource",
+              "anchor8_resource_lr1e4"
+            ],
+            "seconds": 3600.0,
+            "workers": 18
+          },
+          "case_failure_files": 0
+        }
+      ],
+      "disk": {
+        "free_bytes": 49845551104,
+        "free_inodes": 11328459
+      },
+      "preserved_nam": {
+        "container_running": true,
+        "jobs": 13,
+        "finished": 0,
+        "failed": 0,
+        "search_processes": 13
+      }
+    }
+  ]
+}
