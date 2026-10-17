@@ -24,6 +24,7 @@ def main():
     from zxopt.general_feasibility import Feasibility
     from zxopt.verify import qiskit_matrix_zx_order
     from zxopt.experiment_input import recorded_input
+    from zxopt.scalable_verify import reference_for
     torch.set_num_threads(1)
     summary = json.loads((a.campaign/"summary.json").read_text()); results = []
     for row in summary["rows"]:
@@ -33,11 +34,11 @@ def main():
         config = protocol["config"]
         input_path = recorded_input(folder, protocol)
         original = qasm2.loads(input_path.read_text()); n = original.num_qubits
-        ref = qiskit_matrix_zx_order(original)
+        ref = reference_for(input_path.read_text(), config.get("verification", "matrix"))
         raw = Diagram.from_record(json.loads(gzip.decompress((folder/"objects"/(protocol["root_graph"]+".json.gz")).read_bytes())))
         views = Views(n, ref); view = views.get(raw)
         general_zx = config.get("general_zx", False)
-        kernel = GeneralKernel(environment(input_path), config["seed"], config["jpv"], config["candidate_cap"], config["matching_work"], general_zx)
+        kernel = GeneralKernel(environment(input_path), config["seed"], config["jpv"], config["candidate_cap"], config["matching_work"], general_zx, config.get("total_candidate_cap", 0))
         available = kernel.prepare(raw, view, protocol["root_view_vertices"]+config["max_growth"])
         if config.get("feasibility_mask", False):
             available, _ = Feasibility(protocol["max_vertices"], len(raw.edges)+config["max_edge_growth"]).prepare(raw, view, available, kernel)

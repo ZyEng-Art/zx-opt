@@ -1,0 +1,71 @@
+NAM per-circuit stagnation training on node22/node23, 2026-10-17
+
+Method: continue the current RL-ZX general-angle on-target PPO/search. Quarl
+(arXiv2307.10120 Table2) supplies the 26 NAM raw benchmark inputs and reference
+counts. This is not a reproduction of Quarl's original learning algorithm.
+Each target starts independently with seed11; no historical optimized witnesses,
+model transfer or held-out generalization claims. Input hashes and upstream Git
+blobs are in quarl-nam-inputs.json; copies are inputs/quarl-nam-raw/.
+
+Run all26, thirteen targets per node; assignments and fixed options are in
+nam-patience-plan.json. Objective is total H/RZ/X/CX gates; CX breaks gate-count
+ties. Stop each target after10800 wall seconds since its latest strict reduction
+in best total gates. CX/depth-only changes do not reset patience. No overall wall
+cap: --seconds0 --no-improvement-seconds10800. Setup/baseline precedes the clock.
+The saved last-improvement Unix timestamp survives full-state resume; downtime
+counts toward stagnation. Real-time clocks are assumed reasonably synchronized.
+
+Use total-candidate-cap32 (family-balanced deterministic state/visit menu), and
+exact feasibility checking of every retained candidate. All native families are
+eligible; visit order changes the finite menu. No permanent action suppression.
+PPO rollout32, four epochs, minibatch32; default optimizer/model retained. These
+are recorded choices for a new training experiment, not unchanged-paper parity.
+Default total-candidate-cap0 and matrix verification preserve earlier behavior.
+
+Scalable verification is opt-in --verification adaptive. Up to7 wires retain
+full independent Qiskit fixed-wire operator checks. Above7 use the pinned PyZX
+full_reduce on input.adjoint composed with the candidate. Accept only exactly
+ordered identity wires,2n boundary vertices,n simple edges,degree1 boundaries,
+known nonzero scalar and scalar modulus within1e-9 of1. Never permit swaps or
+amplitude renormalization. Nonidentity residuals are INCONCLUSIVE, not disproved
+or passed. Failed extractions remain unscored and are saved under unverified-
+extractions; no cost/reward credit. Raw transitions whose equivalence check is
+inconclusive are rejected conservatively. This can reduce usable exploration.
+The large checker shares the pinned PyZX implementation with the optimizer and
+is not an independent-library or formally certified complete equivalence prover.
+Zero numeric error fields for large targets are certificate placeholders; inspect
+verification_method and receipts rather than reporting zero matrix error.
+
+A graph/proof budget is finite; the complete JPV schemata do not imply complete
+search, complete constraint solving, guaranteed extraction, or global optimality.
+
+Persistence: input snapshot/protocol/source hashes; all native action events,
+raw graph objects and contextual proof receipts; QASM candidates; best-history
+for every lexicographic best (strict_gate_improvement marks timer resets);
+PPO losses/entropy/KL/EV, restart/buffer logs; initial/final models; atomic full
+search-state.pt and checkpoint.json every300s plus final save. Full state includes
+model,Adam,native scored/latent pools,active trajectory,pending rollout,CPU RNG,
+JPV and bounded-menu visit counts,patience. Source-bound full resume uses a fresh
+output segment and preserves prior segment objects/logs. Caches are recomputed.
+
+Each node: isolated owned Docker container,32 CPU limit,64GiB memory,13 single-
+thread workers, no accelerator devices or GPU allocation. Python is the image's
+python310_torch29_cuda environment used on CPU. Additional dependencies are an
+offline copy of the completed node44 runtime, plus the pinned SymPy1.13.1 overlay;
+source archives exclude sitecustomize. Shared node Python packages are unchanged.
+Each node runs the full unit suite, then every assigned target preflights4 steps
+and1 PPO update before formal training begins. Every target's final trace is
+replayed, saved QASMs checked, source hashes audited, and root policy probed.
+All cases and failures are retained. The exact owned container incarnation stops
+after assigned workers/audits finish, and outputs are archived with SHA256.
+
+A local detached collector rsyncs monitoring copies every600s over the existing
+SSH control sockets, then downloads and hashes the authoritative final archives.
+It never initiates a new interactive QR/fingerprint authentication. Network
+failures are logged/retried; final archive checks determine collection completion.
+
+Training:
+python tools/nam_patience_campaign.py runs/nam-study --node 22
+python tools/nam_patience_campaign.py runs/nam-study --node 23
+(Use a separate node checkout.)
+Host lifecycle: tools/node_nam_patience.py. Local collector: tools/mirror_nam_nodes.py.

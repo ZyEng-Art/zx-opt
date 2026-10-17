@@ -1,0 +1,1093 @@
+{
+  "paper": "https://arxiv.org/html/2307.10120v1",
+  "table": 2,
+  "upstream": "https://github.com/quantum-compiler/Quarl",
+  "upstream_commit": "385cf5e04a41590a48a2fe82b99f5e99e6cd2279",
+  "input_mode": "raw NAM H/RZ/X/CX, before rotation merging",
+  "cases": [
+    {
+      "id": "nam/tof_3",
+      "name": "tof_3",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/tof_3.qasm",
+        "sha256": "1ef85ff33abe0849d7397718a0469a5b4667e47842e4ecb54688c8db76de94d6",
+        "git_blob": "1c80ef1d0e251ce27791a6f1538295504d9e89fd",
+        "upstream_path": "experiment/circs/nam_circs/tof_3.qasm",
+        "gates": 45,
+        "qubits": 5,
+        "ops": {
+          "rz": 21,
+          "cx": 18,
+          "h": 6
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/tof_3.qasm",
+        "sha256": "2a256cfe37db2563a8fd6c7a93dc614396a20d13d7d17aa480174dac7f5b58e4",
+        "git_blob": "1fa325145a52516131154a71f152702c979e773a",
+        "upstream_path": "experiment/circs/nam_rm_circs/tof_3.qasm",
+        "gates": 39,
+        "qubits": 5,
+        "ops": {
+          "cx": 18,
+          "rz": 15,
+          "h": 6
+        }
+      },
+      "paper_original_gates": 45,
+      "paper_with_rm": {
+        "gates": 33,
+        "cx": 12
+      },
+      "paper_without_rm": {
+        "gates": 33,
+        "cx": 12
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/barenco_tof_3",
+      "name": "barenco_tof_3",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/barenco_tof_3.qasm",
+        "sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92",
+        "git_blob": "adcd6c5ba9ab82dac03bbc15487a3e68ec929dd8",
+        "upstream_path": "experiment/circs/nam_circs/barenco_tof_3.qasm",
+        "gates": 58,
+        "qubits": 5,
+        "ops": {
+          "rz": 28,
+          "cx": 24,
+          "h": 6
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/barenco_tof_3.qasm",
+        "sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+        "git_blob": "d9032e4baaa32f1347ffba323e4c5163d032c033",
+        "upstream_path": "experiment/circs/nam_rm_circs/barenco_tof_3.qasm",
+        "gates": 46,
+        "qubits": 5,
+        "ops": {
+          "cx": 24,
+          "rz": 16,
+          "h": 6
+        }
+      },
+      "paper_original_gates": 58,
+      "paper_with_rm": {
+        "gates": 35,
+        "cx": 13
+      },
+      "paper_without_rm": {
+        "gates": 36,
+        "cx": 14
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/mod5_4",
+      "name": "mod5_4",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/mod5_4.qasm",
+        "sha256": "027e0503fd046e37525c4011de2359f2f7e2161d2752096bbf821b6c3d283641",
+        "git_blob": "060ca37c3e9f991f3ebcccf921e0897aea3d74a5",
+        "upstream_path": "experiment/circs/nam_circs/mod5_4.qasm",
+        "gates": 63,
+        "qubits": 5,
+        "ops": {
+          "cx": 28,
+          "rz": 28,
+          "h": 6,
+          "x": 1
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/mod5_4.qasm",
+        "sha256": "105b99904bfb08f9f88188f9a88747d79c56e4019df3d1e159e3ba276f5e34f0",
+        "git_blob": "194a8196ea621f896336e11e430c318ed6f52448",
+        "upstream_path": "experiment/circs/nam_rm_circs/mod5_4.qasm",
+        "gates": 51,
+        "qubits": 5,
+        "ops": {
+          "cx": 28,
+          "rz": 16,
+          "h": 6,
+          "x": 1
+        }
+      },
+      "paper_original_gates": 63,
+      "paper_with_rm": {
+        "gates": 24,
+        "cx": 13
+      },
+      "paper_without_rm": {
+        "gates": 24,
+        "cx": 13
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/tof_4",
+      "name": "tof_4",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/tof_4.qasm",
+        "sha256": "1510fc43fe60ab2e0ad02e654585aa86b962e90be434edd06b03d8e92f4ab0bc",
+        "git_blob": "5956866e0bcb03cb18d1c6701965652d8b864c1a",
+        "upstream_path": "experiment/circs/nam_circs/tof_4.qasm",
+        "gates": 75,
+        "qubits": 7,
+        "ops": {
+          "rz": 35,
+          "cx": 30,
+          "h": 10
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/tof_4.qasm",
+        "sha256": "87b5498d0d738afe69d7417998c9365e544dc69c3473af1372559083efa8ab35",
+        "git_blob": "51ba6d1d54087e12dc4198d64de5e9a32867cfc2",
+        "upstream_path": "experiment/circs/nam_rm_circs/tof_4.qasm",
+        "gates": 63,
+        "qubits": 7,
+        "ops": {
+          "cx": 30,
+          "rz": 23,
+          "h": 10
+        }
+      },
+      "paper_original_gates": 75,
+      "paper_with_rm": {
+        "gates": 51,
+        "cx": 18
+      },
+      "paper_without_rm": {
+        "gates": 51,
+        "cx": 18
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/barenco_tof_4",
+      "name": "barenco_tof_4",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/barenco_tof_4.qasm",
+        "sha256": "51708309fc33830f148ff22567e97135c33f103b2969d2fb812d137f9157fae9",
+        "git_blob": "e910f0614a1e02e065d7dbdac8003e23ca75ddb4",
+        "upstream_path": "experiment/circs/nam_circs/barenco_tof_4.qasm",
+        "gates": 114,
+        "qubits": 7,
+        "ops": {
+          "rz": 56,
+          "cx": 48,
+          "h": 10
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/barenco_tof_4.qasm",
+        "sha256": "3dbb50a5fa8d475461738255a99c6b8fce4e68582a086a8c0f39ab649d7a3251",
+        "git_blob": "c8f2e55e6d24865a1da53f1e871dae75988106c3",
+        "upstream_path": "experiment/circs/nam_rm_circs/barenco_tof_4.qasm",
+        "gates": 86,
+        "qubits": 7,
+        "ops": {
+          "cx": 48,
+          "rz": 28,
+          "h": 10
+        }
+      },
+      "paper_original_gates": 114,
+      "paper_with_rm": {
+        "gates": 62,
+        "cx": 24
+      },
+      "paper_without_rm": {
+        "gates": 62,
+        "cx": 24
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/tof_5",
+      "name": "tof_5",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/tof_5.qasm",
+        "sha256": "3f7a89ddd0c85394403bee09726b682fdb2aeaafb2a606b1ab59c856c762fe69",
+        "git_blob": "f160b5f115ddbb6faf25d54c0c49fb2e0f4274a1",
+        "upstream_path": "experiment/circs/nam_circs/tof_5.qasm",
+        "gates": 105,
+        "qubits": 9,
+        "ops": {
+          "rz": 49,
+          "cx": 42,
+          "h": 14
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/tof_5.qasm",
+        "sha256": "b100e33e99cb8974eb3a82d5418ad50a72a4a324b741955813a7a3f9b4bc9642",
+        "git_blob": "c87c9296552cdf88ddff2fb74d201a6aaec43511",
+        "upstream_path": "experiment/circs/nam_rm_circs/tof_5.qasm",
+        "gates": 87,
+        "qubits": 9,
+        "ops": {
+          "cx": 42,
+          "rz": 31,
+          "h": 14
+        }
+      },
+      "paper_original_gates": 105,
+      "paper_with_rm": {
+        "gates": 69,
+        "cx": 24
+      },
+      "paper_without_rm": {
+        "gates": 69,
+        "cx": 24
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/mod_mult_55",
+      "name": "mod_mult_55",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/mod_mult_55.qasm",
+        "sha256": "dc42c2d600907cbba3b284398a0e5f4f456da765f87339e6b6763a0c799dd388",
+        "git_blob": "672b667fce6cfd5ae8d7ceac394d93a996e44b7e",
+        "upstream_path": "experiment/circs/nam_circs/mod_mult_55.qasm",
+        "gates": 119,
+        "qubits": 9,
+        "ops": {
+          "rz": 49,
+          "cx": 48,
+          "h": 14,
+          "x": 8
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/mod_mult_55.qasm",
+        "sha256": "5f0c5bddd854fde9952a2f9fb973247159913e94cf7115ec17a3175e24055a0b",
+        "git_blob": "f5a4c81d2f732d11d74cb6d145348e741adfe2b0",
+        "upstream_path": "experiment/circs/nam_rm_circs/mod_mult_55.qasm",
+        "gates": 105,
+        "qubits": 9,
+        "ops": {
+          "cx": 48,
+          "rz": 35,
+          "h": 14,
+          "x": 8
+        }
+      },
+      "paper_original_gates": 119,
+      "paper_with_rm": {
+        "gates": 84,
+        "cx": 37
+      },
+      "paper_without_rm": {
+        "gates": 84,
+        "cx": 36
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/vbe_adder_3",
+      "name": "vbe_adder_3",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/vbe_adder_3.qasm",
+        "sha256": "dd404097d3af94cc126391265a4710694e99fa6b3c9008ddcb17cb1ff36f6bcf",
+        "git_blob": "f9925735dc2dc3d90e9567294449a668b28b3fd2",
+        "upstream_path": "experiment/circs/nam_circs/vbe_adder_3.qasm",
+        "gates": 150,
+        "qubits": 10,
+        "ops": {
+          "cx": 70,
+          "rz": 70,
+          "h": 10
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/vbe_adder_3.qasm",
+        "sha256": "bf152d6b3273cb840c1579ba5670ebd7b1c0adc3f853d5afe95a3f1fa8d3c9c9",
+        "git_blob": "38bb0f1a1f2054fc44b298faef506b1554e918ca",
+        "upstream_path": "experiment/circs/nam_rm_circs/vbe_adder_3.qasm",
+        "gates": 115,
+        "qubits": 10,
+        "ops": {
+          "cx": 70,
+          "rz": 35,
+          "h": 10
+        }
+      },
+      "paper_original_gates": 150,
+      "paper_with_rm": {
+        "gates": 71,
+        "cx": 32
+      },
+      "paper_without_rm": {
+        "gates": 71,
+        "cx": 32
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/barenco_tof_5",
+      "name": "barenco_tof_5",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/barenco_tof_5.qasm",
+        "sha256": "a2869353fab91cfaa7026f9e061358eeff06a9a7f1f13e544886f0ca075046d6",
+        "git_blob": "33731e53509899261daa0bc8cae7f7f18799ff52",
+        "upstream_path": "experiment/circs/nam_circs/barenco_tof_5.qasm",
+        "gates": 170,
+        "qubits": 9,
+        "ops": {
+          "rz": 84,
+          "cx": 72,
+          "h": 14
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/barenco_tof_5.qasm",
+        "sha256": "d07c1d842b7151cd62649c193ed0d365dc8af791ab433abefba4b05384b41845",
+        "git_blob": "90162bc03ade53201cbca21f094f115fe9b698e5",
+        "upstream_path": "experiment/circs/nam_rm_circs/barenco_tof_5.qasm",
+        "gates": 126,
+        "qubits": 9,
+        "ops": {
+          "cx": 72,
+          "rz": 40,
+          "h": 14
+        }
+      },
+      "paper_original_gates": 170,
+      "paper_with_rm": {
+        "gates": 90,
+        "cx": 36
+      },
+      "paper_without_rm": {
+        "gates": 96,
+        "cx": 42
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/csla_mux_3",
+      "name": "csla_mux_3",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/csla_mux_3.qasm",
+        "sha256": "0bcf835df8584ab10127e60b20ffc091cbd60107149676a317b00198c48c28c3",
+        "git_blob": "92331090b7185b413a148217355be9f377f84c01",
+        "upstream_path": "experiment/circs/nam_circs/csla_mux_3.qasm",
+        "gates": 170,
+        "qubits": 15,
+        "ops": {
+          "cx": 80,
+          "rz": 70,
+          "h": 20
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/csla_mux_3.qasm",
+        "sha256": "63c4f8735342687fb4b5d573542686e3f8176fb6c3b93dd57ec8e474f4042aca",
+        "git_blob": "7e0b32ae25ca70feb27fbaf9ade632777bf353ae",
+        "upstream_path": "experiment/circs/nam_rm_circs/csla_mux_3.qasm",
+        "gates": 164,
+        "qubits": 15,
+        "ops": {
+          "cx": 80,
+          "rz": 64,
+          "h": 20
+        }
+      },
+      "paper_original_gates": 170,
+      "paper_with_rm": {
+        "gates": 141,
+        "cx": 63
+      },
+      "paper_without_rm": {
+        "gates": 141,
+        "cx": 63
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/rc_adder_6",
+      "name": "rc_adder_6",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/rc_adder_6.qasm",
+        "sha256": "7c255071adeb4dc61d8bdd15522485a17449af7f84f4291ba8ac8208252fbda9",
+        "git_blob": "f5fdf4cc925893dd082867e9a6c7a0336de5728f",
+        "upstream_path": "experiment/circs/nam_circs/rc_adder_6.qasm",
+        "gates": 200,
+        "qubits": 14,
+        "ops": {
+          "cx": 93,
+          "rz": 77,
+          "h": 22,
+          "x": 8
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/rc_adder_6.qasm",
+        "sha256": "c5c74ea2cd196796cd077590e72e71bda42be88dc277726fe5d5bf0c49f3e03c",
+        "git_blob": "01f9a3bf1cd8e3fa7c79c473312011ecdae63ed6",
+        "upstream_path": "experiment/circs/nam_rm_circs/rc_adder_6.qasm",
+        "gates": 174,
+        "qubits": 14,
+        "ops": {
+          "cx": 93,
+          "rz": 51,
+          "h": 22,
+          "x": 8
+        }
+      },
+      "paper_original_gates": 200,
+      "paper_with_rm": {
+        "gates": 134,
+        "cx": 61
+      },
+      "paper_without_rm": {
+        "gates": 148,
+        "cx": 67
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/gf2^4_mult",
+      "name": "gf2^4_mult",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/gf2^4_mult.qasm",
+        "sha256": "aac240d9414afc35eb927d0e2154f7558f8c184d46d7777a4606e468421ede53",
+        "git_blob": "bdb81c0339ff16ef37dc97a07bdc7f8e8e648f01",
+        "upstream_path": "experiment/circs/nam_circs/gf2^4_mult.qasm",
+        "gates": 225,
+        "qubits": 12,
+        "ops": {
+          "rz": 112,
+          "cx": 99,
+          "h": 14
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^4_mult.qasm",
+        "sha256": "7790f0747a4de4dbf53610782dee6b0c851e5cbdfdfc736e5511d1c2b61cafa1",
+        "git_blob": "443afc61afc8d95d03c67b58a92ce6fac5e98699",
+        "upstream_path": "experiment/circs/nam_rm_circs/gf2^4_mult.qasm",
+        "gates": 186,
+        "qubits": 12,
+        "ops": {
+          "cx": 99,
+          "rz": 73,
+          "h": 14
+        }
+      },
+      "paper_original_gates": 225,
+      "paper_with_rm": {
+        "gates": 160,
+        "cx": 79
+      },
+      "paper_without_rm": {
+        "gates": 163,
+        "cx": 81
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/tof_10",
+      "name": "tof_10",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/tof_10.qasm",
+        "sha256": "82b8d0e426b45f4a690aac385e0488f9e0c7dc7bd0e24076f60b40a5ea750469",
+        "git_blob": "60da3e8ad86e9c5767a50ca38622fbcc9796f65c",
+        "upstream_path": "experiment/circs/nam_circs/tof_10.qasm",
+        "gates": 255,
+        "qubits": 19,
+        "ops": {
+          "rz": 119,
+          "cx": 102,
+          "h": 34
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/tof_10.qasm",
+        "sha256": "4624b5ff79e803d534b45c5d9d469cdaf8e7b9ae2b642859f050ea7fb7785cc6",
+        "git_blob": "3ab1432d80165812b6d0eab94f92db049a3d91c4",
+        "upstream_path": "experiment/circs/nam_rm_circs/tof_10.qasm",
+        "gates": 207,
+        "qubits": 19,
+        "ops": {
+          "cx": 102,
+          "rz": 71,
+          "h": 34
+        }
+      },
+      "paper_original_gates": 255,
+      "paper_with_rm": {
+        "gates": 169,
+        "cx": 64
+      },
+      "paper_without_rm": {
+        "gates": 169,
+        "cx": 64
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/mod_red_21",
+      "name": "mod_red_21",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/mod_red_21.qasm",
+        "sha256": "e77aeb66059063b96bb113133bfc0ecd0375ba60dc9fbcd8969f2c77f7e0600e",
+        "git_blob": "299e1af10e691350a7f34b3566a8659b875fe223",
+        "upstream_path": "experiment/circs/nam_circs/mod_red_21.qasm",
+        "gates": 278,
+        "qubits": 11,
+        "ops": {
+          "rz": 119,
+          "cx": 105,
+          "h": 30,
+          "x": 24
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/mod_red_21.qasm",
+        "sha256": "440809b2f85030a47eb49a6be16224d45d3572051f71f94e735d69a3f7c38639",
+        "git_blob": "6c820e453e20c9b348d332796f0330e04357ad51",
+        "upstream_path": "experiment/circs/nam_rm_circs/mod_red_21.qasm",
+        "gates": 236,
+        "qubits": 11,
+        "ops": {
+          "cx": 105,
+          "rz": 77,
+          "h": 30,
+          "x": 24
+        }
+      },
+      "paper_original_gates": 278,
+      "paper_with_rm": {
+        "gates": 179,
+        "cx": 74
+      },
+      "paper_without_rm": {
+        "gates": 177,
+        "cx": 74
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/hwb6",
+      "name": "hwb6",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/hwb6.qasm",
+        "sha256": "b40302894129713a6e20e81d1827e480db8fed42c02d208df41d9595b60045c3",
+        "git_blob": "2f7b9a617187c014a06868b4fb61548d66a6209c",
+        "upstream_path": "experiment/circs/nam_circs/hwb6.qasm",
+        "gates": 259,
+        "qubits": 7,
+        "ops": {
+          "cx": 116,
+          "rz": 105,
+          "h": 30,
+          "x": 8
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/hwb6.qasm",
+        "sha256": "8732637c003e8a081e734764367cfb31e6605b20c1a7439112af9f209249963c",
+        "git_blob": "e597871a4bbd15988583d0331b9abe94286df496",
+        "upstream_path": "experiment/circs/nam_rm_circs/hwb6.qasm",
+        "gates": 237,
+        "qubits": 7,
+        "ops": {
+          "cx": 116,
+          "rz": 83,
+          "h": 30,
+          "x": 8
+        }
+      },
+      "paper_original_gates": 259,
+      "paper_with_rm": {
+        "gates": 193,
+        "cx": 86
+      },
+      "paper_without_rm": {
+        "gates": 196,
+        "cx": 88
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/gf2^5_mult",
+      "name": "gf2^5_mult",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/gf2^5_mult.qasm",
+        "sha256": "59408663a930ed8d7ac30c0187439c963f83f1b93f4ba74b297a717273b486a4",
+        "git_blob": "4421bf3a0e640dab1c642d66a297fea4bf9d493a",
+        "upstream_path": "experiment/circs/nam_circs/gf2^5_mult.qasm",
+        "gates": 347,
+        "qubits": 15,
+        "ops": {
+          "rz": 175,
+          "cx": 154,
+          "h": 18
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^5_mult.qasm",
+        "sha256": "c88d768eda5f5f2fcdbcd2a72b63f45c27451624ccef190ce535edf9b22ec6a6",
+        "git_blob": "cc00cedeba5ba151c78c7d6873ab27aa6baf4aa4",
+        "upstream_path": "experiment/circs/nam_rm_circs/gf2^5_mult.qasm",
+        "gates": 287,
+        "qubits": 15,
+        "ops": {
+          "cx": 154,
+          "rz": 115,
+          "h": 18
+        }
+      },
+      "paper_original_gates": 347,
+      "paper_with_rm": {
+        "gates": 257,
+        "cx": 132
+      },
+      "paper_without_rm": {
+        "gates": 266,
+        "cx": 133
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/csum_mux_9",
+      "name": "csum_mux_9",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/csum_mux_9.qasm",
+        "sha256": "18ec6fae4a3541d69cc1cf820e3b7c79f4e18f997ddd6fcae0671d85471845de",
+        "git_blob": "7e0bed04b39dfdbddebf0b49beb97cf1b708303b",
+        "upstream_path": "experiment/circs/nam_circs/csum_mux_9.qasm",
+        "gates": 420,
+        "qubits": 30,
+        "ops": {
+          "rz": 196,
+          "cx": 168,
+          "x": 28,
+          "h": 28
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/csum_mux_9.qasm",
+        "sha256": "e53142a19a690907a4c713afba1ce87395a204845ab51a57832faed9ef8c8afe",
+        "git_blob": "ea122dd8b2661c8b06c7a81e2225133492350d51",
+        "upstream_path": "experiment/circs/nam_rm_circs/csum_mux_9.qasm",
+        "gates": 308,
+        "qubits": 30,
+        "ops": {
+          "cx": 168,
+          "rz": 84,
+          "x": 28,
+          "h": 28
+        }
+      },
+      "paper_original_gates": 420,
+      "paper_with_rm": {
+        "gates": 224,
+        "cx": 112
+      },
+      "paper_without_rm": {
+        "gates": 282,
+        "cx": 140
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/barenco_tof_10",
+      "name": "barenco_tof_10",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/barenco_tof_10.qasm",
+        "sha256": "623eb1f277dc7c2966b5ac836cefb93bf12ec234fb5f1dbc16168e03ca308d21",
+        "git_blob": "331ba87cea2c607ef48b69c4bc122a38540cf880",
+        "upstream_path": "experiment/circs/nam_circs/barenco_tof_10.qasm",
+        "gates": 450,
+        "qubits": 19,
+        "ops": {
+          "rz": 224,
+          "cx": 192,
+          "h": 34
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/barenco_tof_10.qasm",
+        "sha256": "3ef2879e67f1c1a3a83fe24744e0c2cce306a281c19bb57b041b124350006c54",
+        "git_blob": "13bb9f3732d675bb240a72843d12e9fdd1a019e7",
+        "upstream_path": "experiment/circs/nam_rm_circs/barenco_tof_10.qasm",
+        "gates": 326,
+        "qubits": 19,
+        "ops": {
+          "cx": 192,
+          "rz": 100,
+          "h": 34
+        }
+      },
+      "paper_original_gates": 450,
+      "paper_with_rm": {
+        "gates": 236,
+        "cx": 102
+      },
+      "paper_without_rm": {
+        "gates": 274,
+        "cx": 122
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/qcla_com_7",
+      "name": "qcla_com_7",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/qcla_com_7.qasm",
+        "sha256": "c9796142b4b8efe5ecc89d8bf3fa91a9bfbdd9d1bbb4db2106e24c7a249b04fd",
+        "git_blob": "3300630edcfa3cdb964551095f1f1766ee1fd101",
+        "upstream_path": "experiment/circs/nam_circs/qcla_com_7.qasm",
+        "gates": 443,
+        "qubits": 24,
+        "ops": {
+          "rz": 203,
+          "cx": 186,
+          "h": 39,
+          "x": 15
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/qcla_com_7.qasm",
+        "sha256": "f5e03012b8f8023a240048c985e8e67ef3beb00e65cbcaca6d0720a2db94a7c9",
+        "git_blob": "99865658c59df296fe48d2c0575c6f23701c06f8",
+        "upstream_path": "experiment/circs/nam_rm_circs/qcla_com_7.qasm",
+        "gates": 349,
+        "qubits": 24,
+        "ops": {
+          "cx": 186,
+          "rz": 109,
+          "h": 39,
+          "x": 15
+        }
+      },
+      "paper_original_gates": 443,
+      "paper_with_rm": {
+        "gates": 258,
+        "cx": 111
+      },
+      "paper_without_rm": {
+        "gates": 277,
+        "cx": 120
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/ham15-low",
+      "name": "ham15-low",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/ham15-low.qasm",
+        "sha256": "c67613bb2760ed3a1e253e9c2f6e1fa2fd84459ae624b4e82b1fb9fd5ab42281",
+        "git_blob": "18bbd1c9e8d16e52e7c9f695e199f88e63bd4ace",
+        "upstream_path": "experiment/circs/nam_circs/ham15-low.qasm",
+        "gates": 443,
+        "qubits": 17,
+        "ops": {
+          "cx": 236,
+          "rz": 161,
+          "h": 46
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/ham15-low.qasm",
+        "sha256": "9ddd48df3d15956fba8e88f5f2911f9559abbdf573dd40e5022c3a09bb0f7df6",
+        "git_blob": "9366e5bf536d2c4f8092e8711fb45bcb00623d96",
+        "upstream_path": "experiment/circs/nam_rm_circs/ham15-low.qasm",
+        "gates": 395,
+        "qubits": 17,
+        "ops": {
+          "cx": 236,
+          "rz": 113,
+          "h": 46
+        }
+      },
+      "paper_original_gates": 443,
+      "paper_with_rm": {
+        "gates": 323,
+        "cx": 185
+      },
+      "paper_without_rm": {
+        "gates": 322,
+        "cx": 180
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/gf2^6_mult",
+      "name": "gf2^6_mult",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/gf2^6_mult.qasm",
+        "sha256": "d6fb4194a16aa508447529640066faa2a2d56293447dee3f54f415ee07a7945c",
+        "git_blob": "7d2ab30ab08b04a23dfb2d30b76bd7ac9d41d43e",
+        "upstream_path": "experiment/circs/nam_circs/gf2^6_mult.qasm",
+        "gates": 495,
+        "qubits": 18,
+        "ops": {
+          "rz": 252,
+          "cx": 221,
+          "h": 22
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^6_mult.qasm",
+        "sha256": "83f2ff8e3356e6bae95a78e22d75b13f8280a21388ce7cb424d10a1f41d46dbf",
+        "git_blob": "ffb7b11507047214aee664558581d5302f52630f",
+        "upstream_path": "experiment/circs/nam_rm_circs/gf2^6_mult.qasm",
+        "gates": 401,
+        "qubits": 18,
+        "ops": {
+          "cx": 221,
+          "rz": 158,
+          "h": 22
+        }
+      },
+      "paper_original_gates": 495,
+      "paper_with_rm": {
+        "gates": 352,
+        "cx": 182
+      },
+      "paper_without_rm": {
+        "gates": 386,
+        "cx": 197
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/qcla_adder_10",
+      "name": "qcla_adder_10",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/qcla_adder_10.qasm",
+        "sha256": "63ee8b3d9b4f59d629dd4d9152c3166c1b1489be86a7f6b91e6ad35219b77938",
+        "git_blob": "943a9700fcd2dc7bc50e23896c6b1c28113f0903",
+        "upstream_path": "experiment/circs/nam_circs/qcla_adder_10.qasm",
+        "gates": 521,
+        "qubits": 36,
+        "ops": {
+          "rz": 238,
+          "cx": 233,
+          "h": 50
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/qcla_adder_10.qasm",
+        "sha256": "7b580c8abf86166bdd2cace53244f31e9df2838fad840c4c9d93acf1591cebd1",
+        "git_blob": "4638c165956b86bbdc21cd59792f104cc5a31823",
+        "upstream_path": "experiment/circs/nam_rm_circs/qcla_adder_10.qasm",
+        "gates": 450,
+        "qubits": 36,
+        "ops": {
+          "cx": 233,
+          "rz": 167,
+          "h": 50
+        }
+      },
+      "paper_original_gates": 521,
+      "paper_with_rm": {
+        "gates": 380,
+        "cx": 165
+      },
+      "paper_without_rm": {
+        "gates": 391,
+        "cx": 169
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/gf2^7_mult",
+      "name": "gf2^7_mult",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/gf2^7_mult.qasm",
+        "sha256": "a46e7f91303e9a4fbd89a7496ad4a3fe1c75beca2827ca23c0a1e3381fea0eb2",
+        "git_blob": "f894cf4020468ca08a5a29dcc04d36a54edb7252",
+        "upstream_path": "experiment/circs/nam_circs/gf2^7_mult.qasm",
+        "gates": 669,
+        "qubits": 21,
+        "ops": {
+          "rz": 343,
+          "cx": 300,
+          "h": 26
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^7_mult.qasm",
+        "sha256": "9d7b79429a9cba150181bb4cf016ec0b07bfc9daeea11c1fb64979e10a73760a",
+        "git_blob": "30b6e974b9e44085e7b38b61d995cad1c023c0b5",
+        "upstream_path": "experiment/circs/nam_rm_circs/gf2^7_mult.qasm",
+        "gates": 543,
+        "qubits": 21,
+        "ops": {
+          "cx": 300,
+          "rz": 217,
+          "h": 26
+        }
+      },
+      "paper_original_gates": 669,
+      "paper_with_rm": {
+        "gates": 484,
+        "cx": 253
+      },
+      "paper_without_rm": {
+        "gates": 530,
+        "cx": 271
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/gf2^8_mult",
+      "name": "gf2^8_mult",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/gf2^8_mult.qasm",
+        "sha256": "6015ea15cc499823644561b2d71ae176733e938e91f1cf3017c190c58e050d67",
+        "git_blob": "e01dabe59a1025deaa16bba1601f64bb0049ebe4",
+        "upstream_path": "experiment/circs/nam_circs/gf2^8_mult.qasm",
+        "gates": 883,
+        "qubits": 24,
+        "ops": {
+          "rz": 448,
+          "cx": 405,
+          "h": 30
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^8_mult.qasm",
+        "sha256": "909e5016718a332c37470f74c6d0121e796fbee0d2a715122f4276f0b98f9c95",
+        "git_blob": "cea5506ddf335bfb5057f4e6df327dbe1a0d90a4",
+        "upstream_path": "experiment/circs/nam_rm_circs/gf2^8_mult.qasm",
+        "gates": 703,
+        "qubits": 24,
+        "ops": {
+          "cx": 405,
+          "rz": 268,
+          "h": 30
+        }
+      },
+      "paper_original_gates": 883,
+      "paper_with_rm": {
+        "gates": 648,
+        "cx": 364
+      },
+      "paper_without_rm": {
+        "gates": 755,
+        "cx": 393
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/qcla_mod_7",
+      "name": "qcla_mod_7",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/qcla_mod_7.qasm",
+        "sha256": "a26c52be1b2c0fef0dc369cb0cce428297f2eb5c2f84e808e5eea44044a6429c",
+        "git_blob": "1190f0826aa439f4e74aa4ed03c50fc104c6b80d",
+        "upstream_path": "experiment/circs/nam_circs/qcla_mod_7.qasm",
+        "gates": 884,
+        "qubits": 26,
+        "ops": {
+          "rz": 413,
+          "cx": 382,
+          "h": 82,
+          "x": 7
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/qcla_mod_7.qasm",
+        "sha256": "717d1781d51b872a5a32c82a276d85ac6368defce622cbfa94f347c7bd75e8b4",
+        "git_blob": "78b3ee75ba837e9e2f1b03162fca80ca3d9fd454",
+        "upstream_path": "experiment/circs/nam_rm_circs/qcla_mod_7.qasm",
+        "gates": 727,
+        "qubits": 26,
+        "ops": {
+          "cx": 382,
+          "rz": 256,
+          "h": 82,
+          "x": 7
+        }
+      },
+      "paper_original_gates": 884,
+      "paper_with_rm": {
+        "gates": 629,
+        "cx": 285
+      },
+      "paper_without_rm": {
+        "gates": 664,
+        "cx": 296
+      },
+      "input_count_matches": true
+    },
+    {
+      "id": "nam/adder_8",
+      "name": "adder_8",
+      "gate_set": "nam",
+      "raw": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_raw/adder_8.qasm",
+        "sha256": "4620e911d0dfb6709d84f0bee954791831ee43825358735964f5bf0cf04d8d80",
+        "git_blob": "852a5e1ce296c3dfd59d254c733fd521439f1545",
+        "upstream_path": "experiment/circs/nam_circs/adder_8.qasm",
+        "gates": 900,
+        "qubits": 24,
+        "ops": {
+          "cx": 409,
+          "rz": 399,
+          "h": 80,
+          "x": 12
+        }
+      },
+      "rotation_merged": {
+        "path": "benchmark_inputs/quarl_paper_v1/nam_rm/adder_8.qasm",
+        "sha256": "89ffd99503f07bf7310c950fea9b294bec2bd8899d18e553629e5ed978637eb8",
+        "git_blob": "5c01058521bf77ab0002512b43be3ef7365d1113",
+        "upstream_path": "experiment/circs/nam_rm_circs/adder_8.qasm",
+        "gates": 732,
+        "qubits": 24,
+        "ops": {
+          "cx": 409,
+          "rz": 231,
+          "h": 80,
+          "x": 12
+        }
+      },
+      "paper_original_gates": 900,
+      "paper_with_rm": {
+        "gates": 560,
+        "cx": 265
+      },
+      "paper_without_rm": {
+        "gates": 669,
+        "cx": 313
+      },
+      "input_count_matches": true
+    }
+  ]
+}

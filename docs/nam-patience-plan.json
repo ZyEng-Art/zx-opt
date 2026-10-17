@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "method": "current RL-ZX general_zx online; paper NAM inputs/reference only",
+  "assignments": {
+    "22": [
+      "adder_8",
+      "barenco_tof_10",
+      "barenco_tof_4",
+      "barenco_tof_5",
+      "gf2^4_mult",
+      "gf2^5_mult",
+      "gf2^7_mult",
+      "hwb6",
+      "qcla_adder_10",
+      "qcla_com_7",
+      "tof_3",
+      "tof_4",
+      "vbe_adder_3"
+    ],
+    "23": [
+      "barenco_tof_3",
+      "csla_mux_3",
+      "csum_mux_9",
+      "gf2^6_mult",
+      "gf2^8_mult",
+      "ham15-low",
+      "mod5_4",
+      "mod_mult_55",
+      "mod_red_21",
+      "qcla_mod_7",
+      "rc_adder_6",
+      "tof_10",
+      "tof_5"
+    ]
+  },
+  "raw_gate_load": {
+    "22": 4368,
+    "23": 4373
+  },
+  "seed": 11,
+  "patience_seconds": 10800,
+  "reset": "strict total NAM gate reduction only; CX/depth ties do not reset",
+  "overall_time_cap": null,
+  "total_candidate_cap": 32,
+  "checkpoint_seconds": 300,
+  "verification": "Full matrices up to7 wires; sufficient ordered ZX miter identity reduction above7; inconclusive rejected",
+  "cpu_workers_per_node": 13,
+  "gpu": false,
+  "scope": "Independent target learning/search, no pretrained model or state transfer, no held-out generalization claim",
+  "rollout": 32
+}

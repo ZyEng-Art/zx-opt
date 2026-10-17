@@ -16,6 +16,7 @@ from .legacy import oracle
 from .general_kernel import OperatorMismatch
 from .search import operation_limit, atomic_json
 from .verify import graph_matrix, matrix_error, qiskit_matrix_zx_order
+from .scalable_verify import check_graph, check_qasm, InconclusiveVerification
 
 
 class ExtractionMismatch(RuntimeError):
@@ -47,7 +48,16 @@ class VerifiedCompletion:
             return
         error = self.invalid_qasm.get(sha)
         if error is None:
-            error = matrix_error(self.reference, qiskit_matrix_zx_order(qasm2.loads(result["qasm"])))
+            try:
+                error = check_qasm(self.reference, result["qasm"])
+            except InconclusiveVerification as exc:
+                self.stats["inconclusive_extractions"] += 1
+                if self.quarantine is not None:
+                    pending = self.quarantine.parent/"unverified-extractions"
+                    pending.mkdir(exist_ok=True)
+                    (pending/(sha+".qasm")).write_text(result["qasm"])
+                    atomic_json(pending/(sha+".json"), dict(status="inconclusive", reason=str(exc), cost_excluded=result["cost"]))
+                raise
         if error > 2e-8:
             self.invalid_qasm[sha] = error
             self.max_invalid_error = max(self.max_invalid_error, error)
@@ -83,7 +93,7 @@ class VerifiedCompletion:
                             zx.simplify.clifford_simp(graph, quiet=True)
                         else:
                             zx.full_reduce(graph, quiet=True)
-                        error = matrix_error(self.reference, graph_matrix(graph))
+                        error = check_graph(self.reference, graph)
                         if error > 2e-8:
                             raise OperatorMismatch("Extraction repair changed the raw operator: "+str(error))
                         scorer = self.repair

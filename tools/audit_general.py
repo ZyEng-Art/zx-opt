@@ -31,6 +31,7 @@ def audit_one(spec):
     from zxopt.jpv_actions import replay_h_pairs
     from zxopt.verify import qiskit_matrix_zx_order, matrix_error
     from zxopt.experiment_input import recorded_input
+    from zxopt.scalable_verify import reference_for, check_qasm
     torch.set_num_threads(1)
     protocol = json.loads((folder/"protocol.json").read_text())
     report = json.loads((folder/"report.json").read_text())
@@ -38,7 +39,7 @@ def audit_one(spec):
     input_path = recorded_input(folder, protocol)
     original = qasm2.loads(input_path.read_text()); n = original.num_qubits
     assert n == protocol.get("num_qubits", 5)
-    reference = qiskit_matrix_zx_order(original)
+    reference = reference_for(input_path.read_text(), protocol["config"].get("verification", "matrix"))
     views = Views(n, reference); kernel = GeneralKernel(environment(input_path), jpv=False)
 
     @lru_cache(maxsize=256)
@@ -54,7 +55,7 @@ def audit_one(spec):
         assert hashlib.sha256(text.encode()).hexdigest() == key
         c = qasm2.loads(text)
         assert c.num_qubits == n and set(c.count_ops()) <= {"h", "rz", "x", "cx"}
-        error = matrix_error(reference, qiskit_matrix_zx_order(c))
+        error = check_qasm(reference, text)
         assert error < 2e-8
         return dict(gates=len(c), cx=int(c.count_ops().get("cx", 0)), depth=int(c.depth())), error
 
@@ -118,9 +119,9 @@ def audit_one(spec):
         assert event["parent_cost"] == state.cost
         assert event["unscored_depth_before"] == state.unscored_depth
         if event["status"] == "excluded_after_deadline":
-            assert event["seconds"] > config["seconds"]
+            assert event["seconds"] > event.get("deadline_seconds", config["seconds"])
             continue
-        assert 0 <= event["seconds"] <= config["seconds"]
+        assert 0 <= event["seconds"] <= event.get("deadline_seconds", config["seconds"])
         if event["status"] == "rejected":
             assert event["reward"] == 0
             continue
@@ -186,7 +187,7 @@ def audit_one(spec):
         restart(restart_rows[restart_cursor]); restart_cursor += 1
     assert archive.summary() == report["buffer"]
     best_circuit = qasm2.loads((folder/"best.qasm").read_text())
-    assert matrix_error(reference, qiskit_matrix_zx_order(best_circuit)) < 2e-8
+    assert check_qasm(reference, (folder/"best.qasm").read_text()) < 2e-8
     if (folder/"initial.pt").exists():
         initial = torch.load(folder/"initial.pt", map_location="cpu", weights_only=True)["state_dict"]
         final = torch.load(folder/"final.pt", map_location="cpu", weights_only=True)["state_dict"]
@@ -209,6 +210,7 @@ def audit_one(spec):
                 quarantined_invalid_qasm=invalid_saved,
                 max_graph_operator_error=max_graph_error, max_qasm_operator_error=qasm_error,
                 accepted_families=dict(families), completion_branches=dict(repairs),
+                verification_method=protocol.get("verification_method", "full operator"),
                 model=model, events_sha256=sha(folder/"events.jsonl"), report_sha256=sha(folder/"report.json"))
 
 

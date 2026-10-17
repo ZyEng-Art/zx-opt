@@ -26,6 +26,8 @@ from .general_feasibility import Feasibility, FeasibilityMismatch, signature as 
 from .jpv_actions import hh_identity
 from .verify import qiskit_matrix_zx_order, matrix_error
 from monitored_ppo import ppo_update
+from .scalable_verify import reference_for, check_qasm, ZXReference
+from .patience import GatePatience
 
 
 def tensor_digest(net):
@@ -62,8 +64,10 @@ def run(args):
     if args.general_zx:
         args.jpv = True
         args.allow_arbitrary_angles = True
-    if (args.seconds <= 0 or args.horizon < 1 or args.max_unscored < 1 or args.max_growth < 0
-            or args.candidate_cap < 1 or args.matching_work < 1):
+    if ((args.seconds <= 0 and args.no_improvement_seconds <= 0) or args.seconds < 0
+            or args.no_improvement_seconds < 0 or args.checkpoint_seconds < 0 or args.total_candidate_cap < 0
+            or args.horizon < 1 or args.max_unscored < 1 or args.max_growth < 0
+            or args.candidate_cap < 1 or args.matching_work < 1 or args.rewrite_timeout <= 0):
         raise ValueError("Invalid search bounds")
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     (out/"objects").mkdir(); (out/"candidates").mkdir()
@@ -74,9 +78,9 @@ def run(args):
     (out/"input.qasm").write_bytes(input_bytes)
     env = environment(out/"input.qasm"); n = len(env.graph.inputs())
     input_circuit = qasm2.loads(input_bytes.decode())
-    reference = qiskit_matrix_zx_order(input_circuit)
+    reference = reference_for(input_bytes.decode(), args.verification, out/"verification/receipts.jsonl")
     views = Views(n, reference); scorer = VerifiedCompletion(reference, out/"invalid-extractions")
-    kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work, args.general_zx)
+    kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work, args.general_zx, args.total_candidate_cap)
     diagram = from_pyzx(env.graph, allow_arbitrary=args.allow_arbitrary_angles)
     root_view = views.get(diagram)
     if root_view.graph is None:
@@ -85,7 +89,7 @@ def run(args):
     root_result = root_evaluation.result
     if root_result is None:
         raise RuntimeError("Initial completion failed: "+str(root_evaluation.reason))
-    root_error = matrix_error(reference, qiskit_matrix_zx_order(qasm2.loads(root_result["qasm"])))
+    root_error = check_qasm(reference, root_result["qasm"])
     if root_error > 2e-8:
         raise OperatorMismatch("Initial extracted circuit changed the operator")
     root = SearchState(diagram, root_result["cost"], root_result["cost"])
@@ -146,6 +150,12 @@ def run(args):
                     limits="candidate/node/matching/horizon/latent-depth bounds; extraction failures are legal transitions, verification/resource failures rejected",
                     hh="I_X backward / H forward / I_Z forward proof; every contextual cancellation has a replay receipt")
     protocol["invalid_extraction"] = "quarantined and excluded from all gate costs/rewards; legal raw graph can continue. Raw/repair operator mismatches remain fatal. Repairs apply identically in every arm."
+    protocol["verification_method"] = ("fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors"
+                                       if isinstance(reference, ZXReference) else "independent full fixed-wire Qiskit operator, tolerance2e-8")
+    protocol["stop_rule"] = dict(no_improvement_seconds=args.no_improvement_seconds,
+                                resets_on="strict reduction in total gates only; CX/depth ties do not reset",
+                                overall_cap_seconds=args.seconds or None,
+                                checkpoint_seconds=args.checkpoint_seconds)
     protocol["feasibility_mask"] = "When enabled, rewrite-only previews exclude node/wire-budget violations before categorical sampling; no extraction/cost lookahead. Exact-state/action LRU; all preview work inside budget."
     protocol["preview_native_prefix_sha256"] = kernel.preview_prefix_sha256
     protocol["angle_support"] = dict(
@@ -168,16 +178,21 @@ def run(args):
     events = (out/"events.jsonl").open("w", buffering=1); updates_file = (out/"updates.jsonl").open("w", buffering=1)
     restart_file = (out/"restarts.jsonl").open("w", buffering=1)
     deadend_file = (out/"deadends.jsonl").open("w", buffering=1)
+    best_history = (out/"best-history.jsonl").open("w", buffering=1)
     shared = None
     if args.shared_buffer:
         from .shared_search import ZXSharedBridge
         shared = ZXSharedBridge(args.shared_buffer, input_bytes.decode(), args.seed, out)
         shared.publish(root_result, diagram.digest())
-    started = time.perf_counter(); deadline = started+args.seconds
+    started = time.perf_counter()
+    budget_deadline = started+args.seconds if args.seconds else float("inf")
+    patience = GatePatience(args.no_improvement_seconds, best["cost"]["gates"])
+    deadline = min(budget_deadline, started+patience.remaining())
     transition = trajectory = accepted = unscored = recovered = updates = 0
     invalid = Counter(); families = Counter(); accepted_families = Counter(); latent_families = Counter()
     timers = Counter(); rollout = []
     state = None; status = "budget_reached"; start = None
+    step = 0; restart_source = None; last_checkpoint = started
     first_best = {str(root_result["cost"]["gates"]-k): None for k in range(1, 6)}
 
     if args.resume_state:
@@ -187,12 +202,15 @@ def run(args):
         if saved["input_sha256"] != protocol["input_sha256"] or saved["sources"] != sources:
             raise ValueError("Resume input/source differs")
         semantic = ["seed", "policy", "jpv", "general_zx", "allow_arbitrary_angles", "horizon", "max_unscored", "max_growth", "max_edge_growth",
-                    "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask"]
+                    "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask",
+                    "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
         step, restart_source = saved["step"], saved["restart_source"]
         rollout = saved["rollout"]; best = saved["best"]; first_best = saved["first_best"]
+        patience = GatePatience(args.no_improvement_seconds, best["cost"]["gates"], record=saved.get("patience"))
+        deadline = min(budget_deadline, time.perf_counter()+patience.remaining())
         transition, trajectory, accepted, unscored, recovered, updates = saved["counts"]
         if net is not None:
             net.load_state_dict(saved["net"])
@@ -200,6 +218,7 @@ def run(args):
             optimizer.load_state_dict(saved["optimizer"])
         if kernel.jpv is not None:
             kernel.jpv.rounds, kernel.jpv.stats = saved["jpv"]
+        kernel.cap_rounds = saved.get("proposal_cap_rounds", {})
         rng.bit_generator.state = saved["rng"]
         random.setstate(saved["python_rng"]); np.random.set_state(saved["numpy_rng"])
         torch.set_rng_state(saved["torch_rng"])
@@ -215,6 +234,22 @@ def run(args):
         atomic_json(out/"protocol.json", protocol)
         (out/"best.qasm").write_text(saved["best_qasm"])
         atomic_json(out/"best.json", best)
+
+    def checkpoint_now():
+        t = time.perf_counter()
+        checkpoint = _checkpoint_payload(protocol, pool, state, start, step, restart_source,
+                                         rollout, best, (out/"best.qasm").read_text(), first_best,
+                                         (transition, trajectory, accepted, unscored, recovered, updates),
+                                         net, optimizer, kernel, rng, shared, patience)
+        torch.save(checkpoint, out/"search-state.pt.tmp")
+        (out/"search-state.pt.tmp").replace(out/"search-state.pt")
+        atomic_json(out/"checkpoint.json", dict(path="search-state.pt", transition=transition,
+                    updates=updates, patience=patience.record(), saved_unix=time.time(),
+                    input_sha256=protocol["input_sha256"]))
+        timers["checkpoint"] += time.perf_counter()-t
+
+    if args.checkpoint_seconds:
+        checkpoint_now()
     try:
         while time.perf_counter() < deadline and (args.max_steps is None or transition < args.max_steps):
             if state is None:
@@ -235,6 +270,8 @@ def run(args):
                     save_graph(out/"objects", start.diagram)
                     if score(start.cost) < score(best["cost"]):
                         result = record["completion"]
+                        patience.observe(start.cost["gates"])
+                        deadline = min(budget_deadline, time.perf_counter()+patience.remaining())
                         best = dict(cost=start.cost, sha256=result["sha256"],
                                     seconds=time.perf_counter()-started, graph=start.key,
                                     origin="shared_import", shared_key=record["key"])
@@ -246,7 +283,12 @@ def run(args):
                                    source=restart_source, buffer=pool.summary()))+"\n")
             t = time.perf_counter()
             view = views.get(state.diagram)
-            available = kernel.prepare(state.diagram, view, view_limit)
+            try:
+                with operation_limit(max(.001, deadline-time.perf_counter())):
+                    available = kernel.prepare(state.diagram, view, view_limit)
+            except TimeoutError:
+                timers["matching"] += time.perf_counter()-t
+                break
             timers["matching"] += time.perf_counter()-t
             previews = {}
             if feasibility is not None:
@@ -282,11 +324,12 @@ def run(args):
                        parent_graph_key=state.key, restart_graph_key=start.key, restart_source=restart_source,
                        action=chosen.record(), available=len(available), candidate_sha256=candidate_digest(available),
                        selection=dict(slot=slot, log_probability=old_log, value=value), context=context,
-                       parent_cost=state.cost, last_scored_cost=state.last_counts, unscored_depth_before=state.unscored_depth)
+                       parent_cost=state.cost, last_scored_cost=state.last_counts, unscored_depth_before=state.unscored_depth,
+                       deadline_seconds=deadline-started)
             child = child_view = None; reason = None; rejected = None; result = None; auxiliary = []
             t = time.perf_counter()
             try:
-                with operation_limit(min(5., max(.001, deadline-time.perf_counter()))):
+                with operation_limit(min(args.rewrite_timeout, max(.001, deadline-time.perf_counter()))):
                     preview_key = feasibility_signature(state.diagram, chosen) if feasibility is not None else None
                     if preview_key in previews:
                         child, auxiliary = previews[preview_key]
@@ -327,7 +370,7 @@ def run(args):
                         path.write_text(result["qasm"])
                     row["sha256"] = result["sha256"]
             elapsed = time.perf_counter()-started; row["seconds"] = elapsed
-            if elapsed > args.seconds:
+            if time.perf_counter() > deadline:
                 row["status"] = "excluded_after_deadline"; events.write(json.dumps(row)+"\n"); break
             done = step >= args.horizon; reward = 0.
             if rejected is None:
@@ -349,9 +392,14 @@ def run(args):
                         if first_best[target] is None and result["cost"]["gates"] <= int(target):
                             first_best[target] = elapsed
                     if score(result["cost"]) < score(best["cost"]):
+                        gate_improvement = patience.observe(result["cost"]["gates"])
+                        deadline = min(budget_deadline, time.perf_counter()+patience.remaining())
                         best = dict(cost=result["cost"], sha256=result["sha256"], seconds=elapsed, graph=state.key)
                         (out/"best.qasm.tmp").write_text(result["qasm"]); (out/"best.qasm.tmp").replace(out/"best.qasm")
                         atomic_json(out/"best.json", best)
+                        best_history.write(json.dumps(dict(**best, transition=transition, trajectory=trajectory,
+                                             strict_gate_improvement=gate_improvement,
+                                             patience=patience.record()))+"\n")
                 admitted = (pool.add(state, start.last_counts)
                             if state.cost is not None or state.unscored_depth < args.max_unscored else False)
                 row.update(status="accepted" if result is not None else "accepted_unscored", admitted=admitted,
@@ -380,10 +428,16 @@ def run(args):
                 update.update(transition=transition, seconds=time.perf_counter()-started)
                 updates_file.write(json.dumps(update)+"\n"); updates += 1; rollout = []
                 timers["ppo"] += time.perf_counter()-t
+            if args.checkpoint_seconds and time.perf_counter()-last_checkpoint >= args.checkpoint_seconds:
+                checkpoint_now()
+                last_checkpoint = time.perf_counter()
             if transition % 64 == 0:
                 atomic_json(out/"progress.json", dict(transitions=transition, accepted=accepted, unscored=unscored,
                                                      recovered=recovered, updates=updates, best=best,
-                                                     seconds=time.perf_counter()-started, buffer=pool.summary(), timers=dict(timers)))
+                                                     seconds=time.perf_counter()-started, buffer=pool.summary(), timers=dict(timers),
+                                                     patience=patience.record(), patience_remaining_seconds=patience.remaining()))
+        if patience.remaining() <= 0:
+            status = "no_improvement_timeout"
         if args.max_steps is not None and transition >= args.max_steps:
             status = "step_limit_reached"
     except BaseException as exc:
@@ -395,25 +449,14 @@ def run(args):
         updates_file.flush(); os.fsync(updates_file.fileno()); updates_file.close()
         restart_file.flush(); os.fsync(restart_file.fileno()); restart_file.close()
         deadend_file.flush(); os.fsync(deadend_file.fileno()); deadend_file.close()
+        best_history.flush(); os.fsync(best_history.fileno()); best_history.close()
     loop_seconds = time.perf_counter()-started
     if net is not None:
         torch.save(dict(state_dict=net.state_dict(), steps=transition, updates=updates,
                         optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
                         input_sha256=hashlib.sha256(input_bytes).hexdigest(),
                         scope="model/Adam only, not a complete search checkpoint"), out/"final.pt")
-    checkpoint = dict(schema=1, input_sha256=protocol["input_sha256"], sources=sources, config=protocol["config"],
-                      pool=pool, state=state, start=start, step=locals().get("step", 0),
-                      restart_source=locals().get("restart_source"), rollout=rollout, best=best,
-                      best_qasm=(out/"best.qasm").read_text(), first_best=first_best,
-                      counts=(transition, trajectory, accepted, unscored, recovered, updates),
-                      net=None if net is None else net.state_dict(),
-                      optimizer=None if optimizer is None else optimizer.state_dict(),
-                      jpv=None if kernel.jpv is None else (kernel.jpv.rounds, kernel.jpv.stats),
-                      rng=rng.bit_generator.state, python_rng=random.getstate(), numpy_rng=np.random.get_state(),
-                      torch_rng=torch.get_rng_state(), exchange_rng=None if shared is None else shared.rng.getstate(),
-                      scope="Trusted local checkpoint. Native pools, active trajectory, pending on-policy rollout, model/Adam and RNG retained. Recomputable matching/view/score caches excluded; wall-budget bitwise replay not guaranteed.")
-    torch.save(checkpoint, out/"search-state.pt.tmp")
-    (out/"search-state.pt.tmp").replace(out/"search-state.pt")
+    checkpoint_now()
     if shared is not None:
         shared.pool.snapshot(out/"shared-buffer.sqlite")
         shared.pool.close()
@@ -430,10 +473,30 @@ def run(args):
                   feasibility=None if feasibility is None else feasibility.summary(),
                   max_graph_operator_error=views.max_error, max_qasm_operator_error=scorer.max_valid_error,
                   first_passage_seconds=first_best, budget_seconds=args.seconds,
-                  total_loop_seconds=loop_seconds, timers=dict(timers), verification="passed")
+                  total_loop_seconds=loop_seconds, timers=dict(timers), verification="passed",
+                  verification_method=protocol["verification_method"], patience=patience.record(),
+                  certificate_stats=dict(reference.stats) if isinstance(reference, ZXReference) else None,
+                  finished_unix=time.time())
     atomic_json(out/"report.json", report)
     print(json.dumps(report), flush=True)
     return report
+
+
+def _checkpoint_payload(protocol, pool, state, start, step, restart_source, rollout,
+                        best, best_qasm, first_best, counts, net, optimizer, kernel,
+                        rng, shared, patience):
+    return dict(schema=1, input_sha256=protocol["input_sha256"], sources=protocol["sources"], config=protocol["config"],
+                      pool=pool, state=state, start=start, step=step,
+                      restart_source=restart_source, rollout=rollout, best=best,
+                      best_qasm=best_qasm, first_best=first_best, counts=counts,
+                      patience=patience.record(),
+                      net=None if net is None else net.state_dict(),
+                      optimizer=None if optimizer is None else optimizer.state_dict(),
+                      jpv=None if kernel.jpv is None else (kernel.jpv.rounds, kernel.jpv.stats),
+                      proposal_cap_rounds=kernel.cap_rounds,
+                      rng=rng.bit_generator.state, python_rng=random.getstate(), numpy_rng=np.random.get_state(),
+                      torch_rng=torch.get_rng_state(), exchange_rng=None if shared is None else shared.rng.getstate(),
+                      scope="Trusted local checkpoint. Native pools, active trajectory, pending on-policy rollout, model/Adam and RNG retained. Recomputable matching/view/score caches excluded; wall-budget bitwise replay not guaranteed.")
 
 
 def parser():
@@ -450,10 +513,14 @@ def parser():
                    help="Preserve non-pi/4 phases as context; skip inapplicable JPV matches")
     p.add_argument("--policy", choices=["uniform", "frozen", "online"], default="uniform")
     p.add_argument("--seconds", type=float, default=1200.)
+    p.add_argument("--no-improvement-seconds", type=float, default=0., help="Strict total-gate plateau patience; --seconds 0 disables the overall cap")
+    p.add_argument("--checkpoint-seconds", type=float, default=0., help="Atomic full search-state checkpoint interval")
+    p.add_argument("--verification", choices=["matrix", "adaptive"], default="matrix", help="Adaptive retains full matrices up to7 wires, sufficient fixed-wire ZX identity reduction above7")
     p.add_argument("--seed", type=int, default=11)
     p.add_argument("--max-growth", type=int, default=64)
     p.add_argument("--max-edge-growth", type=int, default=256)
     p.add_argument("--candidate-cap", type=int, default=32)
+    p.add_argument("--total-candidate-cap", type=int, default=0, help="Family-balanced deterministic menu before exact previews;0 preserves the full native menu")
     p.add_argument("--matching-work", type=int, default=2048)
     p.add_argument("--horizon", type=int, default=70)
     p.add_argument("--max-unscored", type=int, default=8)
@@ -461,6 +528,7 @@ def parser():
     p.add_argument("--latent-archive", type=int, default=128)
     p.add_argument("--rollout", type=int, default=128)
     p.add_argument("--extraction-timeout", type=float, default=2.)
+    p.add_argument("--rewrite-timeout", type=float, default=5.)
     p.add_argument("--max-steps", type=int)
     p.add_argument("--no-feasibility-mask", dest="feasibility_mask", action="store_false")
     p.set_defaults(feasibility_mask=True)

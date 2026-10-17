@@ -1,5 +1,6 @@
 """General-diagram states, with independent normalized scoring/macro views."""
 from collections import OrderedDict
+import hashlib
 from dataclasses import dataclass
 from fractions import Fraction as F
 
@@ -13,6 +14,7 @@ from .verify import graph_matrix, matrix_error
 from .complete.angles import Phase
 from .legacy import environment
 from runtime import graph_key
+from .scalable_verify import check_graph
 
 
 class OperatorMismatch(RuntimeError):
@@ -40,14 +42,14 @@ class Views:
             return self.entries[key]
         self.misses += 1
         pg = to_pyzx(diagram, self.inputs, evaluate_expressions=True)
-        error = matrix_error(self.reference, graph_matrix(pg))
+        error = check_graph(self.reference, pg)
         self.max_error = max(self.max_error, error)
         if error > 2e-8:
             raise OperatorMismatch("General graph changed the fixed-wire operator: " + str(error))
         try:
             zx.to_graph_like(pg)
             pg = pg.copy()  # compact IDs before the frozen matcher's integer encoding
-            normalized_error = matrix_error(self.reference, graph_matrix(pg))
+            normalized_error = check_graph(self.reference, pg)
             self.max_error = max(self.max_error, normalized_error)
             if normalized_error > 2e-8:
                 raise OperatorMismatch("Graph-like normalization changed the operator")
@@ -95,10 +97,11 @@ class HybridAction:
 
 
 class GeneralKernel:
-    def __init__(self, env, seed=11, jpv=True, candidate_cap=32, matching_work=2048, general_zx=False):
+    def __init__(self, env, seed=11, jpv=True, candidate_cap=32, matching_work=2048, general_zx=False, total_candidate_cap=0):
         self.native = Kernel(env)
         self.jpv = Proposals(seed, candidate_cap, matching_work, general=general_zx) if jpv else None
         self.candidate_cap = candidate_cap
+        self.total_candidate_cap = total_candidate_cap; self.cap_seed = seed; self.cap_rounds = {}
         from optimized_backend import compile_rewrite_prefix
         wrapper = next(c for c in type(env).__mro__ if "rewrite_prefix_sha256" in c.__dict__)
         original = wrapper.__mro__[1]
@@ -148,6 +151,25 @@ class GeneralKernel:
                                             params.get("right_legs", 0)/8, params.get("links", 0)/8),
                                            (len(r.nodes)-len(r.ports))-(len(l.nodes)-len(l.ports)),
                                            action.direction))
+        if self.total_candidate_cap and len(result) > self.total_candidate_cap:
+            import numpy as np
+            key = raw.digest(); visit = self.cap_rounds.get(key, 0); self.cap_rounds[key] = visit+1
+            seed = hashlib.sha256((str(self.cap_seed)+key+":"+str(visit)).encode()).digest()
+            rng = np.random.default_rng(int.from_bytes(seed[:8], "big"))
+            buckets = {}
+            for action in result:
+                buckets.setdefault(action.family, []).append(action)
+            for values in buckets.values():
+                rng.shuffle(values)
+            families = sorted(buckets); rng.shuffle(families)
+            bounded = []
+            for offset in range(max(map(len, buckets.values()))):
+                for family in families:
+                    if offset < len(buckets[family]):
+                        bounded.append(buckets[family][offset])
+                        if len(bounded) == self.total_candidate_cap:
+                            return bounded
+            return bounded
         return result
 
     def step(self, raw, view, action):
