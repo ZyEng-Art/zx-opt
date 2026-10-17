@@ -85,7 +85,8 @@ def observation(raw, view, available, context):
             x[13+2*j:15+2*j] = [math.sin(math.pi*float(phase)), math.cos(math.pi*float(phase))]
         x[19:22] = action.shape
         x[22] = float(action.mode == "jpv")
-        pos = len(xs); xs.append(x); kinds.append(FAMILIES.index(action.family)+1); y.append(i)
+        pos = len(xs); xs.append(x)
+        kinds.append(0 if action.mode == "noop" else FAMILIES.index(action.family)+1); y.append(i)
         mapping = raw_map if action.mode == "jpv" else view_map
         for w in action.vertices:
             if w in mapping:

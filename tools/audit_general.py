@@ -118,12 +118,32 @@ def audit_one(spec):
         assert event["last_scored_cost"] == state.last_counts
         assert event["parent_cost"] == state.cost
         assert event["unscored_depth_before"] == state.unscored_depth
+        if config.get("selection") == "anchor":
+            from zxopt.anchor_policy import catalog
+            current_view = views.get(state.diagram)
+            anchors = catalog(state.diagram, current_view.graph, config["jpv"])
+            assert event["anchor"] == anchors[event["selection"]["anchor_slot"]].record()
+            assert event["selection"]["anchors"] == len(anchors)
+            selection = event["selection"]
+            if selection["log_probability"] is not None:
+                assert abs(selection["log_probability"]-selection["anchor_log_probability"]
+                           -selection["conditional_log_probability"]) < 2e-5
         if event["status"] == "excluded_after_deadline":
             assert event["seconds"] > event.get("deadline_seconds", config["seconds"])
             continue
         assert 0 <= event["seconds"] <= event.get("deadline_seconds", config["seconds"])
         if event["status"] == "rejected":
             assert event["reward"] == 0
+            continue
+        if event["status"] == "anchor_noop":
+            action = HybridAction.from_record(event["action"])
+            assert action.mode == "noop" and action.family == "anchor_noop"
+            child, receipts = kernel.step(state.diagram, views.get(state.diagram), action)
+            assert child.record() == state.diagram.record() and not receipts
+            assert event["graph_key"] == state.key and event["cost"] == state.cost
+            assert event["reward"] == 0 and not event["admitted"]
+            assert event["unscored_depth"] == state.unscored_depth
+            assert archive.summary() == event["buffer"] and event["best"] == best
             continue
         assert event["status"] in ("accepted", "accepted_unscored")
         action = HybridAction.from_record(event["action"])

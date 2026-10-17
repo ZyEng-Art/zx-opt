@@ -1,0 +1,49 @@
+Anchor-first ZX search (2026-10-18)
+
+Opt in with --selection anchor. The default global mode retains the baseline.
+Example:
+  python -m zxopt.general_search runs/anchor --general-zx --selection anchor \
+    --policy online --seconds 600 --rollout 32 --total-candidate-cap 32
+
+The selector encodes topology-only anchors before querying rule applicability.
+It samples one raw node, raw edge, closed wire, global scalar location, or
+scoring-view node/H edge. Raw and normalized scoring IDs remain separate.
+Native predicates receive restricted starting vertices/edges with their full
+host neighborhoods. General templates pin a distinguished pattern vertex and
+extend through adjacent host vertices. Simple S/I/H proposals use incidence
+queries. At most eight local candidates are previewed by default.
+
+This borrows Quarl's selected-location matching order, not its entire learning
+algorithm. In particular Quarl samples nodes from temperature-scaled critic
+values; this mode learns the anchor actor with PPO. The PPO ratio uses
+log p(anchor|graph) + log p(instance|graph,anchor,local menu). Both menu and
+selected anchor are retained in each rollout, including complete checkpoints.
+It never rematches during PPO. The entropy bonus is an explicitly sampled
+conditional regularizer rather than exact full hierarchical entropy.
+
+If no resource-feasible local instance exists, the attempted anchor is an
+explicit zero-reward unchanged-state transition, with terminal horizon handling
+and its anchor probability logged. No retry conditions the distribution on
+unknown rewritability. Noops do not enter the archive, change latent depth,
+reset gate patience or count as accepted rewrites. They must be reported
+separately from productive transitions in speed/learning comparisons.
+
+Finite local menus, phase splits and work limits still sacrifice exhaustive
+search. This changes the proposal distribution. Faster matching does not prove
+better final gate counts; compare equal wall time and frozen controls per
+target, with independent model initialization for every seed/circuit.
+
+The existing node22/node23 long jobs keep immutable source f5874e497ce1.
+This branch and its runs are isolated; those jobs are not restarted or replaced.
+
+Tests check rooted/global embedding coverage on a finite host, reachable
+instances of all12 schemata in both directions, wire/scalar cases, arbitrary
+phase inference, native query/preview replay, joint density, both actor stages,
+and finite PPO updates. Full run audits replay accepted proofs and verify saved
+NAM circuits; large circuits use the existing sufficient ZX certificate and
+inconclusive cases are excluded, not called proven incorrect.
+
+Comparison driver:
+  python tools/anchor_campaign.py runs/anchor-study --seconds 300 --workers 4 \
+    --circuits barenco_tof_3 mod5_4 tof_5 --seeds 11 29 47 \
+    --modes global32 anchor8 anchor32 --policies frozen online

@@ -141,11 +141,19 @@ class Proposals:
                 compiled(name, direction, color)
         hh_identity()
 
-    def build(self, graph):
+    def build(self, graph, anchor=None):
+        """Build globally, or only at a preselected (node/edge/loop/global, id).
+
+        Anchors are selected before this method runs. A complex template has a
+        fixed distinguished vertex, so every occurrence has a possible anchor;
+        anchoring does not mean enumerating globally and filtering afterwards.
+        """
         if not self.cap:
             return []
-        key = graph.digest(); visit = self.rounds.get(key, 0); self.rounds[key] = visit+1
-        digest = hashlib.sha256((str(self.seed)+key+":"+str(visit)).encode()).digest()
+        key = graph.digest()
+        visit_key = key if anchor is None else key+":"+str(anchor)
+        visit = self.rounds.get(visit_key, 0); self.rounds[visit_key] = visit+1
+        digest = hashlib.sha256((str(self.seed)+visit_key+":"+str(visit)).encode()).digest()
         rng = np.random.default_rng(int.from_bytes(digest[:8], "big"))
         hs = incidences(graph); reached = connected_ports(graph)
         # Random order within the boundary-connected and scalar groups, fixed
@@ -153,6 +161,11 @@ class Proposals:
         vertices = list(graph.nodes); rng.shuffle(vertices)
         vertices.sort(key=lambda v: v not in reached)
         host = graph.clone(); host.nodes = {v: graph.nodes[v] for v in vertices}
+        node_anchor = anchor[1] if anchor is not None and anchor[0] == "node" else None
+        if anchor is not None:
+            if anchor[0] not in ("node", "edge", "loop", "global"):
+                raise ValueError("Unknown proposal anchor")
+            vertices = [node_anchor] if node_anchor is not None else []
         parent = key
         buckets = {}
         count = 12 if self.general else 11
@@ -172,7 +185,10 @@ class Proposals:
 
         # Spider fusion: all direct same-color neighbors, including parallel wires.
         pairs = {}
-        for i, (a, b) in enumerate(graph.edges):
+        edge_ids = (range(len(graph.edges)) if anchor is None else
+                    sorted({e for e, _ in hs[node_anchor]}) if node_anchor is not None else [])
+        for i in edge_ids:
+            a, b = graph.edges[i]
             if a != b and graph.nodes[a].kind == graph.nodes[b].kind and graph.nodes[a].kind in ("Z", "X"):
                 pairs.setdefault(tuple(sorted((a, b))), []).append(i)
         pair_items = [(pair, es) for pair, es in pairs.items()
@@ -210,11 +226,18 @@ class Proposals:
                 rule = axiom("H", domain=self.domain, color=n.kind, alpha=n.phase, arity=len(shuffled))
                 add(rule, "backward", single_match(rule.right, v, shuffled))
 
-        edge_order = list(range(len(graph.edges))); rng.shuffle(edge_order)
+        edge_order = (list(range(len(graph.edges))) if anchor is None else
+                      [anchor[1]] if anchor[0] == "edge" else [])
+        rng.shuffle(edge_order)
         edge_order.sort(key=lambda e: not any(v in reached for v in graph.edges[e]))
         for i in edge_order[:per]:
             rule = axiom("I", color="Z" if rng.integers(2) else "X")
             add(rule, "backward", Match(wire_edges=((0, i, int(rng.integers(2))),)))
+        if anchor is not None and anchor[0] == "loop":
+            if not 0 <= anchor[1] < graph.loops:
+                raise ValueError("Closed wire anchor absent")
+            rule = axiom("I", color="Z" if rng.integers(2) else "X")
+            add(rule, "backward", Match(wire_edges=((0, -anchor[1]-1, 0),)))
 
         # Fixed branch-count bounds preserve paired prefixes across machine load.
         jobs = [(name, direction, color, 0) for name in ("CP", "B", "K", "EU", "SUP", "E", "C", "BW")
@@ -222,7 +245,7 @@ class Proposals:
         if self.general:
             jobs += [("A", direction, color, 0)
                      for direction, color in product(("forward", "backward"), ("Z", "X"))]
-        arities = sorted({len(hs[v]) for v in vertices if graph.nodes[v].kind in ("Z", "X")})
+        arities = sorted({len(hs[v]) for v in graph.nodes if graph.nodes[v].kind in ("Z", "X")})
         jobs += [("H", "forward", color, arity) for color in ("Z", "X") for arity in arities]
         rng.shuffle(jobs)
         for name, direction, color, arity in jobs:
@@ -232,8 +255,12 @@ class Proposals:
                 if self.general:
                     from .general_angles import compiled as general_compiled, inferred_rules
                     pattern = general_compiled(name, direction, color, arity)[0]
+                    pin = self._pin(graph, pattern, anchor)
+                    if pin is False:
+                        continue
                     attempts = 0
-                    for match in matches(host, pattern, ignore_phases=True, work_limit=self.matching_work):
+                    for match in matches(host, pattern, ignore_phases=True, work_limit=self.matching_work,
+                                         vertex_anchor=pin):
                         attempts += 1
                         for rule in inferred_rules(host, match, name, direction, color, arity):
                             add(rule, direction, match); self.stats["phase_inferred"] += 1
@@ -243,8 +270,12 @@ class Proposals:
                             break
                     continue
                 pattern, internal, lookup, fixed = compiled(name, direction, color, arity)
+                pin = self._pin(graph, pattern, anchor)
+                if pin is False:
+                    continue
                 attempts = 0
-                for match in matches(host, pattern, ignore_phases=True, work_limit=self.matching_work):
+                for match in matches(host, pattern, ignore_phases=True, work_limit=self.matching_work,
+                                     vertex_anchor=pin):
                     attempts += 1
                     mapping = dict(match.vertices)
                     phases = tuple(graph.nodes[mapping[v]].phase for v in internal)
@@ -280,3 +311,19 @@ class Proposals:
                     return result
         self.stats["calls"] += 1
         return result
+
+    @staticmethod
+    def _pin(graph, pattern, anchor):
+        if anchor is None:
+            return None
+        internal = [v for v in pattern.nodes if v not in pattern.ports]
+        if not internal:
+            return None if anchor[0] == "global" else False
+        if anchor[0] != "node":
+            return False
+        root = min(internal, key=lambda v: (-pattern.degree(v), pattern.nodes[v].kind, v))
+        target = anchor[1]
+        if (graph.nodes[target].kind != pattern.nodes[root].kind
+                or graph.degree(target) != pattern.degree(root)):
+            return False
+        return root, target

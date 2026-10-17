@@ -1,0 +1,29 @@
+{
+  "time": "2026-10-18T00:37:45.883154+08:00",
+  "event": "anchor_first_initial_implementation",
+  "branch": "feat/anchor-first-zx",
+  "unit_tests": 74,
+  "local_runtime": "Python3.9 Torch2.6 pinned PyZX0.8 fork74SHA",
+  "selection": "learned anchor actor then rooted template matching and local instance actor",
+  "ppo": "joint anchor and conditional instance log probability",
+  "local_candidate_cap": 8,
+  "development_smoke": {
+    "transitions": 40,
+    "updates": 5,
+    "accepted": 40,
+    "gate_improvement": false
+  },
+  "empty_anchor_test": {
+    "transitions": 64,
+    "noops": 32,
+    "accepted": 32,
+    "updates": 4
+  },
+  "preserved_long_source": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+  "scope": "Initial development tests and audits; equal-wall performance and learning comparisons pending",
+  "resolved_development_issues": [
+    "Initial test invocation imported stock PyZX: failed imports/precision check; corrected PYTHONPATH and verified all74 pinned sources",
+    "H-forward anchor may be an H node; template arities must be inferred from the whole topology index",
+    "Gadget fusion local negative action IDs need global-group remapping and recorded survivor ordering"
+  ]
+}

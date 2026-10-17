@@ -1,0 +1,26 @@
+/private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:64: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+  prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+/private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+/private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+/private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/_mathtext.py:45: PyparsingDeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'
+  ParserElement.enablePackrat()
+In /private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+In /private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+test_catalog_and_anchor_encoding_do_not_query_matching (test_anchor.AnchorTest) ... ok
+test_closed_wire_and_self_loop_insertion_proofs (test_anchor.AnchorTest) ... ok
+test_empty_menu_is_an_explicit_unchanged_state (test_anchor.AnchorTest) ... ok
+test_every_schema_direction_has_a_reachable_anchor (test_anchor.AnchorTest) ... ok
+test_gadget_fusion_ids_are_remapped_from_the_local_menu (test_anchor.AnchorTest) ... ok
+test_general_angles_are_inferred_at_the_anchor (test_anchor.AnchorTest) ... ok
+test_joint_density_batching_and_both_stage_gradients (test_anchor.AnchorTest) ... ok
+test_local_kernel_does_not_use_whole_graph_native_prepare (test_anchor.AnchorTest) ... ok
+test_native_rooted_union_and_preview_equal_global_rules (test_anchor.AnchorTest) ... ok
+test_ppo_changes_actor_with_joint_probability (test_anchor.AnchorTest) ... ok
+test_rooted_embeddings_partition_the_global_matches (test_anchor.AnchorTest) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.157s
+
+OK

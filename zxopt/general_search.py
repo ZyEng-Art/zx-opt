@@ -28,6 +28,7 @@ from .verify import qiskit_matrix_zx_order, matrix_error
 from monitored_ppo import ppo_update
 from .scalable_verify import reference_for, check_qasm, ZXReference
 from .patience import GatePatience
+from . import anchor_policy
 
 
 def tensor_digest(net):
@@ -67,7 +68,8 @@ def run(args):
     if ((args.seconds <= 0 and args.no_improvement_seconds <= 0) or args.seconds < 0
             or args.no_improvement_seconds < 0 or args.checkpoint_seconds < 0 or args.total_candidate_cap < 0
             or args.horizon < 1 or args.max_unscored < 1 or args.max_growth < 0
-            or args.candidate_cap < 1 or args.matching_work < 1 or args.rewrite_timeout <= 0):
+            or args.candidate_cap < 1 or args.matching_work < 1 or args.rewrite_timeout <= 0
+            or args.anchor_candidate_cap < 1):
         raise ValueError("Invalid search bounds")
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     (out/"objects").mkdir(); (out/"candidates").mkdir()
@@ -81,6 +83,17 @@ def run(args):
     reference = reference_for(input_bytes.decode(), args.verification, out/"verification/receipts.jsonl")
     views = Views(n, reference); scorer = VerifiedCompletion(reference, out/"invalid-extractions")
     kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work, args.general_zx, args.total_candidate_cap)
+    anchored = args.selection == "anchor"
+    if anchored:
+        kernel.candidate_cap = min(args.candidate_cap, args.anchor_candidate_cap)
+        kernel.total_candidate_cap = min(args.total_candidate_cap or args.anchor_candidate_cap, args.anchor_candidate_cap)
+        if kernel.jpv is not None:
+            kernel.jpv.cap = kernel.candidate_cap
+    Agent = anchor_policy.AnchorAgent if anchored else GeneralAgent
+    pack = anchor_policy.batch if anchored else batch
+    update_ppo = ppo_update
+    if anchored:
+        from .anchor_ppo import ppo_update as update_ppo
     diagram = from_pyzx(env.graph, allow_arbitrary=args.allow_arbitrary_angles)
     root_view = views.get(diagram)
     if root_view.graph is None:
@@ -98,12 +111,14 @@ def run(args):
     wire_limit = len(diagram.edges)+args.max_edge_growth
     feasibility = Feasibility(raw_limit, wire_limit) if args.feasibility_mask else None
     view_limit = root_view.graph.num_vertices()+args.max_growth
-    net = GeneralAgent(general_zx=args.general_zx) if args.policy != "uniform" else None
+    net = Agent(general_zx=args.general_zx) if args.policy != "uniform" else None
     optimizer = torch.optim.Adam(net.parameters(), lr=.0003, eps=1e-5) if args.policy == "online" else None
     if args.resume_model:
         if net is None:
             raise ValueError("Model resume requires frozen/online policy")
         saved = torch.load(args.resume_model, map_location="cpu", weights_only=False)
+        if saved.get("selection", "global") != args.selection:
+            raise ValueError("Resume model uses a different action factorization")
         if saved.get("input_sha256") != hashlib.sha256(input_bytes).hexdigest():
             raise ValueError("Resume model input mismatch")
         net.load_state_dict(saved["state_dict"])
@@ -169,6 +184,13 @@ def run(args):
     if args.general_zx:
         protocol["proposals"] = "12 general-phase families; finite matching/candidates and per-template phase-operation budget 128"
         protocol["symbolic_state"] = "Exact expression records retained; numeric evaluation only for scoring. Native/macro transitions disabled while raw phases contain expressions."
+    protocol["selection"] = (dict(mode="anchor", order="graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+                                  anchors="raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+                                  policy="learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+                                  empty="explicit zero-reward unchanged-state transition; no hidden resampling",
+                                  entropy="anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+                                  candidate_cap=kernel.total_candidate_cap)
+                             if anchored else dict(mode="global"))
     atomic_json(out/"protocol.json", protocol)
     atomic_json(out/"hh-derivation.json", hh_identity()[2])
     save_graph(out/"objects", diagram)
@@ -190,7 +212,7 @@ def run(args):
     deadline = min(budget_deadline, started+patience.remaining())
     transition = trajectory = accepted = unscored = recovered = updates = 0
     invalid = Counter(); families = Counter(); accepted_families = Counter(); latent_families = Counter()
-    timers = Counter(); rollout = []
+    timers = Counter(); rollout = []; anchor_stats = Counter()
     state = None; status = "budget_reached"; start = None
     step = 0; restart_source = None; last_checkpoint = started
     first_best = {str(root_result["cost"]["gates"]-k): None for k in range(1, 6)}
@@ -203,7 +225,8 @@ def run(args):
             raise ValueError("Resume input/source differs")
         semantic = ["seed", "policy", "jpv", "general_zx", "allow_arbitrary_angles", "horizon", "max_unscored", "max_growth", "max_edge_growth",
                     "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask",
-                    "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout"]
+                    "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout",
+                    "selection", "anchor_candidate_cap"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -219,6 +242,7 @@ def run(args):
         if kernel.jpv is not None:
             kernel.jpv.rounds, kernel.jpv.stats = saved["jpv"]
         kernel.cap_rounds = saved.get("proposal_cap_rounds", {})
+        anchor_stats = Counter(saved.get("anchor_stats", {}))
         rng.bit_generator.state = saved["rng"]
         random.setstate(saved["python_rng"]); np.random.set_state(saved["numpy_rng"])
         torch.set_rng_state(saved["torch_rng"])
@@ -241,6 +265,7 @@ def run(args):
                                          rollout, best, (out/"best.qasm").read_text(), first_best,
                                          (transition, trajectory, accepted, unscored, recovered, updates),
                                          net, optimizer, kernel, rng, shared, patience)
+        checkpoint["anchor_stats"] = dict(anchor_stats)
         torch.save(checkpoint, out/"search-state.pt.tmp")
         (out/"search-state.pt.tmp").replace(out/"search-state.pt")
         atomic_json(out/"checkpoint.json", dict(path="search-state.pt", transition=transition,
@@ -283,13 +308,38 @@ def run(args):
                                    source=restart_source, buffer=pool.summary()))+"\n")
             t = time.perf_counter()
             view = views.get(state.diagram)
+            anchor = anchor_obs = None; anchor_slot = None
+            if anchored:
+                timers["views"] += time.perf_counter()-t
+                t = time.perf_counter()
+                context = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes))
+                anchors = anchor_policy.catalog(state.diagram, view.graph, kernel.jpv is not None)
+                if not anchors:
+                    raise RuntimeError("No anchor exists in this representation")
+                anchor_obs = anchor_policy.anchor_observation(state.diagram, view.graph, anchors, context)
+                if net is None:
+                    anchor_slot = int(rng.integers(len(anchors)))
+                else:
+                    with torch.no_grad():
+                        from torch_geometric.data import Batch
+                        a = Batch.from_data_list([anchor_obs])
+                        anchor_slot = anchor_policy.draw(net.actor(a).flatten()[a.y != -1], rng)
+                anchor = anchors[anchor_slot]
+                anchor_obs.selected = torch.tensor([anchor_slot])
+                anchor_stats["samples"] += 1
+                anchor_stats[anchor.space+":"+anchor.kind] += 1
+                timers["anchor_inference"] += time.perf_counter()-t
+                t = time.perf_counter()
             try:
                 with operation_limit(max(.001, deadline-time.perf_counter())):
-                    available = kernel.prepare(state.diagram, view, view_limit)
+                    available = kernel.prepare(state.diagram, view, view_limit,
+                                               None if anchor is None else anchor.query())
             except TimeoutError:
                 timers["matching"] += time.perf_counter()-t
                 break
             timers["matching"] += time.perf_counter()-t
+            if anchored:
+                anchor_stats["matched_candidates"] += len(available)
             previews = {}
             if feasibility is not None:
                 t = time.perf_counter()
@@ -300,6 +350,11 @@ def run(args):
                     timers["feasibility"] += time.perf_counter()-t
                     break
                 timers["feasibility"] += time.perf_counter()-t
+            if anchored:
+                anchor_stats["eligible_candidates"] += len(available)
+                if not available:
+                    anchor_stats["empty"] += 1
+                    available = [anchor_policy.empty_action()]
             if not available:
                 deadend_file.write(json.dumps(dict(trajectory=trajectory, graph_key=state.key,
                                                   seconds=time.perf_counter()-started))+"\n")
@@ -308,15 +363,18 @@ def run(args):
                 state = None
                 continue
             context = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes))
-            t = time.perf_counter(); obs = observation(state.diagram, view.graph, available, context)
+            t = time.perf_counter()
+            obs = ((anchor_obs, *anchor_policy.conditional_observation(state.diagram, view.graph, available, context, anchor))
+                   if anchored else observation(state.diagram, view.graph, available, context))
             if net is None:
                 slot = int(rng.integers(len(available))); old_log = value = None
             else:
                 with torch.no_grad():
-                    packed = batch([obs]); logits = net.actor(packed[0]).flatten()[packed[0].y != -1].double().numpy()
+                    packed = pack([obs]); policy_graph = packed[1] if anchored else packed[0]
+                    logits = net.actor(policy_graph).flatten()[policy_graph.y != -1].double().numpy()
                     probabilities = np.exp(logits-logits.max()); probabilities /= probabilities.sum()
                     slot = min(int(np.searchsorted(np.cumsum(probabilities), rng.random(), side="right")), len(available)-1)
-                    _, logs, _, values, _, _ = net.get_action_and_value(packed, action=torch.tensor([slot]))
+                    _, logs, _, values, anchor_log, local_log = net.get_action_and_value(packed, action=torch.tensor([slot]))
                     old_log = float(logs[0]); value = float(values[0])
             timers["inference"] += time.perf_counter()-t
             chosen = available[slot]; transition += 1; step += 1; families[chosen.family] += 1
@@ -326,6 +384,11 @@ def run(args):
                        selection=dict(slot=slot, log_probability=old_log, value=value), context=context,
                        parent_cost=state.cost, last_scored_cost=state.last_counts, unscored_depth_before=state.unscored_depth,
                        deadline_seconds=deadline-started)
+            if anchored:
+                row["anchor"] = anchor.record()
+                row["selection"].update(anchor_slot=anchor_slot, anchors=len(anchors),
+                                        anchor_log_probability=None if net is None else float(anchor_log[0]),
+                                        conditional_log_probability=None if net is None else float(local_log[0]))
             child = child_view = None; reason = None; rejected = None; result = None; auxiliary = []
             t = time.perf_counter()
             try:
@@ -349,7 +412,7 @@ def run(args):
             except Exception as exc:
                 rejected = type(exc).__name__+": "+str(exc); invalid[rejected] += 1
             timers["rewrite_verify"] += time.perf_counter()-t
-            if rejected is None:
+            if rejected is None and chosen.mode != "noop":
                 t = time.perf_counter()
                 try:
                     evaluation = scorer.evaluate(child_view, min(args.extraction_timeout, max(.001, deadline-time.perf_counter())))
@@ -373,7 +436,11 @@ def run(args):
             if time.perf_counter() > deadline:
                 row["status"] = "excluded_after_deadline"; events.write(json.dumps(row)+"\n"); break
             done = step >= args.horizon; reward = 0.
-            if rejected is None:
+            if rejected is None and chosen.mode == "noop":
+                row.update(status="anchor_noop", admitted=False, unscored_depth=state.unscored_depth,
+                           graph_key=state.key, cost=state.cost, view_key=view.key,
+                           raw_operator_error=view.error, vertices=len(child.nodes), edges=len(child.edges))
+            elif rejected is None:
                 old_unscored = state.unscored_depth
                 state, reward = following_state(state, child, result)
                 accepted += 1; accepted_families[chosen.family] += 1
@@ -420,8 +487,8 @@ def run(args):
                     next_obs = observation(state.diagram, next_view.graph, [], ctx)
                     with torch.no_grad():
                         bootstrap = float(net.get_value(batch([next_obs])[1])[0])
-                update = ppo_update(net, optimizer, rollout, bootstrap, dict(epochs=4, minibatch=32), deadline)
-                choices = [int((r[0][0].y != -1).sum()) for r in rollout]
+                update = update_ppo(net, optimizer, rollout, bootstrap, dict(epochs=4, minibatch=32), deadline)
+                choices = [int((r[0][1 if anchored else 0].y != -1).sum()) for r in rollout]
                 fraction = sum(k > 1 for k in choices)/len(choices)
                 update["metrics"]["conditional_normalized_entropy"] = (update["metrics"]["normalized_entropy"]/fraction if fraction else None)
                 update["metrics"]["forced_action_fraction"] = 1-fraction
@@ -435,6 +502,7 @@ def run(args):
                 atomic_json(out/"progress.json", dict(transitions=transition, accepted=accepted, unscored=unscored,
                                                      recovered=recovered, updates=updates, best=best,
                                                      seconds=time.perf_counter()-started, buffer=pool.summary(), timers=dict(timers),
+                                                     anchor_stats=dict(anchor_stats),
                                                      patience=patience.record(), patience_remaining_seconds=patience.remaining()))
         if patience.remaining() <= 0:
             status = "no_improvement_timeout"
@@ -455,6 +523,7 @@ def run(args):
         torch.save(dict(state_dict=net.state_dict(), steps=transition, updates=updates,
                         optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
                         input_sha256=hashlib.sha256(input_bytes).hexdigest(),
+                        selection=args.selection,
                         scope="model/Adam only, not a complete search checkpoint"), out/"final.pt")
     checkpoint_now()
     if shared is not None:
@@ -469,6 +538,7 @@ def run(args):
                   rejections=dict(invalid), buffer=pool.summary(), checked_qasm=len(scorer.valid_qasm),
                   view_cache=dict(hits=views.hits, misses=views.misses),
                   jpv_proposals=None if kernel.jpv is None else kernel.jpv.stats,
+                  anchor_stats=dict(anchor_stats),
                   completion=scorer.summary(),
                   feasibility=None if feasibility is None else feasibility.summary(),
                   max_graph_operator_error=views.max_error, max_qasm_operator_error=scorer.max_valid_error,
@@ -512,6 +582,10 @@ def parser():
     p.add_argument("--allow-arbitrary-angles", action="store_true",
                    help="Preserve non-pi/4 phases as context; skip inapplicable JPV matches")
     p.add_argument("--policy", choices=["uniform", "frozen", "online"], default="uniform")
+    p.add_argument("--selection", choices=["global", "anchor"], default="global",
+                   help="Sample a topology-only anchor before any rule matching; global preserves the baseline")
+    p.add_argument("--anchor-candidate-cap", type=int, default=8,
+                   help="Maximum local instances/previews after sampling one anchor")
     p.add_argument("--seconds", type=float, default=1200.)
     p.add_argument("--no-improvement-seconds", type=float, default=0., help="Strict total-gate plateau patience; --seconds 0 disables the overall cap")
     p.add_argument("--checkpoint-seconds", type=float, default=0., help="Atomic full search-state checkpoint interval")

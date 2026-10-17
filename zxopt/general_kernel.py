@@ -116,15 +116,21 @@ class GeneralKernel:
         self.prepared_fields = (dict(e.pivot_info_dict), dict(e.gadget_info_dict),
                                 dict(e.gadgets), list(e.gadget_fusion_ids))
 
-    def prepare(self, raw, view, max_view_vertices):
+    def prepare(self, raw, view, max_view_vertices, anchor=None):
         result = []
         # An evaluated scoring view must never erase the symbolic proof state.
         # Native/macro transitions remain exact rational transitions only.
-        if view.graph is not None and not any(isinstance(n.phase, Phase) for n in raw.nodes.values()):
+        if (view.graph is not None and not any(isinstance(n.phase, Phase) for n in raw.nodes.values())
+                and (anchor is None or anchor[0] == "view")):
             before = graph_key(view.graph)
-            _, native = self.native.prepare(view.graph)
-            self.remember_matches(view)
-            extra = candidates(view.graph, max_view_vertices, self.candidate_cap)
+            if anchor is None:
+                _, native = self.native.prepare(view.graph)
+            else:
+                native = self.native.prepare_at(view.graph, anchor[2]) if anchor[1] == "node" else []
+            if anchor is None or anchor[1] == "node":
+                self.remember_matches(view)
+            extra = candidates(view.graph, max_view_vertices, self.candidate_cap,
+                               None if anchor is None else (anchor[1], anchor[2]))
             for _, identifier, action in native:
                 result.append(HybridAction("legacy", action.kind, action, identifier, view.key,
                                            action.vertices, (F(0),)*3, (0., 0., 0.), 0))
@@ -135,8 +141,8 @@ class GeneralKernel:
                                            growth(view.graph, action)))
             if graph_key(view.graph) != before:
                 raise AssertionError("Macro preparation mutated its independent scoring view")
-        if self.jpv is not None:
-            for action in self.jpv.build(raw):
+        if self.jpv is not None and (anchor is None or anchor[0] == "raw"):
+            for action in self.jpv.build(raw, None if anchor is None else (anchor[1], anchor[2])):
                 rule = action.axiom
                 l, r = (rule.left, rule.right) if action.direction == "forward" else (rule.right, rule.left)
                 params = rule.parameters
@@ -153,7 +159,8 @@ class GeneralKernel:
                                            action.direction))
         if self.total_candidate_cap and len(result) > self.total_candidate_cap:
             import numpy as np
-            key = raw.digest(); visit = self.cap_rounds.get(key, 0); self.cap_rounds[key] = visit+1
+            key = raw.digest() + ("" if anchor is None else ":"+str(anchor))
+            visit = self.cap_rounds.get(key, 0); self.cap_rounds[key] = visit+1
             seed = hashlib.sha256((str(self.cap_seed)+key+":"+str(visit)).encode()).digest()
             rng = np.random.default_rng(int.from_bytes(seed[:8], "big"))
             buckets = {}
@@ -173,6 +180,8 @@ class GeneralKernel:
         return result
 
     def step(self, raw, view, action):
+        if action.mode == "noop":
+            return raw.clone(), []
         if action.mode == "jpv":
             child = action.payload.apply(raw)
         else:

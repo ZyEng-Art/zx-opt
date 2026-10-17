@@ -148,7 +148,7 @@ def apply(graph, action):
     return g.copy()
 
 
-def candidates(graph, max_vertices, cap=32):
+def candidates(graph, max_vertices, cap=32, anchor=None):
     """Deterministic bounded proposals, interleaved by rule family.
 
     These bounds and the pi/4 phase menu deliberately sacrifice completeness.
@@ -156,10 +156,13 @@ def candidates(graph, max_vertices, cap=32):
     families = {k: [] for k in ["identity_insert", "phase_split", "spider_split",
                                "gadget_split", "phase_transfer", "spider_nest"]}
     phases = (Fraction(1, 4), Fraction(-1, 4), Fraction(1, 2))
-    for edge in sorted(graph.edges()):
+    edges = (sorted(graph.edges()) if anchor is None else
+             [anchor[1]] if anchor[0] == "edge" else [])
+    for edge in edges:
         if graph.edge_type(edge) == E.HADAMARD:
             families["identity_insert"].append(Action("identity_insert", tuple(graph.edge_st(edge))))
-    for v in sorted(graph.vertices()):
+    vertices = sorted(graph.vertices()) if anchor is None else [anchor[1]] if anchor[0] == "node" else []
+    for v in vertices:
         if graph.type(v) != V.Z:
             continue
         neighbours = tuple(sorted(graph.neighbors(v)))
@@ -170,16 +173,21 @@ def candidates(graph, max_vertices, cap=32):
             for part in (neighbours[:1], neighbours[-1:], neighbours[:len(neighbours)//2]):
                 for phase in (Fraction(0), Fraction(1, 4)):
                     families["spider_split"].append(Action("spider_split", (v,), phase, part))
-    gs = gadgets(graph)
-    for root, leaf, targets in gs:
+    gs = [] if anchor is not None and anchor[0] != "node" else gadgets(graph)
+    local_gs = gs if anchor is None else [g for g in gs if anchor[0] == "node" and anchor[1] in g[:2]]
+    for root, leaf, targets in local_gs:
         for phase in phases:
             families["gadget_split"].append(Action("gadget_split", (root, leaf), phase))
-    for a, b in combinations(gs, 2):
+    pairs = (combinations(gs, 2) if anchor is None else
+             ((a, b) for a in local_gs for b in gs if a != b))
+    for a, b in pairs:
         if a[2] == b[2]:
             for phase in phases:
                 families["phase_transfer"].append(Action("phase_transfer", (a[1], b[1]), phase))
-    contexts = {t for _, _, t in gs if 2 <= len(t) <= 4}
-    for a, b in combinations(gs[:24], 2):
+    contexts = {t for _, _, t in local_gs if 2 <= len(t) <= 4}
+    pairs = (combinations(gs[:24], 2) if anchor is None else
+             ((a, b) for a in local_gs for b in gs[:24] if a != b))
+    for a, b in pairs:
         union = tuple(sorted(set(a[2]) | set(b[2])))
         if 2 <= len(union) <= 4:
             contexts.add(union)

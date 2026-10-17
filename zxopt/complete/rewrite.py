@@ -47,7 +47,7 @@ class MatchLimit(RuntimeError):
     """Optional caller-selected deterministic matching work budget exhausted."""
 
 
-def matches(host, pattern, ignore_phases=False, work_limit=None):
+def matches(host, pattern, ignore_phases=False, work_limit=None, vertex_anchor=None):
     """Enumerate every finite embedding of an instantiated registry pattern.
 
     A concrete pattern has finitely many matches in a finite host. In contrast,
@@ -83,15 +83,39 @@ def matches(host, pattern, ignore_phases=False, work_limit=None):
             labels.setdefault((n.kind, None if ignore_phases else n.phase, hd[w]), []).append(w)
     choices = {v: labels.get((pattern.nodes[v].kind,
                              None if ignore_phases else pattern.nodes[v].phase, pd[v]), []) for v in internal}
+    if vertex_anchor is not None:
+        pv, hv = vertex_anchor
+        if pv not in internal:
+            raise ValueError("Pattern anchor must be an internal vertex")
+        if hv not in choices[pv]:
+            return
+        choices[pv] = [hv]
     order = sorted(internal, key=lambda v: (len(choices[v]), -pd[v], v))
+    if vertex_anchor is not None:
+        # Pin the root before exploring the surrounding pattern. Subsequent
+        # connected vertices use the host adjacency, not a whole-graph scan.
+        order.remove(vertex_anchor[0]); order.insert(0, vertex_anchor[0])
+    adjacent = {v: set() for v in host.nodes}
+    for a, b in host.edges:
+        adjacent[a].add(b); adjacent[b].add(a)
     mapping = {}
 
     def vertex_assign(k):
         if k == len(order):
             yield from edge_assign(0, {}, set())
             return
-        v = order[k]
+        remaining = [v for v in order if v not in mapping]
+        v = (min(remaining, key=lambda v: (-sum(pattern_edges.get(tuple(sorted((u, v))), 0) > 0
+                                               for u in mapping), len(choices[v]), -pd[v], v))
+             if vertex_anchor is not None and mapping else order[k])
+        allowed = None
+        if vertex_anchor is not None:
+            for u, target in mapping.items():
+                if pattern_edges.get(tuple(sorted((u, v))), 0):
+                    allowed = adjacent[target].copy() if allowed is None else allowed & adjacent[target]
         for w in choices[v]:
+            if allowed is not None and w not in allowed:
+                continue
             tick()
             if w in mapping.values():
                 continue
