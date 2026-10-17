@@ -20,7 +20,8 @@
           "rz": 21,
           "cx": 18,
           "h": 6
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/tof_3.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/tof_3.qasm",
@@ -61,7 +62,8 @@
           "rz": 28,
           "cx": 24,
           "h": 6
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/barenco_tof_3.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/barenco_tof_3.qasm",
@@ -103,7 +105,8 @@
           "rz": 28,
           "h": 6,
           "x": 1
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/mod5_4.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/mod5_4.qasm",
@@ -145,7 +148,8 @@
           "rz": 35,
           "cx": 30,
           "h": 10
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/tof_4.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/tof_4.qasm",
@@ -186,7 +190,8 @@
           "rz": 56,
           "cx": 48,
           "h": 10
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/barenco_tof_4.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/barenco_tof_4.qasm",
@@ -227,7 +232,8 @@
           "rz": 49,
           "cx": 42,
           "h": 14
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/tof_5.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/tof_5.qasm",
@@ -269,7 +275,8 @@
           "cx": 48,
           "h": 14,
           "x": 8
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/mod_mult_55.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/mod_mult_55.qasm",
@@ -311,7 +318,8 @@
           "cx": 70,
           "rz": 70,
           "h": 10
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/vbe_adder_3.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/vbe_adder_3.qasm",
@@ -352,7 +360,8 @@
           "rz": 84,
           "cx": 72,
           "h": 14
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/barenco_tof_5.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/barenco_tof_5.qasm",
@@ -393,7 +402,8 @@
           "cx": 80,
           "rz": 70,
           "h": 20
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/csla_mux_3.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/csla_mux_3.qasm",
@@ -435,7 +445,8 @@
           "rz": 77,
           "h": 22,
           "x": 8
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/rc_adder_6.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/rc_adder_6.qasm",
@@ -477,7 +488,8 @@
           "rz": 112,
           "cx": 99,
           "h": 14
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/gf2^4_mult.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^4_mult.qasm",
@@ -518,7 +530,8 @@
           "rz": 119,
           "cx": 102,
           "h": 34
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/tof_10.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/tof_10.qasm",
@@ -560,7 +573,8 @@
           "cx": 105,
           "h": 30,
           "x": 24
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/mod_red_21.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/mod_red_21.qasm",
@@ -603,7 +617,8 @@
           "rz": 105,
           "h": 30,
           "x": 8
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/hwb6.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/hwb6.qasm",
@@ -645,7 +660,8 @@
           "rz": 175,
           "cx": 154,
           "h": 18
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/gf2^5_mult.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^5_mult.qasm",
@@ -687,7 +703,8 @@
           "cx": 168,
           "x": 28,
           "h": 28
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/csum_mux_9.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/csum_mux_9.qasm",
@@ -729,7 +746,8 @@
           "rz": 224,
           "cx": 192,
           "h": 34
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/barenco_tof_10.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/barenco_tof_10.qasm",
@@ -771,7 +789,8 @@
           "cx": 186,
           "h": 39,
           "x": 15
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/qcla_com_7.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/qcla_com_7.qasm",
@@ -813,7 +832,8 @@
           "cx": 236,
           "rz": 161,
           "h": 46
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/ham15-low.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/ham15-low.qasm",
@@ -854,7 +874,8 @@
           "rz": 252,
           "cx": 221,
           "h": 22
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/gf2^6_mult.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^6_mult.qasm",
@@ -895,7 +916,8 @@
           "rz": 238,
           "cx": 233,
           "h": 50
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/qcla_adder_10.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/qcla_adder_10.qasm",
@@ -936,7 +958,8 @@
           "rz": 343,
           "cx": 300,
           "h": 26
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/gf2^7_mult.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^7_mult.qasm",
@@ -977,7 +1000,8 @@
           "rz": 448,
           "cx": 405,
           "h": 30
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/gf2^8_mult.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/gf2^8_mult.qasm",
@@ -1019,7 +1043,8 @@
           "cx": 382,
           "h": 82,
           "x": 7
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/qcla_mod_7.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/qcla_mod_7.qasm",
@@ -1062,7 +1087,8 @@
           "rz": 399,
           "h": 80,
           "x": 12
-        }
+        },
+        "copied_path": "inputs/quarl-nam-raw/adder_8.qasm"
       },
       "rotation_merged": {
         "path": "benchmark_inputs/quarl_paper_v1/nam_rm/adder_8.qasm",

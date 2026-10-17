@@ -1,0 +1,26 @@
+{
+  "status": "development_checks_passed",
+  "unit_tests": 63,
+  "small_plateau": {
+    "seconds": 5,
+    "observed_stop": "no_improvement_timeout",
+    "loop_seconds": 5.001110834,
+    "transitions": 46,
+    "updates": 5,
+    "full_checkpoints": true
+  },
+  "large_identity_prototypes": [
+    "barenco_tof_3 5q: passed",
+    "tof_5 9q: passed",
+    "qcla_adder_10 36q: passed",
+    "adder_8 24q: passed"
+  ],
+  "development_failures": [
+    "Container base python initially lacked torch; corrected to image python310_torch29_cuda environment",
+    "Package downloads unavailable on node23; retained attempt logs, switched both nodes to the completed verified offline runtime",
+    "Uncapped36q 60s development trial spent57s in feasibility and sampled0 actions; finite total menu added",
+    "Cap64 development trial finalized with source-change assertion because source was edited during this development run; not counted as a completed experiment; preserved raw directory",
+    "Initial local input-audit invocation used system Python without Qiskit; rerun in fixed diagnostic environment before deployment"
+  ],
+  "scope": "Preparation and local tests, not formal training results or measured3h plateau stop"
+}
