@@ -1,0 +1,6965 @@
+{
+  "status": "demonstration_path_reverified",
+  "source_whole_audit_passed": false,
+  "development_unaudited_source": true,
+  "source_trial": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s197",
+  "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+  "source_protocol_sha256": "49f8ba02d5c4ff55b7fc33ebd096f15ac8df6200703707aeb3a795b4259fd3d4",
+  "source_events_sha256": "76871e6dd11443970c43f64539fc17e918dca0c39327cf67ce324ae2b9617f2b",
+  "source_report_sha256": "6d1a3738bf7eee3e483317b916291df342e6f1786c22637b10e7bbf9f66b6a82",
+  "source_initial_sha256": "399b8f10e429735b8ec64f40df79a01ac70475bc3c0d5d4432e73658225c7ae0",
+  "input_sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92",
+  "root_graph": "31983b7d496c0ac4ac8b4eafe168c30f9b6bad7f31422579af3a17ab366326c2",
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "target_transition": 14008,
+  "target_graph": "10851e87fbabdd68ccc1701eac4d2b448d42d2f74e49165116ff48d53950deca",
+  "target_cost": {
+    "gates": 36,
+    "cx": 14,
+    "depth": 34
+  },
+  "examples": 125,
+  "path": [
+    {
+      "transition": 1,
+      "trajectory": 1,
+      "trajectory_step": 1,
+      "parent": "31983b7d496c0ac4ac8b4eafe168c30f9b6bad7f31422579af3a17ab366326c2",
+      "child": "3b769ee971f27ea9d664c42b02b162a9e7038d72ddd62e09b7842b18ef259605",
+      "action": {
+        "mode": "macro",
+        "family": "phase_split",
+        "action": {
+          "kind": "phase_split",
+          "vertices": [
+            56
+          ],
+          "phase": "1/2",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "32dd70225bef72e2e918e541944dbf4e7ef731d00f193e9bdec7f0f426886c87"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 56
+      },
+      "visits_before": 0,
+      "candidate_sha256": "3f41c83b1bdf077212d7b8eb1efcfc3630fc9c7fc8276f6e265a948e55c2cfc5",
+      "anchor_slot": 343,
+      "slot": 6,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 2,
+      "trajectory": 1,
+      "trajectory_step": 2,
+      "parent": "3b769ee971f27ea9d664c42b02b162a9e7038d72ddd62e09b7842b18ef259605",
+      "child": "a1a3b01ba6702ed7a16879b31618c5b7fb29c34eca6c3225cac17e6055d7cd65",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                116,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "3b769ee971f27ea9d664c42b02b162a9e7038d72ddd62e09b7842b18ef259605"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 116
+      },
+      "visits_before": 0,
+      "candidate_sha256": "63ae2790610e2e31c1555992c0b9619cb665ce218a2580c3617d287eeca10c8b",
+      "anchor_slot": 265,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 3,
+      "trajectory": 1,
+      "trajectory_step": 3,
+      "parent": "a1a3b01ba6702ed7a16879b31618c5b7fb29c34eca6c3225cac17e6055d7cd65",
+      "child": "a270c00f01ff43a4b586d2df21c1210061f3325155f6e160d89d2854979c81da",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            19,
+            24
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "83d723ccd07e659de9d5e17d782d0d0c21e88f020f7a60b7615c7796e0020a6c"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          19,
+          24
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "fdf5bab987c15bfcf4b4a3eeb324021ed0a150ccfbb4574a48eaf0718af4ccaf",
+      "anchor_slot": 402,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 4,
+      "trajectory": 1,
+      "trajectory_step": 4,
+      "parent": "a270c00f01ff43a4b586d2df21c1210061f3325155f6e160d89d2854979c81da",
+      "child": "ef5bcdbb79294c7ffa27e94167122943adf6d7348209c6c5deb59549319eef4d",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                91
+              ],
+              [
+                3,
+                79
+              ],
+              [
+                5,
+                74
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                46
+              ],
+              [
+                2,
+                23
+              ],
+              [
+                4,
+                12
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                47,
+                0
+              ],
+              [
+                4,
+                22,
+                1
+              ],
+              [
+                6,
+                11,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "a270c00f01ff43a4b586d2df21c1210061f3325155f6e160d89d2854979c81da"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 15
+      },
+      "visits_before": 0,
+      "candidate_sha256": "fc5e4ac5ffa6436256aaa10f3f84910ab14329a701b62726aedd3176ec2f713c",
+      "anchor_slot": 10,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 5,
+      "trajectory": 1,
+      "trajectory_step": 5,
+      "parent": "ef5bcdbb79294c7ffa27e94167122943adf6d7348209c6c5deb59549319eef4d",
+      "child": "817106d6b187e62c1b7805385a2026308ecba2548c9ea2df965f0955f9e7f108",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "X"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                71
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                6,
+                0
+              ],
+              [
+                2,
+                5,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "ef5bcdbb79294c7ffa27e94167122943adf6d7348209c6c5deb59549319eef4d"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 71
+      },
+      "visits_before": 0,
+      "candidate_sha256": "cc3d95e510855fdfc5af7729456010ce967307a52dd60cbe58c20c90c10482aa",
+      "anchor_slot": 60,
+      "slot": 1,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 6,
+      "trajectory": 1,
+      "trajectory_step": 6,
+      "parent": "817106d6b187e62c1b7805385a2026308ecba2548c9ea2df965f0955f9e7f108",
+      "child": "072102315ec0cf122b8b6495fb17ecfec62c706fda0d35b6bdd8d3032eac9a65",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "7/4",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                45
+              ],
+              [
+                1,
+                135
+              ],
+              [
+                3,
+                134
+              ],
+              [
+                5,
+                131
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                128
+              ],
+              [
+                2,
+                127
+              ],
+              [
+                4,
+                121
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                129,
+                0
+              ],
+              [
+                4,
+                126,
+                1
+              ],
+              [
+                6,
+                120,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "817106d6b187e62c1b7805385a2026308ecba2548c9ea2df965f0955f9e7f108"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 45
+      },
+      "visits_before": 0,
+      "candidate_sha256": "15577509d1e67758879657ba07ccf721399d3501a243568174dd241bf483cd0d",
+      "anchor_slot": 39,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 7,
+      "trajectory": 1,
+      "trajectory_step": 7,
+      "parent": "072102315ec0cf122b8b6495fb17ecfec62c706fda0d35b6bdd8d3032eac9a65",
+      "child": "a8c0ffbafb1e031405a030b32ce593ad8e807631b15e163a9f8bb59accb9e679",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "Z"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                122
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                102,
+                0
+              ],
+              [
+                2,
+                101,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "072102315ec0cf122b8b6495fb17ecfec62c706fda0d35b6bdd8d3032eac9a65"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 122
+      },
+      "visits_before": 0,
+      "candidate_sha256": "6d24b515afe8008d611b2b4d5bc5a8043af4f0e9f94227902d4e8babaab8e292",
+      "anchor_slot": 106,
+      "slot": 2,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 8,
+      "trajectory": 1,
+      "trajectory_step": 8,
+      "parent": "a8c0ffbafb1e031405a030b32ce593ad8e807631b15e163a9f8bb59accb9e679",
+      "child": "72a55ed3142ead13d031e5defb6d649e327c94babd71860debebecaf4d03bc5f",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                162,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "a8c0ffbafb1e031405a030b32ce593ad8e807631b15e163a9f8bb59accb9e679"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 162
+      },
+      "visits_before": 0,
+      "candidate_sha256": "189a6c5ac430816421384e74cf73d3e0bd2f512c8370e7b93be16d6e09dcaef0",
+      "anchor_slot": 315,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 9,
+      "trajectory": 1,
+      "trajectory_step": 9,
+      "parent": "72a55ed3142ead13d031e5defb6d649e327c94babd71860debebecaf4d03bc5f",
+      "child": "918bc43ebc0fb66f73e2ef370be19250ffa0f82414d6f782cc70da6f8326108c",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "Z"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                77
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                13,
+                1
+              ],
+              [
+                2,
+                14,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "72a55ed3142ead13d031e5defb6d649e327c94babd71860debebecaf4d03bc5f"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 77
+      },
+      "visits_before": 0,
+      "candidate_sha256": "9aea36289f9eb077e992682ee81223d836e307554d06c482e04c77a18778a97a",
+      "anchor_slot": 63,
+      "slot": 1,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 10,
+      "trajectory": 1,
+      "trajectory_step": 10,
+      "parent": "918bc43ebc0fb66f73e2ef370be19250ffa0f82414d6f782cc70da6f8326108c",
+      "child": "ad60719347be48e43883b606805db51004910ad601a9925b932b532a83125c30",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                107,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "918bc43ebc0fb66f73e2ef370be19250ffa0f82414d6f782cc70da6f8326108c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 107
+      },
+      "visits_before": 0,
+      "candidate_sha256": "181c65ca4fd4684b5d9d56e32c54ffb4f12dc0eeba05d74815fc071d53f6453b",
+      "anchor_slot": 264,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 11,
+      "trajectory": 1,
+      "trajectory_step": 11,
+      "parent": "ad60719347be48e43883b606805db51004910ad601a9925b932b532a83125c30",
+      "child": "53af5aef87e421c8321998abf36dbc75b7afe5f6a494cb6352a075b4a2669757",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            32,
+            75
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "b3bddfb5e911a15c7e9e08ba9ea6827de5cbce37d0223913ffec6d47dcf43410"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          32,
+          75
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "f5c66e6532a47028f8d631e98da7009f0a7bde338a18b768ce56d47b3e76cb04",
+      "anchor_slot": 456,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 12,
+      "trajectory": 1,
+      "trajectory_step": 12,
+      "parent": "53af5aef87e421c8321998abf36dbc75b7afe5f6a494cb6352a075b4a2669757",
+      "child": "ab1dacd4832706fb3fc31064b0af462d52d4c5bf499ad84217110e84627f82f3",
+      "action": {
+        "mode": "macro",
+        "family": "spider_split",
+        "action": {
+          "kind": "spider_split",
+          "vertices": [
+            71
+          ],
+          "phase": "0",
+          "subset": [
+            70
+          ]
+        },
+        "identifier": null,
+        "parent_view_key": "1fe8f11057ebd88e30d7a06f340777356706d9bd5eca33dd428151d10e8c2684"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 71
+      },
+      "visits_before": 0,
+      "candidate_sha256": "5123d0cd3bb602ed18c3ccc1f3fe7da61eba9c2ad685dcaa15c8ab1c9880a828",
+      "anchor_slot": 425,
+      "slot": 1,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 13,
+      "trajectory": 1,
+      "trajectory_step": 13,
+      "parent": "ab1dacd4832706fb3fc31064b0af462d52d4c5bf499ad84217110e84627f82f3",
+      "child": "38d728ac6e177096557d73d8f76054fc09a60a303ea8c17d0778abb5c51ce70e",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "Z"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                162
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                143,
+                0
+              ],
+              [
+                2,
+                142,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "ab1dacd4832706fb3fc31064b0af462d52d4c5bf499ad84217110e84627f82f3"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 162
+      },
+      "visits_before": 0,
+      "candidate_sha256": "0a71004277e02d9b8e46d89003acefb647d401058288e76fda38e05e6c4575e4",
+      "anchor_slot": 152,
+      "slot": 2,
+      "cost": {
+        "gates": 52,
+        "cx": 23,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 14,
+      "trajectory": 1,
+      "trajectory_step": 14,
+      "parent": "38d728ac6e177096557d73d8f76054fc09a60a303ea8c17d0778abb5c51ce70e",
+      "child": "505e7c9fec9251a925ca80b2cb4adeb745b1c59c5c2d37c8e34f897fda0f8614",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            13,
+            14
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "55a5771e6b19900071b9ffb5b6093327532b2a250df5c6e41e168c9551759b61"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          13,
+          14
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "39162b46b467aef4edefdd0dc7f9093ad2df09279c6f14ad5c4623d4bf02f5a6",
+      "anchor_slot": 473,
+      "slot": 0,
+      "cost": {
+        "gates": 52,
+        "cx": 23,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 15,
+      "trajectory": 1,
+      "trajectory_step": 15,
+      "parent": "505e7c9fec9251a925ca80b2cb4adeb745b1c59c5c2d37c8e34f897fda0f8614",
+      "child": "f7afc296b84979bdbdde781642d1588b6ad4003e6579185cf82c4a63690ce27e",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "1/4",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                29
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                109,
+                0
+              ],
+              [
+                2,
+                108,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "505e7c9fec9251a925ca80b2cb4adeb745b1c59c5c2d37c8e34f897fda0f8614"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 29
+      },
+      "visits_before": 0,
+      "candidate_sha256": "1b83626ea8688eff8693b3de5de057a77d25af88cffe5bdbfae4d2d905d83de7",
+      "anchor_slot": 24,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 16,
+      "trajectory": 1,
+      "trajectory_step": 16,
+      "parent": "f7afc296b84979bdbdde781642d1588b6ad4003e6579185cf82c4a63690ce27e",
+      "child": "ac1d5c32c7ca3e50e731e7e85bb1421dbf3b94052ccd3715ae10b6d9913bfac8",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            84,
+            85
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "0a4c8589bf3011744c0c6ea8412605743e9c1f9be7600d4711d52b84d2a94645"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          84,
+          85
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "184a4d044551331453dd703eae5da9121383ae3637cff69ac1a575eecf492ff7",
+      "anchor_slot": 568,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 17,
+      "trajectory": 1,
+      "trajectory_step": 17,
+      "parent": "ac1d5c32c7ca3e50e731e7e85bb1421dbf3b94052ccd3715ae10b6d9913bfac8",
+      "child": "a79fd1f6f08c171d4309793c75d380492edf2d3bf6029895be8fa07acc18700d",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                28,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "ac1d5c32c7ca3e50e731e7e85bb1421dbf3b94052ccd3715ae10b6d9913bfac8"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 28
+      },
+      "visits_before": 0,
+      "candidate_sha256": "209abde9d52fd5f1b7d8053fe8f16066a34d85267cfe4f9edf776c5a3a3aa77e",
+      "anchor_slot": 217,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 18,
+      "trajectory": 1,
+      "trajectory_step": 18,
+      "parent": "a79fd1f6f08c171d4309793c75d380492edf2d3bf6029895be8fa07acc18700d",
+      "child": "14e77d670fbc56445bbd2229c9eef63a64db61971beee33a87b82b4adccaef17",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            21,
+            48
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "eadfd887f9e3350d44c24d94a8b8be4a5d34f5cfa7ee2c0c801adde73df84682"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          21,
+          48
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "0be17e9de8bc305a17838b184826f8e36111e305f4cf4f610e624c79411c7f84",
+      "anchor_slot": 514,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 19,
+      "trajectory": 1,
+      "trajectory_step": 19,
+      "parent": "14e77d670fbc56445bbd2229c9eef63a64db61971beee33a87b82b4adccaef17",
+      "child": "3df61a0275a8586c5372f929a961698907e15dc22b635e1b4f221ad6a683207d",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                167,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "14e77d670fbc56445bbd2229c9eef63a64db61971beee33a87b82b4adccaef17"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 167
+      },
+      "visits_before": 0,
+      "candidate_sha256": "d16ebca72e694cf75d8759b61fa568db481b96f9dea6e5f9f59c63e5acea2f8e",
+      "anchor_slot": 360,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 20,
+      "trajectory": 1,
+      "trajectory_step": 20,
+      "parent": "3df61a0275a8586c5372f929a961698907e15dc22b635e1b4f221ad6a683207d",
+      "child": "24b7e866d7678179461b1435209a29950943410a28140c28bc73c28d3b42d1d9",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                141,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "3df61a0275a8586c5372f929a961698907e15dc22b635e1b4f221ad6a683207d"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 141
+      },
+      "visits_before": 0,
+      "candidate_sha256": "aa9dc05152b663c8743fdbc3f913647b9dc531fc0ec0cf3f968a30779b432890",
+      "anchor_slot": 335,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 21,
+      "trajectory": 1,
+      "trajectory_step": 21,
+      "parent": "24b7e866d7678179461b1435209a29950943410a28140c28bc73c28d3b42d1d9",
+      "child": "9c2679093740a313b4ccb7f244ab47b2ffd1bfd29b9ba90ff198700770e587e2",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                84
+              ],
+              [
+                1,
+                111
+              ],
+              [
+                3,
+                187
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                47
+              ],
+              [
+                2,
+                200
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                46,
+                1
+              ],
+              [
+                4,
+                201,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "24b7e866d7678179461b1435209a29950943410a28140c28bc73c28d3b42d1d9"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 111
+      },
+      "visits_before": 0,
+      "candidate_sha256": "e9332086fa74a025f8430cbfc13500330fb856d39f8939a53b28ffe1b659dd3e",
+      "anchor_slot": 101,
+      "slot": 1,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 22,
+      "trajectory": 1,
+      "trajectory_step": 22,
+      "parent": "9c2679093740a313b4ccb7f244ab47b2ffd1bfd29b9ba90ff198700770e587e2",
+      "child": "30581465f3a1b7d09f97dd4bd596613ec3988043135ff97b53a5df56df85ada7",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                132,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "9c2679093740a313b4ccb7f244ab47b2ffd1bfd29b9ba90ff198700770e587e2"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 132
+      },
+      "visits_before": 0,
+      "candidate_sha256": "1d9325ff62f3caa7527b054041b411d64b19e5009f10b196d6f5aa9221f85e84",
+      "anchor_slot": 325,
+      "slot": 0,
+      "cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 23,
+      "trajectory": 1,
+      "trajectory_step": 23,
+      "parent": "30581465f3a1b7d09f97dd4bd596613ec3988043135ff97b53a5df56df85ada7",
+      "child": "f518a88d80716a2b401c28b60df10a434f47a515ee60f122cdb65de892de797c",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "1/2",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                69
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                177,
+                0
+              ],
+              [
+                2,
+                14,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "30581465f3a1b7d09f97dd4bd596613ec3988043135ff97b53a5df56df85ada7"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 69
+      },
+      "visits_before": 0,
+      "candidate_sha256": "019463e215f1d9def15b065cd96e3b0eb0c5c834f44f8a92397b173a0e29c16b",
+      "anchor_slot": 59,
+      "slot": 0,
+      "cost": {
+        "gates": 52,
+        "cx": 23,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 24,
+      "trajectory": 1,
+      "trajectory_step": 24,
+      "parent": "f518a88d80716a2b401c28b60df10a434f47a515ee60f122cdb65de892de797c",
+      "child": "327c308818c968760419b318e1e462a8df8555eab3eb148153f67ad0e399ae04",
+      "action": {
+        "mode": "macro",
+        "family": "phase_split",
+        "action": {
+          "kind": "phase_split",
+          "vertices": [
+            26
+          ],
+          "phase": "1/2",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "ac8282855bfb94f6014d1f3de1197f92fe0e7ebe048d7f35ccc3167698752fd8"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 26
+      },
+      "visits_before": 0,
+      "candidate_sha256": "763e953c2c7f923b7344d504195d65570a01595bab6f9783439a538290ce9cdd",
+      "anchor_slot": 423,
+      "slot": 4,
+      "cost": {
+        "gates": 52,
+        "cx": 23,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 25,
+      "trajectory": 1,
+      "trajectory_step": 25,
+      "parent": "327c308818c968760419b318e1e462a8df8555eab3eb148153f67ad0e399ae04",
+      "child": "d23bb315c0e704001bc058117fa8d24bd6e8c294c71e1e283d51b622a822801c",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "Z"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                165
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                153,
+                0
+              ],
+              [
+                2,
+                152,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "327c308818c968760419b318e1e462a8df8555eab3eb148153f67ad0e399ae04"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 165
+      },
+      "visits_before": 0,
+      "candidate_sha256": "1a7b9d3ef6792015b015a615e039514a79f974333eca0d5aa817c943213ad7fc",
+      "anchor_slot": 155,
+      "slot": 1,
+      "cost": {
+        "gates": 53,
+        "cx": 29,
+        "depth": 48
+      }
+    },
+    {
+      "transition": 26,
+      "trajectory": 1,
+      "trajectory_step": 26,
+      "parent": "d23bb315c0e704001bc058117fa8d24bd6e8c294c71e1e283d51b622a822801c",
+      "child": "215869918f30e4b10d7cd5a6f54c1c409eeff42dcfc5cfdc68ef8191ac8140f5",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                6,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "d23bb315c0e704001bc058117fa8d24bd6e8c294c71e1e283d51b622a822801c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 6
+      },
+      "visits_before": 0,
+      "candidate_sha256": "d4fd600061dc1eeb6e6792b986bac0a7d34e1ecd8582b96242bf8b29f6e87176",
+      "anchor_slot": 206,
+      "slot": 0,
+      "cost": {
+        "gates": 53,
+        "cx": 29,
+        "depth": 48
+      }
+    },
+    {
+      "transition": 28,
+      "trajectory": 1,
+      "trajectory_step": 28,
+      "parent": "215869918f30e4b10d7cd5a6f54c1c409eeff42dcfc5cfdc68ef8191ac8140f5",
+      "child": "151e8f50e8cb21a56e83b8f9f3cae72a201da079029761bea86afdcca3687126",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                68
+              ],
+              [
+                1,
+                117
+              ],
+              [
+                3,
+                107
+              ],
+              [
+                5,
+                96
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                54
+              ],
+              [
+                2,
+                34
+              ],
+              [
+                4,
+                11
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                53,
+                1
+              ],
+              [
+                4,
+                33,
+                1
+              ],
+              [
+                6,
+                10,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "215869918f30e4b10d7cd5a6f54c1c409eeff42dcfc5cfdc68ef8191ac8140f5"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 68
+      },
+      "visits_before": 0,
+      "candidate_sha256": "25199e7b363e1689f92393e8dc83bb4f402a66924cea6a748e927b328cd80145",
+      "anchor_slot": 58,
+      "slot": 2,
+      "cost": {
+        "gates": 51,
+        "cx": 24,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 29,
+      "trajectory": 1,
+      "trajectory_step": 29,
+      "parent": "151e8f50e8cb21a56e83b8f9f3cae72a201da079029761bea86afdcca3687126",
+      "child": "d545609de9eecf53e0c090541ea76cb23cdff9d5db30cd200b033d9c5ee251e8",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                113,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "151e8f50e8cb21a56e83b8f9f3cae72a201da079029761bea86afdcca3687126"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 113
+      },
+      "visits_before": 0,
+      "candidate_sha256": "f049b9226bd8a685c69f9203c2025669e5bc1cb9d075c468b44dfc7f8ee39e7c",
+      "anchor_slot": 311,
+      "slot": 0,
+      "cost": {
+        "gates": 51,
+        "cx": 24,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 30,
+      "trajectory": 1,
+      "trajectory_step": 30,
+      "parent": "d545609de9eecf53e0c090541ea76cb23cdff9d5db30cd200b033d9c5ee251e8",
+      "child": "48914f9963b183248ae2964c2da68cd94f790875408fada6a1a4b0b671b25757",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                91,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "d545609de9eecf53e0c090541ea76cb23cdff9d5db30cd200b033d9c5ee251e8"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 91
+      },
+      "visits_before": 0,
+      "candidate_sha256": "a07c9b9f6b466baa7012149481ed0a566fef7faf0bbc9a71a999dadd16534d71",
+      "anchor_slot": 290,
+      "slot": 0,
+      "cost": {
+        "gates": 51,
+        "cx": 24,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 31,
+      "trajectory": 1,
+      "trajectory_step": 31,
+      "parent": "48914f9963b183248ae2964c2da68cd94f790875408fada6a1a4b0b671b25757",
+      "child": "dd01664ac2aa589ef4191c756900fdbea6114b04bcb8dd73269d95095eef9f4e",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                51
+              ],
+              [
+                1,
+                172
+              ],
+              [
+                3,
+                158
+              ],
+              [
+                5,
+                130
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                156
+              ],
+              [
+                2,
+                130
+              ],
+              [
+                4,
+                75
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                157,
+                0
+              ],
+              [
+                4,
+                129,
+                1
+              ],
+              [
+                6,
+                74,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "48914f9963b183248ae2964c2da68cd94f790875408fada6a1a4b0b671b25757"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 51
+      },
+      "visits_before": 0,
+      "candidate_sha256": "7735a8fd6c5448ce79e02d177def6fa1658093662d08360a4588fbce88ddb5ab",
+      "anchor_slot": 46,
+      "slot": 3,
+      "cost": {
+        "gates": 45,
+        "cx": 21,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 32,
+      "trajectory": 1,
+      "trajectory_step": 32,
+      "parent": "dd01664ac2aa589ef4191c756900fdbea6114b04bcb8dd73269d95095eef9f4e",
+      "child": "b8a0feb0550aa72dbea4fcf4265f0dd5be45d4a3481cce852bc592e7dc11aa16",
+      "action": {
+        "mode": "legacy",
+        "family": "PV",
+        "action": {
+          "kind": "PV",
+          "vertices": [
+            12,
+            13
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 36013,
+        "parent_view_key": "3112c60e5bf7bcc4f7d53c31a6b39fc44b9b043a927d9fe07763e177d969be41"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 13
+      },
+      "visits_before": 0,
+      "candidate_sha256": "3711c82d9a752537523ae100b23aa14b8a975636585e65054a2f0e0e6df4e12e",
+      "anchor_slot": 420,
+      "slot": 1,
+      "cost": {
+        "gates": 54,
+        "cx": 25,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 33,
+      "trajectory": 1,
+      "trajectory_step": 33,
+      "parent": "b8a0feb0550aa72dbea4fcf4265f0dd5be45d4a3481cce852bc592e7dc11aa16",
+      "child": "7b6ad73f85e3d41d563e544d215352a32a481c8fbe7a0dad9d90d4e621fe0138",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            27,
+            80
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "30d4bf8a807445ac721d005098d554460ff77fd3de28a8f3381f70450a3c58a5"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          27,
+          80
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "58a8739e75f0346fa09d4e765440788ed8b131b493b5c2bc388d79d120ed1326",
+      "anchor_slot": 558,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 25,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 35,
+      "trajectory": 1,
+      "trajectory_step": 35,
+      "parent": "7b6ad73f85e3d41d563e544d215352a32a481c8fbe7a0dad9d90d4e621fe0138",
+      "child": "4b2d9225c7bda795746e989f6d8b88b907a8c272f42171585fd9afd108bd8874",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "1/4",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                39
+              ],
+              [
+                1,
+                171
+              ],
+              [
+                3,
+                172
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                137
+              ],
+              [
+                2,
+                138
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                136,
+                1
+              ],
+              [
+                4,
+                139,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "7b6ad73f85e3d41d563e544d215352a32a481c8fbe7a0dad9d90d4e621fe0138"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 171
+      },
+      "visits_before": 0,
+      "candidate_sha256": "31487b0e082eff05162fbe118d80f6aca98bc4d343c8b91156094928b25e9e81",
+      "anchor_slot": 161,
+      "slot": 0,
+      "cost": {
+        "gates": 47,
+        "cx": 23,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 36,
+      "trajectory": 1,
+      "trajectory_step": 36,
+      "parent": "4b2d9225c7bda795746e989f6d8b88b907a8c272f42171585fd9afd108bd8874",
+      "child": "58e27bc06e8dc4037ad15c98b0e5b395060bc307195b581cc6e2e787107a1852",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                62,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "4b2d9225c7bda795746e989f6d8b88b907a8c272f42171585fd9afd108bd8874"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 62
+      },
+      "visits_before": 0,
+      "candidate_sha256": "593a5b641d200a4d775e29c5b5390df617dc3d4b425aa956924aa349a3d4e9af",
+      "anchor_slot": 261,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 25,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 37,
+      "trajectory": 1,
+      "trajectory_step": 37,
+      "parent": "58e27bc06e8dc4037ad15c98b0e5b395060bc307195b581cc6e2e787107a1852",
+      "child": "a933ca919acbf42a8bfa7e0687e69436919f8c79916971fa0f75fc34684863b2",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                53,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "58e27bc06e8dc4037ad15c98b0e5b395060bc307195b581cc6e2e787107a1852"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 53
+      },
+      "visits_before": 0,
+      "candidate_sha256": "fe6164318a1294aea53e859331746a8d69ea721ee0db76a04bbc4550cb40aed0",
+      "anchor_slot": 253,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 25,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 38,
+      "trajectory": 1,
+      "trajectory_step": 38,
+      "parent": "a933ca919acbf42a8bfa7e0687e69436919f8c79916971fa0f75fc34684863b2",
+      "child": "e5af29476213c96564948e830502e8bc784ac322a3b8a33f5baf1cb65beb9e73",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                64
+              ],
+              [
+                1,
+                148
+              ],
+              [
+                3,
+                191
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                88
+              ],
+              [
+                2,
+                173
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                87,
+                1
+              ],
+              [
+                4,
+                172,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "a933ca919acbf42a8bfa7e0687e69436919f8c79916971fa0f75fc34684863b2"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 148
+      },
+      "visits_before": 0,
+      "candidate_sha256": "813ca38d1e14b8300990108acada821c2ce8d263ef4b6d439672b67291be6a16",
+      "anchor_slot": 137,
+      "slot": 0,
+      "cost": {
+        "gates": 50,
+        "cx": 20,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 39,
+      "trajectory": 1,
+      "trajectory_step": 39,
+      "parent": "e5af29476213c96564948e830502e8bc784ac322a3b8a33f5baf1cb65beb9e73",
+      "child": "2d5365f39ca335783d8cd93b8978e7b7d21a8645ddbea3e2c37b52fb3fcba13b",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                51,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "e5af29476213c96564948e830502e8bc784ac322a3b8a33f5baf1cb65beb9e73"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 51
+      },
+      "visits_before": 0,
+      "candidate_sha256": "1b6aac4922865b5ce71a1b8bd107cd2a5fcb9f671d6efa9951c6a257cefd99df",
+      "anchor_slot": 250,
+      "slot": 0,
+      "cost": {
+        "gates": 50,
+        "cx": 20,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 40,
+      "trajectory": 1,
+      "trajectory_step": 40,
+      "parent": "2d5365f39ca335783d8cd93b8978e7b7d21a8645ddbea3e2c37b52fb3fcba13b",
+      "child": "8da1ab407412f7bfe1dc8d5e1d15efdb1e28cd8f134ce801b00ef70ca26884db",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                35,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "2d5365f39ca335783d8cd93b8978e7b7d21a8645ddbea3e2c37b52fb3fcba13b"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 35
+      },
+      "visits_before": 0,
+      "candidate_sha256": "a9cd847664292a759e0bc17411a04560004b69e116f33c362ec67e147ed6c209",
+      "anchor_slot": 235,
+      "slot": 0,
+      "cost": {
+        "gates": 50,
+        "cx": 20,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 41,
+      "trajectory": 1,
+      "trajectory_step": 41,
+      "parent": "8da1ab407412f7bfe1dc8d5e1d15efdb1e28cd8f134ce801b00ef70ca26884db",
+      "child": "380ee6cbb21cb7673b868577ede4c53eff68989ad2d80724649de18995cd8c69",
+      "action": {
+        "mode": "jpv",
+        "family": "I:forward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                59
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                2,
+                164,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "8da1ab407412f7bfe1dc8d5e1d15efdb1e28cd8f134ce801b00ef70ca26884db"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 59
+      },
+      "visits_before": 0,
+      "candidate_sha256": "c685a2accbc4d970bde959b67c02ebb7935d432d1586013e3b36b5081b3e38b2",
+      "anchor_slot": 48,
+      "slot": 1,
+      "cost": {
+        "gates": 53,
+        "cx": 23,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 42,
+      "trajectory": 1,
+      "trajectory_step": 42,
+      "parent": "380ee6cbb21cb7673b868577ede4c53eff68989ad2d80724649de18995cd8c69",
+      "child": "6f93122aacd2b379c2ba0777e40f98d9f2c700e75bd7cdc76bf093708482c467",
+      "action": {
+        "mode": "legacy",
+        "family": "PV",
+        "action": {
+          "kind": "PV",
+          "vertices": [
+            37,
+            89
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 111089,
+        "parent_view_key": "2b06f1e28b23bd082424a075c46375245b00738875be8f98262692e3ae2ed7e8"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 89
+      },
+      "visits_before": 0,
+      "candidate_sha256": "a0b6b28d292d85b0f5ce60bad22e14fd7edb7febf6cf885c3c7d1065ba5c07b2",
+      "anchor_slot": 496,
+      "slot": 1,
+      "cost": {
+        "gates": 59,
+        "cx": 28,
+        "depth": 48
+      }
+    },
+    {
+      "transition": 43,
+      "trajectory": 1,
+      "trajectory_step": 43,
+      "parent": "6f93122aacd2b379c2ba0777e40f98d9f2c700e75bd7cdc76bf093708482c467",
+      "child": "c7c3742539ab84eb7a530f90df51e66d22d770d4626b9fc59891b9d361077c8c",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "0",
+              "arity": 0
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                195
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": []
+          },
+          "parent_sha256": "6f93122aacd2b379c2ba0777e40f98d9f2c700e75bd7cdc76bf093708482c467"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 195
+      },
+      "visits_before": 0,
+      "candidate_sha256": "d3a7a4e095f69d57f455ff79028dad323cdbba6b0f611ee4e3627bd2b513d46e",
+      "anchor_slot": 185,
+      "slot": 2,
+      "cost": {
+        "gates": 59,
+        "cx": 28,
+        "depth": 48
+      }
+    },
+    {
+      "transition": 44,
+      "trajectory": 1,
+      "trajectory_step": 44,
+      "parent": "c7c3742539ab84eb7a530f90df51e66d22d770d4626b9fc59891b9d361077c8c",
+      "child": "e89e306e9d7d3c41d50cb71a78ed4e5d0ee6c78e8d2f40e443a6b163ac2dcd67",
+      "action": {
+        "mode": "legacy",
+        "family": "ID",
+        "action": {
+          "kind": "ID",
+          "vertices": [
+            80
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 9000080,
+        "parent_view_key": "eb204c4f97ea4322eb5f307cd74eced83d9e4f77c4d447305cc1a963d9063ccd"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 80
+      },
+      "visits_before": 0,
+      "candidate_sha256": "c3e03a55b0af283380c2e05137781fe87633c6546ba917907bd961715160ba0e",
+      "anchor_slot": 482,
+      "slot": 0,
+      "cost": {
+        "gates": 52,
+        "cx": 21,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 45,
+      "trajectory": 1,
+      "trajectory_step": 45,
+      "parent": "e89e306e9d7d3c41d50cb71a78ed4e5d0ee6c78e8d2f40e443a6b163ac2dcd67",
+      "child": "7fd81e1147cb9027c1fb705b14262c669ec2b653445cbb85a73226add910a6f5",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                109,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "e89e306e9d7d3c41d50cb71a78ed4e5d0ee6c78e8d2f40e443a6b163ac2dcd67"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 109
+      },
+      "visits_before": 0,
+      "candidate_sha256": "18dd58ef00073c1eb4ad1073aa6cc51099a2b9826465dc29d0c5caa560d34d9e",
+      "anchor_slot": 302,
+      "slot": 0,
+      "cost": {
+        "gates": 52,
+        "cx": 21,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 46,
+      "trajectory": 1,
+      "trajectory_step": 46,
+      "parent": "7fd81e1147cb9027c1fb705b14262c669ec2b653445cbb85a73226add910a6f5",
+      "child": "2f51bb95d558b8d0ada8169fc66626d032ec524837b8bea2799cfcdc498f24bb",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                172,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "7fd81e1147cb9027c1fb705b14262c669ec2b653445cbb85a73226add910a6f5"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 172
+      },
+      "visits_before": 0,
+      "candidate_sha256": "98c3035794b05e537522d2233a4949208f10e818376c8407ccee3e8e76e91316",
+      "anchor_slot": 366,
+      "slot": 0,
+      "cost": {
+        "gates": 52,
+        "cx": 21,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 47,
+      "trajectory": 1,
+      "trajectory_step": 47,
+      "parent": "2f51bb95d558b8d0ada8169fc66626d032ec524837b8bea2799cfcdc498f24bb",
+      "child": "84cae671717aec47b7db4de515a6c67adbd54f3838c8baaa6161d9783d53ab3a",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            65,
+            70
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "cafc7ee529c45ea26ac0ef4213e225c1f65f330c1ac265e1bd3d1ae9f824eda2"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          65,
+          70
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "8b9c1e42d3afd27572417ca656d4c44ee246530a6f7fd5134ec269bd7e0122e4",
+      "anchor_slot": 575,
+      "slot": 0,
+      "cost": {
+        "gates": 52,
+        "cx": 21,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 48,
+      "trajectory": 1,
+      "trajectory_step": 48,
+      "parent": "84cae671717aec47b7db4de515a6c67adbd54f3838c8baaa6161d9783d53ab3a",
+      "child": "25e0102f359fd3f99cef3a85bcd5ce8749670b7ce04ddcafb5ee78d7ba7e95a1",
+      "action": {
+        "mode": "macro",
+        "family": "phase_split",
+        "action": {
+          "kind": "phase_split",
+          "vertices": [
+            79
+          ],
+          "phase": "-1/4",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "3e38c2d8ea81fd48a0927d90fc7620c91fa7c97957850a19fa52527a6f7e5b87"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 79
+      },
+      "visits_before": 0,
+      "candidate_sha256": "40d566166aa83373976274e8de22acddb9440902a40d2da5a37126c4313cf060",
+      "anchor_slot": 481,
+      "slot": 4,
+      "cost": {
+        "gates": 53,
+        "cx": 23,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 51,
+      "trajectory": 1,
+      "trajectory_step": 51,
+      "parent": "25e0102f359fd3f99cef3a85bcd5ce8749670b7ce04ddcafb5ee78d7ba7e95a1",
+      "child": "9708efc02d9c522730c9b39407fabf2faba5c56772d0aa5c66196d5e6819ded6",
+      "action": {
+        "mode": "legacy",
+        "family": "ID",
+        "action": {
+          "kind": "ID",
+          "vertices": [
+            89
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 9000089,
+        "parent_view_key": "649c540e631268b64359af8dd1bbb071d6c18b184eb91c9962acfa97574feb40"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 89
+      },
+      "visits_before": 0,
+      "candidate_sha256": "072dd1de8c1c8b4153a96a2ac4674e0aae861c318b325671f0c79180dc59d020",
+      "anchor_slot": 280,
+      "slot": 0,
+      "cost": {
+        "gates": 42,
+        "cx": 17,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 52,
+      "trajectory": 1,
+      "trajectory_step": 52,
+      "parent": "9708efc02d9c522730c9b39407fabf2faba5c56772d0aa5c66196d5e6819ded6",
+      "child": "cfb8df6111808905e813f17e3e5d21c8f7259f15a47d0e4f125e395c075df885",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            25,
+            26
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "856c2656c219dc9997c199340c6146440c9dcdeb69f4f4e805b724ae5cfadfd8"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          25,
+          26
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "cc3e592caef2784157897831fb3fd13018ca7b8d8849e496500d954ae8326bd2",
+      "anchor_slot": 552,
+      "slot": 0,
+      "cost": {
+        "gates": 42,
+        "cx": 17,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 54,
+      "trajectory": 1,
+      "trajectory_step": 54,
+      "parent": "cfb8df6111808905e813f17e3e5d21c8f7259f15a47d0e4f125e395c075df885",
+      "child": "b40c081ae8d5750e091238dcbce02c0a76609bc5c0753bc908553544a71b66dd",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "7/4",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                17
+              ],
+              [
+                1,
+                132
+              ],
+              [
+                3,
+                135
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                57
+              ],
+              [
+                2,
+                62
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                56,
+                1
+              ],
+              [
+                4,
+                63,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "cfb8df6111808905e813f17e3e5d21c8f7259f15a47d0e4f125e395c075df885"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 132
+      },
+      "visits_before": 0,
+      "candidate_sha256": "c446e6618c21f04718583b9066d8234a353e556b762a3817ef14cc3f66964c6a",
+      "anchor_slot": 122,
+      "slot": 0,
+      "cost": {
+        "gates": 43,
+        "cx": 17,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 56,
+      "trajectory": 1,
+      "trajectory_step": 56,
+      "parent": "b40c081ae8d5750e091238dcbce02c0a76609bc5c0753bc908553544a71b66dd",
+      "child": "fcec965c63421be4b55cac7c46ddb8f0fcf202f0d5e4c0cf8d8a13d08eb1c1dd",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                163,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "b40c081ae8d5750e091238dcbce02c0a76609bc5c0753bc908553544a71b66dd"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 163
+      },
+      "visits_before": 0,
+      "candidate_sha256": "5e495572bb7750ee3afbbad933566488d46530d9135d58fdfbf75d25fb1f7946",
+      "anchor_slot": 362,
+      "slot": 0,
+      "cost": {
+        "gates": 43,
+        "cx": 17,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 57,
+      "trajectory": 1,
+      "trajectory_step": 57,
+      "parent": "fcec965c63421be4b55cac7c46ddb8f0fcf202f0d5e4c0cf8d8a13d08eb1c1dd",
+      "child": "394ef53faccd885718e5c096f692c39a045d5c277854f68653d21c53e6c5eb21",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                132,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "fcec965c63421be4b55cac7c46ddb8f0fcf202f0d5e4c0cf8d8a13d08eb1c1dd"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 132
+      },
+      "visits_before": 0,
+      "candidate_sha256": "63e4a179c6053d53fe92fd37cc205bc0144b289403789d9a556f22dec745a3ca",
+      "anchor_slot": 332,
+      "slot": 0,
+      "cost": {
+        "gates": 43,
+        "cx": 17,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 60,
+      "trajectory": 1,
+      "trajectory_step": 60,
+      "parent": "394ef53faccd885718e5c096f692c39a045d5c277854f68653d21c53e6c5eb21",
+      "child": "6fb73f2f3a38aa7cfff87cd3ce584ce149d720fe55f677bf39267edebc95b1cb",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "7/4",
+              "arity": 4
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                63
+              ],
+              [
+                1,
+                143
+              ],
+              [
+                3,
+                182
+              ],
+              [
+                5,
+                171
+              ],
+              [
+                7,
+                169
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                76
+              ],
+              [
+                2,
+                155
+              ],
+              [
+                4,
+                132
+              ],
+              [
+                6,
+                129
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                75,
+                1
+              ],
+              [
+                4,
+                154,
+                1
+              ],
+              [
+                6,
+                217,
+                0
+              ],
+              [
+                8,
+                128,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "394ef53faccd885718e5c096f692c39a045d5c277854f68653d21c53e6c5eb21"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 63
+      },
+      "visits_before": 0,
+      "candidate_sha256": "6896010e5dc5595ed04a5665e6adac719253669a5c9d4e1c56f22b93b0389e7a",
+      "anchor_slot": 52,
+      "slot": 1,
+      "cost": {
+        "gates": 42,
+        "cx": 17,
+        "depth": 33
+      }
+    },
+    {
+      "transition": 61,
+      "trajectory": 1,
+      "trajectory_step": 61,
+      "parent": "6fb73f2f3a38aa7cfff87cd3ce584ce149d720fe55f677bf39267edebc95b1cb",
+      "child": "376d093fecff14a7c44e154928935070cb6a484ef5aef5539f6fb83f3de9462a",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                27
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                25,
+                1
+              ],
+              [
+                2,
+                103,
+                0
+              ],
+              [
+                3,
+                101,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "6fb73f2f3a38aa7cfff87cd3ce584ce149d720fe55f677bf39267edebc95b1cb"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 27
+      },
+      "visits_before": 0,
+      "candidate_sha256": "582553712036e430624a1b4d09f5a3a5d745a8d865b3f81e2ba6eb2cce4df5ad",
+      "anchor_slot": 21,
+      "slot": 1,
+      "cost": {
+        "gates": 52,
+        "cx": 23,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 62,
+      "trajectory": 1,
+      "trajectory_step": 62,
+      "parent": "376d093fecff14a7c44e154928935070cb6a484ef5aef5539f6fb83f3de9462a",
+      "child": "da4a8320a57df18e6915a629d554da44778ea91a87a59d65fa48a1abaf2ef715",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                51,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "376d093fecff14a7c44e154928935070cb6a484ef5aef5539f6fb83f3de9462a"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 51
+      },
+      "visits_before": 0,
+      "candidate_sha256": "03306ef169be3935d9cdcf949880b989099e776ed1ec3ae33fa41949bb5da1c5",
+      "anchor_slot": 245,
+      "slot": 0,
+      "cost": {
+        "gates": 52,
+        "cx": 23,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 63,
+      "trajectory": 1,
+      "trajectory_step": 63,
+      "parent": "da4a8320a57df18e6915a629d554da44778ea91a87a59d65fa48a1abaf2ef715",
+      "child": "800b714ec051521c18914fc3f6a922700b9cd9aec5259bc1a71def052837c7a6",
+      "action": {
+        "mode": "legacy",
+        "family": "ID",
+        "action": {
+          "kind": "ID",
+          "vertices": [
+            78
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 9000078,
+        "parent_view_key": "4af00314c8a7a9966d16667b62f3ff940f21ad5f1bcfb078c605aa87762b039f"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 78
+      },
+      "visits_before": 0,
+      "candidate_sha256": "b782f755d6f63857be3433edcfec6c9d62731a06ca01bd72fee9e59b39bd6246",
+      "anchor_slot": 476,
+      "slot": 0,
+      "cost": {
+        "gates": 53,
+        "cx": 23,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 64,
+      "trajectory": 1,
+      "trajectory_step": 64,
+      "parent": "800b714ec051521c18914fc3f6a922700b9cd9aec5259bc1a71def052837c7a6",
+      "child": "92abe0689dce03afdd49e0ab514c92a04b9bd2e828393ffc4ea8bdb341b0d2cc",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                55,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "800b714ec051521c18914fc3f6a922700b9cd9aec5259bc1a71def052837c7a6"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 55
+      },
+      "visits_before": 0,
+      "candidate_sha256": "3f3738c7f2d38452f246bf010e6a2ede773fbd1890f9019964c68361d737c76f",
+      "anchor_slot": 252,
+      "slot": 0,
+      "cost": {
+        "gates": 53,
+        "cx": 23,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 65,
+      "trajectory": 1,
+      "trajectory_step": 65,
+      "parent": "92abe0689dce03afdd49e0ab514c92a04b9bd2e828393ffc4ea8bdb341b0d2cc",
+      "child": "8a12e4f7f25534e0f67d77bc67458a65ec6703a7b12aa42288eebe05a3101734",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                13,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "92abe0689dce03afdd49e0ab514c92a04b9bd2e828393ffc4ea8bdb341b0d2cc"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 13
+      },
+      "visits_before": 0,
+      "candidate_sha256": "53a5e792b0cd456f5ea6d73b980322f9b0db99a640cf0b07dd5f25f8e998497e",
+      "anchor_slot": 211,
+      "slot": 0,
+      "cost": {
+        "gates": 53,
+        "cx": 23,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 66,
+      "trajectory": 1,
+      "trajectory_step": 66,
+      "parent": "8a12e4f7f25534e0f67d77bc67458a65ec6703a7b12aa42288eebe05a3101734",
+      "child": "06faa0529cce4f82478968bdb4dac3f930ac990ddd895f4b731947113b1115ee",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                9,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "8a12e4f7f25534e0f67d77bc67458a65ec6703a7b12aa42288eebe05a3101734"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 9
+      },
+      "visits_before": 0,
+      "candidate_sha256": "0224cd402231ecabbd4b2abcef8e6da637f677ea23ae3f13d0f618a76bec2ed3",
+      "anchor_slot": 208,
+      "slot": 0,
+      "cost": {
+        "gates": 53,
+        "cx": 23,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 67,
+      "trajectory": 1,
+      "trajectory_step": 67,
+      "parent": "06faa0529cce4f82478968bdb4dac3f930ac990ddd895f4b731947113b1115ee",
+      "child": "d4158a5cfa1a83ff915df1754d3c84483ad03b54995e016eafec02836edd0e32",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            37,
+            91
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "36e3cd8cf7a91c36e0ec64f86bbf48446d16d1850adfd8664c42097765c6462b"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          37,
+          91
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "f47ebeb54b4ff48ae2220b0698c96b0dcc93015d237495d085839bfbc4f2e68d",
+      "anchor_slot": 563,
+      "slot": 0,
+      "cost": {
+        "gates": 53,
+        "cx": 23,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 68,
+      "trajectory": 1,
+      "trajectory_step": 68,
+      "parent": "d4158a5cfa1a83ff915df1754d3c84483ad03b54995e016eafec02836edd0e32",
+      "child": "eb8f9a3ee5ddf8737a6b9061290086a40a6eac766dea7613e14286ead37cf81b",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "1/4",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                41
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                146,
+                0
+              ],
+              [
+                2,
+                143,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "d4158a5cfa1a83ff915df1754d3c84483ad03b54995e016eafec02836edd0e32"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 41
+      },
+      "visits_before": 0,
+      "candidate_sha256": "eaf1c3f9b76bb8c8528388a9f1e049b6ef0a7c828a0acfe62befda3f27436641",
+      "anchor_slot": 36,
+      "slot": 0,
+      "cost": {
+        "gates": 48,
+        "cx": 22,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 69,
+      "trajectory": 1,
+      "trajectory_step": 69,
+      "parent": "eb8f9a3ee5ddf8737a6b9061290086a40a6eac766dea7613e14286ead37cf81b",
+      "child": "c5293fbbde788e28a3ef1522d23272bf8d0857c07085498785ceb8486ef808f1",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                169,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "eb8f9a3ee5ddf8737a6b9061290086a40a6eac766dea7613e14286ead37cf81b"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 169
+      },
+      "visits_before": 0,
+      "candidate_sha256": "61b0deb708c88df03f7c93b73dcac87882045223a3a578cdc9934a0702703e8e",
+      "anchor_slot": 368,
+      "slot": 0,
+      "cost": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 141,
+      "trajectory": 3,
+      "trajectory_step": 1,
+      "parent": "c5293fbbde788e28a3ef1522d23272bf8d0857c07085498785ceb8486ef808f1",
+      "child": "65b09ebb673057a943e5aa925d22a5708697866b445182728d997ea2c13759c9",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                9,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "c5293fbbde788e28a3ef1522d23272bf8d0857c07085498785ceb8486ef808f1"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 9
+      },
+      "visits_before": 0,
+      "candidate_sha256": "6b076927483ed278690facf11e8f72929ad736aa535e1f7e561973a6956262a9",
+      "anchor_slot": 209,
+      "slot": 0,
+      "cost": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 4285,
+      "trajectory": 127,
+      "trajectory_step": 1,
+      "parent": "65b09ebb673057a943e5aa925d22a5708697866b445182728d997ea2c13759c9",
+      "child": "95ab639f9d79b42b156ec559eeccdaedd673a43dbd3f2d58b74a548354b77d96",
+      "action": {
+        "mode": "jpv",
+        "family": "S:forward",
+        "action": {
+          "axiom": {
+            "name": "S",
+            "parameters": {
+              "color": "Z",
+              "alpha": "0",
+              "beta": "0",
+              "left_legs": 3,
+              "right_legs": 1,
+              "links": 1
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                6
+              ],
+              [
+                1,
+                219
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                216
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                3,
+                1
+              ],
+              [
+                3,
+                10,
+                0
+              ],
+              [
+                4,
+                12,
+                0
+              ],
+              [
+                5,
+                217,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "65b09ebb673057a943e5aa925d22a5708697866b445182728d997ea2c13759c9"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 6
+      },
+      "visits_before": 0,
+      "candidate_sha256": "7dae002bd039571290c39d958a65f508f130c63eb51d5477329fb206480b4a86",
+      "anchor_slot": 1,
+      "slot": 1,
+      "cost": {
+        "gates": 53,
+        "cx": 27,
+        "depth": 47
+      }
+    },
+    {
+      "transition": 4286,
+      "trajectory": 127,
+      "trajectory_step": 2,
+      "parent": "95ab639f9d79b42b156ec559eeccdaedd673a43dbd3f2d58b74a548354b77d96",
+      "child": "315aafda13bbab679a51a1115a4193cb66561e7259b94bbeeaef481d5fce5677",
+      "action": {
+        "mode": "legacy",
+        "family": "PV",
+        "action": {
+          "kind": "PV",
+          "vertices": [
+            31,
+            32
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 93032,
+        "parent_view_key": "944842882b2ce896c0c99215c8c3534f900bcd47d4c0b318aed6e372d25e2410"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 31
+      },
+      "visits_before": 0,
+      "candidate_sha256": "33556e4335ce4c1527feef95832b582f143fc5b9a71e1ae7e430d071965f9348",
+      "anchor_slot": 443,
+      "slot": 0,
+      "cost": {
+        "gates": 57,
+        "cx": 25,
+        "depth": 45
+      }
+    },
+    {
+      "transition": 4287,
+      "trajectory": 127,
+      "trajectory_step": 3,
+      "parent": "315aafda13bbab679a51a1115a4193cb66561e7259b94bbeeaef481d5fce5677",
+      "child": "c41131974ef0b363233891ff0c9255178be7a5401dd34c9f301729d930ec7e4a",
+      "action": {
+        "mode": "macro",
+        "family": "identity_insert",
+        "action": {
+          "kind": "identity_insert",
+          "vertices": [
+            8,
+            10
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "0affdecec601c86932fcc5154af59f64d85f839ceb8d7e6bd708e22d290cf119"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "edge",
+        "position": [
+          8,
+          10
+        ]
+      },
+      "visits_before": 0,
+      "candidate_sha256": "e5f72273751cc5454b692bac8d3fcbdb1e0fe90d957d1542000c67935af2ff87",
+      "anchor_slot": 517,
+      "slot": 0,
+      "cost": {
+        "gates": 57,
+        "cx": 25,
+        "depth": 45
+      }
+    },
+    {
+      "transition": 4288,
+      "trajectory": 127,
+      "trajectory_step": 4,
+      "parent": "c41131974ef0b363233891ff0c9255178be7a5401dd34c9f301729d930ec7e4a",
+      "child": "dafc77705f3b8718b717f0b89a63183dc2ee93e31867f6c2bd8cafda0ffc2506",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                59
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                172,
+                0
+              ],
+              [
+                2,
+                14,
+                1
+              ],
+              [
+                3,
+                35,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "c41131974ef0b363233891ff0c9255178be7a5401dd34c9f301729d930ec7e4a"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 59
+      },
+      "visits_before": 0,
+      "candidate_sha256": "4ce4cd9a6b23ec2c13eb5007dbd4438a9bf997e09cf655953e5f76cea802bbd2",
+      "anchor_slot": 49,
+      "slot": 1,
+      "cost": {
+        "gates": 55,
+        "cx": 22,
+        "depth": 42
+      }
+    },
+    {
+      "transition": 4289,
+      "trajectory": 127,
+      "trajectory_step": 5,
+      "parent": "dafc77705f3b8718b717f0b89a63183dc2ee93e31867f6c2bd8cafda0ffc2506",
+      "child": "2a0c896d01df988e9ff33e89a1774642ad1666162451ba027efd1c5d433b30ca",
+      "action": {
+        "mode": "jpv",
+        "family": "S:backward",
+        "action": {
+          "axiom": {
+            "name": "S",
+            "parameters": {
+              "color": "Z",
+              "alpha": "3/4",
+              "beta": "5/4",
+              "left_legs": 1,
+              "right_legs": 1,
+              "links": 1
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                62
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                170,
+                0
+              ],
+              [
+                2,
+                169,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "dafc77705f3b8718b717f0b89a63183dc2ee93e31867f6c2bd8cafda0ffc2506"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 62
+      },
+      "visits_before": 0,
+      "candidate_sha256": "b8949e07f98f6b5064ebcfa8aa11320b21deddff20dfde9f354668408a7cd856",
+      "anchor_slot": 51,
+      "slot": 2,
+      "cost": {
+        "gates": 46,
+        "cx": 19,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 4290,
+      "trajectory": 127,
+      "trajectory_step": 6,
+      "parent": "2a0c896d01df988e9ff33e89a1774642ad1666162451ba027efd1c5d433b30ca",
+      "child": "b4d1655e7b2399b9767bfc88a44a990a29ddae3874c0e880e86330d67ef4ead2",
+      "action": {
+        "mode": "legacy",
+        "family": "ID",
+        "action": {
+          "kind": "ID",
+          "vertices": [
+            67
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 9000067,
+        "parent_view_key": "2bd85b66f1e6eb6e748473d6aa0d9a204f48ddd0a32c4920cea95c91857b9397"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 67
+      },
+      "visits_before": 0,
+      "candidate_sha256": "81aaac2a84c7c6e6405be44f1db0246dea7e241e4abe1d5a5fc3470dcd2ee657",
+      "anchor_slot": 473,
+      "slot": 0,
+      "cost": {
+        "gates": 46,
+        "cx": 22,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 4291,
+      "trajectory": 127,
+      "trajectory_step": 7,
+      "parent": "b4d1655e7b2399b9767bfc88a44a990a29ddae3874c0e880e86330d67ef4ead2",
+      "child": "0d6eda9b1a88f9bb6283aa15a3bd92e79ca6698a75e0ed694aa0ec979b0c6f42",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "3/4",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                34
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                126,
+                0
+              ],
+              [
+                2,
+                128,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "b4d1655e7b2399b9767bfc88a44a990a29ddae3874c0e880e86330d67ef4ead2"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 34
+      },
+      "visits_before": 0,
+      "candidate_sha256": "209b0fb14f2e3971f15f83e9430aebdf1001bb794903c1a2498e8711571f87f2",
+      "anchor_slot": 29,
+      "slot": 1,
+      "cost": {
+        "gates": 41,
+        "cx": 17,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 4292,
+      "trajectory": 127,
+      "trajectory_step": 8,
+      "parent": "0d6eda9b1a88f9bb6283aa15a3bd92e79ca6698a75e0ed694aa0ec979b0c6f42",
+      "child": "02b88d64b74b95ed42b2fe0f9e27703fb688af602d849357c20f952e34a32234",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                6,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "0d6eda9b1a88f9bb6283aa15a3bd92e79ca6698a75e0ed694aa0ec979b0c6f42"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 6
+      },
+      "visits_before": 0,
+      "candidate_sha256": "b8552feb9af9365d5f79dbb965160f84af76b86773158d27fb7e9014603d40d8",
+      "anchor_slot": 201,
+      "slot": 0,
+      "cost": {
+        "gates": 46,
+        "cx": 20,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 4293,
+      "trajectory": 127,
+      "trajectory_step": 9,
+      "parent": "02b88d64b74b95ed42b2fe0f9e27703fb688af602d849357c20f952e34a32234",
+      "child": "f48fc164d6cc2142f59fe05d1a73577802544107e8a82d5820c81d07ca2236ab",
+      "action": {
+        "mode": "legacy",
+        "family": "PVG",
+        "action": {
+          "kind": "PVG",
+          "vertices": [
+            32,
+            73
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 96073,
+        "parent_view_key": "b2c8581846c3e68dca9251f2bf8a74ba4751bc6658243a429237ee08f808d016"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 73
+      },
+      "visits_before": 0,
+      "candidate_sha256": "7474c0d2f318770a0a4e04bd66b5c7006bc67e73b80e4296ebdd54de8c43d2e7",
+      "anchor_slot": 473,
+      "slot": 1,
+      "cost": {
+        "gates": 53,
+        "cx": 27,
+        "depth": 48
+      }
+    },
+    {
+      "transition": 4294,
+      "trajectory": 127,
+      "trajectory_step": 10,
+      "parent": "f48fc164d6cc2142f59fe05d1a73577802544107e8a82d5820c81d07ca2236ab",
+      "child": "282e94594805d098194812f8d15e48df70424914d3f9f0922cf0951682e00fbe",
+      "action": {
+        "mode": "jpv",
+        "family": "S:backward",
+        "action": {
+          "axiom": {
+            "name": "S",
+            "parameters": {
+              "color": "Z",
+              "alpha": "1/4",
+              "beta": "7/4",
+              "left_legs": 1,
+              "right_legs": 2,
+              "links": 1
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                5
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                7,
+                0
+              ],
+              [
+                2,
+                5,
+                0
+              ],
+              [
+                3,
+                4,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "f48fc164d6cc2142f59fe05d1a73577802544107e8a82d5820c81d07ca2236ab"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 5
+      },
+      "visits_before": 0,
+      "candidate_sha256": "dd7e1f44706b81136bccffd8767bfbff56bed60511f879d7bc0ae71459c190f2",
+      "anchor_slot": 0,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 23,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 4295,
+      "trajectory": 127,
+      "trajectory_step": 11,
+      "parent": "282e94594805d098194812f8d15e48df70424914d3f9f0922cf0951682e00fbe",
+      "child": "0607ff8d06d74d2baa470635b642624f192a45b38bc48a6d2b7dbdf3e3133366",
+      "action": {
+        "mode": "macro",
+        "family": "gadget_split",
+        "action": {
+          "kind": "gadget_split",
+          "vertices": [
+            50,
+            49
+          ],
+          "phase": "1/4",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "0ba3f7f1cc53a7def3f2ca584e2150d2994d35219fce5b2347edcf9df75594fd"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 49
+      },
+      "visits_before": 0,
+      "candidate_sha256": "d4ac3a4c703aa80374c3150b07c8afaae1c25229d2b8550a9a9808654fd37d29",
+      "anchor_slot": 452,
+      "slot": 1,
+      "cost": {
+        "gates": 54,
+        "cx": 23,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 4296,
+      "trajectory": 127,
+      "trajectory_step": 12,
+      "parent": "0607ff8d06d74d2baa470635b642624f192a45b38bc48a6d2b7dbdf3e3133366",
+      "child": "bd813f9c8bbe4d2140fd9b1f0bf049585a10bb391c143ad96bbcfd86fa43bd0f",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "7/4",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                78
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                49,
+                1
+              ],
+              [
+                2,
+                61,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "0607ff8d06d74d2baa470635b642624f192a45b38bc48a6d2b7dbdf3e3133366"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 78
+      },
+      "visits_before": 0,
+      "candidate_sha256": "5137c206e5fe2c3558ba6019e1e07865fa647209e5488ad4ef2320bc54e3bfb4",
+      "anchor_slot": 68,
+      "slot": 0,
+      "cost": {
+        "gates": 44,
+        "cx": 20,
+        "depth": 34
+      }
+    },
+    {
+      "transition": 4297,
+      "trajectory": 127,
+      "trajectory_step": 13,
+      "parent": "bd813f9c8bbe4d2140fd9b1f0bf049585a10bb391c143ad96bbcfd86fa43bd0f",
+      "child": "507b320d804e1ce62bb3215d7311699eddb221f7cb38a54c74bcda263014a732",
+      "action": {
+        "mode": "legacy",
+        "family": "PV",
+        "action": {
+          "kind": "PV",
+          "vertices": [
+            69,
+            79
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 207079,
+        "parent_view_key": "a005e15459316cbf6101ac4cf87c3a08382fb1d11192eff6a00cb9010ea5cab2"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 79
+      },
+      "visits_before": 0,
+      "candidate_sha256": "3e5252e291ef80ea9f7d828febbcbc76e8eebb006a4aaa2d0dfe04774bae4ca9",
+      "anchor_slot": 484,
+      "slot": 1,
+      "cost": {
+        "gates": 45,
+        "cx": 19,
+        "depth": 37
+      }
+    },
+    {
+      "transition": 4298,
+      "trajectory": 127,
+      "trajectory_step": 14,
+      "parent": "507b320d804e1ce62bb3215d7311699eddb221f7cb38a54c74bcda263014a732",
+      "child": "ea438a10956ff4dcfc57a34d3b7eb2d8dca07694aa1ea71a3e1ab420aa21f5f7",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "X"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                110
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                41,
+                0
+              ],
+              [
+                2,
+                40,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "507b320d804e1ce62bb3215d7311699eddb221f7cb38a54c74bcda263014a732"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 110
+      },
+      "visits_before": 0,
+      "candidate_sha256": "d72f67dc230fbf40a751c8b0e57584b19a04836485715edf707500857edae84e",
+      "anchor_slot": 100,
+      "slot": 2,
+      "cost": {
+        "gates": 52,
+        "cx": 25,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 4299,
+      "trajectory": 127,
+      "trajectory_step": 15,
+      "parent": "ea438a10956ff4dcfc57a34d3b7eb2d8dca07694aa1ea71a3e1ab420aa21f5f7",
+      "child": "5c6326a81b656ff763aee58d2cd40afd924baef77a5988f8da7c48be17d755d6",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                179,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "ea438a10956ff4dcfc57a34d3b7eb2d8dca07694aa1ea71a3e1ab420aa21f5f7"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 179
+      },
+      "visits_before": 0,
+      "candidate_sha256": "853c8644dcfd42064f05bbf0c545211a6b53db6f810918e402d91704b40579e7",
+      "anchor_slot": 379,
+      "slot": 0,
+      "cost": {
+        "gates": 59,
+        "cx": 30,
+        "depth": 49
+      }
+    },
+    {
+      "transition": 4301,
+      "trajectory": 127,
+      "trajectory_step": 17,
+      "parent": "5c6326a81b656ff763aee58d2cd40afd924baef77a5988f8da7c48be17d755d6",
+      "child": "2389d9f7284de24f56a9222516094b094662b244c711ff5588dc3ddd43c5c7e9",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                35
+              ],
+              [
+                1,
+                154
+              ],
+              [
+                3,
+                126
+              ],
+              [
+                5,
+                155
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                128
+              ],
+              [
+                2,
+                72
+              ],
+              [
+                4,
+                130
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                129,
+                0
+              ],
+              [
+                4,
+                71,
+                1
+              ],
+              [
+                6,
+                131,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "5c6326a81b656ff763aee58d2cd40afd924baef77a5988f8da7c48be17d755d6"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 35
+      },
+      "visits_before": 0,
+      "candidate_sha256": "b370abd0e11071e5eaeaf80bf04ac372349471d4467e9d4f0f331acdebb1ea63",
+      "anchor_slot": 30,
+      "slot": 2,
+      "cost": {
+        "gates": 48,
+        "cx": 19,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 4302,
+      "trajectory": 127,
+      "trajectory_step": 18,
+      "parent": "2389d9f7284de24f56a9222516094b094662b244c711ff5588dc3ddd43c5c7e9",
+      "child": "8eab07cb37bc34299c1e79f18110e2d959a3e942b7621abc38608ab581c3a31b",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                23
+              ],
+              [
+                1,
+                139
+              ],
+              [
+                3,
+                109
+              ],
+              [
+                5,
+                138
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                95
+              ],
+              [
+                2,
+                39
+              ],
+              [
+                4,
+                93
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                96,
+                0
+              ],
+              [
+                4,
+                38,
+                1
+              ],
+              [
+                6,
+                94,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "2389d9f7284de24f56a9222516094b094662b244c711ff5588dc3ddd43c5c7e9"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 23
+      },
+      "visits_before": 0,
+      "candidate_sha256": "9ae40fdef9941cae46ee9c891753d87ca8b189995b666357513e1c3bfb7b1a19",
+      "anchor_slot": 18,
+      "slot": 0,
+      "cost": {
+        "gates": 48,
+        "cx": 20,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 4303,
+      "trajectory": 127,
+      "trajectory_step": 19,
+      "parent": "8eab07cb37bc34299c1e79f18110e2d959a3e942b7621abc38608ab581c3a31b",
+      "child": "5b2297c286f2eb08277a5fb7eba235862870aa93d1833ae6e7ad6eacc8051f6c",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "X"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                143
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                98,
+                0
+              ],
+              [
+                2,
+                97,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "8eab07cb37bc34299c1e79f18110e2d959a3e942b7621abc38608ab581c3a31b"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 143
+      },
+      "visits_before": 0,
+      "candidate_sha256": "069d88f20800528ab8cc691ddc05dc43df557fe9e101259ff60f2b1809a69b89",
+      "anchor_slot": 126,
+      "slot": 2,
+      "cost": {
+        "gates": 48,
+        "cx": 20,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 4304,
+      "trajectory": 127,
+      "trajectory_step": 20,
+      "parent": "5b2297c286f2eb08277a5fb7eba235862870aa93d1833ae6e7ad6eacc8051f6c",
+      "child": "0421ee92228dc6377285c2f9ef2e7e990c0976d8d9c37b0984cb88b9a06c572f",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                99,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "5b2297c286f2eb08277a5fb7eba235862870aa93d1833ae6e7ad6eacc8051f6c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 99
+      },
+      "visits_before": 0,
+      "candidate_sha256": "6bbc8bd765efe5f83e62797390480e4e2c22da3ac16d09cf1d0ca3ac71c0b397",
+      "anchor_slot": 297,
+      "slot": 0,
+      "cost": {
+        "gates": 48,
+        "cx": 20,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 4305,
+      "trajectory": 127,
+      "trajectory_step": 21,
+      "parent": "0421ee92228dc6377285c2f9ef2e7e990c0976d8d9c37b0984cb88b9a06c572f",
+      "child": "9d54c161afb56d36c0f20f3cb17fe600ea6b7b4151d506479a857aa4c358a793",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                123,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "0421ee92228dc6377285c2f9ef2e7e990c0976d8d9c37b0984cb88b9a06c572f"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 123
+      },
+      "visits_before": 0,
+      "candidate_sha256": "7c72daebbd40182e073e9c34c5b907c87f24e950cc7db354de41c5c712bb72de",
+      "anchor_slot": 322,
+      "slot": 0,
+      "cost": {
+        "gates": 48,
+        "cx": 20,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 4306,
+      "trajectory": 127,
+      "trajectory_step": 22,
+      "parent": "9d54c161afb56d36c0f20f3cb17fe600ea6b7b4151d506479a857aa4c358a793",
+      "child": "5940d3836bed70442dc536d0a6c21e80f07341ddca0b7247d400aa41f35bdd90",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "3/2",
+              "arity": 1
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                61
+              ],
+              [
+                1,
+                175
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                157
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                156,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "9d54c161afb56d36c0f20f3cb17fe600ea6b7b4151d506479a857aa4c358a793"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 175
+      },
+      "visits_before": 0,
+      "candidate_sha256": "fa3efdfde3ce7676c23a5cda28f10758e712ef053211ecb64c8cc287e018e3d4",
+      "anchor_slot": 155,
+      "slot": 0,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 4502,
+      "trajectory": 132,
+      "trajectory_step": 1,
+      "parent": "5940d3836bed70442dc536d0a6c21e80f07341ddca0b7247d400aa41f35bdd90",
+      "child": "3bcbd3dd1276be058c7b85119ef159da7c0786cfd2fa27911713e6cb2805a48f",
+      "action": {
+        "mode": "jpv",
+        "family": "S:backward",
+        "action": {
+          "axiom": {
+            "name": "S",
+            "parameters": {
+              "color": "X",
+              "alpha": "7/4",
+              "beta": "7/4",
+              "left_legs": 1,
+              "right_legs": 0,
+              "links": 1
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                229
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                207,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "5940d3836bed70442dc536d0a6c21e80f07341ddca0b7247d400aa41f35bdd90"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 229
+      },
+      "visits_before": 0,
+      "candidate_sha256": "c0f6d90dd60ca3d94755155c5d2b356078162dff04f56f698bc350bfa3f2af73",
+      "anchor_slot": 195,
+      "slot": 1,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 4744,
+      "trajectory": 140,
+      "trajectory_step": 1,
+      "parent": "3bcbd3dd1276be058c7b85119ef159da7c0786cfd2fa27911713e6cb2805a48f",
+      "child": "e5abb12868c84c4171ad2a1375a4b039ec9fbc371b85e1af70fe8bfc97d7a306",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 0
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                202
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": []
+          },
+          "parent_sha256": "3bcbd3dd1276be058c7b85119ef159da7c0786cfd2fa27911713e6cb2805a48f"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 202
+      },
+      "visits_before": 0,
+      "candidate_sha256": "1b85db12fe1bf2b6ddb34979c1681e156b7bf87ee5c1bf2ffd757df902241ad8",
+      "anchor_slot": 180,
+      "slot": 1,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 4746,
+      "trajectory": 140,
+      "trajectory_step": 3,
+      "parent": "e5abb12868c84c4171ad2a1375a4b039ec9fbc371b85e1af70fe8bfc97d7a306",
+      "child": "d5efb344312e630adefda07b1b5e6d1fc33a05667d141aa8bbc5c26f2fe7118a",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                26,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "e5abb12868c84c4171ad2a1375a4b039ec9fbc371b85e1af70fe8bfc97d7a306"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 26
+      },
+      "visits_before": 0,
+      "candidate_sha256": "7a9d67416a67192d4de213cbcae26ffa018d2dec9115689999382bf562fe4e90",
+      "anchor_slot": 226,
+      "slot": 0,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 4747,
+      "trajectory": 140,
+      "trajectory_step": 4,
+      "parent": "d5efb344312e630adefda07b1b5e6d1fc33a05667d141aa8bbc5c26f2fe7118a",
+      "child": "2fdaca6928964291430198ec69ecbfbcf46f28d5ec4081a734dc181779cd265c",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                59
+              ],
+              [
+                1,
+                167
+              ],
+              [
+                3,
+                173
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                140
+              ],
+              [
+                2,
+                152
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                139,
+                1
+              ],
+              [
+                4,
+                151,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "d5efb344312e630adefda07b1b5e6d1fc33a05667d141aa8bbc5c26f2fe7118a"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 167
+      },
+      "visits_before": 0,
+      "candidate_sha256": "67e8595c3c9a15a4fc66a9b1d90f69f5adb174d69f6ce254f6e5c87bb570e81b",
+      "anchor_slot": 146,
+      "slot": 0,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 4748,
+      "trajectory": 140,
+      "trajectory_step": 5,
+      "parent": "2fdaca6928964291430198ec69ecbfbcf46f28d5ec4081a734dc181779cd265c",
+      "child": "377cdda367800bb443c8a6feab213c906ad49f6f47cbba9caf8a42b7d2c5cdcc",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                89,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "2fdaca6928964291430198ec69ecbfbcf46f28d5ec4081a734dc181779cd265c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 89
+      },
+      "visits_before": 0,
+      "candidate_sha256": "6823525a3c5b25b9ccd8216e78205ce5a8d8c0035e3b7a466fb579b851d08110",
+      "anchor_slot": 288,
+      "slot": 0,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 6256,
+      "trajectory": 185,
+      "trajectory_step": 1,
+      "parent": "377cdda367800bb443c8a6feab213c906ad49f6f47cbba9caf8a42b7d2c5cdcc",
+      "child": "0f86efa10d06061f8bbd038f28798e1bab5b8df97fd35a477c27974fdc5e3e7c",
+      "action": {
+        "mode": "jpv",
+        "family": "I:forward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                75
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                85,
+                1
+              ],
+              [
+                2,
+                171,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "377cdda367800bb443c8a6feab213c906ad49f6f47cbba9caf8a42b7d2c5cdcc"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 75
+      },
+      "visits_before": 1,
+      "candidate_sha256": "a46265be3ff269a4c0c6984c4fbef9267fd9bda87df8507f034866d574f9aa67",
+      "anchor_slot": 61,
+      "slot": 0,
+      "cost": {
+        "gates": 49,
+        "cx": 22,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 6257,
+      "trajectory": 185,
+      "trajectory_step": 2,
+      "parent": "0f86efa10d06061f8bbd038f28798e1bab5b8df97fd35a477c27974fdc5e3e7c",
+      "child": "ede53464094d5622785a8d827d692d0ecb62f279b37081b11e2bcfa79d8e9398",
+      "action": {
+        "mode": "jpv",
+        "family": "S:backward",
+        "action": {
+          "axiom": {
+            "name": "S",
+            "parameters": {
+              "color": "Z",
+              "alpha": "1",
+              "beta": "1",
+              "left_legs": 1,
+              "right_legs": 1,
+              "links": 1
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                85
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                145,
+                1
+              ],
+              [
+                2,
+                166,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "0f86efa10d06061f8bbd038f28798e1bab5b8df97fd35a477c27974fdc5e3e7c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 85
+      },
+      "visits_before": 0,
+      "candidate_sha256": "3cdcc57ed7ca2016cf40e7815289ae1391e28971b4f58ca01be53a412a858b5b",
+      "anchor_slot": 70,
+      "slot": 1,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 6259,
+      "trajectory": 185,
+      "trajectory_step": 4,
+      "parent": "ede53464094d5622785a8d827d692d0ecb62f279b37081b11e2bcfa79d8e9398",
+      "child": "fd14388b7cf062bef2f7ec854f19bee92b0ca71ef5acd04ca578fb8521ae5bc6",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                139,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "ede53464094d5622785a8d827d692d0ecb62f279b37081b11e2bcfa79d8e9398"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 139
+      },
+      "visits_before": 0,
+      "candidate_sha256": "120ff7c349bdf42e5780ac6717633636aa39775562a9f3e1b837186aab4418b2",
+      "anchor_slot": 337,
+      "slot": 0,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 8442,
+      "trajectory": 245,
+      "trajectory_step": 1,
+      "parent": "fd14388b7cf062bef2f7ec854f19bee92b0ca71ef5acd04ca578fb8521ae5bc6",
+      "child": "4705c0b4366cc349333164b7bea625dd5199208e1cf881545f5afafc03730a4d",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                62,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "fd14388b7cf062bef2f7ec854f19bee92b0ca71ef5acd04ca578fb8521ae5bc6"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 62
+      },
+      "visits_before": 0,
+      "candidate_sha256": "8806bd1cd3b7aadf18e21cd9bff818076488bd782311eaa5df9f45ca024936bb",
+      "anchor_slot": 261,
+      "slot": 0,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 12376,
+      "trajectory": 366,
+      "trajectory_step": 1,
+      "parent": "4705c0b4366cc349333164b7bea625dd5199208e1cf881545f5afafc03730a4d",
+      "child": "19f3f76fb8a659aa7915e25387f0cc2f3a5662a6087bb42c9ac45809ab0bcfef",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                20,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "4705c0b4366cc349333164b7bea625dd5199208e1cf881545f5afafc03730a4d"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 20
+      },
+      "visits_before": 0,
+      "candidate_sha256": "8dabdd106ff91fe75c465576669234cce0d12b1a148fe80dfbbd3bf59f174c11",
+      "anchor_slot": 220,
+      "slot": 0,
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      }
+    },
+    {
+      "transition": 13975,
+      "trajectory": 408,
+      "trajectory_step": 3,
+      "parent": "19f3f76fb8a659aa7915e25387f0cc2f3a5662a6087bb42c9ac45809ab0bcfef",
+      "child": "4eb84373bea27bf737733668cbb65fb3bef627855e03c955ba17e1c198683d1c",
+      "action": {
+        "mode": "legacy",
+        "family": "PV",
+        "action": {
+          "kind": "PV",
+          "vertices": [
+            29,
+            36
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 87036,
+        "parent_view_key": "d3f3514a2f9a2fb4df31189dec06e1995637b4a5cf2e9aaa3fa4ce03aa6dc2fa"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 29
+      },
+      "visits_before": 0,
+      "candidate_sha256": "5713ec9da0b66b148f844f044c44d6afb3664a00c3912663d89c74ea7e946673",
+      "anchor_slot": 225,
+      "slot": 0,
+      "cost": {
+        "gates": 56,
+        "cx": 26,
+        "depth": 45
+      }
+    },
+    {
+      "transition": 13976,
+      "trajectory": 408,
+      "trajectory_step": 4,
+      "parent": "4eb84373bea27bf737733668cbb65fb3bef627855e03c955ba17e1c198683d1c",
+      "child": "2ca4afb65572cc68e6e22d3791918a7eef32f1b75fc11b7250d26bf59b18428c",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                194,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "4eb84373bea27bf737733668cbb65fb3bef627855e03c955ba17e1c198683d1c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 194
+      },
+      "visits_before": 0,
+      "candidate_sha256": "b32a00da03e37af1357555fd6df60526ec764ffb06ef88856fa497cb01940482",
+      "anchor_slot": 393,
+      "slot": 0,
+      "cost": {
+        "gates": 56,
+        "cx": 26,
+        "depth": 45
+      }
+    },
+    {
+      "transition": 13977,
+      "trajectory": 408,
+      "trajectory_step": 5,
+      "parent": "2ca4afb65572cc68e6e22d3791918a7eef32f1b75fc11b7250d26bf59b18428c",
+      "child": "810eb2cb5d9a2dad509fa6a26683ad633889057ddf5cec076117a7e4fd3b082f",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                34,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "2ca4afb65572cc68e6e22d3791918a7eef32f1b75fc11b7250d26bf59b18428c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 34
+      },
+      "visits_before": 0,
+      "candidate_sha256": "8a09c49348a8a8faed707b17f7aa080f482c4529d99b529876dad254f7663366",
+      "anchor_slot": 234,
+      "slot": 0,
+      "cost": {
+        "gates": 56,
+        "cx": 26,
+        "depth": 45
+      }
+    },
+    {
+      "transition": 13978,
+      "trajectory": 408,
+      "trajectory_step": 6,
+      "parent": "810eb2cb5d9a2dad509fa6a26683ad633889057ddf5cec076117a7e4fd3b082f",
+      "child": "6da92fc638b1869271ab9475763e063cfb0ccfd97985440fabd9380abb863914",
+      "action": {
+        "mode": "legacy",
+        "family": "PVG",
+        "action": {
+          "kind": "PVG",
+          "vertices": [
+            26,
+            25
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 78025,
+        "parent_view_key": "8c461363510a02419970c3d449a0a63b458673d1b92eeede0c7168fbb5a4385e"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 25
+      },
+      "visits_before": 0,
+      "candidate_sha256": "1aedb1c63fc11838c47d54b2f63866b8b6de535b88596fa3b531ca4ac5e654c6",
+      "anchor_slot": 221,
+      "slot": 1,
+      "cost": {
+        "gates": 49,
+        "cx": 21,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 13979,
+      "trajectory": 408,
+      "trajectory_step": 7,
+      "parent": "6da92fc638b1869271ab9475763e063cfb0ccfd97985440fabd9380abb863914",
+      "child": "dc750bcfc9d2bd304fe8cc496841dd61f03bf7160d7f18d3cee6bfac64a2d3dc",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                159,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "6da92fc638b1869271ab9475763e063cfb0ccfd97985440fabd9380abb863914"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 159
+      },
+      "visits_before": 0,
+      "candidate_sha256": "a4ec9d5b1193218b5d98444ac3abb20d7db86e55f7e60a4933fab2aae05502bf",
+      "anchor_slot": 358,
+      "slot": 0,
+      "cost": {
+        "gates": 49,
+        "cx": 21,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 13980,
+      "trajectory": 408,
+      "trajectory_step": 8,
+      "parent": "dc750bcfc9d2bd304fe8cc496841dd61f03bf7160d7f18d3cee6bfac64a2d3dc",
+      "child": "88af955a96a7d7b1911a5ddd6496134e144c0fbf86ab800b838146036da610db",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                20
+              ],
+              [
+                1,
+                134
+              ],
+              [
+                3,
+                135
+              ],
+              [
+                5,
+                128
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                82
+              ],
+              [
+                2,
+                83
+              ],
+              [
+                4,
+                69
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                81,
+                1
+              ],
+              [
+                4,
+                84,
+                0
+              ],
+              [
+                6,
+                68,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "dc750bcfc9d2bd304fe8cc496841dd61f03bf7160d7f18d3cee6bfac64a2d3dc"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 20
+      },
+      "visits_before": 0,
+      "candidate_sha256": "90eadc9b2dfe2ecf3876aa8e63692e2bad3c766942d08fc490b5f3ee790f1cec",
+      "anchor_slot": 15,
+      "slot": 1,
+      "cost": {
+        "gates": 55,
+        "cx": 25,
+        "depth": 41
+      }
+    },
+    {
+      "transition": 13981,
+      "trajectory": 408,
+      "trajectory_step": 9,
+      "parent": "88af955a96a7d7b1911a5ddd6496134e144c0fbf86ab800b838146036da610db",
+      "child": "207d957778b29ad720b8a18cecb8be7205c87f8f1a6901be21bca37448c6bc3c",
+      "action": {
+        "mode": "legacy",
+        "family": "PV",
+        "action": {
+          "kind": "PV",
+          "vertices": [
+            10,
+            86
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 30086,
+        "parent_view_key": "d551d99c376acd4bb325fb44631e6c370fdc423383f796b3fdf917d858e1f7d7"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 10
+      },
+      "visits_before": 0,
+      "candidate_sha256": "e342653c21da4535bb00cfd88e7c2a04dc58da63e255dc38d71a2341ab9c1435",
+      "anchor_slot": 415,
+      "slot": 1,
+      "cost": {
+        "gates": 43,
+        "cx": 18,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 13982,
+      "trajectory": 408,
+      "trajectory_step": 10,
+      "parent": "207d957778b29ad720b8a18cecb8be7205c87f8f1a6901be21bca37448c6bc3c",
+      "child": "87b8e6acb745c63c3c5b667821b5c38b54414dabcc34151af87373854351e188",
+      "action": {
+        "mode": "macro",
+        "family": "phase_split",
+        "action": {
+          "kind": "phase_split",
+          "vertices": [
+            92
+          ],
+          "phase": "1/2",
+          "subset": []
+        },
+        "identifier": null,
+        "parent_view_key": "4f8490af150b9a6bb7ffa670d7457ddad0af543e42ae650865b7aaae663ab30e"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 92
+      },
+      "visits_before": 0,
+      "candidate_sha256": "1b3d6791bb7c2cf30e44d529d393d8aabcf4c050835578942433311f5ccae58d",
+      "anchor_slot": 488,
+      "slot": 2,
+      "cost": {
+        "gates": 43,
+        "cx": 18,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 13983,
+      "trajectory": 408,
+      "trajectory_step": 11,
+      "parent": "87b8e6acb745c63c3c5b667821b5c38b54414dabcc34151af87373854351e188",
+      "child": "db61e7359ed534023ee9e1722a44e49c53fa9a8762af1b8a94594b168d1ff50c",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                133,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "87b8e6acb745c63c3c5b667821b5c38b54414dabcc34151af87373854351e188"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 133
+      },
+      "visits_before": 0,
+      "candidate_sha256": "46d5111e4bdeead1516e5c1d595ea6693ecffa2af3c450daded5e97794e1196d",
+      "anchor_slot": 332,
+      "slot": 0,
+      "cost": {
+        "gates": 43,
+        "cx": 18,
+        "depth": 38
+      }
+    },
+    {
+      "transition": 13984,
+      "trajectory": 408,
+      "trajectory_step": 12,
+      "parent": "db61e7359ed534023ee9e1722a44e49c53fa9a8762af1b8a94594b168d1ff50c",
+      "child": "1bed5ff9bd097a8d406b5db999b161f202d0b9df160fd0c66d166cc254509add",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "1/2",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                22
+              ],
+              [
+                1,
+                149
+              ],
+              [
+                3,
+                151
+              ],
+              [
+                5,
+                145
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                92
+              ],
+              [
+                2,
+                95
+              ],
+              [
+                4,
+                84
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                91,
+                1
+              ],
+              [
+                4,
+                96,
+                0
+              ],
+              [
+                6,
+                83,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "db61e7359ed534023ee9e1722a44e49c53fa9a8762af1b8a94594b168d1ff50c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 22
+      },
+      "visits_before": 0,
+      "candidate_sha256": "696b254095e011a89091e85fe87e4a25cd53b237e65d2870ecb260fc540facd1",
+      "anchor_slot": 17,
+      "slot": 1,
+      "cost": {
+        "gates": 54,
+        "cx": 25,
+        "depth": 49
+      }
+    },
+    {
+      "transition": 13985,
+      "trajectory": 408,
+      "trajectory_step": 13,
+      "parent": "1bed5ff9bd097a8d406b5db999b161f202d0b9df160fd0c66d166cc254509add",
+      "child": "0b5888fcbbced493821baa84d8088739f4777201843363bc974e198529e71273",
+      "action": {
+        "mode": "legacy",
+        "family": "PVG",
+        "action": {
+          "kind": "PVG",
+          "vertices": [
+            51,
+            53
+          ],
+          "phase": "0",
+          "subset": []
+        },
+        "identifier": 153053,
+        "parent_view_key": "75f47ec66a97a2dc8b7a40a96f0cd2041637d797f4aa48a25c43c090829a2f92"
+      },
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 53
+      },
+      "visits_before": 0,
+      "candidate_sha256": "c2bc68bb77adaaa7b6fb95594a721e8b63497c69edbd8a4ba3ce13c29caac9b7",
+      "anchor_slot": 453,
+      "slot": 0,
+      "cost": {
+        "gates": 56,
+        "cx": 28,
+        "depth": 39
+      }
+    },
+    {
+      "transition": 13986,
+      "trajectory": 408,
+      "trajectory_step": 14,
+      "parent": "0b5888fcbbced493821baa84d8088739f4777201843363bc974e198529e71273",
+      "child": "e3fe3ba64633f2a099aa0b03a1e240b8b10cc4d11a885cf7f710fe274f48db0f",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                17
+              ],
+              [
+                1,
+                130
+              ],
+              [
+                3,
+                119
+              ],
+              [
+                5,
+                131
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                74
+              ],
+              [
+                2,
+                51
+              ],
+              [
+                4,
+                75
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                73,
+                1
+              ],
+              [
+                4,
+                50,
+                1
+              ],
+              [
+                6,
+                76,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "0b5888fcbbced493821baa84d8088739f4777201843363bc974e198529e71273"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 17
+      },
+      "visits_before": 0,
+      "candidate_sha256": "df083713222d87241ecdf462b03ebbea918795c66b1a089b4fcb9daa4449c5ee",
+      "anchor_slot": 12,
+      "slot": 2,
+      "cost": {
+        "gates": 46,
+        "cx": 18,
+        "depth": 36
+      }
+    },
+    {
+      "transition": 13987,
+      "trajectory": 408,
+      "trajectory_step": 15,
+      "parent": "e3fe3ba64633f2a099aa0b03a1e240b8b10cc4d11a885cf7f710fe274f48db0f",
+      "child": "8b7ff6551f7213d12631dcde0021efa57beffd6ce107d231e56048b431cce523",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "Z"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                170
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                150,
+                1
+              ],
+              [
+                2,
+                151,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "e3fe3ba64633f2a099aa0b03a1e240b8b10cc4d11a885cf7f710fe274f48db0f"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 170
+      },
+      "visits_before": 0,
+      "candidate_sha256": "213bb16ad664872f91d0ebf2605426bafbc8aa89954fabfc43b46c8664938811",
+      "anchor_slot": 156,
+      "slot": 1,
+      "cost": {
+        "gates": 55,
+        "cx": 27,
+        "depth": 46
+      }
+    },
+    {
+      "transition": 13988,
+      "trajectory": 408,
+      "trajectory_step": 16,
+      "parent": "8b7ff6551f7213d12631dcde0021efa57beffd6ce107d231e56048b431cce523",
+      "child": "eab048431befa01ab84578cb133f23ad23ee31b2ef0c467a4e63028832e0f15a",
+      "action": {
+        "mode": "jpv",
+        "family": "I:forward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                29
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                110,
+                0
+              ],
+              [
+                2,
+                107,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "8b7ff6551f7213d12631dcde0021efa57beffd6ce107d231e56048b431cce523"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 29
+      },
+      "visits_before": 0,
+      "candidate_sha256": "1351aa2ab69e4fe38dbffb14eff9d7a647e3d8b6f1f7d2144d3f9f4e4261c7d7",
+      "anchor_slot": 23,
+      "slot": 2,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13989,
+      "trajectory": 408,
+      "trajectory_step": 17,
+      "parent": "eab048431befa01ab84578cb133f23ad23ee31b2ef0c467a4e63028832e0f15a",
+      "child": "c828d95c21b60c1aec2c49ddceee42567c3feaeca42c6cf5071ae5904258e0d4",
+      "action": {
+        "mode": "jpv",
+        "family": "S:backward",
+        "action": {
+          "axiom": {
+            "name": "S",
+            "parameters": {
+              "color": "Z",
+              "alpha": "5/4",
+              "beta": "3/4",
+              "left_legs": 0,
+              "right_legs": 0,
+              "links": 1
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                206
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": []
+          },
+          "parent_sha256": "eab048431befa01ab84578cb133f23ad23ee31b2ef0c467a4e63028832e0f15a"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 206
+      },
+      "visits_before": 0,
+      "candidate_sha256": "6df9454c77f5e10cce2b70c9bd5514f814c57979cfb77dfd6a849d2fe8a2d7e7",
+      "anchor_slot": 190,
+      "slot": 2,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13990,
+      "trajectory": 408,
+      "trajectory_step": 18,
+      "parent": "c828d95c21b60c1aec2c49ddceee42567c3feaeca42c6cf5071ae5904258e0d4",
+      "child": "3eaf8a72d89819be7be5b8ed2756ccede8045aa1fe45d0d01d25225df6924753",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "0",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                72
+              ],
+              [
+                1,
+                186
+              ],
+              [
+                3,
+                104
+              ],
+              [
+                5,
+                136
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                179
+              ],
+              [
+                2,
+                21
+              ],
+              [
+                4,
+                80
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                178,
+                1
+              ],
+              [
+                4,
+                20,
+                1
+              ],
+              [
+                6,
+                79,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "c828d95c21b60c1aec2c49ddceee42567c3feaeca42c6cf5071ae5904258e0d4"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 72
+      },
+      "visits_before": 0,
+      "candidate_sha256": "a30186ae6327f405ad6a93d5aa6a6d2f02dc013e54fcbae7bde416210071e22e",
+      "anchor_slot": 60,
+      "slot": 3,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13991,
+      "trajectory": 408,
+      "trajectory_step": 19,
+      "parent": "3eaf8a72d89819be7be5b8ed2756ccede8045aa1fe45d0d01d25225df6924753",
+      "child": "e50135962772c3dcb195559d456a213fc1a782a9e7b7d0e122ec06ffdf8c0f7f",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                193,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "3eaf8a72d89819be7be5b8ed2756ccede8045aa1fe45d0d01d25225df6924753"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 193
+      },
+      "visits_before": 0,
+      "candidate_sha256": "f6846dabdd2feacaa4596fdd726e14d20fc3da3d5bce779885ce49319e89a994",
+      "anchor_slot": 389,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13992,
+      "trajectory": 408,
+      "trajectory_step": 20,
+      "parent": "e50135962772c3dcb195559d456a213fc1a782a9e7b7d0e122ec06ffdf8c0f7f",
+      "child": "b2c8f33877723320c4ba28fdb3c5e2e28ff6fcb8e9057407d5fe6332f74a3fdd",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                154,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "e50135962772c3dcb195559d456a213fc1a782a9e7b7d0e122ec06ffdf8c0f7f"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 154
+      },
+      "visits_before": 0,
+      "candidate_sha256": "f02b6c78c8ccae0d4946e452b3a4b5a58c3f2ce954cf117bf846f54488e7150d",
+      "anchor_slot": 351,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13993,
+      "trajectory": 408,
+      "trajectory_step": 21,
+      "parent": "b2c8f33877723320c4ba28fdb3c5e2e28ff6fcb8e9057407d5fe6332f74a3fdd",
+      "child": "096d5eeae0e4bddcd54189333a470f94ade4285e11aded5cdc2fcf4b47a182b3",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                138,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "b2c8f33877723320c4ba28fdb3c5e2e28ff6fcb8e9057407d5fe6332f74a3fdd"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 138
+      },
+      "visits_before": 0,
+      "candidate_sha256": "2bc39bdafef32e54e460d562ee0d76b8289078246ae3590df8a8c4a552d2bfd0",
+      "anchor_slot": 336,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13994,
+      "trajectory": 408,
+      "trajectory_step": 22,
+      "parent": "096d5eeae0e4bddcd54189333a470f94ade4285e11aded5cdc2fcf4b47a182b3",
+      "child": "1f71ea67dba88f3e2d0ba0102a00484500a320ba1ae7c6815912a05b8dce352b",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                138,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "096d5eeae0e4bddcd54189333a470f94ade4285e11aded5cdc2fcf4b47a182b3"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 138
+      },
+      "visits_before": 0,
+      "candidate_sha256": "b90a1f763869b4c3317e5fdecd4718ab51c50a5126fe8883cc7b30c3801c5577",
+      "anchor_slot": 337,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13995,
+      "trajectory": 408,
+      "trajectory_step": 23,
+      "parent": "1f71ea67dba88f3e2d0ba0102a00484500a320ba1ae7c6815912a05b8dce352b",
+      "child": "8f7b17b0207f03999e410fef602e06c4c0ad160e0c7a5f82192c9df772cd8a7a",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                30,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "1f71ea67dba88f3e2d0ba0102a00484500a320ba1ae7c6815912a05b8dce352b"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 30
+      },
+      "visits_before": 0,
+      "candidate_sha256": "c94fbc5317c09436ad9f6bdd0b7a2a34e2badd80c6a6a65e7bb44c97c8e3f2a6",
+      "anchor_slot": 230,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13997,
+      "trajectory": 408,
+      "trajectory_step": 25,
+      "parent": "8f7b17b0207f03999e410fef602e06c4c0ad160e0c7a5f82192c9df772cd8a7a",
+      "child": "20d82924d0edabcada4226264367eb1fdc0d11c4fc6c674622e9446e540aa694",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "0",
+              "arity": 10
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                7
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                16,
+                0
+              ],
+              [
+                2,
+                10,
+                1
+              ],
+              [
+                3,
+                18,
+                0
+              ],
+              [
+                4,
+                204,
+                0
+              ],
+              [
+                5,
+                24,
+                0
+              ],
+              [
+                6,
+                20,
+                0
+              ],
+              [
+                7,
+                26,
+                0
+              ],
+              [
+                8,
+                22,
+                0
+              ],
+              [
+                9,
+                13,
+                0
+              ],
+              [
+                10,
+                14,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "8f7b17b0207f03999e410fef602e06c4c0ad160e0c7a5f82192c9df772cd8a7a"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 7
+      },
+      "visits_before": 0,
+      "candidate_sha256": "9a62c022cc2f3062e5c6fe61413291a73ab06494486d05dad0b133237bdaec34",
+      "anchor_slot": 2,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13998,
+      "trajectory": 408,
+      "trajectory_step": 26,
+      "parent": "20d82924d0edabcada4226264367eb1fdc0d11c4fc6c674622e9446e540aa694",
+      "child": "b55bf4d86d4f82301f99fbe4977763f9196340b81693f47b269123697120b0be",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                76,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "20d82924d0edabcada4226264367eb1fdc0d11c4fc6c674622e9446e540aa694"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 76
+      },
+      "visits_before": 0,
+      "candidate_sha256": "df028cd2d0d435245cbb4e217f5868af094b87fe03de6430e04b0744924d7f7c",
+      "anchor_slot": 271,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 13999,
+      "trajectory": 408,
+      "trajectory_step": 27,
+      "parent": "b55bf4d86d4f82301f99fbe4977763f9196340b81693f47b269123697120b0be",
+      "child": "d3b7ef08f83b45cecd9c665935711a67f2fcba80e5bdf86a3e9efb90213c2056",
+      "action": {
+        "mode": "jpv",
+        "family": "H:forward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "X",
+              "alpha": "7/4",
+              "arity": 2
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                26
+              ],
+              [
+                1,
+                145
+              ],
+              [
+                3,
+                147
+              ]
+            ],
+            "internal_edges": [
+              [
+                0,
+                76
+              ],
+              [
+                2,
+                79
+              ]
+            ],
+            "port_halves": [
+              [
+                2,
+                210,
+                0
+              ],
+              [
+                4,
+                80,
+                0
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "b55bf4d86d4f82301f99fbe4977763f9196340b81693f47b269123697120b0be"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 145
+      },
+      "visits_before": 0,
+      "candidate_sha256": "e613f3ff9fbd530b5a006f5435b77bc60105716ea2927250c282608d813775dc",
+      "anchor_slot": 118,
+      "slot": 1,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 14000,
+      "trajectory": 408,
+      "trajectory_step": 28,
+      "parent": "d3b7ef08f83b45cecd9c665935711a67f2fcba80e5bdf86a3e9efb90213c2056",
+      "child": "67be5190750df0585594233fdb060061a568688f60ee6e0b1c76c7fe15fcdee4",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                95,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "d3b7ef08f83b45cecd9c665935711a67f2fcba80e5bdf86a3e9efb90213c2056"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 95
+      },
+      "visits_before": 0,
+      "candidate_sha256": "d5fca9f118d12f7b4579e333f2387cabff441b5e3717b767e24322563ad0c5bb",
+      "anchor_slot": 289,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 14001,
+      "trajectory": 408,
+      "trajectory_step": 29,
+      "parent": "67be5190750df0585594233fdb060061a568688f60ee6e0b1c76c7fe15fcdee4",
+      "child": "a1e3b5afd974f7c2598654417225f3e19a7ef1dd72103f62d69c75441d95818c",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "X"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                30,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "67be5190750df0585594233fdb060061a568688f60ee6e0b1c76c7fe15fcdee4"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 30
+      },
+      "visits_before": 0,
+      "candidate_sha256": "204eec33a3634fc9d10dcb5c07208651c9a0dfde35e5b87bdc76491e1eee0a9e",
+      "anchor_slot": 225,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 14002,
+      "trajectory": 408,
+      "trajectory_step": 30,
+      "parent": "a1e3b5afd974f7c2598654417225f3e19a7ef1dd72103f62d69c75441d95818c",
+      "child": "06fc8fe1684d44410cbe055599db5dd33baae990980d01a2bc7e2bfe8f0cfd5f",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                144,
+                0
+              ]
+            ]
+          },
+          "parent_sha256": "a1e3b5afd974f7c2598654417225f3e19a7ef1dd72103f62d69c75441d95818c"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 144
+      },
+      "visits_before": 0,
+      "candidate_sha256": "8fa415ce4ef484498d9b87d7cb62906e1c98b5910770412067e5ec9118651625",
+      "anchor_slot": 340,
+      "slot": 0,
+      "cost": {
+        "gates": 54,
+        "cx": 22,
+        "depth": 43
+      }
+    },
+    {
+      "transition": 14003,
+      "trajectory": 408,
+      "trajectory_step": 31,
+      "parent": "06fc8fe1684d44410cbe055599db5dd33baae990980d01a2bc7e2bfe8f0cfd5f",
+      "child": "f9013a487eb146055ee6e48f9d7414f699bdd7fa92a303e089a17a2a654a29c0",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "0",
+              "arity": 6
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                15
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                41,
+                0
+              ],
+              [
+                2,
+                42,
+                0
+              ],
+              [
+                3,
+                46,
+                0
+              ],
+              [
+                4,
+                48,
+                0
+              ],
+              [
+                5,
+                44,
+                0
+              ],
+              [
+                6,
+                36,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "06fc8fe1684d44410cbe055599db5dd33baae990980d01a2bc7e2bfe8f0cfd5f"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 15
+      },
+      "visits_before": 0,
+      "candidate_sha256": "c0b0a9fdd4c4007fbb770c65001829280459d6b560739b189e25d08dafbdf6c3",
+      "anchor_slot": 9,
+      "slot": 0,
+      "cost": {
+        "gates": 51,
+        "cx": 21,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 14004,
+      "trajectory": 408,
+      "trajectory_step": 32,
+      "parent": "f9013a487eb146055ee6e48f9d7414f699bdd7fa92a303e089a17a2a654a29c0",
+      "child": "37dd37631c681460da22ee415b484303dca63de673e3055d8e4b9102d2d9a536",
+      "action": {
+        "mode": "jpv",
+        "family": "EU:forward",
+        "action": {
+          "axiom": {
+            "name": "EU",
+            "parameters": {
+              "color": "Z"
+            },
+            "domain": "general"
+          },
+          "direction": "forward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                159
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                88,
+                0
+              ],
+              [
+                2,
+                87,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "f9013a487eb146055ee6e48f9d7414f699bdd7fa92a303e089a17a2a654a29c0"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 159
+      },
+      "visits_before": 0,
+      "candidate_sha256": "363047acee5e941c194ad6eb7b5eb1f86e57b47e7a456f0a957a6fcfd9ad6d18",
+      "anchor_slot": 123,
+      "slot": 2,
+      "cost": {
+        "gates": 51,
+        "cx": 21,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 14005,
+      "trajectory": 408,
+      "trajectory_step": 33,
+      "parent": "37dd37631c681460da22ee415b484303dca63de673e3055d8e4b9102d2d9a536",
+      "child": "42405c23bc7b202ddb2f46b4a47402ec4e82572d2f483c3f09f3039b0ad1ffe2",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                18,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "37dd37631c681460da22ee415b484303dca63de673e3055d8e4b9102d2d9a536"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 18
+      },
+      "visits_before": 0,
+      "candidate_sha256": "58f05a627a4b8c61cadb5786cbc1d98ded45d2836af82d76e78cf45620023101",
+      "anchor_slot": 214,
+      "slot": 0,
+      "cost": {
+        "gates": 51,
+        "cx": 21,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 14006,
+      "trajectory": 408,
+      "trajectory_step": 34,
+      "parent": "42405c23bc7b202ddb2f46b4a47402ec4e82572d2f483c3f09f3039b0ad1ffe2",
+      "child": "26a7d9ac546c729a456b00d44b1d012b3999d1c6802818106f753d1af333db74",
+      "action": {
+        "mode": "jpv",
+        "family": "I:backward",
+        "action": {
+          "axiom": {
+            "name": "I",
+            "parameters": {
+              "color": "Z"
+            }
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [],
+            "internal_edges": [],
+            "port_halves": [],
+            "wire_edges": [
+              [
+                0,
+                84,
+                1
+              ]
+            ]
+          },
+          "parent_sha256": "42405c23bc7b202ddb2f46b4a47402ec4e82572d2f483c3f09f3039b0ad1ffe2"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "edge",
+        "position": 84
+      },
+      "visits_before": 0,
+      "candidate_sha256": "8e471ec55450e03bee124643f5842c19e9184c3bf8a0b083a01ac1ece3ae37ec",
+      "anchor_slot": 281,
+      "slot": 0,
+      "cost": {
+        "gates": 51,
+        "cx": 21,
+        "depth": 40
+      }
+    },
+    {
+      "transition": 14008,
+      "trajectory": 408,
+      "trajectory_step": 36,
+      "parent": "26a7d9ac546c729a456b00d44b1d012b3999d1c6802818106f753d1af333db74",
+      "child": "10851e87fbabdd68ccc1701eac4d2b448d42d2f74e49165116ff48d53950deca",
+      "action": {
+        "mode": "jpv",
+        "family": "H:backward",
+        "action": {
+          "axiom": {
+            "name": "H",
+            "parameters": {
+              "color": "Z",
+              "alpha": "1/2",
+              "arity": 3
+            },
+            "domain": "general"
+          },
+          "direction": "backward",
+          "match": {
+            "vertices": [
+              [
+                0,
+                84
+              ]
+            ],
+            "internal_edges": [],
+            "port_halves": [
+              [
+                1,
+                144,
+                1
+              ],
+              [
+                2,
+                185,
+                1
+              ],
+              [
+                3,
+                59,
+                1
+              ]
+            ],
+            "wire_edges": []
+          },
+          "parent_sha256": "26a7d9ac546c729a456b00d44b1d012b3999d1c6802818106f753d1af333db74"
+        },
+        "identifier": null,
+        "parent_view_key": null
+      },
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 84
+      },
+      "visits_before": 0,
+      "candidate_sha256": "a26d69d05b5af2c9efe8f54c90adf9ad9b9acffe0089b3288ae39e48ea541ba9",
+      "anchor_slot": 68,
+      "slot": 0,
+      "cost": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 34
+      }
+    }
+  ],
+  "max_graph_operator_error": 1.0111570888008614e-14,
+  "max_qasm_operator_error": 1.136074978892206e-15,
+  "dataset_sha256": "805391e8831049a96323dc901de320787a50759d78cc8e5a2b567f483f1a8e31",
+  "initial_model_sha256": "06a7f3d4dd82ecfad462c8a6f385b7f8f6122d9307669ff902bb646ce5ea822e",
+  "config": {
+    "output": "/workspace/task/source/runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s197",
+    "resume_state": null,
+    "resume_model": null,
+    "shared_buffer": null,
+    "input": "/workspace/task/source/inputs/quarl-nam-raw/barenco_tof_3.qasm",
+    "jpv": true,
+    "general_zx": true,
+    "allow_arbitrary_angles": true,
+    "policy": "online",
+    "selection": "anchor",
+    "anchor_candidate_cap": 8,
+    "anchor_prior": "uniform",
+    "learning_rate": 0.0001,
+    "anchor_resource_mask": true,
+    "seconds": 3600.0,
+    "no_improvement_seconds": 0.0,
+    "checkpoint_seconds": 300.0,
+    "verification": "adaptive",
+    "seed": 197,
+    "max_growth": 64,
+    "max_edge_growth": 256,
+    "candidate_cap": 32,
+    "total_candidate_cap": 32,
+    "matching_work": 2048,
+    "horizon": 70,
+    "max_unscored": 8,
+    "archive": 64,
+    "latent_archive": 128,
+    "rollout": 32,
+    "extraction_timeout": 20.0,
+    "rewrite_timeout": 30.0,
+    "max_steps": null,
+    "feasibility_mask": true
+  },
+  "preparer_sha256": "2b2e635212645aa3871c0a9f7ea0fd7c3a5d00a44b678f051d0950d4c83e0015",
+  "scope": "Same-circuit successful search ancestry, potentially across archive restarts; recorded sampling contexts retained. Every local menu SHA, witness, saved child, HH receipt and fixed-wire operator/circuit cost reverified. No target was injected into a menu. Demonstration learning is separate from assessing the original PPO; later probes must use only model weights and the original input with fresh pools/RNG."
+}

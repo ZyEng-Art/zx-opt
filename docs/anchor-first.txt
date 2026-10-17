@@ -264,3 +264,34 @@ and parameter comparisons are required before calling this computation-only.
   are bitwise equal to retained controls. An alternating-order export-only
   benchmark measured4.87x locally, excluding shared phase-helper work and all
   verification from its timer. Full training/audit speedups need Linux evidence.
+
+  Linux matched600s controls now passed all8trials per version, on the same
+  node/seeds/resources. Median accepted throughput improved11.5%frozen and
+  9.5%online. All8gate outcomes tie. Every common sampled action/reward/archive
+  prefix agrees (roughly8k-11ksteps per pair); only adapter/ring source hashes
+  differ. These are computation savings, not evidence that PPO learned better.
+
+2026-10-18 same-circuit successful-path imitation prototype
+  prepare_imitation_path.py reconstructs first-creation state ancestry back to
+  the original root, across archived restarts when necessary. Recreate each
+  source-seeded local menu using its prior state/anchor visit count; require
+  the exact recorded candidate SHA, selected action and anchor slots. Recheck
+  saved children, HH receipts, fixed-wire graph operators and extracted QASM
+  costs. Missing menus are errors; no target injection or path truncation.
+
+  One previously discovered36gate barenco path yielded125verified examples.
+  train_path_imitation.py trains only the existing actor's joint anchor/action
+  likelihood, leaving critic tensors unchanged. Full-path,23gate-reducing-step
+  and one-final-action diagnostic subsets have separate hashes and reports.
+  These are supervised demonstrations on the same circuit, separate from the
+  original PPO evaluation. Training-set fit is not search efficacy. The source
+  whole-cohort audit is pending, recorded explicitly; the selected path itself
+  has been independently reverified. Development script bytes are hash-bound.
+
+  Four128step frozen-model smoke runs passed complete operator/circuit/model
+  replay audits. Initial/full/positive/single model stages then use seeds
+  853/877/911,900s each, starting from the original40gate input and fresh pools.
+  Only hash-checked model capsules are transferred and mounted read-only; no
+  teacher graph, candidate circuit or restart archive enters these searches.
+  The model-probe launcher retains this development-demonstration scope. The
+  existing policy-probe workflow still requires its complete source PPO audit.

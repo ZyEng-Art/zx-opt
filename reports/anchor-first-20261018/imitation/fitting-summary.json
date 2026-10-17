@@ -1,0 +1,27 @@
+{
+  "status": "training_set_diagnostics_only",
+  "variants": {
+    "full": {
+      "updates": 6000,
+      "initial_joint_nll": 6.684836029052734,
+      "final_joint_nll": 5.94838882446289,
+      "anchor_accuracy": 0.032,
+      "local_action_accuracy": 0.864
+    },
+    "positive": {
+      "updates": 4000,
+      "initial_joint_nll": 6.787872148596722,
+      "final_joint_nll": 4.477707489677098,
+      "anchor_accuracy": 0.2608695652173913,
+      "local_action_accuracy": 0.6956521739130435
+    },
+    "single": {
+      "updates": 400,
+      "initial_joint_nll": 6.9180755615234375,
+      "final_joint_nll": 0.0014892484759911895,
+      "anchor_accuracy": 1.0,
+      "local_action_accuracy": 1.0
+    }
+  },
+  "scope": "Different supervised subsets; fitting accuracy is not search utility. Four128step frozen-model functional cases passed complete audits; no efficacy claim. Preregistered fresh-search seeds853877911 and900s per model follow, from original40gate root with no teacher circuit/archive transfer."
+}

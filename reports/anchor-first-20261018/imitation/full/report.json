@@ -1,0 +1,27 @@
+{
+  "status": "imitation_training_complete",
+  "updates": 6000,
+  "first": {
+    "update": 0,
+    "seconds": 0.4641385000000007,
+    "joint_nll": 6.684836029052734,
+    "anchor_accuracy": 0.0,
+    "local_action_accuracy": 0.672
+  },
+  "final": {
+    "update": 6000,
+    "seconds": 158.888429916,
+    "joint_nll": 5.94838882446289,
+    "anchor_accuracy": 0.032,
+    "local_action_accuracy": 0.864
+  },
+  "actor_l2_delta": 16.289937141832336,
+  "critic_tensors_bitwise_unchanged": true,
+  "initial_tensor_sha256": "9bd53352492a366170e5898f8b9d62320943082b1d7753c86c84b022055aed27",
+  "final_tensor_sha256": "4b0d09d12e6da8cdf155a3e340b3d7a27fd7b0fdf1169e9e7e6bff5343a2722d",
+  "trained_model_sha256": "0523160f217954873a5c3f24b5eac9a500764749ed405cecdc23786e8e64fb4b",
+  "initial_model_sha256": "06a7f3d4dd82ecfad462c8a6f385b7f8f6122d9307669ff902bb646ce5ea822e",
+  "demonstration_sha256": "531a68e241384dd94ef2a794f55612fc4dd3f50673b7410f7ff56eeaee5f2042",
+  "development_dataset": true,
+  "scope": "Training-set fit only; no utility/convergence/generalization claim without separate frozen initial/imitated model searches from the original circuit and fresh pools."
+}

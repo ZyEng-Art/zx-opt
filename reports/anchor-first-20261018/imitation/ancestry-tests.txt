@@ -1,0 +1,7 @@
+test_missing_predecessors_are_rejected_instead_of_truncating_the_path (test_imitation_ancestry.ImitationAncestryTest) ... ok
+test_restarts_reuse_the_first_creation_edge_and_count_failed_visits (test_imitation_ancestry.ImitationAncestryTest) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK

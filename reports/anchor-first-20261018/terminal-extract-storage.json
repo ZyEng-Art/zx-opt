@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-18T04:19:02.054582+08:00",
+  "event": "pruned_reproducible_terminal_dataset_copies",
+  "records": [
+    {
+      "removed": "runs/verified-archives-20261018/anchor-node22",
+      "retained_archive": "runs/anchor-launch-20261018/mirror/node22/anchor-e3a47f2fcba0-records.tar.gz",
+      "sha256": "32a1a18a5261312113280b63a380caef26cea56e831f8a912fe7c3631abfbc26"
+    },
+    {
+      "removed": "runs/verified-archives-20261018/anchor-node23",
+      "retained_archive": "runs/anchor-launch-20261018/mirror/node23/anchor-64e61def1b92-records.tar.gz",
+      "sha256": "dd77c57e9500cc89f138e7e3b5606d49337fe113a5cba2c9ab99317b032c8028"
+    },
+    {
+      "removed": "runs/anchor-native-launch-20261018/mirror/node22/live-runs",
+      "retained_archive": "runs/native-final-archive-20261018/anchor-60e20456bb34-passed-records.tar.gz",
+      "sha256": "89c62f4aebce8d36c421cd74c23341ebb1b97274eb3c986bc2566532b212a37a"
+    }
+  ],
+  "scope": "Only duplicate local extracted/monitoring datasets after both108trial reaudits and full retained-archive SHA checks. All trajectories remain in checksum-verified archives and remote task directories. Native authoritative extraction retained. Teacher hour18 datasets and active collectors unchanged."
+}

@@ -1,0 +1,10 @@
+{
+  "development_base_commit": "3f7cb8f",
+  "tool_sha256": {
+    "tools/prepare_imitation_path.py": "2b2e635212645aa3871c0a9f7ea0fd7c3a5d00a44b678f051d0950d4c83e0015",
+    "tools/train_path_imitation.py": "130febd70d5820fabbf89057521172d76e4d61bb96d3a4e243f9dfe23f3a08d6",
+    "tools/select_imitation_examples.py": "7ba222e5f3886edcdfa57c76fc21e08efd5684393eb5641307ce402880742ff2",
+    "tools/model_weight_campaign.py": "d61661efd13a922e2c841081cb572fbbfce379d3d391a681ca1e3a9747ffe4ed"
+  },
+  "scope": "These new development scripts were untracked while prototypes were produced; exact script bytes are committed with this report. Kernel/policy code stayed at0f25b74 plus metadata3f7cb8f. Each preparer/trainer/model-runner protocol records its script hash. Source teacher whole-cohort audit remains pending; selected demonstrations were reverified independently. These are supervised diagnostics, not original-PPO efficacy results."
+}

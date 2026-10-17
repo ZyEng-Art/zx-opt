@@ -43,7 +43,9 @@ def main():
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3", "mod5_4", "tof_5"])
     p.add_argument("--seeds", nargs="+", default=["11", "29", "47"])
     p.add_argument("--modes", nargs="+", default=["global32", "anchor8", "anchor32"])
-    p.add_argument("--experiment", choices=["search", "policy-probe"], default="search")
+    p.add_argument("--experiment", choices=["search", "policy-probe", "model-probe"], default="search")
+    p.add_argument("--model-manifest", type=Path)
+    p.add_argument("--allow-development-models", action="store_true")
     p.add_argument("--probe-source", type=Path)
     p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
     p.add_argument("--audit-workers", type=int, default=2)
@@ -104,7 +106,17 @@ def main():
                   "--seeds", *a.seeds, "--modes", *a.modes,
                   "--audit-native-replay", a.audit_native_replay,
                   "--audit-crosscheck-native-every", str(a.audit_crosscheck_native_every)]
-        if a.experiment == "policy-probe":
+        if a.experiment == "model-probe":
+            if a.model_manifest is None:
+                raise ValueError("Demonstration model probes require a read-only model manifest")
+            arguments = ["tools/model_weight_campaign.py", str(a.model_manifest), "runs/comparison",
+                         "--seconds", str(a.seconds), "--workers", str(a.workers),
+                         "--audit-workers", str(a.audit_workers), "--seeds", *a.seeds,
+                         "--audit-native-replay", a.audit_native_replay,
+                         "--audit-crosscheck-native-every", str(a.audit_crosscheck_native_every)]
+            if a.allow_development_models: arguments += ["--allow-development-models"]
+            run(arguments, "comparison.log")
+        elif a.experiment == "policy-probe":
             if a.probe_source is None:
                 raise ValueError("Model probes require a read-only training source")
             run(["tools/policy_weight_probes.py", str(a.probe_source), "runs/comparison", *common,

@@ -1,0 +1,15 @@
+{
+  "source_commit": "3f7cb8ff5e185890aa7d1218c6d66827276fd7ee",
+  "trainer_sha256": "130febd70d5820fabbf89057521172d76e4d61bb96d3a4e243f9dfe23f3a08d6",
+  "demonstration_sha256": "ee89d0ca6afbc548531e3764b95e20a82c3fff8d9efd724bd30ee243b95fc578",
+  "dataset_sha256": "a5cf50a7dc62be947306f0f5d84b78501d91ad9adb273af7c303d9c7fb2fd01b",
+  "initial_model_sha256": "06a7f3d4dd82ecfad462c8a6f385b7f8f6122d9307669ff902bb646ce5ea822e",
+  "examples": 1,
+  "max_updates": 2000,
+  "seconds": 90.0,
+  "minibatch": 1,
+  "learning_rate": 0.001,
+  "seed": 1221,
+  "development_dataset": true,
+  "scope": "Successful-path supervised joint anchor/action likelihood, actor only. Training-set diagnostics only; later model-only fresh-pool frozen searches determine utility. This does not validate the original PPO."
+}

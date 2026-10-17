@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,7 +20,8 @@ def main():
     p.add_argument("--workers", type=int, default=10)
     p.add_argument("--cpus", type=int, default=16)
     p.add_argument("--memory-gib", type=int, default=48)
-    p.add_argument("--experiment", choices=["search", "policy-probe"], default="search")
+    p.add_argument("--experiment", choices=["search", "policy-probe", "model-probe"], default="search")
+    p.add_argument("--model-manifest", type=Path, help="Flat hash-bound demonstration model package")
     p.add_argument("--probe-source-tag", help="Completed owned study on the same host; mounted read-only")
     p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
     p.add_argument("--audit-workers", type=int, default=2)
@@ -45,6 +47,22 @@ def main():
         raise RuntimeError("Commit the source before launching a sealed comparison")
     revision = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
     out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
+    model_bundle = None; model_files = []; development_models = False
+    if a.experiment == "model-probe":
+        if a.model_manifest is None:
+            raise ValueError("Model probes require a local models.json manifest")
+        manifest = json.loads(a.model_manifest.read_text()); development_models = manifest["development_source"]
+        model_bundle = out/"models.tar.gz"
+        with tarfile.open(model_bundle, "w:gz", compresslevel=1) as tar:
+            tar.add(a.model_manifest, arcname="models.json"); model_files.append("models.json")
+            for model in manifest["models"]:
+                name = model["model"]
+                if not re.fullmatch(r"[a-zA-Z0-9_.-]+", name) or name in model_files:
+                    raise ValueError("Model package must use unique flat filenames")
+                path = a.model_manifest.resolve().parent/name
+                if hashlib.sha256(path.read_bytes()).hexdigest() != model["sha256"]:
+                    raise ValueError("Model capsule checksum mismatch")
+                tar.add(path, arcname=name); model_files.append(name)
     bundle = out/"source.bundle"
     subprocess.run(["git", "-C", str(ROOT), "bundle", "create", str(bundle), "HEAD"], check=True)
     spec = dict(node=a.node, tag=a.tag, source_commit=revision, seconds=a.seconds,
@@ -54,6 +72,8 @@ def main():
                 audit_native_replay=a.audit_native_replay,
                 audit_crosscheck_native_every=a.audit_crosscheck_native_every,
                 build_native_flow=a.build_native_flow,
+                model_bundle_sha256=None if model_bundle is None else hashlib.sha256(model_bundle.read_bytes()).hexdigest(),
+                model_files=model_files, development_models=development_models,
                 save_improvement_models=a.save_improvement_models,
                 base="/tmp/dengzengyong_rlzx_"+a.tag+"_node"+str(a.node)+"_20261018",
                 bundle_sha256=hashlib.sha256(bundle.read_bytes()).hexdigest())
@@ -72,8 +92,11 @@ def main():
         raise RuntimeError("Remote directory creation failed; inspect setup.log without overwriting another task")
     subprocess.run(["scp", "-o", "ControlPath="+socket, "-o", "ProxyCommand=false", "-o", "BatchMode=yes",
                     str(bundle), host+":"+spec["base"]+"/source.bundle"], check=True, timeout=120)
+    if model_bundle is not None:
+        subprocess.run(["scp", "-o", "ControlPath="+socket, "-o", "ProxyCommand=false", "-o", "BatchMode=yes",
+                        str(model_bundle), host+":"+spec["base"]+"/models.tar.gz"], check=True, timeout=120)
     script = "spec=json.loads("+repr(json.dumps(spec))+")\n"
-    script = "import json,subprocess,pathlib,hashlib\n"+script+r'''
+    script = "import json,subprocess,pathlib,hashlib,tarfile\n"+script+r'''
 base=pathlib.Path(spec['base'])
 if hashlib.sha256((base/'source.bundle').read_bytes()).hexdigest()!=spec['bundle_sha256']:
     raise RuntimeError('Bundle transport checksum mismatch')
@@ -93,6 +116,17 @@ if spec['experiment']=='policy-probe':
         raise RuntimeError('Training source has not reached an audited terminal pass')
     probe_source=training/'source/runs/comparison'
     extra_mounts=['-v',str(probe_source)+':/workspace/probe-source:ro']
+if spec['experiment']=='model-probe':
+    if hashlib.sha256((base/'models.tar.gz').read_bytes()).hexdigest()!=spec['model_bundle_sha256']:
+        raise RuntimeError('Model bundle transport checksum mismatch')
+    models=base/'models';models.mkdir(exist_ok=False);seen=set()
+    with tarfile.open(base/'models.tar.gz','r:gz') as tar:
+        for member in tar:
+            if not member.isfile() or member.name not in spec['model_files'] or member.name in seen:
+                raise ValueError('Unexpected model archive member')
+            seen.add(member.name);tar.extract(member,path=models)
+    if seen!=set(spec['model_files']): raise ValueError('Incomplete model package')
+    extra_mounts=['-v',str(models)+':/workspace/models:ro']
 cid=run(['docker','create','--name',name,'--label','owner=dengzengyong','--label','task=rlzx-anchor-20261018',
          '--cpus',str(spec['cpus']),'--memory',str(spec['memory_gib'])+'g','--shm-size','4g','--pids-limit','4096',
          '-v',str(base)+':/workspace/task','-v',str(old/'pyzx-pin')+':/workspace/pin:ro',
@@ -113,6 +147,9 @@ command=['python3',str(base/'source/tools/node_anchor_campaign.py'),str(base),'-
          '--audit-crosscheck-native-every',str(spec['audit_crosscheck_native_every'])]
 if probe_source is not None:
     command+=['--probe-source','/workspace/probe-source','--training-seeds',*spec['training_seeds']]
+if spec['experiment']=='model-probe':
+    command+=['--model-manifest','/workspace/models/models.json']
+    if spec['development_models']: command+=['--allow-development-models']
 if spec['build_native_flow']:
     command+=['--build-native-flow']
 if spec['save_improvement_models']:

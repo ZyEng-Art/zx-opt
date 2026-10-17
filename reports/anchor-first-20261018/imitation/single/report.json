@@ -1,0 +1,27 @@
+{
+  "status": "imitation_training_complete",
+  "updates": 400,
+  "first": {
+    "update": 0,
+    "seconds": 0.029966207999999828,
+    "joint_nll": 6.9180755615234375,
+    "anchor_accuracy": 0.0,
+    "local_action_accuracy": 0.0
+  },
+  "final": {
+    "update": 400,
+    "seconds": 1.838922583,
+    "joint_nll": 0.0014892484759911895,
+    "anchor_accuracy": 1.0,
+    "local_action_accuracy": 1.0
+  },
+  "actor_l2_delta": 9.802487569579101,
+  "critic_tensors_bitwise_unchanged": true,
+  "initial_tensor_sha256": "9bd53352492a366170e5898f8b9d62320943082b1d7753c86c84b022055aed27",
+  "final_tensor_sha256": "261bbac8cfd2971afbc8dda66a632cecb5758ea53d351b46e0ddf2b42872c016",
+  "trained_model_sha256": "94fcee7cc2e010e762946596870f3a37514a262f278b108e595afd3d99550f74",
+  "initial_model_sha256": "06a7f3d4dd82ecfad462c8a6f385b7f8f6122d9307669ff902bb646ce5ea822e",
+  "demonstration_sha256": "ee89d0ca6afbc548531e3764b95e20a82c3fff8d9efd724bd30ee243b95fc578",
+  "development_dataset": true,
+  "scope": "Training-set fit only; no utility/convergence/generalization claim without separate frozen initial/imitated model searches from the original circuit and fresh pools."
+}
