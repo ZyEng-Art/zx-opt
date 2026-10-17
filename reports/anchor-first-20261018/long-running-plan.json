@@ -1,0 +1,34 @@
+{
+  "time": "2026-10-18T01:44:02.449156+08:00",
+  "event": "hour_long_fresh_seed_controls_started",
+  "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+  "node": 23,
+  "workers": 18,
+  "cpus": 24,
+  "memory_gib": 64,
+  "circuit": "barenco_tof_3",
+  "seeds": [
+    137,
+    163,
+    197
+  ],
+  "modes": [
+    "global32",
+    "anchor8_resource",
+    "anchor8_resource_lr1e4"
+  ],
+  "policies": [
+    "frozen",
+    "online"
+  ],
+  "trials": 18,
+  "seconds_per_trial": 3600,
+  "training_scope": "Same circuit per policy and seed, no held-out circuit evaluation",
+  "storage": {
+    "node23_free_bytes_before_launch": 51051347968,
+    "local_free_bytes_before_launch": 50753568768
+  },
+  "purpose": "Check longer training behavior and gate-search quality at default and lower learning rates",
+  "existing26": "Preserved without restart",
+  "status": "running"
+}
