@@ -55,6 +55,10 @@
     "seconds_per_trial": 600,
     "planned_trials": 18,
     "rules": "legacy only",
-    "gpu": false
+    "gpu": false,
+    "status": "running",
+    "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+    "workers": 9,
+    "controller_pid": 2277791
   }
 }
