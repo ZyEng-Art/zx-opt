@@ -1,0 +1,137 @@
+{
+  "status": "passed",
+  "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+  "trials": 18,
+  "saved_qasm_files_checked": 24669,
+  "distinct_qasm_operators_checked": 21875,
+  "max_operator_error": 1.8038988979531736e-15,
+  "checks": "NAM gate counts, fixed named wires, all 32x32 operator entries, unit-modulus global phase only, rewards, deadlines, node bounds and transition chains",
+  "records": [
+    {
+      "arm": "expanded_dedup",
+      "seed": 11,
+      "transitions": 3315,
+      "accepted": 2785,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_dedup",
+      "seed": 29,
+      "transitions": 3414,
+      "accepted": 2969,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_dedup",
+      "seed": 47,
+      "transitions": 3709,
+      "accepted": 3201,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_frozen",
+      "seed": 11,
+      "transitions": 3335,
+      "accepted": 2785,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_frozen",
+      "seed": 29,
+      "transitions": 3147,
+      "accepted": 2764,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_frozen",
+      "seed": 47,
+      "transitions": 2931,
+      "accepted": 2553,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_online",
+      "seed": 11,
+      "transitions": 2569,
+      "accepted": 2197,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_online",
+      "seed": 29,
+      "transitions": 2808,
+      "accepted": 2425,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_online",
+      "seed": 47,
+      "transitions": 2585,
+      "accepted": 2237,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_uniform",
+      "seed": 11,
+      "transitions": 3616,
+      "accepted": 3132,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_uniform",
+      "seed": 29,
+      "transitions": 3388,
+      "accepted": 2951,
+      "status": "passed"
+    },
+    {
+      "arm": "expanded_uniform",
+      "seed": 47,
+      "transitions": 3571,
+      "accepted": 3059,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 11,
+      "transitions": 3330,
+      "accepted": 3329,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 29,
+      "transitions": 3342,
+      "accepted": 3341,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 47,
+      "transitions": 3397,
+      "accepted": 3396,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 11,
+      "transitions": 3648,
+      "accepted": 3647,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 29,
+      "transitions": 3575,
+      "accepted": 3574,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 47,
+      "transitions": 3570,
+      "accepted": 3569,
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,1775 @@
+{
+  "status": "passed",
+  "scope": "same-case pilot only; all arms/seeds; no generalization or completeness claim",
+  "campaign_sha256": "41ca318430a1e6d247c0ef21c0c441f07cab46fd90d7f43cd40c7283137d9f05",
+  "summary_sha256": "746855247470fe63d9ab3eb6bd8d6afe5bdf911f6a7d4bcf7a84a1cfbf7f35b8",
+  "budget_seconds": 180.0,
+  "trials": [
+    {
+      "arm": "expanded_dedup",
+      "seed": 11,
+      "folder": "expanded_dedup_s11",
+      "status": "budget_reached",
+      "transitions": 3315,
+      "accepted": 2785,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 35
+        },
+        "sha256": "1b547ac653c663c76adcfba70057fddea028946969261008672dfa999603670c",
+        "seconds": 152.49731760597206
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "identity_insert": 361,
+        "PVG": 479,
+        "spider_split": 322,
+        "phase_split": 386,
+        "ID": 409,
+        "gadget_split": 326,
+        "PV": 307,
+        "PVB": 107,
+        "GF": 40,
+        "phase_transfer": 548,
+        "LC": 3,
+        "spider_nest": 27
+      },
+      "accepted_counts": {
+        "PVG": 478,
+        "spider_split": 110,
+        "phase_split": 386,
+        "ID": 409,
+        "gadget_split": 326,
+        "PV": 307,
+        "PVB": 90,
+        "GF": 40,
+        "phase_transfer": 548,
+        "LC": 3,
+        "identity_insert": 71,
+        "spider_nest": 17
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 459,
+        "AssertionError: ": 53,
+        "ValueError: vertex growth bound exceeded": 17,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2686,
+        "hits": 3415,
+        "exact_isomorphism_comparisons": 3415,
+        "attempted_actions": 3315
+      },
+      "checked_qasm": 1038,
+      "max_graph_operator_error": 5.2804964812562795e-15,
+      "max_qasm_operator_error": 1.451804990739938e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.0176213879895,
+      "first_passage_seconds": {
+        "39": 34.05360751299304,
+        "38": 152.49731760597206,
+        "37": null,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 100,
+      "raw_graph_keys": 2764,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "47116a9f06b1c9f37c82899900999d0079321888dd97974c47ef752c754fbe10",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "0f2118705ea2f68bbeff4da37d7e35aba4e482e2964d1ef20bd5cf51b2f64d48",
+      "invalid_proposals": 529,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 8,
+      "mean_anytime_gates": 39.03639402843869
+    },
+    {
+      "arm": "expanded_dedup",
+      "seed": 29,
+      "folder": "expanded_dedup_s29",
+      "status": "budget_reached",
+      "transitions": 3414,
+      "accepted": 2969,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84",
+        "seconds": 137.28848180102068
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "identity_insert": 375,
+        "PVG": 575,
+        "spider_split": 286,
+        "PV": 384,
+        "ID": 374,
+        "PVB": 135,
+        "gadget_split": 316,
+        "phase_split": 373,
+        "phase_transfer": 511,
+        "GF": 39,
+        "spider_nest": 46
+      },
+      "accepted_counts": {
+        "PVG": 575,
+        "spider_split": 153,
+        "identity_insert": 108,
+        "PV": 384,
+        "ID": 374,
+        "PVB": 99,
+        "gadget_split": 316,
+        "phase_split": 373,
+        "phase_transfer": 511,
+        "GF": 39,
+        "spider_nest": 37
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 362,
+        "AssertionError: ": 46,
+        "ValueError: vertex growth bound exceeded": 36,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2882,
+        "hits": 3502,
+        "exact_isomorphism_comparisons": 3502,
+        "attempted_actions": 3414
+      },
+      "checked_qasm": 1041,
+      "max_graph_operator_error": 5.471231958559961e-15,
+      "max_qasm_operator_error": 1.3327777483606129e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.02477052001632,
+      "first_passage_seconds": {
+        "39": 10.190961095999228,
+        "38": 12.124309780017938,
+        "37": 15.556797840021318,
+        "36": 137.28848180102068,
+        "35": null
+      },
+      "duplicate_successors": 88,
+      "raw_graph_keys": 2948,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "cfa90401fb8f17de2f4d88dcd4a95a153fd9dc5142c54ae8ba38109f041ebfc3",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "b2a6720fdc4ef122b3ac5bd574da6cfb801eb2f39c0c5a4b243210b6da617409",
+      "invalid_proposals": 444,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 10,
+      "mean_anytime_gates": 36.973114169539215
+    },
+    {
+      "arm": "expanded_dedup",
+      "seed": 47,
+      "folder": "expanded_dedup_s47",
+      "status": "budget_reached",
+      "transitions": 3709,
+      "accepted": 3201,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 34
+        },
+        "sha256": "171ad69d69cf8a808b567ddcf8c606b3050208f174c8f8a923d3e2ef21fd835f",
+        "seconds": 10.80267700200784
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "identity_insert": 373,
+        "phase_split": 406,
+        "PVG": 665,
+        "PVB": 120,
+        "PV": 340,
+        "ID": 449,
+        "gadget_split": 361,
+        "spider_split": 353,
+        "GF": 40,
+        "phase_transfer": 524,
+        "spider_nest": 78
+      },
+      "accepted_counts": {
+        "identity_insert": 98,
+        "phase_split": 406,
+        "PVG": 665,
+        "PVB": 111,
+        "PV": 340,
+        "ID": 449,
+        "gadget_split": 361,
+        "spider_split": 165,
+        "GF": 40,
+        "phase_transfer": 523,
+        "spider_nest": 43
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 416,
+        "AssertionError: ": 82,
+        "ValueError: vertex growth bound exceeded": 9,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 3100,
+        "hits": 3811,
+        "exact_isomorphism_comparisons": 3811,
+        "attempted_actions": 3709
+      },
+      "checked_qasm": 960,
+      "max_graph_operator_error": 5.732870286016959e-15,
+      "max_qasm_operator_error": 1.4957139510615702e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.03396378600155,
+      "first_passage_seconds": {
+        "39": 3.398105096013751,
+        "38": 10.80267700200784,
+        "37": 10.80267700200784,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 102,
+      "raw_graph_keys": 3180,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "3e6f8124e175f1849b3df6cb8e018b33572c7102473e7b0e8b7f4601c0293587",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "383790ee18a38f3d33f88c7e8c48e09ee336e2fec7e22925385fd6e14ad32c74",
+      "invalid_proposals": 507,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 4,
+      "mean_anytime_gates": 37.13890810611127
+    },
+    {
+      "arm": "expanded_frozen",
+      "seed": 11,
+      "folder": "expanded_frozen_s11",
+      "status": "budget_reached",
+      "transitions": 3335,
+      "accepted": 2785,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "5ae70ad079df1a7c647ccee7c56377125524dbd67f83e8a7e218bea38dd477f9",
+        "seconds": 30.53980225601117
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 513,
+        "spider_split": 354,
+        "identity_insert": 411,
+        "ID": 348,
+        "PVB": 91,
+        "PV": 367,
+        "phase_split": 369,
+        "gadget_split": 322,
+        "phase_transfer": 469,
+        "spider_nest": 70,
+        "GF": 21
+      },
+      "accepted_counts": {
+        "PVG": 513,
+        "spider_split": 143,
+        "ID": 347,
+        "identity_insert": 109,
+        "PVB": 81,
+        "PV": 367,
+        "phase_split": 369,
+        "gadget_split": 322,
+        "phase_transfer": 469,
+        "spider_nest": 44,
+        "GF": 21
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 480,
+        "AssertionError: ": 59,
+        "ValueError: vertex growth bound exceeded": 10,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2665,
+        "hits": 3456,
+        "exact_isomorphism_comparisons": 3456,
+        "attempted_actions": 3335
+      },
+      "checked_qasm": 803,
+      "max_graph_operator_error": 5.127071695044207e-15,
+      "max_qasm_operator_error": 1.4438902883526792e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.0062685479934,
+      "first_passage_seconds": {
+        "39": 6.612316560989711,
+        "38": 30.53980225601117,
+        "37": 30.53980225601117,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 121,
+      "raw_graph_keys": 2757,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "745264c8ca7675202306dd3b68539662a27a8462a9052bb62d9d70d43dd3c724",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "b23095d63866e03b4ced41b2a87a95f4790df786e471e46e56782f9519060e3b",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "1cbd803e0c3f62fee500ea1c72c70b89ca554515a176008ec282280c5318abaf",
+      "invalid_proposals": 549,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 6,
+      "mean_anytime_gates": 37.3760662281834
+    },
+    {
+      "arm": "expanded_frozen",
+      "seed": 29,
+      "folder": "expanded_frozen_s29",
+      "status": "budget_reached",
+      "transitions": 3147,
+      "accepted": 2764,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 35
+        },
+        "sha256": "b6bfdcaffae984be049fb943f6ed71aca535aff6e9c4af23a899b34074e45d3b",
+        "seconds": 106.89029813697562
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "phase_split": 285,
+        "spider_split": 291,
+        "PVG": 487,
+        "identity_insert": 314,
+        "gadget_split": 263,
+        "phase_transfer": 519,
+        "PVB": 80,
+        "ID": 459,
+        "PV": 323,
+        "spider_nest": 81,
+        "GF": 45
+      },
+      "accepted_counts": {
+        "phase_split": 285,
+        "spider_split": 144,
+        "PVG": 486,
+        "gadget_split": 263,
+        "phase_transfer": 519,
+        "ID": 459,
+        "PVB": 65,
+        "PV": 323,
+        "identity_insert": 110,
+        "GF": 45,
+        "spider_nest": 65
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 300,
+        "AssertionError: ": 67,
+        "ValueError: vertex growth bound exceeded": 15,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2651,
+        "hits": 3261,
+        "exact_isomorphism_comparisons": 3261,
+        "attempted_actions": 3147
+      },
+      "checked_qasm": 918,
+      "max_graph_operator_error": 5.239636202032658e-15,
+      "max_qasm_operator_error": 1.667183881801782e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.03016065899283,
+      "first_passage_seconds": {
+        "39": 3.6863194659817964,
+        "38": 106.89029813697562,
+        "37": null,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 114,
+      "raw_graph_keys": 2744,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "43f70efd347ac2613a58e4dab4f0e0850c00ddb5661b74514a9976a2a543f3a1",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "c576fad4ea7766dc214b9fb8ba02022feb7147010351b16c1217a2aed6f82e1b",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "d8c1c67ea3f6ffd30d7e00c82223ec65b90a72319d233fcdaf326077f4f508bb",
+      "invalid_proposals": 382,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 7,
+      "mean_anytime_gates": 38.61431454223865
+    },
+    {
+      "arm": "expanded_frozen",
+      "seed": 47,
+      "folder": "expanded_frozen_s47",
+      "status": "budget_reached",
+      "transitions": 2931,
+      "accepted": 2553,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 32
+        },
+        "sha256": "e9a991c8c8351b38a9f2bfa6212fdaab8bdd95e1b974daf6317885eeb105b59c",
+        "seconds": 75.11691176102613
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "phase_split": 301,
+        "ID": 372,
+        "PVB": 116,
+        "PVG": 484,
+        "identity_insert": 312,
+        "spider_split": 269,
+        "PV": 282,
+        "phase_transfer": 474,
+        "gadget_split": 247,
+        "GF": 35,
+        "spider_nest": 39
+      },
+      "accepted_counts": {
+        "phase_split": 300,
+        "ID": 372,
+        "PVB": 89,
+        "PVG": 484,
+        "identity_insert": 96,
+        "spider_split": 146,
+        "PV": 282,
+        "phase_transfer": 474,
+        "gadget_split": 247,
+        "GF": 35,
+        "spider_nest": 28
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 290,
+        "AssertionError: ": 60,
+        "ValueError: vertex growth bound exceeded": 27,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2453,
+        "hits": 3032,
+        "exact_isomorphism_comparisons": 3032,
+        "attempted_actions": 2931
+      },
+      "checked_qasm": 1034,
+      "max_graph_operator_error": 5.460780728424888e-15,
+      "max_qasm_operator_error": 1.4770556661825108e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.0229409970052,
+      "first_passage_seconds": {
+        "39": 4.272479882027255,
+        "38": 75.11691176102613,
+        "37": null,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 101,
+      "raw_graph_keys": 2536,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "13f2fd5dbaefba7aaeb25b31dc1cd56a32988316717228e2b55393aa35b6dae7",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "0c6bb9926692c5c9651b7ed56e133f7c557f1d2afef7a5493568d89bc9869321",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "ab3cd21790bf881466acbaeafdcb1cf5ad1df90c76cbaedbcde7ded67ba9cba8",
+      "invalid_proposals": 377,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 18,
+      "mean_anytime_gates": 38.44105217579474
+    },
+    {
+      "arm": "expanded_online",
+      "seed": 11,
+      "folder": "expanded_online_s11",
+      "status": "budget_reached",
+      "transitions": 2569,
+      "accepted": 2197,
+      "updates": 20,
+      "best": {
+        "cost": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 37
+        },
+        "sha256": "8a426f01533558277e926e47132190485c6b869a43db877bf7df17e8e1536783",
+        "seconds": 167.35016321198782
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 419,
+        "spider_split": 237,
+        "identity_insert": 285,
+        "ID": 302,
+        "PVB": 102,
+        "PV": 276,
+        "phase_split": 274,
+        "gadget_split": 217,
+        "phase_transfer": 382,
+        "spider_nest": 61,
+        "GF": 14
+      },
+      "accepted_counts": {
+        "PVG": 419,
+        "spider_split": 102,
+        "ID": 302,
+        "identity_insert": 85,
+        "PVB": 80,
+        "PV": 276,
+        "phase_split": 274,
+        "gadget_split": 217,
+        "phase_transfer": 382,
+        "spider_nest": 46,
+        "GF": 14
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 319,
+        "AssertionError: ": 30,
+        "ValueError: vertex growth bound exceeded": 22,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2111,
+        "hits": 2676,
+        "exact_isomorphism_comparisons": 2676,
+        "attempted_actions": 2569
+      },
+      "checked_qasm": 966,
+      "max_graph_operator_error": 5.2619172680473545e-15,
+      "max_qasm_operator_error": 1.3414875847488985e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.01239321599132,
+      "first_passage_seconds": {
+        "39": 65.85207320400514,
+        "38": 167.35016321198782,
+        "37": null,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 87,
+      "raw_graph_keys": 2176,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "745264c8ca7675202306dd3b68539662a27a8462a9052bb62d9d70d43dd3c724",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "d97250355ac410fae513605f3cdf6cdf5c487b819b5c2c1e24fbaa70fb95b87d",
+      "updates_sha256": "518e45bcaf4e833a01a70f44a5d32195ede5256c0eaf38a579e667fb0b9325f5",
+      "protocol_sha256": "347c0fc487527547ebc19d9bba973989557ea8b083013433a2ddf3513ab899cd",
+      "invalid_proposals": 371,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 13,
+      "mean_anytime_gates": 39.29556798008885,
+      "learning": {
+        "policy_loss": {
+          "first": -0.00013031307607889176,
+          "last": -8.242452749982477e-05
+        },
+        "value_loss": {
+          "first": 0.3782856782898307,
+          "last": 0.2730348162353039
+        },
+        "entropy": {
+          "first": 3.921236088871956,
+          "last": 3.78167362511158
+        },
+        "approx_kl": {
+          "first": 8.944422006607055e-07,
+          "last": 8.761649951338768e-07
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.0
+        },
+        "value_explained_variance_after": {
+          "first": -0.0030211624643787793,
+          "last": 0.11636477416248014
+        },
+        "normalized_entropy": {
+          "first": 0.999998953991631,
+          "last": 0.999996418352336
+        },
+        "optimizer_steps": 320
+      }
+    },
+    {
+      "arm": "expanded_online",
+      "seed": 29,
+      "folder": "expanded_online_s29",
+      "status": "budget_reached",
+      "transitions": 2808,
+      "accepted": 2425,
+      "updates": 21,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 34
+        },
+        "sha256": "82683614797747974b235836823450a849894b4e1a6063b4ddbfd5d894d84d2a",
+        "seconds": 39.41026707101264
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "phase_split": 306,
+        "spider_split": 299,
+        "PVG": 414,
+        "identity_insert": 312,
+        "gadget_split": 231,
+        "phase_transfer": 398,
+        "PVB": 82,
+        "ID": 363,
+        "PV": 339,
+        "spider_nest": 34,
+        "GF": 30
+      },
+      "accepted_counts": {
+        "phase_split": 306,
+        "spider_split": 154,
+        "PVG": 413,
+        "gadget_split": 231,
+        "phase_transfer": 398,
+        "ID": 363,
+        "PVB": 73,
+        "PV": 339,
+        "identity_insert": 95,
+        "GF": 30,
+        "spider_nest": 23
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 281,
+        "AssertionError: ": 92,
+        "ValueError: vertex growth bound exceeded": 9,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2344,
+        "hits": 2911,
+        "exact_isomorphism_comparisons": 2911,
+        "attempted_actions": 2808
+      },
+      "checked_qasm": 836,
+      "max_graph_operator_error": 5.232303548759196e-15,
+      "max_qasm_operator_error": 1.4770556661825108e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.02371988398954,
+      "first_passage_seconds": {
+        "39": 3.7187299790093675,
+        "38": 39.41026707101264,
+        "37": 39.41026707101264,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 82,
+      "raw_graph_keys": 2397,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "43f70efd347ac2613a58e4dab4f0e0850c00ddb5661b74514a9976a2a543f3a1",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "df33f0d79359dc2b8c98fc83a6a0fc9ba33accd6c3ce16cb74d9a51d5e47e067",
+      "updates_sha256": "d323a7dd1b90dce2523c102e184c174f608c93e62a2fee2b97876daa653c384b",
+      "protocol_sha256": "3508b8c3edf3b3b65dd10a244dc0891b24d6f2fb702746734fc46ff849717191",
+      "invalid_proposals": 382,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 10,
+      "mean_anytime_gates": 37.458551467339085,
+      "learning": {
+        "policy_loss": {
+          "first": -0.0002089201589114964,
+          "last": -0.00033057056134566665
+        },
+        "value_loss": {
+          "first": 0.23665012400597335,
+          "last": 0.33897723685950043
+        },
+        "entropy": {
+          "first": 3.926805192232132,
+          "last": 3.7699405282735823
+        },
+        "approx_kl": {
+          "first": 1.693028025329113e-06,
+          "last": 9.040092118084431e-06
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.0
+        },
+        "value_explained_variance_after": {
+          "first": 0.021954101155800987,
+          "last": 0.16351960090992157
+        },
+        "normalized_entropy": {
+          "first": 0.9999887318024868,
+          "last": 0.9997210445918988
+        },
+        "optimizer_steps": 336
+      }
+    },
+    {
+      "arm": "expanded_online",
+      "seed": 47,
+      "folder": "expanded_online_s47",
+      "status": "budget_reached",
+      "transitions": 2585,
+      "accepted": 2237,
+      "updates": 20,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 33
+        },
+        "sha256": "ec69e0dd53cd9b9b0cb7ab95d608f3ef7b2213d621e53f5063cb75783b9cce7c",
+        "seconds": 33.92878729701624
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "phase_split": 263,
+        "ID": 341,
+        "PVB": 75,
+        "PVG": 334,
+        "identity_insert": 255,
+        "spider_split": 252,
+        "PV": 220,
+        "phase_transfer": 479,
+        "gadget_split": 265,
+        "GF": 33,
+        "spider_nest": 68
+      },
+      "accepted_counts": {
+        "phase_split": 263,
+        "ID": 341,
+        "PVB": 65,
+        "PVG": 334,
+        "identity_insert": 60,
+        "spider_split": 127,
+        "PV": 220,
+        "phase_transfer": 478,
+        "gadget_split": 265,
+        "GF": 33,
+        "spider_nest": 51
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 302,
+        "AssertionError: ": 35,
+        "ValueError: vertex growth bound exceeded": 10,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2149,
+        "hits": 2694,
+        "exact_isomorphism_comparisons": 2694,
+        "attempted_actions": 2585
+      },
+      "checked_qasm": 994,
+      "max_graph_operator_error": 5.252344276171501e-15,
+      "max_qasm_operator_error": 1.4449569726155179e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.03472681800486,
+      "first_passage_seconds": {
+        "39": 4.191948997002328,
+        "38": 23.639201889018295,
+        "37": 33.92878729701624,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 89,
+      "raw_graph_keys": 2218,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "13f2fd5dbaefba7aaeb25b31dc1cd56a32988316717228e2b55393aa35b6dae7",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "bba9227a68b949eb32e076c7467b396b0bf0f7b6813659810d5b9aabec590a66",
+      "updates_sha256": "20502971f6145706d1b18ad52ddaa679b0e10ef879da56c028d6a81d14a7ec6b",
+      "protocol_sha256": "882d4186545a0505c81ec220b7cef619de1f41c599657560a40d27dc53d74c09",
+      "invalid_proposals": 347,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 16,
+      "mean_anytime_gates": 37.34311076768354,
+      "learning": {
+        "policy_loss": {
+          "first": -2.2225233260542153e-05,
+          "last": -7.439407054334878e-05
+        },
+        "value_loss": {
+          "first": 0.33418564666062595,
+          "last": 0.31198276234790684
+        },
+        "entropy": {
+          "first": 3.852116137742996,
+          "last": 3.771324226260185
+        },
+        "approx_kl": {
+          "first": 3.6135315895080564e-08,
+          "last": 2.3650936782360076e-07
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.0
+        },
+        "value_explained_variance_after": {
+          "first": 0.005480505396124702,
+          "last": 0.12998559581394747
+        },
+        "normalized_entropy": {
+          "first": 0.9999996390585627,
+          "last": 0.9999990643103832
+        },
+        "optimizer_steps": 320
+      }
+    },
+    {
+      "arm": "expanded_uniform",
+      "seed": 11,
+      "folder": "expanded_uniform_s11",
+      "status": "budget_reached",
+      "transitions": 3616,
+      "accepted": 3132,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 36
+        },
+        "sha256": "37451fb2c73ff26ce4e826026a1e799bd86cae6e17e5b921e8abf070d2ad824d",
+        "seconds": 14.413812269980554
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "identity_insert": 377,
+        "phase_split": 383,
+        "ID": 428,
+        "PVG": 638,
+        "gadget_split": 347,
+        "PV": 353,
+        "spider_split": 354,
+        "PVB": 141,
+        "phase_transfer": 475,
+        "spider_nest": 90,
+        "GF": 29,
+        "LC": 1
+      },
+      "accepted_counts": {
+        "phase_split": 383,
+        "ID": 428,
+        "PVG": 638,
+        "gadget_split": 347,
+        "PV": 353,
+        "spider_split": 179,
+        "identity_insert": 113,
+        "PVB": 113,
+        "phase_transfer": 475,
+        "spider_nest": 73,
+        "GF": 29,
+        "LC": 1
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 381,
+        "ValueError: vertex growth bound exceeded": 28,
+        "AssertionError: ": 74,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 3004,
+        "hits": 3745,
+        "exact_isomorphism_comparisons": 3745,
+        "attempted_actions": 0
+      },
+      "checked_qasm": 1054,
+      "max_graph_operator_error": 5.237352218896723e-15,
+      "max_qasm_operator_error": 1.3345785898812087e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.02247559899115,
+      "first_passage_seconds": {
+        "39": 5.804035328997998,
+        "38": 14.413812269980554,
+        "37": null,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 129,
+      "raw_graph_keys": 3094,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "906a9025eb4fdc4ae14278ba9afefddbf6ac46a7b9276b46e7694647641c19c1",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "844905eb553bfa0b0db3979628964fe1d25aefc165316e0125f317e1745a908d",
+      "invalid_proposals": 483,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 5,
+      "mean_anytime_gates": 38.11232137554988
+    },
+    {
+      "arm": "expanded_uniform",
+      "seed": 29,
+      "folder": "expanded_uniform_s29",
+      "status": "budget_reached",
+      "transitions": 3388,
+      "accepted": 2951,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 33
+        },
+        "sha256": "4ab6595660fd210b339a58c425bf12a58cf20ea8c4645dbefd6fc9941fde5e37",
+        "seconds": 91.89071116599371
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "identity_insert": 371,
+        "PVG": 491,
+        "spider_split": 304,
+        "PV": 372,
+        "ID": 441,
+        "PVB": 104,
+        "gadget_split": 321,
+        "phase_split": 347,
+        "phase_transfer": 524,
+        "spider_nest": 65,
+        "GF": 48
+      },
+      "accepted_counts": {
+        "PVG": 491,
+        "spider_split": 167,
+        "identity_insert": 112,
+        "PV": 372,
+        "ID": 440,
+        "PVB": 80,
+        "gadget_split": 321,
+        "phase_split": 347,
+        "phase_transfer": 524,
+        "spider_nest": 49,
+        "GF": 48
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 338,
+        "AssertionError: ": 74,
+        "ValueError: vertex growth bound exceeded": 24,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2812,
+        "hits": 3528,
+        "exact_isomorphism_comparisons": 3528,
+        "attempted_actions": 0
+      },
+      "checked_qasm": 1032,
+      "max_graph_operator_error": 5.509513436394227e-15,
+      "max_qasm_operator_error": 1.5562935128250673e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.00220584700583,
+      "first_passage_seconds": {
+        "39": 1.5740002919919789,
+        "38": 30.70248996600276,
+        "37": 91.89071116599371,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 140,
+      "raw_graph_keys": 2909,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "3c17a1df77f6908bbb47c4c15975f08397e85d6794d6e03bfd806a2f937a878a",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "f9558eea6a9125ca3b1196da4641a0c47e92fa2f277001718aacd50ee6793cdf",
+      "invalid_proposals": 436,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 10,
+      "mean_anytime_gates": 37.689817785688824
+    },
+    {
+      "arm": "expanded_uniform",
+      "seed": 47,
+      "folder": "expanded_uniform_s47",
+      "status": "budget_reached",
+      "transitions": 3571,
+      "accepted": 3059,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 37
+        },
+        "sha256": "8a426f01533558277e926e47132190485c6b869a43db877bf7df17e8e1536783",
+        "seconds": 52.158013278996805
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "identity_insert": 415,
+        "phase_split": 415,
+        "PVG": 765,
+        "PVB": 130,
+        "PV": 330,
+        "ID": 371,
+        "gadget_split": 312,
+        "spider_split": 348,
+        "phase_transfer": 417,
+        "spider_nest": 39,
+        "GF": 29
+      },
+      "accepted_counts": {
+        "identity_insert": 132,
+        "phase_split": 415,
+        "PVG": 765,
+        "PVB": 111,
+        "PV": 330,
+        "ID": 370,
+        "gadget_split": 312,
+        "spider_split": 160,
+        "phase_transfer": 417,
+        "spider_nest": 18,
+        "GF": 29
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 435,
+        "AssertionError: ": 57,
+        "ValueError: vertex growth bound exceeded": 19,
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2941,
+        "hits": 3690,
+        "exact_isomorphism_comparisons": 3690,
+        "attempted_actions": 0
+      },
+      "checked_qasm": 1100,
+      "max_graph_operator_error": 5.3386767161701805e-15,
+      "max_qasm_operator_error": 1.4770556661825108e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.00195941500715,
+      "first_passage_seconds": {
+        "39": 15.46797427200363,
+        "38": 52.158013278996805,
+        "37": null,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 119,
+      "raw_graph_keys": 3021,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "0a546ceb2582fef641c4a375fa65c00d8f36593e4a6de0443156dd2dde07f3b3",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "b109a1f28cc7418d143a1f50de2c1eeb2f39934759e1c203ac4a2ed6b72e402f",
+      "invalid_proposals": 511,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 15,
+      "mean_anytime_gates": 38.37569993083889
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 11,
+      "folder": "legacy_dedup_s11",
+      "status": "budget_reached",
+      "transitions": 3330,
+      "accepted": 3329,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 33
+        },
+        "sha256": "9cd8e738b0cb3f917cd9bed968023672e00ce502bcc746da2fce9bf4407bb1fd",
+        "seconds": 108.35199024400208
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2213,
+        "ID": 417,
+        "PV": 323,
+        "PVB": 377
+      },
+      "accepted_counts": {
+        "PVG": 2212,
+        "ID": 417,
+        "PV": 323,
+        "PVB": 377
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2998,
+        "hits": 4073,
+        "exact_isomorphism_comparisons": 4073,
+        "attempted_actions": 3330
+      },
+      "checked_qasm": 2196,
+      "max_graph_operator_error": 3.693745107994398e-15,
+      "max_qasm_operator_error": 1.4623790925227244e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.00211166098597,
+      "first_passage_seconds": {
+        "39": 1.5303962659963872,
+        "38": 12.72246748697944,
+        "37": 108.35199024400208,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 332,
+      "raw_graph_keys": 3317,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "c50b7413538f21f837847d402c6d635ff00cb53b3360ce0a79bb4613d46ee10f",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "797b522e6b13dd1b74294faa187f168039f6afda0e04d9aeeb2930830b32aa42",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 132,
+      "mean_anytime_gates": 37.68113807776099
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 29,
+      "folder": "legacy_dedup_s29",
+      "status": "budget_reached",
+      "transitions": 3342,
+      "accepted": 3341,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "9cd1be4082b32c50140479c02e5353a736357c361e7b0da65b5c88a04c9cd547",
+        "seconds": 58.77341940201586
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2235,
+        "PVB": 334,
+        "PV": 290,
+        "ID": 483
+      },
+      "accepted_counts": {
+        "PVG": 2235,
+        "PVB": 333,
+        "PV": 290,
+        "ID": 483
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2927,
+        "hits": 4187,
+        "exact_isomorphism_comparisons": 4187,
+        "attempted_actions": 3342
+      },
+      "checked_qasm": 2203,
+      "max_graph_operator_error": 3.904539953647383e-15,
+      "max_qasm_operator_error": 1.448085813565212e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.00339324501692,
+      "first_passage_seconds": {
+        "39": 5.092480444000103,
+        "38": 21.57033647800563,
+        "37": 36.59097941502114,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 415,
+      "raw_graph_keys": 3325,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "332a939e7f88a3239b15591ad1298ede0b5265a85dafb4c00878119190ea9da1",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "077ab035d6304943cd935c7dac2bf56a8927d47ad991f027b19bb9efad4f679a",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 146,
+      "mean_anytime_gates": 37.35140997965015
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 47,
+      "folder": "legacy_dedup_s47",
+      "status": "budget_reached",
+      "transitions": 3397,
+      "accepted": 3396,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 33
+        },
+        "sha256": "437558b3be3731f482c1c35edb70175565addb36b58fd7b486322f98a5511ff6",
+        "seconds": 64.24085531500168
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2192,
+        "ID": 511,
+        "PV": 337,
+        "PVB": 357
+      },
+      "accepted_counts": {
+        "PVG": 2191,
+        "ID": 511,
+        "PV": 337,
+        "PVB": 357
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 3018,
+        "hits": 4194,
+        "exact_isomorphism_comparisons": 4194,
+        "attempted_actions": 3397
+      },
+      "checked_qasm": 2223,
+      "max_graph_operator_error": 3.6876850200590406e-15,
+      "max_qasm_operator_error": 1.6682232373515109e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.0024766669958,
+      "first_passage_seconds": {
+        "39": 14.806925562996184,
+        "38": 15.36395605400321,
+        "37": 64.24085531500168,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 379,
+      "raw_graph_keys": 3377,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "3fa2aecfe0a3f91d2bced85159c1905ccc5839689c4388d7a6f48c6a6e365dc8",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "1cbcd1f38d9c0185979bbdddbeb7dc40c1030f07613bf3cfd2eb22bd5999579e",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 149,
+      "mean_anytime_gates": 37.52450964962223
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 11,
+      "folder": "legacy_uniform_s11",
+      "status": "budget_reached",
+      "transitions": 3648,
+      "accepted": 3647,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "8a18eb039364ccf222cccb6a34c0cc53d7bb7a55a51ef7869401f78bc72e222c",
+        "seconds": 151.70680073299445
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2492,
+        "ID": 412,
+        "PV": 360,
+        "PVB": 384
+      },
+      "accepted_counts": {
+        "PVG": 2491,
+        "ID": 412,
+        "PV": 360,
+        "PVB": 384
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2930,
+        "hits": 4753,
+        "exact_isomorphism_comparisons": 4753,
+        "attempted_actions": 0
+      },
+      "checked_qasm": 2074,
+      "max_graph_operator_error": 3.692984939585389e-15,
+      "max_qasm_operator_error": 1.667183881801782e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.0018928979989,
+      "first_passage_seconds": {
+        "39": 2.9177888839913066,
+        "38": 2.9177888839913066,
+        "37": 151.70680073299445,
+        "36": 151.70680073299445,
+        "35": null
+      },
+      "duplicate_successors": 718,
+      "raw_graph_keys": 3277,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "fda172b307dbece02dc40b21915ee476db06105da55256c0c43dcdc046c8fb52",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "da1c8fa2e17ce4e05bc28bbb5b63c6868ade913f2c73d0fad76b40864155c380",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 113,
+      "mean_anytime_gates": 37.718050995744285
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 29,
+      "folder": "legacy_uniform_s29",
+      "status": "budget_reached",
+      "transitions": 3575,
+      "accepted": 3574,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "1ad3b2a103d32e83c1d601fa79b0674cc6e2fd867fb8e5ebdbfdc8f3ad17d394",
+        "seconds": 110.30701568399672
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2389,
+        "PVB": 320,
+        "PV": 436,
+        "ID": 430
+      },
+      "accepted_counts": {
+        "PVG": 2389,
+        "PVB": 320,
+        "PV": 435,
+        "ID": 430
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 3074,
+        "hits": 4453,
+        "exact_isomorphism_comparisons": 4453,
+        "attempted_actions": 0
+      },
+      "checked_qasm": 2077,
+      "max_graph_operator_error": 3.7894909430945094e-15,
+      "max_qasm_operator_error": 1.5587665693871347e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.0020977880049,
+      "first_passage_seconds": {
+        "39": 1.9673300609865692,
+        "38": 40.33231208199868,
+        "37": 77.45155298698228,
+        "36": 110.30701568399672,
+        "35": null
+      },
+      "duplicate_successors": 501,
+      "raw_graph_keys": 3240,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "c92cc21b38a7621bc37b2f56d96cd584c837c71de37ed607bdcf5950cfd0602c",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "bc5c064c85b0600a3e3a24d16d1bae86199515dbe5c35c0dab25b7cca690b80e",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 68,
+      "mean_anytime_gates": 37.27810117118869
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 47,
+      "folder": "legacy_uniform_s47",
+      "status": "budget_reached",
+      "transitions": 3570,
+      "accepted": 3569,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 34
+        },
+        "sha256": "171ad69d69cf8a808b567ddcf8c606b3050208f174c8f8a923d3e2ef21fd835f",
+        "seconds": 112.92342054401524
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2240,
+        "ID": 598,
+        "PV": 405,
+        "PVB": 327
+      },
+      "accepted_counts": {
+        "PVG": 2239,
+        "ID": 598,
+        "PV": 405,
+        "PVB": 327
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 2884,
+        "hits": 4602,
+        "exact_isomorphism_comparisons": 4602,
+        "attempted_actions": 0
+      },
+      "checked_qasm": 2084,
+      "max_graph_operator_error": 3.679903363894043e-15,
+      "max_qasm_operator_error": 1.5622222714862009e-15,
+      "verification": "passed",
+      "budget_seconds": 180.0,
+      "total_loop_seconds": 180.0015644209925,
+      "first_passage_seconds": {
+        "39": 14.976554890017724,
+        "38": 78.49104478300433,
+        "37": 112.92342054401524,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 686,
+      "raw_graph_keys": 3225,
+      "git_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "6733afc102744fd54cd7cf518809d11cb78938a54af435287320664128d1acc3",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "cf1c1887ec2f92f181f49f0d90a31a0ce720b2e51634e6e4e98f6f487aa0d8fe",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 85,
+      "mean_anytime_gates": 38.14661677898354
+    }
+  ],
+  "aggregate": [
+    {
+      "arm": "expanded_dedup",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        38,
+        36,
+        37
+      ],
+      "mean_anytime_gates": 37.71613876802973,
+      "mean_transitions": 3479.3333333333335,
+      "rejection_fraction": 0.1417896148687488,
+      "deadline_exclusions": 3,
+      "duplicate_successor_fraction": 0.03238414293690676
+    },
+    {
+      "arm": "expanded_frozen",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        37,
+        38,
+        38
+      ],
+      "mean_anytime_gates": 38.14381098207226,
+      "mean_transitions": 3137.6666666666665,
+      "rejection_fraction": 0.13895676192499734,
+      "deadline_exclusions": 3,
+      "duplicate_successor_fraction": 0.04147124166872377
+    },
+    {
+      "arm": "expanded_online",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        38,
+        37,
+        37
+      ],
+      "mean_anytime_gates": 38.03241007170383,
+      "mean_transitions": 2654.0,
+      "rejection_fraction": 0.13815624215021352,
+      "deadline_exclusions": 3,
+      "duplicate_successor_fraction": 0.03761481265490596
+    },
+    {
+      "arm": "expanded_uniform",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        38,
+        37,
+        38
+      ],
+      "mean_anytime_gates": 38.059279697359194,
+      "mean_transitions": 3525.0,
+      "rejection_fraction": 0.13522458628841608,
+      "deadline_exclusions": 3,
+      "duplicate_successor_fraction": 0.04244147888864581
+    },
+    {
+      "arm": "legacy_dedup",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        37,
+        37,
+        37
+      ],
+      "mean_anytime_gates": 37.51901923567779,
+      "mean_transitions": 3356.3333333333335,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 3,
+      "duplicate_successor_fraction": 0.11186171269620504
+    },
+    {
+      "arm": "legacy_uniform",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        36,
+        36,
+        37
+      ],
+      "mean_anytime_gates": 37.714256315305505,
+      "mean_transitions": 3597.6666666666665,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 3,
+      "duplicate_successor_fraction": 0.17655236329935126
+    }
+  ],
+  "best_source": {
+    "arm": "expanded_dedup",
+    "seed": 29,
+    "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84"
+  }
+}

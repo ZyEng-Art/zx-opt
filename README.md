@@ -19,6 +19,10 @@ python -m venv .venv
 
 当前实现不声明 ZX 规则完备，也不把损失下降视为门数优化有效。完整规则系的公理覆盖、相位范围和 flow 条件将单独记录。
 
+首轮已完成 6 组 × 3 种子 × 180 秒的同电路比较：旧动作随机组为 36/36/37 门，扩展动作加去重的随机组为 38/36/37 门，在线组为 38/37/37 门。目前没有稳定的在线学习收益。详见[完整解读](reports/pilot-20261017/interpretation.txt)、[搜索曲线](reports/pilot-20261017/anytime.png)与[学习诊断](reports/pilot-20261017/learning.png)。
+
+保存的 24,669 份 QASM 已通过固定线序全矩阵复核。运行使用 node44 的已有环境，实际版本和证据摘要保存在 [reports/pilot-20261017](reports/pilot-20261017)；本地开发依赖列在 `requirements.txt`。
+
 开发计划和边界见 [docs/plan.txt](docs/plan.txt)，逐步记录见 [docs/work-log.jsonl](docs/work-log.jsonl)。原始运行数据与模型保存在 `runs/`，Git 记录配置、源码摘要、结果摘要和可复现命令。
 
 参考：

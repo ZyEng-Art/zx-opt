@@ -17,6 +17,16 @@ $PYTHON -m zxopt.search runs/example --expanded --dedup --policy online --second
 六组消融、三种子，全部只搜索同一个电路
 $PYTHON -m zxopt.campaign runs/pilot --seconds 180 --workers 3
 
+只读进度与结束后的分析
+python tools/progress.py runs/pilot
+$PYTHON tools/summarize_campaign.py runs/pilot reports/new-pilot
+$PYTHON tools/verify_artifacts.py runs/pilot inputs/barenco_tof_3.qasm reports/new-pilot/verification.json
+$PYTHON tools/audit_models.py runs/pilot reports/new-pilot/models.json
+
+本次原始归档位于 runs/download-20261017/，SHA 和远端资源释放回执见
+reports/pilot-20261017/archive.json。解包后的正式实验位于
+runs/download-20261017/extracted/runs/pilot/。源码、模型、曲线与数值检查对应同一轮数据。
+
 六组分别为：旧动作随机、旧动作随机+结构去重、新动作随机、新动作随机+去重、
 新动作冻结策略+去重、新动作在线 PPO+去重。后两组使用相同随机初始化。
 旧动作组仍使用本轮全矩阵检查和日志，不能直接与历史 v49 每秒步数相比。

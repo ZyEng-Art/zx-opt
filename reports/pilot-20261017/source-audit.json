@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "trials": 18,
+  "commits": [
+    "90589d2f0847188f7cb01f39b38163193369eb8d"
+  ],
+  "committed_source_hashes": 9,
+  "frozen_baseline_files": 28,
+  "pinned_pyzx_files_compared": 74,
+  "archive_sha256_verified": true
+}

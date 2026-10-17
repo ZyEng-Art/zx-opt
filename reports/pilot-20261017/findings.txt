@@ -1,0 +1,10 @@
+barenco_tof_3 pilot: every arm and seed retained.
+Final gates (seeds in the JSON report), time-averaged best gates, rejection fraction:
+expanded_dedup: [38, 36, 37]; anytime=37.716; rejected=14.2%; repeated-successors=3.2%
+expanded_frozen: [37, 38, 38]; anytime=38.144; rejected=13.9%; repeated-successors=4.1%
+expanded_online: [38, 37, 37]; anytime=38.032; rejected=13.8%; repeated-successors=3.8%
+expanded_uniform: [38, 37, 38]; anytime=38.059; rejected=13.5%; repeated-successors=4.2%
+legacy_dedup: [37, 37, 37]; anytime=37.519; rejected=0.0%; repeated-successors=11.2%
+legacy_uniform: [36, 36, 37]; anytime=37.714; rejected=0.0%; repeated-successors=17.7%
+Loss and value fit diagnose training; compare the search curves to assess useful learning.
+Bounded proposals and extraction rejection do not give a completeness guarantee.

@@ -1,0 +1,268 @@
+{
+  "status": "passed",
+  "rule_counts": {
+    "GF": {
+      "accepted": 403
+    },
+    "ID": {
+      "accepted": 7505,
+      "excluded_after_deadline": 3
+    },
+    "LC": {
+      "accepted": 4
+    },
+    "PV": {
+      "accepted": 6043,
+      "excluded_after_deadline": 1
+    },
+    "PVB": {
+      "accepted": 3155,
+      "rejected": 226,
+      "excluded_after_deadline": 1
+    },
+    "PVG": {
+      "accepted": 20018,
+      "excluded_after_deadline": 7
+    },
+    "gadget_split": {
+      "accepted": 3528
+    },
+    "identity_insert": {
+      "rejected": 2972,
+      "accepted": 1189
+    },
+    "phase_split": {
+      "accepted": 4107,
+      "excluded_after_deadline": 1
+    },
+    "phase_transfer": {
+      "accepted": 5718,
+      "excluded_after_deadline": 2
+    },
+    "spider_nest": {
+      "rejected": 204,
+      "accepted": 494
+    },
+    "spider_split": {
+      "accepted": 1750,
+      "rejected": 1916,
+      "excluded_after_deadline": 3
+    }
+  },
+  "isomorphic_extraction_cost_conflicts": 815,
+  "largest_examples": [
+    {
+      "run": "legacy_dedup_s29",
+      "state": 1548,
+      "costs": [
+        [
+          38,
+          16
+        ],
+        [
+          47,
+          19
+        ],
+        [
+          49,
+          21
+        ],
+        [
+          67,
+          35
+        ]
+      ],
+      "gate_gap": 29,
+      "examples": [
+        {
+          "graph_key": "22829a1e2ac01f146224a4bbf233d157bbd53ce8a861605910a8685cac1b6b29",
+          "sha256": "affe971374d639fe6f1b43d13ae7d140792836497186bf30c73cb8624cdbd1c1",
+          "cost": {
+            "gates": 38,
+            "cx": 16,
+            "depth": 33
+          },
+          "transition": 1921
+        },
+        {
+          "graph_key": "b0cfc4ebe56bc0a0b98c6a464a1126a63dc438dc85b5eb107f66033cc45c8bb1",
+          "sha256": "5d9631ccda7d4067ecf443c53031c80473e56a4c3cff72e27ebbbb3989c93882",
+          "cost": {
+            "gates": 67,
+            "cx": 35,
+            "depth": 47
+          },
+          "transition": 3076
+        }
+      ]
+    },
+    {
+      "run": "legacy_uniform_s47",
+      "state": 529,
+      "costs": [
+        [
+          41,
+          15
+        ],
+        [
+          70,
+          34
+        ]
+      ],
+      "gate_gap": 29,
+      "examples": [
+        {
+          "graph_key": "d3150a4adb61fae37517da222975cbffd89d9d72763dde2059d99ab8b247472e",
+          "sha256": "4cb1d095277bffe6d509e499a591a4e5b2a05429eff3b94f3de9d4b5cb8b5c89",
+          "cost": {
+            "gates": 41,
+            "cx": 15,
+            "depth": 36
+          },
+          "transition": 599
+        },
+        {
+          "graph_key": "22ddc2931753250ab269867b7cad90d8827787709b5ee1dc1c7edc02dc5ef59d",
+          "sha256": "d5e6a6eb4a430543a62e29c45644c159b6556e97a2f1b0da0cdd8a668e9a76ad",
+          "cost": {
+            "gates": 70,
+            "cx": 34,
+            "depth": 56
+          },
+          "transition": 603
+        }
+      ]
+    },
+    {
+      "run": "legacy_uniform_s47",
+      "state": 703,
+      "costs": [
+        [
+          42,
+          18
+        ],
+        [
+          68,
+          34
+        ]
+      ],
+      "gate_gap": 26,
+      "examples": [
+        {
+          "graph_key": "1eae0879f031060e08d9167bd5e5c5982435801e6259364762f56069dbed6bbf",
+          "sha256": "f28b8006c3fe8432e03fcf2893e9d373beea99dc99595ee8af232c55d654d51d",
+          "cost": {
+            "gates": 42,
+            "cx": 18,
+            "depth": 38
+          },
+          "transition": 2416
+        },
+        {
+          "graph_key": "b42b00dfd322f169dc97a0a5bd59501e336e6275325dea62bacc95bc8d65e27c",
+          "sha256": "d0c8408c0234340b11a33dc7d76304b21d4db289c02c251a889a0cbf5e167c49",
+          "cost": {
+            "gates": 68,
+            "cx": 34,
+            "depth": 55
+          },
+          "transition": 833
+        }
+      ]
+    },
+    {
+      "run": "legacy_dedup_s29",
+      "state": 475,
+      "costs": [
+        [
+          41,
+          17
+        ],
+        [
+          58,
+          28
+        ],
+        [
+          59,
+          29
+        ],
+        [
+          60,
+          28
+        ],
+        [
+          64,
+          34
+        ]
+      ],
+      "gate_gap": 23,
+      "examples": [
+        {
+          "graph_key": "bf4cc526aa16a112fa38d655b9063988312aff3b1076b527ff02b2539f24e2ab",
+          "sha256": "cd8b0fed6f0d6098227f100d4e33eb35a489770b30099c309dec32a36c7ad39a",
+          "cost": {
+            "gates": 41,
+            "cx": 17,
+            "depth": 38
+          },
+          "transition": 2351
+        },
+        {
+          "graph_key": "c45cccf2262526ad947ef18a2c4e874a679820f6f28fdd26a093a4bce1471b01",
+          "sha256": "12675829f4a85ee80e077426fc303a4a7ee5a609b0aca0d65b294c16aeb659ab",
+          "cost": {
+            "gates": 64,
+            "cx": 34,
+            "depth": 51
+          },
+          "transition": 2920
+        }
+      ]
+    },
+    {
+      "run": "legacy_dedup_s47",
+      "state": 310,
+      "costs": [
+        [
+          44,
+          18
+        ],
+        [
+          51,
+          25
+        ],
+        [
+          55,
+          29
+        ],
+        [
+          66,
+          34
+        ]
+      ],
+      "gate_gap": 22,
+      "examples": [
+        {
+          "graph_key": "b1929a40dd85fc3f8b9a3ab0f5e25171227911e2ec80ce4fed2136dfbc5e97ab",
+          "sha256": "e68691d3033eba185efcc14b9ffe73315be0e7c92389a09d0f28f3c1aa7078ab",
+          "cost": {
+            "gates": 44,
+            "cx": 18,
+            "depth": 35
+          },
+          "transition": 3067
+        },
+        {
+          "graph_key": "7434e787af2333a50ba264e712ef490cf8e3a2a019cb0981337b53628553afb4",
+          "sha256": "ba8cfba5aac4e05b9e2d35666991b1b99196d98bc88c805cea30685d65449d49",
+          "cost": {
+            "gates": 66,
+            "cx": 34,
+            "depth": 50
+          },
+          "transition": 1067
+        }
+      ]
+    }
+  ]
+}
