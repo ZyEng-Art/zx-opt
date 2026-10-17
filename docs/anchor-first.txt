@@ -71,3 +71,16 @@ of non-forced local actions. The initial implementation incorrectly applied
 that division to combined anchor/local entropy, so historical values above1
 of conditional_normalized_entropy are not valid convergence evidence. This is
 read-only instrumentation; the PPO gradient/objective is unchanged.
+
+--anchor-resource-mask is another opt-in experiment. It excludes raw wire and
+closed-wire anchors when their I-backward insertion (+1 node,+1 wire) cannot
+fit, and global E-backward insertion anchors (+2 nodes,+1 wire) when they cannot
+fit. Raw HH pairs can offset growth, so unnormalized foreign raw contexts are
+left unfiltered. Normal search states already cancel HH pairs after each step.
+Scoring-view H-edge insertion is measured against the normalized view's raw
+representation, not against the current raw state's size; its growth is+4 raw
+nodes/+4 wires. Unsupported scalar-size estimation leaves the anchor available
+for the existing exact preview. Node anchors are never removed by this mask.
+No rule matching, candidate rewriting or cost lookahead occurs before sampling.
+The mask and its prior remain part of the recorded PPO categorical support.
+Gate rewards, archive admission and gate-plateau stopping remain unchanged.

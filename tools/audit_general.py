@@ -121,7 +121,9 @@ def audit_one(spec):
         if config.get("selection") == "anchor":
             from zxopt.anchor_policy import catalog
             current_view = views.get(state.diagram)
-            anchors = catalog(state.diagram, current_view.graph, config["jpv"])
+            anchors = catalog(state.diagram, current_view.graph, config["jpv"],
+                              protocol["max_vertices"] if config.get("anchor_resource_mask") else None,
+                              len(root.diagram.edges)+config["max_edge_growth"] if config.get("anchor_resource_mask") else None)
             assert event["anchor"] == anchors[event["selection"]["anchor_slot"]].record()
             assert event["selection"]["anchors"] == len(anchors)
             selection = event["selection"]

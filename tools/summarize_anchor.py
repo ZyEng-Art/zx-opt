@@ -11,8 +11,12 @@ def rows(path):
     return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
 
 
-def summarize(root, output):
+def summarize(root, output, baseline_mode=None):
     campaign = json.loads((root/"campaign.json").read_text())
+    modes = {r["mode"] for r in campaign["plan"]}
+    baseline_mode = baseline_mode or ("global32" if "global32" in modes else "anchor8")
+    if baseline_mode not in modes:
+        raise ValueError("Comparison baseline missing: "+baseline_mode)
     if not (root/"finished.json").is_file():
         raise RuntimeError("Only summarize a completed audited campaign")
     verification = json.loads((root/"audit/verification.json").read_text())
@@ -66,8 +70,8 @@ def summarize(root, output):
                                  online_gates=online["best_gates"], frozen_gates=frozen["best_gates"],
                                  outcome="win" if online["best_gates"] < frozen["best_gates"] else
                                          "loss" if online["best_gates"] > frozen["best_gates"] else "tie"))
-        baseline = trials.get((circuit, "global32", seed, policy))
-        if mode != "global32" and baseline:
+        baseline = trials.get((circuit, baseline_mode, seed, policy))
+        if mode != baseline_mode and baseline:
             base = baseline[0]
             speeds.append(dict(circuit=circuit, mode=mode, seed=seed, policy=policy,
                                accepted_speedup=online["accepted_per_second"]/base["accepted_per_second"],
@@ -78,13 +82,15 @@ def summarize(root, output):
         speed_rows = [r for r in speeds if r["mode"] == mode and r["policy"] == "online"]
         grouped[mode] = dict(online_vs_frozen={k: sum(r["outcome"] == k for r in learning_rows) for k in ("win", "tie", "loss")},
                              median_online_accepted_speedup=statistics.median(r["accepted_speedup"] for r in speed_rows) if speed_rows else None,
-                             online_vs_global={k: sum((r["gate_delta"] < 0 if k == "win" else r["gate_delta"] > 0 if k == "loss" else r["gate_delta"] == 0)
+                             online_vs_baseline={k: sum((r["gate_delta"] < 0 if k == "win" else r["gate_delta"] > 0 if k == "loss" else r["gate_delta"] == 0)
                                                      for r in speed_rows) for k in ("win", "tie", "loss")})
+        if baseline_mode == "global32":
+            grouped[mode]["online_vs_global"] = grouped[mode]["online_vs_baseline"]
     output.mkdir(parents=True, exist_ok=False)
     fieldnames = list(dict.fromkeys(k for r in records for k in r))
     with (output/"trials.csv").open("w") as stream:
         writer = csv.DictWriter(stream, fieldnames=fieldnames); writer.writeheader(); writer.writerows(records)
-    result = dict(status="passed", source_commit=campaign["source_commit"], trials=len(records),
+    result = dict(status="passed", source_commit=campaign["source_commit"], trials=len(records), baseline_mode=baseline_mode,
                   grouped=grouped, paired_prefixes=pairs, learning=learning, performance=speeds,
                   records=records, caveats=["Finite on-target search; no generalization claim",
                   "Accepted throughput excludes noops but includes legal neutral rewrites",
@@ -100,6 +106,7 @@ def summarize(root, output):
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("campaign", type=Path); p.add_argument("output", type=Path)
+    p.add_argument("--baseline-mode")
     a = p.parse_args()
-    r = summarize(a.campaign, a.output)
+    r = summarize(a.campaign, a.output, a.baseline_mode)
     print(json.dumps(dict(trials=r["trials"], grouped=r["grouped"])))

@@ -21,7 +21,9 @@ def main():
     p.add_argument("--seeds", nargs="+", type=int, default=[11, 29, 47])
     p.add_argument("--policies", nargs="+", choices=["frozen", "online"], default=["frozen", "online"])
     p.add_argument("--modes", nargs="+", choices=["global32", "anchor8", "anchor32", "anchor8_nodes",
-                                                 "anchor8_lr1e3", "anchor8_nodes_lr1e3"],
+                                                 "anchor8_lr1e3", "anchor8_nodes_lr1e3", "anchor8_resource",
+                                                 "anchor8_nodes_resource", "anchor8_resource_lr1e3",
+                                                 "anchor8_nodes_resource_lr1e3"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
     p.add_argument("--workers", type=int, default=4)
@@ -64,6 +66,8 @@ def main():
                    "--checkpoint-seconds", "300"]
         if a.max_steps is not None:
             command += ["--max-steps", str(a.max_steps)]
+        if "_resource" in spec["mode"]:
+            command += ["--anchor-resource-mask"]
         try:
             with (out/(spec["folder"].replace("/", "__")+".log")).open("x") as log:
                 subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)

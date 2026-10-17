@@ -32,7 +32,7 @@ class Anchor:
         return self.space, self.kind, self.position
 
 
-def catalog(raw, view, jpv=True):
+def catalog(raw, view, jpv=True, max_vertices=None, max_edges=None, stats=None):
     """Cheap topology-only choices. No applicability query or rewrite preview."""
     result = []
     if jpv:
@@ -45,7 +45,49 @@ def catalog(raw, view, jpv=True):
         result += [Anchor("view", "node", v) for v in view.vertices() if view.type(v) == V.Z]
         result += [Anchor("view", "edge", tuple(view.edge_st(e))) for e in view.edges()
                    if view.edge_type(e) == E.HADAMARD]
-    return result
+    if max_vertices is None and max_edges is None:
+        return result
+
+    def fits(vertices, edges):
+        return ((max_vertices is None or vertices <= max_vertices)
+                and (max_edges is None or edges <= max_edges))
+
+    # Every normal kernel transition cancels HH pairs. If a caller supplies an
+    # unnormalized diagram, later cancellation could offset an insertion's
+    # growth, so leave uncertain raw anchors available rather than over-mask.
+    canonical = not any(a != b and raw.nodes[a].kind == raw.nodes[b].kind == "H" for a, b in raw.edges)
+    raw_wire_fits = fits(len(raw.nodes)+1, len(raw.edges)+1)
+    raw_scalar_fits = fits(len(raw.nodes)+2, len(raw.edges)+1)
+    view_wire_fits = True
+    if any(a.space == "view" and a.kind == "edge" for a in result):
+        try:
+            from .complete.adapter import from_pyzx
+            base = from_pyzx(view, allow_arbitrary=raw.allow_arbitrary)
+            # An H edge (one explicit H node, two raw wires) is replaced by
+            # three H edges and two Z identities: four extra nodes/wires.
+            view_wire_fits = fits(len(base.nodes)+4, len(base.edges)+4)
+        except ValueError:
+            # Unsupported scalar import remains the exact preview's job.
+            if stats is not None:
+                stats["resource_view_estimate_unavailable"] += 1
+    selected = []
+    for anchor in result:
+        keep = True
+        if anchor.space == "raw" and canonical:
+            if anchor.kind in ("edge", "loop"):
+                keep = raw_wire_fits
+            elif anchor.kind == "global":
+                keep = raw_scalar_fits
+        elif anchor.space == "view" and anchor.kind == "edge":
+            keep = view_wire_fits
+        if keep:
+            selected.append(anchor)
+        elif stats is not None:
+            stats["resource_excluded_"+anchor.space+"_"+anchor.kind] += 1
+    if stats is not None:
+        stats["resource_catalog_calls"] += 1
+        stats["resource_uncanonical_states"] += int(not canonical)
+    return selected
 
 
 def _anchor_features(raw, view, anchor, raw_map, view_map):

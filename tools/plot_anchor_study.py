@@ -12,7 +12,9 @@ import numpy as np
 
 LABELS = dict(global32="Global32", anchor8="Anchor8", anchor32="Anchor32",
               anchor8_nodes="Node prior", anchor8_lr1e3="LR 0.001",
-              anchor8_nodes_lr1e3="Node prior + LR 0.001")
+              anchor8_nodes_lr1e3="Node prior + LR 0.001", anchor8_resource="Resource mask",
+              anchor8_nodes_resource="Nodes + resource mask", anchor8_resource_lr1e3="Resource mask + LR 0.001",
+              anchor8_nodes_resource_lr1e3="Nodes + mask + LR 0.001")
 COLORS = dict(zip(LABELS, plt.get_cmap("tab10").colors))
 
 

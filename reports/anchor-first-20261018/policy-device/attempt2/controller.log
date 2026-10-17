@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/tmp/dengzengyong_rlzx_policy_device_node23_20261018/controller-attempt2.py", line 15, in <module>
+    with (base/'benchmark.log').open('x') as stream:subprocess.run(args,stdout=stream,stderr=subprocess.STDOUT,check=True,timeout=600)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker', 'exec', '-w', '/workspace/task/source-attempt2', '-e', 'PYTHONPATH=/workspace/pin:/workspace/offline', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'OPENBLAS_NUM_THREADS=1', '7e6e3451ac8350e3faf969597cabcee4af2253fff2dc718f61d3312d34257a72', '/root/miniconda/envs/python310_torch29_cuda/bin/python', 'tools/benchmark_anchor_device.py', '/workspace/task/benchmark.json', '--device', 'kunlun', '--batch-sizes', '1', '8', '32', '--repeats', '5', '--warmup', '2']' returned non-zero exit status 137.

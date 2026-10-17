@@ -113,6 +113,54 @@ class AnchorTest(unittest.TestCase):
         logs, _ = net.distribution(packed, packed.selected)
         torch.testing.assert_close(logs[0], scores.log_softmax(0)[0])
 
+    def test_resource_catalog_excludes_only_infeasible_insertions(self):
+        all_anchors = catalog(self.raw, self.view.graph)
+        kernel = GeneralKernel(self.env, general_zx=True, candidate_cap=64, total_candidate_cap=64)
+        for growth, edge_growth in ((0, 0), (1, 1), (4, 4), (64, 256)):
+            nv, ne = len(self.raw.nodes)+growth, len(self.raw.edges)+edge_growth
+            bounded = catalog(self.raw, self.view.graph, max_vertices=nv, max_edges=ne)
+            removed = [a for a in all_anchors if a not in bounded]
+            self.assertTrue(all(a.kind != "node" for a in removed))
+            sampled = set()
+            for anchor in removed:
+                group = anchor.space, anchor.kind
+                if group in sampled:
+                    continue
+                sampled.add(group)
+                actions = kernel.prepare(self.raw, self.view, self.view.graph.num_vertices()+64, anchor.query())
+                self.assertTrue(actions, anchor)
+                for action in actions:
+                    child, _ = kernel.preview(self.raw, self.view, action)
+                    self.assertTrue(len(child.nodes) > nv or len(child.edges) > ne, (anchor, action.family))
+
+    def test_resource_catalog_handles_closed_wires_and_hh_conservatively(self):
+        raw = Diagram(loops=1)
+        self.assertEqual(catalog(raw, None, max_vertices=0, max_edges=0), [])
+        self.assertEqual(catalog(raw, None, max_vertices=1, max_edges=1), [Anchor("raw", "loop", 0)])
+        raw = Diagram(); a, b = raw.node("H"), raw.node("H")
+        raw.edge(a, b); raw.edge(a, b)
+        # HH cancellation could offset a selected insertion. Do not assume the
+        # normalized-parent growth formula on a foreign unnormalized diagram.
+        self.assertEqual(catalog(raw, None, max_vertices=2, max_edges=2), catalog(raw, None))
+
+    def test_view_insertions_use_normalized_size_instead_of_raw_growth(self):
+        from zxopt.complete import actions
+        raw = self.raw.clone()
+        for _ in range(16):
+            raw = next(actions(raw, axiom("I", color="Z"), "backward")).apply(raw)
+        view = self.views.get(raw)
+        nv, ne = len(raw.nodes), len(raw.edges)
+        bounded = catalog(raw, view.graph, max_vertices=nv, max_edges=ne)
+        retained = [a for a in bounded if a.space == "view" and a.kind == "edge"]
+        self.assertTrue(retained)
+        kernel = GeneralKernel(self.env, general_zx=True)
+        for anchor in retained[:3]:
+            action = next(a for a in kernel.prepare(raw, view, view.graph.num_vertices()+64, anchor.query())
+                          if a.family == "identity_insert")
+            child, _ = kernel.preview(raw, view, action)
+            self.assertLessEqual(len(child.nodes), nv)
+            self.assertLessEqual(len(child.edges), ne)
+
     def test_local_kernel_does_not_use_whole_graph_native_prepare(self):
         kernel = GeneralKernel(self.env, general_zx=True, candidate_cap=8, total_candidate_cap=8)
         for anchor in (Anchor("raw", "node", 0), Anchor("raw", "edge", 0),

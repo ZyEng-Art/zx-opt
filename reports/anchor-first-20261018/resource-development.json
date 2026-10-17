@@ -1,0 +1,27 @@
+{
+  "time": "2026-10-18T01:18:54.353886+08:00",
+  "event": "anchor_resource_catalog_prepared",
+  "tests": 80,
+  "flag": "--anchor-resource-mask (opt-in; defaults unchanged)",
+  "filter": "Exact node/wire growth excludes over-budget raw-wire/loop/global and scoring-view H-edge insertions before sampling; all node anchors retained; HH-unnormalized raw contexts handled conservatively",
+  "reward": "Unchanged total-gate delta; no invalid-action penalty added",
+  "smoke": {
+    "transitions": 96,
+    "accepted": 69,
+    "noops": 27,
+    "updates": 6,
+    "audit": "passed",
+    "source": "development only"
+  },
+  "gpu_probe": {
+    "source": "510f542",
+    "single_graph_roundtrip_cpu_ms": 1.005336998787243,
+    "single_graph_roundtrip_p800_ms": 1.986058006878011,
+    "batch32_optimizer_cpu_ms": 80.25057999475393,
+    "batch32_optimizer_p800_ms": 50.88677699677646,
+    "status": "kernel_checks_passed_native_teardown_failed_and_interrupted",
+    "container_stopped": true,
+    "card_released": true
+  },
+  "next": "Matched five-seed600s resource-mask and node-prior controls on barenco_tof_3"
+}

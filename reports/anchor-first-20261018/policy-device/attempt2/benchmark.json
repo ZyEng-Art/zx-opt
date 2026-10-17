@@ -1,0 +1,202 @@
+{
+  "status": "passed",
+  "requested": "kunlun",
+  "device_name": "GPU",
+  "torch": "2.9.0+cu129",
+  "input_sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92",
+  "batches": [
+    {
+      "batch_size": 1,
+      "backend": "cpu",
+      "policy_nodes": [
+        739,
+        305,
+        302
+      ],
+      "max_anchor_logit_error": 0.0,
+      "max_joint_log_probability_error": 0.0,
+      "anchor_preloaded": {
+        "median_seconds": 0.000830390999908559,
+        "minimum_seconds": 0.0008080070037976839,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.001987305993679911,
+        "minimum_seconds": 0.001955788000486791,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.001005336998787243,
+        "minimum_seconds": 0.0009568549940013327,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.005872273999557365,
+        "minimum_seconds": 0.005747515999246389,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    },
+    {
+      "batch_size": 1,
+      "backend": "kunlun",
+      "policy_nodes": [
+        739,
+        305,
+        302
+      ],
+      "max_anchor_logit_error": 2.2118911147117615e-09,
+      "max_joint_log_probability_error": 0.0,
+      "anchor_preloaded": {
+        "median_seconds": 0.0014679340019938536,
+        "minimum_seconds": 0.0013873740026610903,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.004801420000148937,
+        "minimum_seconds": 0.004768241000419948,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.001986058006878011,
+        "minimum_seconds": 0.0019537810003384948,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.01946959600172704,
+        "minimum_seconds": 0.018103294998581987,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    },
+    {
+      "batch_size": 8,
+      "backend": "cpu",
+      "policy_nodes": [
+        5912,
+        2439,
+        2416
+      ],
+      "max_anchor_logit_error": 0.0,
+      "max_joint_log_probability_error": 0.0,
+      "anchor_preloaded": {
+        "median_seconds": 0.004197034999378957,
+        "minimum_seconds": 0.00418482199893333,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.008308416996442247,
+        "minimum_seconds": 0.008213234999857377,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.004485620003833901,
+        "minimum_seconds": 0.00446587100304896,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.020551761001115665,
+        "minimum_seconds": 0.02017066999542294,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    },
+    {
+      "batch_size": 8,
+      "backend": "kunlun",
+      "policy_nodes": [
+        5912,
+        2439,
+        2416
+      ],
+      "max_anchor_logit_error": 2.2118911147117615e-09,
+      "max_joint_log_probability_error": 0.0,
+      "anchor_preloaded": {
+        "median_seconds": 0.002367408997088205,
+        "minimum_seconds": 0.0023411509973811917,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.008446646999800578,
+        "minimum_seconds": 0.008404570995480753,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.0031114800003706478,
+        "minimum_seconds": 0.0030949290012358688,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.025682603001769166,
+        "minimum_seconds": 0.02480225299950689,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    },
+    {
+      "batch_size": 32,
+      "backend": "cpu",
+      "policy_nodes": [
+        23648,
+        9768,
+        9664
+      ],
+      "max_anchor_logit_error": 0.0,
+      "max_joint_log_probability_error": 0.0,
+      "anchor_preloaded": {
+        "median_seconds": 0.015711090003605932,
+        "minimum_seconds": 0.015509326003666501,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.032305523003742564,
+        "minimum_seconds": 0.031711581999843474,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.017436375994293485,
+        "minimum_seconds": 0.016745134998927824,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.08025057999475393,
+        "minimum_seconds": 0.07589324800210306,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    },
+    {
+      "batch_size": 32,
+      "backend": "kunlun",
+      "policy_nodes": [
+        23648,
+        9768,
+        9664
+      ],
+      "max_anchor_logit_error": 2.2118911147117615e-09,
+      "max_joint_log_probability_error": 4.76837158203125e-07,
+      "anchor_preloaded": {
+        "median_seconds": 0.006430147004721221,
+        "minimum_seconds": 0.006418706994736567,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.022826106993306894,
+        "minimum_seconds": 0.02281727000081446,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.007863088001613505,
+        "minimum_seconds": 0.007824554006219842,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.05088677699677646,
+        "minimum_seconds": 0.049380766999092884,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    }
+  ],
+  "scope": "Fixed graph shapes, kernel/transfer microbenchmark; no search or learning-quality claim"
+}

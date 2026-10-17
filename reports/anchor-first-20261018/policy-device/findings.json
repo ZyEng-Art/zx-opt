@@ -1,0 +1,48 @@
+{
+  "status": "kernel_checks_passed_native_teardown_failed_and_interrupted",
+  "host_controller": "failed",
+  "container": {
+    "running": false,
+    "exit_code": 137,
+    "started_at": "2026-10-17T17:11:24.627911239Z",
+    "devices": [
+      {
+        "PathOnHost": "/dev/xpu0",
+        "PathInContainer": "/dev/xpu0",
+        "CgroupPermissions": "rwm"
+      },
+      {
+        "PathOnHost": "/dev/xpuctrl",
+        "PathInContainer": "/dev/xpuctrl",
+        "CgroupPermissions": "rwm"
+      }
+    ]
+  },
+  "hardware": "node23 P800 card0 only; host xpu-smi and device mounts recorded",
+  "measurements": [
+    {
+      "batch_size": 1,
+      "roundtrip_cpu_ms": 1.005336998787243,
+      "roundtrip_p800_ms": 1.986058006878011,
+      "optimizer_cpu_ms": 5.872273999557365,
+      "optimizer_p800_ms": 19.46959600172704
+    },
+    {
+      "batch_size": 8,
+      "roundtrip_cpu_ms": 4.485620003833901,
+      "roundtrip_p800_ms": 3.1114800003706478,
+      "optimizer_cpu_ms": 20.551761001115665,
+      "optimizer_p800_ms": 25.682603001769166
+    },
+    {
+      "batch_size": 32,
+      "roundtrip_cpu_ms": 17.436375994293485,
+      "roundtrip_p800_ms": 7.863088001613505,
+      "optimizer_cpu_ms": 80.25057999475393,
+      "optimizer_p800_ms": 50.88677699677646
+    }
+  ],
+  "decision": "Keep current search on CPU: single-graph transfers slower; batch32 optimizer improves only in a preloaded microbenchmark. Vendor runtime aborts during teardown; do not treat it as a deployable GPU path.",
+  "scope": "No search jobs moved to GPU; synthetic benchmark optimizer steps are not learning evidence",
+  "card_released_after_stop": true
+}

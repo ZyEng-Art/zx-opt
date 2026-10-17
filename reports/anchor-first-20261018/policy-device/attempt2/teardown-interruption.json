@@ -1,0 +1,6 @@
+{
+  "time": "2026-10-18T01:17:35.089840+08:00",
+  "reason": "Benchmark kernels finished and results flushed; vendor runtime errored during native teardown. Stop only this owned probe container to release card0.",
+  "container_id": "7e6e3451ac8350e3faf969597cabcee4af2253fff2dc718f61d3312d34257a72",
+  "started_at": "2026-10-17T17:11:24.627911239Z"
+}

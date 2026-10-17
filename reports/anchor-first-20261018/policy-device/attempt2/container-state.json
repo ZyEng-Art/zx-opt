@@ -1,0 +1,17 @@
+{
+  "running": false,
+  "exit_code": 137,
+  "started_at": "2026-10-17T17:11:24.627911239Z",
+  "devices": [
+    {
+      "PathOnHost": "/dev/xpu0",
+      "PathInContainer": "/dev/xpu0",
+      "CgroupPermissions": "rwm"
+    },
+    {
+      "PathOnHost": "/dev/xpuctrl",
+      "PathInContainer": "/dev/xpuctrl",
+      "CgroupPermissions": "rwm"
+    }
+  ]
+}

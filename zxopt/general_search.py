@@ -73,6 +73,8 @@ def run(args):
         raise ValueError("Invalid search bounds")
     if args.selection != "anchor" and args.anchor_prior != "uniform":
         raise ValueError("Anchor prior requires --selection anchor")
+    if args.selection != "anchor" and args.anchor_resource_mask:
+        raise ValueError("Anchor resource mask requires --selection anchor")
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     (out/"objects").mkdir(); (out/"candidates").mkdir()
     torch.set_num_threads(1); torch.set_num_interop_threads(1)
@@ -123,6 +125,8 @@ def run(args):
             raise ValueError("Resume model uses a different action factorization")
         if saved.get("anchor_prior", "uniform") != args.anchor_prior:
             raise ValueError("Resume model uses a different anchor prior")
+        if saved.get("anchor_resource_mask", False) != args.anchor_resource_mask:
+            raise ValueError("Resume model uses a different anchor resource mask")
         if saved.get("input_sha256") != hashlib.sha256(input_bytes).hexdigest():
             raise ValueError("Resume model input mismatch")
         net.load_state_dict(saved["state_dict"])
@@ -196,6 +200,7 @@ def run(args):
                                   empty="explicit zero-reward unchanged-state transition; no hidden resampling",
                                   entropy="anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
                                   prior=args.anchor_prior,
+                                  resource_mask=args.anchor_resource_mask,
                                   candidate_cap=kernel.total_candidate_cap)
                              if anchored else dict(mode="global"))
     atomic_json(out/"protocol.json", protocol)
@@ -234,7 +239,7 @@ def run(args):
                     "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask",
                     "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout",
                     "selection", "anchor_candidate_cap"]
-        semantic += ["anchor_prior", "learning_rate"]
+        semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -321,9 +326,20 @@ def run(args):
                 timers["views"] += time.perf_counter()-t
                 t = time.perf_counter()
                 context = context_for(state, start, best, step, args, root_result["cost"]["gates"], len(diagram.nodes))
-                anchors = anchor_policy.catalog(state.diagram, view.graph, kernel.jpv is not None)
+                anchors = anchor_policy.catalog(state.diagram, view.graph, kernel.jpv is not None,
+                                                raw_limit if args.anchor_resource_mask else None,
+                                                wire_limit if args.anchor_resource_mask else None,
+                                                anchor_stats if args.anchor_resource_mask else None)
                 if not anchors:
-                    raise RuntimeError("No anchor exists in this representation")
+                    timers["anchor_inference"] += time.perf_counter()-t
+                    deadend_file.write(json.dumps(dict(trajectory=trajectory, graph_key=state.key,
+                                       seconds=time.perf_counter()-started, reason="empty resource-bounded anchor catalog"))+"\n")
+                    if rollout:
+                        previous = list(rollout[-1]); previous[-1] = True; rollout[-1] = tuple(previous)
+                    state = None
+                    if len(pool.scored)+len(pool.latent) == 1:
+                        status = "no_resource_anchors"; break
+                    continue
                 anchor_obs = anchor_policy.anchor_observation(state.diagram, view.graph, anchors, context, args.anchor_prior)
                 if net is None:
                     if "prior" in anchor_obs:
@@ -537,6 +553,7 @@ def run(args):
                         input_sha256=hashlib.sha256(input_bytes).hexdigest(),
                         selection=args.selection,
                         anchor_prior=args.anchor_prior, learning_rate=args.learning_rate,
+                        anchor_resource_mask=args.anchor_resource_mask,
                         scope="model/Adam only, not a complete search checkpoint"), out/"final.pt")
     checkpoint_now()
     if shared is not None:
@@ -602,6 +619,8 @@ def parser():
     p.add_argument("--anchor-prior", choices=["uniform", "nodes"], default="uniform",
                    help="Optional topology-only node-focused category prior, included in the PPO density")
     p.add_argument("--learning-rate", type=float, default=.0003)
+    p.add_argument("--anchor-resource-mask", action="store_true",
+                   help="Before sampling, remove only wire/scalar anchors whose insertion is provably over budget")
     p.add_argument("--seconds", type=float, default=1200.)
     p.add_argument("--no-improvement-seconds", type=float, default=0., help="Strict total-gate plateau patience; --seconds 0 disables the overall cap")
     p.add_argument("--checkpoint-seconds", type=float, default=0., help="Atomic full search-state checkpoint interval")
