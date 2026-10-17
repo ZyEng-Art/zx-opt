@@ -1,0 +1,193 @@
+{
+  "status": "passed_development_smoke",
+  "tests": 97,
+  "frozen_trials": [
+    {
+      "trial": "anchor8_resource_train137_initial_frozen_s431",
+      "best": {
+        "gates": 40,
+        "cx": 15,
+        "depth": 35
+      },
+      "transitions": 96,
+      "updates": 0,
+      "initial_tensor_sha256": "706905fe2bd2a513b206aaf9d975ee86bb4b0edcdbe0070979f2c36d48ee88af",
+      "model_resume": {
+        "sha256": "780177a627423c6ba8f49ed1c4e84e362fa65d50d7e9fd34c06bc820637dbaad",
+        "input_sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92",
+        "tensor_sha256": "706905fe2bd2a513b206aaf9d975ee86bb4b0edcdbe0070979f2c36d48ee88af",
+        "steps": 0,
+        "updates": 0,
+        "snapshot": "resume-model.pt",
+        "original_path": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/model-probe-smoke-20261018/probe-models/barenco_tof_3__anchor8_resource_train137_initial.pt",
+        "probe_origin": {
+          "training_folder": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/archive-qasm-smoke-20261018/barenco_tof_3/anchor8_resource_online_s137",
+          "training_mode": "anchor8_resource",
+          "training_seed": 137,
+          "stage": "initial",
+          "source_commit": "7168fa3b8fc63fe81cf34e2048939147931d91b1",
+          "source_model_sha256": "6d4e0a1351898860fb0f5febd8ba2db347380828bfd6aa206b9bf0facdce3358",
+          "training_protocol_sha256": "d81ee022b3433b186a859096c4ce88329325b07ac643bb3ade9a73d12c213e90",
+          "training_report_sha256": "38bb0be2d7a224f45115e6b1ebfd709901412bd8e0f20e8a73c143f10f57683d",
+          "training_events_sha256": "0744ca7448f531e88e0a28166d219a6b3d9831341f8bd54e185235875956ea66",
+          "training_audit_sha256": "d02da30367fd8a67db52dab2efa526f3931d93b88c8e35e557ac46dce6d82db1",
+          "development_allow_dirty": true
+        }
+      },
+      "report_sha256": "7ffe77712cb953c23c90aad2f34b5d58b7668dfc0fc5449ba5fba78dabb0db23"
+    },
+    {
+      "trial": "anchor8_resource_train137_trained_frozen_s431",
+      "best": {
+        "gates": 40,
+        "cx": 15,
+        "depth": 35
+      },
+      "transitions": 96,
+      "updates": 0,
+      "initial_tensor_sha256": "8c9d174c90e9925d7be22e998236dcdb2ec584590f616572ec2674ba68f6ac81",
+      "model_resume": {
+        "sha256": "ae2ba5d399b5a3b0496db49f874e4fa9a4746368a0c6e461ceda548a3e13dc51",
+        "input_sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92",
+        "tensor_sha256": "8c9d174c90e9925d7be22e998236dcdb2ec584590f616572ec2674ba68f6ac81",
+        "steps": 384,
+        "updates": 12,
+        "snapshot": "resume-model.pt",
+        "original_path": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/model-probe-smoke-20261018/probe-models/barenco_tof_3__anchor8_resource_train137_trained.pt",
+        "probe_origin": {
+          "training_folder": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/archive-qasm-smoke-20261018/barenco_tof_3/anchor8_resource_online_s137",
+          "training_mode": "anchor8_resource",
+          "training_seed": 137,
+          "stage": "trained",
+          "source_commit": "7168fa3b8fc63fe81cf34e2048939147931d91b1",
+          "source_model_sha256": "ab730c2d23269f7a36ec6e385ee7f589ed9fef6c3eaf4fd7f136abb88a7d6436",
+          "training_protocol_sha256": "d81ee022b3433b186a859096c4ce88329325b07ac643bb3ade9a73d12c213e90",
+          "training_report_sha256": "38bb0be2d7a224f45115e6b1ebfd709901412bd8e0f20e8a73c143f10f57683d",
+          "training_events_sha256": "0744ca7448f531e88e0a28166d219a6b3d9831341f8bd54e185235875956ea66",
+          "training_audit_sha256": "d02da30367fd8a67db52dab2efa526f3931d93b88c8e35e557ac46dce6d82db1",
+          "development_allow_dirty": true
+        }
+      },
+      "report_sha256": "2c02563eeec32c1553165e15f0e2dc340f39622b09b1a135073f84abd9d65680"
+    }
+  ],
+  "audit": {
+    "status": "passed",
+    "development_allow_dirty": true,
+    "trials": 2,
+    "records": [
+      {
+        "arm": "anchor8_resource_train137_trained_frozen",
+        "seed": 431,
+        "status": "passed",
+        "transitions": 96,
+        "accepted_rewrites": 70,
+        "replayed_auxiliary": 23,
+        "legal_unscored": 0,
+        "recovered": 0,
+        "saved_qasm": 17,
+        "quarantined_invalid_qasm": 0,
+        "max_graph_operator_error": 1.099222836313072e-14,
+        "max_qasm_operator_error": 8.035441813322767e-16,
+        "accepted_families": {
+          "identity_insert": 5,
+          "I:backward": 23,
+          "H:forward": 9,
+          "EU:forward": 9,
+          "phase_split": 4,
+          "spider_split": 2,
+          "I:forward": 3,
+          "S:backward": 4,
+          "H:backward": 10,
+          "ID": 1
+        },
+        "completion_branches": {
+          "clifford_repair": 48,
+          "full_reduce_repair": 22
+        },
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "model": {
+          "parameter_l2_delta": 0.0,
+          "actor_l2_delta": 0.0,
+          "finite": true
+        },
+        "events_sha256": "cc9611d3f0463f89a9336e7edd07f53dd5dac55f6a7aca5b699504cd14354b34",
+        "report_sha256": "2c02563eeec32c1553165e15f0e2dc340f39622b09b1a135073f84abd9d65680"
+      },
+      {
+        "arm": "anchor8_resource_train137_initial_frozen",
+        "seed": 431,
+        "status": "passed",
+        "transitions": 96,
+        "accepted_rewrites": 85,
+        "replayed_auxiliary": 31,
+        "legal_unscored": 0,
+        "recovered": 0,
+        "saved_qasm": 20,
+        "quarantined_invalid_qasm": 0,
+        "max_graph_operator_error": 1.0336307813105153e-14,
+        "max_qasm_operator_error": 1.1264530981048447e-15,
+        "accepted_families": {
+          "identity_insert": 7,
+          "I:backward": 29,
+          "H:forward": 12,
+          "EU:forward": 7,
+          "phase_split": 5,
+          "spider_split": 1,
+          "I:forward": 2,
+          "S:backward": 4,
+          "H:backward": 12,
+          "PVG": 3,
+          "ID": 1,
+          "PV": 2
+        },
+        "completion_branches": {
+          "clifford_repair": 71,
+          "full_reduce_repair": 14
+        },
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "model": {
+          "parameter_l2_delta": 0.0,
+          "actor_l2_delta": 0.0,
+          "finite": true
+        },
+        "events_sha256": "a75b6dc8971004afd6ea671f8714da3f8f4b0532196cd18e69897abb890bd41a",
+        "report_sha256": "7ffe77712cb953c23c90aad2f34b5d58b7668dfc0fc5449ba5fba78dabb0db23"
+      }
+    ],
+    "model_pairs": [],
+    "saved_qasm": 37,
+    "accepted_rewrites": 155,
+    "caveat": "Quarantined invalid extractions are excluded from candidates, rewards and best gate counts"
+  },
+  "comparison": {
+    "status": "passed",
+    "pairs": [
+      {
+        "circuit": "barenco_tof_3",
+        "mode": "anchor8_resource",
+        "training_seed": 137,
+        "search_seed": 431,
+        "initial": {
+          "gates": 40,
+          "cx": 15,
+          "depth": 35
+        },
+        "trained": {
+          "gates": 40,
+          "cx": 15,
+          "depth": 35
+        },
+        "saved_gates": 0,
+        "outcome": "tie"
+      }
+    ],
+    "by_mode": {
+      "anchor8_resource": {
+        "tie": 1
+      }
+    },
+    "scope": "Gate-count comparison of audited frozen initial/trained weights on the training circuit; training seeds and reused controls introduce dependence. No convergence or generalization claim."
+  },
+  "scope": "Two96-step frozen searches from384-step development training; functional provenance/audit check only, not learning effectiveness evidence"
+}

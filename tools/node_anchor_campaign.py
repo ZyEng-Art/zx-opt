@@ -43,6 +43,10 @@ def main():
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3", "mod5_4", "tof_5"])
     p.add_argument("--seeds", nargs="+", default=["11", "29", "47"])
     p.add_argument("--modes", nargs="+", default=["global32", "anchor8", "anchor32"])
+    p.add_argument("--experiment", choices=["search", "policy-probe"], default="search")
+    p.add_argument("--probe-source", type=Path)
+    p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
+    p.add_argument("--audit-workers", type=int, default=2)
     a = p.parse_args(); base = a.base.resolve()
     ownership = json.loads((base/"ownership.json").read_text())
     if ownership["container_name"] != a.container:
@@ -82,11 +86,19 @@ def main():
         status("unit_tests")
         run(["tools/check_pyzx_pin.py"], "pyzx-pin.log")
         run(["-m", "unittest", "discover", "-s", "tests", "-v"], "unit-tests.log")
-        status("comparison", circuits=a.circuits, seeds=a.seeds, modes=a.modes, seconds=a.seconds, workers=a.workers)
-        run(["tools/anchor_campaign.py", "runs/comparison", "--seconds", str(a.seconds),
-             "--workers", str(a.workers), "--audit-workers", "2", "--circuits", *a.circuits,
-             "--seeds", *a.seeds, "--modes", *a.modes,
-             "--policies", "frozen", "online"], "comparison.log")
+        status("comparison", experiment=a.experiment, circuits=a.circuits, seeds=a.seeds,
+               modes=a.modes, seconds=a.seconds, workers=a.workers)
+        common = ["--seconds", str(a.seconds), "--workers", str(a.workers),
+                  "--audit-workers", str(a.audit_workers), "--circuits", *a.circuits,
+                  "--seeds", *a.seeds, "--modes", *a.modes]
+        if a.experiment == "policy-probe":
+            if a.probe_source is None:
+                raise ValueError("Model probes require a read-only training source")
+            run(["tools/policy_weight_probes.py", str(a.probe_source), "runs/comparison", *common,
+                 "--training-seeds", *a.training_seeds], "comparison.log")
+        else:
+            run(["tools/anchor_campaign.py", "runs/comparison", *common,
+                 "--policies", "frozen", "online"], "comparison.log")
         finished = json.loads((base/"source/runs/comparison/finished.json").read_text())
         if finished["status"] != "passed":
             raise RuntimeError("Comparison did not pass its event and circuit audits")

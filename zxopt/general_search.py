@@ -28,15 +28,12 @@ from .verify import qiskit_matrix_zx_order, matrix_error
 from monitored_ppo import ppo_update
 from .scalable_verify import reference_for, check_qasm, ZXReference
 from .patience import GatePatience
+from .model_snapshot import read_model_snapshot, state_dict_digest
 from . import anchor_policy
 
 
 def tensor_digest(net):
-    h = hashlib.sha256()
-    for name, value in sorted(net.state_dict().items()):
-        h.update(name.encode()); h.update(str(value.dtype).encode()); h.update(str(tuple(value.shape)).encode())
-        h.update(value.numpy().tobytes())
-    return h.hexdigest()
+    return state_dict_digest(net.state_dict())
 
 
 def candidate_digest(available):
@@ -119,19 +116,15 @@ def run(args):
     view_limit = root_view.graph.num_vertices()+args.max_growth
     net = Agent(general_zx=args.general_zx) if args.policy != "uniform" else None
     optimizer = torch.optim.Adam(net.parameters(), lr=args.learning_rate, eps=1e-5) if args.policy == "online" else None
+    model_resume = None
     if args.resume_model:
         if net is None:
             raise ValueError("Model resume requires frozen/online policy")
-        saved = torch.load(args.resume_model, map_location="cpu", weights_only=False)
-        if saved.get("selection", "global") != args.selection:
-            raise ValueError("Resume model uses a different action factorization")
-        if saved.get("anchor_prior", "uniform") != args.anchor_prior:
-            raise ValueError("Resume model uses a different anchor prior")
-        if saved.get("anchor_resource_mask", False) != args.anchor_resource_mask:
-            raise ValueError("Resume model uses a different anchor resource mask")
-        if saved.get("input_sha256") != hashlib.sha256(input_bytes).hexdigest():
-            raise ValueError("Resume model input mismatch")
+        saved, payload, model_resume = read_model_snapshot(
+            args.resume_model, hashlib.sha256(input_bytes).hexdigest(),
+            args.selection, args.anchor_prior, args.anchor_resource_mask)
         net.load_state_dict(saved["state_dict"])
+        (out/"resume-model.pt").write_bytes(payload)
         if optimizer is not None:
             if saved.get("optimizer_state_dict") is None:
                 raise ValueError("Resume checkpoint has no optimizer")
@@ -177,6 +170,9 @@ def run(args):
                     limits="candidate/node/matching/horizon/latent-depth bounds; extraction failures are legal transitions, verification/resource failures rejected",
                     hh="I_X backward / H forward / I_Z forward proof; every contextual cancellation has a replay receipt")
     protocol["invalid_extraction"] = "quarantined and excluded from all gate costs/rewards; legal raw graph can continue. Raw/repair operator mismatches remain fatal. Repairs apply identically in every arm."
+    if model_resume is not None:
+        protocol["model_resume"] = model_resume
+        protocol["scope"] = "same-target search from recorded model weights; total NAM gates then CX; this is model continuation/probing, not independent fresh-model training"
     if args.archive_qasm_cap:
         protocol["archive_grouping"] = dict(
             key="SHA256 of the already verified completion QASM; no extra extraction/lookahead",

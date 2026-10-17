@@ -213,8 +213,21 @@ def audit_one(spec):
     best_circuit = qasm2.loads((folder/"best.qasm").read_text())
     assert check_qasm(reference, (folder/"best.qasm").read_text()) < 2e-8
     if (folder/"initial.pt").exists():
+        from zxopt.model_snapshot import state_dict_digest
         initial = torch.load(folder/"initial.pt", map_location="cpu", weights_only=True)["state_dict"]
         final = torch.load(folder/"final.pt", map_location="cpu", weights_only=True)["state_dict"]
+        assert state_dict_digest(initial) == protocol["initial_tensor_sha256"]
+        if protocol.get("model_resume"):
+            origin = protocol["model_resume"]
+            assert origin["snapshot"] == "resume-model.pt"
+            snapshot = folder/origin["snapshot"]
+            assert sha(snapshot) == origin["sha256"]
+            saved = torch.load(snapshot, map_location="cpu", weights_only=True)
+            assert saved["input_sha256"] == protocol["input_sha256"] == origin["input_sha256"]
+            assert state_dict_digest(saved["state_dict"]) == origin["tensor_sha256"]
+            assert origin["tensor_sha256"] == protocol["initial_tensor_sha256"]
+            assert set(initial) == set(saved["state_dict"])
+            assert all(torch.equal(value, saved["state_dict"][k]) for k, value in initial.items())
         for v in final.values():
             assert bool(torch.isfinite(v).all())
         delta = float(sum((final[k]-v).double().square().sum() for k, v in initial.items()).sqrt())

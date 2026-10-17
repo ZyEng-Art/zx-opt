@@ -122,3 +122,38 @@ and parameter comparisons are required before calling this computation-only.
   and2 online (63mapped states), with most raw states close to the node cap.
   Different normalized graph keys remain common; exact view dedup alone would
   not remove most of these completion-equivalent raw variants.
+
+2026-10-18 frozen learned-weight probes
+  tools/policy_weight_probes.py consumes a completed, replay-audited training
+  campaign. For every specified mode/training seed it freezes both the
+  initial and final weights, then searches the original same-circuit input
+  with matched fresh search RNG seeds and wall budgets. It transfers no
+  incumbent circuit, active state, optimizer or restart pool. All arms use
+  --policy frozen, and the auditor checks zero parameter change throughout
+  each probe. This isolates retained final-policy behavior from changes in
+  online policy and restart-pool history; it does not test other circuits.
+  All planned training models are included, rather than selecting the run
+  with the smallest final gate count. Controls reused across learning-rate
+  variants are correlated and are not independent statistical samples.
+
+  Model packages include input/policy-support checks, exact source model,
+  protocol, event, report and training-audit hashes, and tensor digests.
+  --resume-model now stores an exact byte snapshot inside every new run and
+  records its digest; its protocol explicitly identifies model continuation
+  instead of claiming a fresh-model run. Replay auditing checks initial
+  weights against the recorded digest and byte/tensor equality with that
+  snapshot. Non-finite, other-input and incompatible policy-support models
+  are rejected before use. Optimizer continuation remains available only
+  with --policy online; these probes never create an optimizer.
+
+  Launch after the training source reaches an audited terminal pass:
+    python3 tools/launch_anchor_node.py runs/anchor-probes-launch-20261018 \
+      --node 23 --tag anchor_probes --experiment policy-probe \
+      --probe-source-tag anchor_long --seconds 900 --workers 12 \
+      --cpus 24 --memory-gib 64 --audit-workers 4 \
+      --circuits barenco_tof_3 --training-seeds 137 163 197 \
+      --seeds 401 431 461 \
+      --modes global32 anchor8_resource anchor8_resource_lr1e4
+  The training source is mounted read-only in a separate owned container.
+  The launch refuses an incomplete or failed source campaign. Archives and
+  event/circuit/parameter audits use the same terminal collection workflow.

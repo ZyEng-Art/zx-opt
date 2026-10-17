@@ -19,6 +19,10 @@ def main():
     p.add_argument("--workers", type=int, default=10)
     p.add_argument("--cpus", type=int, default=16)
     p.add_argument("--memory-gib", type=int, default=48)
+    p.add_argument("--experiment", choices=["search", "policy-probe"], default="search")
+    p.add_argument("--probe-source-tag", help="Completed owned study on the same host; mounted read-only")
+    p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
+    p.add_argument("--audit-workers", type=int, default=2)
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3"])
     p.add_argument("--seeds", nargs="+", default=["11", "29", "47", "71", "101"])
     p.add_argument("--modes", nargs="+", default=["global32", "anchor8", "anchor8_nodes",
@@ -26,6 +30,9 @@ def main():
     a = p.parse_args()
     if not re.fullmatch(r"[a-z0-9_]{1,32}", a.tag):
         raise ValueError("Use a short task tag")
+    if a.experiment == "policy-probe" and (not a.probe_source_tag or
+            not re.fullmatch(r"[a-z0-9_]{1,32}", a.probe_source_tag)):
+        raise ValueError("Policy probes require a valid completed source-study tag")
     if a.workers < 1 or a.cpus < 1 or a.memory_gib < 1:
         raise ValueError("Resource limits must be positive")
     if subprocess.check_output(["git", "-C", str(ROOT), "status", "--porcelain", "--untracked-files=no"], text=True).strip():
@@ -36,6 +43,8 @@ def main():
     subprocess.run(["git", "-C", str(ROOT), "bundle", "create", str(bundle), "HEAD"], check=True)
     spec = dict(node=a.node, tag=a.tag, source_commit=revision, seconds=a.seconds,
                 workers=a.workers, cpus=a.cpus, memory_gib=a.memory_gib, circuits=a.circuits, seeds=a.seeds, modes=a.modes,
+                experiment=a.experiment, probe_source_tag=a.probe_source_tag,
+                training_seeds=a.training_seeds, audit_workers=a.audit_workers,
                 base="/tmp/dengzengyong_rlzx_"+a.tag+"_node"+str(a.node)+"_20261018",
                 bundle_sha256=hashlib.sha256(bundle.read_bytes()).hexdigest())
     host = "dengzengyong@wxtky02-p800-backup-8nic-vd-node"+str(a.node)+".wxtky02"
@@ -65,19 +74,33 @@ if revision!=spec['source_commit']: raise RuntimeError('Source revision mismatch
 old=pathlib.Path('/tmp/dengzengyong_rlzx_nam_node'+str(spec['node'])+'_20261017')
 image=json.loads(run(['docker','inspect','dengzengyong_rlzx_nam_node'+str(spec['node'])+'_20261017']))[0]['Image']
 name=base.name
+extra_mounts=[]; probe_source=None
+if spec['experiment']=='policy-probe':
+    training=pathlib.Path('/tmp/dengzengyong_rlzx_'+spec['probe_source_tag']+'_node'+str(spec['node'])+'_20261018')
+    controller=json.loads((training/'controller.json').read_text())
+    training_owner=json.loads((training/'ownership.json').read_text())
+    if controller['phase']!='passed' or controller['commit']!=training_owner['source_commit']:
+        raise RuntimeError('Training source has not reached an audited terminal pass')
+    probe_source=training/'source/runs/comparison'
+    extra_mounts=['-v',str(probe_source)+':/workspace/probe-source:ro']
 cid=run(['docker','create','--name',name,'--label','owner=dengzengyong','--label','task=rlzx-anchor-20261018',
          '--cpus',str(spec['cpus']),'--memory',str(spec['memory_gib'])+'g','--shm-size','4g','--pids-limit','4096',
          '-v',str(base)+':/workspace/task','-v',str(old/'pyzx-pin')+':/workspace/pin:ro',
-         '-v',str(old/'offline-deps')+':/workspace/offline:ro','--entrypoint','/bin/bash',image,'-lc','sleep infinity'])
+         '-v',str(old/'offline-deps')+':/workspace/offline:ro',*extra_mounts,
+         '--entrypoint','/bin/bash',image,'-lc','sleep infinity'])
 run(['docker','start',cid])
 data=json.loads(run(['docker','inspect',cid]))[0]
 meta=dict(container_name=name,container_id=cid,started_at=data['State']['StartedAt'],image=image,
-          source_commit=revision,cpus=spec['cpus'],memory_gib=spec['memory_gib'],workers=spec['workers'],gpu=False,node=spec['node'])
+          source_commit=revision,cpus=spec['cpus'],memory_gib=spec['memory_gib'],workers=spec['workers'],gpu=False,node=spec['node'],
+          experiment=spec['experiment'],probe_source=None if probe_source is None else str(probe_source))
 (base/'ownership.json').write_text(json.dumps(meta,indent=2)+'\n')
 run(['docker','exec',cid,'git','config','--global','--add','safe.directory','/workspace/task/source'])
 command=['python3',str(base/'source/tools/node_anchor_campaign.py'),str(base),'--container',name,
          '--commit',revision,'--seconds',str(spec['seconds']),'--workers',str(spec['workers']),
-         '--circuits',*spec['circuits'],'--seeds',*spec['seeds'],'--modes',*spec['modes']]
+         '--circuits',*spec['circuits'],'--seeds',*spec['seeds'],'--modes',*spec['modes'],
+         '--experiment',spec['experiment'],'--audit-workers',str(spec['audit_workers'])]
+if probe_source is not None:
+    command+=['--probe-source','/workspace/probe-source','--training-seeds',*spec['training_seeds']]
 with (base/'controller.log').open('x') as stream:
     proc=subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
 meta['controller_pid']=proc.pid
