@@ -17,6 +17,8 @@ def main():
     p.add_argument("--tag", default="anchor_prior")
     p.add_argument("--seconds", type=float, default=600)
     p.add_argument("--workers", type=int, default=10)
+    p.add_argument("--cpus", type=int, default=16)
+    p.add_argument("--memory-gib", type=int, default=48)
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3"])
     p.add_argument("--seeds", nargs="+", default=["11", "29", "47", "71", "101"])
     p.add_argument("--modes", nargs="+", default=["global32", "anchor8", "anchor8_nodes",
@@ -24,6 +26,8 @@ def main():
     a = p.parse_args()
     if not re.fullmatch(r"[a-z0-9_]{1,32}", a.tag):
         raise ValueError("Use a short task tag")
+    if a.workers < 1 or a.cpus < 1 or a.memory_gib < 1:
+        raise ValueError("Resource limits must be positive")
     if subprocess.check_output(["git", "-C", str(ROOT), "status", "--porcelain", "--untracked-files=no"], text=True).strip():
         raise RuntimeError("Commit the source before launching a sealed comparison")
     revision = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
@@ -31,7 +35,7 @@ def main():
     bundle = out/"source.bundle"
     subprocess.run(["git", "-C", str(ROOT), "bundle", "create", str(bundle), "HEAD"], check=True)
     spec = dict(node=a.node, tag=a.tag, source_commit=revision, seconds=a.seconds,
-                workers=a.workers, circuits=a.circuits, seeds=a.seeds, modes=a.modes,
+                workers=a.workers, cpus=a.cpus, memory_gib=a.memory_gib, circuits=a.circuits, seeds=a.seeds, modes=a.modes,
                 base="/tmp/dengzengyong_rlzx_"+a.tag+"_node"+str(a.node)+"_20261018",
                 bundle_sha256=hashlib.sha256(bundle.read_bytes()).hexdigest())
     host = "dengzengyong@wxtky02-p800-backup-8nic-vd-node"+str(a.node)+".wxtky02"
@@ -62,13 +66,13 @@ old=pathlib.Path('/tmp/dengzengyong_rlzx_nam_node'+str(spec['node'])+'_20261017'
 image=json.loads(run(['docker','inspect','dengzengyong_rlzx_nam_node'+str(spec['node'])+'_20261017']))[0]['Image']
 name=base.name
 cid=run(['docker','create','--name',name,'--label','owner=dengzengyong','--label','task=rlzx-anchor-20261018',
-         '--cpus','16','--memory','48g','--shm-size','4g','--pids-limit','4096',
+         '--cpus',str(spec['cpus']),'--memory',str(spec['memory_gib'])+'g','--shm-size','4g','--pids-limit','4096',
          '-v',str(base)+':/workspace/task','-v',str(old/'pyzx-pin')+':/workspace/pin:ro',
          '-v',str(old/'offline-deps')+':/workspace/offline:ro','--entrypoint','/bin/bash',image,'-lc','sleep infinity'])
 run(['docker','start',cid])
 data=json.loads(run(['docker','inspect',cid]))[0]
 meta=dict(container_name=name,container_id=cid,started_at=data['State']['StartedAt'],image=image,
-          source_commit=revision,cpus=16,memory_gib=48,workers=spec['workers'],gpu=False,node=spec['node'])
+          source_commit=revision,cpus=spec['cpus'],memory_gib=spec['memory_gib'],workers=spec['workers'],gpu=False,node=spec['node'])
 (base/'ownership.json').write_text(json.dumps(meta,indent=2)+'\n')
 run(['docker','exec',cid,'git','config','--global','--add','safe.directory','/workspace/task/source'])
 command=['python3',str(base/'source/tools/node_anchor_campaign.py'),str(base),'--container',name,

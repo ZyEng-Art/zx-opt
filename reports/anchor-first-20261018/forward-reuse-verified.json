@@ -1,0 +1,25 @@
+{
+  "time": "2026-10-18T01:38:18.971198+08:00",
+  "event": "same_step_forward_reuse_verified",
+  "source_before": "d4a9147",
+  "source_after": "1d14314",
+  "paired_trials": 4,
+  "fixed_steps_per_trial": 256,
+  "policies": [
+    "frozen",
+    "online"
+  ],
+  "priors": [
+    "uniform",
+    "nodes"
+  ],
+  "matching_actions_rewards_buffer_and_model_tensors": "bitwise identical in all4 pairs",
+  "measured_speedups": [
+    1.0651208113786594,
+    1.040709794249506,
+    1.032895894840279,
+    1.0490141897222545
+  ],
+  "scope": "Single local execution;3-6%end-to-end gain, no claim of improved learning from this computation-only change",
+  "next": "One-hour single-barenco frozen/online study at three fresh seeds, comparing global32, resource-masked anchor8 and lower learning rate"
+}

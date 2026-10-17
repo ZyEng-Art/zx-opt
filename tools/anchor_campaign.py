@@ -23,7 +23,7 @@ def main():
     p.add_argument("--modes", nargs="+", choices=["global32", "anchor8", "anchor32", "anchor8_nodes",
                                                  "anchor8_lr1e3", "anchor8_nodes_lr1e3", "anchor8_resource",
                                                  "anchor8_nodes_resource", "anchor8_resource_lr1e3",
-                                                 "anchor8_nodes_resource_lr1e3"],
+                                                 "anchor8_nodes_resource_lr1e3", "anchor8_resource_lr1e4"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
     p.add_argument("--workers", type=int, default=4)
@@ -60,7 +60,8 @@ def main():
                    "--selection", "global" if spec["mode"] == "global32" else "anchor",
                    "--anchor-candidate-cap", "32" if spec["mode"] == "anchor32" else "8",
                    "--anchor-prior", "nodes" if "_nodes" in spec["mode"] else "uniform",
-                   "--learning-rate", ".001" if spec["mode"].endswith("lr1e3") else ".0003",
+                   "--learning-rate", ".0001" if spec["mode"].endswith("lr1e4") else
+                                      ".001" if spec["mode"].endswith("lr1e3") else ".0003",
                    "--seconds", str(a.seconds), "--rollout", "32", "--total-candidate-cap", "32",
                    "--verification", "adaptive", "--extraction-timeout", "20", "--rewrite-timeout", "30",
                    "--checkpoint-seconds", "300"]
