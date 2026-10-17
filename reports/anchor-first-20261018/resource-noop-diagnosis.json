@@ -1,0 +1,123 @@
+{
+  "total_noops": 27,
+  "groups": [
+    {
+      "key": [
+        "view",
+        "node",
+        "Z",
+        null
+      ],
+      "count": 16
+    },
+    {
+      "key": [
+        "raw",
+        "node",
+        "H",
+        2
+      ],
+      "count": 10
+    },
+    {
+      "key": [
+        "raw",
+        "node",
+        "X",
+        3
+      ],
+      "count": 1
+    }
+  ],
+  "examples": [
+    {
+      "transition": 3,
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 48
+      },
+      "kind": "Z",
+      "degree": null,
+      "parent": "665f019d068aa79c270770a735203d9ebd334c975c14d5a9dd72e68ca4f4622f"
+    },
+    {
+      "transition": 11,
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 88
+      },
+      "kind": "H",
+      "degree": 2,
+      "parent": "b33a7214ca1df88c13dc80548b2c19d70714aee8fd9799a3a39fb14488dab486"
+    },
+    {
+      "transition": 14,
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 25
+      },
+      "kind": "Z",
+      "degree": null,
+      "parent": "5038a9aae91c9d7883b5904428628e1438aac50cb6097d3bd699227d8b2b49bd"
+    },
+    {
+      "transition": 16,
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 120
+      },
+      "kind": "H",
+      "degree": 2,
+      "parent": "704395af337ef880778424d9b9b7b740d6268b3bf2b92759177dbb3a0a680b58"
+    },
+    {
+      "transition": 17,
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 27
+      },
+      "kind": "Z",
+      "degree": null,
+      "parent": "704395af337ef880778424d9b9b7b740d6268b3bf2b92759177dbb3a0a680b58"
+    },
+    {
+      "transition": 25,
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 76
+      },
+      "kind": "Z",
+      "degree": null,
+      "parent": "0988e31004a5017fdd3e1929a9e4601b39f211c51f7ab03c4bbd8f9d5be38979"
+    },
+    {
+      "transition": 26,
+      "anchor": {
+        "space": "view",
+        "kind": "node",
+        "position": 9
+      },
+      "kind": "Z",
+      "degree": null,
+      "parent": "0988e31004a5017fdd3e1929a9e4601b39f211c51f7ab03c4bbd8f9d5be38979"
+    },
+    {
+      "transition": 30,
+      "anchor": {
+        "space": "raw",
+        "kind": "node",
+        "position": 90
+      },
+      "kind": "H",
+      "degree": 2,
+      "parent": "c55b62440e0458867ed6490a803565576d68aa15faa33ed8633bc57236bd0cb9"
+    }
+  ],
+  "scope": "96-step tight-resource development run only; raw and normalized view IDs remain separate"
+}

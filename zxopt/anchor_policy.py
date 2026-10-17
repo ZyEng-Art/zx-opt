@@ -185,6 +185,19 @@ class AnchorAgent(GeneralAgent):
             entropy.append(-(logp.exp()*logp).sum())
         return torch.stack(logs), torch.stack(entropy)
 
+    def selected_action_value(self, anchor_scores, action_scores, anchor_slot, action_slot, value_graph):
+        """Reuse this step's deterministic sampler scores, never another state.
+
+        Search has no optimizer update between the anchor and instance samples.
+        The current encoder contains only deterministic linear/tanh/reduction
+        layers. PPO still recomputes all scores for every optimizer minibatch.
+        """
+        if value_graph.num_graphs != 1:
+            raise ValueError("Selected-step reuse requires a single graph")
+        anchor_log = anchor_scores.log_softmax(0)[anchor_slot].reshape(1)
+        action_log = action_scores.log_softmax(0)[action_slot].reshape(1)
+        return anchor_log+action_log, self.get_value(value_graph), anchor_log, action_log
+
     def get_action_and_value(self, observations, action=None, device="cpu", testing=False):
         a, p, v = observations
         if action is None:

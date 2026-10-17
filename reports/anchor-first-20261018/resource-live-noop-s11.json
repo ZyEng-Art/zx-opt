@@ -1,0 +1,39 @@
+{
+  "time": "2026-10-18T01:26:09.241059+08:00",
+  "scope": "Rolling monitor of at most512 complete recent event lines per trial; not final campaign audit",
+  "trials": [
+    {
+      "name": "anchor8_resource_online_s11",
+      "rows": 512,
+      "statuses": {
+        "accepted": 419,
+        "anchor_noop": 93
+      },
+      "noop_types": {
+        "view:node": 59,
+        "raw:H": 31,
+        "raw:X": 3
+      },
+      "h_eu_budget_and_small_spider_neighbor": {
+        "(False, False)": 28,
+        "(False, True)": 3
+      }
+    },
+    {
+      "name": "anchor8_nodes_resource_online_s11",
+      "rows": 512,
+      "statuses": {
+        "accepted": 377,
+        "anchor_noop": 135
+      },
+      "noop_types": {
+        "view:node": 125,
+        "raw:H": 10
+      },
+      "h_eu_budget_and_small_spider_neighbor": {
+        "(False, False)": 9,
+        "(False, True)": 1
+      }
+    }
+  ]
+}

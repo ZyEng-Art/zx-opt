@@ -52,9 +52,9 @@ def ppo_update(net, optimizer, rollout, bootstrap, config, deadline):
     state = torch.get_rng_state().clone()
     with torch.no_grad():
         a, p, v = packed = batch(observations)
-        _, logs, entropy, predicted, _, _ = net.get_action_and_value(packed, action=acts)
-        _, ha = net.distribution(a, a.selected)
-        _, hm = net.distribution(p, acts)
+        la, ha = net.distribution(a, a.selected)
+        lm, hm = net.distribution(p, acts)
+        logs, entropy, predicted = la+lm, ha+hm, net.get_value(v)
         variance = float(returns.var(unbiased=False))
         explained = lambda values: None if variance < 1e-12 else 1-float((returns-values).var(unbiased=False))/variance
         metrics = {k: float(np.mean([d[k] for d in diagnostics])) for k in diagnostics[0]} if diagnostics else {}

@@ -277,6 +277,31 @@ class AnchorTest(unittest.TestCase):
         self.assertIn("anchor_entropy", update["metrics"])
         self.assertLessEqual(update["metrics"]["normalized_local_entropy"], 1.000001)
 
+    def test_selected_step_reuses_both_sampler_scores_exactly(self):
+        torch.manual_seed(29); net = AnchorAgent(general_zx=True)
+        for original in self.observations():
+            for prior in ("uniform", "nodes"):
+                ap = anchor_observation(self.raw, self.view.graph, catalog(self.raw, self.view.graph),
+                                        self.context, prior=prior)
+                # Match actual sampling: the first actor call precedes adding
+                # the selected-anchor metadata used by PPO batching.
+                pre = Batch.from_data_list([ap])
+                with torch.no_grad():
+                    anchor_scores = net.actor(pre).flatten()[pre.y != -1]
+                ap.selected = original[0].selected.clone()
+                a, p, v = batch([(ap, original[1], original[2])]); slot = 0
+                with torch.no_grad():
+                    _, reference_log, _, reference_value, reference_anchor, reference_local = net.get_action_and_value(
+                        (a, p, v), action=torch.tensor([slot]))
+                    local_scores = net.actor(p).flatten()[p.y != -1]
+                    with patch.object(net, "actor", side_effect=AssertionError("Repeated actor inference")):
+                        log, value, la, lm = net.selected_action_value(anchor_scores, local_scores,
+                                                                      int(a.selected[0]), slot, v)
+                    self.assertTrue(torch.equal(log, reference_log))
+                    self.assertTrue(torch.equal(value, reference_value))
+                    self.assertTrue(torch.equal(la, reference_anchor))
+                    self.assertTrue(torch.equal(lm, reference_local))
+
 
 if __name__ == "__main__":
     unittest.main()

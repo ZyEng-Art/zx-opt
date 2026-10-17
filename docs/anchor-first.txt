@@ -84,3 +84,11 @@ for the existing exact preview. Node anchors are never removed by this mask.
 No rule matching, candidate rewriting or cost lookahead occurs before sampling.
 The mask and its prior remain part of the recorded PPO categorical support.
 Gate rewards, archive admission and gate-plateau stopping remain unchanged.
+
+The actor's deterministic scores are now reused within a single search step:
+once for the anchor sample and once for the local instance sample, then the
+same tensors provide their recorded log probabilities. There is no cross-state
+or cross-update cache. The critic is still evaluated for each sampled step,
+and PPO recomputes the actor for every optimizer minibatch. Read-only PPO
+diagnostics also avoid duplicating the same actor forwards. Fixed-step trace
+and parameter comparisons are required before calling this computation-only.

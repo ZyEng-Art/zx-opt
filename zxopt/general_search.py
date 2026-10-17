@@ -201,6 +201,7 @@ def run(args):
                                   entropy="anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
                                   prior=args.anchor_prior,
                                   resource_mask=args.anchor_resource_mask,
+                                  forward_reuse="Same-step deterministic sampler logits reused for stored probabilities; no cross-state cache",
                                   candidate_cap=kernel.total_candidate_cap)
                              if anchored else dict(mode="global"))
     atomic_json(out/"protocol.json", protocol)
@@ -321,7 +322,7 @@ def run(args):
                                    source=restart_source, buffer=pool.summary()))+"\n")
             t = time.perf_counter()
             view = views.get(state.diagram)
-            anchor = anchor_obs = None; anchor_slot = None
+            anchor = anchor_obs = None; anchor_slot = None; anchor_scores = None
             if anchored:
                 timers["views"] += time.perf_counter()-t
                 t = time.perf_counter()
@@ -350,7 +351,8 @@ def run(args):
                     with torch.no_grad():
                         from torch_geometric.data import Batch
                         a = Batch.from_data_list([anchor_obs])
-                        anchor_slot = anchor_policy.draw(net.actor(a).flatten()[a.y != -1], rng)
+                        anchor_scores = net.actor(a).flatten()[a.y != -1]
+                        anchor_slot = anchor_policy.draw(anchor_scores, rng)
                 anchor = anchors[anchor_slot]
                 anchor_obs.selected = torch.tensor([anchor_slot])
                 anchor_stats["samples"] += 1
@@ -398,10 +400,15 @@ def run(args):
             else:
                 with torch.no_grad():
                     packed = pack([obs]); policy_graph = packed[1] if anchored else packed[0]
-                    logits = net.actor(policy_graph).flatten()[policy_graph.y != -1].double().numpy()
+                    local_scores = net.actor(policy_graph).flatten()[policy_graph.y != -1]
+                    logits = local_scores.double().numpy()
                     probabilities = np.exp(logits-logits.max()); probabilities /= probabilities.sum()
                     slot = min(int(np.searchsorted(np.cumsum(probabilities), rng.random(), side="right")), len(available)-1)
-                    _, logs, _, values, anchor_log, local_log = net.get_action_and_value(packed, action=torch.tensor([slot]))
+                    if anchored:
+                        logs, values, anchor_log, local_log = net.selected_action_value(
+                            anchor_scores, local_scores, anchor_slot, slot, packed[2])
+                    else:
+                        _, logs, _, values, anchor_log, local_log = net.get_action_and_value(packed, action=torch.tensor([slot]))
                     old_log = float(logs[0]); value = float(values[0])
             timers["inference"] += time.perf_counter()-t
             chosen = available[slot]; transition += 1; step += 1; families[chosen.family] += 1

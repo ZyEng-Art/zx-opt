@@ -1,0 +1,10 @@
+{
+  "time": "2026-10-18T01:35:01.694064+08:00",
+  "event": "same_step_policy_forward_reuse_prepared",
+  "tests": 81,
+  "change": "Reuse deterministic anchor/local sampler tensors for recorded likelihoods; remove duplicate diagnostic actor calls",
+  "scope": "No cross-state or cross-update cache; optimizer recomputes each minibatch; fixed-step full-trace proof pending",
+  "resource_roll_monitor": "resource-live-noop-s11.json",
+  "node22_study": "All54 training workers finished; full replay audit confirmed live at01:28",
+  "learning_scope": "Short-budget9 circuit-seed combinations, incomplete study audit: anchor8 online3wins5ties1loss versus frozen; no universal learning claim"
+}
