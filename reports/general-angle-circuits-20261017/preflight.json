@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "mode": "conditional",
+      "circuit": "barenco_tof_3",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 57.21060040802695
+    },
+    {
+      "mode": "conditional",
+      "circuit": "mod5_4",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 71.73386007698718
+    },
+    {
+      "mode": "conditional",
+      "circuit": "qft_4_numeric",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 40.45889436500147
+    },
+    {
+      "mode": "conditional",
+      "circuit": "ising_4_numeric",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 47.14529795397539
+    },
+    {
+      "mode": "general",
+      "circuit": "barenco_tof_3",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 54.49725108104758
+    },
+    {
+      "mode": "general",
+      "circuit": "mod5_4",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 69.56352949596476
+    },
+    {
+      "mode": "general",
+      "circuit": "qft_4_numeric",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 42.015679137955885
+    },
+    {
+      "mode": "general",
+      "circuit": "ising_4_numeric",
+      "transitions": 128,
+      "updates": 1,
+      "seconds": 52.869666505022906
+    }
+  ]
+}

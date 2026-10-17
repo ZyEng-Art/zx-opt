@@ -96,3 +96,10 @@ failure.json：真正的等价性错误或异常导致运行失败时保存最�
 - 只允许整体相位对齐，不允许幅值归一化或输入输出自由置换。
 - 图同构只控制搜索状态池与已尝试动作；成本缓存仍用精确序列化。
 - 每次失败试运行和修复写入 work-log；不覆盖旧输出目录。
+
+一般角度四电路实验（已完成）
+固定源34e0f43；运行 tools/general_angle_study.py，48次、每次600秒。
+完整设置、所有种子结果、A候选覆盖、损失曲线和审计见
+reports/general-angle-circuits-20261017/findings.txt。
+从解压后的 runs/ 目录生成汇总：tools/summarize_angle_study.py RUNS NEW_REPORT。
+有限候选覆盖：tools/probe_general_a_coverage.py RUNS/angle-study OUTPUT.json。

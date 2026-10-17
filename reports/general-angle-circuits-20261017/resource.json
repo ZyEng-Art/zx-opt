@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "error": null,
+  "restored_stopped": true,
+  "started_at": "2026-10-17T14:18:11.977296453Z",
+  "trials": 48,
+  "seconds": 600,
+  "workers": 48,
+  "time": "2026-10-17T22:32:26.526412+08:00",
+  "commit": "34e0f43e9874fa06977c4acfb4101e14a661b4c5",
+  "container": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+  "gpu": false,
+  "source": "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-34e0f43e9874"
+}

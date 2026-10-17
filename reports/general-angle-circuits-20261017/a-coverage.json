@@ -1,0 +1,4644 @@
+{
+  "status": "passed",
+  "scope": "Post-hoc sample: each distinct raw SHA once, proposal seed 11 and first visit; cap32, work2048. No extraction/cost lookahead; not exhaustive topology coverage.",
+  "records": [
+    {
+      "campaign": "general-barenco_tof_3",
+      "unique_states": 7113,
+      "samples": 64,
+      "A_proposals": 0,
+      "families": {
+        "E:backward": 128,
+        "H:forward": 192,
+        "S:backward": 192,
+        "I:forward": 190,
+        "H:backward": 192,
+        "EU:forward": 192,
+        "I:backward": 192,
+        "CP:backward": 74,
+        "S:forward": 10,
+        "E:forward": 3,
+        "EU:backward": 8,
+        "B:backward": 3,
+        "CP:forward": 2
+      },
+      "rows": [
+        {
+          "graph": "6fae1e410fc6be76fc3193b8e9dd484f37e298d889a4e0b99eef7612698f729c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/6fae1e410fc6be76fc3193b8e9dd484f37e298d889a4e0b99eef7612698f729c.json.gz",
+          "source_sha256": "83a30d74a46d563a983e23ca5dd9efe674e2a63a4c570bac04cf17bfc65079d3",
+          "nodes": 109,
+          "families": {
+            "E:backward": 2,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:forward": 1,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "8fc24fbf2157df782a48abfe978de8dd2c3214f81490a92b2d6d3606c41465ee",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/8fc24fbf2157df782a48abfe978de8dd2c3214f81490a92b2d6d3606c41465ee.json.gz",
+          "source_sha256": "e4a8f0a115c3b42a1e05eba8a6c68b63252bba02d676efb5c4a2d25325238a3d",
+          "nodes": 162,
+          "families": {
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "3ca978fd219b747fd569d808fe2bea5b1a10b485b02978c0e5a48106882ecf1d",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/3ca978fd219b747fd569d808fe2bea5b1a10b485b02978c0e5a48106882ecf1d.json.gz",
+          "source_sha256": "45899a746252268e5006d012c014ac92fa5376503e764b04440f84f420e2b80e",
+          "nodes": 147,
+          "families": {
+            "EU:forward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "d00fbdbc8c6facac9287340a673456d758dc9f6288b38eb7293790300bebd7ad",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s29/objects/d00fbdbc8c6facac9287340a673456d758dc9f6288b38eb7293790300bebd7ad.json.gz",
+          "source_sha256": "cc87195e7c4d8fd22c0c7776d84ab78750310c5594469a07030ef18da13b3051",
+          "nodes": 166,
+          "families": {
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "0694d841c830801799cc6e56d6ecfd516b046c1621b4e51a70469a9966d3a9c6",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/0694d841c830801799cc6e56d6ecfd516b046c1621b4e51a70469a9966d3a9c6.json.gz",
+          "source_sha256": "014cf20c4292aaad841491862e9dc722b071b4687290aa376f7b140daf89e5dc",
+          "nodes": 170,
+          "families": {
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "013101064fecd47d9831f11e42d1869d2e641cb239bf3a53c3181adfb3c8958f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s29/objects/013101064fecd47d9831f11e42d1869d2e641cb239bf3a53c3181adfb3c8958f.json.gz",
+          "source_sha256": "71952ffe002e0b06a1b188ef415866262f89c3d3593785b1798222e9e8cb89ad",
+          "nodes": 157,
+          "families": {
+            "E:backward": 2,
+            "CP:backward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "5a7e6c8f2c2e40ba127a3fcfef2ef58caa7fef4210d86b53039f8ca1b5a06ab6",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/5a7e6c8f2c2e40ba127a3fcfef2ef58caa7fef4210d86b53039f8ca1b5a06ab6.json.gz",
+          "source_sha256": "38d5cd134c285dc6f6c882f0f7c4a6954ee3ea76c45e7fa2c309e0b0c54d533d",
+          "nodes": 163,
+          "families": {
+            "H:backward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "8fc8af7b0690c608316345f552aad50512161a7aae2236498c407a8be423e59f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/8fc8af7b0690c608316345f552aad50512161a7aae2236498c407a8be423e59f.json.gz",
+          "source_sha256": "8739c3699005f9e7ae94b05b49bb8c034fb4a323b568337e3a0dc1c5e9e1fa50",
+          "nodes": 166,
+          "families": {
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "2561c59731cef7bb7718390c7261e1bb387b5ab65a3388b03fb3b7b1bb425872",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/2561c59731cef7bb7718390c7261e1bb387b5ab65a3388b03fb3b7b1bb425872.json.gz",
+          "source_sha256": "42f61ab5ff55fd11d38332ebf8d3f417623d7ef330557730c1eed43f4710c5a7",
+          "nodes": 165,
+          "families": {
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "7e5f3c88bded218c88cb1946b8d784c26f30dec68c56fc494629f7acdaf6d182",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/7e5f3c88bded218c88cb1946b8d784c26f30dec68c56fc494629f7acdaf6d182.json.gz",
+          "source_sha256": "030c3554d8ab7bf134c2bc1078e27de55308884c98dc12829e43240002ba4e49",
+          "nodes": 165,
+          "families": {
+            "S:forward": 1,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "CP:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "ba701a6695e26412c23168d5df2541f2dde7a5ee04b5c9aad0d9c8f5df70be06",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/ba701a6695e26412c23168d5df2541f2dde7a5ee04b5c9aad0d9c8f5df70be06.json.gz",
+          "source_sha256": "7e65e394dee638960d4173cdc16e82c38ce18d7d2d55dfc2d375257a9608d45b",
+          "nodes": 157,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "dacaaaf0799f3f19fc3e383a101b378173dc384e33e0a823db7664882b7924bb",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/dacaaaf0799f3f19fc3e383a101b378173dc384e33e0a823db7664882b7924bb.json.gz",
+          "source_sha256": "234b512d41b16424bc1c7fd2abc15761d038ee39e897e5f8c06e10535a8078c8",
+          "nodes": 166,
+          "families": {
+            "EU:forward": 3,
+            "CP:backward": 1,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "eeb7650611db13e990d0122967d5bde88d4e395e82e9458d953487dd5e95c6f9",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/eeb7650611db13e990d0122967d5bde88d4e395e82e9458d953487dd5e95c6f9.json.gz",
+          "source_sha256": "3d51561f279796d7d06419754a21bc4a4613bc1ba1d47d0d2c4e2cd3d0b9c492",
+          "nodes": 160,
+          "families": {
+            "E:backward": 2,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "c558c98982a1e4e8d856baf0d93997d575cafe410c784e6e9ad4948d9314fccf",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/c558c98982a1e4e8d856baf0d93997d575cafe410c784e6e9ad4948d9314fccf.json.gz",
+          "source_sha256": "95a6286fbefc8cfe59dff83597cf1daafc4095bb88ae7060a98d03d652575bf2",
+          "nodes": 164,
+          "families": {
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:forward": 3,
+            "CP:backward": 2,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "27c8157748e96648a9051e106e77ef57a308b3cf278c4310f4c4307724b3e2f8",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/27c8157748e96648a9051e106e77ef57a308b3cf278c4310f4c4307724b3e2f8.json.gz",
+          "source_sha256": "8bf1719e59582e115948f83f3055fcca6121e202aa22a222a863e21b30138d1e",
+          "nodes": 128,
+          "families": {
+            "S:backward": 3,
+            "E:backward": 2,
+            "S:forward": 1,
+            "H:backward": 3,
+            "E:forward": 1,
+            "I:forward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "b1c9215f4ced891dcd142e21d815bbaaccc6241147fc34d1682e93ad54599070",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/b1c9215f4ced891dcd142e21d815bbaaccc6241147fc34d1682e93ad54599070.json.gz",
+          "source_sha256": "9cde2adf1b327d251d4876420e6f7d0e66cf68957b253d4384c5e5b362702994",
+          "nodes": 154,
+          "families": {
+            "H:forward": 3,
+            "I:forward": 3,
+            "CP:backward": 2,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "E:forward": 1,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "c69086e2d92468fe1f122ad7a900d455de45a2c6bd01014d8962980e62ab183e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/c69086e2d92468fe1f122ad7a900d455de45a2c6bd01014d8962980e62ab183e.json.gz",
+          "source_sha256": "5940a6077bcdd5788cac3f2b68b41965f8a3d837d2ad40c4664a88cebf1d750b",
+          "nodes": 166,
+          "families": {
+            "H:forward": 3,
+            "CP:backward": 2,
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "S:forward": 1,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "d890196280f54f648728a18d317801089dd7c5c21de430b3c81341e44732e77c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s29/objects/d890196280f54f648728a18d317801089dd7c5c21de430b3c81341e44732e77c.json.gz",
+          "source_sha256": "23f48df594671154857f10e7e10c50f4fa91f15c283c386a77d21da69226155e",
+          "nodes": 172,
+          "families": {
+            "EU:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "16042e7241eca8062d7472c825f1aff3d93cd52aa1784de55fac016ae2e90531",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s29/objects/16042e7241eca8062d7472c825f1aff3d93cd52aa1784de55fac016ae2e90531.json.gz",
+          "source_sha256": "af2453630622b674711411cece5ee20d51c3dde9f6a7469f40e58bf121a35d00",
+          "nodes": 169,
+          "families": {
+            "EU:forward": 3,
+            "CP:backward": 2,
+            "H:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "f62cc7826ee9bda914a7e61aed5fedec6cf7cd3bd293214bc6f57efeea57f79b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/f62cc7826ee9bda914a7e61aed5fedec6cf7cd3bd293214bc6f57efeea57f79b.json.gz",
+          "source_sha256": "286850d159a42a0a27e9b76df0afec06a9b39f59764094de776adadb8ac1c27c",
+          "nodes": 166,
+          "families": {
+            "E:backward": 2,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "CP:backward": 1
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "5a1b9c9388bdabc4fd3d52ab7f919a6962658d7b46b44ecbcece46635350285b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/5a1b9c9388bdabc4fd3d52ab7f919a6962658d7b46b44ecbcece46635350285b.json.gz",
+          "source_sha256": "9182fbd8e5992bc56b929c003a435f860367ebbdd9d877a0b037dcbc9d8d01d6",
+          "nodes": 144,
+          "families": {
+            "EU:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "CP:backward": 2,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "d735858f57fa8da7c8e7ea968ccda7607a1bdc657ca19993726f11b551326b67",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/d735858f57fa8da7c8e7ea968ccda7607a1bdc657ca19993726f11b551326b67.json.gz",
+          "source_sha256": "a3c2285353091e090618ebf1237788ee608fbfef02b90a9143e131a508fa098f",
+          "nodes": 168,
+          "families": {
+            "H:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "39d47fce50c4a76ec8c4c135a64a1060f5d7f974a1e75944d60b05343afdab44",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/39d47fce50c4a76ec8c4c135a64a1060f5d7f974a1e75944d60b05343afdab44.json.gz",
+          "source_sha256": "f1cf627c40b45a9b4a6e9c710e2f248fdf90861ac50292fda535ea53531ae718",
+          "nodes": 169,
+          "families": {
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "cc573654ad3f7f4ab45c5ec44611346c097a70ca60fe6ce071723d06e7df5331",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/cc573654ad3f7f4ab45c5ec44611346c097a70ca60fe6ce071723d06e7df5331.json.gz",
+          "source_sha256": "fdcc922c883c69376e6cfd0febd63a9e8b54c28cfe3e38cd232e3a97fbbd9a14",
+          "nodes": 162,
+          "families": {
+            "S:forward": 2,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "EU:backward": 2,
+            "H:forward": 3,
+            "S:backward": 3,
+            "CP:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "7952e0dcd371aee2ef8e4b71ef7646afb40309a67c71a02f3a41b93a4a62c317",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s29/objects/7952e0dcd371aee2ef8e4b71ef7646afb40309a67c71a02f3a41b93a4a62c317.json.gz",
+          "source_sha256": "2c8f2db9f244aa3f1bfe60be49df746a4fcdd2ff8b640d065e2d47b45570bceb",
+          "nodes": 158,
+          "families": {
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "CP:backward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "a3d28d0a9e6b1103627afc52c7ecc5def28646a656822c57362d4acbcd40e450",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s47/objects/a3d28d0a9e6b1103627afc52c7ecc5def28646a656822c57362d4acbcd40e450.json.gz",
+          "source_sha256": "1d5820146957eb82303edbf3d77b51f60a3612005bd2c0cdfb7d8b03bfa566b2",
+          "nodes": 168,
+          "families": {
+            "S:forward": 1,
+            "I:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "B:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "d46c8fd5cf55823ed46200c7e07bf1cf0dc5140f10db53192697f5142e3e1e4d",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/d46c8fd5cf55823ed46200c7e07bf1cf0dc5140f10db53192697f5142e3e1e4d.json.gz",
+          "source_sha256": "849efd3a82bd5769b78e767b740e24f63140092d5866c04696a7f5fffa40c231",
+          "nodes": 166,
+          "families": {
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "CP:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "4eb6758c4c5e36a66f99b2b7843d1ef05f7fd77fc675e332fe2400d285bb39c3",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/4eb6758c4c5e36a66f99b2b7843d1ef05f7fd77fc675e332fe2400d285bb39c3.json.gz",
+          "source_sha256": "1003ca16ed5259575d8d97d2e45c9e283c824596ff587d8539e5447b73a6d3dd",
+          "nodes": 127,
+          "families": {
+            "S:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "f3c890d7f422b47c7a12edb6d7282ac16b9ac8d30c2d20921d75f85bdb44cceb",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/f3c890d7f422b47c7a12edb6d7282ac16b9ac8d30c2d20921d75f85bdb44cceb.json.gz",
+          "source_sha256": "f3bc48f57746f26aadac882a01ff88c406e391626011aacdfec8cf2429b64e77",
+          "nodes": 157,
+          "families": {
+            "H:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "4425421f26cf57fd34336a4caa700c98431c292e272efade597f6ffe74e9129b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s47/objects/4425421f26cf57fd34336a4caa700c98431c292e272efade597f6ffe74e9129b.json.gz",
+          "source_sha256": "a725e3fa80d72e82dc4ebb1c770325cf0b705b009c74fb54da448d63c498679a",
+          "nodes": 166,
+          "families": {
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "58b4f91c4430a7795a6f8ca64e0a390db6cc376fe9de6e9eb81bbeef513906fc",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/58b4f91c4430a7795a6f8ca64e0a390db6cc376fe9de6e9eb81bbeef513906fc.json.gz",
+          "source_sha256": "59cdfcdc0d79ab73c76a2a3fdadc11f4d976a5ee57875abc93310db16f0f0cd6",
+          "nodes": 152,
+          "families": {
+            "CP:backward": 2,
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "bd4b65578899970828825ccb0cc44048f784a5668170487db1d3dfe212bf67aa",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/bd4b65578899970828825ccb0cc44048f784a5668170487db1d3dfe212bf67aa.json.gz",
+          "source_sha256": "019e1220cb223cb7d92f3d5b2fb12c42898bb2f95cf600f03546d4281e6604db",
+          "nodes": 171,
+          "families": {
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "CP:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "c99a828b3f9225e106b7f8624eb4bd816fe43d8740ca197ec6f5cb685d73f394",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/c99a828b3f9225e106b7f8624eb4bd816fe43d8740ca197ec6f5cb685d73f394.json.gz",
+          "source_sha256": "f615e020d073c3e10a3f412c2610e754eef1f8b9209f3658e7dc85c900823bc2",
+          "nodes": 167,
+          "families": {
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "6f326140b79f97fd32e92581db3ccc5c700dc73df3a5888694d697037c85234f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/6f326140b79f97fd32e92581db3ccc5c700dc73df3a5888694d697037c85234f.json.gz",
+          "source_sha256": "936f7fc98df9caf52ff8b9b17cf18ed057dc2ef6db9d11a12c09ad04549c6ffe",
+          "nodes": 173,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "9c9d1faf3627e4fbd91f6fea97902a23484fe324213ee38033f9cbecd6ce5b26",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/9c9d1faf3627e4fbd91f6fea97902a23484fe324213ee38033f9cbecd6ce5b26.json.gz",
+          "source_sha256": "60fb568972c6748b8b54c9ec669b44c748fdc52c778c717152c4c877199948fd",
+          "nodes": 121,
+          "families": {
+            "EU:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "7c06bfacbaccfa3805aba882ae52f27a3caf7c825b7e88c4a118f9240e55e98c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/7c06bfacbaccfa3805aba882ae52f27a3caf7c825b7e88c4a118f9240e55e98c.json.gz",
+          "source_sha256": "5dcdff117aba9ef5b5d90786be6eda0f27c95e052f3ae923f223ce111921dbfb",
+          "nodes": 165,
+          "families": {
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "CP:backward": 2,
+            "I:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "a4a371d19206a818a39132f9c3218f05318efe756dacd11506d66a4c5ce2f627",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s29/objects/a4a371d19206a818a39132f9c3218f05318efe756dacd11506d66a4c5ce2f627.json.gz",
+          "source_sha256": "f01a1e071c0478ff765ac7253dc074713e2e770f0aac1d121f8ba64806ca2dc8",
+          "nodes": 170,
+          "families": {
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "f889a0f1f7b056d7275f32a35323f3befbb379ea4e5e2f81b0646b471f92e132",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/f889a0f1f7b056d7275f32a35323f3befbb379ea4e5e2f81b0646b471f92e132.json.gz",
+          "source_sha256": "28d6bb05701f036c5d7673fae1595daf00780784dfec486c4ec0e517f2834925",
+          "nodes": 157,
+          "families": {
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "5e5c056f92d8fdaefc5f87728873181f373ee5c5a887e220c8339fc368b99045",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/5e5c056f92d8fdaefc5f87728873181f373ee5c5a887e220c8339fc368b99045.json.gz",
+          "source_sha256": "204b7ae1b77f3974d7f8a3a90dd3693a9ae92efba3adf6fceed73c2c4f288c0b",
+          "nodes": 144,
+          "families": {
+            "H:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "0f2e3e1afb24395deb71a2c71fe6b724dabfafee6ef7f776ba2849583974e63f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/0f2e3e1afb24395deb71a2c71fe6b724dabfafee6ef7f776ba2849583974e63f.json.gz",
+          "source_sha256": "845523139f586ebd6a3af334f266c18ba40ff5e000890d51e786fd70a3171210",
+          "nodes": 171,
+          "families": {
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "CP:backward": 3,
+            "H:forward": 3,
+            "CP:forward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "750430f7d16d9c5edc6bf19a97bfbd6b180653e83f3788de20b59e5972dbe13a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/750430f7d16d9c5edc6bf19a97bfbd6b180653e83f3788de20b59e5972dbe13a.json.gz",
+          "source_sha256": "b14bd5d4cc0e02cb290b3c97e5ec8598a1741f7d430b66a07b9003c53341a794",
+          "nodes": 169,
+          "families": {
+            "CP:backward": 1,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "82e4b77212ca3ee20ea09ec3778118298526c537a1b7a9b0df93ea54420e875f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/82e4b77212ca3ee20ea09ec3778118298526c537a1b7a9b0df93ea54420e875f.json.gz",
+          "source_sha256": "7cb1bd6e7957da76708e7f05e7652a5f45f1e975286a711c8a472e1df9914aeb",
+          "nodes": 166,
+          "families": {
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "CP:backward": 2,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "922df97cd5c209d0d19cc74b61f5420cd6ddf765a01d353cfc03cc9780dc1981",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/922df97cd5c209d0d19cc74b61f5420cd6ddf765a01d353cfc03cc9780dc1981.json.gz",
+          "source_sha256": "429e00a49b2e4f79e73f0799683a1500531232615282a72b21f018c860470c54",
+          "nodes": 169,
+          "families": {
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:backward": 3,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "28f5b161e468d5e2e00108a07f193f38ccfa00b2e2f7d4beba7c7bd0aa320a55",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/28f5b161e468d5e2e00108a07f193f38ccfa00b2e2f7d4beba7c7bd0aa320a55.json.gz",
+          "source_sha256": "42c22a1089f8e68744da5626c489078a0e1371fe0eb01b7e2d824b04757e3233",
+          "nodes": 161,
+          "families": {
+            "H:forward": 3,
+            "EU:backward": 2,
+            "E:backward": 2,
+            "S:backward": 3,
+            "S:forward": 2,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "CP:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "f8d70b799a70fbb4c7efcf69ab0e1cc7f2cfa5c33f8b36eb015ad1ff40b26c01",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/f8d70b799a70fbb4c7efcf69ab0e1cc7f2cfa5c33f8b36eb015ad1ff40b26c01.json.gz",
+          "source_sha256": "72f71a60ee3750792a6bdb30bd48df1ea18e0ecaf4da64731385d4117a5b5193",
+          "nodes": 170,
+          "families": {
+            "H:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "EU:backward": 2,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "05f80f122b810d593c1d1887664b2c7346fd8d662bc6dc9c982d7498d38ed76c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/05f80f122b810d593c1d1887664b2c7346fd8d662bc6dc9c982d7498d38ed76c.json.gz",
+          "source_sha256": "1fda15f7eb86bb1d440fd6a90197c147da4aa150f16823ccb96afc1f06f32835",
+          "nodes": 159,
+          "families": {
+            "CP:backward": 1,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "b0e99adee7441e567eb5fe657dfea8b272a7710009fbc355c55ee49ddb41f476",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s47/objects/b0e99adee7441e567eb5fe657dfea8b272a7710009fbc355c55ee49ddb41f476.json.gz",
+          "source_sha256": "029380126184e711db4695bfd05f1c8ed32d845f76985f8a43d24fabd8169e84",
+          "nodes": 159,
+          "families": {
+            "CP:backward": 3,
+            "S:forward": 1,
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "0d4103a1fa53d858587bb847dc679dad7801f33fd917273909a5d39e77c49ba9",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/0d4103a1fa53d858587bb847dc679dad7801f33fd917273909a5d39e77c49ba9.json.gz",
+          "source_sha256": "ef6a76948d186a4e82fa1c306276fd480413ee194c13dfc69a1ffb2c8422fa5a",
+          "nodes": 162,
+          "families": {
+            "H:forward": 3,
+            "H:backward": 3,
+            "CP:backward": 2,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "6b9848869fd91c2e096330b7f7f1537a04a293ee289565e7b91004664a85c912",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s29/objects/6b9848869fd91c2e096330b7f7f1537a04a293ee289565e7b91004664a85c912.json.gz",
+          "source_sha256": "c6dc5ff1d39286d723080841fbbf0718a69abd21ee9aa49d10d71698630dfd1a",
+          "nodes": 165,
+          "families": {
+            "H:forward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "E:forward": 1,
+            "E:backward": 2,
+            "I:forward": 3,
+            "CP:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "89058b5d3cc582669e10d8883a949a65c1aefb63a8b120ec8dcda1d7b6a17dd5",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/89058b5d3cc582669e10d8883a949a65c1aefb63a8b120ec8dcda1d7b6a17dd5.json.gz",
+          "source_sha256": "528d20a97443112bf09d38a017580c55614defd8e2c73bf2139aed57afe66112",
+          "nodes": 163,
+          "families": {
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "c79ad089726036381b5730d4bf7ac12c0c3f50dbea6a3f9d79eee9adbe51479e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s29/objects/c79ad089726036381b5730d4bf7ac12c0c3f50dbea6a3f9d79eee9adbe51479e.json.gz",
+          "source_sha256": "0ca8f6a053852b8afe4214d132abe531f15e1c3cc939e11b23ef046623a0e4b2",
+          "nodes": 173,
+          "families": {
+            "CP:backward": 1,
+            "H:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "d336033c5d65bc9534a90d3c641841031729c2135cb29c8d3c9d824d032d395e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s47/objects/d336033c5d65bc9534a90d3c641841031729c2135cb29c8d3c9d824d032d395e.json.gz",
+          "source_sha256": "17efdb753b86092d85bf7d522fc40d73d29009a2b902e35ff29dddd12e806ae9",
+          "nodes": 142,
+          "families": {
+            "I:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "4e9be907e7b539a099f02cb9bb75bd466b0463a433009dde6a220ec9cbad9d05",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/4e9be907e7b539a099f02cb9bb75bd466b0463a433009dde6a220ec9cbad9d05.json.gz",
+          "source_sha256": "a7d3e54b550f7e8e9be050bce4e04556a7821fc57c63dbd1f647809bd65a7089",
+          "nodes": 170,
+          "families": {
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 2,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "EU:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "4fdd1a252e107c6f1c54903f380b9220d12b5c2ca01d9d60e05a72e6cb715dbb",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/4fdd1a252e107c6f1c54903f380b9220d12b5c2ca01d9d60e05a72e6cb715dbb.json.gz",
+          "source_sha256": "2e796b8a610fed954e88446bf99b89611cbe620bf8585a5a121dbd3a2e7f2ddb",
+          "nodes": 145,
+          "families": {
+            "EU:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "3c9c912f99727e4fbef1e23386b33d0af6fdac59be57ce9e648d34615724ab9f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/3c9c912f99727e4fbef1e23386b33d0af6fdac59be57ce9e648d34615724ab9f.json.gz",
+          "source_sha256": "3589bba57b6213e8a31ef1738072941a4ad53bc2dfb0afe1fac65c30307d4acb",
+          "nodes": 166,
+          "families": {
+            "I:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "7242106b839687d1f474db899c13a3eb7e288da2f2b46e5b249d07afeb2bf709",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/7242106b839687d1f474db899c13a3eb7e288da2f2b46e5b249d07afeb2bf709.json.gz",
+          "source_sha256": "e7ea996509a61d523034947821533d59524e529ca21e768b2e5d40c90868e5ad",
+          "nodes": 173,
+          "families": {
+            "CP:backward": 1,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "a43f2f349af00074ebf6e7b65733d766c64ce07972af7e54d7b625cbc5b345e9",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s11/objects/a43f2f349af00074ebf6e7b65733d766c64ce07972af7e54d7b625cbc5b345e9.json.gz",
+          "source_sha256": "a16f23b30142e32a247a7246407a375fac186a5e52154b640960c4e9735d7736",
+          "nodes": 164,
+          "families": {
+            "E:backward": 2,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "8c4ef0c4c17f7fa25a62b219c8a6f24dd95df6535b56abfae10496b90de88544",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/8c4ef0c4c17f7fa25a62b219c8a6f24dd95df6535b56abfae10496b90de88544.json.gz",
+          "source_sha256": "5eee6c3a69f42f66470424c4dde836db3fbacd9b2a1088619be60d20301d316e",
+          "nodes": 152,
+          "families": {
+            "H:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "d3f77ee3fd21996e1ef19207a3b2b8dccfd587a05ed4b4deec36cf2d06c5402b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s47/objects/d3f77ee3fd21996e1ef19207a3b2b8dccfd587a05ed4b4deec36cf2d06c5402b.json.gz",
+          "source_sha256": "2b3e35b268ba36315c73e5e1064c9cff529b32610d1d3498dd9ad4c2cc7386b1",
+          "nodes": 161,
+          "families": {
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "08c856b1bb30f40383d76300d5dd4c7a1bac4856a182469530cdaca06466bb0a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/08c856b1bb30f40383d76300d5dd4c7a1bac4856a182469530cdaca06466bb0a.json.gz",
+          "source_sha256": "3ab5dbfad4f1078d9709a1636a3b6d7a9a0115407058e9519d6060f2b554aa21",
+          "nodes": 166,
+          "families": {
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "b96ac535b3ca6ebafc3c73be2bbbeae3a2d25bc0408d43cb839a0ccc828844c7",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s47/objects/b96ac535b3ca6ebafc3c73be2bbbeae3a2d25bc0408d43cb839a0ccc828844c7.json.gz",
+          "source_sha256": "a29f8521f40095fd1eeaae5956de24ab37008dc4b4a84070fe45ac0dff10ada2",
+          "nodes": 161,
+          "families": {
+            "E:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "01cb88b87ae02c078a00dc1171d2d995e347824a7f163f4d70c77c15dd5a6e55",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_frozen_s47/objects/01cb88b87ae02c078a00dc1171d2d995e347824a7f163f4d70c77c15dd5a6e55.json.gz",
+          "source_sha256": "49c69183d281c6165f336ffdc8fc479115a258353fd8e3ea35326a61fe7575dc",
+          "nodes": 168,
+          "families": {
+            "E:backward": 2,
+            "EU:forward": 3,
+            "S:forward": 1,
+            "I:backward": 3,
+            "H:forward": 3,
+            "CP:backward": 2,
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "8b25f48bda67d18b0bfb1f88b4324b90a693cbfaa489c308618c8dc90a731dca",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s47/objects/8b25f48bda67d18b0bfb1f88b4324b90a693cbfaa489c308618c8dc90a731dca.json.gz",
+          "source_sha256": "c73d170054f4278ede369e38840ceffe4b3cf245027bc426ce7bfe4088963bce",
+          "nodes": 130,
+          "families": {
+            "E:backward": 2,
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "b96f59fe2fadb45bd53581a8f29b6ca5ea40d5f3351686c92404ab866ef6fcbf",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-barenco_tof_3/jpv_online_s11/objects/b96f59fe2fadb45bd53581a8f29b6ca5ea40d5f3351686c92404ab866ef6fcbf.json.gz",
+          "source_sha256": "d917a970511bd6c966214ad17870cff6438f12e0232a2ed6cd2c351585182294",
+          "nodes": 169,
+          "families": {
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        }
+      ],
+      "stats": {
+        "calls": 64,
+        "matching_work_exhausted": 18,
+        "phase_inferred": 602,
+        "non_clifford_matches_skipped": 0
+      }
+    },
+    {
+      "campaign": "general-ising_4_numeric",
+      "unique_states": 6873,
+      "samples": 64,
+      "A_proposals": 0,
+      "families": {
+        "I:forward": 192,
+        "I:backward": 192,
+        "S:backward": 192,
+        "H:forward": 192,
+        "H:backward": 192,
+        "EU:forward": 192,
+        "E:backward": 128,
+        "E:forward": 2,
+        "CP:backward": 32,
+        "EU:backward": 2,
+        "S:forward": 7,
+        "CP:forward": 2
+      },
+      "rows": [
+        {
+          "graph": "1213da86d1a1af059d60e941366cb2c9ef6ea8b283c95f7e114bd603f1884106",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/1213da86d1a1af059d60e941366cb2c9ef6ea8b283c95f7e114bd603f1884106.json.gz",
+          "source_sha256": "9e43274bb20af975d6db2ab50a69a3df5d95c63bfee524cbed1fb3cf76d1c904",
+          "nodes": 107,
+          "families": {
+            "I:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "87c08375dd4684758e565cc261e9831c19fb66e9cadc28430104b8d5a43c16ef",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/87c08375dd4684758e565cc261e9831c19fb66e9cadc28430104b8d5a43c16ef.json.gz",
+          "source_sha256": "f7deb623da7cae8140c8f81307cf3cbdbefa5bba770b91088a37c8cab0727190",
+          "nodes": 158,
+          "families": {
+            "S:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:forward": 1,
+            "E:backward": 2,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "8163071d322001f049c854c277d911db3caedc56175f64c4106c443e15cf48d5",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/8163071d322001f049c854c277d911db3caedc56175f64c4106c443e15cf48d5.json.gz",
+          "source_sha256": "c6eb6f7bda3739b2fdecd0bb1f9bf7d5c510e84dc7297b867a4a3ccc4a63326a",
+          "nodes": 143,
+          "families": {
+            "H:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "CP:backward": 2,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "3325351502095e56e2bca7528d0405cecbeaaad73c0a22ac63ca6740f0439f76",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/3325351502095e56e2bca7528d0405cecbeaaad73c0a22ac63ca6740f0439f76.json.gz",
+          "source_sha256": "aae41fd353eed87b2b458e48263f9a144e9437309782e8b859c583b324b75241",
+          "nodes": 168,
+          "families": {
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "da919ba625c5d7cf537ebe1f950fe0c32ab94b2c5725160e6e5ad1d6efc0cce1",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/da919ba625c5d7cf537ebe1f950fe0c32ab94b2c5725160e6e5ad1d6efc0cce1.json.gz",
+          "source_sha256": "31a033f188bcad667bae650174c894a7704ecf3504dfd1c6f78c71a180411984",
+          "nodes": 164,
+          "families": {
+            "H:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "871a50e94731fa4c81bc50d048f97b589e9f5b29d1e99e7ff52fe2360933171c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/871a50e94731fa4c81bc50d048f97b589e9f5b29d1e99e7ff52fe2360933171c.json.gz",
+          "source_sha256": "06244d4206fd264cca6127d236cc91989f8f362d384858152af6bf1be735529b",
+          "nodes": 161,
+          "families": {
+            "S:backward": 3,
+            "CP:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "5367cbe233b13c833efb188df34e8b1f40a4f6c9ab2c15a2e657829dad0f76c0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s29/objects/5367cbe233b13c833efb188df34e8b1f40a4f6c9ab2c15a2e657829dad0f76c0.json.gz",
+          "source_sha256": "e33a19eeb045ec3f794fae9d89a26d09a97401aa086ecdb7099fe0ab85609b39",
+          "nodes": 153,
+          "families": {
+            "H:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "EU:backward": 2,
+            "S:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "6723d27e4485dd212c061efc5de1a20f9e43bfaa34b1e97f9c640f34f8539a21",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/6723d27e4485dd212c061efc5de1a20f9e43bfaa34b1e97f9c640f34f8539a21.json.gz",
+          "source_sha256": "0397bccfa5cc7eb07b95054ffd6fbdad9dce0ba984d32513f0a21625d34c5a30",
+          "nodes": 149,
+          "families": {
+            "S:backward": 3,
+            "S:forward": 1,
+            "CP:backward": 1,
+            "H:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "406a73cdd10d665d533574e7a577a47961b0b576f726ade0d1e4093a9c91e02c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s29/objects/406a73cdd10d665d533574e7a577a47961b0b576f726ade0d1e4093a9c91e02c.json.gz",
+          "source_sha256": "379f77cfe1827c08b2a298a64933788b5b3a6f4c44e5adf48525ea4ab858e793",
+          "nodes": 159,
+          "families": {
+            "S:backward": 3,
+            "CP:backward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "6fee1d29fa0b1441f56553c683b69e862a1e5c14c285b184c2358d1946907417",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/6fee1d29fa0b1441f56553c683b69e862a1e5c14c285b184c2358d1946907417.json.gz",
+          "source_sha256": "995605183dd1a11c554dc2d439e80468c036b7970b30341429d1f3704ee39a6e",
+          "nodes": 149,
+          "families": {
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "E:forward": 1
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "d22c4ccba08f16492a9732afee6d365f6fd7f7c557b2077b330cf4d2163e3b12",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/d22c4ccba08f16492a9732afee6d365f6fd7f7c557b2077b330cf4d2163e3b12.json.gz",
+          "source_sha256": "9a569ca2a3ba410d9cbae283f0b40c8ddb85f3582db4522485fc719fa7260d81",
+          "nodes": 155,
+          "families": {
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "9d5728252fd92cd1af84eaca701839c797339892ec247a15243d3f94437df01b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/9d5728252fd92cd1af84eaca701839c797339892ec247a15243d3f94437df01b.json.gz",
+          "source_sha256": "d167cce0ab6a1f2b54a3d3019f799ec816e03f85ae2a598bb2f796350fa89f7d",
+          "nodes": 148,
+          "families": {
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "ac70415dc4ed96e6882d701d199cde6e2a0d536ae0925b5852e6afa814546f3a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s29/objects/ac70415dc4ed96e6882d701d199cde6e2a0d536ae0925b5852e6afa814546f3a.json.gz",
+          "source_sha256": "26b404cf5a39843698ba42c033f15c58e9891924537e71f62a5fd6fdf90d3267",
+          "nodes": 165,
+          "families": {
+            "EU:forward": 3,
+            "CP:forward": 2,
+            "H:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "a0516f7bef4fe56d24a846160cc9cf8c8c271c612a3fa85448e351b4f81f594a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/a0516f7bef4fe56d24a846160cc9cf8c8c271c612a3fa85448e351b4f81f594a.json.gz",
+          "source_sha256": "e412420be053ab07bdddf6cafc3990c155f09e96ebce786dda4296b6d172bba3",
+          "nodes": 165,
+          "families": {
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "ffd395b6cd367a42971fccaa8d5904405956073771a5d887c677c011de4098c0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/ffd395b6cd367a42971fccaa8d5904405956073771a5d887c677c011de4098c0.json.gz",
+          "source_sha256": "5eb4fb5b8e100e87b4088272eda204a403617890ea4a4dea09a458dab4511bc5",
+          "nodes": 170,
+          "families": {
+            "S:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:forward": 1,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "065cc3df15ea370f5b79e2d2f1584ea6e9019bdc6d743e2463130db6fbe92855",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/065cc3df15ea370f5b79e2d2f1584ea6e9019bdc6d743e2463130db6fbe92855.json.gz",
+          "source_sha256": "4663869796ea82897047bcb34b8afb5e5128dfde94a988c5bfa8ed9e2afa4098",
+          "nodes": 160,
+          "families": {
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "59d468354cab7e5d90e1f86b2cdaea353b61c3d213c829624972e4d8415fe754",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s29/objects/59d468354cab7e5d90e1f86b2cdaea353b61c3d213c829624972e4d8415fe754.json.gz",
+          "source_sha256": "994bdb89642c0d29a2616d9b08a9f7ddb86ffa3279b5a3eac4ec6e191db2a684",
+          "nodes": 164,
+          "families": {
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "e31f600ced65f351b7bee455c631fb1082947e5f663297c62e95de2bce8dc5ff",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s47/objects/e31f600ced65f351b7bee455c631fb1082947e5f663297c62e95de2bce8dc5ff.json.gz",
+          "source_sha256": "47db74a07d11ad9a25c367d2da742fb26d948cf748dc9ed1fa7479a4571867d6",
+          "nodes": 156,
+          "families": {
+            "I:forward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "5e4e8af9c5887095849a5d80caa26ebd826434f3581b9945cae799f9bd832e1f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/5e4e8af9c5887095849a5d80caa26ebd826434f3581b9945cae799f9bd832e1f.json.gz",
+          "source_sha256": "fe2f1ee04e6b5da82a462ae14776d08d0928932148a199c787d0b07c6c24aacc",
+          "nodes": 143,
+          "families": {
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "24583c53fe3dd9e609dd23bad047bd75447296d5f2669e02f0b51e068e8a31fd",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/24583c53fe3dd9e609dd23bad047bd75447296d5f2669e02f0b51e068e8a31fd.json.gz",
+          "source_sha256": "f806c602d501b0b0ac11386441e533c8db7a03310af3ba43329a91bcadc40394",
+          "nodes": 167,
+          "families": {
+            "I:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "4caa6c116278788e6dcb7850ac5fdbd78e350643e9464f712c0a178b062960b0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s29/objects/4caa6c116278788e6dcb7850ac5fdbd78e350643e9464f712c0a178b062960b0.json.gz",
+          "source_sha256": "d6aac5861f5cd0b00327997f28a3066365152aa5d5b8d047d2b31d2e53046080",
+          "nodes": 163,
+          "families": {
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "CP:backward": 1,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "90273d153bd9b1aca0b70ce80fca1479cf6ecaf15d9197c651630640b7299bbe",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/90273d153bd9b1aca0b70ce80fca1479cf6ecaf15d9197c651630640b7299bbe.json.gz",
+          "source_sha256": "5d0f3a32cc6ed3dc359c32809396af74ddb8c95d37d3b4d9bc46de0f4762f1a2",
+          "nodes": 166,
+          "families": {
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "78c52a5fa94360eae1c701049edf0e9596af64e65752beff39c8ce77b0dacd3a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/78c52a5fa94360eae1c701049edf0e9596af64e65752beff39c8ce77b0dacd3a.json.gz",
+          "source_sha256": "9a24cc320260a3f4448878a01a5ff4c793be4b257854f9f063f92b6ff39f82fb",
+          "nodes": 164,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "f7eec51f6c4b67d8464ff5e28938f31e596240ddb3b11c8674d79e6ef96e55f6",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/f7eec51f6c4b67d8464ff5e28938f31e596240ddb3b11c8674d79e6ef96e55f6.json.gz",
+          "source_sha256": "0c7a332cb615c83a40afac369a387ddc2c887e1fced2a2b325921a26893eeaa1",
+          "nodes": 129,
+          "families": {
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "7045e55b2ec9412a62d0214ae9f53b41a768cb1dcfcec6d4c19e776039b6f888",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s29/objects/7045e55b2ec9412a62d0214ae9f53b41a768cb1dcfcec6d4c19e776039b6f888.json.gz",
+          "source_sha256": "c55b4e07626518612b839caa17b1605a7e2467f7fec0c6a0f85c7166cf5d0314",
+          "nodes": 158,
+          "families": {
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "CP:backward": 1
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "0e7ebe2bc0509dca204dbb59b7f821fb89ce4cce67e7fa920e483ef490fe4fd1",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/0e7ebe2bc0509dca204dbb59b7f821fb89ce4cce67e7fa920e483ef490fe4fd1.json.gz",
+          "source_sha256": "2f706e625bdfac20538d42a79f31ba9bdb34e7372895b0278166be1051dfdd13",
+          "nodes": 159,
+          "families": {
+            "E:backward": 2,
+            "H:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "6a2954ae34f7c2b5a511604f5def914ab5feae8f6918c3c861a7fb1817a6fca1",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/6a2954ae34f7c2b5a511604f5def914ab5feae8f6918c3c861a7fb1817a6fca1.json.gz",
+          "source_sha256": "089155dbe5400c1224edda37d982f93fe6c7754edf69333cd0ea4f878626d140",
+          "nodes": 168,
+          "families": {
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "cad4def047690850df310ce781a9ac4e99429e81b189167209e2ac7a3e1a0365",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/cad4def047690850df310ce781a9ac4e99429e81b189167209e2ac7a3e1a0365.json.gz",
+          "source_sha256": "a5dae8bc0b2a95174aadef7a520cbac3ff439908d6fcaa52e00c6c16a09b5d12",
+          "nodes": 170,
+          "families": {
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "d44270a7fb8c0c710f35cf0d3be95e8e2d1525e9e4372b8fe9f8acba7e5ef4ef",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/d44270a7fb8c0c710f35cf0d3be95e8e2d1525e9e4372b8fe9f8acba7e5ef4ef.json.gz",
+          "source_sha256": "f5fa303acddfbed4489f79fc60f7c1a537b740b2ed35ca217f3ac3c7e16aa522",
+          "nodes": 153,
+          "families": {
+            "EU:forward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "c02baf0e919787802f95638e1d6dfb1f0fea5bc5760798fd3237f5f61051d27f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/c02baf0e919787802f95638e1d6dfb1f0fea5bc5760798fd3237f5f61051d27f.json.gz",
+          "source_sha256": "093fe614650fd233ba1d60e484792e03125367b2010db589a0e13030ef3e6159",
+          "nodes": 143,
+          "families": {
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "8611b2b16cad584f3f71f90b06e1dd87153741ae4d100a008c4058f4009fc730",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/8611b2b16cad584f3f71f90b06e1dd87153741ae4d100a008c4058f4009fc730.json.gz",
+          "source_sha256": "f70a62a53c64a41ebddaa47f9b2e4384dd12bf1681a879a949942dedd9350475",
+          "nodes": 170,
+          "families": {
+            "I:forward": 3,
+            "S:forward": 2,
+            "H:backward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "9ff8640aaf4e80feb14edea510edc83e14028ca6f9000a5074e746ea63b0ca26",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/9ff8640aaf4e80feb14edea510edc83e14028ca6f9000a5074e746ea63b0ca26.json.gz",
+          "source_sha256": "57c66337263a21c96f43e2df231c1d9a345805d8bbf7c6b7a14a207622261ef1",
+          "nodes": 151,
+          "families": {
+            "CP:backward": 2,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "b7406fb2761f9fd7447e4b3e563234890acd885bb4275d35cbe8bf20705d234c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s47/objects/b7406fb2761f9fd7447e4b3e563234890acd885bb4275d35cbe8bf20705d234c.json.gz",
+          "source_sha256": "80ccc01acbc1940472d33df5ac270ade33b7cfa3c497f81347a3bda6f10a3a9e",
+          "nodes": 169,
+          "families": {
+            "EU:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "fd3162daff6d297d86a37f8d3948c194395cdf74ca85d589536e205efa9e1ac4",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/fd3162daff6d297d86a37f8d3948c194395cdf74ca85d589536e205efa9e1ac4.json.gz",
+          "source_sha256": "5cc53c1ac02023fb8df515b260aaf8a7f2d919d6bd9ae9b959b2b2d8522b78ed",
+          "nodes": 166,
+          "families": {
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "CP:backward": 1,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "ce5012bcad24b67eee2079cabb109de0af7af3250f997b9f70ab24b500bf54c3",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/ce5012bcad24b67eee2079cabb109de0af7af3250f997b9f70ab24b500bf54c3.json.gz",
+          "source_sha256": "8e4a61be325c7d76d2742a84d08879a92ce66d971c5ac4f79c76dd2ce5a6600a",
+          "nodes": 151,
+          "families": {
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "S:backward": 3,
+            "CP:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "3324f23b198828ba2d7e853f86f003e2962aee53230765a6c14d3d1d74dc98a9",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/3324f23b198828ba2d7e853f86f003e2962aee53230765a6c14d3d1d74dc98a9.json.gz",
+          "source_sha256": "414ca022a778b580a089ff7177279c098dedc331cd8cf95f0120d6e8a61c7184",
+          "nodes": 169,
+          "families": {
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "53900a29b3dba1d993fad73b18172c36dcf5a156a4cc7cf2deaad3f85fe515f8",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/53900a29b3dba1d993fad73b18172c36dcf5a156a4cc7cf2deaad3f85fe515f8.json.gz",
+          "source_sha256": "15e7f7000ef4bba477e0b34e88957e0ce61e11e25e5640f849728bb7822324bf",
+          "nodes": 157,
+          "families": {
+            "E:backward": 2,
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "7b81a7676e9cc622483971e4776df03fdf5e8efb0e5b9592b6a14eb7b73d49a3",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s29/objects/7b81a7676e9cc622483971e4776df03fdf5e8efb0e5b9592b6a14eb7b73d49a3.json.gz",
+          "source_sha256": "5756c665db8fc97a1598cc9799a5c4e2e397ff488b0f498c4bc11394c14a4ca3",
+          "nodes": 166,
+          "families": {
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "CP:backward": 2,
+            "I:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "953ccac8464104d5e2f97a452ddc9d9c3230fa3fc90b56903fbccc077a0ca4f0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/953ccac8464104d5e2f97a452ddc9d9c3230fa3fc90b56903fbccc077a0ca4f0.json.gz",
+          "source_sha256": "d46fe25c5f0166b4c8e35422adde752640287dfa355486cbdffabf9c4e9f7c93",
+          "nodes": 166,
+          "families": {
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "76c756abbaa3d96aa382ed9c8561c9a0086dd3dc557c20cf98812dc376a71ec0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s47/objects/76c756abbaa3d96aa382ed9c8561c9a0086dd3dc557c20cf98812dc376a71ec0.json.gz",
+          "source_sha256": "45d5f328efc37de81e8cf7f6846f12faa1b9046a020caa918930ef4d1b785533",
+          "nodes": 134,
+          "families": {
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "95c8594e8a12c86e993c106d96541d61db3511df3d5918b57ab86b8b677ab82a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/95c8594e8a12c86e993c106d96541d61db3511df3d5918b57ab86b8b677ab82a.json.gz",
+          "source_sha256": "706ce1f09261d068a5f7982791317fff3881ade2b10bd0f23d3e6c844d318694",
+          "nodes": 166,
+          "families": {
+            "S:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "CP:backward": 1,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "07ab77a39c06a996f2e7e72b4552e7087b95ccddde8a2bd91ea6ebab476989b6",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/07ab77a39c06a996f2e7e72b4552e7087b95ccddde8a2bd91ea6ebab476989b6.json.gz",
+          "source_sha256": "4083c4be2451783af6c59a5064a8942a3fa6fc632f8b5b50a1fae88f680424ec",
+          "nodes": 171,
+          "families": {
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "CP:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "2daba22599b0a097a8ee3311128a0f5490dc7448bacb5a3fe3231157ddfecdf3",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/2daba22599b0a097a8ee3311128a0f5490dc7448bacb5a3fe3231157ddfecdf3.json.gz",
+          "source_sha256": "ad7f6f4c6f920f940cf84ad193c4e64663a06237aec5370d6e2500a0a62d0663",
+          "nodes": 135,
+          "families": {
+            "I:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "519c7b40f4f21b9940aeae3044e4a3b8c62331dfdbdeb27f1ec8b56b3df24c86",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/519c7b40f4f21b9940aeae3044e4a3b8c62331dfdbdeb27f1ec8b56b3df24c86.json.gz",
+          "source_sha256": "edc26ca6a80bd7c3f2320ed340835669fb4c6301747421aa7117219705cf9502",
+          "nodes": 163,
+          "families": {
+            "H:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "369029bca4f1a69ecdecffec3d9ae1fdb22bb270481971d0fa68c9279a90d7cc",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/369029bca4f1a69ecdecffec3d9ae1fdb22bb270481971d0fa68c9279a90d7cc.json.gz",
+          "source_sha256": "0d631d298cbf22d37395a067b14aedebb0ad859a62eac249020d3ad71cd67a67",
+          "nodes": 166,
+          "families": {
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "33557fde9a038d71f8cf35aae907efd052879700f653874ee9f228d26a59c800",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/33557fde9a038d71f8cf35aae907efd052879700f653874ee9f228d26a59c800.json.gz",
+          "source_sha256": "071bd0e873d64236cc95c81e94d70c635478156e5139d6dd149a9335897dbc12",
+          "nodes": 170,
+          "families": {
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "3a4e0e461783ddb53fde4f65f3d866296bacb5426aa842f2b51bd66da64442c7",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s29/objects/3a4e0e461783ddb53fde4f65f3d866296bacb5426aa842f2b51bd66da64442c7.json.gz",
+          "source_sha256": "fccd7758b74dfc8673ffa6ac59f37f3ae04cd19612fd20c746859efbece5f2a9",
+          "nodes": 167,
+          "families": {
+            "I:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "81a0fdc75ac2b673d9f88b29aa638dee2a0e502ad3da96d6cdd77b574bc59224",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s29/objects/81a0fdc75ac2b673d9f88b29aa638dee2a0e502ad3da96d6cdd77b574bc59224.json.gz",
+          "source_sha256": "e2d06d173e137f213b6d053edc855ddb8dfe982fdb851e7a055a71cc3c664ce6",
+          "nodes": 164,
+          "families": {
+            "CP:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "20dbdcc9a1767761099992198e968d215e4c0b0eb9606d11cef8020fd724a55e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/20dbdcc9a1767761099992198e968d215e4c0b0eb9606d11cef8020fd724a55e.json.gz",
+          "source_sha256": "be0f683ef87e59366d09e88c75bfdbe70d27cb32a3d5f4d1e9462021bdadebdb",
+          "nodes": 166,
+          "families": {
+            "EU:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "235c9137430996c9fa356664178dbb06b059710a8ad95bdca36c3177c5e4894a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/235c9137430996c9fa356664178dbb06b059710a8ad95bdca36c3177c5e4894a.json.gz",
+          "source_sha256": "63fb307d13db95046de7dfb988b7a3c52deb3cc60fe0b28e4f0f9db0d5c76cba",
+          "nodes": 142,
+          "families": {
+            "I:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "db74452a03bffaa27bdfb73bf8153276859aeba6f3b44f4ca3dc43babb7b991d",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/db74452a03bffaa27bdfb73bf8153276859aeba6f3b44f4ca3dc43babb7b991d.json.gz",
+          "source_sha256": "5b6e7362b83d2671006365a6625d4fe4f4b93fa63f20264f4439f666452bb307",
+          "nodes": 170,
+          "families": {
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "ab7716ba00ebb91b5db1b006ad6a0177c25a61239918e69b5ab103e152e08298",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/ab7716ba00ebb91b5db1b006ad6a0177c25a61239918e69b5ab103e152e08298.json.gz",
+          "source_sha256": "acc01c5c9202fc7897d0592d333ad106c58848e422f41995b4c8b44c2660480e",
+          "nodes": 158,
+          "families": {
+            "EU:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "d1f5c1f77903001069b6836551853ca1d3423be0f5ad88df08b60bdf1d3ec851",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s29/objects/d1f5c1f77903001069b6836551853ca1d3423be0f5ad88df08b60bdf1d3ec851.json.gz",
+          "source_sha256": "641be2fc721535e2a117e0b496da7b70a6a46040f454dc2aba3399334b146bfc",
+          "nodes": 161,
+          "families": {
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:forward": 2,
+            "E:backward": 2,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "0a20f584fd66cebfc01b2f2d196279f07ec0ab6441f4f9bdb8782dc10022007d",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s47/objects/0a20f584fd66cebfc01b2f2d196279f07ec0ab6441f4f9bdb8782dc10022007d.json.gz",
+          "source_sha256": "4aaaa51432ae94b04f49abf428e569257e748de7ffa0e180de84ed81470d9f10",
+          "nodes": 165,
+          "families": {
+            "EU:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "06a06babcfbec6eb6d44ec53761db73c2319dd0373816f1939238fe3140c0702",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/06a06babcfbec6eb6d44ec53761db73c2319dd0373816f1939238fe3140c0702.json.gz",
+          "source_sha256": "02365eb8fc4a412a76d1153edc2b03806d4e8d787e078503633c885017645b2c",
+          "nodes": 166,
+          "families": {
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "ee3fb7045f34d1b6ff8ddd548c7ef9b3a887bbcc0ba4cb4470a04b8ea0481e02",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s11/objects/ee3fb7045f34d1b6ff8ddd548c7ef9b3a887bbcc0ba4cb4470a04b8ea0481e02.json.gz",
+          "source_sha256": "a93d554c1114110a4fc8ed91ef0c03a5da62415f869e928385ab8c24ca090a0b",
+          "nodes": 167,
+          "families": {
+            "CP:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "46697fb5211067854ffcdf7076f3f547dba1a01bee8eb10a5259c78e66c2637e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s29/objects/46697fb5211067854ffcdf7076f3f547dba1a01bee8eb10a5259c78e66c2637e.json.gz",
+          "source_sha256": "c4a138ce35e80d81b81657096119a3a1ae8ba12891157c84fa569bd67755d796",
+          "nodes": 118,
+          "families": {
+            "H:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "11ad446ca42ef74610260465d0d8c3f41d598c48c31baafb2dfe91b28be5fef0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/11ad446ca42ef74610260465d0d8c3f41d598c48c31baafb2dfe91b28be5fef0.json.gz",
+          "source_sha256": "e6b97649f33a9f980a965d2bb599a0c585b53436397cc0d0792357adc0ac9a7a",
+          "nodes": 161,
+          "families": {
+            "H:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "66d8659946e11806dd751b6f3153187854914abf43995e7935c771b0893a7f9e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s29/objects/66d8659946e11806dd751b6f3153187854914abf43995e7935c771b0893a7f9e.json.gz",
+          "source_sha256": "14899733faa9211e6320d422da9a70954ade045c01ada297a7def41f09468bd5",
+          "nodes": 171,
+          "families": {
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "CP:backward": 1
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "d2614f1a6eefd8271d65ca52a794cb9dc603a075025f3499b22d78845da3ace0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/d2614f1a6eefd8271d65ca52a794cb9dc603a075025f3499b22d78845da3ace0.json.gz",
+          "source_sha256": "fe75b3f8aecea6a67e6b97bd41ea2b51f4a6079b193613650dc3974e3159a262",
+          "nodes": 162,
+          "families": {
+            "I:forward": 3,
+            "S:forward": 1,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "cfa1ec9b60728cfc0c11ffb53416c5774a947cf68a773122cef99ce03fbb4def",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s29/objects/cfa1ec9b60728cfc0c11ffb53416c5774a947cf68a773122cef99ce03fbb4def.json.gz",
+          "source_sha256": "18b3a3bbcc312f30f7d44ba14a532048e2ce49ca4406943cf25962d33ab99c40",
+          "nodes": 161,
+          "families": {
+            "H:forward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "834883538af4135605304b32906d407c17faa80b70e83af5adef45d22773c680",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/834883538af4135605304b32906d407c17faa80b70e83af5adef45d22773c680.json.gz",
+          "source_sha256": "13283ac2be047b7ab9d29f915e56b59f5ecdb66e8a3c5cb169af42b1a85c282f",
+          "nodes": 122,
+          "families": {
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "94d2d343c26b4c224078dc51142cb83dd72c336c89f5affa9b2d0145de093c23",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_online_s11/objects/94d2d343c26b4c224078dc51142cb83dd72c336c89f5affa9b2d0145de093c23.json.gz",
+          "source_sha256": "fd4db81b075dc5fd241dca1ca8b7fc780fe45f96b67cbce035181942e1b8d74e",
+          "nodes": 161,
+          "families": {
+            "I:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        },
+        {
+          "graph": "d6a1bcb2135695dc7483d4e16be099e376bd244130fc2efe4252597444046a6e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-ising_4_numeric/jpv_frozen_s47/objects/d6a1bcb2135695dc7483d4e16be099e376bd244130fc2efe4252597444046a6e.json.gz",
+          "source_sha256": "08aeb2bec06833adf33af23e1426bf491bdb54f4be2b39885f4e3d3d20b3dce4",
+          "nodes": 145,
+          "families": {
+            "I:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 16
+        }
+      ],
+      "stats": {
+        "calls": 64,
+        "matching_work_exhausted": 2,
+        "phase_inferred": 550,
+        "non_clifford_matches_skipped": 0
+      }
+    },
+    {
+      "campaign": "general-mod5_4",
+      "unique_states": 5153,
+      "samples": 64,
+      "A_proposals": 0,
+      "families": {
+        "I:forward": 192,
+        "H:backward": 192,
+        "S:backward": 192,
+        "H:forward": 192,
+        "EU:forward": 192,
+        "E:backward": 128,
+        "I:backward": 192,
+        "CP:backward": 62,
+        "EU:backward": 6,
+        "S:forward": 7,
+        "CP:forward": 2,
+        "E:forward": 4,
+        "B:backward": 12
+      },
+      "rows": [
+        {
+          "graph": "17907d56631e1e4429cb0db26d2e85525fea213ef0b35b7b94d13e4bc095619c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/17907d56631e1e4429cb0db26d2e85525fea213ef0b35b7b94d13e4bc095619c.json.gz",
+          "source_sha256": "b2ad575963c932ce1cb7d9f5e69df7257d95f74fcca79d4eba91ad5354cfaf35",
+          "nodes": 141,
+          "families": {
+            "I:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "050be5b2abbd7bc8964a0a14da6d11cc71d3febf313f81f44d79692fd05d8023",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/050be5b2abbd7bc8964a0a14da6d11cc71d3febf313f81f44d79692fd05d8023.json.gz",
+          "source_sha256": "aa24aece30e99754e1838d0f09704df22dd443345cc532aa812b7042dc8a25f4",
+          "nodes": 203,
+          "families": {
+            "I:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "f70f459d0b550f62a83a60ce9e36ccbb7ae762ea01b38d3dfcfb25d12646ed1e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s29/objects/f70f459d0b550f62a83a60ce9e36ccbb7ae762ea01b38d3dfcfb25d12646ed1e.json.gz",
+          "source_sha256": "6840fd3f84842a9c83c65ae6e8bb4268f3deb15f42278c32f9bbee16bcd31e2b",
+          "nodes": 179,
+          "families": {
+            "I:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "8ea28fa554ace608541fe57394f0b0369fe3467ffd72bbd12076a1dd96807b49",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/8ea28fa554ace608541fe57394f0b0369fe3467ffd72bbd12076a1dd96807b49.json.gz",
+          "source_sha256": "8470e93c30db65539860e2cf6e3c52aed76ce1f5ff5ddf2467212b14f8bd7bc9",
+          "nodes": 163,
+          "families": {
+            "CP:backward": 1,
+            "H:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "f396fc54ea39abfa41bc6d8c9e50c395c488bc08a6f4aedd8bfdfa1709335a71",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/f396fc54ea39abfa41bc6d8c9e50c395c488bc08a6f4aedd8bfdfa1709335a71.json.gz",
+          "source_sha256": "afbcb33629fc5649e2bea6a4481e9602ee0d178b23b59852033ec804eb348e4c",
+          "nodes": 193,
+          "families": {
+            "EU:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "CP:backward": 2,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "154d8df2a135c554586db05042d0acfcafaf6fb115dd03b6c74cf6ecc9f22dde",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/154d8df2a135c554586db05042d0acfcafaf6fb115dd03b6c74cf6ecc9f22dde.json.gz",
+          "source_sha256": "9a54c153ff2aa9a31d1b72d4eef1a41d8a79f80a408d5088f641a224aba2fd2a",
+          "nodes": 195,
+          "families": {
+            "EU:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "693218ae87f93ab91954b9f603d16d32fb07635f227f8c9e625c3306e957b6a5",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s29/objects/693218ae87f93ab91954b9f603d16d32fb07635f227f8c9e625c3306e957b6a5.json.gz",
+          "source_sha256": "090f42487b7dea15ce80d2aa655b8fd53b2bc9ae7e4ccaa31221925de37d7a76",
+          "nodes": 197,
+          "families": {
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "4a5f67a96996677d654f7995a67a44eb7eef70ba0f55257c53e33c0947f0ff40",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s47/objects/4a5f67a96996677d654f7995a67a44eb7eef70ba0f55257c53e33c0947f0ff40.json.gz",
+          "source_sha256": "e5109da934f23e64e6cfed448c5b9b11ed25f86684d9d05ebf9fc26af7eb3dcd",
+          "nodes": 196,
+          "families": {
+            "E:backward": 2,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "e77429cf2ffd8dd02b9185c4069c03ee32b84ca16fcce635f92551a330743879",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s47/objects/e77429cf2ffd8dd02b9185c4069c03ee32b84ca16fcce635f92551a330743879.json.gz",
+          "source_sha256": "ad7d6ca561f53dce204f85d2878f8c441fd72619d26abf3eeae3957ecba411f1",
+          "nodes": 159,
+          "families": {
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "edec2c141bb487d765b3ffe32d7666f657bc8f80e5268c33f6e104c198d06b68",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/edec2c141bb487d765b3ffe32d7666f657bc8f80e5268c33f6e104c198d06b68.json.gz",
+          "source_sha256": "0cf05f08edc93bd96893e742e995382a7dc4f1f85ec4f2fda839b94859172641",
+          "nodes": 196,
+          "families": {
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "999522ffb47139d4503228210d62dce876d034aaf191337a310d0387d61af62b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/999522ffb47139d4503228210d62dce876d034aaf191337a310d0387d61af62b.json.gz",
+          "source_sha256": "d681d08d189b6776771bc2252f20bb143a21c2f448c90cdc98a9169e0b130830",
+          "nodes": 182,
+          "families": {
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "7a5d9ebe6589b7d5c238b35c6f467a53a5f287269dc055b7930378aff68b4e9b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s29/objects/7a5d9ebe6589b7d5c238b35c6f467a53a5f287269dc055b7930378aff68b4e9b.json.gz",
+          "source_sha256": "a3adf3b695ef2d79255f00507f41d87258f41bc6918752ce4b9348df6f192dd4",
+          "nodes": 188,
+          "families": {
+            "I:forward": 3,
+            "EU:backward": 2,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:forward": 2,
+            "H:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "a751d1d12fd399d37b180123bb381a6ebea8f5fac44e51651f21edbdecfd50e6",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/a751d1d12fd399d37b180123bb381a6ebea8f5fac44e51651f21edbdecfd50e6.json.gz",
+          "source_sha256": "8eaf2b472fc93deefc9a39e4b7c5f5ca628c4a43c424086b378e770fa7cb992e",
+          "nodes": 194,
+          "families": {
+            "E:backward": 2,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "CP:backward": 1,
+            "I:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "a07055eb4d699319c78b44f2389b8e55f0273042ac18598eb1fb7a6c90425649",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/a07055eb4d699319c78b44f2389b8e55f0273042ac18598eb1fb7a6c90425649.json.gz",
+          "source_sha256": "1c0a0f761c9e8f8f50966c7a5aa1dca252e21b5f8507c8325cc0f51e67042d33",
+          "nodes": 190,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "S:forward": 1,
+            "H:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "CP:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "464ca1d03a41ba236ec66a002792f9c73a4a61258a2522279ae0f8d0dfc22a99",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s29/objects/464ca1d03a41ba236ec66a002792f9c73a4a61258a2522279ae0f8d0dfc22a99.json.gz",
+          "source_sha256": "ec28a97b7d555d4c11926c9157b60fbae4fa76dd656bffb77076f729d5ad4f80",
+          "nodes": 201,
+          "families": {
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "4a8e93c525d7c380cddef2358a10e6646a30638600d00467e380619047f46f7c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/4a8e93c525d7c380cddef2358a10e6646a30638600d00467e380619047f46f7c.json.gz",
+          "source_sha256": "9e740dcc2854efa341acfc3cfa2ddc3206176689a729ac0e522213e22916d086",
+          "nodes": 152,
+          "families": {
+            "I:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "db09e0cc1a93b24f522f21fb482e3725567f76582dabc6a0f0b85447f992dd8f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/db09e0cc1a93b24f522f21fb482e3725567f76582dabc6a0f0b85447f992dd8f.json.gz",
+          "source_sha256": "b67b0a0d97622c08ea10c3108b071295a0179a45986b7591b14f1500decc4b32",
+          "nodes": 204,
+          "families": {
+            "I:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "CP:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "d03c875331b5ca584e7105c5fb29aa2f8f5c846aedfb1942b7e074a8dd893f16",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s29/objects/d03c875331b5ca584e7105c5fb29aa2f8f5c846aedfb1942b7e074a8dd893f16.json.gz",
+          "source_sha256": "4b7720e0ffebb6d020d73888c9123cd6d10febb0d482a1e8dcfd4959167478ee",
+          "nodes": 202,
+          "families": {
+            "I:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "0b266840ff6a26ae4a82c65051eae67de68cf703e7c2ab768fdfa5737445fca1",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/0b266840ff6a26ae4a82c65051eae67de68cf703e7c2ab768fdfa5737445fca1.json.gz",
+          "source_sha256": "45c2eef4bb1a561765772ebb58f84639153dfc5f1070f560ac6cd33de8428cdf",
+          "nodes": 188,
+          "families": {
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "25c427968e0abc49ed2d60ab5076b360392026f606de14215c270d90d03c5d95",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/25c427968e0abc49ed2d60ab5076b360392026f606de14215c270d90d03c5d95.json.gz",
+          "source_sha256": "06bebc3f81878ce18711172377e897439644e23aa97883d3a4708677e740e820",
+          "nodes": 192,
+          "families": {
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "2a051b9fb1001065f78ea14cc3cdf21e58187e9de4854bf721d909c73b2e995a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s29/objects/2a051b9fb1001065f78ea14cc3cdf21e58187e9de4854bf721d909c73b2e995a.json.gz",
+          "source_sha256": "c2f7e72cb92892be9066a86849b1cf1f3c032a7f3053892b79ba9654c249d2c4",
+          "nodes": 147,
+          "families": {
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "CP:backward": 1,
+            "H:forward": 3,
+            "S:backward": 3,
+            "CP:forward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "c1052c87bcd9d01162b104b426982837fd7a5de2a60d625e00b31d78a701c34c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s29/objects/c1052c87bcd9d01162b104b426982837fd7a5de2a60d625e00b31d78a701c34c.json.gz",
+          "source_sha256": "eb043a1c57bda3d62e1bb432945f9c8135753310778da41e8dd3673a5bec30ad",
+          "nodes": 163,
+          "families": {
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "f22662c4da22c21d0514adfb52927cbc38916bde9e09767d79c54ccf1257aac6",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/f22662c4da22c21d0514adfb52927cbc38916bde9e09767d79c54ccf1257aac6.json.gz",
+          "source_sha256": "6c41607ebc308f844eb0c0b0f566e4ef737d3e93f4a6811b32c4aab07cb58ef5",
+          "nodes": 200,
+          "families": {
+            "E:backward": 2,
+            "I:backward": 3,
+            "CP:backward": 1,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "2629545027d0ce95580d2ec118ef6a07d2f9127071da10d9deb6c7a940fde644",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s29/objects/2629545027d0ce95580d2ec118ef6a07d2f9127071da10d9deb6c7a940fde644.json.gz",
+          "source_sha256": "ddac83254a72977abb900fecfe2c61d0394c9caf6da85ef5ef25f6f7382cac2d",
+          "nodes": 194,
+          "families": {
+            "EU:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "6a87366c4ac09400dbca0e71d40ba76ac4a8d711195694f2912e0323b216c61f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/6a87366c4ac09400dbca0e71d40ba76ac4a8d711195694f2912e0323b216c61f.json.gz",
+          "source_sha256": "9e8f68aed5ba420ca23ea0d4cd000f602f7b7ba470e5c7e8010790342189f27c",
+          "nodes": 197,
+          "families": {
+            "H:backward": 3,
+            "S:backward": 3,
+            "CP:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "09b497b903e6c4456934f24c459a97d98f16e7e51ef110712c5f423e28cbddd5",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s29/objects/09b497b903e6c4456934f24c459a97d98f16e7e51ef110712c5f423e28cbddd5.json.gz",
+          "source_sha256": "43b8ce404d4a23308bccf3632f89dbd302be75165597653e7f8f903b8befd4da",
+          "nodes": 187,
+          "families": {
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "f2d7faad4d8324e80d31091f8ceba35ab6f0d109c48dd1fe9f0d5c8a807bed0e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/f2d7faad4d8324e80d31091f8ceba35ab6f0d109c48dd1fe9f0d5c8a807bed0e.json.gz",
+          "source_sha256": "7bbe17900d44444ada78fbb8a79f2ec716ec1976a39d638268acd469d2d6c985",
+          "nodes": 196,
+          "families": {
+            "H:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "E:forward": 1,
+            "H:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "c50ab1f93b97bf459a4602db5b84b36c4511cc1327c16ac94f32dc3944156368",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/c50ab1f93b97bf459a4602db5b84b36c4511cc1327c16ac94f32dc3944156368.json.gz",
+          "source_sha256": "cb2e243b87f3a4fd7ae7ccbf302d8e8c16a25c88bdd0331d507e4e9ccdd1d89b",
+          "nodes": 199,
+          "families": {
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "1d1c7775d9ead1dc58db10bd96e602bf6ecc86f32c478a747e60fe7a65af1836",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s47/objects/1d1c7775d9ead1dc58db10bd96e602bf6ecc86f32c478a747e60fe7a65af1836.json.gz",
+          "source_sha256": "a3335292febbd19dc6faa2812aa81460e94e177cb1a4e4fca0ccc348ef9d16a9",
+          "nodes": 198,
+          "families": {
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "3ee2c0e3c9b4556e7c23057ad15a078ab3213b52f4030c520261572a7e5d7db6",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/3ee2c0e3c9b4556e7c23057ad15a078ab3213b52f4030c520261572a7e5d7db6.json.gz",
+          "source_sha256": "690aa547fafda90ee4354052d69eb2c037d8499bbec5458282c2fbc9edb35774",
+          "nodes": 176,
+          "families": {
+            "S:backward": 3,
+            "B:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "EU:backward": 2,
+            "H:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "63215ac61b055848d4d3bb9c84d5a4974264b51f9e80e204d2bfa5aa31601aec",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/63215ac61b055848d4d3bb9c84d5a4974264b51f9e80e204d2bfa5aa31601aec.json.gz",
+          "source_sha256": "5701fae1be1a9078b6481e9b5c690495f17de36fedd2d01103239ee88ff7465c",
+          "nodes": 183,
+          "families": {
+            "H:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "CP:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "cb937ef2744fa544a99ebea5bfddf774d5f6fa6d5709e717e57ea531e05bf162",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/cb937ef2744fa544a99ebea5bfddf774d5f6fa6d5709e717e57ea531e05bf162.json.gz",
+          "source_sha256": "5c5c4ce4cd36914d0e742e054d28bbb548a355ee1478bacc2d1c85de69035228",
+          "nodes": 189,
+          "families": {
+            "H:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "e8ccbdf7da75350d37c4c1b0b1b8d2d2f9eda09641a2bf4605a9a0ea18f02260",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/e8ccbdf7da75350d37c4c1b0b1b8d2d2f9eda09641a2bf4605a9a0ea18f02260.json.gz",
+          "source_sha256": "638a3c345fae87fedc4f3bbf48e473a57b0aedc0e0c44d37768ea63aefa85013",
+          "nodes": 198,
+          "families": {
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "45e4c3080c5c0a61f82a458ccc60543a6b24d4ddd8458a48be9417ebb5dc43ae",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/45e4c3080c5c0a61f82a458ccc60543a6b24d4ddd8458a48be9417ebb5dc43ae.json.gz",
+          "source_sha256": "8059222f26bdf0ebff92bf5884ac385a583d2a3532895891cadcc2ac013018b4",
+          "nodes": 202,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "B:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "8880f048d3bab0594c04667004024b0748c0c506fe8f1a7fae5d883d38e933d3",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/8880f048d3bab0594c04667004024b0748c0c506fe8f1a7fae5d883d38e933d3.json.gz",
+          "source_sha256": "79bea99e199fa249481164a98fe9dd5ac1993640fd7d7de16c565e794a8aa17d",
+          "nodes": 197,
+          "families": {
+            "EU:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "344d916c3494e4bd3591802da77196052c99fe019cbc97fd4b26f71e8ab9811f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/344d916c3494e4bd3591802da77196052c99fe019cbc97fd4b26f71e8ab9811f.json.gz",
+          "source_sha256": "f2d199a957374492b1a610c21e84404b2812872ec2d3bc605f451c760321277c",
+          "nodes": 191,
+          "families": {
+            "H:backward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "402dc7544b7ca18cbce28384a552ce1f2288da640d279ca7aae3b7fd1bba9164",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s29/objects/402dc7544b7ca18cbce28384a552ce1f2288da640d279ca7aae3b7fd1bba9164.json.gz",
+          "source_sha256": "181a0ccee4e1ee9c0281102b583e9e9881b3e8bc4fc6a4f689542ca132ec2492",
+          "nodes": 167,
+          "families": {
+            "EU:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "CP:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "818d63140c20dab96deed86cbdb856073886efbe846ca2719c7c2cbcc11a89e0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/818d63140c20dab96deed86cbdb856073886efbe846ca2719c7c2cbcc11a89e0.json.gz",
+          "source_sha256": "fd91b3edeed755d813c41f90cc7653373d7412f29dad2ce5242ae19c35a69947",
+          "nodes": 189,
+          "families": {
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "3220d9ebc52cce2fe1f50ad159381c0aa04ac289f08100d0eca170ac49f9717b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/3220d9ebc52cce2fe1f50ad159381c0aa04ac289f08100d0eca170ac49f9717b.json.gz",
+          "source_sha256": "be0d4da0645c9251b179ac6fade6c22a491d5d731341815b875112d090e38d10",
+          "nodes": 197,
+          "families": {
+            "H:backward": 3,
+            "S:backward": 3,
+            "S:forward": 1,
+            "H:forward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "e7656d42c00b6faec887c7ff94c10c19b1695b35e29a18c108ecc1d118accdec",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/e7656d42c00b6faec887c7ff94c10c19b1695b35e29a18c108ecc1d118accdec.json.gz",
+          "source_sha256": "c600122f10dc88397ea9a860f35d005a08149b5eaaf30dd3e03903863897a522",
+          "nodes": 191,
+          "families": {
+            "H:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "E:forward": 1,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "7e19bd1bb8095400f7d2233df6b5f882884a4e36c67b50dddb5a1229e0d84012",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/7e19bd1bb8095400f7d2233df6b5f882884a4e36c67b50dddb5a1229e0d84012.json.gz",
+          "source_sha256": "aaad84c9e9f51a1271ee2f67c1bd4a1f6021ff9b9b102e1acfacb681af8921d9",
+          "nodes": 198,
+          "families": {
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "89e1d92b3560c4e925406bf04bfec1af9c0e0a4d0266ad27e84eb2d293cb0054",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/89e1d92b3560c4e925406bf04bfec1af9c0e0a4d0266ad27e84eb2d293cb0054.json.gz",
+          "source_sha256": "75bedf686b3185b55c524304fa08f47b883926eca324d7cb8f4a8fbf44a04730",
+          "nodes": 183,
+          "families": {
+            "I:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "b92299e18fd9c243c0ac4b2ca0306d56573ecebba7f3d9007bcd8ee23a7fcf49",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/b92299e18fd9c243c0ac4b2ca0306d56573ecebba7f3d9007bcd8ee23a7fcf49.json.gz",
+          "source_sha256": "a319f85660191dbd448519f7950fc8457fa29923dbb005a53df584bbcc72f87b",
+          "nodes": 191,
+          "families": {
+            "CP:backward": 2,
+            "S:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "e6da0f8f57a9512620a0dc7cd07a998b40cef44d7ea9c038921eedebe0f06d1a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/e6da0f8f57a9512620a0dc7cd07a998b40cef44d7ea9c038921eedebe0f06d1a.json.gz",
+          "source_sha256": "6c185b114df8217478849d3eeb8f8a3b68973367d3a93ebd381818a736de2ea2",
+          "nodes": 172,
+          "families": {
+            "H:backward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "abf15722b82ed54d75a29fe0da540de905677f0d49c3713d66d79c23ea2cb0aa",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/abf15722b82ed54d75a29fe0da540de905677f0d49c3713d66d79c23ea2cb0aa.json.gz",
+          "source_sha256": "eedff6bb721c3b98655f1054df2aa5839e7785c27d349fda47f013fb386609e5",
+          "nodes": 155,
+          "families": {
+            "H:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "0bc9b2a78675b7abd85ea9b4c7f5e13add1c9a561686cac52bab11b6b67b38f5",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/0bc9b2a78675b7abd85ea9b4c7f5e13add1c9a561686cac52bab11b6b67b38f5.json.gz",
+          "source_sha256": "30619dd1db72f6c091edcc6e8bfe6615e1cbc7bb7c9c2c250f2759a02817a410",
+          "nodes": 183,
+          "families": {
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "e0c920f89af64686874cdde086c647ca19f3b15b04924b6d7408e1de13de23ae",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/e0c920f89af64686874cdde086c647ca19f3b15b04924b6d7408e1de13de23ae.json.gz",
+          "source_sha256": "86c052b32774f80de0d0b03b94348589137c6b5e130ec82df403e9676cce61f5",
+          "nodes": 205,
+          "families": {
+            "CP:backward": 1,
+            "H:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "B:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "178fccc4eea6b527e2b05aad237a5c525d04a689dfbb215d407ab23efa0c9814",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/178fccc4eea6b527e2b05aad237a5c525d04a689dfbb215d407ab23efa0c9814.json.gz",
+          "source_sha256": "f53a16438ffd02ca3fa8ef3d536822a73a6ddd6d9cfe9f327079e2d13be30a25",
+          "nodes": 196,
+          "families": {
+            "I:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 1
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "ca0ee39af7b698e665686ee56c28ab0b52b4cbe1c4ad9d5d754437d73dd8814a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/ca0ee39af7b698e665686ee56c28ab0b52b4cbe1c4ad9d5d754437d73dd8814a.json.gz",
+          "source_sha256": "a0909721f8087fcca94839e0dc0c2f620d9976f799925ddd117a87b589e87018",
+          "nodes": 203,
+          "families": {
+            "H:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "1ea0c688fbdc4a7c8d78156abf89fa5bcaf1c160d7ab017477906ef3169fcbb7",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s47/objects/1ea0c688fbdc4a7c8d78156abf89fa5bcaf1c160d7ab017477906ef3169fcbb7.json.gz",
+          "source_sha256": "bd5a45b5b012cf182e22efd6c9a73d92db06a3b00c380e0f7425bc9a8dcc4485",
+          "nodes": 203,
+          "families": {
+            "CP:backward": 3,
+            "B:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "384cad716e4f20833eb55db23a1dfceeecd0e02ae6c0747a8e1b7b49dc1a8a62",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s29/objects/384cad716e4f20833eb55db23a1dfceeecd0e02ae6c0747a8e1b7b49dc1a8a62.json.gz",
+          "source_sha256": "c9697d05ded9ddbd3043ed145075b665709b018ed7bfdcd8819969acbd9de980",
+          "nodes": 179,
+          "families": {
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "S:forward": 1,
+            "H:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "37720ecfcf5b871539a01410b53a40fdb6d09424106d136629640226510cde0f",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s29/objects/37720ecfcf5b871539a01410b53a40fdb6d09424106d136629640226510cde0f.json.gz",
+          "source_sha256": "c2ca205fa3a51eaee04c190d150ffe6151e900eec859ca5f550ba43be04aba65",
+          "nodes": 198,
+          "families": {
+            "S:backward": 3,
+            "H:backward": 3,
+            "CP:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "93f3c7332a106c21f9c68da19ec2bdc9845ee17c08c69ca9e8454ad0e3a8ce14",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s29/objects/93f3c7332a106c21f9c68da19ec2bdc9845ee17c08c69ca9e8454ad0e3a8ce14.json.gz",
+          "source_sha256": "56194ff4acee9447b4a3ac29404fc029a514237a019a746036c687f1f2e71f3f",
+          "nodes": 197,
+          "families": {
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "4db649cc65aa548ed741867408686cea8d6be52860afc45699cf580ad55f45a7",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s29/objects/4db649cc65aa548ed741867408686cea8d6be52860afc45699cf580ad55f45a7.json.gz",
+          "source_sha256": "f40bd5ca80d270fb30c3658118f0f8b49dc3bf8875cf9e8390cc9b8e85606f94",
+          "nodes": 165,
+          "families": {
+            "EU:forward": 3,
+            "I:backward": 3,
+            "CP:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "9798d0265291dac5834b00efe99d7673bcd093327fa7c38bd999b74a2a3dabe9",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/9798d0265291dac5834b00efe99d7673bcd093327fa7c38bd999b74a2a3dabe9.json.gz",
+          "source_sha256": "86ff2988d6225e584934ebdd2c0a48e468d3f632f04bdcf03c334fa32922b74f",
+          "nodes": 141,
+          "families": {
+            "H:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "cdb27beb0a8f68832f6a45838a01a9d8d91e6dad27d8c20ee7ac05c625160a46",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/cdb27beb0a8f68832f6a45838a01a9d8d91e6dad27d8c20ee7ac05c625160a46.json.gz",
+          "source_sha256": "192c97cdde55e693901013d171c57a43aabab052614f62317544b705343aa81b",
+          "nodes": 176,
+          "families": {
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:forward": 1,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "77e1a2d64cb71d41a2e481d12af44922f453deeeaa975707c4673ee4cf7d8a44",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s11/objects/77e1a2d64cb71d41a2e481d12af44922f453deeeaa975707c4673ee4cf7d8a44.json.gz",
+          "source_sha256": "9ef2706962cf7c4f321cc7f91e65e42697ef5fac55e70783b3b4647bb846ba74",
+          "nodes": 186,
+          "families": {
+            "E:forward": 1,
+            "CP:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "e65a79ebfc5bec4072de2c1a790048ee4b6f8eaec98435f3f1e3ad69512e10b8",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/e65a79ebfc5bec4072de2c1a790048ee4b6f8eaec98435f3f1e3ad69512e10b8.json.gz",
+          "source_sha256": "aa911b97e0ab9b308a145a00340202efbf3b6fa579517f10238a784cbbf8c513",
+          "nodes": 180,
+          "families": {
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "240e8ff6d404e87fccd6158125fa5ac6d42b6930a8688242b6c4db08ee2bb2d3",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s47/objects/240e8ff6d404e87fccd6158125fa5ac6d42b6930a8688242b6c4db08ee2bb2d3.json.gz",
+          "source_sha256": "31ad501968118dd4adc7d7026a5fd329d35f4f5022b9603a011b4344bb985a51",
+          "nodes": 173,
+          "families": {
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "86063344419c9fc2cd1cf954883005e646c6ce5a19393074ea3920410eb2e85a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/86063344419c9fc2cd1cf954883005e646c6ce5a19393074ea3920410eb2e85a.json.gz",
+          "source_sha256": "a5110f34f2f9730ffb37ca8183aa03701a8e30aad603f761d29f2cdf3b5a28c4",
+          "nodes": 197,
+          "families": {
+            "I:backward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "79551ad7ba0f0b4a1f72bc6c238f1ec0662aa9dce4fea2b379bf1950fadd587c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_frozen_s29/objects/79551ad7ba0f0b4a1f72bc6c238f1ec0662aa9dce4fea2b379bf1950fadd587c.json.gz",
+          "source_sha256": "89582d4735b63575d861dc91de05ad4d2f8c2a98f4d50334c1e39880b50b9015",
+          "nodes": 165,
+          "families": {
+            "I:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "CP:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "3f59e3d582f1d77e2a06da8d5c5090295c388f48611e0dbe318368c29d0e738b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/3f59e3d582f1d77e2a06da8d5c5090295c388f48611e0dbe318368c29d0e738b.json.gz",
+          "source_sha256": "3798ceb2f92e81161ee4d21190ff792a7b3605b43051822721e2c3f60fe3aa45",
+          "nodes": 194,
+          "families": {
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "37184145700d8175b229df62c08f1061d5fbc22445c6760ed9aa4f443851f849",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s47/objects/37184145700d8175b229df62c08f1061d5fbc22445c6760ed9aa4f443851f849.json.gz",
+          "source_sha256": "1e7ebdc42811b555c73e85789718b516f0bd4a4bf3b1bc70dc0399d27687f7ce",
+          "nodes": 184,
+          "families": {
+            "H:backward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        },
+        {
+          "graph": "98f8a458aa8f7f4a4ef79dcb75a606f752215b51bee8b63358be55cd988e1c61",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-mod5_4/jpv_online_s11/objects/98f8a458aa8f7f4a4ef79dcb75a606f752215b51bee8b63358be55cd988e1c61.json.gz",
+          "source_sha256": "2ac644f20140f7ec941b5ab3b8db43b42d14dca6ea73c5e15bfd92c876d88906",
+          "nodes": 204,
+          "families": {
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "S:forward": 2,
+            "EU:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 0
+        }
+      ],
+      "stats": {
+        "calls": 64,
+        "matching_work_exhausted": 15,
+        "phase_inferred": 598,
+        "non_clifford_matches_skipped": 0
+      }
+    },
+    {
+      "campaign": "general-qft_4_numeric",
+      "unique_states": 7190,
+      "samples": 64,
+      "A_proposals": 0,
+      "families": {
+        "E:backward": 128,
+        "H:backward": 192,
+        "H:forward": 192,
+        "I:backward": 192,
+        "I:forward": 192,
+        "EU:forward": 192,
+        "S:backward": 192,
+        "E:forward": 2,
+        "S:forward": 17,
+        "CP:backward": 59,
+        "CP:forward": 2,
+        "EU:backward": 14,
+        "B:backward": 12,
+        "B:forward": 3
+      },
+      "rows": [
+        {
+          "graph": "1e1ad26ed94355fe0e5ecea70bceb0f77b911e53c228141015f51d4100bc2e10",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/1e1ad26ed94355fe0e5ecea70bceb0f77b911e53c228141015f51d4100bc2e10.json.gz",
+          "source_sha256": "d833f928ef39410c916dbda071d84a877c18f8a4251fb681c8f69357e8e3c9bf",
+          "nodes": 108,
+          "families": {
+            "E:backward": 2,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "37c0204c520ac05c0374ddc8a2bfdbebff6751981cc50e9240b7bba014793fe0",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/37c0204c520ac05c0374ddc8a2bfdbebff6751981cc50e9240b7bba014793fe0.json.gz",
+          "source_sha256": "a3feb80af65045960fda87ea4d0deda08aa8562518ec637edb6a67a42e6870a3",
+          "nodes": 156,
+          "families": {
+            "H:forward": 3,
+            "E:forward": 1,
+            "E:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "S:forward": 1,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "ba98b64941be1277a1a7901538dd4d7ad2a561e1ae865256fd1553d8386b60c3",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/ba98b64941be1277a1a7901538dd4d7ad2a561e1ae865256fd1553d8386b60c3.json.gz",
+          "source_sha256": "1c43d4275cf9ee6f5a38e74ab598acb7e174e1bb0f1df0df66fa6b70f5134230",
+          "nodes": 122,
+          "families": {
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "CP:backward": 2,
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "8881467d5310c3116dc48ba048b65abad33ddd07fe0361fc6bf83316a5312876",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/8881467d5310c3116dc48ba048b65abad33ddd07fe0361fc6bf83316a5312876.json.gz",
+          "source_sha256": "f250bca7712ef7fe3ce1a68fce5be4b9b743ed899f2fc08150e5f00d952bdb4d",
+          "nodes": 127,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "de2ef869f1baff92fc6b8d7bae42ad4c42736a77c6b7fb40f15a62fd8d8a0d60",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/de2ef869f1baff92fc6b8d7bae42ad4c42736a77c6b7fb40f15a62fd8d8a0d60.json.gz",
+          "source_sha256": "dc3d2094f576ef6246033353f30f974789f765a76bbe054a2c4448f5f2293651",
+          "nodes": 162,
+          "families": {
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "ec634b8377aa61f67930a08deea1e78cbd150bb24ef2759baadd0ae3ab4a1068",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/ec634b8377aa61f67930a08deea1e78cbd150bb24ef2759baadd0ae3ab4a1068.json.gz",
+          "source_sha256": "891e6ad2d60bee2bd5a8726ba107e5450fe7e029b046a45c79129b0d96e5e8ae",
+          "nodes": 127,
+          "families": {
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "a46450e7be85f0c49bdf1690334d4e9abc0572eb298ab532098e8714e4076714",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/a46450e7be85f0c49bdf1690334d4e9abc0572eb298ab532098e8714e4076714.json.gz",
+          "source_sha256": "5670d28ebc657eae26594809ce027aaca66e010b01eabde2d68900d3b4caff1e",
+          "nodes": 123,
+          "families": {
+            "I:forward": 3,
+            "E:backward": 2,
+            "CP:forward": 2,
+            "CP:backward": 2,
+            "S:forward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "3b63e7fb9b8f8dedf2dad07bc2533698cb2a441b63c7bb85c47ff38364e75cfb",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/3b63e7fb9b8f8dedf2dad07bc2533698cb2a441b63c7bb85c47ff38364e75cfb.json.gz",
+          "source_sha256": "864de5c5481fd58350100f5e6bdce291563e4465108d791629eff622c8dd9678",
+          "nodes": 163,
+          "families": {
+            "E:backward": 2,
+            "B:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "90a622c080f3f973c6065da04bf971ef64f8aec9da1b223bfae389828d31c2b9",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s47/objects/90a622c080f3f973c6065da04bf971ef64f8aec9da1b223bfae389828d31c2b9.json.gz",
+          "source_sha256": "7c3c687191cf37d225ce3acef705300515cbe37ebd63e2fd733fdfed7e24ca97",
+          "nodes": 151,
+          "families": {
+            "I:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "0f0f96cf29bde9c08cc711c26a8ac4b8e0593501bf177dd0c24fa3d07b5e3beb",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/0f0f96cf29bde9c08cc711c26a8ac4b8e0593501bf177dd0c24fa3d07b5e3beb.json.gz",
+          "source_sha256": "3fae10dfacb0d1abfc08df8ef05a941f51f55f235e200960bfc4232a1c5d9eb4",
+          "nodes": 146,
+          "families": {
+            "CP:backward": 2,
+            "H:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "98c90d563929260ed267b5d5684cb331874f9ee0be89d18c8c0c987003ddc953",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/98c90d563929260ed267b5d5684cb331874f9ee0be89d18c8c0c987003ddc953.json.gz",
+          "source_sha256": "ec63ecfa511ade38e564edda2686aae11b000b6d55906ad73d9fdc74cc5b87b4",
+          "nodes": 141,
+          "families": {
+            "E:backward": 2,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "a1953c6e1188012d9babf11722b6221d1b2082928228f21e79c0ceb5ca0c3b58",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/a1953c6e1188012d9babf11722b6221d1b2082928228f21e79c0ceb5ca0c3b58.json.gz",
+          "source_sha256": "cd976a0215c0fc946470d2ed7ab38c7cb9c34a5001a0b19c261241cce5fbcb9d",
+          "nodes": 169,
+          "families": {
+            "I:backward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "S:forward": 2,
+            "E:backward": 2,
+            "H:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "fe07d2b77ec1c1e7fdaa9ac2795912633cd33ee3582c882c0fb812fe88dfe6f7",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/fe07d2b77ec1c1e7fdaa9ac2795912633cd33ee3582c882c0fb812fe88dfe6f7.json.gz",
+          "source_sha256": "b69f335621b3c7a2b1d5f5a0e6860135c0791876eb0a20185906735c1362fa8d",
+          "nodes": 170,
+          "families": {
+            "H:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "b6c0a764f75bca321029935848ed09bde954b821f173a0a46d09bc671e33d85a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/b6c0a764f75bca321029935848ed09bde954b821f173a0a46d09bc671e33d85a.json.gz",
+          "source_sha256": "adb2b257481e785a580b4676ba1a49611617ba7fb22ec3d322243e50889469b3",
+          "nodes": 117,
+          "families": {
+            "E:backward": 2,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "CP:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "ed4f1317888f88d79a45c00c3c7237b571a42c11a80dce9cbc36bf8772dfdb83",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/ed4f1317888f88d79a45c00c3c7237b571a42c11a80dce9cbc36bf8772dfdb83.json.gz",
+          "source_sha256": "9490497611b5eea51860896b174b97c3de28188a62a5cc5508b33c1605ee0e36",
+          "nodes": 168,
+          "families": {
+            "I:backward": 3,
+            "E:backward": 2,
+            "S:forward": 1,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "618e0bb7290ba36846b739e177a85031b3160b09ba60198402e88b9b24066136",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/618e0bb7290ba36846b739e177a85031b3160b09ba60198402e88b9b24066136.json.gz",
+          "source_sha256": "076852e0b44eee13067c56ffaade0cee80de5b7a9916d906136a9b8fabd91f84",
+          "nodes": 105,
+          "families": {
+            "H:forward": 3,
+            "E:backward": 2,
+            "S:forward": 1,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "0f874ea831c2418f83d1b0d945c962cd945cc09dfe6d1eebb66e17b7c555f7f4",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/0f874ea831c2418f83d1b0d945c962cd945cc09dfe6d1eebb66e17b7c555f7f4.json.gz",
+          "source_sha256": "4aa6626e2fb77d145badcd0decbf8076d8342aca83e94258e77ea38e332268b9",
+          "nodes": 147,
+          "families": {
+            "I:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "EU:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "bd2f1aa67e74bb462168474c2bcb529f56cb5e63b880e4aa0f15c84e50e475c2",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/bd2f1aa67e74bb462168474c2bcb529f56cb5e63b880e4aa0f15c84e50e475c2.json.gz",
+          "source_sha256": "a5c5235f2112c49d50ac825ba0127b5739c9f83a3f9048e33303cb859c9aac9b",
+          "nodes": 138,
+          "families": {
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "282b8e6b44c2a85b419a605d87cc470531986d1db79ebcda9d6d3ddc0ec1f230",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/282b8e6b44c2a85b419a605d87cc470531986d1db79ebcda9d6d3ddc0ec1f230.json.gz",
+          "source_sha256": "1df855bf908a7820875246c64250f5ba712e4b5ee130f896429f090aa1c8dfdf",
+          "nodes": 117,
+          "families": {
+            "H:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "CP:backward": 1,
+            "S:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "03a48637515b27d4aeeb1628d57880046bf3ab1e3d4ea091310863b50bfeacb2",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s47/objects/03a48637515b27d4aeeb1628d57880046bf3ab1e3d4ea091310863b50bfeacb2.json.gz",
+          "source_sha256": "90f253eb3184c78907e86f14d441abf7cbbe08ec242ab9dac01232564f68ee26",
+          "nodes": 162,
+          "families": {
+            "CP:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "3920080f24418e74cc94558e3ac7203efa2df978ec73e7272559236d4aad3ba6",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/3920080f24418e74cc94558e3ac7203efa2df978ec73e7272559236d4aad3ba6.json.gz",
+          "source_sha256": "7408a40af3e66e05f4fd394630f1d49eb88540c1a9608f2d98a25bedba74d588",
+          "nodes": 143,
+          "families": {
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "7175da3888d1f32cbea6c61d87a3199b66bc29f15e9e92ee89faad372106713b",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s29/objects/7175da3888d1f32cbea6c61d87a3199b66bc29f15e9e92ee89faad372106713b.json.gz",
+          "source_sha256": "62caf4b82285367d33ab2a887823313f8e426a2a2677f89966971d6b7fd13fb1",
+          "nodes": 161,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "CP:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "09df33147fb7497da986cc3fd1c9ff4e8a32993c5bdb4bad840e1b0345a53bad",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/09df33147fb7497da986cc3fd1c9ff4e8a32993c5bdb4bad840e1b0345a53bad.json.gz",
+          "source_sha256": "781adc607f1d8c3dfd75e4bfb0102fd44c1cb58644e5d85fe3e9dcb0917c1879",
+          "nodes": 165,
+          "families": {
+            "I:backward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "CP:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "eb538cb6aac4cc222fb4595eb2beb68fa027bb7ca0aa27ba506c56ac9273cf57",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/eb538cb6aac4cc222fb4595eb2beb68fa027bb7ca0aa27ba506c56ac9273cf57.json.gz",
+          "source_sha256": "e3334cede6c71e9b81a816d8c3bcbd845586376db496e91d27e7f0a9cb26a8b5",
+          "nodes": 167,
+          "families": {
+            "H:backward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "CP:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "3bbe6cccd1bebcd0144246a2b66f0d745c18a010f4cdf1b68a9e1ee13ca86444",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/3bbe6cccd1bebcd0144246a2b66f0d745c18a010f4cdf1b68a9e1ee13ca86444.json.gz",
+          "source_sha256": "f0c1f711378f02e407389c1e67da16d1215cb49515a5d8c988163e88631c86d5",
+          "nodes": 158,
+          "families": {
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "120e21fadb5bfd094a42eec62bf2097c848fd367868dcc4503a027b2f072e3b1",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/120e21fadb5bfd094a42eec62bf2097c848fd367868dcc4503a027b2f072e3b1.json.gz",
+          "source_sha256": "9a1b5a4d84c0a889690bd4524c8f4beecdd52e5250f81c2269eb0b7fa89f16cd",
+          "nodes": 143,
+          "families": {
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "CP:backward": 1,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "0775d04da7cc7f8c436b391a4061d70a4bf3b6fc3088d2bc1a751d61c0247f81",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/0775d04da7cc7f8c436b391a4061d70a4bf3b6fc3088d2bc1a751d61c0247f81.json.gz",
+          "source_sha256": "c8bc17cabe0f3c1dd289ee9626b1c285cc4b5ef86cfa06a7b512efab8d28641f",
+          "nodes": 169,
+          "families": {
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "CP:backward": 2,
+            "S:forward": 2,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "B:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "864c6de87c82a9ec36739dde9bc301f3c9d08dab6fc83195c8e32f55da320090",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s47/objects/864c6de87c82a9ec36739dde9bc301f3c9d08dab6fc83195c8e32f55da320090.json.gz",
+          "source_sha256": "b3659dcee10407b4960ec0936081ea2b803d7599eba21d6ab163c8d0b04a98cc",
+          "nodes": 140,
+          "families": {
+            "E:backward": 2,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "90baf85a08c07f7ab7fc675007d4b97143248930a20b63c140788b3f88ba1a73",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/90baf85a08c07f7ab7fc675007d4b97143248930a20b63c140788b3f88ba1a73.json.gz",
+          "source_sha256": "9eb58342b62184a8af007ce5fd389b1b282cf3a8f3a1d63950b1308304021784",
+          "nodes": 160,
+          "families": {
+            "H:backward": 3,
+            "E:backward": 2,
+            "CP:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "5cab937cee789b4f3757f4b9d127b2ade7e2b68c1a0b743e27c4cd53bbb6fa2a",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/5cab937cee789b4f3757f4b9d127b2ade7e2b68c1a0b743e27c4cd53bbb6fa2a.json.gz",
+          "source_sha256": "9ed7daa6ec1dfdcb5101d3c11c5d6bd5e30635de5856d1a075b8e61d2d9ca5c8",
+          "nodes": 171,
+          "families": {
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "I:forward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "80a15bbf99c512c04e0f532c98baa4034ce185383792fef03010089c1c0ac8b2",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/80a15bbf99c512c04e0f532c98baa4034ce185383792fef03010089c1c0ac8b2.json.gz",
+          "source_sha256": "6e4fd0f7b11fa2295efd62ff50ff302d3c1f544e5180ceb8a79c4eda26acf79c",
+          "nodes": 137,
+          "families": {
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "0165d516c040f4464841346fd27d5cef27651b6b5b9485f3251cc7016dac63d2",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/0165d516c040f4464841346fd27d5cef27651b6b5b9485f3251cc7016dac63d2.json.gz",
+          "source_sha256": "62f2dcb5f5efe0d143bc9816c35f676268bda9cf0ad09917b779afdc127dd08f",
+          "nodes": 161,
+          "families": {
+            "E:backward": 2,
+            "EU:forward": 3,
+            "S:forward": 1,
+            "H:forward": 3,
+            "S:backward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "89f7bd75eaffda94a66b903d009c473619db1ea62aa5ff46ede13700667e1213",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s47/objects/89f7bd75eaffda94a66b903d009c473619db1ea62aa5ff46ede13700667e1213.json.gz",
+          "source_sha256": "04eabf34fe0a1ace2da25ba15e44820f5f545a11171cf3da9e4c8e8ac170b789",
+          "nodes": 166,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "2763ebba3b0e11ccec0a1782dcbcde98c30bec5b6781f435661d7687b602a9da",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/2763ebba3b0e11ccec0a1782dcbcde98c30bec5b6781f435661d7687b602a9da.json.gz",
+          "source_sha256": "940394cc067e4b086ca0d040f676e38c4a87aa8284f83ee7e622b2891eafb020",
+          "nodes": 141,
+          "families": {
+            "H:backward": 3,
+            "E:backward": 2,
+            "H:forward": 3,
+            "EU:forward": 3,
+            "CP:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "492d38396155855986c0ac277514dad208748ab649f2a9971d79fed38f3f5b6e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/492d38396155855986c0ac277514dad208748ab649f2a9971d79fed38f3f5b6e.json.gz",
+          "source_sha256": "4cc23143ef1148dfcc8638a5d0776aeabbe3a0395be539ea908fccaf6a9a152c",
+          "nodes": 152,
+          "families": {
+            "CP:backward": 2,
+            "E:backward": 2,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "39d0f35682e8c4ce84ba9527bd5d8468c3237bc0e5864000733c1ae3f3f778d1",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/39d0f35682e8c4ce84ba9527bd5d8468c3237bc0e5864000733c1ae3f3f778d1.json.gz",
+          "source_sha256": "93b047f8f295c4220fc7ba58c1bdb27fa006efcb637b44d4d15ac820c5c42b68",
+          "nodes": 149,
+          "families": {
+            "I:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "CP:backward": 2,
+            "S:backward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "cb7576201e5234c02f70184a7de6b2bddabb0f6c7eaa7410d5f4058bd9269ad9",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s29/objects/cb7576201e5234c02f70184a7de6b2bddabb0f6c7eaa7410d5f4058bd9269ad9.json.gz",
+          "source_sha256": "3a1f43b2d5be725942439707ea7a1ad4288ac6e730ace58d4f03c50c372e7fc9",
+          "nodes": 167,
+          "families": {
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "B:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "7fe8db7c56f1b860b296899ebfb5d6e3f7342202f9dfec1328e8a90561dd9349",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/7fe8db7c56f1b860b296899ebfb5d6e3f7342202f9dfec1328e8a90561dd9349.json.gz",
+          "source_sha256": "f83c06cbe860f9970ac883f4d82b66c09cd210e66d2a3cc6f8537bac41790fdc",
+          "nodes": 165,
+          "families": {
+            "EU:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "b24fe3c9ad8449ea044e037260a8c01eaa8c3c855ac66d0b9004a1b83f5e29bb",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/b24fe3c9ad8449ea044e037260a8c01eaa8c3c855ac66d0b9004a1b83f5e29bb.json.gz",
+          "source_sha256": "744b4ae2389fefcd8476327c1ac850d988b262e2d8ce14bfc1068d58432a0de8",
+          "nodes": 170,
+          "families": {
+            "H:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "EU:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "CP:backward": 1,
+            "H:forward": 3,
+            "S:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "6a309e97a08da06b140cff633276768be70bf8797a06e540a16d9d75fbdd04ab",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/6a309e97a08da06b140cff633276768be70bf8797a06e540a16d9d75fbdd04ab.json.gz",
+          "source_sha256": "c6b135f766d5bd727dc786ea2bffeb408f76f2cdcd5b2fd21f180e1a4853d7a1",
+          "nodes": 170,
+          "families": {
+            "EU:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "6a73f308880f68811c63c06bd2d672489bd6905a63f97605e8bbb7c49320dc9d",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/6a73f308880f68811c63c06bd2d672489bd6905a63f97605e8bbb7c49320dc9d.json.gz",
+          "source_sha256": "9b5149f46c5728cf63b4f6a4a61a6ebd4a3a018ee3e45ee7b759a8ac23445770",
+          "nodes": 124,
+          "families": {
+            "CP:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "c82fda5f2cd568519e931da866440b1463d4ff33c90e56103b28d1a912af5e0c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/c82fda5f2cd568519e931da866440b1463d4ff33c90e56103b28d1a912af5e0c.json.gz",
+          "source_sha256": "d7d09268cd44ed2a912c4e53973af87813e1a2e07602a264d0c76be795529ea9",
+          "nodes": 119,
+          "families": {
+            "I:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "aabff4385534c01861200fcd2ce12f47654915ee3f7dbbfd1480e1e1925b1fc5",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/aabff4385534c01861200fcd2ce12f47654915ee3f7dbbfd1480e1e1925b1fc5.json.gz",
+          "source_sha256": "d39c8d2d3a2489b7a82238163c6af93703fa7082c00bd275cd35b20c10b3e5fc",
+          "nodes": 131,
+          "families": {
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "3c15e69141646e28251ea8beb2224c043ab0fd6146e0648735fc9ada141de558",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/3c15e69141646e28251ea8beb2224c043ab0fd6146e0648735fc9ada141de558.json.gz",
+          "source_sha256": "ad731b7fae286f210f83fe683dc154d7d3a4f310ae94b4f65f67c48afece2239",
+          "nodes": 164,
+          "families": {
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "add397c7dfaff82bd6a43c49ecd77227de280d3626b1f61ce75fd8602b1dabf3",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/add397c7dfaff82bd6a43c49ecd77227de280d3626b1f61ce75fd8602b1dabf3.json.gz",
+          "source_sha256": "8ab60276787739f30fd5c200ba0f631f53ae36bc59b798354b059495035a554f",
+          "nodes": 147,
+          "families": {
+            "H:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "1cfc638eb64f1e2a7182aa7158b35184ab793271472688f99a1a8091d077dc18",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/1cfc638eb64f1e2a7182aa7158b35184ab793271472688f99a1a8091d077dc18.json.gz",
+          "source_sha256": "7d9d02c203e51c46ab6bb11d5a0e62270f456ffd336287ff109ef95d78771794",
+          "nodes": 165,
+          "families": {
+            "I:forward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "791d35e6d2c6c7ec6b420bd79914fb132e489615905df4bf0db10816dd3ba3c2",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/791d35e6d2c6c7ec6b420bd79914fb132e489615905df4bf0db10816dd3ba3c2.json.gz",
+          "source_sha256": "a97979c202bf670a81da76580fa853e5f822358f04114a1bfdbaacf2898d3874",
+          "nodes": 161,
+          "families": {
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "H:backward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "91f4199ea192bb250788862854f65b028814e9aa7b903b36c53477320d9a421d",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/91f4199ea192bb250788862854f65b028814e9aa7b903b36c53477320d9a421d.json.gz",
+          "source_sha256": "abd65e0f875723ef587409197008f64e4cc928d0fac7b8c572f2e2db94706cd9",
+          "nodes": 138,
+          "families": {
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:forward": 3,
+            "CP:backward": 1,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "0107aa691461d1703dae9fb9bee9db6cb6655b75133b5aa6bedde1b1736ca9ab",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/0107aa691461d1703dae9fb9bee9db6cb6655b75133b5aa6bedde1b1736ca9ab.json.gz",
+          "source_sha256": "648007363fcda49737d219c218712924b61b9ba9707e9f01b7f7441a6c0a53c8",
+          "nodes": 157,
+          "families": {
+            "EU:backward": 2,
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "a2b728411a3054668803ab36a310e9a9557e5fb151b829f09fb0449932c01fde",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/a2b728411a3054668803ab36a310e9a9557e5fb151b829f09fb0449932c01fde.json.gz",
+          "source_sha256": "0c7fc63f60abe82a53df1d66307d8ca352ec88249b231e4a0cbb811f7b0a7dfe",
+          "nodes": 164,
+          "families": {
+            "I:forward": 3,
+            "H:forward": 3,
+            "CP:backward": 1,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "I:backward": 3,
+            "E:backward": 2,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "53c004ddf06a9a2bdcdd406408168c95294751df34f15d95a60c8f082c8d476c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/53c004ddf06a9a2bdcdd406408168c95294751df34f15d95a60c8f082c8d476c.json.gz",
+          "source_sha256": "daf088c5487f094b1b79fba899f98410f0b3da737f344ddb600d5c406db22612",
+          "nodes": 123,
+          "families": {
+            "I:backward": 3,
+            "S:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "a0d6e212ec786b34d823c79ac319b0138a8cbbe4c92f8f3a511e3647707cc411",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s47/objects/a0d6e212ec786b34d823c79ac319b0138a8cbbe4c92f8f3a511e3647707cc411.json.gz",
+          "source_sha256": "c9d9845617dac23945dd17d76e4f0ae8907f75fe155b262f9d0d51c711a82ef9",
+          "nodes": 165,
+          "families": {
+            "EU:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "d426385969ef031752eecd2830c397a4f789ecfd86ee3569cc7ac4d3369763ed",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/d426385969ef031752eecd2830c397a4f789ecfd86ee3569cc7ac4d3369763ed.json.gz",
+          "source_sha256": "50ea0732d9be0b63adcc191eee13588d8bc6ae91fca5d79fe765c953b88a0046",
+          "nodes": 170,
+          "families": {
+            "E:backward": 2,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "c9c5e4e40f19a02a122d14ac16e35f8f395a5988532284f7635b19a782a65352",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/c9c5e4e40f19a02a122d14ac16e35f8f395a5988532284f7635b19a782a65352.json.gz",
+          "source_sha256": "7b4a3a5a034dcaa0e8f0a69e74e51f9cc0aa12bc9e7149ce66ebc908bcf8abc2",
+          "nodes": 169,
+          "families": {
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "B:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "CP:backward": 3,
+            "B:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "b6ec66bf44cc6a2206ae39d9be73bb9f5e97461e15be269b073c73a18c438036",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/b6ec66bf44cc6a2206ae39d9be73bb9f5e97461e15be269b073c73a18c438036.json.gz",
+          "source_sha256": "2c70bb4f5f3a9a4b8950cfc8025c50db573c0f322efb44d8ae7e7d927140e75a",
+          "nodes": 127,
+          "families": {
+            "I:forward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "I:backward": 3,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "387a0f53c838d2dab8e39d951552be80818b59b28ffaf2889ba3c7904f1d6dfd",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/387a0f53c838d2dab8e39d951552be80818b59b28ffaf2889ba3c7904f1d6dfd.json.gz",
+          "source_sha256": "b0195fdc7d3d78124f11ba7c57e5e881848a4858e7a44e3c2fc33f166f7a0a0a",
+          "nodes": 158,
+          "families": {
+            "H:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "I:backward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "aa6f6542ed4dc0d2194350f06e0c2c65a823ff59188a1b9f98ba21e15064ce22",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s29/objects/aa6f6542ed4dc0d2194350f06e0c2c65a823ff59188a1b9f98ba21e15064ce22.json.gz",
+          "source_sha256": "f9c0330f2665697a52db2499b33da42f9a13dc2ca336a9f3649dd3d11070bbae",
+          "nodes": 150,
+          "families": {
+            "I:backward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "CP:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "a2d20383fda9f566a6d13076b5bb42ad79fa27a249cb41f96595efc8347f38cf",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s29/objects/a2d20383fda9f566a6d13076b5bb42ad79fa27a249cb41f96595efc8347f38cf.json.gz",
+          "source_sha256": "874ff522bb73081982854fa01ed263180ba9213a0ee9c13a72ea8322bbf71c41",
+          "nodes": 172,
+          "families": {
+            "I:backward": 3,
+            "EU:forward": 3,
+            "H:backward": 3,
+            "E:backward": 2,
+            "S:forward": 1,
+            "H:forward": 3,
+            "I:forward": 3,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "79fc2c334d560f4ddff5729f328ddf2fbd0a912c7873714f1eaf95105316691e",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s29/objects/79fc2c334d560f4ddff5729f328ddf2fbd0a912c7873714f1eaf95105316691e.json.gz",
+          "source_sha256": "11800f63d602cea02e49999f6acbad4d2745839999fa8415d9cd597716136345",
+          "nodes": 161,
+          "families": {
+            "H:forward": 3,
+            "S:backward": 3,
+            "I:backward": 3,
+            "H:backward": 3,
+            "CP:backward": 3,
+            "I:forward": 3,
+            "EU:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "c5b5ea5f72c7e40bf9e6f5677a204efc4e81e5928c5ba93ae9c2ec918477018d",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s47/objects/c5b5ea5f72c7e40bf9e6f5677a204efc4e81e5928c5ba93ae9c2ec918477018d.json.gz",
+          "source_sha256": "f32d09c9414d12b3cd061f698662931e92b155a26e3e32f817f8bdae327bac03",
+          "nodes": 159,
+          "families": {
+            "EU:forward": 3,
+            "I:backward": 3,
+            "I:forward": 3,
+            "H:backward": 3,
+            "H:forward": 3,
+            "E:backward": 2,
+            "S:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "6fb0977e3af3fabe5af8ea90baafebbeb2c266eacc0c113ebc5f37ddda52403d",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s11/objects/6fb0977e3af3fabe5af8ea90baafebbeb2c266eacc0c113ebc5f37ddda52403d.json.gz",
+          "source_sha256": "e1eacf17c8fec995863f0cfbe003344a99c5b29d80c68dbe5aeef1020e31f71e",
+          "nodes": 118,
+          "families": {
+            "EU:forward": 3,
+            "H:backward": 3,
+            "I:backward": 3,
+            "S:backward": 3,
+            "I:forward": 3,
+            "H:forward": 3,
+            "E:backward": 2
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "d1f167a238e5cc885489af2e1797de76a14c3c16c00b1e89445e08ed19226a21",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s29/objects/d1f167a238e5cc885489af2e1797de76a14c3c16c00b1e89445e08ed19226a21.json.gz",
+          "source_sha256": "3364b0f42687a76ff186f63ca150f2ae62bd699044a29c7c2a9cbed3266b532d",
+          "nodes": 126,
+          "families": {
+            "CP:backward": 2,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "S:backward": 3,
+            "H:forward": 3,
+            "I:forward": 3,
+            "E:backward": 2,
+            "H:backward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "98d5e9a90a31b78bb3bb42356c9e9e3b34043d9958ff39b65c2b392ff508123c",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_online_s29/objects/98d5e9a90a31b78bb3bb42356c9e9e3b34043d9958ff39b65c2b392ff508123c.json.gz",
+          "source_sha256": "a4b4aa875d4de373e7783251f4977224852a69b73c5da37659b7a3fb073359dc",
+          "nodes": 132,
+          "families": {
+            "I:backward": 3,
+            "EU:forward": 3,
+            "EU:backward": 2,
+            "CP:backward": 2,
+            "E:backward": 2,
+            "I:forward": 3,
+            "H:backward": 3,
+            "S:backward": 3,
+            "H:forward": 3
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        },
+        {
+          "graph": "fec70905ec443833719b85018a1c8ee210bd4c400ddb761928c8d7adacb7b794",
+          "source": "runs/angle-launch-20261017/collected/runs/angle-study/general-qft_4_numeric/jpv_frozen_s11/objects/fec70905ec443833719b85018a1c8ee210bd4c400ddb761928c8d7adacb7b794.json.gz",
+          "source_sha256": "6ca631d8fdbea8fa2661878023f5c33e783aec94c36a8fd97bfad740ce1fc380",
+          "nodes": 167,
+          "families": {
+            "H:forward": 3,
+            "EU:backward": 3,
+            "E:backward": 2,
+            "S:backward": 3,
+            "H:backward": 3,
+            "S:forward": 2,
+            "I:forward": 3,
+            "I:backward": 3,
+            "EU:forward": 3,
+            "E:forward": 1
+          },
+          "symbolic_nodes": 0,
+          "non_quarter_nodes": 7
+        }
+      ],
+      "stats": {
+        "calls": 64,
+        "matching_work_exhausted": 22,
+        "phase_inferred": 604,
+        "non_clifford_matches_skipped": 0
+      }
+    }
+  ],
+  "samples": 256,
+  "A_proposals": 0
+}

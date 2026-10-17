@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "input": "qft_4_numeric.qasm",
+      "sha256": "80f383ddc82c4751b19cd5e3151f6eb9f56193570800e73f167b15f4f9cce525",
+      "expected": "16-point unitary positive-sign DFT, fixed Qiskit wire order, global unit phase allowed",
+      "operator_error": 2.06083980778777e-15
+    },
+    {
+      "input": "ising_4_numeric.qasm",
+      "sha256": "3c1adeeb6452e00d379104851df199a62aede1767ea5a933339a617ad1ee4a4e",
+      "expected": "Product of exp(-i beta sum X) exp(-i gamma sum ZZ), two layers, H tensor4 initial layer",
+      "operator_error": 6.335327934766281e-16
+    }
+  ]
+}

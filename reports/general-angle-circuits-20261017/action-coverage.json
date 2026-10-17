@@ -1,0 +1,196 @@
+[
+  {
+    "mode": "conditional",
+    "target": "barenco_tof_3",
+    "jpv_accepted": {
+      "E:backward": 174,
+      "I:backward": 304,
+      "EU:forward": 253,
+      "H:backward": 302,
+      "S:backward": 283,
+      "H:forward": 331,
+      "I:forward": 341,
+      "CP:backward": 132,
+      "EU:backward": 22,
+      "S:forward": 22,
+      "E:forward": 2,
+      "CP:forward": 2
+    },
+    "jpv_nonquarter_parameter_actions": {},
+    "quarantined_qasm_counted_per_trial": 10,
+    "rejections": {}
+  },
+  {
+    "mode": "conditional",
+    "target": "mod5_4",
+    "jpv_accepted": {
+      "S:backward": 212,
+      "EU:forward": 162,
+      "I:backward": 197,
+      "H:forward": 186,
+      "E:backward": 109,
+      "H:backward": 189,
+      "CP:backward": 75,
+      "I:forward": 214,
+      "B:backward": 19,
+      "EU:backward": 9,
+      "S:forward": 10,
+      "E:forward": 2,
+      "CP:forward": 1
+    },
+    "jpv_nonquarter_parameter_actions": {},
+    "quarantined_qasm_counted_per_trial": 1,
+    "rejections": {
+      "TimeoutError: candidate operation exceeded deadline": 1
+    }
+  },
+  {
+    "mode": "conditional",
+    "target": "qft_4_numeric",
+    "jpv_accepted": {
+      "H:forward": 371,
+      "EU:forward": 300,
+      "CP:backward": 52,
+      "I:forward": 402,
+      "S:backward": 397,
+      "H:backward": 376,
+      "I:backward": 329,
+      "E:backward": 201,
+      "E:forward": 7,
+      "S:forward": 26,
+      "EU:backward": 18,
+      "CP:forward": 3,
+      "B:backward": 5
+    },
+    "jpv_nonquarter_parameter_actions": {},
+    "quarantined_qasm_counted_per_trial": 0,
+    "rejections": {
+      "TimeoutError: candidate operation exceeded deadline": 2
+    }
+  },
+  {
+    "mode": "conditional",
+    "target": "ising_4_numeric",
+    "jpv_accepted": {
+      "I:backward": 411,
+      "H:backward": 452,
+      "S:backward": 421,
+      "E:backward": 219,
+      "H:forward": 452,
+      "CP:backward": 41,
+      "EU:forward": 289,
+      "I:forward": 429,
+      "S:forward": 37,
+      "EU:backward": 47,
+      "E:forward": 10,
+      "B:backward": 17,
+      "B:forward": 2,
+      "CP:forward": 1
+    },
+    "jpv_nonquarter_parameter_actions": {},
+    "quarantined_qasm_counted_per_trial": 2,
+    "rejections": {}
+  },
+  {
+    "mode": "general",
+    "target": "barenco_tof_3",
+    "jpv_accepted": {
+      "EU:forward": 246,
+      "S:backward": 310,
+      "I:backward": 290,
+      "H:backward": 347,
+      "I:forward": 336,
+      "E:backward": 166,
+      "H:forward": 306,
+      "EU:backward": 22,
+      "CP:backward": 112,
+      "S:forward": 17,
+      "E:forward": 8,
+      "CP:forward": 4,
+      "B:backward": 12,
+      "B:forward": 1
+    },
+    "jpv_nonquarter_parameter_actions": {},
+    "quarantined_qasm_counted_per_trial": 7,
+    "rejections": {
+      "TimeoutError: candidate operation exceeded deadline": 2
+    }
+  },
+  {
+    "mode": "general",
+    "target": "mod5_4",
+    "jpv_accepted": {
+      "H:forward": 217,
+      "EU:forward": 187,
+      "I:backward": 174,
+      "E:backward": 123,
+      "I:forward": 208,
+      "H:backward": 208,
+      "CP:backward": 72,
+      "S:backward": 172,
+      "B:backward": 17,
+      "EU:backward": 10,
+      "S:forward": 20,
+      "E:forward": 4,
+      "CP:forward": 3
+    },
+    "jpv_nonquarter_parameter_actions": {},
+    "quarantined_qasm_counted_per_trial": 0,
+    "rejections": {}
+  },
+  {
+    "mode": "general",
+    "target": "qft_4_numeric",
+    "jpv_accepted": {
+      "I:forward": 349,
+      "I:backward": 317,
+      "S:backward": 299,
+      "CP:backward": 91,
+      "H:forward": 334,
+      "EU:forward": 285,
+      "E:backward": 191,
+      "H:backward": 357,
+      "B:backward": 4,
+      "EU:backward": 18,
+      "S:forward": 14,
+      "E:forward": 3,
+      "CP:forward": 1
+    },
+    "jpv_nonquarter_parameter_actions": {
+      "H:forward": 59,
+      "H:backward": 50,
+      "S:backward": 41
+    },
+    "quarantined_qasm_counted_per_trial": 1,
+    "rejections": {
+      "TimeoutError: candidate operation exceeded deadline": 2
+    }
+  },
+  {
+    "mode": "general",
+    "target": "ising_4_numeric",
+    "jpv_accepted": {
+      "I:backward": 368,
+      "EU:forward": 289,
+      "E:backward": 206,
+      "H:backward": 395,
+      "H:forward": 394,
+      "I:forward": 435,
+      "S:backward": 380,
+      "EU:backward": 31,
+      "S:forward": 33,
+      "CP:backward": 56,
+      "CP:forward": 3,
+      "E:forward": 7,
+      "B:backward": 3
+    },
+    "jpv_nonquarter_parameter_actions": {
+      "H:backward": 140,
+      "S:backward": 121,
+      "H:forward": 142,
+      "S:forward": 8
+    },
+    "quarantined_qasm_counted_per_trial": 2,
+    "rejections": {}
+  }
+]
