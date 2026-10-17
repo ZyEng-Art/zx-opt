@@ -47,9 +47,15 @@ def prepare_pair(source, circuit, mode, training_seed, output, allow_dirty=False
             or (protocol["tracked_dirty"] and not allow_dirty)):
         raise ValueError("Training source provenance mismatch")
     report_sha, events_sha = sha(folder/"report.json"), sha(folder/"events.jsonl")
-    if not any(row["report_sha256"] == report_sha and row["events_sha256"] == events_sha
-               and row["status"] == "passed" for row in audit["records"]):
+    receipts = [row for row in audit["records"] if row["report_sha256"] == report_sha
+                and row["events_sha256"] == events_sha and row["status"] == "passed"]
+    if len(receipts) != 1:
         raise ValueError("The selected model's report/events lack a matching replay receipt")
+    receipt = receipts[0]
+    for key, name in (("protocol_sha256", "protocol.json"), ("initial_model_sha256", "initial.pt"),
+                      ("final_model_sha256", "final.pt")):
+        if receipt.get(key) and sha(folder/name) != receipt[key]:
+            raise ValueError("Selected model/protocol changed after its replay audit: "+name)
     target = ROOT/"inputs/quarl-nam-raw"/(circuit+".qasm")
     if sha(target) != protocol["input_sha256"]:
         raise ValueError("Probe target differs from the training input")
@@ -111,7 +117,7 @@ def command_for(spec, folder, seconds, max_steps=None):
                 "verification"):
         command += ["--"+key.replace("_", "-"), str(config[key])]
     command += ["--archive-qasm-cap", str(config.get("archive_qasm_cap", 0))]
-    for key in ("general_zx", "jpv", "allow_arbitrary_angles", "anchor_resource_mask"):
+    for key in ("general_zx", "jpv", "allow_arbitrary_angles", "anchor_resource_mask", "anchor_noop_stop"):
         if config.get(key):
             command += ["--"+key.replace("_", "-")]
     if not config["feasibility_mask"]:

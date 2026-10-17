@@ -175,3 +175,32 @@ and parameter comparisons are required before calling this computation-only.
   A103-test suite and a384-step online development run checked782035native
   scores and every match update exactly; fixed-step full trace/model and Linux
   builds are required before any throughput or training-quality claim.
+
+2026-10-18 trajectory credit experiments
+  --anchor-noop-stop is opt-in and applies only to anchor selection. An empty
+  local menu still produces the recorded unchanged-state, zero-reward noop,
+  with its joint anchor/action log probability and no archive admission or
+  accepted-rewrite increment. With this flag it is terminal; the next action
+  follows the existing archive/root restart policy. This adapts the nop_stop
+  concept in Quarl's actor to the existing empty-anchor noop. The default
+  continues within the current trajectory. It adds no gate reward or penalty.
+
+  The rollout128 arm collects128steps before updating rather than32. GAE,
+  four PPO epochs and the32-sample gradient minibatch stay unchanged. It is
+  a collection/credit-window experiment, not a128-graph inference batch.
+  Four conditions (neither change, stop, rollout128, both), all at learning
+  rate1e-4 with resource masking and the same native CPU scoring backend,
+  isolate the two effects. Frozen32/128 controls have identical search
+  policies and RNG paths and are explicitly correlated. Each target circuit
+  is trained independently; this experiment uses only barenco_tof_3.
+
+  --save-improvement-models saves an immutable policy/Adam snapshot at each
+  strict total-gate improvement, before updating on that transition. CX ties
+  do not create such snapshots. The original input, policy support, step,
+  update count and source revision remain in the capsule; best-history.jsonl
+  records its path and SHA256. Saving and hashing pay search wall time. This
+  retains the policy that generated an improvement even if later PPO updates
+  drift. It transfers no circuit or restart state. Uniform policies have no
+  model to save. The option defaults off; normal runs retain initial/final
+  checkpoints as before. Replay audits bind each snapshot to the actual best
+  improvement event, validate finite/compatible weights and check byte hashes.

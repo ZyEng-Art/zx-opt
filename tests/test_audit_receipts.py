@@ -33,3 +33,22 @@ class AuditReceiptTest(unittest.TestCase):
             spec["seed"] = 29
             with self.assertRaises(ValueError):
                 require_audit_receipt(path, spec, verification)
+
+    def test_changed_policy_snapshot_invalidates_the_receipt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp); spec, verification = self.fixture(path)
+            model = path/"improvement-models/g37-t100.pt"
+            model.parent.mkdir(); model.write_bytes(b"original audited model bytes")
+            verification["records"][0]["improvement_model_receipts"] = {
+                "improvement-models/g37-t100.pt": hashlib.sha256(model.read_bytes()).hexdigest()}
+            require_audit_receipt(path, spec, verification)
+            model.write_bytes(b"different model")
+            with self.assertRaises(ValueError):
+                require_audit_receipt(path, spec, verification)
+
+    def test_policy_snapshot_cannot_escape_the_trial_directory(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp); spec, verification = self.fixture(path)
+            verification["records"][0]["improvement_model_receipts"] = {"../model.pt": "sha"}
+            with self.assertRaises(ValueError):
+                require_audit_receipt(path, spec, verification)

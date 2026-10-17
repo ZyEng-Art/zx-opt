@@ -66,13 +66,15 @@ def run(args):
             or args.no_improvement_seconds < 0 or args.checkpoint_seconds < 0 or args.total_candidate_cap < 0
             or args.horizon < 1 or args.max_unscored < 1 or args.max_growth < 0
             or args.candidate_cap < 1 or args.matching_work < 1 or args.rewrite_timeout <= 0
-            or args.anchor_candidate_cap < 1 or args.archive_qasm_cap < 0
+            or args.anchor_candidate_cap < 1 or args.archive_qasm_cap < 0 or args.rollout < 1
             or args.learning_rate <= 0 or not np.isfinite(args.learning_rate)):
         raise ValueError("Invalid search bounds")
     if args.selection != "anchor" and args.anchor_prior != "uniform":
         raise ValueError("Anchor prior requires --selection anchor")
     if args.selection != "anchor" and args.anchor_resource_mask:
         raise ValueError("Anchor resource mask requires --selection anchor")
+    if args.selection != "anchor" and args.anchor_noop_stop:
+        raise ValueError("Anchor noop termination requires --selection anchor")
     if args.verify_native_flow and not args.native_flow_module:
         raise ValueError("Native flow verification requires a native module")
     native_flow = None
@@ -81,6 +83,8 @@ def run(args):
         native_flow = enable_native_flow(args.native_flow_module)
         native_flow["verify_all_batches"] = args.verify_native_flow
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
+    if args.save_improvement_models:
+        (out/"improvement-models").mkdir()
     (out/"objects").mkdir(); (out/"candidates").mkdir()
     torch.set_num_threads(1); torch.set_num_interop_threads(1)
     random.seed(args.seed); np.random.seed(args.seed); torch.manual_seed(args.seed)
@@ -212,7 +216,8 @@ def run(args):
     protocol["selection"] = (dict(mode="anchor", order="graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
                                   anchors="raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
                                   policy="learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
-                                  empty="explicit zero-reward unchanged-state transition; no hidden resampling",
+                                  empty=("explicit terminal zero-reward unchanged-state transition; next step restarts from archive; no hidden resampling"
+                                         if args.anchor_noop_stop else "explicit zero-reward unchanged-state transition; no hidden resampling"),
                                   entropy="anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
                                   prior=args.anchor_prior,
                                   resource_mask=args.anchor_resource_mask,
@@ -256,7 +261,7 @@ def run(args):
                     "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout",
                     "selection", "anchor_candidate_cap"]
         semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask", "archive_qasm_cap",
-                     "native_flow_module", "verify_native_flow"]
+                     "native_flow_module", "verify_native_flow", "anchor_noop_stop"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -487,6 +492,9 @@ def run(args):
                 row["status"] = "excluded_after_deadline"; events.write(json.dumps(row)+"\n"); break
             done = step >= args.horizon; reward = 0.
             if rejected is None and chosen.mode == "noop":
+                if args.anchor_noop_stop:
+                    done = True
+                    anchor_stats["noop_terminations"] += 1
                 row.update(status="anchor_noop", admitted=False, unscored_depth=state.unscored_depth,
                            graph_key=state.key, cost=state.cost, view_key=view.key,
                            raw_operator_error=view.error, vertices=len(child.nodes), edges=len(child.edges))
@@ -514,9 +522,23 @@ def run(args):
                         best = dict(cost=result["cost"], sha256=result["sha256"], seconds=elapsed, graph=state.key)
                         (out/"best.qasm.tmp").write_text(result["qasm"]); (out/"best.qasm.tmp").replace(out/"best.qasm")
                         atomic_json(out/"best.json", best)
-                        best_history.write(json.dumps(dict(**best, transition=transition, trajectory=trajectory,
-                                             strict_gate_improvement=gate_improvement,
-                                             patience=patience.record()))+"\n")
+                        history = dict(**best, transition=transition, trajectory=trajectory,
+                                       strict_gate_improvement=gate_improvement, patience=patience.record())
+                        if gate_improvement and args.save_improvement_models and net is not None:
+                            t = time.perf_counter()
+                            snapshot = out/"improvement-models"/("g"+str(result["cost"]["gates"])+"-t"+str(transition)+".pt")
+                            with snapshot.open("xb") as stream:
+                                torch.save(dict(state_dict=net.state_dict(), steps=transition, updates=updates,
+                                    optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
+                                    input_sha256=protocol["input_sha256"], source_commit=revision,
+                                    selection=args.selection, anchor_prior=args.anchor_prior,
+                                    anchor_resource_mask=args.anchor_resource_mask,
+                                    anchor_noop_stop=args.anchor_noop_stop,
+                                    scope="Policy that generated this strict gate improvement, before this transition's PPO update; no active circuit/archive"), stream)
+                            history["policy_snapshot"] = dict(path=str(snapshot.relative_to(out)),
+                                sha256=hashlib.sha256(snapshot.read_bytes()).hexdigest(), steps=transition, updates=updates)
+                            timers["improvement_model"] += time.perf_counter()-t
+                        best_history.write(json.dumps(history)+"\n")
                 admitted = (pool.add(state, start.last_counts, None if result is None else result["sha256"])
                             if state.cost is not None or state.unscored_depth < args.max_unscored else False)
                 row.update(status="accepted" if result is not None else "accepted_unscored", admitted=admitted,
@@ -577,6 +599,7 @@ def run(args):
                         selection=args.selection,
                         anchor_prior=args.anchor_prior, learning_rate=args.learning_rate,
                         anchor_resource_mask=args.anchor_resource_mask,
+                        anchor_noop_stop=args.anchor_noop_stop,
                         scope="model/Adam only, not a complete search checkpoint"), out/"final.pt")
     checkpoint_now()
     if shared is not None:
@@ -648,6 +671,10 @@ def parser():
     p.add_argument("--learning-rate", type=float, default=.0003)
     p.add_argument("--anchor-resource-mask", action="store_true",
                    help="Before sampling, remove only wire/scalar anchors whose insertion is provably over budget")
+    p.add_argument("--anchor-noop-stop", action="store_true",
+                   help="Opt-in terminal empty-anchor noop; record zero reward then restart next step")
+    p.add_argument("--save-improvement-models", action="store_true",
+                   help="Save policy/Adam on each strict total-gate improvement, before the next PPO update")
     p.add_argument("--native-flow-module", type=Path,
                    help="Opt-in built CPU CFlow scoring module with matching build.json receipt")
     p.add_argument("--verify-native-flow", action="store_true",

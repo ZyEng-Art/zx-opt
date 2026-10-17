@@ -48,6 +48,7 @@ def main():
     p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
     p.add_argument("--audit-workers", type=int, default=2)
     p.add_argument("--build-native-flow", action="store_true")
+    p.add_argument("--save-improvement-models", action="store_true")
     a = p.parse_args(); base = a.base.resolve()
     ownership = json.loads((base/"ownership.json").read_text())
     if ownership["container_name"] != a.container:
@@ -107,6 +108,8 @@ def main():
         else:
             if native_library is not None:
                 common += ["--native-flow-module", native_library]
+            if a.save_improvement_models:
+                common += ["--save-improvement-models"]
             run(["tools/anchor_campaign.py", "runs/comparison", *common,
                  "--policies", "frozen", "online"], "comparison.log")
         finished = json.loads((base/"source/runs/comparison/finished.json").read_text())

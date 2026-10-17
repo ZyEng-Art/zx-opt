@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "steps": 512,
+  "model_tensors_bitwise_equal": true,
+  "accepted": 493,
+  "updates": 0,
+  "before_seconds": 41.504412916,
+  "after_seconds": 44.709573375,
+  "speedup": 0.9283115400785236,
+  "best": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "scope": "Frozen-policy rollout32/128 controls have identical512step traces and model tensors; treat their search outcomes as correlated, not independent controls."
+}

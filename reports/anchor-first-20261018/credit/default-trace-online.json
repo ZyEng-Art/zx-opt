@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "steps": 512,
+  "model_tensors_bitwise_equal": true,
+  "accepted": 431,
+  "updates": 16,
+  "before_seconds": 41.290410375,
+  "after_seconds": 60.08948270799999,
+  "speedup": 0.68714870746429,
+  "best": {
+    "gates": 38,
+    "cx": 14,
+    "depth": 32
+  },
+  "scope": "512step unchanged-default/noop-disabled plus improvement-model logging versus99e96dc reference. Actions/rewards/buffer/final model tensors bitwise equal. Timing not a speed comparison."
+}

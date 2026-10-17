@@ -18,6 +18,18 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def immediate_terminal(event, config, root_gates):
+    """The recorded step's terminal flag, before any later dead-end discovery."""
+    done = event["trajectory_step"] >= config["horizon"]
+    if event["status"] == "anchor_noop":
+        done = done or config.get("anchor_noop_stop", False)
+    elif event["status"] == "accepted_unscored":
+        done = done or event["unscored_depth"] >= config["max_unscored"]
+    elif event["status"] == "accepted":
+        done = done or event["cost"]["gates"] > 1.5*root_gates
+    return done
+
+
 def audit_one(spec):
     campaign, row, allow_dirty = spec
     folder = Path(campaign)/row["folder"]
@@ -68,9 +80,13 @@ def audit_one(spec):
     statuses = Counter(); families = Counter(); repairs = Counter(); score_by_view = {}
     reward_sum = 0.; recoveries = 0; qasm_error = 0.; max_graph_error = 0.; auxiliary = 0
     events = [json.loads(line) for line in (folder/"events.jsonl").read_text().splitlines()]
+    history_entries = [json.loads(line) for line in (folder/"best-history.jsonl").read_text().splitlines()]
+    pending_history = {entry["transition"]: entry for entry in history_entries}
+    assert len(pending_history) == len(history_entries)
     restart_path = folder/"restarts.jsonl"
     restart_rows = ([json.loads(l) for l in restart_path.read_text().splitlines()] if restart_path.exists() else [])
     restart_cursor = 0
+    prior_event = None
     def restart(record):
         nonlocal best
         key, source = record["graph_key"], record["source"]
@@ -107,7 +123,10 @@ def audit_one(spec):
     for i, event in enumerate(events, 1):
         assert event["transition"] == i
         statuses[event["status"]] += 1
+        if prior_event is not None and prior_event.get("terminal"):
+            assert event["trajectory"] > prior_event["trajectory"]
         if event["trajectory"] != trajectory:
+            assert event["trajectory_step"] == 1
             trajectory = event["trajectory"]
             if restart_rows:
                 while restart_cursor < len(restart_rows) and restart_rows[restart_cursor]["trajectory"] <= trajectory:
@@ -135,6 +154,8 @@ def audit_one(spec):
         if event["status"] == "excluded_after_deadline":
             assert event["seconds"] > event.get("deadline_seconds", config["seconds"])
             continue
+        assert event["terminal"] == immediate_terminal(event, config, root.cost["gates"])
+        prior_event = event
         assert 0 <= event["seconds"] <= event.get("deadline_seconds", config["seconds"])
         if event["status"] == "rejected":
             assert event["reward"] == 0
@@ -178,7 +199,15 @@ def audit_one(spec):
             if state.unscored_depth:
                 recoveries += 1
             repairs[event.get("completion_branch")] += 1
-            if score(counts) < score(best):
+            improves = score(counts) < score(best)
+            history = pending_history.pop(event["transition"], None)
+            assert bool(history) == improves
+            if history:
+                assert history["cost"] == counts and history["sha256"] == event["sha256"]
+                assert history["graph"] == event["graph_key"] and history["trajectory"] == event["trajectory"]
+                assert history["seconds"] == event["seconds"]
+                assert history["strict_gate_improvement"] == (counts["gates"] < best["gates"])
+            if improves:
                 best = counts
         else:
             assert event["cost"] is None and event["score_failure"]
@@ -207,9 +236,12 @@ def audit_one(spec):
     assert statuses["accepted_unscored"] == report["unscored"]
     assert recoveries == report["recovered"]
     assert best == report["best"]["cost"]
+    assert not pending_history
     while restart_cursor < len(restart_rows):
         restart(restart_rows[restart_cursor]); restart_cursor += 1
     assert archive.summary() == report["buffer"]
+    if config.get("anchor_noop_stop"):
+        assert report["anchor_stats"].get("noop_terminations", 0) == statuses["anchor_noop"]
     best_circuit = qasm2.loads((folder/"best.qasm").read_text())
     assert check_qasm(reference, (folder/"best.qasm").read_text()) < 2e-8
     if (folder/"initial.pt").exists():
@@ -240,6 +272,36 @@ def audit_one(spec):
         model = dict(parameter_l2_delta=delta, actor_l2_delta=actor_delta, finite=True)
     else:
         model = None
+    snapshots = 0
+    snapshot_receipts = {}
+    for entry in history_entries:
+        required = bool(config.get("save_improvement_models") and model is not None
+                        and entry["strict_gate_improvement"])
+        receipt = entry.get("policy_snapshot")
+        assert bool(receipt) == required
+        if not required:
+            continue
+        expected = "improvement-models/g"+str(entry["cost"]["gates"])+"-t"+str(entry["transition"])+".pt"
+        assert receipt["path"] == expected and receipt["steps"] == entry["transition"]
+        path = folder/expected
+        assert sha(path) == receipt["sha256"]
+        snapshot_receipts[expected] = receipt["sha256"]
+        saved = torch.load(path, map_location="cpu", weights_only=True)
+        assert saved["steps"] == entry["transition"] and saved["updates"] == receipt["updates"]
+        assert 0 <= saved["updates"] <= report["updates"]
+        assert saved["input_sha256"] == protocol["input_sha256"]
+        assert saved["source_commit"] == protocol["git_commit"]
+        assert saved["selection"] == config["selection"]
+        assert saved["anchor_noop_stop"] == config.get("anchor_noop_stop", False)
+        assert saved["anchor_prior"] == config["anchor_prior"]
+        assert saved["anchor_resource_mask"] == config["anchor_resource_mask"]
+        assert set(saved["state_dict"]) == set(initial)
+        assert all(saved["state_dict"][k].shape == value.shape and bool(torch.isfinite(saved["state_dict"][k]).all())
+                   for k, value in initial.items())
+        if config["policy"] == "frozen":
+            assert all(torch.equal(value, saved["state_dict"][k]) for k, value in initial.items())
+        snapshots += 1
+    assert snapshots == len(list((folder/"improvement-models").glob("*.pt")))
     return dict(arm=row["arm"], seed=row["seed"], status="passed", transitions=len(events),
                 accepted_rewrites=report["accepted"], replayed_auxiliary=auxiliary,
                 legal_unscored=report["unscored"], recovered=recoveries,
@@ -248,7 +310,12 @@ def audit_one(spec):
                 max_graph_operator_error=max_graph_error, max_qasm_operator_error=qasm_error,
                 accepted_families=dict(families), completion_branches=dict(repairs),
                 verification_method=protocol.get("verification_method", "full operator"),
-                model=model, events_sha256=sha(folder/"events.jsonl"), report_sha256=sha(folder/"report.json"))
+                model=model, improvement_model_snapshots=snapshots,
+                protocol_sha256=sha(folder/"protocol.json"), best_history_sha256=sha(folder/"best-history.jsonl"),
+                initial_model_sha256=sha(folder/"initial.pt") if (folder/"initial.pt").exists() else None,
+                final_model_sha256=sha(folder/"final.pt") if (folder/"final.pt").exists() else None,
+                improvement_model_receipts=snapshot_receipts,
+                events_sha256=sha(folder/"events.jsonl"), report_sha256=sha(folder/"report.json"))
 
 
 def main():

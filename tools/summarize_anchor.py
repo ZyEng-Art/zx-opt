@@ -19,7 +19,18 @@ def require_audit_receipt(folder, spec, verification):
                and r["arm"] == spec["arm"] and r["seed"] == spec["seed"] and r["status"] == "passed"]
     if len(matches) != 1:
         raise ValueError("Report/events do not have one matching completed audit receipt: "+str(folder))
-    return matches[0]
+    receipt = matches[0]
+    for field, name in (("protocol_sha256", "protocol.json"), ("best_history_sha256", "best-history.jsonl"),
+                        ("initial_model_sha256", "initial.pt"), ("final_model_sha256", "final.pt")):
+        if receipt.get(field) and hashlib.sha256((folder/name).read_bytes()).hexdigest() != receipt[field]:
+            raise ValueError("Changed audited artifact: "+str(folder/name))
+    for name, expected in receipt.get("improvement_model_receipts", {}).items():
+        relative = Path(name)
+        if relative.is_absolute() or ".." in relative.parts:
+            raise ValueError("Improvement snapshot must be local to its trial")
+        if hashlib.sha256((folder/relative).read_bytes()).hexdigest() != expected:
+            raise ValueError("Changed audited policy snapshot: "+str(folder/relative))
+    return receipt
 
 
 def summarize(root, output, baseline_mode=None):

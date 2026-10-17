@@ -25,13 +25,16 @@ def main():
                                                  "anchor8_nodes_resource", "anchor8_resource_lr1e3",
                                                  "anchor8_nodes_resource_lr1e3", "anchor8_resource_lr1e4",
                                                  "anchor8_qasm2", "anchor8_resource_qasm2",
-                                                 "anchor8_resource_native", "anchor8_nodes_resource_native"],
+                                                 "anchor8_resource_native", "anchor8_nodes_resource_native",
+                                                 "anchor8_resource_lr1e4_native", "anchor8_resource_lr1e4_stop_native",
+                                                 "anchor8_resource_lr1e4_r128_native", "anchor8_resource_lr1e4_stop_r128_native"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--audit-workers", type=int, default=2)
     p.add_argument("--max-steps", type=int)
     p.add_argument("--native-flow-module", type=Path)
+    p.add_argument("--save-improvement-models", action="store_true")
     p.add_argument("--allow-dirty", action="store_true")
     a = p.parse_args()
     if any(mode.endswith("_native") for mode in a.modes) and a.native_flow_module is None:
@@ -66,9 +69,10 @@ def main():
                    "--selection", "global" if spec["mode"] == "global32" else "anchor",
                    "--anchor-candidate-cap", "32" if spec["mode"] == "anchor32" else "8",
                    "--anchor-prior", "nodes" if "_nodes" in spec["mode"] else "uniform",
-                   "--learning-rate", ".0001" if spec["mode"].endswith("lr1e4") else
-                                      ".001" if spec["mode"].endswith("lr1e3") else ".0003",
-                   "--seconds", str(a.seconds), "--rollout", "32", "--total-candidate-cap", "32",
+                   "--learning-rate", ".0001" if "_lr1e4" in spec["mode"] else
+                                      ".001" if "_lr1e3" in spec["mode"] else ".0003",
+                   "--seconds", str(a.seconds), "--rollout", "128" if "_r128" in spec["mode"] else "32",
+                   "--total-candidate-cap", "32",
                    "--verification", "adaptive", "--extraction-timeout", "20", "--rewrite-timeout", "30",
                    "--checkpoint-seconds", "300"]
         if a.max_steps is not None:
@@ -79,6 +83,10 @@ def main():
             command += ["--archive-qasm-cap", "2"]
         if spec["mode"].endswith("_native"):
             command += ["--native-flow-module", str(a.native_flow_module.resolve())]
+        if "_stop" in spec["mode"]:
+            command += ["--anchor-noop-stop"]
+        if a.save_improvement_models:
+            command += ["--save-improvement-models"]
         try:
             with (out/(spec["folder"].replace("/", "__")+".log")).open("x") as log:
                 subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)

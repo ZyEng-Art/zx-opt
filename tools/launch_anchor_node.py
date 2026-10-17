@@ -24,6 +24,7 @@ def main():
     p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
     p.add_argument("--audit-workers", type=int, default=2)
     p.add_argument("--build-native-flow", action="store_true")
+    p.add_argument("--save-improvement-models", action="store_true")
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3"])
     p.add_argument("--seeds", nargs="+", default=["11", "29", "47", "71", "101"])
     p.add_argument("--modes", nargs="+", default=["global32", "anchor8", "anchor8_nodes",
@@ -47,6 +48,7 @@ def main():
                 experiment=a.experiment, probe_source_tag=a.probe_source_tag,
                 training_seeds=a.training_seeds, audit_workers=a.audit_workers,
                 build_native_flow=a.build_native_flow,
+                save_improvement_models=a.save_improvement_models,
                 base="/tmp/dengzengyong_rlzx_"+a.tag+"_node"+str(a.node)+"_20261018",
                 bundle_sha256=hashlib.sha256(bundle.read_bytes()).hexdigest())
     host = "dengzengyong@wxtky02-p800-backup-8nic-vd-node"+str(a.node)+".wxtky02"
@@ -105,6 +107,8 @@ if probe_source is not None:
     command+=['--probe-source','/workspace/probe-source','--training-seeds',*spec['training_seeds']]
 if spec['build_native_flow']:
     command+=['--build-native-flow']
+if spec['save_improvement_models']:
+    command+=['--save-improvement-models']
 with (base/'controller.log').open('x') as stream:
     proc=subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
 meta['controller_pid']=proc.pid
