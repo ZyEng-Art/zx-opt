@@ -1,0 +1,85 @@
+{
+  "node": 23,
+  "time": "2026-10-18T00:58:25.900012+08:00",
+  "anchor": {
+    "phase": "comparison",
+    "commit": "64e61def1b92c53ca296677e1cc1f250e347b8d3",
+    "container_id": "6b620a2c8319521c569d45e1e605c699beccfbbca4a16dfeb35df57f5ac1ad29",
+    "time": "2026-10-18T00:48:53.470954+08:00",
+    "circuits": [
+      "barenco_tof_3",
+      "mod5_4",
+      "tof_5"
+    ],
+    "seeds": [
+      "11",
+      "29",
+      "47"
+    ],
+    "seconds": 300.0,
+    "workers": 6,
+    "completed": 6,
+    "expected": 54,
+    "finished_trials": [
+      {
+        "folder": "barenco_tof_3/anchor8_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        }
+      },
+      {
+        "folder": "barenco_tof_3/anchor32_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 34
+        }
+      },
+      {
+        "folder": "barenco_tof_3/global32_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 39,
+          "cx": 17,
+          "depth": 37
+        }
+      },
+      {
+        "folder": "barenco_tof_3/anchor32_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 37
+        }
+      },
+      {
+        "folder": "barenco_tof_3/anchor8_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 33
+        }
+      },
+      {
+        "folder": "barenco_tof_3/global32_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 39,
+          "cx": 17,
+          "depth": 37
+        }
+      }
+    ]
+  },
+  "old_nam26": {
+    "jobs": 13,
+    "finished": 0,
+    "failed": 0
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "node": 22,
+  "time": "2026-10-18T00:58:25.780372+08:00",
+  "anchor": {
+    "phase": "comparison",
+    "commit": "e3a47f2fcba0fb80e322c51582ba6f53675e6409",
+    "container_id": "8c9b182d4efec105d5f228fe4043e7be85b288eb303489e114a2940631c5e74e",
+    "time": "2026-10-18T00:40:46.170662+08:00",
+    "circuits": [
+      "barenco_tof_3",
+      "mod5_4",
+      "tof_5"
+    ],
+    "seeds": [
+      "11",
+      "29",
+      "47"
+    ],
+    "seconds": 300.0,
+    "workers": 6,
+    "completed": 18,
+    "expected": 54,
+    "finished_trials": [
+      {
+        "folder": "barenco_tof_3/anchor8_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 38,
+          "cx": 14,
+          "depth": 31
+        }
+      },
+      {
+        "folder": "barenco_tof_3/anchor32_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 39,
+          "cx": 17,
+          "depth": 37
+        }
+      },
+      {
+        "folder": "barenco_tof_3/global32_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 39,
+          "cx": 17,
+          "depth": 37
+        }
+      },
+      {
+        "folder": "barenco_tof_3/global32_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 39,
+          "cx": 17,
+          "depth": 37
+        }
+      },
+      {
+        "folder": "barenco_tof_3/anchor8_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 33
+        }
+      },
+      {
+        "folder": "barenco_tof_3/anchor32_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 37
+        }
+      },
+      {
+        "folder": "mod5_4/global32_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 23,
+          "cx": 13,
+          "depth": 12
+        }
+      },
+      {
+        "folder": "mod5_4/anchor8_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 24,
+          "cx": 14,
+          "depth": 17
+        }
+      },
+      {
+        "folder": "mod5_4/global32_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 23,
+          "cx": 13,
+          "depth": 12
+        }
+      },
+      {
+        "folder": "mod5_4/anchor32_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 23,
+          "cx": 13,
+          "depth": 12
+        }
+      },
+      {
+        "folder": "mod5_4/anchor8_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 23,
+          "cx": 13,
+          "depth": 13
+        }
+      },
+      {
+        "folder": "mod5_4/anchor32_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 23,
+          "cx": 13,
+          "depth": 12
+        }
+      },
+      {
+        "folder": "tof_5/global32_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 75,
+          "cx": 30,
+          "depth": 59
+        }
+      },
+      {
+        "folder": "tof_5/anchor8_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 75,
+          "cx": 30,
+          "depth": 59
+        }
+      },
+      {
+        "folder": "tof_5/global32_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 75,
+          "cx": 30,
+          "depth": 59
+        }
+      },
+      {
+        "folder": "tof_5/anchor32_frozen_s11",
+        "status": "passed",
+        "best": {
+          "gates": 75,
+          "cx": 30,
+          "depth": 59
+        }
+      },
+      {
+        "folder": "tof_5/anchor8_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 75,
+          "cx": 30,
+          "depth": 59
+        }
+      },
+      {
+        "folder": "tof_5/anchor32_online_s11",
+        "status": "passed",
+        "best": {
+          "gates": 75,
+          "cx": 30,
+          "depth": 59
+        }
+      }
+    ]
+  },
+  "anchor_prior": {
+    "phase": "comparison",
+    "commit": "34a35c880b83e074c8b3194fa0a93c8d303faee5",
+    "container_id": "117637e0ebe813934f7fcf30c83de5bfced7eb625d8a0ecb061a0f0db51b7f14",
+    "time": "2026-10-18T00:57:56.648035+08:00",
+    "circuits": [
+      "barenco_tof_3"
+    ],
+    "seeds": [
+      "11",
+      "29",
+      "47",
+      "71",
+      "101"
+    ],
+    "modes": [
+      "global32",
+      "anchor8",
+      "anchor8_nodes",
+      "anchor8_lr1e3",
+      "anchor8_nodes_lr1e3"
+    ],
+    "seconds": 600.0,
+    "workers": 10
+  },
+  "old_nam26": {
+    "jobs": 13,
+    "finished": 0,
+    "failed": 0
+  }
+}
