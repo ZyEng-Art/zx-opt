@@ -1,5 +1,5 @@
 {
-  "phase": "implementation_and_pilot_complete_push_pending",
+  "phase": "implementation_and_pilot_complete_pushed",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "experiment_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
@@ -23,9 +23,11 @@
     "background_jobs": "none"
   },
   "github": {
-    "push": "pending_authentication",
-    "observed_failure": "HTTPS username credential unavailable; SSH publickey authentication rejected",
-    "user_action": "Configure GitHub push authentication on this machine; then run git push -u origin main"
+    "push": "completed",
+    "transport": "ssh",
+    "authenticated_account": "ZyEng-Art",
+    "initial_published_commit": "517baeadda8d06848f8406406d1e0a279387d57c",
+    "previous_failure": "HTTPS username credential unavailable; SSH publickey authentication rejected; resolved after public-key authorization"
   },
   "research_findings": [
     "All saved circuits pass fixed-wire full-operator checks",
