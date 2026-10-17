@@ -1,0 +1,49 @@
+{
+  "node": 22,
+  "tag": "anchor_native",
+  "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+  "seconds": 600.0,
+  "workers": 8,
+  "cpus": 16,
+  "memory_gib": 48,
+  "circuits": [
+    "barenco_tof_3"
+  ],
+  "seeds": [
+    "419",
+    "443",
+    "467"
+  ],
+  "modes": [
+    "anchor8_resource",
+    "anchor8_resource_native",
+    "anchor8_nodes_resource",
+    "anchor8_nodes_resource_native"
+  ],
+  "experiment": "search",
+  "probe_source_tag": null,
+  "training_seeds": [
+    "137",
+    "163",
+    "197"
+  ],
+  "audit_workers": 4,
+  "build_native_flow": true,
+  "base": "/tmp/dengzengyong_rlzx_anchor_native_node22_20261018",
+  "bundle_sha256": "4cfe90e0fc92caf11797056d47371b342e0778864b3ad907ff270d1d3b86eb9c",
+  "runtime": {
+    "container_name": "dengzengyong_rlzx_anchor_native_node22_20261018",
+    "container_id": "0648e30f8300de9628f09a343421d5f586e1119df232c34ec77ac3c3430ee98a",
+    "started_at": "2026-10-17T18:44:30.244720468Z",
+    "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+    "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+    "cpus": 16,
+    "memory_gib": 48,
+    "workers": 8,
+    "gpu": false,
+    "node": 22,
+    "experiment": "search",
+    "probe_source": null,
+    "controller_pid": 2455716
+  }
+}
