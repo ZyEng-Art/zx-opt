@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "checks": "Same uniform action/state/cost/reward prefix before deferred recovery; first resumed transition follows baseline exhaustion",
+  "records": [
+    {
+      "seed": 11,
+      "common_prefix_transitions": 8696,
+      "first_deferred_transition": 8697,
+      "control_status": "retained_frontier_exhausted",
+      "reserve_status": "budget_reached",
+      "control_best": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "reserve_best": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "deferred_resumptions": 131,
+      "status": "passed"
+    },
+    {
+      "seed": 29,
+      "common_prefix_transitions": 8019,
+      "first_deferred_transition": 8020,
+      "control_status": "retained_frontier_exhausted",
+      "reserve_status": "budget_reached",
+      "control_best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "reserve_best": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "deferred_resumptions": 127,
+      "status": "passed"
+    },
+    {
+      "seed": 47,
+      "common_prefix_transitions": 3768,
+      "first_deferred_transition": 3769,
+      "control_status": "retained_frontier_exhausted",
+      "reserve_status": "budget_reached",
+      "control_best": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "reserve_best": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 35
+      },
+      "deferred_resumptions": 1162,
+      "status": "passed"
+    }
+  ]
+}

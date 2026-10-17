@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "archive": "runs/local-followups-20261017-records.tar.gz",
+  "sha256": "72af1a9812ec7fe801a3fbf40af5d8fd7cd40c52cff4ad1f42928ec2540f253f",
+  "bytes": 4239635,
+  "includes": [
+    "frontier-pair-20261017",
+    "representation-20261017-local",
+    "frontier-node-20261017-local"
+  ],
+  "scope": "Completed local matched pair, extraction diagnostics, preflights and committed source bundles"
+}

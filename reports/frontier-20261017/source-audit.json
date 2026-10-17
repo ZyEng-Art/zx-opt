@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "trials": 12,
+  "commits": {
+    "5b556664ed8744a51e0f006939e1017cd0bd1e64": {
+      "sources": {
+        "zxopt/__init__.py": "d59f50b299eac0a9206238f0716252f50ff8cd604a964ba21595454027f3693f",
+        "zxopt/archive.py": "c7d316492919a4ebeb5ebac66236b0d4ec09a1b577256054238b4219854cacff",
+        "zxopt/campaign.py": "5f5eddf651ebea56820786ade267f80dd3d69a4e210cbd102962faeae386b767",
+        "zxopt/dedup.py": "ee54c725cc0aa981c966be9485ae1f317782b84ccb4af0e5ca8ba0635a06eb53",
+        "zxopt/kernel.py": "ce6deb5cf65f99e2c7727a8174f7bfee25cc7180d49c319b20cba68f31f1d954",
+        "zxopt/legacy.py": "0794b16c5f6c56dfbb546c26337b036f44a474bcd87e4701dedb66f71fabbbdf",
+        "zxopt/policy.py": "c8f80e08c32502b7afb4b5c2b7a8b634ac6574a5ed635c0925218af71299bc27",
+        "zxopt/rules.py": "318612a702d69239611224838bb60d5504b61e6f12e5aa97fa2b337a5cc9970e",
+        "zxopt/search.py": "db5432edaefb4c80dbd11c65d6b967c022fdbb6e5b2544f9c92219170d3ec4be",
+        "zxopt/verify.py": "6695a2ac604e9173815a9e23590726e385819fb384073f9a932657c995c11ffc"
+      },
+      "baseline_sha256": "9f64ee6c40f94c8433e05291bd44e213659cf6594a12e0201af3f907b45755dd",
+      "frozen_legacy_files": 28
+    }
+  },
+  "records": [
+    {
+      "arm": "frontier_frozen",
+      "seed": 11,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "frontier_frozen",
+      "seed": 29,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "frontier_frozen",
+      "seed": 47,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 11,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 29,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 47,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "serialized",
+      "seed": 11,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "serialized",
+      "seed": 29,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "serialized",
+      "seed": 47,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "serialized_frontier",
+      "seed": 11,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "serialized_frontier",
+      "seed": 29,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    },
+    {
+      "arm": "serialized_frontier",
+      "seed": 47,
+      "commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "status": "passed"
+    }
+  ],
+  "checks": "Every core source against Git objects; identical campaign snapshot; frozen legacy manifest and files; input digest; clean experiment checkout"
+}

@@ -1,0 +1,1531 @@
+{
+  "status": "passed",
+  "scope": "same-case pilot only; all arms/seeds; no generalization or completeness claim",
+  "campaign_sha256": "97b9ac2f4728419f987c1659e849b3a79ba22e62aaca97a4bb8098a79c153fd5",
+  "summary_sha256": "c5a96cf1cecaeaa0f4e3ff2665d69a0ce401aa231914689fa1da85ad5d709979",
+  "budget_seconds": 600.0,
+  "trials": [
+    {
+      "arm": "frontier_frozen",
+      "seed": 11,
+      "folder": "frontier_frozen_s11",
+      "status": "budget_reached",
+      "transitions": 10723,
+      "accepted": 10723,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "6112849371486b5b8a8acdaf971a8849ea156bf9dc624fd4a1326287c54de796",
+        "seconds": 67.57801085500978
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 6421,
+        "PVB": 1343,
+        "PV": 1108,
+        "ID": 1851
+      },
+      "accepted_counts": {
+        "PVG": 6421,
+        "PVB": 1343,
+        "PV": 1108,
+        "ID": 1851
+      },
+      "rejections": {},
+      "index": {
+        "states": 6578,
+        "hits": 16852,
+        "exact_isomorphism_comparisons": 16852,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 10289,
+        "serialized_attempted_actions": 10723
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 414,
+        "evictions": 351,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 9,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 511,
+        "capacity": 512,
+        "insertions": 8202,
+        "evictions": 6994,
+        "resumptions": 499
+      },
+      "checked_qasm": 4924,
+      "max_graph_operator_error": 3.691578940718515e-15,
+      "max_qasm_operator_error": 1.4770556661825108e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0097689019749,
+      "first_passage_seconds": {
+        "39": 1.369258698017802,
+        "38": 9.530050678993575,
+        "37": 9.530050678993575,
+        "36": 67.57801085500978,
+        "35": null
+      },
+      "duplicate_successors": 4146,
+      "raw_graph_keys": 10460,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "745264c8ca7675202306dd3b68539662a27a8462a9052bb62d9d70d43dd3c724",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "6e660842647d11c797f127f39abcc8e771cf604f2b008be45ce6a6a2a37c7a20",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "dcfef281426d3ca3a168335eec0295e42d661e741c6f608f4dde710d70d82156",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 846,
+      "max_isomorphic_gate_spread": 21,
+      "unretained_successors_without_logged_outgoing_actions": 1843,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 7396,
+      "untried_logged_actions": 49108,
+      "deferred_resumptions": 499,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.14667895151836
+    },
+    {
+      "arm": "frontier_frozen",
+      "seed": 29,
+      "folder": "frontier_frozen_s29",
+      "status": "budget_reached",
+      "transitions": 11286,
+      "accepted": 11285,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "8a18eb039364ccf222cccb6a34c0cc53d7bb7a55a51ef7869401f78bc72e222c",
+        "seconds": 78.69811315595871
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 6752,
+        "PVB": 1666,
+        "PV": 763,
+        "ID": 2105
+      },
+      "accepted_counts": {
+        "PVG": 6752,
+        "PVB": 1666,
+        "PV": 762,
+        "ID": 2105
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 3884,
+        "hits": 21098,
+        "exact_isomorphism_comparisons": 21098,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 10747,
+        "serialized_attempted_actions": 11286
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 436,
+        "evictions": 373,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 7,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 8402,
+        "evictions": 6700,
+        "resumptions": 1013
+      },
+      "checked_qasm": 3137,
+      "max_graph_operator_error": 3.805161050039619e-15,
+      "max_qasm_operator_error": 1.692237855115052e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0065627679578,
+      "first_passage_seconds": {
+        "39": 6.5787489579524845,
+        "38": 10.327780394989531,
+        "37": 78.39635092997923,
+        "36": 78.69811315595871,
+        "35": null
+      },
+      "duplicate_successors": 7402,
+      "raw_graph_keys": 10951,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "43f70efd347ac2613a58e4dab4f0e0850c00ddb5661b74514a9976a2a543f3a1",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "cc8ca7567c2ae79e6012e6ab318b85b5a94651652f03105fe8a5030d262f056d",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "e07537a87b00ba6585732dbf1a1a5a9653650094d3b235a7d9e402df47896571",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 920,
+      "max_isomorphic_gate_spread": 27,
+      "unretained_successors_without_logged_outgoing_actions": 2262,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 7096,
+      "untried_logged_actions": 37018,
+      "deferred_resumptions": 1013,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.290001655731466
+    },
+    {
+      "arm": "frontier_frozen",
+      "seed": 47,
+      "folder": "frontier_frozen_s47",
+      "status": "budget_reached",
+      "transitions": 11561,
+      "accepted": 11560,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84",
+        "seconds": 338.351411814976
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 7792,
+        "PV": 769,
+        "PVB": 1174,
+        "ID": 1826
+      },
+      "accepted_counts": {
+        "PVG": 7791,
+        "PV": 769,
+        "PVB": 1174,
+        "ID": 1826
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 3813,
+        "hits": 21589,
+        "exact_isomorphism_comparisons": 21589,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 10681,
+        "serialized_attempted_actions": 11561
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 550,
+        "evictions": 487,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 6,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 8997,
+        "evictions": 7057,
+        "resumptions": 1228
+      },
+      "checked_qasm": 3206,
+      "max_graph_operator_error": 3.774915347157652e-15,
+      "max_qasm_operator_error": 1.5562935128250673e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0057772769942,
+      "first_passage_seconds": {
+        "39": 3.1100816669641063,
+        "38": 14.739922270993702,
+        "37": 147.12031304900302,
+        "36": 338.351411814976,
+        "35": null
+      },
+      "duplicate_successors": 7748,
+      "raw_graph_keys": 11224,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "13f2fd5dbaefba7aaeb25b31dc1cd56a32988316717228e2b55393aa35b6dae7",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "7d68872b0b9160b77dac7ee30d27eb224859f960cd1773baea5e8ab791c2160e",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "89f4f37372b9cc640ffc9aa5e7a05e947c5a3ef336eed2eb3c2b6429b19e1d2e",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 656,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 2505,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 7439,
+      "untried_logged_actions": 37138,
+      "deferred_resumptions": 1228,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.83886954800323
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 11,
+      "folder": "frontier_online_s11",
+      "status": "budget_reached",
+      "transitions": 10072,
+      "accepted": 10071,
+      "updates": 78,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "6112849371486b5b8a8acdaf971a8849ea156bf9dc624fd4a1326287c54de796",
+        "seconds": 597.9180849659606
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 6702,
+        "PVB": 704,
+        "PV": 730,
+        "ID": 1936
+      },
+      "accepted_counts": {
+        "PVG": 6701,
+        "PVB": 704,
+        "PV": 730,
+        "ID": 1936
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 4739,
+        "hits": 17540,
+        "exact_isomorphism_comparisons": 17540,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 9472,
+        "serialized_attempted_actions": 10072
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 487,
+        "evictions": 424,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 9,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 7875,
+        "evictions": 6468,
+        "resumptions": 702
+      },
+      "checked_qasm": 3562,
+      "max_graph_operator_error": 3.579774828149349e-15,
+      "max_qasm_operator_error": 1.5587665693871347e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0137638549786,
+      "first_passage_seconds": {
+        "39": 1.3883063439861871,
+        "38": 10.071089006960392,
+        "37": 10.071089006960392,
+        "36": 597.9180849659606,
+        "35": null
+      },
+      "duplicate_successors": 5333,
+      "raw_graph_keys": 9577,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "745264c8ca7675202306dd3b68539662a27a8462a9052bb62d9d70d43dd3c724",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "18f072b18318fc6ff31ddc9beb2147ac1ac51a3b14adc8f43c0ac37f43592319",
+      "updates_sha256": "de0547bd5bb785f1ffde6a4d30638af44b4d90f71ac622f9807fb42cb4f4a345",
+      "protocol_sha256": "ff7f0d1a8f3df13a4de4b7e8959302b0286be7dfa0184fc8b2a56d5b6d65ea46",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 738,
+      "max_isomorphic_gate_spread": 25,
+      "unretained_successors_without_logged_outgoing_actions": 1825,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 6709,
+      "untried_logged_actions": 39382,
+      "deferred_resumptions": 702,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 37.032414282206446,
+      "learning": {
+        "policy_loss": {
+          "first": -4.893803270533681e-05,
+          "last": -0.005744546403691761
+        },
+        "value_loss": {
+          "first": 0.5836678744832936,
+          "last": 0.3592748873082823
+        },
+        "entropy": {
+          "first": 1.9249711479795606,
+          "last": 1.1082547828555107
+        },
+        "approx_kl": {
+          "first": 2.5948362523003627e-07,
+          "last": 0.0016855527791401407
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.014494243421052632
+        },
+        "value_explained_variance_after": {
+          "first": 0.02488813416617726,
+          "last": 0.41839461661212046
+        },
+        "normalized_entropy": {
+          "first": 0.9337960671972092,
+          "last": 0.7084963429794687
+        },
+        "conditional_normalized_entropy": {
+          "first": 0.9999964828840903,
+          "last": 0.7988646704278792
+        },
+        "forced_action_fraction": {
+          "first": 0.06620065789473684,
+          "last": 0.11513157894736842
+        },
+        "optimizer_steps": 1248
+      }
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 29,
+      "folder": "frontier_online_s29",
+      "status": "budget_reached",
+      "transitions": 9871,
+      "accepted": 9870,
+      "updates": 77,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "8a18eb039364ccf222cccb6a34c0cc53d7bb7a55a51ef7869401f78bc72e222c",
+        "seconds": 109.51381360500818
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 5803,
+        "PVB": 1442,
+        "PV": 974,
+        "ID": 1652
+      },
+      "accepted_counts": {
+        "PVG": 5802,
+        "PVB": 1442,
+        "PV": 974,
+        "ID": 1652
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 5339,
+        "hits": 16034,
+        "exact_isomorphism_comparisons": 16034,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 9508,
+        "serialized_attempted_actions": 9871
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 554,
+        "evictions": 491,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 7,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 7726,
+        "evictions": 6738,
+        "resumptions": 367
+      },
+      "checked_qasm": 3776,
+      "max_graph_operator_error": 3.7749038889657426e-15,
+      "max_qasm_operator_error": 1.6031097647355052e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0144650979782,
+      "first_passage_seconds": {
+        "39": 6.512128291011322,
+        "38": 8.543094386986922,
+        "37": 108.81359706097282,
+        "36": 109.51381360500818,
+        "35": null
+      },
+      "duplicate_successors": 4532,
+      "raw_graph_keys": 9725,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "43f70efd347ac2613a58e4dab4f0e0850c00ddb5661b74514a9976a2a543f3a1",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "59c0f59b78991108b6c4511123546f76bbeb6d2a521ad126118338a086786038",
+      "updates_sha256": "851c95891718935625a07c8d6c42aafe04e162e47ea0d32c2cf9f0d2ba39a020",
+      "protocol_sha256": "c1ebb4ad72e762e75261f49588e62a14c20c62efb858c31c84858d7c405fc918",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 834,
+      "max_isomorphic_gate_spread": 25,
+      "unretained_successors_without_logged_outgoing_actions": 1650,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 7182,
+      "untried_logged_actions": 45287,
+      "deferred_resumptions": 367,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.3889710555733,
+      "learning": {
+        "policy_loss": {
+          "first": -2.283878673456217e-05,
+          "last": -0.003650701905012523
+        },
+        "value_loss": {
+          "first": 0.6327413241133878,
+          "last": 0.4168204043648745
+        },
+        "entropy": {
+          "first": 1.9912303297927505,
+          "last": 1.495463263047369
+        },
+        "approx_kl": {
+          "first": 2.9146720312143628e-08,
+          "last": 0.001957639345307957
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.022820723684210526
+        },
+        "value_explained_variance_after": {
+          "first": 0.014805779151968462,
+          "last": 0.3890611477990472
+        },
+        "normalized_entropy": {
+          "first": 0.9337986167356863,
+          "last": 0.8407800088395746
+        },
+        "conditional_normalized_entropy": {
+          "first": 0.9999992241987052,
+          "last": 0.9117292583546527
+        },
+        "forced_action_fraction": {
+          "first": 0.06620065789473684,
+          "last": 0.07771381578947369
+        },
+        "optimizer_steps": 1232
+      }
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 47,
+      "folder": "frontier_online_s47",
+      "status": "budget_reached",
+      "transitions": 12672,
+      "accepted": 12672,
+      "updates": 99,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "8a18eb039364ccf222cccb6a34c0cc53d7bb7a55a51ef7869401f78bc72e222c",
+        "seconds": 279.38607578194933
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 6519,
+        "PV": 2002,
+        "PVB": 1686,
+        "ID": 2465
+      },
+      "accepted_counts": {
+        "PVG": 6519,
+        "PV": 2002,
+        "PVB": 1686,
+        "ID": 2465
+      },
+      "rejections": {},
+      "index": {
+        "states": 4415,
+        "hits": 24375,
+        "exact_isomorphism_comparisons": 24375,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 10659,
+        "serialized_attempted_actions": 12672
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 740,
+        "evictions": 677,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 7,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 8252,
+        "evictions": 7232,
+        "resumptions": 20
+      },
+      "checked_qasm": 3396,
+      "max_graph_operator_error": 3.900573935804275e-15,
+      "max_qasm_operator_error": 1.5080245615812922e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.1953497529612,
+      "first_passage_seconds": {
+        "39": 3.0961546159815043,
+        "38": 46.52514812495792,
+        "37": 78.96406304696575,
+        "36": 279.38607578194933,
+        "35": null
+      },
+      "duplicate_successors": 8258,
+      "raw_graph_keys": 10806,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "13f2fd5dbaefba7aaeb25b31dc1cd56a32988316717228e2b55393aa35b6dae7",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "421023a8cce50c4f4febf59804f422a83a972bda882d15be9eae5bf3491410f8",
+      "updates_sha256": "b7666e803eb77365557e594886174ac42be14653c33936c369636fdee6278ac1",
+      "protocol_sha256": "70efee855215b312cca5c0cb65e5ac84f434bae42ba2c93f05b183817c8f22d8",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 598,
+      "max_isomorphic_gate_spread": 23,
+      "unretained_successors_without_logged_outgoing_actions": 1954,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 7325,
+      "untried_logged_actions": 43342,
+      "deferred_resumptions": 20,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.67995240261642,
+      "learning": {
+        "policy_loss": {
+          "first": -0.0004761977203694793,
+          "last": -0.002357337889002843
+        },
+        "value_loss": {
+          "first": 0.6158881291436652,
+          "last": 0.22066207380137506
+        },
+        "entropy": {
+          "first": 1.941990911650161,
+          "last": 0.7469125016488963
+        },
+        "approx_kl": {
+          "first": 3.687878779601306e-05,
+          "last": 0.005773751674168023
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.04909939236111111
+        },
+        "value_explained_variance_after": {
+          "first": 0.028968846294557232,
+          "last": 0.5500338592145958
+        },
+        "normalized_entropy": {
+          "first": 0.922464909482175,
+          "last": 0.5149043476513239
+        },
+        "conditional_normalized_entropy": {
+          "first": 0.9995741883252451,
+          "last": 0.593998942114056
+        },
+        "forced_action_fraction": {
+          "first": 0.0771484375,
+          "last": 0.13248697916666666
+        },
+        "optimizer_steps": 1571
+      }
+    },
+    {
+      "arm": "serialized",
+      "seed": 11,
+      "folder": "serialized_s11",
+      "status": "retained_frontier_exhausted",
+      "transitions": 8696,
+      "accepted": 8696,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "9cd1be4082b32c50140479c02e5353a736357c361e7b0da65b5c88a04c9cd547",
+        "seconds": 264.5503859000164
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 5411,
+        "ID": 1468,
+        "PV": 747,
+        "PVB": 1070
+      },
+      "accepted_counts": {
+        "PVG": 5411,
+        "ID": 1468,
+        "PV": 747,
+        "PVB": 1070
+      },
+      "rejections": {},
+      "index": {
+        "states": 5539,
+        "hits": 13123,
+        "exact_isomorphism_comparisons": 13123,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 8293,
+        "serialized_attempted_actions": 8696
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 384,
+        "evictions": 321,
+        "objective": "nam",
+        "best": [
+          37,
+          13
+        ],
+        "max_distance": 13,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 0,
+        "capacity": 0,
+        "insertions": 0,
+        "evictions": 0,
+        "resumptions": 0
+      },
+      "checked_qasm": 3866,
+      "max_graph_operator_error": 3.777001278024757e-15,
+      "max_qasm_operator_error": 1.4957139510615702e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 437.84301463200245,
+      "first_passage_seconds": {
+        "39": 1.5391048160381615,
+        "38": 12.78587033401709,
+        "37": 41.13682132703252,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 3158,
+      "raw_graph_keys": 8588,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "ca3ceea256f2262eb3e59a6c1f5a5dd9006c1fb87c1282d8bc7f212be465a304",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "9d768ec9e2df7706e3fa53cd9cf1aa71ba1f423cb0c402055d547eb13d7189c3",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 637,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 1425,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 6432,
+      "untried_logged_actions": 46919,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.09243632746181
+    },
+    {
+      "arm": "serialized",
+      "seed": 29,
+      "folder": "serialized_s29",
+      "status": "retained_frontier_exhausted",
+      "transitions": 8019,
+      "accepted": 8019,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 34
+        },
+        "sha256": "171ad69d69cf8a808b567ddcf8c606b3050208f174c8f8a923d3e2ef21fd835f",
+        "seconds": 30.362138124008197
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 5093,
+        "PVB": 980,
+        "PV": 720,
+        "ID": 1226
+      },
+      "accepted_counts": {
+        "PVG": 5093,
+        "PVB": 980,
+        "PV": 720,
+        "ID": 1226
+      },
+      "rejections": {},
+      "index": {
+        "states": 5569,
+        "hits": 11695,
+        "exact_isomorphism_comparisons": 11695,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 7646,
+        "serialized_attempted_actions": 8019
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 291,
+        "evictions": 228,
+        "objective": "nam",
+        "best": [
+          37,
+          15
+        ],
+        "max_distance": 6,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 0,
+        "capacity": 0,
+        "insertions": 0,
+        "evictions": 0,
+        "resumptions": 0
+      },
+      "checked_qasm": 4293,
+      "max_graph_operator_error": 3.902956582889176e-15,
+      "max_qasm_operator_error": 1.5562935128250673e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 434.63953610596946,
+      "first_passage_seconds": {
+        "39": 5.198615069966763,
+        "38": 21.683904341014568,
+        "37": 30.362138124008197,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 2451,
+      "raw_graph_keys": 7842,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "e89b07f477e135c671c6416c07131345b051ac645abd05b0eaff04e88fb806d3",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "4474d82c24faf471f303732ae794d1cdcb7b1bb6cea17f8b780b946c7b26d3fa",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 496,
+      "max_isomorphic_gate_spread": 25,
+      "unretained_successors_without_logged_outgoing_actions": 1239,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 5938,
+      "untried_logged_actions": 42734,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.09540776255832
+    },
+    {
+      "arm": "serialized",
+      "seed": 47,
+      "folder": "serialized_s47",
+      "status": "retained_frontier_exhausted",
+      "transitions": 3768,
+      "accepted": 3768,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "f467f5db8b4c1dbbbf5954b29fea0b55fc463164fe2b7b3a2d44e789697cb199",
+        "seconds": 158.05526778497733
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2394,
+        "ID": 611,
+        "PV": 325,
+        "PVB": 438
+      },
+      "accepted_counts": {
+        "PVG": 2394,
+        "ID": 611,
+        "PV": 325,
+        "PVB": 438
+      },
+      "rejections": {},
+      "index": {
+        "states": 2991,
+        "hits": 5118,
+        "exact_isomorphism_comparisons": 5118,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 3633,
+        "serialized_attempted_actions": 3768
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 291,
+        "evictions": 228,
+        "objective": "nam",
+        "best": [
+          37,
+          13
+        ],
+        "max_distance": 11,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 0,
+        "capacity": 0,
+        "insertions": 0,
+        "evictions": 0,
+        "resumptions": 0
+      },
+      "checked_qasm": 2194,
+      "max_graph_operator_error": 3.792083980059936e-15,
+      "max_qasm_operator_error": 1.5553031891404221e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 194.0843855929561,
+      "first_passage_seconds": {
+        "39": 16.915457130002324,
+        "38": 22.08033887896454,
+        "37": 22.8203632569639,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 778,
+      "raw_graph_keys": 3714,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "2229dea1d6c685e39034fa813e0e27b122dd9350c2c70e029a34b50b18357867",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "83fcfe58ef4ce905b55d7ab8b65ce1b5ff1795ef4b25a6d8e2dc470f4b73624b",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 193,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 545,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 2808,
+      "untried_logged_actions": 23767,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.103026932109884
+    },
+    {
+      "arm": "serialized_frontier",
+      "seed": 11,
+      "folder": "serialized_frontier_s11",
+      "status": "budget_reached",
+      "transitions": 11866,
+      "accepted": 11865,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "9cd1be4082b32c50140479c02e5353a736357c361e7b0da65b5c88a04c9cd547",
+        "seconds": 267.93836158001795
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 7452,
+        "ID": 2021,
+        "PV": 1007,
+        "PVB": 1386
+      },
+      "accepted_counts": {
+        "PVG": 7451,
+        "ID": 2021,
+        "PV": 1007,
+        "PVB": 1386
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 6666,
+        "hits": 18803,
+        "exact_isomorphism_comparisons": 18803,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 11314,
+        "serialized_attempted_actions": 11866
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 475,
+        "evictions": 412,
+        "objective": "nam",
+        "best": [
+          37,
+          13
+        ],
+        "max_distance": 13,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 9052,
+        "evictions": 8284,
+        "resumptions": 131
+      },
+      "checked_qasm": 4553,
+      "max_graph_operator_error": 3.777001278024757e-15,
+      "max_qasm_operator_error": 1.6694926820795615e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0045585580519,
+      "first_passage_seconds": {
+        "39": 1.5519960360252298,
+        "38": 12.87008380505722,
+        "37": 41.4655443369993,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 5200,
+      "raw_graph_keys": 11732,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "2eb6c5e842f1c01181c0841c58809d1228621ac66e62ebcfe9726b9f9e27e7ba",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "6ed892f50cdcd926779f9a02bc49ae8c2dd4c630e58ecdc924978597067fe3f7",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 951,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 1989,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 8731,
+      "untried_logged_actions": 60426,
+      "deferred_resumptions": 131,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 37.0931460402968
+    },
+    {
+      "arm": "serialized_frontier",
+      "seed": 29,
+      "folder": "serialized_frontier_s29",
+      "status": "budget_reached",
+      "transitions": 11156,
+      "accepted": 11155,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 34
+        },
+        "sha256": "171ad69d69cf8a808b567ddcf8c606b3050208f174c8f8a923d3e2ef21fd835f",
+        "seconds": 30.262186151987407
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 7062,
+        "PVB": 1420,
+        "PV": 1068,
+        "ID": 1606
+      },
+      "accepted_counts": {
+        "PVG": 7061,
+        "PVB": 1420,
+        "PV": 1068,
+        "ID": 1606
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 7190,
+        "hits": 16831,
+        "exact_isomorphism_comparisons": 16831,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 10572,
+        "serialized_attempted_actions": 11156
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 344,
+        "evictions": 281,
+        "objective": "nam",
+        "best": [
+          37,
+          15
+        ],
+        "max_distance": 6,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 8608,
+        "evictions": 7808,
+        "resumptions": 127
+      },
+      "checked_qasm": 5555,
+      "max_graph_operator_error": 3.902956582889176e-15,
+      "max_qasm_operator_error": 1.5562935128250673e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0031881210161,
+      "first_passage_seconds": {
+        "39": 5.205310645978898,
+        "38": 21.62471377296606,
+        "37": 30.262186151987407,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 3966,
+      "raw_graph_keys": 10864,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "dd346cec95dd09ae33739b4245747873031fffda16ad78790f401a303d15b0b6",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "36324188022de43fe95c7a7f9bf07f027ee5f16b74a6e618b3f10e4236717a0f",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 807,
+      "max_isomorphic_gate_spread": 25,
+      "unretained_successors_without_logged_outgoing_actions": 1747,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 8159,
+      "untried_logged_actions": 55793,
+      "deferred_resumptions": 127,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 37.09515368428489
+    },
+    {
+      "arm": "serialized_frontier",
+      "seed": 47,
+      "folder": "serialized_frontier_s47",
+      "status": "budget_reached",
+      "transitions": 11610,
+      "accepted": 11609,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84",
+        "seconds": 221.3331649780157
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 7025,
+        "ID": 2123,
+        "PV": 845,
+        "PVB": 1617
+      },
+      "accepted_counts": {
+        "PVG": 7024,
+        "ID": 2123,
+        "PV": 845,
+        "PVB": 1617
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 5902,
+        "hits": 19213,
+        "exact_isomorphism_comparisons": 19213,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 11144,
+        "serialized_attempted_actions": 11610
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 689,
+        "evictions": 626,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 8,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 9599,
+        "evictions": 7831,
+        "resumptions": 1162
+      },
+      "checked_qasm": 4331,
+      "max_graph_operator_error": 3.792083980059936e-15,
+      "max_qasm_operator_error": 1.5553031891404221e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0036909059854,
+      "first_passage_seconds": {
+        "39": 17.04408165498171,
+        "38": 22.258549363992643,
+        "37": 22.92845068202587,
+        "36": 221.3331649780157,
+        "35": null
+      },
+      "duplicate_successors": 5708,
+      "raw_graph_keys": 11416,
+      "git_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "a4492368763b61e993e4eac3b8b54bee0735edaa1a92c5e60cef49eafa822af8",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "e034235482514166e34b4a83ed7399895df508343eefe676408a2a1e61f1e377",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 850,
+      "max_isomorphic_gate_spread": 24,
+      "unretained_successors_without_logged_outgoing_actions": 1867,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 8274,
+      "untried_logged_actions": 52005,
+      "deferred_resumptions": 1162,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.47260707779836
+    }
+  ],
+  "aggregate": [
+    {
+      "arm": "frontier_frozen",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        36,
+        36,
+        36
+      ],
+      "mean_anytime_gates": 36.42518338508435,
+      "mean_transitions": 11190.0,
+      "statuses": [
+        "budget_reached",
+        "budget_reached",
+        "budget_reached"
+      ],
+      "actual_total_loop_seconds": [
+        600.0097689019749,
+        600.0065627679578,
+        600.0057772769942
+      ],
+      "early_exhausted_runs": 0,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 6610,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 2,
+      "duplicate_successor_fraction": 0.5748331744518589
+    },
+    {
+      "arm": "frontier_online",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        36,
+        36,
+        36
+      ],
+      "mean_anytime_gates": 36.700445913465394,
+      "mean_transitions": 10871.666666666666,
+      "statuses": [
+        "budget_reached",
+        "budget_reached",
+        "budget_reached"
+      ],
+      "actual_total_loop_seconds": [
+        600.0137638549786,
+        600.0144650979782,
+        600.1953497529612
+      ],
+      "early_exhausted_runs": 0,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 5429,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 2,
+      "duplicate_successor_fraction": 0.5556986477784932
+    },
+    {
+      "arm": "serialized",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        37,
+        37,
+        37
+      ],
+      "mean_anytime_gates": 37.096957007376666,
+      "mean_transitions": 6827.666666666667,
+      "statuses": [
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted"
+      ],
+      "actual_total_loop_seconds": [
+        437.84301463200245,
+        434.63953610596946,
+        194.0843855929561
+      ],
+      "early_exhausted_runs": 3,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 3209,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 0,
+      "duplicate_successor_fraction": 0.31181955768198016
+    },
+    {
+      "arm": "serialized_frontier",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        37,
+        37,
+        36
+      ],
+      "mean_anytime_gates": 36.886968934126685,
+      "mean_transitions": 11544.0,
+      "statuses": [
+        "budget_reached",
+        "budget_reached",
+        "budget_reached"
+      ],
+      "actual_total_loop_seconds": [
+        600.0045585580519,
+        600.0031881210161,
+        600.0036909059854
+      ],
+      "early_exhausted_runs": 0,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 5603,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 3,
+      "duplicate_successor_fraction": 0.42952438707441737
+    }
+  ],
+  "best_source": {
+    "arm": "frontier_frozen",
+    "seed": 11,
+    "sha256": "6112849371486b5b8a8acdaf971a8849ea156bf9dc624fd4a1326287c54de796"
+  }
+}

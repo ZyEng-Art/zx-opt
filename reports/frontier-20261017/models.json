@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "frozen_online_initial_and_first128_identical": true,
+  "records": [
+    {
+      "arm": "frontier_frozen",
+      "seed": 11,
+      "parameter_l2_delta": 0.0,
+      "initial_file_sha256": "e86ee7a890f61a6a4fae1dcffe45537b66df3fe603e23b5461a23b50c1a14178",
+      "final_file_sha256": "03345bd53cbd0f2e0fd592b10e818560820f99b45cbf4e0e2c3c70ba0d9725fd"
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 11,
+      "parameter_l2_delta": 4.223386597790773,
+      "initial_file_sha256": "e86ee7a890f61a6a4fae1dcffe45537b66df3fe603e23b5461a23b50c1a14178",
+      "final_file_sha256": "939d7a4d7d68b15a6e420c00c0c1fcf2da3bcdd6855818e718ee4d1bcf0b4522"
+    },
+    {
+      "arm": "frontier_frozen",
+      "seed": 29,
+      "parameter_l2_delta": 0.0,
+      "initial_file_sha256": "1aeebdddd92f56f16eb4c2919c8e9dbed4936a389fa623cc9a54c69b450477bc",
+      "final_file_sha256": "044a96252be104fcf88b520a3d07b11bc0f2f223f54a8368d1fc80741c5710fe"
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 29,
+      "parameter_l2_delta": 4.668619469071321,
+      "initial_file_sha256": "1aeebdddd92f56f16eb4c2919c8e9dbed4936a389fa623cc9a54c69b450477bc",
+      "final_file_sha256": "2f4cd2167c9baa13d2c08afb83f7b06ed88c564ed9cd55f7693c8d14bc475557"
+    },
+    {
+      "arm": "frontier_frozen",
+      "seed": 47,
+      "parameter_l2_delta": 0.0,
+      "initial_file_sha256": "46dfb15867f4b6488ba33b3a77d9f56824297f583769df5a22e5c7662e36790d",
+      "final_file_sha256": "9b56192e12e52f10871da5e15521bd1522980e8646e114b26cd104ee4d6432f0"
+    },
+    {
+      "arm": "frontier_online",
+      "seed": 47,
+      "parameter_l2_delta": 6.044597569347245,
+      "initial_file_sha256": "46dfb15867f4b6488ba33b3a77d9f56824297f583769df5a22e5c7662e36790d",
+      "final_file_sha256": "811b7d94b27987ed20f09c0e9ad9a4cded48a71d5ab76782cd6f4ee183309fa7"
+    }
+  ]
+}
