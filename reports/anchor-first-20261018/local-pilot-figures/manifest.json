@@ -1,0 +1,53 @@
+{
+  "source_commit": "b82ec477dca1e2c72cb84063b442691819962053",
+  "figures": [
+    "barenco_tof_3-gates.png",
+    "barenco_tof_3-ppo.png",
+    "mod5_4-gates.png",
+    "mod5_4-ppo.png"
+  ],
+  "input_files": {
+    "campaign.json": "34df7d58902e1238a8750bb11aa20298d7e7130d30ab546ae5d127f1c6d6ceeb",
+    "finished.json": "59e4504e521385d60bc7d768c2e6b8d5e8fe972011c12dbdb3629a21f45c7a50",
+    "audit/verification.json": "238c7c084594b11463ba9ea5a106b2c337f35b5487071096af3e4267a9d7b594",
+    "barenco_tof_3/global32_frozen_s11/protocol.json": "ca0f6240bde52c33ffa06e7a60d481791e782835d9f7fbed81dd3575962850b6",
+    "barenco_tof_3/global32_frozen_s11/best-history.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "barenco_tof_3/anchor8_frozen_s11/protocol.json": "3d210b4fdcfc3b9d992680f6a3c268726d5441432c006fa5b8acc309337d3fb0",
+    "barenco_tof_3/anchor8_frozen_s11/best-history.jsonl": "795bc2721f2b003a0cf9d8b8411dacb4bf2c341f4a8348145f832edd941f4260",
+    "barenco_tof_3/anchor32_frozen_s11/protocol.json": "4170d74f04ed27e16b443004020b607ebdf9698024da06a6e4419f085709d238",
+    "barenco_tof_3/anchor32_frozen_s11/best-history.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "barenco_tof_3/global32_online_s11/protocol.json": "6b0ad8e2045629f99c93f1073e8956b1f8ee90d543bd0bec6ab800bfb98e4e3b",
+    "barenco_tof_3/global32_online_s11/best-history.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "barenco_tof_3/anchor8_online_s11/protocol.json": "0c2997b94b4d0831ea9d73bf4b5f4f327128c2c9e2176d97048497c4855f92a1",
+    "barenco_tof_3/anchor8_online_s11/best-history.jsonl": "efc00c22b59aee8dc0a0b5d133b01bb86a5e3391c8e1c6564694a6a29e82f62b",
+    "barenco_tof_3/anchor32_online_s11/protocol.json": "62b19a5def4bf949179547ec33cfba933ff95067022b22f787b92b5d9cf00c6e",
+    "barenco_tof_3/anchor32_online_s11/best-history.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "barenco_tof_3/global32_online_s11/updates.jsonl": "6228a00aec1c9c98f7f543ff885ff2379f2721b8e4ec7c699a3a82d9d9e9edd5",
+    "barenco_tof_3/anchor8_online_s11/updates.jsonl": "c24dd1881b1898bc309897c309fbbe65b6add2c4da6b875ca623983717ca113a",
+    "barenco_tof_3/anchor32_online_s11/updates.jsonl": "b4ca0bf97596ed6f5c925eaec5cd59c2b3e3fedf72bacf5b813f9124ee577fcc",
+    "mod5_4/global32_frozen_s11/protocol.json": "7232859898352e782eb9995ae84cdb60dcf13709d3b20fd0ced81da158b8c638",
+    "mod5_4/global32_frozen_s11/best-history.jsonl": "946cdce034b920a8d0d6bd936d598aa904cde4cb63fe3f55d4c3278e4c961c34",
+    "mod5_4/anchor8_frozen_s11/protocol.json": "8ed5bf9c0d08cb8361b3c0baab9fdac64a91376a204bed5824a9dec5b7a988e5",
+    "mod5_4/anchor8_frozen_s11/best-history.jsonl": "baf2f441758593aa5fec0164fb9912701d1b3f7d4725765337cc473a866c706f",
+    "mod5_4/anchor32_frozen_s11/protocol.json": "6183de74a91f675dd69f8e20aec760a86b5676557a25257523fd197038a2fcbd",
+    "mod5_4/anchor32_frozen_s11/best-history.jsonl": "72825147af40de917f97ff5305a02296e278b6fb75548c09a34b58b7840d72da",
+    "mod5_4/global32_online_s11/protocol.json": "49a6c831efb1f08d4be3a5742c1baa62afd20e1bfc85a6b0874ffb3f664830b6",
+    "mod5_4/global32_online_s11/best-history.jsonl": "3bf3f4d29285d21a63985e207407e9d6530057b038f9e448b1e03363f17db497",
+    "mod5_4/anchor8_online_s11/protocol.json": "f16ed348702765c9bf91fe7a01ac3936eb4ab76ac181c6672fe043a95aa0599f",
+    "mod5_4/anchor8_online_s11/best-history.jsonl": "be027a6680ec582d82911a7e818fb1094025631e17244d0c644e260f6a85b009",
+    "mod5_4/anchor32_online_s11/protocol.json": "9d57f46ca8f7e59f64bd49babe296d7d1062c86d0af65f837b4dd58265e497e1",
+    "mod5_4/anchor32_online_s11/best-history.jsonl": "8844eccae0e6b2b31dc699fee2bd1ae791d1d6266ef26e6f7b1525df1743b028",
+    "mod5_4/global32_online_s11/updates.jsonl": "7b786051a28d7d978cf967a0c0adfb73bb444f48a3ddf6454c076a0fd56726c6",
+    "mod5_4/anchor8_online_s11/updates.jsonl": "c775a80755e3333f5b598301ba4cec85330b89408034ea75edb0e38f130febe0",
+    "mod5_4/anchor32_online_s11/updates.jsonl": "a8071d114142d9ef34f5602af3a88ef9a7d19d08c9bde2c56fb5a3d7504b005d"
+  },
+  "matplotlib": "3.9.4",
+  "numpy": "2.0.2",
+  "caveats": [
+    "Each circuit is trained independently; no held-out evaluation",
+    "Faster or lower-loss training does not establish improvement over frozen search",
+    "Prior-weighted anchor entropy is not directly comparable to uniform-prior entropy",
+    "No extrapolation of PPO curves before the first or after the final update",
+    "Only final audited trials are plotted; the campaign archive checksum is verified separately"
+  ]
+}

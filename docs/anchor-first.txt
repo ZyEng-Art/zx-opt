@@ -12,6 +12,10 @@ Native predicates receive restricted starting vertices/edges with their full
 host neighborhoods. General templates pin a distinguished pattern vertex and
 extend through adjacent host vertices. Simple S/I/H proposals use incidence
 queries. At most eight local candidates are previewed by default.
+Some axioms also contain disconnected scalar components. Their main component
+is rooted, while the disconnected parts still query host labels globally under
+the same work budget. A fixed-radius match would incorrectly omit those axiom
+instances; selected-anchor matching does not make every rule strictly local.
 
 This borrows Quarl's selected-location matching order, not its entire learning
 algorithm. In particular Quarl samples nodes from temperature-scaled critic

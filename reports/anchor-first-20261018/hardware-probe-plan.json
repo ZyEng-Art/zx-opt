@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-18T01:06:50.605168+08:00",
+  "event": "anchor_policy_hardware_probe_prepared",
+  "plots": "Four figures from the audited12-trial pilot;1seed only, exploratory",
+  "cpu_microbenchmark": "passed; actual graph inputs, replicated fixed shapes, batch1/8/32; not search or learning evidence",
+  "accelerator_resources": {
+    "node22": "All8 P800 cards occupied by an existing SGLang service at01:03; do not use",
+    "node23": "All8 P800 idle at01:04; plan a bounded probe on card0 only"
+  },
+  "next": "Measure P800 operator support, preloaded kernels, host transfers and optimizer steps before deciding whether acceleration helps",
+  "original_long_jobs": "Preserved"
+}

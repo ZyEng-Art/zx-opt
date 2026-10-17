@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "requested": "cpu",
+  "device_name": "CPU",
+  "torch": "2.6.0",
+  "input_sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92",
+  "batches": [
+    {
+      "batch_size": 1,
+      "backend": "cpu",
+      "policy_nodes": [
+        739,
+        305,
+        302
+      ],
+      "max_anchor_logit_error": 0.0,
+      "max_joint_log_probability_error": 0.0,
+      "anchor_preloaded": {
+        "median_seconds": 0.0008885830000000539,
+        "minimum_seconds": 0.0008608340000000325,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.0017298749999996588,
+        "minimum_seconds": 0.0017060409999993809,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.0009590419999998545,
+        "minimum_seconds": 0.000926791000000371,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.0038053329999998553,
+        "minimum_seconds": 0.003589583999999313,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    },
+    {
+      "batch_size": 8,
+      "backend": "cpu",
+      "policy_nodes": [
+        5912,
+        2439,
+        2416
+      ],
+      "max_anchor_logit_error": 0.0,
+      "max_joint_log_probability_error": 0.0,
+      "anchor_preloaded": {
+        "median_seconds": 0.007318708999999757,
+        "minimum_seconds": 0.007060333000000085,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.013022709000000354,
+        "minimum_seconds": 0.012727208000000267,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.007930124999999677,
+        "minimum_seconds": 0.007131999999999472,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.020862583000000434,
+        "minimum_seconds": 0.019640541000000233,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    },
+    {
+      "batch_size": 32,
+      "backend": "cpu",
+      "policy_nodes": [
+        23648,
+        9768,
+        9664
+      ],
+      "max_anchor_logit_error": 0.0,
+      "max_joint_log_probability_error": 0.0,
+      "anchor_preloaded": {
+        "median_seconds": 0.032094375000000674,
+        "minimum_seconds": 0.03129600000000021,
+        "repeats": 5
+      },
+      "joint_preloaded": {
+        "median_seconds": 0.056940124999999675,
+        "minimum_seconds": 0.05652283299999983,
+        "repeats": 5
+      },
+      "anchor_with_transfer": {
+        "median_seconds": 0.033560207999999925,
+        "minimum_seconds": 0.03230158399999983,
+        "repeats": 5
+      },
+      "optimizer_step_preloaded": {
+        "median_seconds": 0.09087245799999977,
+        "minimum_seconds": 0.08438449999999964,
+        "repeats": 5
+      },
+      "parameters_finite": true
+    }
+  ],
+  "scope": "Fixed graph shapes, kernel/transfer microbenchmark; no search or learning-quality claim"
+}
