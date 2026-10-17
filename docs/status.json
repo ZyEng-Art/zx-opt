@@ -1,5 +1,5 @@
 {
-  "phase": "clifford_t_axiom_kernel_complete",
+  "phase": "jpv_search_integration",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO; independent complete Clifford+T JPV axiom kernel",
@@ -27,7 +27,7 @@
     "Align reward and observations with the global extracted-gate objective",
     "Expand reliably extractable rewrite paths"
   ],
-  "active_work": null,
+  "active_work": "Integrate JPV general diagrams with PPO, retain unscorable bridges, then six-arm paired barenco campaign",
   "completed_followups": [
     {
       "suite": "representation",
