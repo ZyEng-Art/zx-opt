@@ -57,6 +57,8 @@ def context_for(state, start, best, step, args, root_gates, root_vertices):
 
 
 def run(args):
+    if args.shared_buffer and (args.general_zx or args.allow_arbitrary_angles):
+        raise ValueError("Shared restart v1 is Clifford+T only; general-angle ZX remains available without --shared-buffer")
     if args.general_zx:
         args.jpv = True
         args.allow_arbitrary_angles = True
@@ -184,7 +186,7 @@ def run(args):
         saved = torch.load(args.resume_state, map_location="cpu", weights_only=False)
         if saved["input_sha256"] != protocol["input_sha256"] or saved["sources"] != sources:
             raise ValueError("Resume input/source differs")
-        semantic = ["seed", "policy", "jpv", "horizon", "max_unscored", "max_growth", "max_edge_growth",
+        semantic = ["seed", "policy", "jpv", "general_zx", "allow_arbitrary_angles", "horizon", "max_unscored", "max_growth", "max_edge_growth",
                     "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")

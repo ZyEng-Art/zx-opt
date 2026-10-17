@@ -1,0 +1,114 @@
+{
+  "status": "step_limit_reached",
+  "transitions": 31,
+  "accepted": 31,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 3,
+  "best": {
+    "cost": {
+      "gates": 40,
+      "cx": 18,
+      "depth": 39
+    },
+    "sha256": "0a22dbc1a1db6a019cdfe6e5a000b2f3bbf54d2b6305a6cdc529349fad85cbcf",
+    "seconds": 0.0,
+    "graph": "1262701aeb26d53cc1d4fea70405faf29fcd9aebdaaf824d4c6f8768b14dd297"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "proposal_counts": {
+    "identity_insert": 2,
+    "phase_split": 1,
+    "PVG": 6,
+    "spider_split": 2,
+    "EU:forward": 2,
+    "PVB": 2,
+    "PV": 1
+  },
+  "accepted_counts": {
+    "identity_insert": 2,
+    "phase_split": 1,
+    "PVG": 6,
+    "spider_split": 2,
+    "EU:forward": 2,
+    "PVB": 2,
+    "PV": 1
+  },
+  "unscored_counts": {},
+  "rejections": {},
+  "buffer": {
+    "scored_size": 21,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 20,
+    "evictions": 0,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      40,
+      18
+    ]
+  },
+  "checked_qasm": 10,
+  "view_cache": {
+    "hits": 15,
+    "misses": 20
+  },
+  "jpv_proposals": {
+    "calls": 32,
+    "matching_work_exhausted": 19,
+    "phase_inferred": 289,
+    "non_clifford_matches_skipped": 0
+  },
+  "completion": {
+    "requests": 19,
+    "primary_successes": 12,
+    "primary_failures": 7,
+    "clifford_repair_successes": 7,
+    "unique_valid_qasm": 10,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 8.158439733063109e-16,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 2005,
+    "resource_masks": 34,
+    "calls": 16,
+    "proposed": 2005,
+    "eligible": 1971,
+    "cache_size": 2005,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "PVB": 8,
+      "PVG": 1,
+      "spider_nest": 25
+    }
+  },
+  "max_graph_operator_error": 7.109687199265729e-15,
+  "max_qasm_operator_error": 8.158439733063109e-16,
+  "first_passage_seconds": {
+    "39": null,
+    "38": null,
+    "37": null,
+    "36": null,
+    "35": null
+  },
+  "budget_seconds": 20.0,
+  "total_loop_seconds": 13.143275053007528,
+  "timers": {
+    "matching": 1.315990699804388,
+    "feasibility": 10.332120127859525,
+    "inference": 0.08584942703600973,
+    "rewrite_verify": 0.48797726072371006,
+    "score": 0.44207586196716875,
+    "shared_exchange": 0.1596483876928687,
+    "ppo": 0.11579422000795603
+  },
+  "verification": "passed"
+}

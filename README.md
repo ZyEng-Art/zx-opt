@@ -73,4 +73,4 @@ python -m venv .venv
 - [Clifford+T 与一般 ZX 的完备性](https://arxiv.org/abs/1903.06035)
 - [Flow-preserving 完备规则](https://arxiv.org/abs/2608.13035)
 
-Quarl 联合搜索：新增可选的[共享起点池与双侧训练流程](docs/shared-quarl-buffer.txt)，两种表示各自生成 on-policy 轨迹，交换经过完整算符验证的电路。已完成双向交换、原生改写重放、训练及断点续跑测试；[测试记录](reports/shared-quarl-20261017/interpretation.txt)。当前仅支持两侧共同的 Clifford+T、≤7比特范围，尚未证明质量或速度收益。
+Quarl 联合搜索：新增可选的[共享起点池与双侧训练流程](docs/shared-quarl-buffer.txt)，两种表示各自生成 on-policy 轨迹，交换经过完整算符验证的电路。已完成双向交换、原生改写重放、训练及断点续跑测试；[测试记录](reports/shared-quarl-20261017/interpretation.txt)。当前共享桥仍限定 Clifford+T、≤7比特；ZX 独立搜索已另支持一般角度。共享训练尚未证明质量或速度收益。

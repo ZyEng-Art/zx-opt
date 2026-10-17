@@ -1,0 +1,34 @@
+{
+  "arm": "shared",
+  "seed": 11,
+  "status": "passed",
+  "transitions": 15,
+  "accepted_rewrites": 15,
+  "replayed_auxiliary": 0,
+  "legal_unscored": 0,
+  "recovered": 0,
+  "saved_qasm": 3,
+  "quarantined_invalid_qasm": 0,
+  "max_graph_operator_error": 7.108006478384698e-15,
+  "max_qasm_operator_error": 2.3551386880256624e-16,
+  "accepted_families": {
+    "PV": 2,
+    "PVG": 3,
+    "phase_split": 2,
+    "ID": 2,
+    "PVB": 3,
+    "I:backward": 1,
+    "B:backward": 1,
+    "spider_split": 1
+  },
+  "completion_branches": {
+    "primary": 15
+  },
+  "model": {
+    "parameter_l2_delta": 0.07124835765641091,
+    "actor_l2_delta": 0.04472775798372782,
+    "finite": true
+  },
+  "events_sha256": "226298e4145bf0065d4ec6e6271b6e2c406925a99a6e7398852dc6ded9af2fa1",
+  "report_sha256": "c9536dbaaf08709b95c71d15d49ca22f00b355305db286a39cc8c96653edde0d"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "segment_events": 16,
+  "accepted_replayed": 16,
+  "unique_qasm_checked": 10,
+  "source_checkpoint": "/tmp/zx-sync-20261017/pilot/zx/search-state.pt"
+}

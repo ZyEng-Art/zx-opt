@@ -51,6 +51,16 @@ class SharedTest(unittest.TestCase):
             self.assertTrue(pool.db.execute('SELECT 1 FROM candidates WHERE key=?',(pool.root_key,)).fetchone())
             pool.close()
 
+    def test_general_mode_cannot_silently_enter_ct_exchange(self):
+        from zxopt.general_search import parser, run
+        for flag in ('--general-zx','--allow-arbitrary-angles'):
+            with tempfile.TemporaryDirectory() as tmp:
+                output=Path(tmp)/'out'
+                args=parser().parse_args([str(output),'--shared-buffer',str(Path(tmp)/'pool.sqlite'),flag])
+                with self.assertRaisesRegex(ValueError,'Clifford\+T only'):
+                    run(args)
+                self.assertFalse(output.exists())
+
     def test_cost_not_producer_supplied_and_rng_is_explicit(self):
         with tempfile.TemporaryDirectory() as tmp:
             pool = SharedBuffer(Path(tmp)/'pool.sqlite',ROOT,'quarl')

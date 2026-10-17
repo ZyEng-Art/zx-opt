@@ -13,8 +13,9 @@ Protocol:
 - Native ZX diagrams that cannot be extracted stay in its latent archive. They
   cannot safely be consumed by the gate optimizer and have no fabricated gate cost.
 - v1 boundary: 1..7 wires, <=10000 unconditional NAM gates, pi/4 integer RZ grid.
-  The ZX kernel is Clifford+T; accepting pi/8 here would be unsound. This restriction
-  is specific to this shared trainer, not a general NAM hardware constraint.
+  The v1 exchange adapter uses the Clifford+T mode. Upstream now also supports
+  general-angle standalone search, but general-angle exchange is not enabled or
+  validated here. This is an adapter restriction, not a NAM hardware constraint.
 - Every unique publication and each sampled import is checked by complete
   fixed-wire Qiskit operators, up to unit-modulus global phase, max error <=1e-9.
   This is bounded numerical validation, not an exact formal proof.
@@ -66,3 +67,9 @@ Outputs: launch.json, both worker logs, SQLite publication/import/sample events;
 Quarl fullseq/progress/checkpoints; ZX objects/candidates/events/restarts/PPO
 updates/protocol/search-state. A shared search improvement is not evidence of
 learning benefit without paired independent vs shared and frozen vs online tests.
+
+2026-10-17 upstream sync: general-angle branches merged. Shared v1 retains its
+previous domain; combining --shared-buffer with --general-zx or
+--allow-arbitrary-angles is rejected before output creation. Native resume now
+also binds these two mode flags. Old source-bound checkpoints must resume with
+their archived source, not silently load into this changed source tree.

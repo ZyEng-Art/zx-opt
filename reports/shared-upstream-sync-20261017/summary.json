@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+  "input_gates": 46,
+  "training": {
+    "quarl_updates": 6,
+    "zx_updates": 1,
+    "zx_transitions": 15,
+    "quarl_best": 40,
+    "zx_best": {
+      "gates": 40,
+      "cx": 18,
+      "depth": 39
+    }
+  },
+  "resume": {
+    "quarl_updates": 2,
+    "quarl_iterations": [
+      6,
+      7
+    ],
+    "zx_transitions_before": 15,
+    "zx_transitions_after": 31,
+    "zx_updates_after": 3
+  },
+  "exchange": {
+    "events": {
+      "quarl:publish": 4,
+      "zx:publish": 8,
+      "zx:export": 18,
+      "zx:sample": 4,
+      "zx:import": 4,
+      "quarl:sample": 2,
+      "quarl:import": 1,
+      "quarl:native_restart": 111
+    },
+    "unique_qasm_verified": 12
+  },
+  "native_audit": {
+    "status": "passed",
+    "edges_replayed": 68,
+    "unique_qasm_checked": 49,
+    "scope": "Native rule replay with fixed-wire signature anchor rebasing; independent complete Qiskit matrix per unique stored QASM, tolerance1e-9"
+  },
+  "zx_audit": {
+    "arm": "shared",
+    "seed": 11,
+    "status": "passed",
+    "transitions": 15,
+    "accepted_rewrites": 15,
+    "replayed_auxiliary": 0,
+    "legal_unscored": 0,
+    "recovered": 0,
+    "saved_qasm": 3,
+    "quarantined_invalid_qasm": 0,
+    "max_graph_operator_error": 7.108006478384698e-15,
+    "max_qasm_operator_error": 2.3551386880256624e-16,
+    "accepted_families": {
+      "PV": 2,
+      "PVG": 3,
+      "phase_split": 2,
+      "ID": 2,
+      "PVB": 3,
+      "I:backward": 1,
+      "B:backward": 1,
+      "spider_split": 1
+    },
+    "completion_branches": {
+      "primary": 15
+    },
+    "model": {
+      "parameter_l2_delta": 0.07124835765641091,
+      "actor_l2_delta": 0.04472775798372782,
+      "finite": true
+    },
+    "events_sha256": "226298e4145bf0065d4ec6e6271b6e2c406925a99a6e7398852dc6ded9af2fa1",
+    "report_sha256": "c9536dbaaf08709b95c71d15d49ca22f00b355305db286a39cc8c96653edde0d"
+  },
+  "environment": {
+    "python": "3.10.19 | packaged by conda-forge | (main, Jan 26 2026, 23:45:08) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+    "torch": "2.9.0+cu129",
+    "pyzx": "0.8.0",
+    "packages": {
+      "qiskit": "2.1.2",
+      "torch-geometric": "2.6.1",
+      "gymnasium": "1.0.0",
+      "networkx": "3.2.1",
+      "numpy": "2.2.6"
+    }
+  },
+  "limits": "Single exposed barenco_tof3 pilot, not a quality/speedup/generalization comparison; CPU only. Numerical full-matrix boundary1e-9. Checkpoints preserve search state but do not guarantee concurrent wall-budget bitwise replay."
+}

@@ -1,0 +1,43 @@
+ZX upstream synchronization into shared-search branch, 2026-10-17
+
+Fetched origin. main remains54ca919; latest relevant work is
+origin/feat/general-zx-nonlinear at85394e7, which already contains
+origin/feat/arbitrary-angle-context at9d959c7. Merged the former into
+feat/quarl-shared-search-buffer (merge575264b), preserving the independent PPO,
+shared restart buffer, native trace and full search-state continuation code.
+Other worktrees/branches and archived prior experiments were not modified.
+
+Incoming features: conditional mixed-angle input contexts, general-phase rule
+schemata, certified nonlinear A rewrites, mode-aware policy/search interfaces,
+symbolic phase serialization and source reports for the new studies.
+
+Compatibility adjustments:
+- Bind general_zx and allow_arbitrary_angles flags in full native ZX checkpoint
+  resume validation, in addition to existing source/input/options validation.
+- Shared v1 still uses the previously tested CT adapter, not the new general-angle
+  adapter. Reject --shared-buffer combined with --general-zx or
+  --allow-arbitrary-angles before creating output. This prevents silently mixing
+  an unsupported phase domain into the pool and failing later during publication.
+- The <=7wire boundary and pi/4 exchange restriction remain. Upstream standalone
+  general-angle support is present; general-angle cross-IR exchange is a separate
+  future change. No new optimizer pass/default or600-case claim.
+
+Validation: all58 unit tests passed in36.198s in the existing node5 CPU runtime,
+including both incoming angle suites, nonlinear symbolic proofs, general PPO and
+four shared-buffer tests. A fresh12-second coupled pilot completed6Quarl updates
+and1ZX PPO update/15accepted rewrites. Real resume: Quarliterations6,7; ZX15->31
+transitions and1->3updates. Whole pilot native68edges/49QASMs and ZX15edges/3QASMs
+passed replay/matrix audits; resumed edges independently audited too. All12shared
+QASMs passed complete matrices. Smoke best40 is not a quality comparison.
+
+Actual environment is the previously established node5 CPU runtime, including
+SymPy1.14.0, Torch2.9, Qiskit2.1.2; upstream recommends SymPy1.13.1. These are
+compatibility tests in the deployed environment, not a reproduction of upstream's
+48-study measurements in its pinned environment. Exact package/source metadata,
+commands, test output and independent proof receipts are retained here.
+
+Remote source/test directory: /tmp/zx-sync-20261017 (isolated checkout).
+Raw models, both native buffers, shared pool, trajectories and resume states are
+archived in the durable workspace path recorded by archive.json. Existing old
+source-bound checkpoints must continue using their archived old source. No long
+training was resumed and no accelerator training was used for this update.
