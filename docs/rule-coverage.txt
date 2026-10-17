@@ -1,4 +1,4 @@
-规则覆盖，2026-10-17
+旧训练宏动作覆盖，2026-10-17；JPV 内核的新增覆盖见文末及 clifford-t-completeness.txt
 
 现有宏动作：LC/PV/PVB/PVG/ID/GF，沿用冻结 v49 源码。
 新动作：
@@ -32,7 +32,7 @@ WL 散列仅用于分桶，合并前必须通过带标签的精确图同构。
 它是运行期间的图同构去重，不是一般 ZX 语义等价判定，也不合并所有等价电路。
 代价缓存仍使用冻结的序列化图键，避免因提取器对编号/布局的依赖而错误复用成本。
 
-尚缺的完备性工作
+原训练宏动作尚缺的完备性工作（以下不描述新的独立 JPV 内核）
 - JPV 基础公理及 SUP/E/C/BW 的逐项完整双向覆盖或宏动作推导证明。
 - 或改为 flow-preserving 的 IO/PF/ZL/LC/EZX/SN 全套，并实现测量类型、flow 前置条件。
 - 任意角度 Euler 规则与精确角度表示；目前不主动搜索 pi/8 或任意实数相位。
@@ -42,3 +42,8 @@ WL 散列仅用于分桶，合并前必须通过带标签的精确图同构。
 https://arxiv.org/abs/1903.06035
 https://arxiv.org/abs/2608.13035
 https://arxiv.org/abs/1812.09114
+
+本轮新增的 JPV 内核
+zxopt.complete 实现 S/I/CP/B/K/EU/H/SUP/E/C/BW 全套、双色双向、开放上下文替换。
+目标是 Clifford+T 的规则完备覆盖；元数无限模式、依据和训练接口边界详见
+docs/clifford-t-completeness.txt。现有训练器的 --expanded 仍指上面的六类受控宏动作。

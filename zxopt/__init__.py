@@ -1,1 +1,1 @@
-"""Controlled, sound ZX search rules; no completeness claim."""
+"""Bounded ZX search and a separate Clifford+T-complete JPV axiom kernel."""

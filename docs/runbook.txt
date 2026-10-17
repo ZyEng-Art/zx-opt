@@ -11,6 +11,11 @@ PYTHON=/tmp/rlzx-diagnostic-env-20261015/bin/python
 规则、去重、矩阵和策略概率检查
 $PYTHON -m unittest discover -s tests -v
 
+Clifford+T 完整公理内核（独立于当前受限的 PPO 动作接口）
+$PYTHON -m zxopt.complete catalog
+$PYTHON tools/verify_complete.py runs/jpv-verification
+详见 docs/clifford-t-completeness.txt：完整模板、双向上下文改写、导入/导出和重放。
+
 单次运行，输出目录须不存在
 $PYTHON -m zxopt.search runs/example --expanded --dedup --policy online --seconds 180 --seed 11
 

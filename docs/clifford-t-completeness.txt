@@ -1,0 +1,81 @@
+Clifford+T 完备规则内核，2026-10-17
+
+范围和依据
+目标是 pi/4 片段的 ZX 规则完备性：同一精确线性算子的两个片段内图，存在有限改写序列。
+依据 Jeandel–Perdrix–Vilmart, Completeness of the ZX-Calculus,
+https://arxiv.org/abs/1903.06035v3 ，图 1/2、定理 1.1。
+图 2 明确使用图 1 去掉 IV、ZO 后，再加入 SUP、E、C、BW；共 11 类公理。
+这不是任意实数角度的 ZX 完备实现，也不是有限 RL 搜索或总门数全局最优的保证。
+
+实现入口
+zxopt/complete/axioms.py：完整公理模板和公平分层的实例生成。
+zxopt/complete/diagram.py：开放 ZX 多重图、张量积、边界粘合、精确张量语义。
+zxopt/complete/rewrite.py：双向动作、严格匹配、上下文替换、动作记录与重放。
+zxopt/complete/adapter.py：现有 PyZX 图的精确导入与导出。
+python -m zxopt.complete：可调用的导入、改写和重放命令。
+
+公理覆盖（每项都支持两种颜色和正反两个方向）
+S   蜘蛛融合/拆分：alpha,beta 为任意 pi/4 倍数；两侧外腿数分别为任意非负整数，
+    内部连线数为任意正整数。不是只枚举三个邻接划分。
+I   零相位二腿蜘蛛与一根线互换；允许在线、自环、无节点闭合圆上插入。
+CP  带图中 sqrt(2) 标量分量的复制规则；保留无连接的标量子图。
+B   带左侧 sqrt(2) 标量分量的双代数规则；四个开放端口。
+K   pi 交换规则；alpha 为任意 pi/4 倍数，左右两侧保留各自的标量子图。
+EU  H 的精确 Euler 图式：包含 -pi/2 相位的标量分支，不省略全局因子。
+H   红绿颜色转换：alpha 任意 pi/4 倍数，任意非负元数，每条腿上的 H 都显式存在。
+SUP alpha 与 alpha+pi 的补充律；右侧的两条平行线不合并。
+E   pi/4 与 -pi/4 的标量图等于空图；支持在任意图中反向插入这个标量恒等式。
+C   alpha,beta,gamma 三个参数，分别覆盖八个 pi/4 相位；四个开放端口。
+BW  原论文图 2 的完整固定相位图式；不以 2..4 目标的 spider-nest 代替。
+上下翻转和弯线通过端口的任意上下文嵌入实现；没有电路方向限制。
+
+完备性的覆盖论证
+1. 表示：节点包含 Z、X、归一化 H、开放边界。允许任意有限度数、平行线、
+   自环、零腿蜘蛛及无节点闭合圆。端口有固定顺序；内部图按同构视为同一拓扑。
+   因而无需把一般 ZX 图强行压回原先的全 Z、graph-like、可立即提取子集。
+2. 实例：alpha,beta,gamma 模 2pi 都有八个值。S 和 H 的元数没有上限。
+   instances_at(rank) 给出互不重叠的有限阶段，其并集覆盖所有实例：
+   S 使用 rank=left_legs+right_legs+links-1，H 使用 rank=arity；其他规则在 rank=0。
+   每个阶段包括所有相位和两种颜色；actions_at 对每个实例枚举正反向匹配。
+3. 上下文：匹配检查所有内部节点标签、度数、内部连线及每个开放端口的半边。
+   若上下文把两个端口直接接回去，也能保留其关联；多个端口可以接同一外部节点。
+   替换后对二度粘合点消元，完整保留平行线、自环和闭合圆计数。
+   注册公理的线端模式只有 I 的单根线；它能匹配任意线段或无节点闭合圆。
+   空源图 E 的反向动作总能插入。其他源模式均有明确内部节点。
+   因此，对任意注册公理在有限图上下文中的一次使用，都有相应动作。
+   自定义的“自由线与内部节点混合”模式不属于此接口支持的匹配语言，会显式拒绝。
+4. 继承定理：上述表示、全部实例和上下文应用覆盖了 JPV 定理 1.1 的规则演算，
+   所以该公理内核覆盖 Clifford+T 的完备改写关系。实现没有形式化到 Lean/Coq；
+   完备性依据是论文定理及这项覆盖论证，不能仅由有限测试次数得出。
+
+规则等式的校验依据
+S 在任意元数/连线数下，由同色蜘蛛的 Kronecker delta 约束与相位相加直接成立。
+H 在任意元数下，由 X 张量的定义和 H^2=I 直接成立。两项的无限模式有上述统一理由。
+其余模板只有有限个端口和有限个 pi/4 参数值，可逐实例比较完整精确端口张量。
+精确算术使用 Q[zeta8]/(zeta8^4+1) 的四个二进有理数系数，禁止浮点相位输入；
+不会对齐整体相位，也不会归一化幅值。独立的 numpy incidence 张量和 PyZX 算子
+另用于交叉检查。测试范围不构成 S/H 的元数上限。
+
+与当前训练代码的关系
+zxopt.search 仍使用已有 LC/PV/PVB/PVG/ID/GF 和可选六类受控宏动作；本轮不改其 PPO
+策略接口、预算、候选上限或历史实验。--expanded 不会自动打开 JPV 完备内核。
+完整内核已能在真实电路图上调用并记录动作；后续把它接入学习搜索时，需要支持
+一般 ZX 图与不能立即提取的中间状态。这项训练接口工作不在本轮完成的范围内。
+内核不以立即提取为状态合法性条件；通用图导出为 PyZX 图也不会要求可提取。
+node44/GPU 均无需启动；本轮仅在本机 CPU 验证规则与同一个 barenco_tof_3。
+
+使用示例（沿用 docs/runbook.txt 的 Python/PYTHONPATH 配置；输出路径必须不存在）
+$PYTHON -m zxopt.complete catalog
+$PYTHON -m zxopt.complete import-qasm inputs/barenco_tof_3.qasm runs/jpv-root.json
+$PYTHON -m zxopt.complete apply runs/jpv-root.json runs/jpv-next.json --axiom E --direction backward
+$PYTHON -m zxopt.complete replay runs/jpv-root.json runs/jpv-next.json.receipt.json runs/jpv-replayed.json
+$PYTHON -m zxopt.complete export-pyzx runs/jpv-next.json runs/jpv-next-pyzx.json --num-inputs 5
+--parameters 接收 JSON；相位用字符串，如 {"alpha":"1/4","beta":"-1/4","links":2}。
+指定一个具体实例时不设置候选上限；--match-index 选择该实例的某个匹配。
+动作记录包含可信公理名/参数、方向、顶点/连线/半边匹配和父图 SHA，重放会检查 SHA。
+
+可复现校验
+$PYTHON tools/verify_complete.py runs/jpv-verification --paper runs/completeness-20261017/jpv.pdf
+脚本执行整个测试集，独立检查 4,768 个精确实例，保存默认模板图和同电路四步改写证据。
+四步为 E 反向插入、I 反向插入、S 相位拆分、H 颜色转换；每步精确等于原图，
+并经导出的 PyZX 图独立核验全算子。它是规则/适配器检查，不是优化成绩或泛化评估。
