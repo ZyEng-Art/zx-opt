@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "archive": "runs/jpv-mask-20261017-records.tar.gz",
+  "bytes": 8214798,
+  "sha256": "4cafd12cd4b577713fcd584c9c303c2a00bb122e9733877d4cd733b3d669d435",
+  "source_commit": "a184ab519a83d75c76faaf9812b9226fc72888e2"
+}

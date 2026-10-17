@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "fixed_state": "original root, original context and exact first proposal list",
+  "proof_limit": "Preference change is not a search-benefit claim",
+  "records": [
+    {
+      "arm": "jpv_online",
+      "seed": 29,
+      "proposals": 101,
+      "candidate_sha256": "46de4b54b0ebbb9e7e7504070e2fcb47607dbbbd68a1f0140ee7dbe34a59644f",
+      "total_variation": 0.009458791150031348,
+      "kl_initial_to_final": 0.00031998048306065537,
+      "normalized_entropy_initial": 0.9999999790543528,
+      "normalized_entropy_final": 0.9999304057730447,
+      "critic_initial": 0.1578797549009323,
+      "critic_final": -0.9968918561935425,
+      "family_probabilities_initial": {
+        "ID": 0.0693216883853405,
+        "PV": 0.019819615475908423,
+        "PVB": 0.16844554811593349,
+        "PVG": 0.24744958262542963,
+        "identity_insert": 0.11879505469602092,
+        "phase_split": 0.1088644782742375,
+        "spider_split": 0.08907416979666348,
+        "EU:forward": 0.029711430059289078,
+        "H:forward": 0.029707474379747488,
+        "E:backward": 0.019802659927725744,
+        "I:forward": 0.009901812282401522,
+        "S:backward": 0.02969793387115008,
+        "I:backward": 0.029692321314308108,
+        "H:backward": 0.029716230795844217
+      },
+      "family_probabilities_final": {
+        "ID": 0.07308786455216543,
+        "PV": 0.019807667032527662,
+        "PVB": 0.16834904534830317,
+        "PVG": 0.24982659288423634,
+        "identity_insert": 0.11792294588448185,
+        "phase_split": 0.1041633203094048,
+        "spider_split": 0.09078981340145197,
+        "EU:forward": 0.029179689019969847,
+        "H:forward": 0.02891842744972471,
+        "E:backward": 0.02009802782741413,
+        "I:forward": 0.009976345956513833,
+        "S:backward": 0.030660066693803646,
+        "I:backward": 0.02822377700154127,
+        "H:backward": 0.028996416638461472
+      }
+    },
+    {
+      "arm": "macros_online",
+      "seed": 29,
+      "proposals": 83,
+      "candidate_sha256": "56f879f594cb38f8b2711fb35007700e63e6207f15179bfadf06609c0b734f97",
+      "total_variation": 0.01182207453901499,
+      "kl_initial_to_final": 0.0003393608354992936,
+      "normalized_entropy_initial": 0.9999999753413076,
+      "normalized_entropy_final": 0.9999220414836966,
+      "critic_initial": 0.1578797549009323,
+      "critic_final": -1.1827683448791504,
+      "family_probabilities_initial": {
+        "ID": 0.08435654665694667,
+        "PV": 0.024118196499929592,
+        "PVB": 0.20497894307494396,
+        "PVG": 0.30111775146984526,
+        "identity_insert": 0.1445599574058298,
+        "phase_split": 0.1324755675980227,
+        "spider_split": 0.10839303729448199
+      },
+      "family_probabilities_final": {
+        "ID": 0.08228817670207239,
+        "PV": 0.02513993969477151,
+        "PVB": 0.2103781059202391,
+        "PVG": 0.29136404688570455,
+        "identity_insert": 0.14567818198120377,
+        "phase_split": 0.13633611544945484,
+        "spider_split": 0.10881543336655389
+      }
+    }
+  ]
+}

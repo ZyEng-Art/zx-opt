@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "steps": 128,
+  "compared_fields": [
+    "action",
+    "parent_graph_key",
+    "graph_key",
+    "candidate_sha256",
+    "reward",
+    "cost",
+    "status"
+  ],
+  "slow_seconds": 106.96543295800001,
+  "fast_seconds": 62.631990916999996,
+  "slow_feasibility_seconds": 90.09366078900005,
+  "fast_feasibility_seconds": 45.25500633999995
+}

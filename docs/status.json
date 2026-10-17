@@ -1,13 +1,13 @@
 {
-  "phase": "jpv_main_auditing_and_resource_mask_correction",
+  "phase": "jpv_main_archive_transfer_and_local_postprocessing",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO; independent complete Clifford+T JPV axiom kernel",
   "resources": {
-    "node44_owned_cpu_container": "running_for_jpv_campaign",
+    "node44_owned_cpu_container": "stopped",
     "new_gpu_tasks": 0,
     "persistent_ssh": "retained",
-    "background_jobs": "owned controller PID 3027081; no GPU"
+    "background_jobs": "only local archive transfer; local mask diagnostic completed"
   },
   "github": {
     "push": "completed",
@@ -27,7 +27,7 @@
     "Align reward and observations with the global extracted-gate objective",
     "Expand reliably extractable rewrite paths"
   ],
-  "active_work": "18-run main campaign finished search and is replay-auditing; commit feasibility correction, run local four-arm seed29 diagnostic",
+  "active_work": "Main search and all semantic/model/replay audits passed on node44; preserve failed source-audit controller receipt, finish source audit and fixed-root policy probes locally after SHA-verified archive download",
   "completed_followups": [
     {
       "suite": "representation",
@@ -114,5 +114,16 @@
     "task_root": "/tmp/dengzengyong_rlzx_node44_20261016",
     "container_id": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
     "bundle_sha256": "900de08abc011db171267d5658bc3173851fbc61a637a845d77c469561562e45"
+  },
+  "jpv_mask": {
+    "source_commit": "a184ab519a83d75c76faaf9812b9226fc72888e2",
+    "trials": 4,
+    "seconds_per_trial": 600,
+    "seed": 29,
+    "report": "reports/jpv-mask-20261017",
+    "replayed": 4644,
+    "checked_qasm": 1885,
+    "resource_rejections": 0,
+    "unit_tests": 38
   }
 }

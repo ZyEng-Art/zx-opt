@@ -21,7 +21,7 @@
 
 范围之外
 - 当前不声称完整复现 Quarl/HAE。
-- 暂不声称 JPV 或 flow-preserving 公理全部实现。
+- 未实现任意角度或 flow-preserving 完整公理；JPV Clifford+T 内核及其接入见后续完成记录。
 - 不根据 loss 或单次最好成绩宣称学习有效。
 - 不开启未经记录的无限训练；GPU 如需要，沿用 node44 持久连接。
 

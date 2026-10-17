@@ -1,0 +1,197 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "arm": "jpv_frozen",
+      "seed": 29,
+      "timers_seconds": {
+        "matching": 78.82376091899911,
+        "feasibility": 418.2467108140016,
+        "inference": 6.666325851000118,
+        "rewrite_verify": 47.97615710200037,
+        "score": 37.117093768000004
+      },
+      "timer_percent": {
+        "matching": 13.386504497512368,
+        "feasibility": 71.03012353260954,
+        "inference": 1.1321307172592239,
+        "rewrite_verify": 8.147708702700186,
+        "score": 6.303532549918698
+      },
+      "feasibility": {
+        "previews": 87085,
+        "calls": 938,
+        "proposed": 88208,
+        "eligible": 72558,
+        "resource_masks": 15506,
+        "cache_hits": 1202,
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 2431,
+          "gadget_split": 2108,
+          "spider_nest": 3730,
+          "PVG": 1493,
+          "identity_insert": 1512,
+          "phase_split": 1501,
+          "spider_split": 1304,
+          "EU:forward": 411,
+          "E:backward": 170,
+          "CP:backward": 120,
+          "I:backward": 126,
+          "S:backward": 126,
+          "phase_transfer": 132,
+          "ID": 149,
+          "PV": 335,
+          "B:backward": 12,
+          "H:backward": 3,
+          "LC": 1
+        }
+      },
+      "accepted": 938,
+      "transitions": 938,
+      "rejections": {}
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 29,
+      "timers_seconds": {
+        "matching": 77.0986558299997,
+        "feasibility": 410.4058354480007,
+        "inference": 7.705655314000279,
+        "rewrite_verify": 46.83413904999945,
+        "score": 36.94559028499978,
+        "ppo": 9.744877790000075
+      },
+      "timer_percent": {
+        "matching": 13.095652217443309,
+        "feasibility": 69.70980273491371,
+        "inference": 1.3088500832251406,
+        "rewrite_verify": 7.955049154871575,
+        "score": 6.275422004857425,
+        "ppo": 1.6552238046888532
+      },
+      "feasibility": {
+        "previews": 85532,
+        "calls": 931,
+        "proposed": 86936,
+        "eligible": 72740,
+        "resource_masks": 13989,
+        "cache_hits": 1474,
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 1859,
+          "gadget_split": 2008,
+          "spider_nest": 3535,
+          "PVG": 1142,
+          "identity_insert": 1401,
+          "phase_split": 1384,
+          "spider_split": 1208,
+          "EU:forward": 381,
+          "E:backward": 178,
+          "CP:backward": 129,
+          "I:backward": 141,
+          "S:backward": 141,
+          "phase_transfer": 48,
+          "ID": 30,
+          "PV": 548,
+          "B:backward": 63
+        }
+      },
+      "accepted": 931,
+      "transitions": 931,
+      "rejections": {}
+    },
+    {
+      "arm": "macros_frozen",
+      "seed": 29,
+      "timers_seconds": {
+        "matching": 30.50213808900007,
+        "feasibility": 410.71455320600063,
+        "inference": 11.047168212997715,
+        "rewrite_verify": 71.99676963699982,
+        "score": 56.95410386500038
+      },
+      "timer_percent": {
+        "matching": 5.247998090316019,
+        "feasibility": 70.66485584062701,
+        "inference": 1.9007034036777715,
+        "rewrite_verify": 12.387292604257034,
+        "score": 9.799150061122178
+      },
+      "feasibility": {
+        "previews": 102250,
+        "calls": 1410,
+        "proposed": 103975,
+        "eligible": 85519,
+        "resource_masks": 18214,
+        "cache_hits": 1725,
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "spider_nest": 6519,
+          "PVG": 1260,
+          "PVB": 2712,
+          "gadget_split": 2838,
+          "identity_insert": 1738,
+          "phase_split": 1718,
+          "spider_split": 1448,
+          "PV": 72,
+          "phase_transfer": 132,
+          "ID": 6,
+          "LC": 13
+        }
+      },
+      "accepted": 1410,
+      "transitions": 1410,
+      "rejections": {}
+    },
+    {
+      "arm": "macros_online",
+      "seed": 29,
+      "timers_seconds": {
+        "matching": 31.379105738999545,
+        "feasibility": 399.1117258260014,
+        "inference": 11.368218480000014,
+        "rewrite_verify": 71.30205471000045,
+        "score": 54.581904515000964,
+        "ppo": 13.477146500000067
+      },
+      "timer_percent": {
+        "matching": 5.398833028670246,
+        "feasibility": 68.66790868552329,
+        "inference": 1.9559229608855118,
+        "rewrite_verify": 12.267650046571294,
+        "score": 9.390917361200366,
+        "ppo": 2.3187679171493114
+      },
+      "feasibility": {
+        "previews": 100274,
+        "calls": 1366,
+        "proposed": 102192,
+        "eligible": 83522,
+        "resource_masks": 18386,
+        "cache_hits": 1918,
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "spider_nest": 5910,
+          "PVG": 1264,
+          "PVB": 2923,
+          "gadget_split": 2924,
+          "identity_insert": 1876,
+          "phase_split": 1854,
+          "spider_split": 1572,
+          "PV": 131,
+          "phase_transfer": 169,
+          "ID": 47
+        }
+      },
+      "accepted": 1365,
+      "transitions": 1366,
+      "rejections": {}
+    }
+  ],
+  "scope": "seed29 chosen after observing invalid-loop failure; diagnostic, no cross-hardware throughput claim"
+}

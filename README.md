@@ -2,7 +2,13 @@
 
 ZX 图改写与单电路学习搜索研究。当前唯一搜索目标是 `barenco_tof_3`，优化提取和后处理后的 H/RZ/X/CX 总门数，CX 数作为同门数时的比较项。
 
-本轮从已有 RL-ZX 单电路实验继续，加入受控图展开、相位拆分与重新分配、多个 gadget 的恒等改写，以及保留输入输出线序的结构去重。新增功能先验证等价性，再做同电路、同时间预算的消融实验。
+当前入口 `zxopt.general_search` 已将 JPV 的 11 类 Clifford+T 公理接入一般 ZX 图搜索和 PPO。状态保留红绿蜘蛛、H、平行线与标量；评分在独立副本进行。合法但不可提取的中间图可以继续改写，进入单独的潜在图池，真实成本保留为未知。策略观察一般图、评分图与动作，目标仍是提取后总 NAM 门数。
+
+数学内核支持完整公理模板的双向上下文改写；训练采用有限候选、匹配工作量、图大小和轨迹上限，因此不声称完备搜索或门数全局最优。范围是 Clifford+T，不包括任意角度的 ZX 完备性。规则覆盖和精确验证见 [完备性说明](docs/clifford-t-completeness.txt)与[内核报告](reports/clifford-t-20261017/interpretation.txt)。
+
+一般图训练先过滤实际子图超出资源预算的动作，过滤后的候选集同时用于采样和 PPO 概率重算；过滤不做提取或查看成本，耗时全部计入预算。错误提取电路被隔离，不参与奖励或最优结果。具体流程、池预算及对照口径见 [一般图搜索说明](docs/general-search.txt)。
+
+原 `zxopt.search` 保留已有 RL-ZX 单电路实验、受控展开和结构去重，用于复现历史对照：
 
 已接入六类新动作：恒等展开、相位拆分、蜘蛛拆分、gadget 拆分、同目标集相位转移、spider-nest 补集替换。结构去重使用 WL 分桶和精确图同构，并记录每个结构状态已尝试的动作；代价缓存保留精确序列化键。
 
@@ -16,7 +22,14 @@ ZX 图改写与单电路学习搜索研究。当前唯一搜索目标是 `barenc
 python -m venv .venv
 .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m unittest discover -s tests -v
-.venv/bin/python -m zxopt.search runs/example --expanded --dedup --policy online --seconds 180
+.venv/bin/python -m zxopt.general_search runs/example --jpv --policy online --seconds 1200
+```
+
+六组随机/冻结/在线对照分别启用和关闭 JPV，其余网络、评分和池相同：
+
+```sh
+.venv/bin/python -m zxopt.general_campaign runs/jpv-study --seconds 1200 --workers 3
+.venv/bin/python tools/audit_general.py runs/jpv-study runs/jpv-audit --workers 3
 ```
 
 复现有限分支储备的在线组（旧规则，600 秒）：
@@ -29,7 +42,9 @@ python -m venv .venv
 
 完整命令与输出说明见 [docs/runbook.txt](docs/runbook.txt)，已实现的规则和剩余缺口见 [docs/rule-coverage.txt](docs/rule-coverage.txt)。
 
-当前实现不声明 ZX 规则完备，也不把损失下降视为门数优化有效。完整规则系的公理覆盖、相位范围和 flow 条件将单独记录。
+损失下降和策略分布变化用于诊断训练；是否改善搜索要看相同预算下随机、冻结和在线的全部种子结果。
+
+一般图接入后的资源过滤诊断已完成：种子 29，冻结/在线分别启用和关闭 JPV，四组各 600 秒。全部 4,644 次接受改写和 1,885 份电路通过核验，资源超限拒绝为零；过滤仍占约 69%～71% 的归类耗时。JPV 两组均为 37 门，宏动作两组均为 38 门，单种子诊断未显示在线优势。详见[修复复测](reports/jpv-mask-20261017/interpretation.txt)。
 
 首轮已完成 6 组 × 3 种子 × 180 秒的同电路比较：旧动作随机组为 36/36/37 门，扩展动作加去重的随机组为 38/36/37 门，在线组为 38/37/37 门。目前没有稳定的在线学习收益。详见[完整解读](reports/pilot-20261017/interpretation.txt)、[搜索曲线](reports/pilot-20261017/anytime.png)与[学习诊断](reports/pilot-20261017/learning.png)。
 
