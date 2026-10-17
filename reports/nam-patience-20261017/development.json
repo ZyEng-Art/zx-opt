@@ -20,7 +20,8 @@
     "Package downloads unavailable on node23; retained attempt logs, switched both nodes to the completed verified offline runtime",
     "Uncapped36q 60s development trial spent57s in feasibility and sampled0 actions; finite total menu added",
     "Cap64 development trial finalized with source-change assertion because source was edited during this development run; not counted as a completed experiment; preserved raw directory",
-    "Initial local input-audit invocation used system Python without Qiskit; rerun in fixed diagnostic environment before deployment"
+    "Initial local input-audit invocation used system Python without Qiskit; rerun in fixed diagnostic environment before deployment",
+    "First node suites rejected stock PyZX0.10 shadowing the pinned fork because offline-deps preceded pyzx-pin. Both containers stopped before search. Corrected PYTHONPATH and added full source SHA guard; original failed run preserved."
   ],
   "scope": "Preparation and local tests, not formal training results or measured3h plateau stop"
 }

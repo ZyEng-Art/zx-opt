@@ -28,7 +28,7 @@ def main():
     mount = "/workspace/task/"+dest.name
     base = ["docker", "exec", "-e", "CUDA_VISIBLE_DEVICES=", "-e", "XPU_VISIBLE_DEVICES=",
             "-e", "OPENBLAS_NUM_THREADS=1", "-e", "OMP_NUM_THREADS=1", "-e", "MKL_NUM_THREADS=1",
-            "-e", "PYTHONHASHSEED=0", "-e", "PYTHONPATH=/workspace/task/offline-deps:/workspace/task/pyzx-pin",
+            "-e", "PYTHONHASHSEED=0", "-e", "PYTHONPATH=/workspace/task/pyzx-pin:/workspace/task/offline-deps",
             "-e", "GIT_CONFIG_COUNT=1", "-e", "GIT_CONFIG_KEY_0=safe.directory", "-e", "GIT_CONFIG_VALUE_0="+mount,
             "-w", mount, name, "/root/miniconda/envs/python310_torch29_cuda/bin/python"]
     def record(status, **extra):
@@ -41,6 +41,7 @@ def main():
     try:
         (dest/"runs").mkdir()
         record("runtime_checks")
+        (dest/"runs/pyzx-pin.json").write_bytes(subprocess.check_output(base+["tools/check_pyzx_pin.py"]))
         with (dest/"runs/unit-tests.txt").open("w") as log:
             subprocess.run(base+["-m", "unittest", "discover", "-s", "tests", "-v"], stdout=log, stderr=subprocess.STDOUT, check=True)
         (dest/"runs/environment.json").write_bytes(subprocess.check_output(base+["tools/environment.py"]))
