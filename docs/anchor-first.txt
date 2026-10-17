@@ -204,3 +204,17 @@ and parameter comparisons are required before calling this computation-only.
   model to save. The option defaults off; normal runs retain initial/final
   checkpoints as before. Replay audits bind each snapshot to the actual best
   improvement event, validate finite/compatible weights and check byte hashes.
+
+2026-10-18 optional rooted audit replay
+  tools/audit_general.py --native-replay rooted checks each recorded native
+  witness through the existing rooted matcher, retaining full host neighborhoods,
+  then executes the hash-guarded frozen rewrite prefix. It skips the legacy
+  post-rewrite global menus and neural observations, which are not audit outputs.
+  Gadget fusion remaps local group indices while preserving the recorded root
+  order. Exact saved-child records, HH receipts, fixed-wire operator checks,
+  QASM costs, rewards, archive admission, model and snapshot checks remain.
+  --crosscheck-native-every 1 also executes the reference path for every native
+  transition; larger positive intervals periodically crosscheck. Reference is
+  still the default. An alternating-order 200-rewrite component benchmark gave
+  5.02x on one local host; loading, normalization and operator checks were outside
+  that timer. This is not a training or complete-audit speedup measurement.

@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+from dataclasses import replace
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -30,8 +31,53 @@ def immediate_terminal(event, config, root_gates):
     return done
 
 
+def replay_native_rooted(kernel, raw, view, action, anchor=None):
+    """Recheck the native rule witness, then replay the frozen rewrite prefix.
+
+    All host neighborhoods remain visible to the original predicates. The
+    post-rewrite global menus and legacy observations are not audit outputs.
+    Operator, saved-child, HH-receipt and QASM checks remain in audit_one.
+    """
+    if action.mode != "legacy" or action.family != action.payload.kind:
+        raise ValueError("Expected a consistent native action record")
+    from runtime import graph_key
+    if view.graph is None or graph_key(view.graph) != action.parent_view_key:
+        raise ValueError("Native action belongs to another scoring view")
+    if anchor is not None:
+        if anchor["space"] != "view" or anchor["kind"] != "node":
+            raise ValueError("Native action has no scoring-view node anchor")
+        root = anchor["position"]
+    else:
+        if not action.payload.vertices:
+            raise ValueError("Native action is missing its root witness")
+        root = action.payload.vertices[0]
+    before = graph_key(view.graph)
+    available = kernel.native.prepare_at(view.graph, root)
+    desired = action.payload.vertices
+    matches = [(identifier, candidate) for _, identifier, candidate in available
+               if candidate.kind == action.family and
+               (set(candidate.vertices) == set(desired) if action.family == "GF"
+                else candidate.vertices == desired and identifier == action.identifier)]
+    if len(matches) != 1:
+        raise ValueError("Native rule witness is absent or ambiguous at its recorded root")
+    identifier, candidate = matches[0]
+    if action.family == "GF":
+        if not isinstance(action.identifier, int) or action.identifier >= -1:
+            raise ValueError("Invalid gadget-fusion action encoding")
+        env = kernel.native.env
+        index = -identifier-2
+        original = env.gadget_fusion_ids[index]
+        env.gadget_info_dict[desired] = env.gadget_info_dict[original]
+        env.gadget_fusion_ids[index] = desired
+    kernel.remember_matches(view)
+    child, receipts = kernel.preview(raw, view, replace(action, identifier=identifier))
+    if graph_key(view.graph) != before:
+        raise AssertionError("Rooted replay mutated the parent scoring view")
+    return child, receipts
+
+
 def audit_one(spec):
-    campaign, row, allow_dirty = spec
+    campaign, row, allow_dirty, native_replay, crosscheck_native_every = spec
     folder = Path(campaign)/row["folder"]
     import numpy as np
     import torch
@@ -87,6 +133,7 @@ def audit_one(spec):
     restart_rows = ([json.loads(l) for l in restart_path.read_text().splitlines()] if restart_path.exists() else [])
     restart_cursor = 0
     prior_event = None
+    native_calls = native_crosschecks = 0
     def restart(record):
         nonlocal best
         key, source = record["graph_key"], record["source"]
@@ -174,7 +221,15 @@ def audit_one(spec):
         action = HybridAction.from_record(event["action"])
         parent_view = views.get(state.diagram)
         # Replaying a macro also reproduces its normalized representation key.
-        child, receipts = kernel.step(state.diagram, parent_view, action)
+        if action.mode == "legacy" and native_replay == "rooted":
+            native_calls += 1
+            child, receipts = replay_native_rooted(kernel, state.diagram, parent_view, action, event.get("anchor"))
+            if crosscheck_native_every and (native_calls-1) % crosscheck_native_every == 0:
+                reference_child, reference_receipts = kernel.step(state.diagram, parent_view, action)
+                assert child.record() == reference_child.record() and receipts == reference_receipts
+                native_crosschecks += 1
+        else:
+            child, receipts = kernel.step(state.diagram, parent_view, action)
         assert child.digest() == event["graph_key"]
         assert receipts == event["auxiliary"]
         if action.mode == "jpv":
@@ -311,6 +366,8 @@ def audit_one(spec):
                 accepted_families=dict(families), completion_branches=dict(repairs),
                 verification_method=protocol.get("verification_method", "full operator"),
                 model=model, improvement_model_snapshots=snapshots,
+                native_replay=native_replay, rooted_native_replays=native_calls,
+                full_native_crosschecks=native_crosschecks,
                 protocol_sha256=sha(folder/"protocol.json"), best_history_sha256=sha(folder/"best-history.jsonl"),
                 initial_model_sha256=sha(folder/"initial.pt") if (folder/"initial.pt").exists() else None,
                 final_model_sha256=sha(folder/"final.pt") if (folder/"final.pt").exists() else None,
@@ -323,13 +380,19 @@ def main():
     p.add_argument("campaign", type=Path); p.add_argument("output", type=Path)
     p.add_argument("--workers", type=int, default=3)
     p.add_argument("--allow-dirty", action="store_true", help="Development-only audit; report preserves dirty-checkout status")
+    p.add_argument("--native-replay", choices=["reference", "rooted"], default="reference")
+    p.add_argument("--crosscheck-native-every", type=int, default=0,
+                   help="Rooted mode: also execute the full reference native path periodically;1 checks every native rewrite")
     a = p.parse_args(); a.output.mkdir(parents=True, exist_ok=False)
+    if a.crosscheck_native_every < 0 or (a.crosscheck_native_every and a.native_replay != "rooted"):
+        raise ValueError("Native crosschecks require rooted replay and a nonnegative interval")
     summary = json.loads((a.campaign/"summary.json").read_text())
     assert summary["completed"] == summary["expected"] == len(summary["rows"])
     assert not any(r["status"] == "failed" for r in summary["rows"])
     audits = []
     with ProcessPoolExecutor(max_workers=a.workers) as pool:
-        for row in pool.map(audit_one, [(str(a.campaign.resolve()), r, a.allow_dirty) for r in summary["rows"]]):
+        for row in pool.map(audit_one, [(str(a.campaign.resolve()), r, a.allow_dirty,
+                                        a.native_replay, a.crosscheck_native_every) for r in summary["rows"]]):
             audits.append(row)
             (a.output/"progress.json").write_text(json.dumps(dict(completed=len(audits), expected=len(summary["rows"])))+"\n")
             print(json.dumps(dict(arm=row["arm"], seed=row["seed"], status="passed",
@@ -351,6 +414,7 @@ def main():
                 assert {k: f.get(k) for k in keys} == {k: o.get(k) for k in keys}, (base, seed, f["transition"])
             pairs.append(dict(base=base, seed=seed, same_initialization=True, identical_prefix=count, status="passed"))
     result = dict(status="passed", development_allow_dirty=a.allow_dirty, trials=len(audits), records=audits, model_pairs=pairs,
+                  native_replay=a.native_replay, crosscheck_native_every=a.crosscheck_native_every,
                   saved_qasm=sum(r["saved_qasm"] for r in audits), accepted_rewrites=sum(r["accepted_rewrites"] for r in audits),
                   caveat="Quarantined invalid extractions are excluded from candidates, rewards and best gate counts")
     (a.output/"verification.json").write_text(json.dumps(result, indent=2)+"\n")

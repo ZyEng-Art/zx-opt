@@ -1,0 +1,26 @@
+{
+  "22": {
+    "status": "transport_verified_and_materialized",
+    "archive": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-launch-20261018/mirror/node22/anchor-e3a47f2fcba0-records.tar.gz",
+    "metadata_sha256": "3f14ca03ce248ce1d40a96fc6a6637e2fefed8b575095965524cd30d0b260930",
+    "archive_sha256": "32a1a18a5261312113280b63a380caef26cea56e831f8a912fe7c3631abfbc26",
+    "bytes": 201686484,
+    "uncompressed_bytes": 525505017,
+    "members": 82577,
+    "source_commit": null,
+    "recorded_study_status": "legacy_see_finished_and_audit",
+    "scope": "Transport verification only; this receipt is not a claim that the study passed"
+  },
+  "23": {
+    "status": "transport_verified_and_materialized",
+    "archive": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-launch-20261018/mirror/node23/anchor-64e61def1b92-records.tar.gz",
+    "metadata_sha256": "8f3cf2dfc583a39f6baa807085b9a357e26436bc47fd8793b8ebfdf1a90be4ed",
+    "archive_sha256": "dd77c57e9500cc89f138e7e3b5606d49337fe113a5cba2c9ab99317b032c8028",
+    "bytes": 319575552,
+    "uncompressed_bytes": 791493480,
+    "members": 143579,
+    "source_commit": null,
+    "recorded_study_status": "legacy_see_finished_and_audit",
+    "scope": "Transport verification only; this receipt is not a claim that the study passed"
+  }
+}
