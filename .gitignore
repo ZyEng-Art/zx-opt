@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.deps/
+.DS_Store
+*.pt
+*.so
+*.dylib
+*.tar.gz
+*.zip
+runs/
+*.egg-info/
+build/
+dist/
