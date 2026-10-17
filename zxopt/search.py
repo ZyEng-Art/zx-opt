@@ -89,7 +89,9 @@ def run(args):
         initial_digest = h.hexdigest()
     sources = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in sorted((ROOT / "zxopt").glob("*.py"))}
-    git = ["git", "-c", "safe.directory=" + str(ROOT)]
+    # Explicit paths work with the container's Git 2.34.1 ownership backport,
+    # which ignores safe.directory supplied through -c or environment entries.
+    git = ["git", "--git-dir=" + str(ROOT/".git"), "--work-tree=" + str(ROOT)]
     revision = subprocess.check_output(git + ["rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     dirty = subprocess.check_output(git + ["status", "--porcelain", "--untracked-files=no"], cwd=ROOT, text=True).strip()
     config = dict(vars(args)); config = {k: str(v) if isinstance(v, Path) else v for k, v in config.items()}
