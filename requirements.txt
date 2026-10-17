@@ -1,0 +1,9 @@
+# Paper fork: CFlow and fixed-wire completion depend on this exact revision.
+pyzx @ git+https://github.com/jng164/pyzx.git@298693bed2608e84fcb44a672282f873321c70b7
+numpy==2.0.2
+networkx==3.2.1
+qiskit==2.2.3
+torch==2.6.0
+torch-geometric==2.6.1
+gymnasium==1.0.0
+matplotlib>=3.7,<4
