@@ -50,7 +50,8 @@ def summarize(root, output, baseline_mode=None):
         events = rows(folder/"events.jsonl")
         noops = sum(e["status"] == "anchor_noop" for e in events)
         gated = [e for e in events if e["status"] == "accepted"]
-        first_best = next((e["seconds"] for e in gated if e["cost"]["gates"] == report["best"]["cost"]["gates"]), None)
+        first_best = (0. if report["root_cost"]["gates"] == report["best"]["cost"]["gates"] else
+                      next((e["seconds"] for e in gated if e["cost"]["gates"] == report["best"]["cost"]["gates"]), None))
         t = report["timers"]; wall = report["total_loop_seconds"]
         row = dict(**spec, input_gates=protocol["input_gates"], root_gates=report["root_cost"]["gates"],
                    best_gates=report["best"]["cost"]["gates"], first_best_seconds=first_best,
@@ -107,8 +108,9 @@ def summarize(root, output, baseline_mode=None):
             grouped[mode]["online_vs_global"] = grouped[mode]["online_vs_baseline"]
     output.mkdir(parents=True, exist_ok=False)
     fieldnames = list(dict.fromkeys(k for r in records for k in r))
-    with (output/"trials.csv").open("w") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fieldnames); writer.writeheader(); writer.writerows(records)
+    with (output/"trials.csv").open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fieldnames, lineterminator="\n")
+        writer.writeheader(); writer.writerows(records)
     result = dict(status="passed", source_commit=campaign["source_commit"], trials=len(records), baseline_mode=baseline_mode,
                   grouped=grouped, paired_prefixes=pairs, learning=learning, performance=speeds,
                   records=records, caveats=["Finite on-target search; no generalization claim",
