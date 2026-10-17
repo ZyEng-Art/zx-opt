@@ -24,14 +24,18 @@ def main():
                                                  "anchor8_lr1e3", "anchor8_nodes_lr1e3", "anchor8_resource",
                                                  "anchor8_nodes_resource", "anchor8_resource_lr1e3",
                                                  "anchor8_nodes_resource_lr1e3", "anchor8_resource_lr1e4",
-                                                 "anchor8_qasm2", "anchor8_resource_qasm2"],
+                                                 "anchor8_qasm2", "anchor8_resource_qasm2",
+                                                 "anchor8_resource_native", "anchor8_nodes_resource_native"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--audit-workers", type=int, default=2)
     p.add_argument("--max-steps", type=int)
+    p.add_argument("--native-flow-module", type=Path)
     p.add_argument("--allow-dirty", action="store_true")
     a = p.parse_args()
+    if any(mode.endswith("_native") for mode in a.modes) and a.native_flow_module is None:
+        raise ValueError("Native comparison modes require --native-flow-module")
     out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     cases = []
     for name in a.circuits:
@@ -48,6 +52,7 @@ def main():
             for s in a.seeds for c in a.circuits for m in a.modes for pol in a.policies]
     atomic_json(out/"campaign.json", dict(source_commit=revision, tracked_dirty=bool(dirty),
                 cases=cases, plan=plan, seconds=a.seconds, workers=a.workers,
+                native_flow_module=None if a.native_flow_module is None else str(a.native_flow_module.resolve()),
                 scope="independent training/search on each target; no generalization claim; count noops separately",
                 started_unix=time.time()))
     env = dict(os.environ, OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1", MKL_NUM_THREADS="1",
@@ -72,6 +77,8 @@ def main():
             command += ["--anchor-resource-mask"]
         if spec["mode"].endswith("_qasm2"):
             command += ["--archive-qasm-cap", "2"]
+        if spec["mode"].endswith("_native"):
+            command += ["--native-flow-module", str(a.native_flow_module.resolve())]
         try:
             with (out/(spec["folder"].replace("/", "__")+".log")).open("x") as log:
                 subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)

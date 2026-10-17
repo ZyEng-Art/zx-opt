@@ -1,0 +1,198 @@
+{
+  "status": "passed_development_score_verification",
+  "tests": 103,
+  "report": {
+    "status": "step_limit_reached",
+    "transitions": 384,
+    "accepted": 306,
+    "unscored": 0,
+    "recovered": 0,
+    "updates": 12,
+    "best": {
+      "cost": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "sha256": "4c69f27844aa13b749b21d6a29c2b8f377bb779983976a2cc1aaa7df9d596332",
+      "seconds": 5.467585667,
+      "graph": "c5293fbbde788e28a3ef1522d23272bf8d0857c07085498785ceb8486ef808f1"
+    },
+    "root_cost": {
+      "gates": 40,
+      "cx": 18,
+      "depth": 39
+    },
+    "proposal_counts": {
+      "phase_split": 7,
+      "I:backward": 112,
+      "identity_insert": 17,
+      "H:forward": 59,
+      "EU:forward": 25,
+      "spider_split": 2,
+      "H:backward": 35,
+      "anchor_noop": 78,
+      "PV": 4,
+      "I:forward": 12,
+      "ID": 8,
+      "S:backward": 20,
+      "PVG": 2,
+      "S:forward": 2,
+      "PVB": 1
+    },
+    "accepted_counts": {
+      "phase_split": 7,
+      "I:backward": 112,
+      "identity_insert": 17,
+      "H:forward": 59,
+      "EU:forward": 25,
+      "spider_split": 2,
+      "H:backward": 35,
+      "PV": 4,
+      "I:forward": 12,
+      "ID": 8,
+      "S:backward": 20,
+      "PVG": 2,
+      "S:forward": 2,
+      "PVB": 1
+    },
+    "unscored_counts": {},
+    "rejections": {},
+    "buffer": {
+      "scored_size": 49,
+      "scored_capacity": 64,
+      "latent_size": 0,
+      "latent_capacity": 128,
+      "insertions": 48,
+      "evictions": 0,
+      "latent_insertions": 0,
+      "latent_evictions": 0,
+      "latent_restarts": 0,
+      "best": [
+        38,
+        14
+      ]
+    },
+    "checked_qasm": 117,
+    "view_cache": {
+      "hits": 473,
+      "misses": 308
+    },
+    "jpv_proposals": {
+      "calls": 291,
+      "matching_work_exhausted": 2,
+      "phase_inferred": 298,
+      "non_clifford_matches_skipped": 0
+    },
+    "anchor_stats": {
+      "resource_catalog_calls": 384,
+      "resource_uncanonical_states": 0,
+      "samples": 384,
+      "view:node": 76,
+      "matched_candidates": 1083,
+      "eligible_candidates": 562,
+      "raw:edge": 112,
+      "view:edge": 17,
+      "raw:node": 179,
+      "resource_excluded_raw_global": 167,
+      "resource_excluded_view_edge": 32580,
+      "resource_excluded_raw_edge": 22455,
+      "empty": 78
+    },
+    "completion": {
+      "requests": 297,
+      "primary_successes": 6,
+      "primary_failures": 291,
+      "clifford_repair_successes": 87,
+      "clifford_repair_failures": 204,
+      "full_reduce_repair_successes": 204,
+      "cache_hits": 10,
+      "unique_valid_qasm": 117,
+      "unique_invalid_qasm": 0,
+      "max_valid_operator_error": 1.344238876125799e-15,
+      "max_rejected_operator_error": 0.0
+    },
+    "feasibility": {
+      "previews": 1083,
+      "calls": 384,
+      "proposed": 1083,
+      "eligible": 562,
+      "resource_masks": 521,
+      "cache_size": 1083,
+      "cache_capacity": 8192,
+      "masked_families": {
+        "phase_split": 190,
+        "spider_split": 65,
+        "S:backward": 29,
+        "PVB": 10,
+        "EU:forward": 128,
+        "PVG": 28,
+        "spider_nest": 15,
+        "gadget_split": 25,
+        "ID": 10,
+        "PV": 16,
+        "H:backward": 4,
+        "LC": 1
+      }
+    },
+    "max_graph_operator_error": 1.132474226192657e-14,
+    "max_qasm_operator_error": 1.344238876125799e-15,
+    "first_passage_seconds": {
+      "39": 5.467585667,
+      "38": 5.467585667,
+      "37": null,
+      "36": null,
+      "35": null
+    },
+    "budget_seconds": 240.0,
+    "total_loop_seconds": 29.129973542,
+    "timers": {
+      "views": 0.162080628000016,
+      "anchor_inference": 3.2175129089999945,
+      "matching": 0.8967623730000067,
+      "feasibility": 2.016826165000026,
+      "inference": 1.887674451999958,
+      "rewrite_verify": 3.0390437579999796,
+      "score": 10.28661067100001,
+      "ppo": 6.563426499,
+      "checkpoint": 0.03410033299999782
+    },
+    "verification": "passed",
+    "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+    "patience": {
+      "seconds": 0.0,
+      "gates": 38,
+      "last_improvement_unix": 1792261736.1123998
+    },
+    "certificate_stats": null,
+    "finished_unix": 1792261759.822415,
+    "native_flow": {
+      "library": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/native-flow-build-local-20261018/zxopt_native_scores.cpython-39-darwin.so",
+      "library_sha256": "e363181858e33c121736e158b79e85f9baeefa37d189e63674456e049f5bc080",
+      "source_sha256": "72823d6d177a57b809035fbcadb22e27fade038c1129d10fc40e6497a6c17274",
+      "build_receipt_sha256": "3cd4bd958a1d2dc069a3b80d5a03163734843392493630947360c8b8a139798f",
+      "legacy_hook_sha256": "e67223e113ad8eeab133d7d145b006f40c97cec5d59d680db5b1f73f0afd5d00",
+      "scope": "Exact score callback only; same match enumeration, driver, ordering and tie handling; no persistent graph cache",
+      "verify_all_batches": true,
+      "primary_statistics": {
+        "native_batches": 11,
+        "native_scores": 2030,
+        "native_scores_verified": 2030,
+        "discarded_pair_allocations_avoided": 1995,
+        "match_updates_verified": 5,
+        "match_updates": 5
+      },
+      "repair_statistics": {
+        "native_batches": 3781,
+        "native_scores": 780005,
+        "native_scores_verified": 780005,
+        "discarded_pair_allocations_avoided": 747474,
+        "match_updates_verified": 1830,
+        "match_updates": 1830
+      }
+    }
+  },
+  "source_git": "645b1af6e8710292c4002d821f12d8dd3af38d3b",
+  "tracked_dirty": true,
+  "scope": "384-step development online search with every native score and flow match update checked against pinned Python; end-to-end speed and full paired trace tests pending"
+}

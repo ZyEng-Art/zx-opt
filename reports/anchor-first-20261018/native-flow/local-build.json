@@ -1,0 +1,22 @@
+{
+  "library": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/native-flow-build-local-20261018/zxopt_native_scores.cpython-39-darwin.so",
+  "library_sha256": "e363181858e33c121736e158b79e85f9baeefa37d189e63674456e049f5bc080",
+  "source_sha256": "72823d6d177a57b809035fbcadb22e27fade038c1129d10fc40e6497a6c17274",
+  "command": [
+    "clang++",
+    "-std=c++17",
+    "-O3",
+    "-fPIC",
+    "-shared",
+    "-I/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/include/python3.9",
+    "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/native_scores.cpp",
+    "-o",
+    "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/native-flow-build-local-20261018/zxopt_native_scores.cpython-39-darwin.so",
+    "-undefined",
+    "dynamic_lookup"
+  ],
+  "compiler": "Apple clang version 17.0.0 (clang-1700.0.13.5)",
+  "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+  "platform": "darwin",
+  "scope": "CPU-only exact integer scores; no GPU runtime or external packages"
+}

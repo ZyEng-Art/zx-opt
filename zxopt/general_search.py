@@ -73,6 +73,13 @@ def run(args):
         raise ValueError("Anchor prior requires --selection anchor")
     if args.selection != "anchor" and args.anchor_resource_mask:
         raise ValueError("Anchor resource mask requires --selection anchor")
+    if args.verify_native_flow and not args.native_flow_module:
+        raise ValueError("Native flow verification requires a native module")
+    native_flow = None
+    if args.native_flow_module:
+        from .native_flow import enable_native_flow
+        native_flow = enable_native_flow(args.native_flow_module)
+        native_flow["verify_all_batches"] = args.verify_native_flow
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     (out/"objects").mkdir(); (out/"candidates").mkdir()
     torch.set_num_threads(1); torch.set_num_interop_threads(1)
@@ -84,6 +91,8 @@ def run(args):
     input_circuit = qasm2.loads(input_bytes.decode())
     reference = reference_for(input_bytes.decode(), args.verification, out/"verification/receipts.jsonl")
     views = Views(n, reference); scorer = VerifiedCompletion(reference, out/"invalid-extractions")
+    if args.verify_native_flow:
+        scorer.primary.scorer.verify_flow = scorer.repair.scorer.verify_flow = True
     kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work, args.general_zx, args.total_candidate_cap)
     anchored = args.selection == "anchor"
     if anchored:
@@ -134,7 +143,7 @@ def run(args):
     initial_sha = tensor_digest(net) if net is not None else None
     if net is not None:
         torch.save(dict(state_dict=net.state_dict(), seed=args.seed, steps=0), out/"initial.pt")
-    source_paths = list((ROOT/"zxopt").rglob("*.py"))
+    source_paths = list((ROOT/"zxopt").rglob("*.py")) + list((ROOT/"zxopt").rglob("*.cpp"))
     sources = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(source_paths)}
     git = ["git", "-c", "safe.directory="+str(ROOT), "--git-dir="+str(ROOT/".git"), "--work-tree="+str(ROOT)]
     revision = subprocess.check_output(git+["rev-parse", "HEAD"], text=True).strip()
@@ -170,6 +179,8 @@ def run(args):
                     limits="candidate/node/matching/horizon/latent-depth bounds; extraction failures are legal transitions, verification/resource failures rejected",
                     hh="I_X backward / H forward / I_Z forward proof; every contextual cancellation has a replay receipt")
     protocol["invalid_extraction"] = "quarantined and excluded from all gate costs/rewards; legal raw graph can continue. Raw/repair operator mismatches remain fatal. Repairs apply identically in every arm."
+    if native_flow is not None:
+        protocol["native_flow"] = native_flow
     if model_resume is not None:
         protocol["model_resume"] = model_resume
         protocol["scope"] = "same-target search from recorded model weights; total NAM gates then CX; this is model continuation/probing, not independent fresh-model training"
@@ -244,7 +255,8 @@ def run(args):
                     "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask",
                     "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout",
                     "selection", "anchor_candidate_cap"]
-        semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask", "archive_qasm_cap"]
+        semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask", "archive_qasm_cap",
+                     "native_flow_module", "verify_native_flow"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -588,6 +600,10 @@ def run(args):
                   verification_method=protocol["verification_method"], patience=patience.record(),
                   certificate_stats=dict(reference.stats) if isinstance(reference, ZXReference) else None,
                   finished_unix=time.time())
+    if native_flow is not None:
+        report["native_flow"] = dict(**native_flow,
+            primary_statistics=dict(scorer.primary.scorer.flow_statistics),
+            repair_statistics=dict(scorer.repair.scorer.flow_statistics))
     atomic_json(out/"report.json", report)
     print(json.dumps(report), flush=True)
     return report
@@ -632,6 +648,10 @@ def parser():
     p.add_argument("--learning-rate", type=float, default=.0003)
     p.add_argument("--anchor-resource-mask", action="store_true",
                    help="Before sampling, remove only wire/scalar anchors whose insertion is provably over budget")
+    p.add_argument("--native-flow-module", type=Path,
+                   help="Opt-in built CPU CFlow scoring module with matching build.json receipt")
+    p.add_argument("--verify-native-flow", action="store_true",
+                   help="Development check: compare every native scoring batch and flow match update to pinned PyZX")
     p.add_argument("--seconds", type=float, default=1200.)
     p.add_argument("--no-improvement-seconds", type=float, default=0., help="Strict total-gate plateau patience; --seconds 0 disables the overall cap")
     p.add_argument("--checkpoint-seconds", type=float, default=0., help="Atomic full search-state checkpoint interval")

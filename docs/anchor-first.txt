@@ -157,3 +157,21 @@ and parameter comparisons are required before calling this computation-only.
   The training source is mounted read-only in a separate owned container.
   The launch refuses an incomplete or failed source campaign. Archives and
   event/circuit/parameter audits use the same terminal collection workflow.
+
+2026-10-18 optional native CFlow scores
+  Build with: python tools/build_native_scores.py runs/native-backend
+  --native-flow-module PATH_TO_SO loads that directory's extension only when
+  its binary/source hashes match build.json. --verify-native-flow additionally
+  compares every scoring batch and match update against pinned PyZX (slow).
+  The extension computes exact integer LC, pivot and identity-fusion scores.
+  It preserves score types, None values and input order; Python still performs
+  all matching, tie handling and rewriting. Adjacency bitsets are rebuilt for
+  each call and are never retained across graph rewrites. Unsupported graph
+  representations/self-loops and graphs above8192vertices use the existing
+  Python fallback. The default remains Python; no shared dependency directory
+  or frozen legacy file is modified. The module has no GPU runtime dependency.
+  Protocols retain source/binary/build-receipt hashes, and reports retain
+  native batch/score/fallback/verification counts separately for both oracles.
+  A103-test suite and a384-step online development run checked782035native
+  scores and every match update exactly; fixed-step full trace/model and Linux
+  builds are required before any throughput or training-quality claim.

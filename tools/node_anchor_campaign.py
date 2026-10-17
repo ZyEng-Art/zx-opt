@@ -18,7 +18,7 @@ def archive_records(base, commit, study_status):
             if (base/"source/runs").exists():
                 tar.add(base/"source/runs", arcname="runs")
             for name in ("unit-tests.log", "pyzx-pin.log", "comparison.log", "ownership.json",
-                         "launch.json", "controller.json"):
+                         "launch.json", "controller.json", "native-build.log"):
                 if (base/name).exists():
                     tar.add(base/name, arcname=name)
     digest = hashlib.sha256()
@@ -47,6 +47,7 @@ def main():
     p.add_argument("--probe-source", type=Path)
     p.add_argument("--training-seeds", nargs="+", default=["137", "163", "197"])
     p.add_argument("--audit-workers", type=int, default=2)
+    p.add_argument("--build-native-flow", action="store_true")
     a = p.parse_args(); base = a.base.resolve()
     ownership = json.loads((base/"ownership.json").read_text())
     if ownership["container_name"] != a.container:
@@ -85,6 +86,13 @@ def main():
             raise RuntimeError("Checkout revision differs from the requested immutable source")
         status("unit_tests")
         run(["tools/check_pyzx_pin.py"], "pyzx-pin.log")
+        native_library = None
+        if a.build_native_flow:
+            if a.experiment != "search":
+                raise ValueError("Native-flow builds are currently supported for search comparisons")
+            run(["tools/build_native_scores.py", "runs/native-backend"], "native-build.log")
+            build = json.loads((base/"source/runs/native-backend/build.json").read_text())
+            native_library = build["library"]
         run(["-m", "unittest", "discover", "-s", "tests", "-v"], "unit-tests.log")
         status("comparison", experiment=a.experiment, circuits=a.circuits, seeds=a.seeds,
                modes=a.modes, seconds=a.seconds, workers=a.workers)
@@ -97,6 +105,8 @@ def main():
             run(["tools/policy_weight_probes.py", str(a.probe_source), "runs/comparison", *common,
                  "--training-seeds", *a.training_seeds], "comparison.log")
         else:
+            if native_library is not None:
+                common += ["--native-flow-module", native_library]
             run(["tools/anchor_campaign.py", "runs/comparison", *common,
                  "--policies", "frozen", "online"], "comparison.log")
         finished = json.loads((base/"source/runs/comparison/finished.json").read_text())
