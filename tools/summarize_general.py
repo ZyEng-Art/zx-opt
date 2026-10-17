@@ -73,7 +73,8 @@ def main():
                               unscored=sum(r["unscored"] for r in group), recovered=sum(r["recovered"] for r in group),
                               invalid_extractions=sum(r["invalid_extractions"] for r in group),
                               rejections=sum(r["statuses"].get("rejected", 0) for r in group)))
-    ax.set(xlabel="Search wall time (seconds)", ylabel="Best total NAM gates", title="barenco_tof_3: all seeds and arms")
+    circuit = campaign.get("circuit", "barenco_tof_3")
+    ax.set(xlabel="Search wall time (seconds)", ylabel="Best total NAM gates", title=circuit+": all seeds and arms")
     ax.legend(fontsize=8); ax.grid(alpha=.2); fig.tight_layout()
     for suffix in ("png", "pdf"):
         fig.savefig(a.output/("anytime."+suffix), dpi=170)
@@ -103,7 +104,7 @@ def main():
                                    online_final=o["best"]["cost"], frozen_final=f["best"]["cost"]))
     best = min(trials, key=lambda r: (r["best"]["cost"]["gates"], r["best"]["cost"]["cx"]))
     shutil.copyfile(a.campaign/best["folder"]/"best.qasm", a.output/"best.qasm")
-    result = dict(status="passed", budget_seconds=budget, aggregate=aggregate, trials=trials, paired=paired,
+    result = dict(status="passed", circuit=circuit, budget_seconds=budget, aggregate=aggregate, trials=trials, paired=paired,
                   scope="single target circuit, paired random initialization, no generalization/global optimality claim",
                   best_source=dict(arm=best["arm"], seed=best["seed"]))
     (a.output/"analysis.json").write_text(json.dumps(result, indent=2)+"\n")

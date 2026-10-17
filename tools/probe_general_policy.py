@@ -23,17 +23,20 @@ def main():
     from zxopt.general_search import candidate_digest
     from zxopt.general_feasibility import Feasibility
     from zxopt.verify import qiskit_matrix_zx_order
+    from zxopt.experiment_input import recorded_input
     torch.set_num_threads(1)
     summary = json.loads((a.campaign/"summary.json").read_text()); results = []
-    ref = qiskit_matrix_zx_order(qasm2.loads((ROOT/"inputs/barenco_tof_3.qasm").read_text()))
     for row in summary["rows"]:
         if not row["arm"].endswith("online"):
             continue
         folder = a.campaign/row["folder"]; protocol = json.loads((folder/"protocol.json").read_text())
         config = protocol["config"]
+        input_path = recorded_input(folder, protocol)
+        original = qasm2.loads(input_path.read_text()); n = original.num_qubits
+        ref = qiskit_matrix_zx_order(original)
         raw = Diagram.from_record(json.loads(gzip.decompress((folder/"objects"/(protocol["root_graph"]+".json.gz")).read_bytes())))
-        views = Views(5, ref); view = views.get(raw)
-        kernel = GeneralKernel(environment(), config["seed"], config["jpv"], config["candidate_cap"], config["matching_work"])
+        views = Views(n, ref); view = views.get(raw)
+        kernel = GeneralKernel(environment(input_path), config["seed"], config["jpv"], config["candidate_cap"], config["matching_work"])
         available = kernel.prepare(raw, view, protocol["root_view_vertices"]+config["max_growth"])
         if config.get("feasibility_mask", False):
             available, _ = Feasibility(protocol["max_vertices"], len(raw.edges)+config["max_edge_growth"]).prepare(raw, view, available, kernel)

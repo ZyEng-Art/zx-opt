@@ -1,8 +1,8 @@
 {
-  "phase": "jpv_search_and_ppo_integration_complete",
+  "phase": "other_circuits_parameterization_and_preflight",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
-  "scope": "barenco_tof_3 only; total NAM gates; general ZX states and verified scoring; complete Clifford+T JPV kernel connected through bounded proposals",
+  "scope": "independent target-wise training/search on tof_3, mod5_4, tof_4; total NAM gates; prior barenco results retained",
   "resources": {
     "node44_owned_cpu_container": "stopped",
     "new_gpu_tasks": 0,
@@ -28,7 +28,7 @@
     "Improve discovery of lower total-gate records rather than fitting zero-reward loops",
     "Study which bounded JPV rewrite paths yield useful extractable states"
   ],
-  "active_work": null,
+  "active_work": "Generalize input snapshots/audits, root checks on 5/5/7 qubits, then 36 independent from-scratch target trials on node44",
   "completed_followups": [
     {
       "suite": "representation",

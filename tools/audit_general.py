@@ -30,12 +30,16 @@ def audit_one(spec):
     from zxopt.general_archive import SearchState, GeneralArchive, following_state, score
     from zxopt.jpv_actions import replay_h_pairs
     from zxopt.verify import qiskit_matrix_zx_order, matrix_error
+    from zxopt.experiment_input import recorded_input
     torch.set_num_threads(1)
     protocol = json.loads((folder/"protocol.json").read_text())
     report = json.loads((folder/"report.json").read_text())
     assert allow_dirty or not protocol["tracked_dirty"]
-    reference = qiskit_matrix_zx_order(qasm2.loads((ROOT/"inputs/barenco_tof_3.qasm").read_text()))
-    views = Views(5, reference); kernel = GeneralKernel(environment(), jpv=False)
+    input_path = recorded_input(folder, protocol)
+    original = qasm2.loads(input_path.read_text()); n = original.num_qubits
+    assert n == protocol.get("num_qubits", 5)
+    reference = qiskit_matrix_zx_order(original)
+    views = Views(n, reference); kernel = GeneralKernel(environment(input_path), jpv=False)
 
     @lru_cache(maxsize=256)
     def graph(key):
@@ -49,7 +53,7 @@ def audit_one(spec):
         text = (folder/"candidates"/(key+".qasm")).read_text()
         assert hashlib.sha256(text.encode()).hexdigest() == key
         c = qasm2.loads(text)
-        assert c.num_qubits == 5 and set(c.count_ops()) <= {"h", "rz", "x", "cx"}
+        assert c.num_qubits == n and set(c.count_ops()) <= {"h", "rz", "x", "cx"}
         error = matrix_error(reference, qiskit_matrix_zx_order(c))
         assert error < 2e-8
         return dict(gates=len(c), cx=int(c.count_ops().get("cx", 0)), depth=int(c.depth())), error

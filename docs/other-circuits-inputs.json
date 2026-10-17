@@ -1,0 +1,25 @@
+{
+  "source_repository": "git@github.com:ZyEng-Art/fast_quarl.git",
+  "source_commit": "3011a327bcd557fb45b5061b5274fb6da3b19a5a",
+  "selection": "three preselected NAM inputs: 5-qubit Toffoli, 5-qubit modular logic, 7-qubit Toffoli; no optimized outputs copied",
+  "circuits": [
+    {
+      "name": "tof_3",
+      "file": "inputs/tof_3.qasm",
+      "sha256": "2a256cfe37db2563a8fd6c7a93dc614396a20d13d7d17aa480174dac7f5b58e4",
+      "source_path": "circuit/nam_rm_circs/tof_3.qasm"
+    },
+    {
+      "name": "mod5_4",
+      "file": "inputs/mod5_4.qasm",
+      "sha256": "105b99904bfb08f9f88188f9a88747d79c56e4019df3d1e159e3ba276f5e34f0",
+      "source_path": "circuit/nam_rm_circs/mod5_4.qasm"
+    },
+    {
+      "name": "tof_4",
+      "file": "inputs/tof_4.qasm",
+      "sha256": "87b5498d0d738afe69d7417998c9365e544dc69c3473af1372559083efa8ab35",
+      "source_path": "circuit/nam_rm_circs/tof_4.qasm"
+    }
+  ]
+}

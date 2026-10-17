@@ -19,6 +19,8 @@ from zxopt.verify import graph_matrix
 from zxopt.general_search import candidate_digest
 from zxopt.general_score import VerifiedCompletion
 from zxopt.general_feasibility import Feasibility
+from zxopt.verify import qiskit_matrix_zx_order
+from zxopt.legacy import ROOT
 from monitored_ppo import ppo_update
 
 
@@ -139,6 +141,17 @@ class GeneralTest(unittest.TestCase):
             d = from_pyzx(g)
             self.assertLessEqual(len(d.nodes), max(2, power//2+2))
             np.testing.assert_allclose([complex(v) for v in exact_tensor(d)], [g.scalar.to_number()], atol=2e-12)
+
+    def test_other_target_roots_preserve_named_wires_and_qubit_count(self):
+        from qiskit import qasm2
+        for name, n in (("tof_3", 5), ("mod5_4", 5), ("tof_4", 7)):
+            path = ROOT/"inputs"/(name+".qasm")
+            reference = qiskit_matrix_zx_order(qasm2.loads(path.read_text()))
+            raw = from_pyzx(environment(path).graph)
+            self.assertEqual(len(raw.ports), 2*n)
+            view = Views(n, reference).get(raw)
+            result = VerifiedCompletion(reference).evaluate(view, seconds=20)
+            self.assertIsNotNone(result.result, name)
 
     def test_invalid_extraction_is_excluded_and_repaired_on_a_copy(self):
         fixture = Path(__file__).parent/"fixtures/barenco_gadget_split.json"

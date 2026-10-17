@@ -65,8 +65,11 @@ def run(args):
     torch.set_num_threads(1); torch.set_num_interop_threads(1)
     random.seed(args.seed); np.random.seed(args.seed); torch.manual_seed(args.seed)
     rng = np.random.default_rng(args.seed)
-    env = environment(args.input); n = len(env.graph.inputs())
-    reference = qiskit_matrix_zx_order(qasm2.loads(args.input.read_text()))
+    input_bytes = args.input.read_bytes()
+    (out/"input.qasm").write_bytes(input_bytes)
+    env = environment(out/"input.qasm"); n = len(env.graph.inputs())
+    input_circuit = qasm2.loads(input_bytes.decode())
+    reference = qiskit_matrix_zx_order(input_circuit)
     views = Views(n, reference); scorer = VerifiedCompletion(reference, out/"invalid-extractions")
     kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work)
     diagram = from_pyzx(env.graph)
@@ -100,14 +103,20 @@ def run(args):
     for path, digest in baseline["files"].items():
         if hashlib.sha256((LEGACY/path).read_bytes()).hexdigest() != digest:
             raise ValueError("Frozen baseline modified: "+path)
+    try:
+        input_repository_path = str(args.input.resolve().relative_to(ROOT))
+    except ValueError:
+        input_repository_path = None
     protocol = dict(config={k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
                     git_commit=revision, tracked_dirty=bool(dirty), sources=sources,
                     initial_tensor_sha256=initial_sha, started_at=datetime.datetime.now().astimezone().isoformat(),
-                    input_sha256=hashlib.sha256(args.input.read_bytes()).hexdigest(),
+                    input_sha256=hashlib.sha256(input_bytes).hexdigest(), input_snapshot="input.qasm",
+                    circuit=args.input.stem, num_qubits=n, input_gates=len(input_circuit),
+                    input_repository_path=input_repository_path,
                     baseline_manifest_sha256=hashlib.sha256((ROOT/"docs/baseline_sources.json").read_bytes()).hexdigest(),
                     root_cost=root_result["cost"], root_graph=diagram.digest(), root_vertices=len(diagram.nodes),
                     root_view_vertices=root_view.graph.num_vertices(), max_vertices=raw_limit,
-                    scope="barenco_tof_3 only; total NAM gates then CX; no historical witness or held-out circuits",
+                    scope="independent on-target training/search; total NAM gates then CX; no historical witness or model transfer",
                     state="general ZX multigraph; raw state never overwritten by its scoring view; macro actions explicitly transition via that view",
                     scoring="verified frozen fixed-wire completion/NAM cleanup; on failure/mismatch repair a separate copy with clifford_simp then full_reduce; first valid branch, exact view-key cache",
                     unscored="verified legal child remains active and enters separate latent FIFO; actual cost=null; reward 0 until next success, then delta from last scored anchor",
@@ -137,7 +146,7 @@ def run(args):
     invalid = Counter(); families = Counter(); accepted_families = Counter(); latent_families = Counter()
     timers = Counter(); rollout = []
     state = None; status = "budget_reached"; start = None
-    first_best = {str(k): None for k in (39, 38, 37, 36, 35)}
+    first_best = {str(root_result["cost"]["gates"]-k): None for k in range(1, 6)}
 
     try:
         while time.perf_counter() < deadline and (args.max_steps is None or transition < args.max_steps):
