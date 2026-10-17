@@ -1,13 +1,13 @@
 {
-  "phase": "jpv_long_campaign_launch_ready",
+  "phase": "jpv_long_campaign_running",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO; independent complete Clifford+T JPV axiom kernel",
   "resources": {
-    "node44_owned_cpu_container": "restored_stopped",
+    "node44_owned_cpu_container": "running_for_jpv_campaign",
     "new_gpu_tasks": 0,
     "persistent_ssh": "retained",
-    "background_jobs": "none"
+    "background_jobs": "owned controller PID 3027081; no GPU"
   },
   "github": {
     "push": "completed",
@@ -27,7 +27,7 @@
     "Align reward and observations with the global extracted-gate objective",
     "Expand reliably extractable rewrite paths"
   ],
-  "active_work": "Launch committed node44 six-arm x three-seed x1200s CPU campaign; paired preflight/audits passed",
+  "active_work": "node44 tests/preflight then 18x1200s CPU trials, full replay/operator/model audit, collect reports",
   "completed_followups": [
     {
       "suite": "representation",
@@ -102,5 +102,17 @@
     "unit_tests": 36,
     "replayed": 2105,
     "checked_qasm": 881
+  },
+  "ongoing_experiment": {
+    "suite": "jpv",
+    "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+    "trials": 18,
+    "workers": 18,
+    "seconds_per_trial": 1200,
+    "controller_pid": 3027081,
+    "host": "wxtky02-p800-8nic-vd-node44.wxtky02",
+    "task_root": "/tmp/dengzengyong_rlzx_node44_20261016",
+    "container_id": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+    "bundle_sha256": "900de08abc011db171267d5658bc3173851fbc61a637a845d77c469561562e45"
   }
 }
