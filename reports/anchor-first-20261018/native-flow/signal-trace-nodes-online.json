@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "steps": 1024,
+  "model_tensors_bitwise_equal": true,
+  "accepted": 854,
+  "updates": 32,
+  "before_seconds": 119.570942666,
+  "after_seconds": 113.964088708,
+  "speedup": 1.0491984275183908,
+  "best": {
+    "gates": 39,
+    "cx": 15,
+    "depth": 31
+  },
+  "scope": "Signal-aware native backend versus retained Python controls; identical1024-step actions/rewards/buffer/final model tensors. Timings have different concurrent local load, so no isolated speed estimate.",
+  "source_before": "af9cb3a",
+  "source_after": "0440e2a"
+}
