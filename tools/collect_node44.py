@@ -8,14 +8,23 @@ import tarfile
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument("task_root",type=Path);p.add_argument("commit");args=p.parse_args()
+    p.add_argument("task_root",type=Path);p.add_argument("commit")
+    p.add_argument("--postprocess-locally",action="store_true",
+                   help="Archive a passed search/replay audit after controller postprocessing failed; keep failed receipt and pending status")
+    args=p.parse_args()
     short=args.commit[:12];source=args.task_root/("zx-opt-"+short)
     report=json.loads((source/"runs/pilot/report.json").read_text())
     summary=json.loads((source/"runs/pilot/summary.json").read_text())
     assert report["status"]=="passed"and report["runs"]==summary["expected"]==summary["completed"]
     controller=args.task_root/("zx-opt-"+short+"-controller.json")
     state=json.loads(controller.read_text())
-    assert state["status"]=="passed"and state["restored_stopped"]and state["commit"]==args.commit
+    assert state["restored_stopped"]and state["commit"]==args.commit
+    pending=state["status"]!="passed"
+    if pending:
+        assert args.postprocess_locally and state["status"]=="failed"
+        semantic=json.loads((source/"runs/audit/verification.json").read_text())
+        assert semantic["status"]=="passed" and semantic["trials"]==summary["expected"]
+        assert sum(r["accepted"] for r in summary["rows"])==semantic["accepted_rewrites"]
     archive=args.task_root/("zx-opt-"+short+"-records.tar.gz")
     if archive.exists():raise FileExistsError(archive)
     with tarfile.open(archive,"w:gz")as tf:
@@ -29,7 +38,8 @@ def main():
     h=hashlib.sha256()
     with archive.open("rb")as f:
         for chunk in iter(lambda:f.read(1024*1024),b""):h.update(chunk)
-    manifest=dict(status="passed",commit=args.commit,archive=archive.name,bytes=archive.stat().st_size,
+    manifest=dict(status="postprocessing_pending" if pending else "passed",commit=args.commit,
+                  postprocess_locally=pending,archive=archive.name,bytes=archive.stat().st_size,
                   sha256=h.hexdigest(),run_files=sum(p.is_file()for p in(source/"runs").rglob("*")),
                   controller=state)
     receipt=args.task_root/("zx-opt-"+short+"-archive.json")

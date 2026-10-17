@@ -19,7 +19,8 @@ def main():
         assert not protocol["tracked_dirty"] and protocol["sources"]==campaign["sources"]
         commit=protocol["git_commit"]
         if commit not in checked:
-            def content(name):return subprocess.check_output(["git","show",commit+":"+name],cwd=root)
+            git=["git","--git-dir="+str(root/".git"),"--work-tree="+str(root)]
+            def content(name):return subprocess.check_output(git+["show",commit+":"+name],cwd=root)
             sources={name:hashlib.sha256(content(name)).hexdigest()for name in protocol["sources"]}
             manifest_bytes=content("docs/baseline_sources.json")
             baseline=json.loads(manifest_bytes)
