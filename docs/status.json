@@ -1,5 +1,5 @@
 {
-  "phase": "jpv_search_preflight",
+  "phase": "jpv_long_campaign_launch_ready",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO; independent complete Clifford+T JPV axiom kernel",
@@ -27,7 +27,7 @@
     "Align reward and observations with the global extracted-gate objective",
     "Expand reliably extractable rewrite paths"
   ],
-  "active_work": "Verify paired prefixes, then run six-arm 1200s node44 CPU campaign",
+  "active_work": "Launch committed node44 six-arm x three-seed x1200s CPU campaign; paired preflight/audits passed",
   "completed_followups": [
     {
       "suite": "representation",
@@ -95,5 +95,12 @@
     "implementation_commit": "40f2fc33d0f349e8f6abf7531c88ac78e5c86a38",
     "existing_ppo_runner": "New zxopt.general_search connects JPV to a general-graph PPO policy; original zxopt.search preserved",
     "formal_proof_assistant": false
+  },
+  "jpv_preflight": {
+    "report": "reports/jpv-preflight-20261017",
+    "source_commit": "c645d8a6afb3f73b20815558c96ec0cd28c6417c",
+    "unit_tests": 36,
+    "replayed": 2105,
+    "checked_qasm": 881
   }
 }

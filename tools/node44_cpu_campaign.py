@@ -57,10 +57,14 @@ def main():
         if args.suite == "jpv":
             run(*base,"-m","zxopt.general_search","runs/preflight","--jpv",
                 "--policy","online","--seconds","180","--max-steps","256")
+            preflight = json.loads((dest/"runs/preflight/report.json").read_text())
+            if preflight["transitions"] < 256 or preflight["updates"] < 2:
+                raise RuntimeError("JPV preflight must finish 256 steps and two PPO updates")
             run(*base,"-m","zxopt.general_campaign","runs/pilot","--seconds",str(args.seconds),
                 "--workers",str(args.workers))
-            run(*base,"tools/audit_general.py","runs/pilot","runs/audit","--workers","6")
+            run(*base,"tools/audit_general.py","runs/pilot","runs/audit","--workers",str(min(args.workers,18)))
             run(*base,"tools/audit_sources.py","runs/pilot","runs/source-audit.json")
+            run(*base,"tools/probe_general_policy.py","runs/pilot","runs/policy-probe.json")
         else:
             preflight = ["--expanded"] if args.suite == "expansion" else ["--dedup-scope", "serialized"]
             run(*base,"-m","zxopt.search","runs/preflight","--dedup",*preflight,

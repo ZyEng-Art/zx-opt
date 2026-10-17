@@ -133,6 +133,13 @@ def audit_one(spec):
         _, error = circuit(p.stem); qasm_error = max(qasm_error, error)
     assert not ({p.stem for p in (folder/"candidates").glob("*.qasm")}
                 & {p.stem for p in (folder/"invalid-extractions").glob("*.qasm")})
+    invalid_saved = 0
+    for p in (folder/"invalid-extractions").glob("*.qasm"):
+        assert hashlib.sha256(p.read_bytes()).hexdigest() == p.stem
+        wrong = qasm2.loads(p.read_text())
+        assert matrix_error(reference, qiskit_matrix_zx_order(wrong)) > 2e-8
+        invalid_saved += 1
+    assert invalid_saved == report["completion"]["unique_invalid_qasm"]
     assert len(events) == report["transitions"]
     assert statuses["accepted"]+statuses["accepted_unscored"] == report["accepted"]
     assert statuses["accepted_unscored"] == report["unscored"]
@@ -160,6 +167,7 @@ def audit_one(spec):
                 accepted_rewrites=report["accepted"], replayed_auxiliary=auxiliary,
                 legal_unscored=report["unscored"], recovered=recoveries,
                 saved_qasm=sum(1 for _ in (folder/"candidates").glob("*.qasm")),
+                quarantined_invalid_qasm=invalid_saved,
                 max_graph_operator_error=max_graph_error, max_qasm_operator_error=qasm_error,
                 accepted_families=dict(families), completion_branches=dict(repairs),
                 model=model, events_sha256=sha(folder/"events.jsonl"), report_sha256=sha(folder/"report.json"))

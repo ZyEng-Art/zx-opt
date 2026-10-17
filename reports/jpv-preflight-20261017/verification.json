@@ -1,0 +1,199 @@
+{
+  "status": "passed",
+  "development_allow_dirty": false,
+  "trials": 4,
+  "records": [
+    {
+      "arm": "jpv_frozen",
+      "seed": 11,
+      "status": "passed",
+      "transitions": 542,
+      "accepted_rewrites": 420,
+      "replayed_auxiliary": 62,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 168,
+      "quarantined_invalid_qasm": 1,
+      "max_graph_operator_error": 7.931040127737453e-15,
+      "max_qasm_operator_error": 1.458852544650288e-15,
+      "accepted_families": {
+        "PVG": 77,
+        "gadget_split": 17,
+        "ID": 72,
+        "PVB": 31,
+        "H:forward": 15,
+        "PV": 28,
+        "I:forward": 18,
+        "phase_split": 27,
+        "E:backward": 16,
+        "S:backward": 14,
+        "spider_split": 13,
+        "GF": 3,
+        "CP:backward": 4,
+        "identity_insert": 22,
+        "EU:forward": 14,
+        "phase_transfer": 16,
+        "H:backward": 19,
+        "I:backward": 12,
+        "spider_nest": 1,
+        "EU:backward": 1
+      },
+      "completion_branches": {
+        "primary": 151,
+        "clifford_repair": 266,
+        "full_reduce_repair": 3
+      },
+      "model": {
+        "parameter_l2_delta": 0.0,
+        "actor_l2_delta": 0.0,
+        "finite": true
+      },
+      "events_sha256": "b3f0fd74707195227bc6ed2969453aebc96f7b199504c8350158cc9337108cf1",
+      "report_sha256": "2545374c4c593618d07d4c9ca712f574a1e525a27cd1102466fd436b7557e2a1"
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 11,
+      "status": "passed",
+      "transitions": 512,
+      "accepted_rewrites": 400,
+      "replayed_auxiliary": 43,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 166,
+      "quarantined_invalid_qasm": 1,
+      "max_graph_operator_error": 7.931040127737453e-15,
+      "max_qasm_operator_error": 1.458852544650288e-15,
+      "accepted_families": {
+        "PVG": 72,
+        "gadget_split": 17,
+        "ID": 72,
+        "PVB": 32,
+        "H:forward": 15,
+        "PV": 24,
+        "I:forward": 14,
+        "phase_split": 30,
+        "E:backward": 13,
+        "S:backward": 13,
+        "spider_split": 9,
+        "GF": 3,
+        "CP:backward": 6,
+        "identity_insert": 22,
+        "EU:forward": 8,
+        "phase_transfer": 19,
+        "H:backward": 16,
+        "I:backward": 14,
+        "CP:forward": 1
+      },
+      "completion_branches": {
+        "primary": 155,
+        "clifford_repair": 242,
+        "full_reduce_repair": 3
+      },
+      "model": {
+        "parameter_l2_delta": 0.8242037276185867,
+        "actor_l2_delta": 0.2657152628657251,
+        "finite": true
+      },
+      "events_sha256": "9631a13b1f06676f7ef700470209aa363d700ec13456c5b9b9d816a3652b2e48",
+      "report_sha256": "b408b7c995bceaefd619b7f7b089e735f09526ef655acac575d3675bdc85c9e6"
+    },
+    {
+      "arm": "macros_frozen",
+      "seed": 11,
+      "status": "passed",
+      "transitions": 804,
+      "accepted_rewrites": 655,
+      "replayed_auxiliary": 0,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 274,
+      "quarantined_invalid_qasm": 0,
+      "max_graph_operator_error": 7.914911601710344e-15,
+      "max_qasm_operator_error": 1.2827761084789717e-15,
+      "accepted_families": {
+        "PVG": 116,
+        "ID": 158,
+        "PVB": 65,
+        "identity_insert": 60,
+        "PV": 102,
+        "spider_split": 40,
+        "phase_split": 43,
+        "gadget_split": 33,
+        "phase_transfer": 35,
+        "spider_nest": 1,
+        "GF": 2
+      },
+      "completion_branches": {
+        "primary": 282,
+        "clifford_repair": 364,
+        "full_reduce_repair": 9
+      },
+      "model": {
+        "parameter_l2_delta": 0.0,
+        "actor_l2_delta": 0.0,
+        "finite": true
+      },
+      "events_sha256": "222705efce1cdcb884b0e2c23ba7b64c3ac14f4ea79d0f49ec49bd220fa383ed",
+      "report_sha256": "a42f5e47004ae53ad301b8edad494e0a5455a23a7089289a755e3b8ff866de08"
+    },
+    {
+      "arm": "macros_online",
+      "seed": 11,
+      "status": "passed",
+      "transitions": 762,
+      "accepted_rewrites": 630,
+      "replayed_auxiliary": 0,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 273,
+      "quarantined_invalid_qasm": 0,
+      "max_graph_operator_error": 8.218780440954819e-15,
+      "max_qasm_operator_error": 1.1292966331992323e-15,
+      "accepted_families": {
+        "PVG": 125,
+        "ID": 146,
+        "PVB": 63,
+        "identity_insert": 53,
+        "PV": 87,
+        "spider_split": 36,
+        "phase_split": 50,
+        "gadget_split": 36,
+        "phase_transfer": 30,
+        "spider_nest": 2,
+        "GF": 2
+      },
+      "completion_branches": {
+        "primary": 266,
+        "clifford_repair": 361,
+        "full_reduce_repair": 3
+      },
+      "model": {
+        "parameter_l2_delta": 0.8721398256965501,
+        "actor_l2_delta": 0.4691024803671658,
+        "finite": true
+      },
+      "events_sha256": "e8a148043860586f2018dbabf045b6da7458dfe7bd03d91a3b16d8a6511129e7",
+      "report_sha256": "28995bc08edc40510a6044e2af573012ce1eca8a27f2be470fee03fb8e2060f1"
+    }
+  ],
+  "model_pairs": [
+    {
+      "base": "macros",
+      "seed": 11,
+      "same_initialization": true,
+      "identical_prefix": 128,
+      "status": "passed"
+    },
+    {
+      "base": "jpv",
+      "seed": 11,
+      "same_initialization": true,
+      "identical_prefix": 128,
+      "status": "passed"
+    }
+  ],
+  "saved_qasm": 881,
+  "accepted_rewrites": 2105,
+  "caveat": "Quarantined invalid extractions are excluded from candidates, rewards and best gate counts"
+}
