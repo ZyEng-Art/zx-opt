@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "development_allow_dirty": false,
+  "trials": 2,
+  "records": [
+    {
+      "arm": "jpv_frozen",
+      "seed": 11,
+      "status": "passed",
+      "transitions": 487,
+      "accepted_rewrites": 487,
+      "replayed_auxiliary": 76,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 7,
+      "quarantined_invalid_qasm": 0,
+      "max_graph_operator_error": 2.408186090927951e-15,
+      "max_qasm_operator_error": 2.9893669801409083e-16,
+      "accepted_families": {
+        "spider_split": 22,
+        "ID": 60,
+        "identity_insert": 33,
+        "EU:forward": 25,
+        "PVB": 14,
+        "S:backward": 21,
+        "gadget_split": 25,
+        "phase_transfer": 21,
+        "PVG": 16,
+        "PV": 53,
+        "H:forward": 28,
+        "CP:backward": 9,
+        "I:forward": 24,
+        "phase_split": 38,
+        "H:backward": 26,
+        "GF": 7,
+        "LC": 1,
+        "I:backward": 29,
+        "spider_nest": 5,
+        "E:backward": 18,
+        "EU:backward": 2,
+        "S:forward": 5,
+        "B:backward": 2,
+        "E:forward": 3
+      },
+      "completion_branches": {
+        "primary": 16,
+        "clifford_repair": 414,
+        "full_reduce_repair": 57
+      },
+      "model": {
+        "parameter_l2_delta": 0.0,
+        "actor_l2_delta": 0.0,
+        "finite": true
+      },
+      "events_sha256": "0e31702986b7a85d91b79f2eac449cd059da1b4b15e534ac33b0cc7d47633277",
+      "report_sha256": "50cf16e33bc5d6ed0d32aca02f31c41df88b557d731e3fe5988a1535e2214a14"
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 11,
+      "status": "passed",
+      "transitions": 473,
+      "accepted_rewrites": 472,
+      "replayed_auxiliary": 77,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 7,
+      "quarantined_invalid_qasm": 0,
+      "max_graph_operator_error": 2.2650998591337196e-15,
+      "max_qasm_operator_error": 2.9893669801409083e-16,
+      "accepted_families": {
+        "spider_split": 27,
+        "ID": 72,
+        "identity_insert": 32,
+        "EU:forward": 20,
+        "PVB": 16,
+        "S:backward": 25,
+        "gadget_split": 25,
+        "phase_transfer": 25,
+        "PVG": 20,
+        "PV": 43,
+        "H:forward": 26,
+        "CP:backward": 10,
+        "I:forward": 21,
+        "phase_split": 37,
+        "H:backward": 26,
+        "GF": 5,
+        "LC": 1,
+        "I:backward": 20,
+        "spider_nest": 5,
+        "E:backward": 14,
+        "EU:backward": 2
+      },
+      "completion_branches": {
+        "primary": 16,
+        "clifford_repair": 453,
+        "full_reduce_repair": 3
+      },
+      "model": {
+        "parameter_l2_delta": 0.26413224766498744,
+        "actor_l2_delta": 0.25898740016635446,
+        "finite": true
+      },
+      "events_sha256": "970035d0be8517c41a9bcc4c98c78585e9380724ecd6d65b3a8119b30d91722f",
+      "report_sha256": "9beba7dad210e11d071d0009a47f56f4e6011439dd0bf98f8b4c7b9257bfee86"
+    }
+  ],
+  "model_pairs": [
+    {
+      "base": "jpv",
+      "seed": 11,
+      "same_initialization": true,
+      "identical_prefix": 128,
+      "status": "passed"
+    }
+  ],
+  "saved_qasm": 14,
+  "accepted_rewrites": 959,
+  "caveat": "Quarantined invalid extractions are excluded from candidates, rewards and best gate counts"
+}

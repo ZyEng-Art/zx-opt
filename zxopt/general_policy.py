@@ -12,6 +12,8 @@ FAMILIES = ["LC", "PV", "PVB", "PVG", "ID", "GF", "identity_insert", "phase_spli
             "spider_split", "gadget_split", "phase_transfer", "spider_nest"]
 FAMILIES += [name+":"+direction for name in ("S", "I", "CP", "B", "K", "EU", "H", "SUP", "E", "C", "BW")
              for direction in ("forward", "backward")]
+BASE_FAMILIES = tuple(FAMILIES)
+FAMILIES += ["A:forward", "A:backward"]
 
 
 def batch(observations):
@@ -95,10 +97,10 @@ def observation(raw, view, available, context):
 
 
 class Encoder(nn.Module):
-    def __init__(self, width=32):
+    def __init__(self, width=32, general_zx=False):
         super().__init__()
         self.input = nn.Linear(FEATURES, width)
-        self.kind = nn.Embedding(len(FAMILIES)+1, width, padding_idx=0)
+        self.kind = nn.Embedding(len(FAMILIES if general_zx else BASE_FAMILIES)+1, width, padding_idx=0)
         self.layers = nn.ModuleList([nn.Linear(2*width, width) for _ in range(2)])
 
     def forward(self, graph):
@@ -112,10 +114,10 @@ class Encoder(nn.Module):
 
 
 class GeneralAgent(nn.Module):
-    def __init__(self, width=32):
+    def __init__(self, width=32, general_zx=False):
         super().__init__()
-        self.actor_encoder = Encoder(width)
-        self.critic_encoder = Encoder(width)
+        self.actor_encoder = Encoder(width, general_zx)
+        self.critic_encoder = Encoder(width, general_zx)
         self.actor_head = nn.Sequential(nn.Linear(2*width+CONTEXT, width), nn.Tanh(), nn.Linear(width, 1))
         self.value_head = nn.Sequential(nn.Linear(width+CONTEXT, width), nn.Tanh(), nn.Linear(width, 1))
         nn.init.orthogonal_(self.actor_head[-1].weight, gain=.01)

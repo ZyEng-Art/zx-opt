@@ -10,9 +10,11 @@ from itertools import product
 
 from .diagram import Diagram
 from .ring import quarter
+from .angles import Phase, phase, record as phase_record, restore as restore_phase, solve_a, a_evidence
 
 
 NAMES = ("S", "I", "CP", "B", "K", "EU", "H", "SUP", "E", "C", "BW")
+GENERAL_NAMES = NAMES + ("A",)
 SOURCE = "https://arxiv.org/abs/1903.06035v3"
 
 
@@ -22,33 +24,57 @@ class Axiom:
     parameters: dict
     left: Diagram
     right: Diagram
+    domain: str = "clifford_t"
+    evidence: str = ""
 
     def record(self):
-        return dict(name=self.name, parameters={k: str(v) if isinstance(v, F) else v
-                                               for k, v in self.parameters.items()})
+        row = dict(name=self.name, parameters={k: phase_record(v) if isinstance(v, (F, Phase)) else v
+                                              for k, v in self.parameters.items()})
+        if self.domain != "clifford_t":
+            row["domain"] = self.domain
+        if self.evidence:
+            row["constraint_evidence"] = self.evidence
+        return row
 
     @classmethod
     def from_record(cls, record):
         parameters = dict(record["parameters"])
-        for k in ("alpha", "beta", "gamma"):
+        for k in ("alpha", "beta", "gamma", "theta1", "theta2", "theta3"):
             if k in parameters:
-                parameters[k] = F(parameters[k])
-        return axiom(record["name"], **parameters)
+                parameters[k] = restore_phase(parameters[k])
+        rule = axiom(record["name"], domain=record.get("domain", "clifford_t"), **parameters)
+        if record.get("constraint_evidence", "") != rule.evidence:
+            raise ValueError("Axiom side-condition evidence changed on reconstruction")
+        return rule
 
 
-def axiom(name, *, color="Z", **parameters):
-    if name not in NAMES or color not in ("Z", "X"):
+def axiom(name, *, color="Z", domain="clifford_t", **parameters):
+    if domain not in ("clifford_t", "general"):
+        raise ValueError("Unknown phase domain")
+    if name not in (GENERAL_NAMES if domain == "general" else NAMES) or color not in ("Z", "X"):
         raise ValueError("Unknown axiom or color")
     allowed = dict(S={"alpha", "beta", "left_legs", "right_legs", "links"},
                    I=set(), CP=set(), B=set(), K={"alpha"}, EU=set(),
                    H={"alpha", "arity"}, SUP={"alpha"}, E=set(),
-                   C={"alpha", "beta", "gamma"}, BW=set())[name]
+                   C={"alpha", "beta", "gamma"}, BW=set(),
+                   A={"alpha", "beta", "gamma", "theta1", "theta2", "theta3"})[name]
     if set(parameters) - allowed:
         raise ValueError("Unexpected axiom parameters")
     p = dict(parameters)
+    evidence = ""
+    if name == "A":
+        for k in ("alpha", "beta", "theta1", "theta2"):
+            p[k] = phase(p.get(k, F(1, 3) if k == "beta" else F(0)))
+        if ("theta3" in p) != ("gamma" in p):
+            raise ValueError("Supply both theta3/gamma, or let the constructive solver choose both")
+        if "theta3" not in p:
+            p["theta3"], p["gamma"] = solve_a(*(p[k] for k in ("alpha", "beta", "theta1", "theta2")))
+        else:
+            p["theta3"], p["gamma"] = phase(p["theta3"]), phase(p["gamma"])
+        evidence = a_evidence(*(p[k] for k in ("alpha", "beta", "theta1", "theta2", "theta3", "gamma")))
     for k in ("alpha", "beta", "gamma"):
         if k in allowed:
-            p[k] = quarter(p.get(k, F(1, 4)))
+            p[k] = (phase if domain == "general" else quarter)(p.get(k, F(1, 4)))
     defaults = dict(left_legs=1, right_legs=1, links=1, arity=2)
     for k in allowed & defaults.keys():
         value = p.get(k, defaults[k])
@@ -56,7 +82,7 @@ def axiom(name, *, color="Z", **parameters):
             raise ValueError("Arities are nonnegative; spider links are positive")
         p[k] = value
     z, x = color, "X" if color == "Z" else "Z"
-    l, r = Diagram(), Diagram()
+    l, r = Diagram(allow_arbitrary=domain == "general"), Diagram(allow_arbitrary=domain == "general")
 
     def scalar(d, phase=0):
         a, b = d.node(x), d.node(z, phase)
@@ -151,6 +177,27 @@ def axiom(name, *, color="Z", **parameters):
                     d.edge(top[side], stem)
             d.leg(hub)
         controlled(l, False); controlled(r, True)
+    elif name == "A":
+        # JPV Figure 3, including every scalar-carrying leaf. Both sides have
+        # one ordered open port; colour duality follows tensor conjugation by H.
+        sides = []
+        for a, b, theta in ((-p["alpha"], p["alpha"], p["theta1"]),
+                            (p["beta"], -p["beta"], p["theta2"])):
+            tip = l.node(x)
+            l.edge(tip, l.node(z, a)); l.edge(tip, l.node(z, b))
+            middle = l.node(z, theta); l.edge(tip, middle)
+            join = l.node(x); l.edge(middle, join); sides.append(join)
+        hub = l.node(z); l.edge(hub, l.node(x, F(1, 2)))
+        bottom = l.node(x)
+        for join in sides:
+            l.edge(join, hub)
+            v = l.node(z, F(1, 4)); l.edge(join, v); l.edge(v, bottom)
+        l.leg(bottom)
+        root = r.node(z, p["theta3"])
+        for a, b in ((-p["gamma"], p["gamma"]), (F(1, 4), F(1, 4))):
+            tip = r.node(x); r.edge(root, tip)
+            r.edge(tip, r.node(z, a)); r.edge(tip, r.node(z, b))
+        r.leg(root)
     elif name == "BW":
         def leaf(d, v):
             d.edge(v, d.node(z, F(1, 4)))
@@ -167,7 +214,7 @@ def axiom(name, *, color="Z", **parameters):
         r.edge(top, a); r.edge(a, b); r.edge(b, bottom); leaf(r, a)
         u = r.node(x, 1); r.edge(top, u); leaf(r, u); leaf(r, u)
         r.leg(top); r.leg(bottom)
-    return Axiom(name, dict(color=color, **p), l.validate(), r.validate())
+    return Axiom(name, dict(color=color, **p), l.validate(), r.validate(), domain, evidence)
 
 
 def instances_at(rank):

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "formal_trials": 48,
+  "transitions": 63107,
+  "accepted_rewrites": 63093,
+  "saved_qasm": 22245,
+  "online_updates": 231,
+  "within_mode_pairs": 24,
+  "prefix_steps": 128,
+  "A_accepted": 0,
+  "A_probe_samples": 256,
+  "A_probe_proposals": 0,
+  "raw_archive_sha256": "282be36d69d08935a7f03fed88b900cb790223721b7aabe7d14d850a2120b2b4",
+  "common_baselines": true,
+  "input_hashes_agree": true,
+  "formal_sources_clean": true,
+  "resource_restored_stopped": true,
+  "source_commit": "34e0f43e9874fa06977c4acfb4101e14a661b4c5"
+}

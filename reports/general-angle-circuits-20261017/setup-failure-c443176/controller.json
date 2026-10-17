@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "error": "CalledProcessError(1, ['docker', 'exec', '-e', 'OPENBLAS_NUM_THREADS=1', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'PYTHONHASHSEED=0', '-e', 'CUDA_VISIBLE_DEVICES=', '-e', 'PYTHONPATH=/workspace/pyzx-298693bed2608e84fcb44a672282f873321c70b7', '-e', 'GIT_CONFIG_COUNT=1', '-e', 'GIT_CONFIG_KEY_0=safe.directory', '-e', 'GIT_CONFIG_VALUE_0=/workspace/zx-opt-c443176ebed5', '-w', '/workspace/zx-opt-c443176ebed5', 'dengzengyong_rlzx_node44_20261016', '/workspace/env310/bin/python', '-c', \"import sympy; assert sympy.__version__ == '1.13.1', sympy.__version__\"])",
+  "restored_stopped": true,
+  "started_at": "2026-10-17T14:17:22.198420179Z",
+  "trials": 48,
+  "seconds": 600,
+  "workers": 48,
+  "time": "2026-10-17T22:17:43.952507+08:00",
+  "commit": "c443176ebed5cce5bcf74d0bb837ab515f1a0cb3",
+  "container": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+  "gpu": false,
+  "source": "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-c443176ebed5"
+}

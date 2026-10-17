@@ -36,14 +36,15 @@ def main():
         ref = qiskit_matrix_zx_order(original)
         raw = Diagram.from_record(json.loads(gzip.decompress((folder/"objects"/(protocol["root_graph"]+".json.gz")).read_bytes())))
         views = Views(n, ref); view = views.get(raw)
-        kernel = GeneralKernel(environment(input_path), config["seed"], config["jpv"], config["candidate_cap"], config["matching_work"])
+        general_zx = config.get("general_zx", False)
+        kernel = GeneralKernel(environment(input_path), config["seed"], config["jpv"], config["candidate_cap"], config["matching_work"], general_zx)
         available = kernel.prepare(raw, view, protocol["root_view_vertices"]+config["max_growth"])
         if config.get("feasibility_mask", False):
             available, _ = Feasibility(protocol["max_vertices"], len(raw.edges)+config["max_edge_growth"]).prepare(raw, view, available, kernel)
         first = json.loads((folder/"events.jsonl").read_text().splitlines()[0])
         assert candidate_digest(available) == first["candidate_sha256"]
         obs = observation(raw, view.graph, available, first["context"]); packed = batch([obs])
-        net = GeneralAgent(); values = []; distributions = []
+        net = GeneralAgent(general_zx=general_zx); values = []; distributions = []
         for checkpoint in ("initial.pt", "final.pt"):
             net.load_state_dict(torch.load(folder/checkpoint, map_location="cpu", weights_only=True)["state_dict"])
             with torch.no_grad():

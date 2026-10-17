@@ -1,0 +1,6 @@
+{
+  "path": "runs/general-zx-20261017/records.tar.gz",
+  "sha256": "680815c362291581b3844bb789e3421e644807a2c6001746bf277178b5c76b94",
+  "bytes": 1311210,
+  "contents": "All kernel checks, full A cases, unitary proof, CLI proof, graph/event/model/QASM records and replay/source audits; raw archive ignored by Git"
+}

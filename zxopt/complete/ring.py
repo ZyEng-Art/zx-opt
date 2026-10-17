@@ -67,11 +67,25 @@ SQRT2 = C8((0, 1, 0, -1))
 INV_SQRT2 = C8((0, Fraction(1, 2), 0, Fraction(-1, 2)))
 
 
-def quarter(phase):
-    """Accept exact pi/4 multiples only; never round a floating angle."""
+def rational_phase(phase):
+    """Normalize an exact coefficient of pi without quantizing its angle."""
+    from .angles import Phase, phase as general_phase
+    if isinstance(phase, Phase):
+        return general_phase(phase)
     if isinstance(phase, float):
         raise ValueError("Use an exact integer/Fraction phase, not float")
-    p = Fraction(phase) % 2
-    if (p * 4).denominator != 1:
+    return Fraction(phase) % 2
+
+
+def is_quarter(phase):
+    """Whether a phase belongs to the finite Clifford+T phase domain."""
+    from .angles import Phase
+    return not isinstance(phase, Phase) and (Fraction(phase) * 4).denominator == 1
+
+
+def quarter(phase):
+    """Accept exact pi/4 multiples only; never round a floating angle."""
+    p = rational_phase(phase)
+    if not is_quarter(p):
         raise ValueError("This kernel covers Clifford+T phases (pi/4 multiples)")
     return p

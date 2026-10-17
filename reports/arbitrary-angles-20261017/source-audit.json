@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "trials": 2,
+  "commits": {
+    "bafaa07415800df4ea5a54e5e9d704642888a8b3": {
+      "sources": {
+        "zxopt/__init__.py": "49f66970629850f9e71721957a4723f03650331fc5240d3d02e5bf00e2f6c6b8",
+        "zxopt/archive.py": "c7d316492919a4ebeb5ebac66236b0d4ec09a1b577256054238b4219854cacff",
+        "zxopt/campaign.py": "5f5eddf651ebea56820786ade267f80dd3d69a4e210cbd102962faeae386b767",
+        "zxopt/complete/__init__.py": "5876d8d4a9fdd89a6665770d492c5484718cfe45c1b68487bd22ad53479e6914",
+        "zxopt/complete/__main__.py": "b20e58b20159198149a6ce4da8b7202b469f8e55fde81e5afca624a704655a57",
+        "zxopt/complete/adapter.py": "4df420e1c0b1b6bb3855f18826df8da793d1d78f1d9e5b4248f16271227cc8e0",
+        "zxopt/complete/axioms.py": "4ff0fe47d8af47544d7b6ed673d83a627d69d7fede9a87b616bf52e4cd358fa5",
+        "zxopt/complete/diagram.py": "3831db827926f0b2a1cd973e2fb1893fce0427decc11eb2a2cc8567c6e4970ed",
+        "zxopt/complete/rewrite.py": "623161fd89059798a40956472a7473df68a445a1bde236a5377044f6f74a4e54",
+        "zxopt/complete/ring.py": "4157784b52f4679b50ecf69b6461acdb8b5e6e8f0883c6aa04e2455e5fe5a2bc",
+        "zxopt/dedup.py": "ee54c725cc0aa981c966be9485ae1f317782b84ccb4af0e5ca8ba0635a06eb53",
+        "zxopt/experiment_input.py": "8eab3f698a14e9027b8d3222f75200cf46455128a5efa829c63bf573dd6e037d",
+        "zxopt/general_archive.py": "a31b446db73afaaeba7ab9b21717a4e5a390b1ba4012348b3c0c82f95b027c35",
+        "zxopt/general_campaign.py": "fa4daa9e809a6dfcd6a50066ad267e0219f0f4af095c84b0fae94597c19f006e",
+        "zxopt/general_feasibility.py": "ca02a7e105d48f108a8d3c9995fa61ec1fe5a179d0b4f9bdb2b95e06060354a2",
+        "zxopt/general_kernel.py": "7c268d7b83ec29d48e472abcaf404a34723cb10b97f999bf93302ba79dea1361",
+        "zxopt/general_policy.py": "beb1f73e7424ef258485056e17e330028a67e37a8f040f9aefc9cea22232ce81",
+        "zxopt/general_score.py": "d155c0a56201d6ca82c2a7b71b197ac9c78c96163b8d9eb6242989fe8979ae67",
+        "zxopt/general_search.py": "b56d60a8cd20c871fec9e81bc59b51b1e19ac1a6d1a3fa59ff68277faac18f9b",
+        "zxopt/jpv_actions.py": "ed5b878ee92620687dcc78ad6759e70ef8a27e0a9ad5a33e25c89739b77289d9",
+        "zxopt/kernel.py": "ce6deb5cf65f99e2c7727a8174f7bfee25cc7180d49c319b20cba68f31f1d954",
+        "zxopt/legacy.py": "0794b16c5f6c56dfbb546c26337b036f44a474bcd87e4701dedb66f71fabbbdf",
+        "zxopt/policy.py": "c8f80e08c32502b7afb4b5c2b7a8b634ac6574a5ed635c0925218af71299bc27",
+        "zxopt/rules.py": "318612a702d69239611224838bb60d5504b61e6f12e5aa97fa2b337a5cc9970e",
+        "zxopt/search.py": "db5432edaefb4c80dbd11c65d6b967c022fdbb6e5b2544f9c92219170d3ec4be",
+        "zxopt/target_campaign.py": "6c29b9c425ffbb86518dc0108511479ce5c8f3e7a7e3321b8bf3a076df758065",
+        "zxopt/verify.py": "6695a2ac604e9173815a9e23590726e385819fb384073f9a932657c995c11ffc"
+      },
+      "baseline_sha256": "9f64ee6c40f94c8433e05291bd44e213659cf6594a12e0201af3f907b45755dd",
+      "frozen_legacy_files": 28
+    }
+  },
+  "records": [
+    {
+      "arm": "jpv_frozen",
+      "seed": 11,
+      "commit": "bafaa07415800df4ea5a54e5e9d704642888a8b3",
+      "status": "passed",
+      "input_sha256": "ec495e1e2f53e33989e94ccefb6c6e7a81a817e4280726ca9f977bac0ae978a3",
+      "input_git_verified": true
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 11,
+      "commit": "bafaa07415800df4ea5a54e5e9d704642888a8b3",
+      "status": "passed",
+      "input_sha256": "ec495e1e2f53e33989e94ccefb6c6e7a81a817e4280726ca9f977bac0ae978a3",
+      "input_git_verified": true
+    }
+  ],
+  "checks": "Every core source against Git objects; identical campaign snapshot; frozen legacy manifest and files; input digest; clean experiment checkout"
+}

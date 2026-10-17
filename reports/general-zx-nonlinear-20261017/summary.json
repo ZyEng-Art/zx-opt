@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "implementation_commit": "b4700e2eef6085d035d62539b2256642d346f2f9",
+  "rule_schemata": [
+    "S",
+    "I",
+    "CP",
+    "B",
+    "K",
+    "EU",
+    "H",
+    "SUP",
+    "E",
+    "C",
+    "BW",
+    "A"
+  ],
+  "kernel_checks": {
+    "status": "passed",
+    "unit_tests": {
+      "passed": true,
+      "count": 54,
+      "seconds": 30.501678458,
+      "failures": [],
+      "errors": []
+    },
+    "axiom_families": [
+      "S",
+      "I",
+      "CP",
+      "B",
+      "K",
+      "EU",
+      "H",
+      "SUP",
+      "E",
+      "C",
+      "BW",
+      "A"
+    ],
+    "high_precision_a_cases": 64,
+    "replayed_a_actions": 128,
+    "decimal_precision": 70,
+    "max_a_tensor_error": "1.38006291165124e-70",
+    "unitary_steps": 2,
+    "max_unitary_operator_error": 2.221139830254355e-15,
+    "symbolic_transcription_proofs": 4,
+    "elapsed_seconds": 79.783902375,
+    "source_unchanged": true,
+    "boundary": "Published rule completeness is distinct from supported real-expression/constraint certificates and finite RL search"
+  },
+  "trial_seconds": 60,
+  "trials": 2,
+  "records": [
+    {
+      "arm": "jpv_frozen_s11",
+      "transitions": 498,
+      "accepted": 497,
+      "updates": 0,
+      "best": {
+        "gates": 8,
+        "cx": 2,
+        "depth": 6
+      },
+      "a_actions": 0,
+      "max_operator_error": 2.142759199588038e-15,
+      "events_sha256": "faf9083318fdbcc70564f06d2d46eaaa3bb4903a158be1a68b0d0c9af24602fc"
+    },
+    {
+      "arm": "jpv_online_s11",
+      "transitions": 493,
+      "accepted": 493,
+      "updates": 3,
+      "best": {
+        "gates": 8,
+        "cx": 2,
+        "depth": 6
+      },
+      "a_actions": 0,
+      "max_operator_error": 2.2377260456559052e-15,
+      "events_sha256": "d412e489df75c881c646a9bcc1ec632b195e8f14d9fcab5218f47d2e505540ce"
+    }
+  ],
+  "replayed_transitions": 990,
+  "saved_qasm": 14,
+  "initial_prefix": [
+    {
+      "base": "jpv",
+      "seed": 11,
+      "same_initialization": true,
+      "identical_prefix": 128,
+      "status": "passed"
+    }
+  ],
+  "source_audit": "passed",
+  "precommit_tested_sources_match_implementation": true,
+  "on_target_a_actions": 0,
+  "optimization_efficacy": "Not demonstrated; both arms retain 8 gates/2 CX and did not select A",
+  "resources": "Local CPU only; no remote node or GPU used",
+  "scope": "General JPV schemata with checked executable constraint instances; no arbitrary-real equality decision or finite-search completeness claim"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "unit_tests": {
+    "passed": true,
+    "count": 54,
+    "seconds": 30.501678458,
+    "failures": [],
+    "errors": []
+  },
+  "axiom_families": [
+    "S",
+    "I",
+    "CP",
+    "B",
+    "K",
+    "EU",
+    "H",
+    "SUP",
+    "E",
+    "C",
+    "BW",
+    "A"
+  ],
+  "high_precision_a_cases": 64,
+  "replayed_a_actions": 128,
+  "decimal_precision": 70,
+  "max_a_tensor_error": "1.38006291165124e-70",
+  "unitary_steps": 2,
+  "max_unitary_operator_error": 2.221139830254355e-15,
+  "symbolic_transcription_proofs": 4,
+  "elapsed_seconds": 79.783902375,
+  "source_unchanged": true,
+  "boundary": "Published rule completeness is distinct from supported real-expression/constraint certificates and finite RL search"
+}

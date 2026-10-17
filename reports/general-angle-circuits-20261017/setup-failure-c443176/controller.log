@@ -1,0 +1,38 @@
+Cloning into '/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-c443176ebed5'...
+Note: switching to 'c443176ebed5cce5bcf74d0bb837ab515f1a0cb3'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+dengzengyong_rlzx_node44_20261016
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+AttributeError: module 'importlib' has no attribute 'util'
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+AttributeError: module 'importlib' has no attribute 'util'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError: 1.14.0
+dengzengyong_rlzx_node44_20261016
+{"status": "failed", "archive": "zx-opt-c443176ebed5-angle-records.tar.gz", "bytes": 4738, "sha256": "f46d6c96f2da17df897da3320742651118d50f31ccb37dc580708ea24bd30088", "commit": "c443176ebed5cce5bcf74d0bb837ab515f1a0cb3"}
+Traceback (most recent call last):
+  File "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-c443176ebed5-angle-controller.py", line 93, in <module>
+    main()
+  File "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-c443176ebed5-angle-controller.py", line 48, in main
+    run(base+["-c", "import sympy; assert sympy.__version__ == '1.13.1', sympy.__version__"])
+  File "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-c443176ebed5-angle-controller.py", line 27, in run
+    subprocess.run(command, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 524, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker', 'exec', '-e', 'OPENBLAS_NUM_THREADS=1', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'PYTHONHASHSEED=0', '-e', 'CUDA_VISIBLE_DEVICES=', '-e', 'PYTHONPATH=/workspace/pyzx-298693bed2608e84fcb44a672282f873321c70b7', '-e', 'GIT_CONFIG_COUNT=1', '-e', 'GIT_CONFIG_KEY_0=safe.directory', '-e', 'GIT_CONFIG_VALUE_0=/workspace/zx-opt-c443176ebed5', '-w', '/workspace/zx-opt-c443176ebed5', 'dengzengyong_rlzx_node44_20261016', '/workspace/env310/bin/python', '-c', "import sympy; assert sympy.__version__ == '1.13.1', sympy.__version__"]' returned non-zero exit status 1.

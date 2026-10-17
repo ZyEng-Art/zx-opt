@@ -10,6 +10,7 @@ from .kernel import Kernel
 from .rules import candidates, growth
 from .jpv_actions import Proposals, cancel_h_pairs
 from .verify import graph_matrix, matrix_error
+from .complete.angles import Phase
 from .legacy import environment
 from runtime import graph_key
 
@@ -38,7 +39,7 @@ class Views:
             self.hits += 1; self.entries.move_to_end(key)
             return self.entries[key]
         self.misses += 1
-        pg = to_pyzx(diagram, self.inputs)
+        pg = to_pyzx(diagram, self.inputs, evaluate_expressions=True)
         error = matrix_error(self.reference, graph_matrix(pg))
         self.max_error = max(self.max_error, error)
         if error > 2e-8:
@@ -94,9 +95,9 @@ class HybridAction:
 
 
 class GeneralKernel:
-    def __init__(self, env, seed=11, jpv=True, candidate_cap=32, matching_work=2048):
+    def __init__(self, env, seed=11, jpv=True, candidate_cap=32, matching_work=2048, general_zx=False):
         self.native = Kernel(env)
-        self.jpv = Proposals(seed, candidate_cap, matching_work) if jpv else None
+        self.jpv = Proposals(seed, candidate_cap, matching_work, general=general_zx) if jpv else None
         self.candidate_cap = candidate_cap
         from optimized_backend import compile_rewrite_prefix
         wrapper = next(c for c in type(env).__mro__ if "rewrite_prefix_sha256" in c.__dict__)
@@ -114,7 +115,9 @@ class GeneralKernel:
 
     def prepare(self, raw, view, max_view_vertices):
         result = []
-        if view.graph is not None:
+        # An evaluated scoring view must never erase the symbolic proof state.
+        # Native/macro transitions remain exact rational transitions only.
+        if view.graph is not None and not any(isinstance(n.phase, Phase) for n in raw.nodes.values()):
             before = graph_key(view.graph)
             _, native = self.native.prepare(view.graph)
             self.remember_matches(view)
@@ -154,7 +157,7 @@ class GeneralKernel:
             if view.graph is None or graph_key(view.graph) != action.parent_view_key:
                 raise ValueError("Macro action belongs to a different normalized representation")
             pg = self.native.step(view.graph, action.payload, action.identifier)
-            child = from_pyzx(pg)
+            child = from_pyzx(pg, allow_arbitrary=raw.allow_arbitrary)
         child, receipts = cancel_h_pairs(child)
         return child, receipts
 
@@ -171,4 +174,4 @@ class GeneralKernel:
         e._matching_graph = e._cached_lcomp = e._cached_ids = None
         e.episode_len = 0; e.episode_stats = dict(e.episode_stats)
         self.preview_prefix(e, action.identifier)
-        return cancel_h_pairs(from_pyzx(e.graph))
+        return cancel_h_pairs(from_pyzx(e.graph, allow_arbitrary=raw.allow_arbitrary))

@@ -1,0 +1,6 @@
+{
+  "path": "runs/arbitrary-angles-20261017/records.tar.gz",
+  "sha256": "73a1a2085f66e75ce9fdda50b19b53840dee916c5d9ba945ad201b5e7d164175",
+  "bytes": 1265092,
+  "contents": "All run records, graph objects, QASM candidates, initial/final models, rollout metrics and independent replay/source audits; ignored by Git"
+}

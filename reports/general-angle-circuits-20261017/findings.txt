@@ -1,0 +1,115 @@
+一般角度 ZX：四电路、48 次独立训练搜索实验（2026-10-17）
+
+结论
+任意数值角度的输入、一般角度 JPV 改写、搜索和输出等价性流程在这四条
+电路上跑通。本轮没有证明在线学习稳定优于冻结策略，也没有证明非线性
+A 公理带来优化收益：全体正式轨迹 A 使用 0 次，256 个保存状态的有限
+候选重建也没有产生 A。不能把完整公理模式的门数改善归因于 A。
+
+设置
+源提交：34e0f43e9874fa06977c4acfb4101e14a661b4c5。
+每电路两种模式，各比较冻结/在线策略，种子 11/29/47，每次 600 秒。
+conditional：--allow-arbitrary-angles --jpv，仅对内部 pi/4 结构实例化 JPV。
+general：--general-zx，一般角度匹配和 12 类公理模式，包括受约束 A。
+两者都接收同一份任意数值角度 QASM，都有原有宏动作和相同提取/后处理。
+统一比较总 H/RZ/X/CX 门数，CX 为次级排序指标。
+模型和 buffer 按电路/种子独立，不做验证电路泛化，不转移历史模型或最优图。
+同模式冻结/在线的初始权重和前 128 步完全一致，24 对均经审计确认。
+跨模式动作嵌入数不同，不声称相同权重；这是配置级比较，不能单独识别 A
+或某一项实现改动的因果效果。三个种子的描述性结果不构成显著性证明。
+
+门数（每个三元组依次是种子 11/29/47）
+电路                  输入  统一后处理基线  conditional冻结  conditional在线  general冻结  general在线
+barenco_tof_3 (5q)      46       40          37/37/37        38/38/39       37/39/36      39/38/36
+mod5_4 (5q)            51       41          23/24/22        24/23/23       23/23/23      24/23/24
+qft_4_numeric (4q)     40       34          31/31/31        32/31/31       31/31/31      31/31/31
+ising_4_numeric (4q)   52       52          46/46/46        46/46/46       46/46/46      46/46/46
+
+general 在线对同模式冻结：1 胜、8 平、3 负（12 对）。
+conditional 在线对同模式冻结：1 胜、5 平、6 负。
+general 在线对 conditional 在线：2 胜、8 平、2 负。
+general 冻结对 conditional 冻结：2 胜、8 平、2 负。
+胜负按总门数统计，平局未用 CX 拆分。
+
+平均全时段最优门数（600 秒内最优门数积分除以 600；越低越好）
+电路                  conditional冻结  conditional在线  general冻结  general在线
+barenco_tof_3             38.061898        38.662524       38.405154      38.464761
+mod5_4                   24.054956        24.460832       24.564433      24.998078
+qft_4_numeric            32.019708        32.016575       31.828228      31.616414
+ising_4_numeric          46.285578        46.229486       46.682100      46.808458
+QFT 的一般角度模式更早找到好结果，但其他电路没有一致改善。
+
+学习诊断
+正式运行共 63,107 步，24 个在线试验合计 231 次 PPO 更新，每次试验 7–12 次。
+所有在线模型和 actor 参数均发生有限非零变化，冻结模型参数完全不变。
+固定根状态策略 TV 距离：general 0.000975–0.024875，conditional 0.000691–0.035704。
+以下是每次试验首/末四分之一更新的均值，再对同模式 12 次在线试验等权平均：
+                         conditional 首→末              general 首→末
+value loss                 0.548902→0.320218              0.318766→0.335504
+value explained variance   0.006383→0.050356              0.016858→0.067470
+conditional norm. entropy  0.9999995→0.9998533            0.9999997→0.9999277
+模型确有更新，critic 有小幅改善；策略依然接近均匀，general value loss 未下降。
+状态/回报分布随搜索变化，loss 单独不能证明收敛。7–12 次更新也不足以排除
+更长训练的收益。本轮可以确认缺乏稳定搜索增益，不能确认已收敛或无法学会。
+
+新增规则实际覆盖
+A：全正式运行 accepted 0 次。
+general QFT 中含非 pi/4 参数的 JPV 动作共 150 次：H前向59、H反向50、S反向41。
+general Ising 共 411 次：H反向140、S反向121、H前向142、S前向8。
+这说明一般角度 S/H 确实工作，不能据此推断非线性 A 已被实际搜索利用。
+每条 general 电路从保存的不同 SHA 原始图里抽取 64 个状态，固定 seed11、
+首次访问、候选上限32、匹配预算2048，重建候选：共256状态，A候选0。
+这是一项有限抽样诊断，不是全轨迹 A 不可匹配、规则不完备或不可达的证明。
+样本中两条数值角度电路各64状态均有非 pi/4 节点，没有派生表达式节点。
+A 未出现的瓶颈更接近结构/候选可达性；本轮不能归结为策略拒选现成 A 候选。
+
+性能
+按记录的六类计时总和加权：
+                         conditional          general
+matching                   14.32%             14.88%
+feasibility previews       69.16%             68.73%
+inference                   1.20%              1.20%
+rewrite/operator checks     8.17%              8.00%
+scoring/extraction          6.64%              6.68%
+PPO                         0.51%              0.51%
+主要时间仍用于候选可行性预览，GPU 不能解决这项主要开销。
+
+正确性与资源
+node44 CPU-only，最多48个单线程搜索 worker，没有 GPU。
+8 个模式/电路预检各完成128步和1次更新；node44的54项单元测试全通过。
+63,093 次已接受改写逐条回放；22,245 份保存 QASM 完整固定线路算符核验通过。
+正式运行最大原始图算符误差 1.0230702459095239e-14，最大有效输出误差
+1.9133237149764433e-15；现有阈值2e-8，只允许单位模全局相位。
+输入数值解析、一般角度视图和输出采用数值完整算符核验，不声称符号等价证明。
+发现23份不等价提取（按运行计数）并隔离，独立审计也确认其不等价；未进入
+有效候选、奖励或最优门数。17次合法但未评分转换，无恢复评分轨迹。
+源文件/输入SHA、模型配对、buffer重放和奖励检查均通过；正式源代码干净。
+运行结束只停止了本实验启动的同一容器实例，2026-10-17 22:32:26 +08恢复停止。
+
+环境准备失败也保留：c443176 首次检查发现 node44 全局 SymPy 为1.14.0，
+未启动正式搜索。后续在本次源码的独立 .deps 目录安装 SymPy1.13.1，不改变
+共享 Python 环境；34e0f43 正式试验和审计均使用该固定版本。
+
+产物与复现
+summary.json：48次全部结果、loss首末段、逐项计时、配对胜负和算符误差。
+comparison.png/pdf：四电路同墙钟预算平均曲线，阴影为三个种子的范围。
+各 mode-circuit 目录：独立分析、学习曲线、最优QASM、正确性/源/模型审计。
+a-coverage.json、action-coverage.json：有限候选覆盖和实际已接受动作计数。
+input-semantics.json：新增QFT与独立DFT矩阵、新增Ising与独立算符乘积核验。
+resource.json、environment.json、transport.json、preflight.json、study.json、
+node44-controller.txt、setup-failure-c443176/：资源、环境、日志和准备失败记录。
+
+固定源码下运行：
+python tools/general_angle_study.py runs/angle-study --inputs inputs/barenco_tof_3.qasm inputs/mod5_4.qasm inputs/qft_4_numeric.qasm inputs/ising_4_numeric.qasm
+然后对每个模式/电路调用 tools/audit_general.py、tools/audit_sources.py、
+tools/probe_general_policy.py、tools/summarize_general.py，详见 tools/node44_angle_study.py。
+使用固定 PyZX 298693bed2608e84fcb44a672282f873321c70b7 和 requirements.txt。
+
+完整原始记录包含模型、事件、图对象、隔离候选及改写证据，未放入Git：
+本机 runs/angle-launch-20261017/zx-opt-34e0f43e9874-angle-records.tar.gz
+node44 /tmp/dengzengyong_rlzx_node44_20261016/zx-opt-34e0f43e9874-angle-records.tar.gz
+122,394,912 字节；下载后SHA256核验通过：
+282be36d69d08935a7f03fed88b900cb790223721b7aabe7d14d850a2120b2b4
+
+下一步应优先提高有用派生规则/非线性结构的候选可达性，并优化可行性预览，
+再用相同控制实验检查收益。延长训练可以另做；本轮不以多跑时间替代这些证据。

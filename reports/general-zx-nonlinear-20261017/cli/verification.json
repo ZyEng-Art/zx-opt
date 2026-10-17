@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "commands": [
+    [
+      "catalog",
+      "--general-zx"
+    ],
+    [
+      "apply",
+      "runs/general-zx-20261017/cli/source.json",
+      "runs/general-zx-20261017/cli/child.json",
+      "--axiom",
+      "A",
+      "--general-zx"
+    ],
+    [
+      "replay",
+      "runs/general-zx-20261017/cli/source.json",
+      "runs/general-zx-20261017/cli/child.json.receipt.json",
+      "runs/general-zx-20261017/cli/replayed.json"
+    ],
+    [
+      "export-pyzx",
+      "runs/general-zx-20261017/cli/child.json",
+      "runs/general-zx-20261017/cli/numeric-view.json",
+      "--num-inputs",
+      "0",
+      "--evaluate-expressions"
+    ]
+  ],
+  "child_sha256": "047c84c79de57e5f638b7ac4dff35027669faff96d2dbd496960c56ce448041a",
+  "catalog": [
+    "S",
+    "I",
+    "CP",
+    "B",
+    "K",
+    "EU",
+    "H",
+    "SUP",
+    "E",
+    "C",
+    "BW",
+    "A"
+  ]
+}

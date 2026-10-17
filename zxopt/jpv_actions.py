@@ -17,6 +17,7 @@ import numpy as np
 
 from .complete import Diagram, axiom, actions as rule_actions, exact_tensor
 from .complete.rewrite import Match, RuleAction, matches, replace, MatchLimit
+from .complete.ring import is_quarter
 
 
 def connected_ports(graph):
@@ -128,9 +129,12 @@ def compiled(name, direction, color, arity=0):
 
 
 class Proposals:
-    def __init__(self, seed=11, cap=32, matching_work=2048):
+    def __init__(self, seed=11, cap=32, matching_work=2048, general=False):
         self.seed = seed; self.cap = cap; self.matching_work = matching_work
-        self.rounds = {}; self.stats = dict(calls=0, matching_work_exhausted=0, phase_inferred=0)
+        self.general = general
+        self.domain = "general" if general else "clifford_t"
+        self.rounds = {}; self.stats = dict(calls=0, matching_work_exhausted=0, phase_inferred=0,
+                                           non_clifford_matches_skipped=0)
         # Compilation depends on the calculus, not on observations or rewards.
         for name in ("CP", "B", "K", "EU", "SUP", "E", "C", "BW"):
             for direction, color in product(("forward", "backward"), ("Z", "X")):
@@ -151,9 +155,17 @@ class Proposals:
         host = graph.clone(); host.nodes = {v: graph.nodes[v] for v in vertices}
         parent = key
         buckets = {}
-        per = max(2, (self.cap+10)//11)
+        count = 12 if self.general else 11
+        per = max(2, (self.cap+count-1)//count)
 
         def add(rule, direction, match):
+            if self.general:
+                import sympy as s
+                from .complete.angles import expr
+                if any(s.count_ops(expr(n.phase)) > 128 for d in (rule.left, rule.right)
+                       for n in d.nodes.values()):
+                    self.stats["phase_budget_skipped"] = self.stats.get("phase_budget_skipped", 0)+1
+                    return
             family = rule.name + ":" + direction
             if len(buckets.get(family, ())) < per:
                 buckets.setdefault(family, []).append(RuleAction(rule, direction, match, parent))
@@ -163,10 +175,12 @@ class Proposals:
         for i, (a, b) in enumerate(graph.edges):
             if a != b and graph.nodes[a].kind == graph.nodes[b].kind and graph.nodes[a].kind in ("Z", "X"):
                 pairs.setdefault(tuple(sorted((a, b))), []).append(i)
-        pair_items = list(pairs.items()); rng.shuffle(pair_items)
+        pair_items = [(pair, es) for pair, es in pairs.items()
+                      if self.general or all(is_quarter(graph.nodes[v].phase) for v in pair)]
+        rng.shuffle(pair_items)
         pair_items.sort(key=lambda item: not any(v in reached for v in item[0]))
         for (a, b), es in pair_items[:per]:
-            rule = axiom("S", color=graph.nodes[a].kind, alpha=graph.nodes[a].phase,
+            rule = axiom("S", domain=self.domain, color=graph.nodes[a].kind, alpha=graph.nodes[a].phase,
                          beta=graph.nodes[b].phase, left_legs=len(hs[a])-len(es),
                          right_legs=len(hs[b])-len(es), links=len(es))
             bindings = []
@@ -179,17 +193,21 @@ class Proposals:
             n = graph.nodes[v]
             if n.kind not in ("Z", "X"):
                 continue
+            if not self.general and not is_quarter(n.phase):
+                # This finite JPV menu only instantiates Clifford+T templates.
+                # Keep other angles unchanged as the surrounding context.
+                continue
             shuffled = list(hs[v]); rng.shuffle(shuffled)
             if len(buckets.get("S:backward", ())) < per:
                 count = int(rng.integers(len(shuffled)+1)); alpha = F(int(rng.integers(8)), 4)
-                rule = axiom("S", color=n.kind, alpha=alpha, beta=n.phase-alpha,
+                rule = axiom("S", domain=self.domain, color=n.kind, alpha=alpha, beta=n.phase-alpha,
                              left_legs=count, right_legs=len(shuffled)-count)
                 add(rule, "backward", single_match(rule.right, v, shuffled))
             if not n.phase and len(shuffled) == 2 and len(buckets.get("I:forward", ())) < per:
                 rule = axiom("I", color=n.kind)
                 add(rule, "forward", single_match(rule.left, v, shuffled))
             if len(buckets.get("H:backward", ())) < per:
-                rule = axiom("H", color=n.kind, alpha=n.phase, arity=len(shuffled))
+                rule = axiom("H", domain=self.domain, color=n.kind, alpha=n.phase, arity=len(shuffled))
                 add(rule, "backward", single_match(rule.right, v, shuffled))
 
         edge_order = list(range(len(graph.edges))); rng.shuffle(edge_order)
@@ -201,6 +219,9 @@ class Proposals:
         # Fixed branch-count bounds preserve paired prefixes across machine load.
         jobs = [(name, direction, color, 0) for name in ("CP", "B", "K", "EU", "SUP", "E", "C", "BW")
                 for direction, color in product(("forward", "backward"), ("Z", "X"))]
+        if self.general:
+            jobs += [("A", direction, color, 0)
+                     for direction, color in product(("forward", "backward"), ("Z", "X"))]
         arities = sorted({len(hs[v]) for v in vertices if graph.nodes[v].kind in ("Z", "X")})
         jobs += [("H", "forward", color, arity) for color in ("Z", "X") for arity in arities]
         rng.shuffle(jobs)
@@ -208,12 +229,31 @@ class Proposals:
             if len(buckets.get(name+":"+direction, ())) >= per:
                 continue
             try:
+                if self.general:
+                    from .general_angles import compiled as general_compiled, inferred_rules
+                    pattern = general_compiled(name, direction, color, arity)[0]
+                    attempts = 0
+                    for match in matches(host, pattern, ignore_phases=True, work_limit=self.matching_work):
+                        attempts += 1
+                        for rule in inferred_rules(host, match, name, direction, color, arity):
+                            add(rule, direction, match); self.stats["phase_inferred"] += 1
+                            if len(buckets.get(name+":"+direction, ())) >= per:
+                                break
+                        if len(buckets.get(name+":"+direction, ())) >= per or attempts >= 64:
+                            break
+                    continue
                 pattern, internal, lookup, fixed = compiled(name, direction, color, arity)
                 attempts = 0
                 for match in matches(host, pattern, ignore_phases=True, work_limit=self.matching_work):
                     attempts += 1
                     mapping = dict(match.vertices)
-                    signature = tuple(int(graph.nodes[mapping[v]].phase*4) for v in internal)
+                    phases = tuple(graph.nodes[mapping[v]].phase for v in internal)
+                    if not all(is_quarter(p) for p in phases):
+                        self.stats["non_clifford_matches_skipped"] += 1
+                        if attempts >= 64:
+                            break
+                        continue
+                    signature = tuple(int(p*4) for p in phases)
                     for params in lookup.get(signature, ()):
                         rule = axiom(name, color=color, **fixed, **params)
                         add(rule, direction, match); self.stats["phase_inferred"] += 1

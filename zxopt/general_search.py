@@ -57,6 +57,9 @@ def context_for(state, start, best, step, args, root_gates, root_vertices):
 
 
 def run(args):
+    if args.general_zx:
+        args.jpv = True
+        args.allow_arbitrary_angles = True
     if (args.seconds <= 0 or args.horizon < 1 or args.max_unscored < 1 or args.max_growth < 0
             or args.candidate_cap < 1 or args.matching_work < 1):
         raise ValueError("Invalid search bounds")
@@ -71,8 +74,8 @@ def run(args):
     input_circuit = qasm2.loads(input_bytes.decode())
     reference = qiskit_matrix_zx_order(input_circuit)
     views = Views(n, reference); scorer = VerifiedCompletion(reference, out/"invalid-extractions")
-    kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work)
-    diagram = from_pyzx(env.graph)
+    kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work, args.general_zx)
+    diagram = from_pyzx(env.graph, allow_arbitrary=args.allow_arbitrary_angles)
     root_view = views.get(diagram)
     if root_view.graph is None:
         raise RuntimeError("Initial normalization failed")
@@ -89,7 +92,7 @@ def run(args):
     wire_limit = len(diagram.edges)+args.max_edge_growth
     feasibility = Feasibility(raw_limit, wire_limit) if args.feasibility_mask else None
     view_limit = root_view.graph.num_vertices()+args.max_growth
-    net = GeneralAgent() if args.policy != "uniform" else None
+    net = GeneralAgent(general_zx=args.general_zx) if args.policy != "uniform" else None
     optimizer = torch.optim.Adam(net.parameters(), lr=.0003, eps=1e-5) if args.policy == "online" else None
     if args.resume_model:
         if net is None:
@@ -143,6 +146,17 @@ def run(args):
     protocol["invalid_extraction"] = "quarantined and excluded from all gate costs/rewards; legal raw graph can continue. Raw/repair operator mismatches remain fatal. Repairs apply identically in every arm."
     protocol["feasibility_mask"] = "When enabled, rewrite-only previews exclude node/wire-budget violations before categorical sampling; no extraction/cost lookahead. Exact-state/action LRU; all preview work inside budget."
     protocol["preview_native_prefix_sha256"] = kernel.preview_prefix_sha256
+    protocol["angle_support"] = dict(
+        allow_arbitrary=args.allow_arbitrary_angles,
+        representation="exact rational coefficients of pi from the pinned QASM parser",
+        jpv=("12 general-phase JPV schemata including A; exact affine inference and checked A constraints"
+             if args.general_zx else "Clifford+T templates only; non-pi/4 internal matches skipped, arbitrary context retained"),
+        verification="existing numeric full-operator checks at 2e-8; C8 exact_tensor remains pi/4-only",
+        completeness=("JPV Theorem 1.3 rule schemata; executable instances require real expressions and checked constraints; finite proposals are not complete search"
+                      if args.general_zx else "Clifford+T rule kernel only; no arbitrary-angle completeness claim"))
+    if args.general_zx:
+        protocol["proposals"] = "12 general-phase families; finite matching/candidates and per-template phase-operation budget 128"
+        protocol["symbolic_state"] = "Exact expression records retained; numeric evaluation only for scoring. Native/macro transitions disabled while raw phases contain expressions."
     atomic_json(out/"protocol.json", protocol)
     atomic_json(out/"hh-derivation.json", hh_identity()[2])
     save_graph(out/"objects", diagram)
@@ -428,6 +442,10 @@ def parser():
     p.add_argument("--shared-buffer", type=Path, help="Opt-in verified cross-IR SQLite restart pool")
     p.add_argument("--input", type=Path, default=ROOT/"inputs/barenco_tof_3.qasm")
     p.add_argument("--jpv", action="store_true")
+    p.add_argument("--general-zx", action="store_true",
+                   help="Enable general-phase templates and checked nonlinear A; implies --jpv --allow-arbitrary-angles")
+    p.add_argument("--allow-arbitrary-angles", action="store_true",
+                   help="Preserve non-pi/4 phases as context; skip inapplicable JPV matches")
     p.add_argument("--policy", choices=["uniform", "frozen", "online"], default="uniform")
     p.add_argument("--seconds", type=float, default=1200.)
     p.add_argument("--seed", type=int, default=11)

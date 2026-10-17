@@ -1,0 +1,12 @@
+{
+  "launch": {
+    "pid": 316613,
+    "commit": "34e0f43e9874fa06977c4acfb4101e14a661b4c5",
+    "time": "2026-10-17T22:18:11.571514+08:00"
+  },
+  "bundle_sha256": "f0ae9408dcb4560f6f2b200de884df3e8a384a48806ffa20e1821d2f839d7cd0",
+  "bundle_bytes": 3801777,
+  "sympy_wheel_sha256": "db36cdc64bf61b9b24578b6f7bab1ecdd2452cf008f34faa33776680c26d66f8",
+  "persistent_socket": true,
+  "gpu": false
+}

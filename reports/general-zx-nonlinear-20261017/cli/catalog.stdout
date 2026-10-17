@@ -1,0 +1,23 @@
+{
+  "scope": "General JPV schemata with checked constraints",
+  "axioms": [
+    "S",
+    "I",
+    "CP",
+    "B",
+    "K",
+    "EU",
+    "H",
+    "SUP",
+    "E",
+    "C",
+    "BW",
+    "A"
+  ],
+  "source": "https://arxiv.org/abs/1903.06035v3",
+  "directions": [
+    "forward",
+    "backward"
+  ],
+  "limitations": "No finite RL-search or gate-optimality guarantee"
+}

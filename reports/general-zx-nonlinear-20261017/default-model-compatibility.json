@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "seed": 11,
+  "all_default_model_tensors_equal_previous_version": true,
+  "reference_model_sha256": "3f8d2c3c8c7e571963a0147cbe87c4dc68f4ff62f9ad86256bfe02e3c391f0f8",
+  "reference_source": "bafaa07415800df4ea5a54e5e9d704642888a8b3"
+}
