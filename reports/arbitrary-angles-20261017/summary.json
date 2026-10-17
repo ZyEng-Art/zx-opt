@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "purpose": "Mixed-angle input/conditional-rule integration check, not learning efficacy or arbitrary-angle completeness",
+  "implementation_commit": "bafaa07415800df4ea5a54e5e9d704642888a8b3",
+  "unit_tests": {
+    "passed": true,
+    "count": 46,
+    "seconds": 28.369,
+    "new_tests": 5
+  },
+  "seconds_per_arm": 60,
+  "seeds": [
+    11
+  ],
+  "trials": 2,
+  "records": [
+    {
+      "arm": "jpv_frozen_s11",
+      "transitions": 487,
+      "accepted": 487,
+      "updates": 0,
+      "best": {
+        "gates": 8,
+        "cx": 2,
+        "depth": 6
+      },
+      "jpv_steps": 192,
+      "non_ct_spider_phase_checks": 576,
+      "skipped_compiled_non_ct_matches": 6616,
+      "events_sha256": "0e31702986b7a85d91b79f2eac449cd059da1b4b15e534ac33b0cc7d47633277"
+    },
+    {
+      "arm": "jpv_online_s11",
+      "transitions": 473,
+      "accepted": 472,
+      "updates": 3,
+      "best": {
+        "gates": 8,
+        "cx": 2,
+        "depth": 6
+      },
+      "jpv_steps": 164,
+      "non_ct_spider_phase_checks": 492,
+      "skipped_compiled_non_ct_matches": 6855,
+      "events_sha256": "970035d0be8517c41a9bcc4c98c78585e9380724ecd6d65b3a8119b30d91722f"
+    }
+  ],
+  "accepted_rewrites": 959,
+  "saved_qasm": 14,
+  "jpv_context_steps": 356,
+  "non_ct_spider_phase_checks": 1068,
+  "identical_frozen_online_prefix": [
+    {
+      "base": "jpv",
+      "seed": 11,
+      "same_initialization": true,
+      "identical_prefix": 128,
+      "status": "passed"
+    }
+  ],
+  "resources": "Local CPU only; no remote node or GPU used",
+  "angle_handling": "Retain parsed rational phases; skip inapplicable CT templates; independent full-operator checks; no phase truncation or CT synthesis"
+}
