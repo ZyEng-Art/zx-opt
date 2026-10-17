@@ -5,6 +5,8 @@ sampling of critic values. PPO uses the JOINT anchor/action log probability.
 Empty menus are explicit zero-reward self loops, never hidden resampling.
 """
 from dataclasses import dataclass
+from collections import Counter
+import math
 
 import numpy as np
 import torch
@@ -81,9 +83,25 @@ def _append(graph, raw, view, anchors, selectable):
     return graph
 
 
-def anchor_observation(raw, view, anchors, context):
+def anchor_observation(raw, view, anchors, context, prior="uniform"):
     p, _ = observation(raw, view, [], context)
-    return _append(p, raw, view, anchors, True)
+    p = _append(p, raw, view, anchors, True)
+    if prior != "uniform":
+        if prior != "nodes":
+            raise ValueError("Unknown anchor prior")
+        def group(a):
+            if a.space == "raw" and a.kind == "node":
+                return "raw_h" if raw.nodes[a.position].kind == "H" else "raw_zx"
+            if a.kind in ("global", "loop"):
+                return "scalar"
+            return a.space+"_"+a.kind
+        groups = [group(a) for a in anchors]; counts = Counter(groups)
+        weights = dict(raw_zx=.35, raw_h=.10, view_node=.45, raw_edge=.045, view_edge=.045, scalar=.01)
+        # This depends only on topology categories, before applicability queries.
+        # Every retained anchor has positive support; PPO evaluates the same prior.
+        p.prior = torch.zeros(len(p.x), dtype=torch.float32)
+        p.prior[p.y != -1] = torch.tensor([math.log(weights[g]/counts[g]) for g in groups])
+    return p
 
 
 def conditional_observation(raw, view, available, context, anchor):
@@ -107,6 +125,10 @@ def empty_action():
 
 
 class AnchorAgent(GeneralAgent):
+    def actor(self, graph):
+        logits = super().actor(graph)
+        return logits+graph.prior.unsqueeze(-1) if "prior" in graph else logits
+
     def distribution(self, graph, choices):
         logits = self.actor(graph).flatten()
         positions = (graph.y != -1).nonzero(as_tuple=True)[0]

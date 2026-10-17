@@ -96,6 +96,23 @@ class AnchorTest(unittest.TestCase):
         self.assertEqual({a.kind for a in anchors}, {"node", "edge", "global"})
         self.assertEqual({a.space for a in anchors}, {"raw", "view"})
 
+    def test_topology_prior_has_support_and_is_in_the_policy_density(self):
+        anchors = catalog(self.raw, self.view.graph)
+        a = anchor_observation(self.raw, self.view.graph, anchors, self.context, prior="nodes")
+        a.selected = torch.tensor([0])
+        torch.manual_seed(11); net = AnchorAgent(general_zx=True)
+        for parameter in net.parameters():
+            parameter.data.zero_()
+        packed = Batch.from_data_list([a])
+        scores = net.actor(packed).flatten()[packed.y != -1]
+        mass = scores.softmax(0)
+        self.assertTrue(bool((mass > 0).all()))
+        view_node_mass = sum(float(p) for anchor, p in zip(anchors, mass)
+                             if anchor.space == "view" and anchor.kind == "node")
+        self.assertAlmostEqual(view_node_mass, .45, places=6)
+        logs, _ = net.distribution(packed, packed.selected)
+        torch.testing.assert_close(logs[0], scores.log_softmax(0)[0])
+
     def test_local_kernel_does_not_use_whole_graph_native_prepare(self):
         kernel = GeneralKernel(self.env, general_zx=True, candidate_cap=8, total_candidate_cap=8)
         for anchor in (Anchor("raw", "node", 0), Anchor("raw", "edge", 0),
@@ -210,6 +227,7 @@ class AnchorTest(unittest.TestCase):
         self.assertGreater(update["actor_parameter_l2_delta"], 0.)
         self.assertTrue(np.isfinite(update["mean_loss"]))
         self.assertIn("anchor_entropy", update["metrics"])
+        self.assertLessEqual(update["metrics"]["normalized_local_entropy"], 1.000001)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,43 @@
+{
+  "arm": "anchor_nodes_online",
+  "seed": 11,
+  "status": "passed",
+  "transitions": 64,
+  "accepted_rewrites": 62,
+  "replayed_auxiliary": 31,
+  "legal_unscored": 0,
+  "recovered": 0,
+  "saved_qasm": 20,
+  "quarantined_invalid_qasm": 1,
+  "max_graph_operator_error": 9.221673037788944e-15,
+  "max_qasm_operator_error": 1.1305693886486381e-15,
+  "accepted_families": {
+    "E:backward": 1,
+    "H:backward": 12,
+    "PVG": 6,
+    "H:forward": 6,
+    "spider_split": 4,
+    "phase_split": 8,
+    "S:backward": 11,
+    "I:backward": 2,
+    "gadget_split": 1,
+    "identity_insert": 3,
+    "EU:forward": 5,
+    "phase_transfer": 1,
+    "PVB": 1,
+    "ID": 1
+  },
+  "completion_branches": {
+    "primary": 32,
+    "clifford_repair": 21,
+    "full_reduce_repair": 9
+  },
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "model": {
+    "parameter_l2_delta": 1.09455380784445,
+    "actor_l2_delta": 0.4566245557046973,
+    "finite": true
+  },
+  "events_sha256": "9ecad75b92ecbfd388cadb8ec3dc2e1d13ef2ac34db92b268422422b3f840b0a",
+  "report_sha256": "8addb83d4c73d4b5a8b764bbb667255f9f089a74133fad14592ce29501a8f07e"
+}

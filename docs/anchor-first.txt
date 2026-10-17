@@ -47,3 +47,23 @@ Comparison driver:
   python tools/anchor_campaign.py runs/anchor-study --seconds 300 --workers 4 \
     --circuits barenco_tof_3 mod5_4 tof_5 --seeds 11 29 47 \
     --modes global32 anchor8 anchor32 --policies frozen online
+
+2026-10-18 follow-up experiments:
+--anchor-prior nodes is an optional topology-only logit prior. Initial category
+mass is35% raw Z/X nodes,10% raw H nodes,45% scoring-view Z nodes,4.5% raw edges,
+4.5% scoring-view H edges,1% global/closed-wire scalar locations. Absent groups
+renormalize automatically. All anchors retain positive support; the prior is
+included in both sampling and PPO probabilities. Default uniform is unchanged.
+This is a search bias, not a learned applicability oracle or a completeness
+guarantee. Frozen controls are required to separate this bias from PPO benefit.
+
+--learning-rate defaults to0.0003; optional0.001 is a separate experiment.
+Campaign modes anchor8_nodes, anchor8_lr1e3, anchor8_nodes_lr1e3 isolate these
+changes against anchor8 and global32. All are independent on-target runs.
+
+The anchor PPO metrics now report normalized anchor and local entropies
+separately. Conditional normalized local entropy divides only by the fraction
+of non-forced local actions. The initial implementation incorrectly applied
+that division to combined anchor/local entropy, so historical values above1
+of conditional_normalized_entropy are not valid convergence evidence. This is
+read-only instrumentation; the PPO gradient/objective is unchanged.

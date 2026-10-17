@@ -1,0 +1,28 @@
+{
+  "time": "2026-10-18T00:56:55.041896+08:00",
+  "event": "anchor_topology_prior_prepared",
+  "tests": 77,
+  "prior": "optional nodes: rawZX35%,rawH10%,viewZ45%,edges9%,scalar1%; uniform default unchanged",
+  "learning_rate_experiment": 0.001,
+  "baseline_learning_rate": 0.0003,
+  "root_probe": {
+    "source": "e3a47f2",
+    "circuit": "barenco_tof_3",
+    "seed": 11,
+    "updates": 80,
+    "anchor_kl": 0.05543956736635221,
+    "edge_anchor_mass": 0.6434547999954641
+  },
+  "smoke": {
+    "steps": 64,
+    "accepted": 62,
+    "noops": 2,
+    "updates": 4,
+    "saved_valid_qasm": 20,
+    "quarantined_invalid_qasm": 1,
+    "gate_improvement": false,
+    "audit": "passed"
+  },
+  "metrics_fix": "Conditional normalized local entropy no longer divides the combined anchor/local entropy by local non-forced fraction",
+  "scope": "Optional proposal prior and learning-rate ablation ready; no claim of improved learning yet"
+}

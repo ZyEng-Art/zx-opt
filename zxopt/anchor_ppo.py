@@ -58,13 +58,17 @@ def ppo_update(net, optimizer, rollout, bootstrap, config, deadline):
         variance = float(returns.var(unbiased=False))
         explained = lambda values: None if variance < 1e-12 else 1-float((returns-values).var(unbiased=False))/variance
         metrics = {k: float(np.mean([d[k] for d in diagnostics])) for k in diagnostics[0]} if diagnostics else {}
-        normalized = []
+        normalized = []; normalized_anchor = []; normalized_local = []
         for i in range(len(observations)):
             ka = int(((a.y != -1) & (a.batch == i)).sum())
             km = int(((p.y != -1) & (p.batch == i)).sum())
             normalized.append(float(entropy[i])/max(1e-12, np.log(ka)+np.log(km)))
+            normalized_anchor.append(float(ha[i])/np.log(ka) if ka > 1 else 0.)
+            normalized_local.append(float(hm[i])/np.log(km) if km > 1 else 0.)
         metrics.update(anchor_entropy=float(ha.mean()), conditional_action_entropy=float(hm.mean()),
                        post_entropy=float(entropy.mean()), normalized_entropy=float(np.mean(normalized)),
+                       normalized_anchor_entropy=float(np.mean(normalized_anchor)),
+                       normalized_local_entropy=float(np.mean(normalized_local)),
                        value_explained_variance_before=explained(torch.tensor(values)),
                        value_explained_variance_after=explained(predicted), return_mean=float(returns.mean()),
                        return_std=variance**.5, reward_mean=float(np.mean(rewards)),

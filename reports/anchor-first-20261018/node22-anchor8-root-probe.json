@@ -1,0 +1,52 @@
+{
+  "source": "e3a47f2",
+  "circuit": "barenco_tof_3",
+  "seed": 11,
+  "anchor_count": 437,
+  "updates": 80,
+  "root_anchor_final_to_initial_kl": 0.05543956736635221,
+  "initial_entropy": 6.079933179940976,
+  "final_entropy": 6.024455710405576,
+  "initial_max_probability": 0.0022892154538750407,
+  "final_max_probability": 0.003775255642722803,
+  "group_mass": {
+    "initial.pt": {
+      "raw:node:Z": 0.14873813619399526,
+      "raw:node:H": 0.16472930246295903,
+      "raw:edge": 0.35235897402586475,
+      "raw:global": 0.002288733460069221,
+      "view:node": 0.15793266468725006,
+      "view:edge": 0.1739521891698617
+    },
+    "final.pt": {
+      "raw:node:Z": 0.10189968447903469,
+      "raw:node:H": 0.09222619665493832,
+      "raw:edge": 0.3623356544756648,
+      "raw:global": 0.0024380854396604495,
+      "view:node": 0.1599812334309029,
+      "view:edge": 0.2811191455197993
+    }
+  },
+  "last_metrics": {
+    "policy_loss": -0.004412231966853142,
+    "value_loss": 0.18815141916275024,
+    "entropy": 6.658117890357971,
+    "approx_kl": 0.0001723598688840866,
+    "clip_fraction": 0.0,
+    "gradient_norm": 0.4105968251824379,
+    "anchor_entropy": 6.359086990356445,
+    "conditional_action_entropy": 0.2880178689956665,
+    "post_entropy": 6.647104263305664,
+    "normalized_entropy": 0.9891568491818997,
+    "value_explained_variance_before": 0.03712650920833627,
+    "value_explained_variance_after": 0.036817639851032036,
+    "return_mean": -1.2363296747207642,
+    "return_std": 0.43343164661418315,
+    "reward_mean": -0.0062500000000000056,
+    "nonzero_reward_fraction": 0.21875,
+    "positive_reward_fraction": 0.125,
+    "post_approx_kl": 0.0008511021733283997,
+    "conditional_normalized_entropy": 3.956627396727599,
+    "forced_action_fraction": 0.75
+  }
+}

@@ -12,15 +12,17 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("output", type=Path)
     p.add_argument("--interval", type=int, default=300)
+    p.add_argument("--task-prefix", default="rlzx_anchor")
+    p.add_argument("--nodes", nargs="+", type=int, choices=[22, 23], default=[22, 23])
     a = p.parse_args(); out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     finished = {}; history = []
-    while len(finished) != 2:
-        for node in (22, 23):
+    while len(finished) != len(a.nodes):
+        for node in a.nodes:
             if str(node) in finished:
                 continue
             target = out/("node"+str(node)); target.mkdir(exist_ok=True)
             live = target/"live-runs"; live.mkdir(exist_ok=True)
-            base = "/tmp/dengzengyong_rlzx_anchor_node"+str(node)+"_20261018"
+            base = "/tmp/dengzengyong_"+a.task_prefix+"_node"+str(node)+"_20261018"
             host = "dengzengyong@wxtky02-p800-backup-8nic-vd-node"+str(node)+".wxtky02"
             ssh = ["ssh", "-S", "/tmp/quarl-nam-node"+str(node)+"-live", "-o", "ProxyCommand=false",
                    "-o", "BatchMode=yes", "-o", "ConnectTimeout=8"]
@@ -56,11 +58,11 @@ def main():
                 history.append(dict(node=node, status="mirrored", time=time.time()))
             except Exception as exc:
                 history.append(dict(node=node, error=repr(exc), time=time.time()))
-            state = dict(status="finished" if len(finished) == 2 else "running", finished=finished,
+            state = dict(status="finished" if len(finished) == len(a.nodes) else "running", finished=finished,
                          updated_unix=time.time(), history=history[-20:],
                          scope="Live rsync copies are monitoring snapshots; checksum-verified final archives are authoritative")
             temp = out/"status.tmp"; temp.write_text(json.dumps(state, indent=2)+"\n"); temp.replace(out/"status.json")
-        if len(finished) != 2:
+        if len(finished) != len(a.nodes):
             time.sleep(a.interval)
 
 

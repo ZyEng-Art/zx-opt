@@ -69,8 +69,10 @@ def run(args):
             or args.no_improvement_seconds < 0 or args.checkpoint_seconds < 0 or args.total_candidate_cap < 0
             or args.horizon < 1 or args.max_unscored < 1 or args.max_growth < 0
             or args.candidate_cap < 1 or args.matching_work < 1 or args.rewrite_timeout <= 0
-            or args.anchor_candidate_cap < 1):
+            or args.anchor_candidate_cap < 1 or args.learning_rate <= 0 or not np.isfinite(args.learning_rate)):
         raise ValueError("Invalid search bounds")
+    if args.selection != "anchor" and args.anchor_prior != "uniform":
+        raise ValueError("Anchor prior requires --selection anchor")
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     (out/"objects").mkdir(); (out/"candidates").mkdir()
     torch.set_num_threads(1); torch.set_num_interop_threads(1)
@@ -112,13 +114,15 @@ def run(args):
     feasibility = Feasibility(raw_limit, wire_limit) if args.feasibility_mask else None
     view_limit = root_view.graph.num_vertices()+args.max_growth
     net = Agent(general_zx=args.general_zx) if args.policy != "uniform" else None
-    optimizer = torch.optim.Adam(net.parameters(), lr=.0003, eps=1e-5) if args.policy == "online" else None
+    optimizer = torch.optim.Adam(net.parameters(), lr=args.learning_rate, eps=1e-5) if args.policy == "online" else None
     if args.resume_model:
         if net is None:
             raise ValueError("Model resume requires frozen/online policy")
         saved = torch.load(args.resume_model, map_location="cpu", weights_only=False)
         if saved.get("selection", "global") != args.selection:
             raise ValueError("Resume model uses a different action factorization")
+        if saved.get("anchor_prior", "uniform") != args.anchor_prior:
+            raise ValueError("Resume model uses a different anchor prior")
         if saved.get("input_sha256") != hashlib.sha256(input_bytes).hexdigest():
             raise ValueError("Resume model input mismatch")
         net.load_state_dict(saved["state_dict"])
@@ -126,6 +130,8 @@ def run(args):
             if saved.get("optimizer_state_dict") is None:
                 raise ValueError("Resume checkpoint has no optimizer")
             optimizer.load_state_dict(saved["optimizer_state_dict"])
+            for group in optimizer.param_groups:
+                group["lr"] = args.learning_rate
     initial_sha = tensor_digest(net) if net is not None else None
     if net is not None:
         torch.save(dict(state_dict=net.state_dict(), seed=args.seed, steps=0), out/"initial.pt")
@@ -189,6 +195,7 @@ def run(args):
                                   policy="learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
                                   empty="explicit zero-reward unchanged-state transition; no hidden resampling",
                                   entropy="anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+                                  prior=args.anchor_prior,
                                   candidate_cap=kernel.total_candidate_cap)
                              if anchored else dict(mode="global"))
     atomic_json(out/"protocol.json", protocol)
@@ -227,6 +234,7 @@ def run(args):
                     "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask",
                     "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout",
                     "selection", "anchor_candidate_cap"]
+        semantic += ["anchor_prior", "learning_rate"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -316,9 +324,12 @@ def run(args):
                 anchors = anchor_policy.catalog(state.diagram, view.graph, kernel.jpv is not None)
                 if not anchors:
                     raise RuntimeError("No anchor exists in this representation")
-                anchor_obs = anchor_policy.anchor_observation(state.diagram, view.graph, anchors, context)
+                anchor_obs = anchor_policy.anchor_observation(state.diagram, view.graph, anchors, context, args.anchor_prior)
                 if net is None:
-                    anchor_slot = int(rng.integers(len(anchors)))
+                    if "prior" in anchor_obs:
+                        anchor_slot = anchor_policy.draw(anchor_obs.prior[anchor_obs.y != -1], rng)
+                    else:
+                        anchor_slot = int(rng.integers(len(anchors)))
                 else:
                     with torch.no_grad():
                         from torch_geometric.data import Batch
@@ -490,7 +501,8 @@ def run(args):
                 update = update_ppo(net, optimizer, rollout, bootstrap, dict(epochs=4, minibatch=32), deadline)
                 choices = [int((r[0][1 if anchored else 0].y != -1).sum()) for r in rollout]
                 fraction = sum(k > 1 for k in choices)/len(choices)
-                update["metrics"]["conditional_normalized_entropy"] = (update["metrics"]["normalized_entropy"]/fraction if fraction else None)
+                local_entropy = update["metrics"]["normalized_local_entropy"] if anchored else update["metrics"]["normalized_entropy"]
+                update["metrics"]["conditional_normalized_entropy"] = (local_entropy/fraction if fraction else None)
                 update["metrics"]["forced_action_fraction"] = 1-fraction
                 update.update(transition=transition, seconds=time.perf_counter()-started)
                 updates_file.write(json.dumps(update)+"\n"); updates += 1; rollout = []
@@ -524,6 +536,7 @@ def run(args):
                         optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
                         input_sha256=hashlib.sha256(input_bytes).hexdigest(),
                         selection=args.selection,
+                        anchor_prior=args.anchor_prior, learning_rate=args.learning_rate,
                         scope="model/Adam only, not a complete search checkpoint"), out/"final.pt")
     checkpoint_now()
     if shared is not None:
@@ -586,6 +599,9 @@ def parser():
                    help="Sample a topology-only anchor before any rule matching; global preserves the baseline")
     p.add_argument("--anchor-candidate-cap", type=int, default=8,
                    help="Maximum local instances/previews after sampling one anchor")
+    p.add_argument("--anchor-prior", choices=["uniform", "nodes"], default="uniform",
+                   help="Optional topology-only node-focused category prior, included in the PPO density")
+    p.add_argument("--learning-rate", type=float, default=.0003)
     p.add_argument("--seconds", type=float, default=1200.)
     p.add_argument("--no-improvement-seconds", type=float, default=0., help="Strict total-gate plateau patience; --seconds 0 disables the overall cap")
     p.add_argument("--checkpoint-seconds", type=float, default=0., help="Atomic full search-state checkpoint interval")
