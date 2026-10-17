@@ -42,6 +42,7 @@ python tools/progress.py runs/pilot
 $PYTHON tools/summarize_campaign.py runs/pilot reports/new-pilot
 $PYTHON tools/verify_artifacts.py runs/pilot inputs/barenco_tof_3.qasm reports/new-pilot/verification.json
 $PYTHON tools/audit_models.py runs/pilot reports/new-pilot/models.json
+$PYTHON tools/audit_sources.py runs/pilot reports/new-pilot/source-audit.json
 
 本次原始归档位于 runs/download-20261017/，SHA 和远端资源释放回执见
 reports/pilot-20261017/archive.json。解包后的正式实验位于

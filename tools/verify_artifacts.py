@@ -44,12 +44,23 @@ def main():
         assert checked[row["best"]["sha256"]]==row["best"]["cost"]
         best=protocol["root_cost"]["gates"];chain={};record_chain={}
         serialized_scope = protocol["config"].get("dedup") and protocol["config"].get("dedup_scope") == "serialized"
-        attempted=set();serialized_costs={}
+        attempted=set();serialized_costs={};last_parent={};deferred_trajectories=set()
+        reserve=protocol["config"].get("frontier_reserve",0)
         if protocol.get("root_graph_key"):
             serialized_costs[protocol["root_graph_key"]]=protocol["root_cost"]
         for e in events:
             trajectory=e["trajectory"]
             parent=e["parent_graph_key"]
+            if "deferred" in e:
+                assert e["deferred"]["capacity"]==reserve
+                assert 0<=e["deferred"]["size"]<=reserve
+                assert 0<e["buffer"]["size"]<=e["buffer"]["capacity"]==64
+                if e.get("restart_source")=="deferred" and trajectory not in deferred_trajectories:
+                    assert reserve>0 and e["restart_key"] in last_parent
+                    assert last_parent[e["restart_key"]]["available"]>1
+                    assert e["trajectory_step"]==1
+                    deferred_trajectories.add(trajectory)
+                assert e["deferred"]["resumptions"]==len(deferred_trajectories)
             if parent in serialized_costs:assert serialized_costs[parent]==e["previous_cost"]
             serialized_costs[parent]=e["previous_cost"]
             if serialized_scope:
@@ -58,6 +69,7 @@ def main():
                 signature=(parent,action["kind"],tuple(action["vertices"]),tuple(sorted(action["subset"])),action["phase"])
                 assert signature not in attempted,(folder,signature)
                 attempted.add(signature)
+            last_parent[parent]=e
             if trajectory in chain:assert e["previous_cost"]==chain[trajectory]
             if trajectory in record_chain:assert e["previous_record"]==record_chain[trajectory]
             if e["status"]=="accepted":
@@ -77,7 +89,8 @@ def main():
                 record_chain[trajectory]=e["previous_record"]
         assert best==row["best"]["cost"]["gates"]
         records.append(dict(arm=row["arm"],seed=row["seed"],transitions=len(events),accepted=len(accepted),
-                            serialized_action_pruning_checked=bool(serialized_scope),status="passed"))
+                            serialized_action_pruning_checked=bool(serialized_scope),
+                            deferred_restart_trajectories_checked=len(deferred_trajectories),status="passed"))
     output=dict(status="passed",input_sha256=expected,trials=len(rows),saved_qasm_files_checked=total,
                 distinct_qasm_operators_checked=len(checked),max_operator_error=max_error,
                 checks="NAM gate counts, fixed named wires, all 32x32 operator entries, unit-modulus global phase only, rewards, deadlines, node bounds, transition chains, exact-key cost consistency and serialized action-registry uniqueness",records=records)
