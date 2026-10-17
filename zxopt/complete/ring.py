@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from fractions import Fraction
 
+from .angles import Phase, phase as general_phase
+
 
 @dataclass(frozen=True)
 class C8:
@@ -69,7 +71,6 @@ INV_SQRT2 = C8((0, Fraction(1, 2), 0, Fraction(-1, 2)))
 
 def rational_phase(phase):
     """Normalize an exact coefficient of pi without quantizing its angle."""
-    from .angles import Phase, phase as general_phase
     if isinstance(phase, Phase):
         return general_phase(phase)
     if isinstance(phase, float):
@@ -79,7 +80,6 @@ def rational_phase(phase):
 
 def is_quarter(phase):
     """Whether a phase belongs to the finite Clifford+T phase domain."""
-    from .angles import Phase
     return not isinstance(phase, Phase) and (Fraction(phase) * 4).denominator == 1
 
 

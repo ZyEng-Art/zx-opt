@@ -247,3 +247,20 @@ and parameter comparisons are required before calling this computation-only.
   --audit-crosscheck-native-every 101. These
   select the optional witness replay and periodic full-path crosschecks; the
   default remains reference. Audit choice never changes search/training.
+
+2026-10-18 exact export computation
+  The adapter's greedy drawing-row order is unchanged: minimize the cut-change
+  integer, then vertex ID. Precompute degree minus twice the number of already
+  processed neighbors, update each affected neighbor by minus2, and use a heap
+  with stale-entry checks. Graph construction, IDs, wire types, phases, boundary
+  ordering, scalar and chosen drawing rows remain identical. No graph cache is
+  retained across calls. Internal Phase imports are resolved once at module
+  load instead of millions of times during phase validation; angle arithmetic
+  and acceptance predicates are unchanged.
+
+  117tests,300saved raw diagrams with exact full-export JSON and independent
+  operator checks, and four512-step frozen/online trajectories (baseline and
+  neutral32) passed. Actions, rewards, restart archives and final model tensors
+  are bitwise equal to retained controls. An alternating-order export-only
+  benchmark measured4.87x locally, excluding shared phase-helper work and all
+  verification from its timer. Full training/audit speedups need Linux evidence.

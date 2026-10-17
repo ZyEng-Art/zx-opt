@@ -1,5 +1,6 @@
 """Exact bridges between the general axiom kernel and the pinned PyZX graph."""
 from fractions import Fraction as F
+import heapq
 
 from .diagram import Diagram, z_network
 from .ring import C8
@@ -64,6 +65,28 @@ def from_pyzx(graph, *, allow_arbitrary=False):
     return d.validate()
 
 
+def _greedy_cut_order(graph):
+    """The existing (cut change, vertex ID) order, with indexed integer scores."""
+    processed = set(graph.inputs())
+    pending = set(graph.vertices()) - processed - set(graph.outputs())
+    scores = {v: sum(1 if u not in processed else -1 for u in graph.neighbors(v)) for v in pending}
+    heap = [(score, v) for v, score in scores.items()]
+    heapq.heapify(heap)
+    order = []
+    while pending:
+        score, v = heapq.heappop(heap)
+        if v not in pending or score != scores[v]:
+            continue
+        pending.remove(v); order.append(v)
+        # Each newly processed neighbor changes exactly one +1 into -1.
+        # Lazy stale entries retain the original integer and vertex-ID ties.
+        for w in graph.neighbors(v):
+            if w in pending:
+                scores[w] -= 2
+                heapq.heappush(heap, (scores[w], w))
+    return order
+
+
 def to_pyzx(diagram, num_inputs, *, evaluate_expressions=False):
     """Encode every general wire using fresh identities, preserving multiplicity.
 
@@ -103,16 +126,11 @@ def to_pyzx(diagram, num_inputs, *, evaluate_expressions=False):
     # PyZX's tensorfy follows drawing rows. Grouping all fresh identities before
     # their endpoints can create a huge disconnected tensor. A greedy cut order
     # provides sensible rows without changing topology or boundary ordering.
-    processed = set(g.inputs())
-    pending = set(g.vertices()) - processed - set(g.outputs())
     for i, v in enumerate(g.inputs()):
         g.set_row(v, 0); g.set_qubit(v, i)
     step = 0
-    while pending:
-        v = min(pending, key=lambda w: (sum(1 if u not in processed else -1 for u in g.neighbors(w)), w))
-        step += 1
+    for step, v in enumerate(_greedy_cut_order(g), 1):
         g.set_row(v, step)
-        processed.add(v); pending.remove(v)
     for i, v in enumerate(g.outputs()):
         g.set_row(v, step+1); g.set_qubit(v, i)
     if not scalar:

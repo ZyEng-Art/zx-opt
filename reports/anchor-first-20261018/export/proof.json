@@ -1,0 +1,11 @@
+{
+  "status": "computation_only_export_checks_passed",
+  "tests": 117,
+  "traces": 4,
+  "steps_per_trace": 512,
+  "full_trace_audit_saved_qasm": 684,
+  "all_final_model_tensors_bitwise_equal": true,
+  "exported_graphs": 300,
+  "export_component_speedup": 4.867312455918818,
+  "scope": "Exact export JSON on300saved diagrams fromthree previously completed circuits, independent full operator checks. Four fixed-step same-target searches preserve sampled actions/rewards/archive and final tensors. Timing on local mixed load is not a complete-training throughput result. Shared phase helpers in the export component timer exclude the phase-import change."
+}
