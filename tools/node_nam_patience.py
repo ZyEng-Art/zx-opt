@@ -40,6 +40,9 @@ def main():
     status = "failed"; error = None
     try:
         (dest/"runs").mkdir()
+        # Old image Git builds may ignore safe.directory passed through env.
+        # This configuration belongs only to our isolated container and path.
+        subprocess.run(["docker", "exec", name, "git", "config", "--global", "--add", "safe.directory", mount], check=True)
         record("runtime_checks")
         (dest/"runs/pyzx-pin.json").write_bytes(subprocess.check_output(base+["tools/check_pyzx_pin.py"]))
         with (dest/"runs/unit-tests.txt").open("w") as log:
