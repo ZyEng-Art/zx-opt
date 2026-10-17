@@ -20,7 +20,7 @@ def main():
     p.add_argument("--python", default="/workspace/env310/bin/python")
     p.add_argument("--seconds", type=int, default=180)
     p.add_argument("--workers", type=int, default=6)
-    p.add_argument("--suite", choices=["expansion", "representation"], default="expansion")
+    p.add_argument("--suite", choices=["expansion", "representation", "frontier"], default="expansion")
     args = p.parse_args()
     if not args.task_root.is_absolute() or not all(c in "0123456789abcdef" for c in args.commit):
         raise ValueError("Expected absolute task directory and hexadecimal commit")
@@ -49,7 +49,7 @@ def main():
             "-e","GIT_CONFIG_COUNT=1","-e","GIT_CONFIG_KEY_0=safe.directory",
             "-e","GIT_CONFIG_VALUE_0="+mount,"-w",mount,args.container,args.python]
     record(status="running",commit=commit,container=args.container_id,started_at=started,gpu=False,
-           seconds_per_run=args.seconds,trials=18,workers=args.workers,suite=args.suite,
+           seconds_per_run=args.seconds,trials=(4 if args.suite == "frontier" else 6)*3,workers=args.workers,suite=args.suite,
            bundle_sha256=hashlib.sha256(bundle.read_bytes()).hexdigest())
     status = "failed"
     try:

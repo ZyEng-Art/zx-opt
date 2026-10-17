@@ -11,7 +11,8 @@ def main():
     p.add_argument("task_root",type=Path);p.add_argument("commit");args=p.parse_args()
     short=args.commit[:12];source=args.task_root/("zx-opt-"+short)
     report=json.loads((source/"runs/pilot/report.json").read_text())
-    assert report["status"]=="passed"and report["runs"]==18
+    summary=json.loads((source/"runs/pilot/summary.json").read_text())
+    assert report["status"]=="passed"and report["runs"]==summary["expected"]==summary["completed"]
     controller=args.task_root/("zx-opt-"+short+"-controller.json")
     state=json.loads(controller.read_text())
     assert state["status"]=="passed"and state["restored_stopped"]and state["commit"]==args.commit

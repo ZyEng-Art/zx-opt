@@ -26,6 +26,17 @@ $PYTHON -m zxopt.campaign runs/representation --suite representation --seconds 6
 --dedup-scope serialized 保留编号、布局、顺序及序列化元数据；不同表示不共享动作记录。
 图同构仍用于诊断统计；精确序列化粒度更保守，也可能保留更多重复结构。
 
+主池耗尽后的有限分支恢复（储备容量是额外资源，必须同时报告）
+$PYTHON -m zxopt.search runs/frontier --dedup --dedup-scope serialized --frontier-reserve 512 --seconds 600
+$PYTHON -m zxopt.campaign runs/frontier-pair --suite frontier --arms serialized serialized_frontier --seeds 47 --seconds 300 --workers 2
+默认储备为零；启用后保存仍有未尝试动作的父图，主池耗尽才按门数优先恢复。
+储备仅保存精确表示，容量有上限；不是完整搜索或无限回放。额外克隆和日志计入时间。
+frontier 套件还提供 frontier_frozen/frontier_online，用于后续配对的学习对照。
+
+离线提取敏感性诊断（不初始化任何搜索状态；输出目录必须不存在）
+$PYTHON tools/probe_extraction.py runs/download-20261017/extracted/runs/pilot/legacy_dedup_s29 runs/extraction-alias --state 1548 --variants 128
+按日志从原始输入重放，重建等价图表示，所有变体与输出电路均检查固定线序全矩阵。
+
 只读进度与结束后的分析
 python tools/progress.py runs/pilot
 $PYTHON tools/summarize_campaign.py runs/pilot reports/new-pilot

@@ -24,3 +24,47 @@ class SearchBuffer(CircuitBuffer):
 
     def summary(self):
         return dict(super().summary(), representative_replacements=self.replacements)
+
+
+class DeferredFrontier:
+    """Bounded parents with remaining actions, used only after archive exhaustion.
+
+    These entries are separate from the 64-state elite restart archive. Storing
+    a parent preserves other branches when its selected child leaves the archive
+    admission threshold. Capacity and all extra work are explicit in the protocol.
+    """
+    def __init__(self, capacity):
+        if capacity < 0:
+            raise ValueError("Negative frontier capacity")
+        self.capacity = capacity
+        self.entries = {}
+        self.insertions = self.evictions = self.resumptions = 0
+
+    def retain(self, entry, remaining):
+        if remaining <= 0:
+            self.entries.pop(entry.key, None)
+            return
+        if not self.capacity:
+            return
+        if entry.key not in self.entries:
+            self.insertions += 1
+        self.entries[entry.key] = entry
+        if len(self.entries) > self.capacity:
+            victim = max(self.entries, key=lambda k: score(self.entries[k].counts))
+            del self.entries[victim]
+            self.evictions += 1
+
+    def pop(self, exhausted):
+        for key in list(self.entries):
+            if key in exhausted:
+                del self.entries[key]
+        if not self.entries:
+            return None
+        key = min(self.entries, key=lambda k: score(self.entries[k].counts))
+        self.resumptions += 1
+        return self.entries.pop(key)
+
+    def summary(self):
+        return dict(size=len(self.entries), capacity=self.capacity,
+                    insertions=self.insertions, evictions=self.evictions,
+                    resumptions=self.resumptions)

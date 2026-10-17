@@ -28,6 +28,12 @@ REPRESENTATION_ARMS = {
     "legacy_serialized_frozen": ["--dedup", "--dedup-scope", "serialized", "--policy", "frozen"],
     "legacy_serialized_online": ["--dedup", "--dedup-scope", "serialized", "--policy", "online"],
 }
+FRONTIER_ARMS = {
+    "serialized": ["--dedup", "--dedup-scope", "serialized"],
+    "serialized_frontier": ["--dedup", "--dedup-scope", "serialized", "--frontier-reserve", "512"],
+    "frontier_frozen": ["--dedup", "--dedup-scope", "serialized", "--frontier-reserve", "512", "--policy", "frozen"],
+    "frontier_online": ["--dedup", "--dedup-scope", "serialized", "--frontier-reserve", "512", "--policy", "online"],
+}
 
 
 def main():
@@ -36,11 +42,16 @@ def main():
     p.add_argument("--seconds", type=float, default=180.)
     p.add_argument("--workers", type=int, default=3)
     p.add_argument("--seeds", type=int, nargs="+", default=[11, 29, 47])
-    p.add_argument("--suite", choices=["expansion", "representation"], default="expansion")
+    p.add_argument("--suite", choices=["expansion", "representation", "frontier"], default="expansion")
+    p.add_argument("--arms", nargs="+", help="Preselect named arms of the chosen suite; all selected arms and seeds are retained")
     args = p.parse_args()
     if args.seconds <= 0 or args.workers < 1 or not args.seeds or len(set(args.seeds)) != len(args.seeds):
         raise ValueError("Expected positive budgets and distinct seeds")
-    arms = ARMS if args.suite == "expansion" else REPRESENTATION_ARMS
+    arms = {"expansion": ARMS, "representation": REPRESENTATION_ARMS, "frontier": FRONTIER_ARMS}[args.suite]
+    if args.arms:
+        if len(set(args.arms)) != len(args.arms) or any(name not in arms for name in args.arms):
+            raise ValueError("Expected distinct arm names from the selected suite")
+        arms = {name: arms[name] for name in args.arms}
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     tasks = [(name, seed) for name in arms for seed in args.seeds]
     random.Random(20261017).shuffle(tasks)

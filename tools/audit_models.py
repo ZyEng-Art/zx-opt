@@ -12,9 +12,13 @@ def main():
     torch.set_num_threads(1)
     records=[]
     seeds=json.loads((args.campaign/"campaign.json").read_text())["seeds"]
-    suite=json.loads((args.campaign/"campaign.json").read_text()).get("suite","expansion")
-    arms = (["expanded_frozen","expanded_online"] if suite == "expansion"
-            else ["legacy_serialized_frozen","legacy_serialized_online"])
+    campaign=json.loads((args.campaign/"campaign.json").read_text())
+    pairs=[(arm,arm[:-len("_frozen")]+"_online")for arm in campaign["arms"]if arm.endswith("_frozen")]
+    if not pairs or any(online not in campaign["arms"]for _,online in pairs):
+        raise ValueError("A frozen/online pair is required for a model audit")
+    if len(pairs)!=1:
+        raise ValueError("Expected one frozen/online pair per suite")
+    arms=pairs[0]
     for seed in seeds:
         initial_hashes=[];prefixes=[]
         for arm in arms:

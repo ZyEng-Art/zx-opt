@@ -21,7 +21,7 @@ from .legacy import ROOT, LEGACY, environment, oracle
 from .kernel import Kernel
 from .rules import candidates
 from .dedup import StructuralIndex, SearchIdentity, action_key
-from .archive import SearchBuffer
+from .archive import SearchBuffer, DeferredFrontier
 from .verify import graph_matrix, matrix_error, qiskit_matrix_zx_order
 from .policy import ExpandedAgent, observation, batch
 from buffer import Entry, score
@@ -57,6 +57,8 @@ def run(args):
         raise ValueError("Invalid search budget or bounds")
     if (args.dedup_scope != "structural" or args.replace_better) and not args.dedup:
         raise ValueError("Deduplication scope and representative replacement require --dedup")
+    if args.frontier_reserve < 0 or (args.frontier_reserve and (not args.dedup or args.dedup_scope != "serialized")):
+        raise ValueError("Deferred frontier requires --dedup --dedup-scope serialized and a nonnegative capacity")
     out = args.output.resolve()
     out.mkdir(parents=True, exist_ok=False)
     (out / "candidates").mkdir()
@@ -80,6 +82,7 @@ def run(args):
     root_pool_key = identity.key(root_state, root_key) if args.dedup else root_key
     pool = SearchBuffer(Entry(root_pool_key, root_result["cost"], root_graph), 64,
                         replace_better=args.replace_better)
+    deferred = DeferredFrontier(args.frontier_reserve)
     max_vertices = root_graph.num_vertices() + args.max_growth
     net = ExpandedAgent() if args.policy != "uniform" else None
     optimizer = torch.optim.Adam(net.parameters(), lr=.0003, eps=1e-5) if args.policy == "online" else None
@@ -119,6 +122,7 @@ def run(args):
                           "; serialized scope keeps representation-specific actions and restart entries; cost cache remains serialized-state",
                     timing="setup and final checkpoint/report excluded; matching, proposals, masking, policy, verification, completion, archive, PPO and streaming log inside search wall time; late candidates excluded",
                     invalid_proposal="zero-reward self-loop, attempted action recorded; never enters archive",
+                    deferred_frontier="Optional bounded parent reserve; retain remaining actions before a transition, resume cheapest only after elite archive exhaustion; capacity and clone/maintenance time included",
                     learning="v49 GAT/context PPO plus new-rule embeddings; current NAM delta / 10 or trajectory record delta / 10; 128 rollout, 32 minibatch, 4 epochs",
                     limits="finite pi/4 phase menu, bounded partitions/candidates/vertices/horizon; not a complete calculus")
     atomic_json(out / "protocol.json", protocol)
@@ -157,12 +161,17 @@ def run(args):
             if not active:
                 available = [e for k, e in pool.entries.items() if k not in exhausted]
                 if not available:
-                    status = "retained_frontier_exhausted"; break
-                start = pool.choose("diverse", rng)
-                for _ in range(16):
-                    if start.key not in exhausted: break
+                    start = deferred.pop(exhausted)
+                    if start is None:
+                        status = "retained_frontier_exhausted"; break
+                    restart_source = "deferred"
+                else:
                     start = pool.choose("diverse", rng)
-                if start.key in exhausted: start = available[int(rng.integers(len(available)))]
+                    for _ in range(16):
+                        if start.key not in exhausted: break
+                        start = pool.choose("diverse", rng)
+                    if start.key in exhausted: start = available[int(rng.integers(len(available)))]
+                    restart_source = "elite"
                 graph = start.payload.clone(); previous = start.counts
                 record = previous["gates"]; step = 0; trajectory += 1; active = True
             state, mapping, obs, available, serialized_key, attempted = build(graph, previous, start.counts, record, step)
@@ -183,12 +192,18 @@ def run(args):
             if args.dedup:
                 assert signature not in attempted
                 attempted.add(signature)
+            if args.frontier_reserve:
+                retained_parent = graph.clone() if len(available) > 1 else None
+                if retained_parent is not None and graph_key(retained_parent) != serialized_key:
+                    raise AssertionError("Deferred clone changed serialized identity")
+                deferred.retain(Entry(serialized_key, previous, retained_parent, step), len(available)-1)
             transitions += 1; step += 1
             counts[action.kind] = counts.get(action.kind, 0) + 1
             row = dict(transition=transitions, trajectory=trajectory, trajectory_step=step,
                        parent_state=state.identifier, parent_graph_key=serialized_key,
                        action_registry_key=identity.key(state, serialized_key) if args.dedup else None,
-                       restart_key=start.key, action=action.record(), legacy_identifier=identifier,
+                       restart_key=start.key, restart_source=restart_source,
+                       action=action.record(), legacy_identifier=identifier,
                        available=len(available), previous_cost=previous, previous_record=record,
                        selection=dict(slot=slot, log_probability=old_log, value=value),
                        context=obs[0].context.tolist())
@@ -242,7 +257,7 @@ def run(args):
                     tmp = out / "best.qasm.tmp"; tmp.write_text(candidate["qasm"]); tmp.replace(out / "best.qasm")
                     atomic_json(out / "best.json", best)
                 previous = candidate["cost"]; graph = following; record = record_after
-            row.update(reward=reward, terminal=done, best=best["cost"], buffer=pool.summary())
+            row.update(reward=reward, terminal=done, best=best["cost"], buffer=pool.summary(), deferred=deferred.summary())
             events.write(json.dumps(row) + "\n")
             active = not done
             if optimizer is not None:
@@ -262,7 +277,7 @@ def run(args):
                     updates.append(update); update_log.write(json.dumps(update) + "\n"); rollout = []
             if transitions % 128 == 0:
                 atomic_json(out / "progress.json", dict(transitions=transitions, accepted=accepted,
-                            best=best, seconds=time.perf_counter()-started, index=index.summary()))
+                            best=best, seconds=time.perf_counter()-started, index=index.summary(), deferred=deferred.summary()))
         if args.max_steps is not None and transitions >= args.max_steps:
             status = "step_limit_reached"
     except BaseException as exc:
@@ -280,6 +295,7 @@ def run(args):
                   best=best, root_cost=root_result["cost"], proposal_counts=counts,
                   accepted_counts=accepted_counts, rejections=errors, index=index.summary(),
                   action_registry=identity.summary(), buffer=pool.summary(),
+                  deferred=deferred.summary(),
                   checked_qasm=len(checked_qasm), max_graph_operator_error=max_graph_error,
                   max_qasm_operator_error=max_qasm_error, verification="passed",
                   budget_seconds=args.seconds, total_loop_seconds=time.perf_counter()-started)
@@ -299,6 +315,7 @@ def parser():
     p.add_argument("--dedup", action="store_true")
     p.add_argument("--dedup-scope", choices=["structural", "serialized"], default="structural")
     p.add_argument("--replace-better", action="store_true", help="Replace a retained representative when the same key yields a strictly lower (gates, CX) cost")
+    p.add_argument("--frontier-reserve", type=int, default=0, help="Additional bounded parent states for untried branches; requires serialized deduplication")
     p.add_argument("--reward", choices=["current", "record"], default="current")
     p.add_argument("--max-growth", type=int, default=16)
     p.add_argument("--candidate-cap", type=int, default=32)
