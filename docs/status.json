@@ -1,5 +1,5 @@
 {
-  "phase": "implementation_and_pilot_complete_pushed",
+  "phase": "representation_audit_in_progress",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "experiment_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
@@ -8,7 +8,11 @@
   "experiment": {
     "trials": 18,
     "seconds_per_trial": 180,
-    "seeds": [11, 29, 47],
+    "seeds": [
+      11,
+      29,
+      47
+    ],
     "transitions": 59250,
     "report": "reports/pilot-20261017/interpretation.txt",
     "verification": "reports/pilot-20261017/verification.json",
@@ -39,5 +43,18 @@
     "Stabilize extraction costs or retain better representatives of isomorphic classes",
     "Use flow conditions to reduce invalid expansion proposals",
     "Run longer matched controls after the state/cost representation is settled"
-  ]
+  ],
+  "active_work": {
+    "question": "Does extraction-sensitive deduplication preserve useful search variants?",
+    "suite": "representation",
+    "seeds": [
+      11,
+      29,
+      47
+    ],
+    "seconds_per_trial": 600,
+    "planned_trials": 18,
+    "rules": "legacy only",
+    "gpu": false
+  }
 }
