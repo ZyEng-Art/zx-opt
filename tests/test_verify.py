@@ -21,3 +21,5 @@ class VerifyTest(unittest.TestCase):
         m = qiskit_matrix_zx_order(c)
         self.assertGreater(matrix_error(m, 2*m), .5)
         self.assertLess(matrix_error(m, 1j*m), 1e-12)
+        with self.assertRaises(ValueError):
+            matrix_error(m, np.full_like(m, np.nan))

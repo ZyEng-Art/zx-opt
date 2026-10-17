@@ -79,8 +79,13 @@ class RulesTest(unittest.TestCase):
         self.assertEqual(candidates(g, g.num_vertices(), cap=32), [])
         actions = candidates(g, g.num_vertices() + 2, cap=7)
         self.assertLessEqual(len(actions), 7)
+        self.assertEqual(len(set(actions)), len(actions))
         for a in actions:
             self.assertLessEqual(apply(g, a).num_vertices(), g.num_vertices() + 2)
+        g, nodes = wires(2)
+        g.add_edge(g.edge(*nodes), E.HADAMARD)
+        all_actions = candidates(g, g.num_vertices() + 2, cap=64)
+        self.assertEqual(len(set(all_actions)), len(all_actions))
 
 
 if __name__ == "__main__":

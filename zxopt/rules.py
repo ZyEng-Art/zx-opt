@@ -192,6 +192,7 @@ def candidates(graph, max_vertices, cap=32):
                 nests.append((len(missing) - len(matched), action))
     families["spider_nest"] = [a for _, a in sorted(nests, key=lambda x: (x[0], x[1].vertices, x[1].phase))]
     result = []
+    seen = set()
     offset = 0
     while len(result) < cap:
         available = False
@@ -199,7 +200,8 @@ def candidates(graph, max_vertices, cap=32):
             if offset < len(items):
                 available = True
                 action = items[offset]
-                if graph.num_vertices() + growth(graph, action) <= max_vertices:
+                if action not in seen and graph.num_vertices() + growth(graph, action) <= max_vertices:
+                    seen.add(action)
                     result.append(action)
                     if len(result) == cap:
                         break

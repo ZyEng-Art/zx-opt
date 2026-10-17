@@ -9,6 +9,8 @@ from pyzx.utils import VertexType as V, EdgeType as E
 
 
 def graph_matrix(graph, max_width=20):
+    if graph.scalar.is_unknown:
+        raise ValueError("Cannot verify a graph with an unknown scalar")
     order = tuple(graph.outputs()) + tuple(graph.inputs())
     if len(order) != len(set(order)):
         raise ValueError("Boundary vertices must have distinct input/output roles")
@@ -63,6 +65,8 @@ def graph_matrix(graph, max_width=20):
 def matrix_error(reference, candidate):
     if reference.shape != candidate.shape:
         raise ValueError("Matrix shape changed")
+    if not np.isfinite(reference).all() or not np.isfinite(candidate).all():
+        raise ValueError("Nonfinite operator entries")
     overlap = np.vdot(reference, candidate)
     phase = overlap / abs(overlap) if abs(overlap) else 1.
     # Align only a unit-modulus global phase; never normalize amplitudes.

@@ -5,10 +5,12 @@ import datetime
 import hashlib
 import json
 import os
+import platform
 from pathlib import Path
 import random
 import signal
 import subprocess
+import sys
 import time
 
 import numpy as np
@@ -78,6 +80,13 @@ def run(args):
     optimizer = torch.optim.Adam(net.parameters(), lr=.0003, eps=1e-5) if args.policy == "online" else None
     if net is not None:
         torch.save(dict(state_dict=net.state_dict(), steps=0, seed=args.seed), out / "initial.pt")
+    initial_digest = None
+    if net is not None:
+        h = hashlib.sha256()
+        for name, value in sorted(net.state_dict().items()):
+            h.update(name.encode()); h.update(str(value.dtype).encode())
+            h.update(str(tuple(value.shape)).encode()); h.update(value.numpy().tobytes())
+        initial_digest = h.hexdigest()
     sources = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in sorted((ROOT / "zxopt").glob("*.py"))}
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
@@ -88,6 +97,8 @@ def run(args):
         if hashlib.sha256((LEGACY / path).read_bytes()).hexdigest() != digest:
             raise ValueError("Frozen baseline source changed: " + path)
     protocol = dict(config=config, git_commit=revision, tracked_dirty=bool(dirty), sources=sources,
+                    initial_tensor_sha256=initial_digest,
+                    software=dict(python=sys.version, platform=platform.platform(), torch=torch.__version__, numpy=np.__version__),
                     baseline_manifest_sha256=hashlib.sha256((ROOT/"docs/baseline_sources.json").read_bytes()).hexdigest(),
                     input_sha256=hashlib.sha256(args.input.read_bytes()).hexdigest(),
                     started_at=datetime.datetime.now().astimezone().isoformat(),
@@ -104,6 +115,7 @@ def run(args):
     (out / "baseline.qasm").write_text(root_result["qasm"])
     (out / "best.qasm").write_text(root_result["qasm"])
     best = dict(cost=root_result["cost"], sha256=root_result["sha256"], seconds=0.)
+    atomic_json(out / "best.json", best)
     checked_qasm = {root_result["sha256"]}
     errors = {}; counts = {}; accepted_counts = {}; exhausted = set()
     rollout = []; updates = []; transitions = accepted = 0
