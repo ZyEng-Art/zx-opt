@@ -5,9 +5,9 @@ from .diagram import Diagram, z_network
 from .ring import C8
 
 
-def from_pyzx(graph):
+def from_pyzx(graph, *, allow_arbitrary=False):
     from pyzx.utils import VertexType as V, EdgeType as E
-    d = Diagram()
+    d = Diagram(allow_arbitrary=allow_arbitrary)
     kinds = {V.Z: "Z", V.X: "X", V.BOUNDARY: "B"}
     mapping = {}
     for v in graph.vertices():

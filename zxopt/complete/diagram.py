@@ -9,18 +9,20 @@ from itertools import product
 import hashlib
 import json
 
-from .ring import C8, ZERO, ONE, INV_SQRT2, quarter
+from .ring import C8, ZERO, ONE, INV_SQRT2, quarter, rational_phase
 
 
 @dataclass(frozen=True)
 class Node:
     kind: str
     phase: Fraction = Fraction(0)
+    allow_arbitrary: bool = field(default=False, compare=False, repr=False)
 
     def __post_init__(self):
         if self.kind not in ("Z", "X", "H", "B"):
             raise ValueError("Unknown ZX generator")
-        object.__setattr__(self, "phase", quarter(self.phase))
+        normalize = rational_phase if self.allow_arbitrary else quarter
+        object.__setattr__(self, "phase", normalize(self.phase))
         if self.kind in ("B", "H") and self.phase:
             raise ValueError("Boundary and H nodes have no phase")
 
@@ -31,10 +33,11 @@ class Diagram:
     edges: list = field(default_factory=list)
     ports: tuple = ()
     loops: int = 0
+    allow_arbitrary: bool = False
 
     def node(self, kind="Z", phase=0):
         v = max(self.nodes, default=-1) + 1
-        self.nodes[v] = Node(kind, phase)
+        self.nodes[v] = Node(kind, phase, self.allow_arbitrary)
         return v
 
     def edge(self, a, b):
@@ -57,6 +60,8 @@ class Diagram:
         return sum((a == v) + (b == v) for a, b in self.edges)
 
     def validate(self):
+        if not isinstance(self.allow_arbitrary, bool):
+            raise ValueError("allow_arbitrary must be boolean")
         if not isinstance(self.loops, int) or self.loops < 0:
             raise ValueError("Closed wire circle count must be nonnegative")
         if len(set(self.ports)) != len(self.ports):
@@ -67,6 +72,8 @@ class Diagram:
             if a not in self.nodes or b not in self.nodes:
                 raise ValueError("Dangling wire")
         for v, n in self.nodes.items():
+            if not self.allow_arbitrary:
+                quarter(n.phase)
             if n.kind == "B" and self.degree(v) != 1:
                 raise ValueError("Boundary must have exactly one wire")
             if n.kind == "H" and self.degree(v) != 2:
@@ -74,18 +81,25 @@ class Diagram:
         return self
 
     def clone(self):
-        return Diagram(dict(self.nodes), list(self.edges), self.ports, self.loops)
+        return Diagram(dict(self.nodes), list(self.edges), self.ports, self.loops, self.allow_arbitrary)
 
     def record(self):
         self.validate()
-        return dict(nodes={str(v): dict(kind=n.kind, phase=str(n.phase))
-                           for v, n in sorted(self.nodes.items())},
-                    edges=[list(e) for e in self.edges], ports=list(self.ports), loops=self.loops)
+        row = dict(nodes={str(v): dict(kind=n.kind, phase=str(n.phase))
+                          for v, n in sorted(self.nodes.items())},
+                   edges=[list(e) for e in self.edges], ports=list(self.ports), loops=self.loops)
+        # Keep all historical Clifford+T records and SHA keys unchanged.
+        if self.allow_arbitrary:
+            row["allow_arbitrary"] = True
+        return row
 
     @classmethod
     def from_record(cls, row):
-        return cls({int(v): Node(n["kind"], Fraction(n["phase"])) for v, n in row["nodes"].items()},
-                   [tuple(e) for e in row["edges"]], tuple(row["ports"]), row.get("loops", 0)).validate()
+        arbitrary = row.get("allow_arbitrary", False)
+        return cls({int(v): Node(n["kind"], Fraction(n["phase"]), arbitrary)
+                    for v, n in row["nodes"].items()},
+                   [tuple(e) for e in row["edges"]], tuple(row["ports"]),
+                   row.get("loops", 0), arbitrary).validate()
 
     def digest(self):
         return hashlib.sha256(json.dumps(self.record(), sort_keys=True).encode()).hexdigest()
@@ -104,7 +118,7 @@ class Diagram:
 
 
 def tensor_product(*diagrams):
-    result = Diagram()
+    result = Diagram(allow_arbitrary=any(d.allow_arbitrary for d in diagrams))
     for d in diagrams:
         d.validate()
         mapping = {v: result.node(n.kind, n.phase) for v, n in d.nodes.items()}
@@ -196,6 +210,10 @@ def exact_tensor(diagram):
     Resource limits belong to callers, not to the definition of a legal rewrite.
     """
     d = diagram.validate()
+    # General-angle contexts use the independently checked numeric operator
+    # path. Never truncate a non-Clifford+T phase into the C8 exact ring.
+    for n in d.nodes.values():
+        quarter(n.phase)
     vertices, edges, scalar = z_network(d)
     factors = []
     for v, n in vertices.items():

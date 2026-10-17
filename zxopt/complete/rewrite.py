@@ -217,7 +217,8 @@ def replace(host, source, target, match):
     selected = set(vm.values())
     result = Diagram({v: n for v, n in host.nodes.items() if v not in selected},
                      [e for i, e in enumerate(host.edges) if i not in used], host.ports,
-                     host.loops - source.loops - sum(e < 0 for e, _ in we.values()) + target.loops)
+                     host.loops - source.loops - sum(e < 0 for e, _ in we.values()) + target.loops,
+                     host.allow_arbitrary)
     junction = {p: result.node("B") for p in source.ports}
     inverse_halves = {h: p for p, h in ph.items()}
     for p, (e, s) in ph.items():

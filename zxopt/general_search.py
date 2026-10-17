@@ -72,7 +72,7 @@ def run(args):
     reference = qiskit_matrix_zx_order(input_circuit)
     views = Views(n, reference); scorer = VerifiedCompletion(reference, out/"invalid-extractions")
     kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work)
-    diagram = from_pyzx(env.graph)
+    diagram = from_pyzx(env.graph, allow_arbitrary=args.allow_arbitrary_angles)
     root_view = views.get(diagram)
     if root_view.graph is None:
         raise RuntimeError("Initial normalization failed")
@@ -132,6 +132,12 @@ def run(args):
     protocol["invalid_extraction"] = "quarantined and excluded from all gate costs/rewards; legal raw graph can continue. Raw/repair operator mismatches remain fatal. Repairs apply identically in every arm."
     protocol["feasibility_mask"] = "When enabled, rewrite-only previews exclude node/wire-budget violations before categorical sampling; no extraction/cost lookahead. Exact-state/action LRU; all preview work inside budget."
     protocol["preview_native_prefix_sha256"] = kernel.preview_prefix_sha256
+    protocol["angle_support"] = dict(
+        allow_arbitrary=args.allow_arbitrary_angles,
+        representation="exact rational coefficients of pi from the pinned QASM parser",
+        jpv="Clifford+T templates only; non-pi/4 internal matches skipped, arbitrary context retained",
+        verification="existing numeric full-operator checks at 2e-8; C8 exact_tensor remains pi/4-only",
+        completeness="Clifford+T rule kernel only; no arbitrary-angle completeness claim")
     atomic_json(out/"protocol.json", protocol)
     atomic_json(out/"hh-derivation.json", hh_identity()[2])
     save_graph(out/"objects", diagram)
@@ -331,6 +337,8 @@ def parser():
     p.add_argument("output", type=Path)
     p.add_argument("--input", type=Path, default=ROOT/"inputs/barenco_tof_3.qasm")
     p.add_argument("--jpv", action="store_true")
+    p.add_argument("--allow-arbitrary-angles", action="store_true",
+                   help="Preserve non-pi/4 phases as context; skip inapplicable JPV matches")
     p.add_argument("--policy", choices=["uniform", "frozen", "online"], default="uniform")
     p.add_argument("--seconds", type=float, default=1200.)
     p.add_argument("--seed", type=int, default=11)

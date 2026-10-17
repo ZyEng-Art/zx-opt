@@ -154,7 +154,7 @@ class GeneralKernel:
             if view.graph is None or graph_key(view.graph) != action.parent_view_key:
                 raise ValueError("Macro action belongs to a different normalized representation")
             pg = self.native.step(view.graph, action.payload, action.identifier)
-            child = from_pyzx(pg)
+            child = from_pyzx(pg, allow_arbitrary=raw.allow_arbitrary)
         child, receipts = cancel_h_pairs(child)
         return child, receipts
 
@@ -171,4 +171,4 @@ class GeneralKernel:
         e._matching_graph = e._cached_lcomp = e._cached_ids = None
         e.episode_len = 0; e.episode_stats = dict(e.episode_stats)
         self.preview_prefix(e, action.identifier)
-        return cancel_h_pairs(from_pyzx(e.graph))
+        return cancel_h_pairs(from_pyzx(e.graph, allow_arbitrary=raw.allow_arbitrary))

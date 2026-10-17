@@ -20,6 +20,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("output", type=Path)
     p.add_argument("--input", type=Path, default=ROOT/"inputs/barenco_tof_3.qasm")
+    p.add_argument("--allow-arbitrary-angles", action="store_true")
     p.add_argument("--seconds", type=float, default=1200.)
     p.add_argument("--workers", type=int, default=6)
     p.add_argument("--seeds", type=int, nargs="+", default=[11, 29, 47])
@@ -38,12 +39,15 @@ def main():
     atomic_json(out/"campaign.json", dict(suite="jpv", arms={k: ARMS[k] for k in selected}, seeds=args.seeds,
                 seconds=args.seconds, workers=args.workers, order=tasks, sources=sources,
                 circuit=args.input.stem, input_sha256=hashlib.sha256(args.input.read_bytes()).hexdigest(),
+                allow_arbitrary_angles=args.allow_arbitrary_angles,
                 scope="independent target; existing six macros in all arms, extra JPV proposals only in jpv arms; identical general graph policy/cost/pools",
                 initialization="Frozen/online same random init, no pretrained weights or historical witness"))
     def one(task):
         arm, seed = task; folder = out/(arm+"_s"+str(seed))
         command = [sys.executable, "-m", "zxopt.general_search", str(folder), "--seed", str(seed),
                    "--seconds", str(args.seconds), "--input", str(args.input.resolve())] + ARMS[arm]
+        if args.allow_arbitrary_angles:
+            command.append("--allow-arbitrary-angles")
         env = dict(os.environ, OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1", MKL_NUM_THREADS="1", PYTHONHASHSEED="0")
         with (out/(folder.name+".log")).open("w") as f:
             result = subprocess.run(command, cwd=ROOT, env=env, stdout=f, stderr=subprocess.STDOUT)

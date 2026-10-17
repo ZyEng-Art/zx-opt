@@ -22,6 +22,9 @@ $PYTHON -m zxopt.general_campaign runs/general-campaign --seconds 1200 --workers
 $PYTHON tools/audit_general.py runs/general-campaign runs/general-audit --workers 3
 详见 docs/general-search.txt。省略 --jpv 时用于相同一般图接口下的宏动作对照。
 默认先过滤资源超预算动作；--no-feasibility-mask 复现旧机制。
+混合角度输入（条件匹配；不声称任意角度规则完备）：
+$PYTHON -m zxopt.general_search runs/mixed-angles --input tests/fixtures/mixed_angles.qasm --allow-arbitrary-angles --jpv --policy online --seconds 60 --max-steps 128 --rollout 32
+详见 docs/arbitrary-angles.txt。未满足角度条件的 JPV 匹配跳过，原相位保留。
 修复诊断：
 $PYTHON -m zxopt.general_campaign runs/general-mask --seconds 600 --workers 4 --arms macros_frozen macros_online jpv_frozen jpv_online --seeds 29
 

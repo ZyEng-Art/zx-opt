@@ -1,0 +1,61 @@
+Mixed-angle inputs with conditional Clifford+T rewrites
+
+Run with the existing pinned Python/PyZX environment from docs/runbook.txt:
+
+$PYTHON -m zxopt.general_search runs/mixed-angles --input tests/fixtures/mixed_angles.qasm --allow-arbitrary-angles --jpv --policy online --seconds 60 --max-steps 128 --rollout 32
+
+general_campaign and target_campaign also forward --allow-arbitrary-angles
+to every run, including target preflight. A short frozen/online integration
+check (not an optimization-efficacy study) can use:
+
+$PYTHON -m zxopt.general_campaign runs/mixed-angle-pair --input tests/fixtures/mixed_angles.qasm --allow-arbitrary-angles --arms jpv_frozen jpv_online --seeds 11 --seconds 60 --workers 2
+
+Input and representation
+- The option accepts numerical rotation angles supported by the pinned QASM
+  parser. It preserves their parsed rational coefficients of pi instead of
+  snapping to the nearest pi/4. The fixture includes pi/3, pi/8 and 0.3 radians.
+- Rational multiples such as pi/3 remain rational phases. Decimal radians pass
+  through PyZX's existing numerical-to-rational parser; this is not exact
+  symbolic arithmetic for arbitrary real numbers or unbound parameters.
+- General diagrams and serialized proof objects record allow_arbitrary=true.
+  Clone, contextual substitution, tensor product, H-H cancellation and macro
+  transitions preserve this mode. Historical CT records and keys are unchanged.
+- Without the option, the original strict pi/4 input contract is retained.
+
+Conditional action matching
+- The finite JPV proposal menu still instantiates only Clifford+T templates.
+  If an internal matched spider has a non-pi/4 phase, that candidate is skipped.
+  Its angle is never truncated, rounded or deleted to make a match succeed.
+- Arbitrary-angle spiders outside the matched region remain as its context;
+  CT rules can therefore optimize suitable subgraphs of a mixed-angle circuit.
+- This conservative menu also skips S/H on non-pi/4 spiders, although those
+  mathematical schemas permit arbitrary phases. Generalizing their trusted
+  template registry is separate work.
+- Existing native/macro rules and scoring simplifications keep their own angle
+  conditions. They can perform valid generic operations involving arbitrary
+  phases. These phases are preserved semantically, not frozen against every rule.
+
+Verification and scoring
+- Every unique raw graph and normalized scoring view retains the existing full
+  fixed-wire operator check against the original Qiskit circuit (tolerance 2e-8).
+  Every unique scored QASM is checked independently; invalid extraction results
+  remain quarantined, with no cost or reward credit.
+- Named wires and amplitudes are preserved. Only a unit-modulus overall phase
+  may be aligned, exactly as in prior experiments.
+- The CT rule registry and C8 exact_tensor still reject non-pi/4 phases. The
+  general representation must never cause int(phase*4) truncation in either
+  the exact evaluator or the compiled finite-phase matcher.
+- Total NAM gates remain the objective, using h/rz/x/cx. An arbitrary-angle rz
+  counts as one gate; it is not compiled into an approximate Clifford+T sequence.
+- Legal graphs without a valid extracted circuit may continue as before.
+
+Scope
+This adds mixed-angle input support, not an arbitrary-angle complete axiom set
+or guaranteed extraction. CT completeness and finite-search limitations stay
+as described in docs/clifford-t-completeness.txt and docs/general-search.txt.
+
+Checks
+tests/test_arbitrary_angles.py checks import/export and scalar phases, all 11
+axiom families in both colors/directions in non-CT contexts, proof replay,
+phase-signature rejection, strict-mode preservation, every generated action's
+operator and native-preview agreement on the mixed-angle fixture.

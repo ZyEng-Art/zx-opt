@@ -17,6 +17,7 @@ import numpy as np
 
 from .complete import Diagram, axiom, actions as rule_actions, exact_tensor
 from .complete.rewrite import Match, RuleAction, matches, replace, MatchLimit
+from .complete.ring import is_quarter
 
 
 def connected_ports(graph):
@@ -130,7 +131,8 @@ def compiled(name, direction, color, arity=0):
 class Proposals:
     def __init__(self, seed=11, cap=32, matching_work=2048):
         self.seed = seed; self.cap = cap; self.matching_work = matching_work
-        self.rounds = {}; self.stats = dict(calls=0, matching_work_exhausted=0, phase_inferred=0)
+        self.rounds = {}; self.stats = dict(calls=0, matching_work_exhausted=0, phase_inferred=0,
+                                           non_clifford_matches_skipped=0)
         # Compilation depends on the calculus, not on observations or rewards.
         for name in ("CP", "B", "K", "EU", "SUP", "E", "C", "BW"):
             for direction, color in product(("forward", "backward"), ("Z", "X")):
@@ -163,7 +165,9 @@ class Proposals:
         for i, (a, b) in enumerate(graph.edges):
             if a != b and graph.nodes[a].kind == graph.nodes[b].kind and graph.nodes[a].kind in ("Z", "X"):
                 pairs.setdefault(tuple(sorted((a, b))), []).append(i)
-        pair_items = list(pairs.items()); rng.shuffle(pair_items)
+        pair_items = [(pair, es) for pair, es in pairs.items()
+                      if all(is_quarter(graph.nodes[v].phase) for v in pair)]
+        rng.shuffle(pair_items)
         pair_items.sort(key=lambda item: not any(v in reached for v in item[0]))
         for (a, b), es in pair_items[:per]:
             rule = axiom("S", color=graph.nodes[a].kind, alpha=graph.nodes[a].phase,
@@ -178,6 +182,10 @@ class Proposals:
         for v in vertices:
             n = graph.nodes[v]
             if n.kind not in ("Z", "X"):
+                continue
+            if not is_quarter(n.phase):
+                # This finite JPV menu only instantiates Clifford+T templates.
+                # Keep other angles unchanged as the surrounding context.
                 continue
             shuffled = list(hs[v]); rng.shuffle(shuffled)
             if len(buckets.get("S:backward", ())) < per:
@@ -213,7 +221,13 @@ class Proposals:
                 for match in matches(host, pattern, ignore_phases=True, work_limit=self.matching_work):
                     attempts += 1
                     mapping = dict(match.vertices)
-                    signature = tuple(int(graph.nodes[mapping[v]].phase*4) for v in internal)
+                    phases = tuple(graph.nodes[mapping[v]].phase for v in internal)
+                    if not all(is_quarter(p) for p in phases):
+                        self.stats["non_clifford_matches_skipped"] += 1
+                        if attempts >= 64:
+                            break
+                        continue
+                    signature = tuple(int(p*4) for p in phases)
                     for params in lookup.get(signature, ()):
                         rule = axiom(name, color=color, **fixed, **params)
                         add(rule, direction, match); self.stats["phase_inferred"] += 1
