@@ -18,13 +18,16 @@ def main():
     p.add_argument("output", type=Path)
     p.add_argument("--inputs", type=Path, nargs="+", required=True)
     p.add_argument("--allow-arbitrary-angles", action="store_true")
+    p.add_argument("--general-zx", action="store_true")
     p.add_argument("--seconds", type=float, default=1200.)
     p.add_argument("--workers-per-target", type=int, default=12)
     p.add_argument("--seeds", type=int, nargs="+", default=[11, 29, 47])
     p.add_argument("--arms", nargs="+", choices=list(ARMS),
-                   default=["macros_uniform", "jpv_uniform", "jpv_frozen", "jpv_online"])
+                   default=None)
     p.add_argument("--preflight-seconds", type=float, default=300.)
     args = p.parse_args()
+    args.arms = args.arms or (["jpv_uniform", "jpv_frozen", "jpv_online"] if args.general_zx
+                             else ["macros_uniform", "jpv_uniform", "jpv_frozen", "jpv_online"])
     inputs = [f.resolve() for f in args.inputs]
     if len({f.stem for f in inputs}) != len(inputs) or args.workers_per_target < 1:
         raise ValueError("Require unique target names and positive worker budget")
@@ -36,6 +39,7 @@ def main():
     atomic_json(out/"campaign.json", dict(suite="other_circuits", targets=targets, sources=sources,
                 seconds=args.seconds, seeds=args.seeds, arms=args.arms,
                 allow_arbitrary_angles=args.allow_arbitrary_angles,
+                general_zx=args.general_zx,
                 workers_per_target=args.workers_per_target, max_total_workers=len(inputs)*args.workers_per_target,
                 scope="Each target trained from scratch; no model/state transfer; all targets/arms/seeds retained"))
 
@@ -46,6 +50,8 @@ def main():
                    "--seconds", str(args.preflight_seconds), "--max-steps", "128"]
         if args.allow_arbitrary_angles:
             command.append("--allow-arbitrary-angles")
+        if args.general_zx:
+            command.append("--general-zx")
         with (out/(f.stem+"-preflight.log")).open("w") as log:
             subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
         report = json.loads((folder/"report.json").read_text())
@@ -64,6 +70,8 @@ def main():
                    "--seeds", *map(str, args.seeds), "--arms", *args.arms]
         if args.allow_arbitrary_angles:
             command.append("--allow-arbitrary-angles")
+        if args.general_zx:
+            command.append("--general-zx")
         with (out/(f.stem+".log")).open("w") as log:
             subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
         summary = json.loads((folder/"summary.json").read_text())

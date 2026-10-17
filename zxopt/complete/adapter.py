@@ -3,6 +3,7 @@ from fractions import Fraction as F
 
 from .diagram import Diagram, z_network
 from .ring import C8
+from .angles import Phase, numeric
 
 
 def from_pyzx(graph, *, allow_arbitrary=False):
@@ -63,7 +64,7 @@ def from_pyzx(graph, *, allow_arbitrary=False):
     return d.validate()
 
 
-def to_pyzx(diagram, num_inputs):
+def to_pyzx(diagram, num_inputs, *, evaluate_expressions=False):
     """Encode every general wire using fresh identities, preserving multiplicity.
 
     Export does not simplify, extract, permute named boundary wires, or refuse
@@ -75,8 +76,14 @@ def to_pyzx(diagram, num_inputs):
         raise ValueError("Invalid input arity")
     vertices, edges, scalar = z_network(diagram)
     g = zx.Graph()
+    def exported_phase(p):
+        if isinstance(p, Phase):
+            if not evaluate_expressions:
+                raise ValueError("Symbolic phase export requires explicit evaluate_expressions=True")
+            return numeric(p)
+        return p
     mapping = {v: g.add_vertex(V.BOUNDARY if n.kind == "B" else V.Z,
-                              -1, 1, n.phase) for v, n in vertices.items()}
+                              -1, 1, exported_phase(n.phase)) for v, n in vertices.items()}
     existing = set()
     for a, b, parity in edges:
         pair = tuple(sorted((a, b)))

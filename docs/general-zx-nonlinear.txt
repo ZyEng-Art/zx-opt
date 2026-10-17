@@ -1,0 +1,101 @@
+General-phase ZX rules and nonlinear JPV (A)
+
+Implemented scope
+- --general-zx enables the 12 general JPV schemata S/I/CP/B/K/EU/H/SUP/E/C/BW/A.
+  It implies --jpv and --allow-arbitrary-angles. The previous strict CT and
+  conditional mixed-angle modes remain available.
+- General S/H/K/SUP/C use arbitrary supported real phase expressions. Constants
+  in the other rules retain the literal JPV templates. S/H have no mathematical
+  arity cap in the kernel; the finite proposal interface is separately bounded.
+- A is transcribed from Figure 3 of https://arxiv.org/pdf/1903.06035v3 .
+  The relevant completeness theorem is Theorem 1.3, not the CT Theorem 1.1.
+  Both colors, directions, general open contexts and scalar leaves are retained.
+
+Exact phase and rule records
+- Rational coefficients of pi keep their historical Fraction representation.
+  Nonrational angles use an exact real expression tree backed by SymPy.
+  For example acos(3/4)/pi is retained rather than rounded into a pi fraction.
+- Real symbols and supported exact operations can be serialized as JSON ASTs.
+  No eval/sympify is applied to external strings. Unbound symbols are allowed
+  in the rule kernel, but must be bound before numerical circuit scoring.
+- MeanArg/MeanAcos implement the total real polar solution of (A), in units of
+  pi, with arg(0)=0. They require four real input arguments. The unit-disc bound
+  follows from the triangle inequality and |cos(alpha)| <= 1.
+- The named axiom, phase domain, expression AST and constraint evidence are
+  reconstructed and checked again when a saved action is replayed.
+- C8 exact_tensor remains restricted to pi/4 phases and rejects expressions.
+
+Nonlinear side condition and certificates
+All angles below are in radians:
+  2 exp(i theta3) cos(gamma)
+    = exp(i theta1) cos(alpha) + exp(i theta2) cos(beta).
+Forward construction sets z to half the right side, theta3=arg(z) and
+gamma=acos(abs(z)); z=0 uses theta3=0 and gamma=pi/2.
+
+Executable instances currently accept:
+1. The constructive polar certificate above.
+2. The diagonal inverse: alpha=beta=gamma, theta1=theta2=theta3.
+3. The symmetric inverse: alpha=beta=0, theta1=theta3+gamma,
+   theta2=theta3-gamma.
+4. Other instances whose side condition SymPy proves as an exact identity.
+
+A small numeric residual is never an admissibility certificate. A failed
+constraint is classified as disproved or unknown; neither may execute. The CAS
+fallback has a work/complexity bound and is not a complete real-expression
+equality decision procedure.
+
+Literal tensor coverage
+The Figure 3 transcription has the following Z-colored open tensors:
+  L = (1+i, exp(i*pi/4) *
+       [exp(i*theta1)*cos(alpha) + exp(i*theta2)*cos(beta)])
+  R = (1+i, 2*exp(i*(theta3+pi/4))*cos(gamma)).
+Thus the side condition implies equal tensors without changing amplitudes or
+dropping scalar factors. Color duality applies H to both tensors. The verification
+tool independently contracts both sides symbolically and checks these formulas
+for real symbols, in addition to finite numeric checks.
+
+Bounded proposals and PPO
+- Topology is matched first. Source phase labels determine the affine parameters
+  exactly modulo 2*pi. This replaces the eight-value phase signature lookup in
+  general mode. SUP backward retains both roots.
+- A forward solves its four source parameters. A backward offers the two exact
+  inverse families above. These finite proposals do not enumerate every member
+  of the continuous inverse family.
+- The policy chooses finite discrete actions. The rule solver computes angles;
+  the network does not need to regress continuous output angles.
+- Existing node/edge/candidate/matching/horizon bounds remain. General proposals
+  also reject templates with more than 128 symbolic operations in any phase.
+  This is a proposal resource bound, not a restriction of the axiom factory.
+- New A action embeddings are enabled only for general-mode models; the default
+  model architecture and old action indices are retained.
+
+Scoring representation
+- The symbolic raw diagram remains the proof/search state. Numeric export of
+  expressions is explicit, with 40 decimal digits of phase coefficient, solely
+  for the independently verified scoring view.
+- When a raw phase is symbolic, native/macro transitions through that numeric
+  view are disabled so they cannot overwrite the exact expression state.
+- Graph normalization, extraction, output QASM, named wire order and amplitude
+  checks retain the existing full-operator checks at tolerance 2e-8.
+- The raw cache key retains expression ASTs. Numerically close expressions are
+  not merged. Legal unscorable graphs still use the separate latent pool.
+
+Commands (pinned environment from docs/runbook.txt)
+$PYTHON -m zxopt.complete catalog --general-zx
+$PYTHON tools/verify_general_zx.py runs/general-zx-verification
+$PYTHON -m zxopt.general_search runs/general-zx-example --input tests/fixtures/mixed_angles.qasm --general-zx --policy online --seconds 60
+$PYTHON -m zxopt.general_campaign runs/general-zx-pair --input tests/fixtures/mixed_angles.qasm --general-zx --arms jpv_frozen jpv_online --seeds 11 --seconds 60 --workers 2
+$PYTHON tools/audit_general.py runs/general-zx-pair runs/general-zx-pair-audit --workers 2
+
+The complete apply command also accepts --general-zx and --axiom A. Its JSON
+parameters use fractions in units of pi or the expression AST. Import accepts
+--allow-arbitrary-angles; export requires --evaluate-expressions for a symbolic
+diagram and is explicitly a numeric view, not an exact symbolic export.
+
+Completeness boundary
+The registry represents the published general JPV axiom schemata. The theorem
+concerns the unrestricted mathematical calculus. Our executable expression and
+side-condition certificate language is specified above; it is not a proof that
+all equal real expressions can be decided automatically. Unknown constraints
+are rejected. Finite RL proposals/search are not complete and extraction is not
+guaranteed. No optimization or learning improvement follows just from adding A.

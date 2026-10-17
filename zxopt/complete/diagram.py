@@ -10,6 +10,7 @@ import hashlib
 import json
 
 from .ring import C8, ZERO, ONE, INV_SQRT2, quarter, rational_phase
+from .angles import record as phase_record, restore as restore_phase
 
 
 @dataclass(frozen=True)
@@ -85,7 +86,7 @@ class Diagram:
 
     def record(self):
         self.validate()
-        row = dict(nodes={str(v): dict(kind=n.kind, phase=str(n.phase))
+        row = dict(nodes={str(v): dict(kind=n.kind, phase=phase_record(n.phase))
                           for v, n in sorted(self.nodes.items())},
                    edges=[list(e) for e in self.edges], ports=list(self.ports), loops=self.loops)
         # Keep all historical Clifford+T records and SHA keys unchanged.
@@ -96,7 +97,7 @@ class Diagram:
     @classmethod
     def from_record(cls, row):
         arbitrary = row.get("allow_arbitrary", False)
-        return cls({int(v): Node(n["kind"], Fraction(n["phase"]), arbitrary)
+        return cls({int(v): Node(n["kind"], restore_phase(n["phase"]), arbitrary)
                     for v, n in row["nodes"].items()},
                    [tuple(e) for e in row["edges"]], tuple(row["ports"]),
                    row.get("loops", 0), arbitrary).validate()
