@@ -89,8 +89,9 @@ def run(args):
         initial_digest = h.hexdigest()
     sources = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in sorted((ROOT / "zxopt").glob("*.py"))}
-    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
-    dirty = subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], cwd=ROOT, text=True).strip()
+    git = ["git", "-c", "safe.directory=" + str(ROOT)]
+    revision = subprocess.check_output(git + ["rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    dirty = subprocess.check_output(git + ["status", "--porcelain", "--untracked-files=no"], cwd=ROOT, text=True).strip()
     config = dict(vars(args)); config = {k: str(v) if isinstance(v, Path) else v for k, v in config.items()}
     baseline = json.loads((ROOT / "docs/baseline_sources.json").read_text())
     for path, digest in baseline["files"].items():

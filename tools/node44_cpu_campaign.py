@@ -53,6 +53,8 @@ def main():
     status = "failed"
     try:
         run(*base,"-m","unittest","discover","-s","tests","-v")
+        run(*base,"-m","zxopt.search","runs/preflight","--expanded","--dedup",
+            "--policy","online","--seconds","15","--max-steps","128")
         run(*base,"-m","zxopt.campaign","runs/pilot","--seconds",str(args.seconds),"--workers",str(args.workers))
         status = "passed"
     finally:
