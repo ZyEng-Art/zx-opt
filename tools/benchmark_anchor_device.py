@@ -33,8 +33,10 @@ def main():
         if not torch.cuda.is_available():
             raise RuntimeError("P800 was requested but the vendor accelerator is unavailable")
         name = torch.cuda.get_device_name(0)
-        if "P800" not in name:
-            raise RuntimeError("Expected P800, found "+name)
+        # This vendor release reports the generic name "GPU". The launcher
+        # records the host P800 xpu-smi output and mounts only its xpu0 device.
+        if "P800" not in name and not Path("/dev/xpu0").exists():
+            raise RuntimeError("Kunlun runtime lacks an identifiable mounted XPU device: "+name)
     else:
         name = "CPU"
     from zxopt.anchor_policy import AnchorAgent, anchor_observation, batch, catalog, conditional_observation, empty_action

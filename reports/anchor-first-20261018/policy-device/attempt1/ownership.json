@@ -1,0 +1,8 @@
+{
+  "container_name": "dengzengyong_rlzx_policy_device_node23_20261018",
+  "container_id": "7e6e3451ac8350e3faf969597cabcee4af2253fff2dc718f61d3312d34257a72",
+  "started_at": "2026-10-17T17:08:06.673981569Z",
+  "source_commit": "2d0d517dff0bc589c2750a0f62cde8fa80a56fad",
+  "gpu_card": 0,
+  "timeout_seconds": 600
+}
