@@ -1,5 +1,5 @@
 {
-  "phase": "representation_and_frontier_studies_complete",
+  "phase": "clifford_t_axiom_implementation",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO",
@@ -27,7 +27,7 @@
     "Align reward and observations with the global extracted-gate objective",
     "Expand reliably extractable rewrite paths"
   ],
-  "active_work": null,
+  "active_work": "Implement JPV Figure 1/2 bidirectional contextual axiom kernel and verify exact semantics",
   "completed_followups": [
     {
       "suite": "representation",
