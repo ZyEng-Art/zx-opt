@@ -1,0 +1,14 @@
+{
+  "status": "passed_independent_saved_circuit_operator_check",
+  "qubits": 5,
+  "gates": 36,
+  "cx": 14,
+  "depth": 34,
+  "operator_error": 5.151029957849199e-16,
+  "input_sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92",
+  "output_sha256": "f5931bb510b843995f038b6731e37721372b0f6349501a10ef84ec2ed74e797e",
+  "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+  "trial": "anchor8_resource_lr1e4_online_s197",
+  "discovery_seconds": 1154.9067977539962,
+  "scope": "Running study snapshot. This check validates the saved36-gate circuit; complete trajectory replay and final frozen/online comparison are still pending."
+}

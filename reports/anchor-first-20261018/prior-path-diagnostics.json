@@ -1,0 +1,6100 @@
+{
+  "scope": "Closed reports only; observational diagnostics before full study audits. Prefixes start at a buffer restart, not the root. No counterfactual outcome claim. Checkpoint pools may predate final reports.",
+  "trials": 47,
+  "rows": [
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s11",
+      "policy": "frozen",
+      "seed": 11,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 12570,
+        "above_incumbent_plus_extra": 7347,
+        "above_bound_accepted": 4410,
+        "above_bound_anchor_noop": 2937
+      },
+      "statuses": {
+        "accepted": 8012,
+        "anchor_noop": 4558,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 3,
+        "0": 696,
+        "1": 531,
+        "2": 741,
+        "3": 1263,
+        "4": 724,
+        "5": 733,
+        "6": 532,
+        "7": 577,
+        "8": 397,
+        "9": 683,
+        "10": 583,
+        "11": 378,
+        "12": 522,
+        "13": 265,
+        "14": 507,
+        "15": 501,
+        "16": 348,
+        "17": 511,
+        "18": 425,
+        "19": 272,
+        "20": 512,
+        "21": 263,
+        "22": 176,
+        "23": 236,
+        "24": 42,
+        "25": 37,
+        "26": 26,
+        "27": 18,
+        "28": 26,
+        "29": 7,
+        "30": 8,
+        "31": 5,
+        "32": 4,
+        "33": 4,
+        "34": 3,
+        "35": 2,
+        "36": 2,
+        "37": 1,
+        "38": 2,
+        "39": 3,
+        "41": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 43,
+          "trajectory": 2,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 2
+        },
+        {
+          "transition": 1880,
+          "trajectory": 35,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 17
+        },
+        {
+          "transition": 4817,
+          "trajectory": 113,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 19
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 12571,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "37": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "202": 1,
+          "206": 6,
+          "211": 13,
+          "203": 2,
+          "207": 5,
+          "208": 6,
+          "209": 11,
+          "210": 14,
+          "205": 2,
+          "204": 3
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1625,
+          "evictions": 1562,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            13
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s11/protocol.json": "35a1e1b4273ec59703a1f2b29f0c8060dc1ceb6c8034e9b461311c9218a82a97",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s11/report.json": "213d584fb9616fd3834b4bf9003a08160b55b816455f3815f55929ee891b2094",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s11/events.jsonl": "08954867badf087f98ab4255c4df2fec0ca67a9036a61506941d5c29e912e69c",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s11/search-state.pt": "2dfb50c6f921cdaa1b003dce9b99ab2528f9dae3490742701e89749eba25c20b"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s29",
+      "policy": "frozen",
+      "seed": 29,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 13577,
+        "above_incumbent_plus_extra": 6654,
+        "above_bound_accepted": 3759,
+        "above_bound_anchor_noop": 2895
+      },
+      "statuses": {
+        "accepted": 7224,
+        "anchor_noop": 6353,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 3848,
+        "1": 314,
+        "2": 1044,
+        "3": 357,
+        "4": 713,
+        "5": 223,
+        "6": 422,
+        "7": 633,
+        "8": 360,
+        "9": 345,
+        "10": 812,
+        "11": 529,
+        "12": 349,
+        "13": 500,
+        "14": 400,
+        "15": 532,
+        "16": 422,
+        "17": 378,
+        "18": 273,
+        "19": 339,
+        "20": 323,
+        "21": 173,
+        "22": 110,
+        "23": 59,
+        "24": 31,
+        "25": 22,
+        "26": 23,
+        "27": 10,
+        "28": 14,
+        "29": 5,
+        "30": 1,
+        "31": 4,
+        "32": 1,
+        "33": 4,
+        "34": 1,
+        "35": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 9002,
+          "trajectory": 189,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        },
+        {
+          "transition": 10065,
+          "trajectory": 211,
+          "before": 39,
+          "after": 37,
+          "trajectory_prefix_max_excess": 19
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 13578,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 56,
+        "unique_known_qasm": 3,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 2,
+          "39": 14,
+          "37": 48
+        },
+        "node_histogram": {
+          "147": 1,
+          "209": 5,
+          "211": 36,
+          "210": 18,
+          "208": 3,
+          "207": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1839,
+          "evictions": 1776,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s29/protocol.json": "5189b2589ee1fafc47ef2788e3c4331b95970a3b984f443e582178da74e10f18",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s29/report.json": "b129769e97af654e81271f11ba401f570d6b1aa20f994860cf12c07c698e56e8",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s29/events.jsonl": "4f057a03b3345a33c041d06453fb272682bb2ac2bb80774d0dd9ef3c9df9dddf",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s29/search-state.pt": "12ae42b0e2657aa31abe3a9ac061c97f242934d8af4e90210d80fa105c8e9b31"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s47",
+      "policy": "frozen",
+      "seed": 47,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 13871,
+        "above_incumbent_plus_extra": 2171,
+        "above_bound_accepted": 1555,
+        "above_bound_anchor_noop": 616
+      },
+      "statuses": {
+        "accepted": 7294,
+        "anchor_noop": 6577,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 8269,
+        "1": 1381,
+        "2": 637,
+        "3": 568,
+        "4": 330,
+        "5": 271,
+        "6": 243,
+        "7": 109,
+        "8": 197,
+        "9": 298,
+        "10": 101,
+        "11": 264,
+        "12": 219,
+        "13": 158,
+        "14": 106,
+        "15": 124,
+        "16": 75,
+        "17": 98,
+        "18": 104,
+        "19": 118,
+        "20": 37,
+        "21": 80,
+        "22": 21,
+        "23": 24,
+        "24": 10,
+        "25": 5,
+        "26": 5,
+        "27": 3,
+        "28": 5,
+        "29": 4,
+        "31": 1,
+        "32": 1,
+        "33": 1,
+        "34": 1,
+        "37": 1,
+        "38": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 278,
+          "trajectory": 11,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 13872,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "190": 1,
+          "210": 30,
+          "211": 25,
+          "209": 6,
+          "208": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4074,
+          "evictions": 4011,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            17
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s47/protocol.json": "7e2696274814cb32131e7c882e238ab5bcfcc4582b97400e53ba4561c1a4602f",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s47/report.json": "eab804843775e92100117a1c9d721f0aebf2c29ceeed2738a8d5cc827f732ee5",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s47/events.jsonl": "21e12b719f5ca6d3e3b5348652dbb8d41986ded2d29479042cf2316ed1b7122c",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s47/search-state.pt": "e2376711e8b32b53f8cf185cbc17607e5fadbb2f1eedd866ecfd3d2f32435591"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s71",
+      "policy": "frozen",
+      "seed": 71,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 12853,
+        "above_incumbent_plus_extra": 6027,
+        "above_bound_accepted": 3855,
+        "above_bound_anchor_noop": 2172
+      },
+      "statuses": {
+        "accepted": 8338,
+        "anchor_noop": 4515,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 1696,
+        "1": 1622,
+        "2": 634,
+        "3": 782,
+        "4": 831,
+        "5": 732,
+        "6": 527,
+        "7": 449,
+        "8": 430,
+        "9": 374,
+        "10": 322,
+        "11": 417,
+        "12": 422,
+        "13": 592,
+        "14": 388,
+        "15": 341,
+        "16": 345,
+        "17": 224,
+        "18": 351,
+        "19": 444,
+        "20": 310,
+        "21": 227,
+        "22": 131,
+        "23": 50,
+        "24": 73,
+        "25": 45,
+        "26": 22,
+        "27": 18,
+        "28": 19,
+        "29": 9,
+        "30": 8,
+        "31": 8,
+        "32": 4,
+        "33": 4
+      },
+      "strict_improvements": [
+        {
+          "transition": 806,
+          "trajectory": 26,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 3
+        },
+        {
+          "transition": 10909,
+          "trajectory": 353,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 19
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 12854,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 51,
+        "unique_known_qasm": 4,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 33,
+          "38": 30
+        },
+        "node_histogram": {
+          "147": 1,
+          "210": 17,
+          "211": 38,
+          "208": 2,
+          "209": 6
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2154,
+          "evictions": 2091,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s71/protocol.json": "0191c3cf01a4125fe0a83bbb7a8fe3901906e529d8678dfe07f5fd5e1919fd15",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s71/report.json": "7314200e00a5ed99d2be6d58a552cb6ec44d204e40a3184e5e559c12a8da9b0c",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s71/events.jsonl": "3a19a57f97287195e6868d1b2362e33d06af2d5622063b2765823a78f04ee717",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_frozen_s71/search-state.pt": "b823970eb9eba0c3c564d6953ccd9dd4a311df445d2ed60c9645cf1f132b6009"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s101",
+      "policy": "frozen",
+      "seed": 101,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 13977,
+        "above_incumbent_plus_extra": 3966,
+        "above_bound_accepted": 2175,
+        "above_bound_anchor_noop": 1791
+      },
+      "statuses": {
+        "accepted": 7137,
+        "anchor_noop": 6840
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 6945,
+        "1": 1199,
+        "2": 895,
+        "3": 267,
+        "4": 325,
+        "5": 266,
+        "6": 113,
+        "7": 2028,
+        "8": 145,
+        "9": 247,
+        "10": 153,
+        "11": 166,
+        "12": 146,
+        "13": 186,
+        "14": 120,
+        "15": 182,
+        "16": 148,
+        "17": 110,
+        "18": 62,
+        "19": 99,
+        "20": 57,
+        "21": 34,
+        "22": 16,
+        "23": 20,
+        "24": 14,
+        "25": 10,
+        "26": 6,
+        "27": 9,
+        "29": 1,
+        "30": 1,
+        "31": 2,
+        "32": 2,
+        "35": 1,
+        "38": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 377,
+          "trajectory": 11,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 13977,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 28,
+          "210": 28,
+          "209": 6,
+          "208": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 3598,
+          "evictions": 3535,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            17
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s101/protocol.json": "929cb962a4d38d9fad0638ead22acf2c13a36c13dfc07bf66f923265f2921063",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s101/report.json": "142cc845d2779d7b7a7da721efc463e3994a05d3e6ec380e3c9dfe268710f6d2",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s101/events.jsonl": "af9413b2294202f2d0ff287ad9c9b41262f0c8df6f7473f123fb1d569daa44cd",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s101/search-state.pt": "c6935ddb523f9ad9287037287ef72571c0ffa4fc74b695eb202dfae57ecffc54"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s11",
+      "policy": "frozen",
+      "seed": 11,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 12413,
+        "above_incumbent_plus_extra": 7224,
+        "above_bound_accepted": 4348,
+        "above_bound_anchor_noop": 2876
+      },
+      "statuses": {
+        "accepted": 7937,
+        "anchor_noop": 4476
+      },
+      "gate_excess_histogram": {
+        "-1": 3,
+        "0": 685,
+        "1": 531,
+        "2": 741,
+        "3": 1263,
+        "4": 724,
+        "5": 713,
+        "6": 529,
+        "7": 567,
+        "8": 396,
+        "9": 678,
+        "10": 568,
+        "11": 371,
+        "12": 512,
+        "13": 260,
+        "14": 500,
+        "15": 494,
+        "16": 348,
+        "17": 501,
+        "18": 408,
+        "19": 272,
+        "20": 502,
+        "21": 263,
+        "22": 176,
+        "23": 220,
+        "24": 42,
+        "25": 35,
+        "26": 26,
+        "27": 18,
+        "28": 25,
+        "29": 7,
+        "30": 8,
+        "31": 5,
+        "32": 4,
+        "33": 4,
+        "34": 3,
+        "35": 2,
+        "36": 2,
+        "37": 1,
+        "38": 2,
+        "39": 3,
+        "41": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 43,
+          "trajectory": 2,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 2
+        },
+        {
+          "transition": 1880,
+          "trajectory": 35,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 17
+        },
+        {
+          "transition": 4817,
+          "trajectory": 113,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 19
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 12413,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "37": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "202": 1,
+          "211": 14,
+          "210": 13,
+          "206": 6,
+          "203": 2,
+          "207": 5,
+          "208": 6,
+          "209": 11,
+          "205": 2,
+          "204": 3
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1622,
+          "evictions": 1559,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            13
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s11/protocol.json": "40158b1f93d08f270ad895447481ef65115a3db78eb6e483021bbb289cd2d4e1",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s11/report.json": "a0489465b17c0c1708121276587c82a46b5b6a79d25591be1030b28a45c7a429",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s11/events.jsonl": "19e1aced7ecd64cfe354b7c3dab6541886e5837a8a95d2d2f03356eae09779fa",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s11/search-state.pt": "85d8601d6b7dec3ca4122de049dc16a97ead16bac36728494080b372e0fecc80"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s29",
+      "policy": "frozen",
+      "seed": 29,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 13457,
+        "above_incumbent_plus_extra": 6560,
+        "above_bound_accepted": 3699,
+        "above_bound_anchor_noop": 2861
+      },
+      "statuses": {
+        "accepted": 7157,
+        "anchor_noop": 6300,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 3829,
+        "1": 314,
+        "2": 1042,
+        "3": 352,
+        "4": 713,
+        "5": 223,
+        "6": 422,
+        "7": 632,
+        "8": 359,
+        "9": 335,
+        "10": 795,
+        "11": 524,
+        "12": 349,
+        "13": 493,
+        "14": 385,
+        "15": 528,
+        "16": 422,
+        "17": 378,
+        "18": 268,
+        "19": 339,
+        "20": 323,
+        "21": 156,
+        "22": 110,
+        "23": 50,
+        "24": 29,
+        "25": 22,
+        "26": 22,
+        "27": 10,
+        "28": 14,
+        "29": 5,
+        "30": 1,
+        "31": 4,
+        "32": 1,
+        "33": 4,
+        "34": 1,
+        "35": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 9002,
+          "trajectory": 189,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        },
+        {
+          "transition": 10065,
+          "trajectory": 211,
+          "before": 39,
+          "after": 37,
+          "trajectory_prefix_max_excess": 19
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 13458,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 55,
+        "unique_known_qasm": 5,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 9,
+          "39": 12,
+          "37": 43
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 39,
+          "209": 4,
+          "210": 17,
+          "204": 1,
+          "208": 2
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1832,
+          "evictions": 1769,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s29/protocol.json": "86a01ac1193c0eae683c3eef23792946f99120ce56f1b52cfe00789c10b4dc19",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s29/report.json": "1fd35225b4d4b14c4150e4bcb1a4940ad431cc1b412a8261c698f4fa9cd6a817",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s29/events.jsonl": "aa5439ce5141ff098b0d1e785012aadb20f5935b176aee71cc93d856a54cb416",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s29/search-state.pt": "c62523181bafd76d4a1debeb6cb58cf2c52fe24d1442afca44d616c05d4652c1"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s47",
+      "policy": "frozen",
+      "seed": 47,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 13686,
+        "above_incumbent_plus_extra": 2171,
+        "above_bound_accepted": 1555,
+        "above_bound_anchor_noop": 616
+      },
+      "statuses": {
+        "accepted": 7211,
+        "anchor_noop": 6475,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 8084,
+        "1": 1381,
+        "2": 637,
+        "3": 568,
+        "4": 330,
+        "5": 271,
+        "6": 243,
+        "7": 109,
+        "8": 197,
+        "9": 298,
+        "10": 101,
+        "11": 264,
+        "12": 219,
+        "13": 158,
+        "14": 106,
+        "15": 124,
+        "16": 75,
+        "17": 98,
+        "18": 104,
+        "19": 118,
+        "20": 37,
+        "21": 80,
+        "22": 21,
+        "23": 24,
+        "24": 10,
+        "25": 5,
+        "26": 5,
+        "27": 3,
+        "28": 5,
+        "29": 4,
+        "31": 1,
+        "32": 1,
+        "33": 1,
+        "34": 1,
+        "37": 1,
+        "38": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 278,
+          "trajectory": 11,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 13687,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "190": 1,
+          "210": 23,
+          "211": 16,
+          "209": 10,
+          "208": 4,
+          "207": 3,
+          "206": 4,
+          "204": 1,
+          "205": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 3991,
+          "evictions": 3928,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            17
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s47/protocol.json": "05c7aac286a17247af5f93397158761740d7868fbc193166d5e5ed272b356c39",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s47/report.json": "a9b6e5c2e3e9e8664106a08d5ec056ea82dcd3d7d46daec3252ec4cbc6291ac8",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s47/events.jsonl": "d1e8a561c19a4167b615d1c36f2fa1e2ad7c2a269b8b5268a1d160390911b8a4",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s47/search-state.pt": "bb828bde702f5dc502fcb791fd7981cf09ccb0559fc23fe9367af83ef4ed7f07"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s71",
+      "policy": "frozen",
+      "seed": 71,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 12843,
+        "above_incumbent_plus_extra": 6027,
+        "above_bound_accepted": 3855,
+        "above_bound_anchor_noop": 2172
+      },
+      "statuses": {
+        "accepted": 8328,
+        "anchor_noop": 4515,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 1696,
+        "1": 1622,
+        "2": 626,
+        "3": 780,
+        "4": 831,
+        "5": 732,
+        "6": 527,
+        "7": 449,
+        "8": 430,
+        "9": 374,
+        "10": 322,
+        "11": 417,
+        "12": 422,
+        "13": 592,
+        "14": 388,
+        "15": 341,
+        "16": 345,
+        "17": 224,
+        "18": 351,
+        "19": 444,
+        "20": 310,
+        "21": 227,
+        "22": 131,
+        "23": 50,
+        "24": 73,
+        "25": 45,
+        "26": 22,
+        "27": 18,
+        "28": 19,
+        "29": 9,
+        "30": 8,
+        "31": 8,
+        "32": 4,
+        "33": 4
+      },
+      "strict_improvements": [
+        {
+          "transition": 806,
+          "trajectory": 26,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 3
+        },
+        {
+          "transition": 10909,
+          "trajectory": 353,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 19
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 12844,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 51,
+        "unique_known_qasm": 4,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 33,
+          "38": 30
+        },
+        "node_histogram": {
+          "147": 1,
+          "210": 17,
+          "211": 38,
+          "208": 2,
+          "209": 6
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2146,
+          "evictions": 2083,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s71/protocol.json": "fe71c61a1b53fb4d8abc9e5f484045a11978bfabcbbc01659df0a77ac588a6a4",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s71/report.json": "391b2ec252815798bfe947a9723485d1aa968422259b980c26681669edebf1ee",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s71/events.jsonl": "3389aa960755645618003168f5bc3003f47ef91caa6b6adc9429c5deec17e552",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_frozen_s71/search-state.pt": "ea906c392ed708d360950765105fbc681cfd8f3455d3cfd3e2f469aae860cfa4"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s101",
+      "policy": "online",
+      "seed": 101,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 12248,
+        "above_incumbent_plus_extra": 2940,
+        "above_bound_accepted": 1521,
+        "above_bound_anchor_noop": 1419
+      },
+      "statuses": {
+        "accepted": 4919,
+        "anchor_noop": 7329,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 2874,
+        "1": 1624,
+        "2": 2601,
+        "3": 805,
+        "4": 610,
+        "5": 335,
+        "6": 457,
+        "7": 220,
+        "8": 363,
+        "9": 333,
+        "10": 305,
+        "11": 188,
+        "12": 262,
+        "13": 297,
+        "14": 172,
+        "15": 195,
+        "16": 143,
+        "17": 90,
+        "18": 87,
+        "19": 90,
+        "20": 65,
+        "21": 58,
+        "22": 36,
+        "23": 8,
+        "24": 11,
+        "25": 1,
+        "26": 5,
+        "27": 4,
+        "28": 3,
+        "30": 1,
+        "31": 1,
+        "36": 1,
+        "38": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 1391,
+          "trajectory": 26,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 2
+        },
+        {
+          "transition": 4518,
+          "trajectory": 78,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 1
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 12249,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 16,
+          "207": 6,
+          "205": 4,
+          "206": 5,
+          "197": 3,
+          "196": 2,
+          "204": 3,
+          "209": 6,
+          "210": 12,
+          "208": 4,
+          "198": 1,
+          "199": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1719,
+          "evictions": 1656,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            16
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s101/protocol.json": "e609d3bb7bba8f4a1c422bd73064fc74c94d47ddf0b20aafa6d71dd9f3a1e387",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s101/report.json": "1f1d72a0c1f1e47fffab68644a342522cf71db732a3b580f8502e88d577ede9e",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s101/events.jsonl": "6c743a32c4c8dd7411110cba18295fca74c3e0a5cdf2ca4c642f94531a878a3a",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s101/search-state.pt": "f9a9646669889fbf94f1f085ac1e3ea09cdc2369420f20289a645b4f95fe4d36"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s11",
+      "policy": "online",
+      "seed": 11,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 14086,
+        "above_incumbent_plus_extra": 1280,
+        "above_bound_accepted": 545,
+        "above_bound_anchor_noop": 735
+      },
+      "statuses": {
+        "accepted": 4144,
+        "anchor_noop": 9942
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 7377,
+        "1": 4977,
+        "2": 156,
+        "3": 115,
+        "4": 119,
+        "5": 54,
+        "6": 7,
+        "7": 58,
+        "8": 183,
+        "9": 6,
+        "10": 363,
+        "11": 65,
+        "12": 378,
+        "13": 30,
+        "14": 55,
+        "15": 4,
+        "16": 76,
+        "18": 6,
+        "19": 1,
+        "20": 37,
+        "21": 9,
+        "22": 1,
+        "23": 2,
+        "24": 2,
+        "25": 1,
+        "28": 1,
+        "30": 1,
+        "32": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 43,
+          "trajectory": 2,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 2
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 14086,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 37,
+          "207": 2,
+          "208": 4,
+          "209": 6,
+          "210": 14
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 3312,
+          "evictions": 3249,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            16
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s11/protocol.json": "0a7954a8a9a2c7cc5c01b73f3392d932197d0cfc78d09f5116ae597d7aa6cfa5",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s11/report.json": "bb335baf1afc77d1469cf85f784ee42da7a0dc5b80967e055f18bf0f1b5e821a",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s11/events.jsonl": "45a06a054ea29c134dec9e7792c68423d8b7c32bd79cc459d53c0ff42a30b882",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s11/search-state.pt": "092ee4b5ab2ed60a34602796f0b2bc1b0a874ec2f58176d5ff684814fcd867e6"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s29",
+      "policy": "online",
+      "seed": 29,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 12782,
+        "above_incumbent_plus_extra": 1994,
+        "above_bound_accepted": 913,
+        "above_bound_anchor_noop": 1081
+      },
+      "statuses": {
+        "accepted": 4577,
+        "anchor_noop": 8205,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 5954,
+        "1": 3282,
+        "2": 418,
+        "3": 244,
+        "4": 329,
+        "5": 314,
+        "6": 246,
+        "7": 152,
+        "8": 144,
+        "9": 174,
+        "10": 138,
+        "11": 119,
+        "12": 205,
+        "13": 354,
+        "14": 146,
+        "15": 96,
+        "16": 234,
+        "17": 34,
+        "18": 44,
+        "19": 44,
+        "20": 71,
+        "21": 4,
+        "22": 9,
+        "23": 8,
+        "24": 4,
+        "25": 5,
+        "26": 1,
+        "27": 3,
+        "28": 2,
+        "30": 1,
+        "31": 1,
+        "32": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 3980,
+          "trajectory": 74,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 20
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 12783,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "207": 1,
+          "209": 7,
+          "210": 17,
+          "211": 37,
+          "208": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2756,
+          "evictions": 2693,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s29/protocol.json": "7a77c3ab6afdad8d5bd9eecd76b219c74987538fa59da60917e0042bab49856f",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s29/report.json": "b9ac6d15f9cf38baa3309a1bcb319eebdb2f252ee06dcc3f58f6ccccecea2355",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s29/events.jsonl": "45867fe8c38f46d414f5a61d80cf2247a80e47e6eaec27413d02ffd382f72379",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s29/search-state.pt": "c34e73ec7a00136715072a75c60b91e85e8998d461f94539bbf2f2487eb91eaf"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s47",
+      "policy": "online",
+      "seed": 47,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 13535,
+        "above_incumbent_plus_extra": 1047,
+        "above_bound_accepted": 507,
+        "above_bound_anchor_noop": 540
+      },
+      "statuses": {
+        "accepted": 3921,
+        "anchor_noop": 9614,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "0": 6513,
+        "1": 192,
+        "2": 4646,
+        "3": 306,
+        "4": 500,
+        "5": 113,
+        "6": 217,
+        "7": 94,
+        "8": 106,
+        "9": 215,
+        "10": 44,
+        "11": 291,
+        "12": 54,
+        "13": 37,
+        "14": 23,
+        "15": 12,
+        "16": 16,
+        "17": 52,
+        "18": 36,
+        "19": 23,
+        "20": 25,
+        "21": 10,
+        "22": 2,
+        "23": 3,
+        "25": 2,
+        "26": 1,
+        "35": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 4169,
+          "trajectory": 69,
+          "before": 40,
+          "after": 38,
+          "trajectory_prefix_max_excess": 4
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 13536,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "207": 2,
+          "211": 21,
+          "209": 10,
+          "210": 19,
+          "204": 1,
+          "205": 2,
+          "208": 6,
+          "206": 2
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2532,
+          "evictions": 2469,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            16
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s47/protocol.json": "d18a972b23595dbe003fa46a5414ed5321f49ee380e38d15d05bdd29d6348d14",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s47/report.json": "1d0841fb5de8d17ad035a6d960391567a693c3a4e70885dd470c21286f414871",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s47/events.jsonl": "58b6437b7592ed000a3dbc64bb098beaabc6bed3b5eb20668581ca75ccfab9ec",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s47/search-state.pt": "5e360cbbe9ebf41e44862b60045dbd8953919e173bfb47503cdff2751247c200"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s71",
+      "policy": "online",
+      "seed": 71,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 10092,
+        "above_incumbent_plus_extra": 3505,
+        "above_bound_accepted": 2363,
+        "above_bound_anchor_noop": 1142
+      },
+      "statuses": {
+        "accepted": 6485,
+        "anchor_noop": 3607,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 1634,
+        "1": 603,
+        "2": 410,
+        "3": 1577,
+        "4": 848,
+        "5": 1307,
+        "6": 206,
+        "7": 383,
+        "8": 154,
+        "9": 130,
+        "10": 306,
+        "11": 169,
+        "12": 248,
+        "13": 208,
+        "14": 280,
+        "15": 129,
+        "16": 138,
+        "17": 160,
+        "18": 398,
+        "19": 170,
+        "20": 173,
+        "21": 193,
+        "22": 113,
+        "23": 78,
+        "24": 17,
+        "25": 15,
+        "26": 7,
+        "27": 11,
+        "28": 13,
+        "29": 3,
+        "30": 4,
+        "31": 1,
+        "32": 1,
+        "33": 1,
+        "34": 2
+      },
+      "strict_improvements": [
+        {
+          "transition": 376,
+          "trajectory": 8,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 2
+        },
+        {
+          "transition": 5887,
+          "trajectory": 94,
+          "before": 39,
+          "after": 37,
+          "trajectory_prefix_max_excess": 14
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 10093,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 60,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "37": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "169": 1,
+          "204": 3,
+          "203": 4,
+          "207": 6,
+          "208": 4,
+          "210": 3,
+          "211": 12,
+          "209": 1,
+          "195": 3,
+          "199": 6,
+          "200": 3,
+          "201": 3,
+          "188": 1,
+          "189": 1,
+          "190": 1,
+          "191": 3,
+          "183": 1,
+          "194": 1,
+          "196": 2,
+          "197": 1,
+          "198": 1,
+          "192": 1,
+          "193": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2286,
+          "evictions": 2223,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s71/protocol.json": "9ce74d19e6afceee2f1653fa6cb5aa1e58a460605a081d4de3f8996281d94a11",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s71/report.json": "2198c73d736a1add5ec652576fedbbbec7b83259b4b6c7f309dfd4ca6e3391fa",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s71/events.jsonl": "2d3e5d1f1efc6afb20bcff34ad74ff528391f39d5d7194bfa6e535131e7243f1",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_lr1e3_online_s71/search-state.pt": "cfc4742646a82635b14d18500cda549a97fc322da287fcaeda187c16154cdf55"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s101",
+      "policy": "frozen",
+      "seed": 101,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9746,
+        "above_incumbent_plus_extra": 6996,
+        "above_bound_accepted": 4583,
+        "above_bound_anchor_noop": 2413
+      },
+      "statuses": {
+        "accepted": 6721,
+        "anchor_noop": 3025,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 3,
+        "0": 305,
+        "1": 99,
+        "2": 159,
+        "3": 744,
+        "4": 381,
+        "5": 611,
+        "6": 448,
+        "7": 564,
+        "8": 376,
+        "9": 371,
+        "10": 317,
+        "11": 402,
+        "12": 461,
+        "13": 457,
+        "14": 523,
+        "15": 522,
+        "16": 505,
+        "17": 530,
+        "18": 432,
+        "19": 301,
+        "20": 289,
+        "21": 351,
+        "22": 210,
+        "23": 154,
+        "24": 55,
+        "25": 38,
+        "26": 33,
+        "27": 33,
+        "28": 23,
+        "29": 16,
+        "30": 12,
+        "31": 8,
+        "32": 7,
+        "33": 1,
+        "34": 2,
+        "35": 2,
+        "36": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 207,
+          "trajectory": 6,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 7
+        },
+        {
+          "transition": 773,
+          "trajectory": 17,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 20
+        },
+        {
+          "transition": 1033,
+          "trajectory": 24,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 21
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 3,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9747,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 52,
+        "unique_known_qasm": 3,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "37": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "202": 1,
+          "203": 4,
+          "205": 5,
+          "206": 13,
+          "204": 4,
+          "208": 9,
+          "209": 7,
+          "210": 7,
+          "211": 6,
+          "207": 7
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 763,
+          "evictions": 700,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            13
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s101/protocol.json": "01a7dcc0fcc4f2ac330df8e8bc3247c46eb633e2a048f84653577eb2ae417fa4",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s101/report.json": "56ec14b260663ad701b01c249c272db1ff49d3018ee97135877e961a38ca4202",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s101/events.jsonl": "91175b389160cde5e40b75158299af128243d35e44ccd3f470f6544576aee260",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s101/search-state.pt": "b06d68f879d32ba0b1b97b0dbbc03cbc366ae23e539259ae52195feaa3eb3270"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s11",
+      "policy": "frozen",
+      "seed": 11,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9023,
+        "above_incumbent_plus_extra": 6830,
+        "above_bound_accepted": 5167,
+        "above_bound_anchor_noop": 1663
+      },
+      "statuses": {
+        "accepted": 7046,
+        "anchor_noop": 1977
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 142,
+        "1": 50,
+        "2": 142,
+        "3": 764,
+        "4": 316,
+        "5": 450,
+        "6": 327,
+        "7": 417,
+        "8": 387,
+        "9": 462,
+        "10": 545,
+        "11": 482,
+        "12": 454,
+        "13": 560,
+        "14": 551,
+        "15": 404,
+        "16": 412,
+        "17": 368,
+        "18": 290,
+        "19": 324,
+        "20": 312,
+        "21": 258,
+        "22": 162,
+        "23": 218,
+        "24": 55,
+        "25": 47,
+        "26": 26,
+        "27": 32,
+        "28": 23,
+        "29": 11,
+        "30": 9,
+        "31": 6,
+        "32": 5,
+        "33": 3,
+        "34": 2,
+        "35": 1,
+        "37": 3,
+        "48": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 129,
+          "trajectory": 5,
+          "before": 40,
+          "after": 38,
+          "trajectory_prefix_max_excess": 14
+        },
+        {
+          "transition": 826,
+          "trajectory": 24,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9023,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 14,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 32,
+          "37": 18,
+          "39": 13
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 21,
+          "210": 6,
+          "206": 6,
+          "209": 13,
+          "207": 4,
+          "208": 4,
+          "205": 2,
+          "201": 1,
+          "202": 1,
+          "203": 3,
+          "204": 2
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 782,
+          "evictions": 719,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s11/protocol.json": "b1267653cd6fde28d95089398ba456891a54cb3c1257cf3a4509c275e9af6077",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s11/report.json": "3a94c40e5b5dff9dbb4c46783957e4fea6157261b98f067b45bc0a2bade371ad",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s11/events.jsonl": "a8adfe393791403f57e4d516ef41680cd3bb26fa4b93fcb331d5ea566a4222ef",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s11/search-state.pt": "11ee2cf3287802c20ec5e9456d5fcd30027259b67f1d1227d8a2bae2b9d596cf"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s29",
+      "policy": "frozen",
+      "seed": 29,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9820,
+        "above_incumbent_plus_extra": 6448,
+        "above_bound_accepted": 4418,
+        "above_bound_anchor_noop": 2030
+      },
+      "statuses": {
+        "accepted": 7102,
+        "anchor_noop": 2718
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 326,
+        "1": 383,
+        "2": 842,
+        "3": 497,
+        "4": 449,
+        "5": 475,
+        "6": 398,
+        "7": 435,
+        "8": 413,
+        "9": 510,
+        "10": 506,
+        "11": 550,
+        "12": 413,
+        "13": 433,
+        "14": 541,
+        "15": 442,
+        "16": 364,
+        "17": 445,
+        "18": 335,
+        "19": 256,
+        "20": 254,
+        "21": 206,
+        "22": 151,
+        "23": 53,
+        "24": 43,
+        "25": 24,
+        "26": 26,
+        "27": 11,
+        "28": 11,
+        "29": 11,
+        "30": 8,
+        "31": 4,
+        "32": 1,
+        "34": 1,
+        "36": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 526,
+          "trajectory": 12,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 10
+        },
+        {
+          "transition": 3486,
+          "trajectory": 79,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 10
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9820,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 56,
+        "unique_known_qasm": 8,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 34,
+          "39": 29
+        },
+        "node_histogram": {
+          "147": 1,
+          "206": 6,
+          "209": 9,
+          "210": 6,
+          "211": 11,
+          "179": 1,
+          "183": 1,
+          "201": 2,
+          "203": 5,
+          "205": 3,
+          "207": 4,
+          "202": 6,
+          "198": 1,
+          "208": 2,
+          "199": 2,
+          "200": 1,
+          "204": 3
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1043,
+          "evictions": 980,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            14
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s29/protocol.json": "99519d67e117afaa6674f23a2a748ebb3f899a0a4e84be4e4999a8327503da5a",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s29/report.json": "dd9b5c17ea981877fa7037c9464d99624dd2b833ce6a222435cffa30761ad857",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s29/events.jsonl": "0f00fb14a7cc6ac2d4ef9290b386484d5981a6409dc5f95771b94dbee73ae158",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s29/search-state.pt": "bd0e5d589ee0c720ab7c5b9aa46241c7b413f591f95d999c0f955edd54a03f24"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s101",
+      "policy": "frozen",
+      "seed": 101,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9723,
+        "above_incumbent_plus_extra": 6986,
+        "above_bound_accepted": 4577,
+        "above_bound_anchor_noop": 2409
+      },
+      "statuses": {
+        "accepted": 6702,
+        "anchor_noop": 3021,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 3,
+        "0": 304,
+        "1": 99,
+        "2": 159,
+        "3": 733,
+        "4": 380,
+        "5": 611,
+        "6": 448,
+        "7": 564,
+        "8": 376,
+        "9": 371,
+        "10": 317,
+        "11": 402,
+        "12": 454,
+        "13": 457,
+        "14": 523,
+        "15": 521,
+        "16": 505,
+        "17": 530,
+        "18": 432,
+        "19": 301,
+        "20": 289,
+        "21": 351,
+        "22": 210,
+        "23": 154,
+        "24": 55,
+        "25": 37,
+        "26": 33,
+        "27": 33,
+        "28": 22,
+        "29": 16,
+        "30": 12,
+        "31": 8,
+        "32": 7,
+        "33": 1,
+        "34": 2,
+        "35": 2,
+        "36": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 207,
+          "trajectory": 6,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 7
+        },
+        {
+          "transition": 773,
+          "trajectory": 17,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 20
+        },
+        {
+          "transition": 1033,
+          "trajectory": 24,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 21
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 3,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9724,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 52,
+        "unique_known_qasm": 4,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "37": 62,
+          "38": 1
+        },
+        "node_histogram": {
+          "147": 1,
+          "202": 1,
+          "203": 4,
+          "205": 5,
+          "206": 13,
+          "204": 4,
+          "208": 9,
+          "209": 7,
+          "210": 7,
+          "211": 6,
+          "207": 7
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 751,
+          "evictions": 688,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            13
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s101/protocol.json": "85fd5a3a85e63fe83414523ac8547579e10c574d6a006c3510a15487f6cb3ac0",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s101/report.json": "a1b4c240dabbab3d37dd5a6278eb73c9c8c2c75c6746c5e2581510e1a3bcfe83",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s101/events.jsonl": "cbc912c3ab392c820cef2735fa08da015cc389ea7e04869de24db1720fc05921",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s101/search-state.pt": "dc8099641cf3219f1e4e490ab3929030f99e69a2165bfd616991de9698e979d3"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s11",
+      "policy": "frozen",
+      "seed": 11,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9045,
+        "above_incumbent_plus_extra": 6847,
+        "above_bound_accepted": 5181,
+        "above_bound_anchor_noop": 1666
+      },
+      "statuses": {
+        "accepted": 7064,
+        "anchor_noop": 1981,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 142,
+        "1": 50,
+        "2": 142,
+        "3": 769,
+        "4": 316,
+        "5": 450,
+        "6": 327,
+        "7": 417,
+        "8": 387,
+        "9": 465,
+        "10": 546,
+        "11": 483,
+        "12": 457,
+        "13": 560,
+        "14": 551,
+        "15": 404,
+        "16": 412,
+        "17": 371,
+        "18": 291,
+        "19": 324,
+        "20": 312,
+        "21": 260,
+        "22": 165,
+        "23": 218,
+        "24": 55,
+        "25": 47,
+        "26": 26,
+        "27": 32,
+        "28": 23,
+        "29": 11,
+        "30": 9,
+        "31": 6,
+        "32": 5,
+        "33": 3,
+        "34": 2,
+        "35": 1,
+        "37": 3,
+        "48": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 129,
+          "trajectory": 5,
+          "before": 40,
+          "after": 38,
+          "trajectory_prefix_max_excess": 14
+        },
+        {
+          "transition": 826,
+          "trajectory": 24,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9046,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 14,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 32,
+          "37": 18,
+          "39": 13
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 21,
+          "210": 6,
+          "206": 6,
+          "209": 13,
+          "207": 4,
+          "208": 4,
+          "205": 2,
+          "201": 1,
+          "202": 1,
+          "203": 3,
+          "204": 2
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 782,
+          "evictions": 719,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s11/protocol.json": "dfc023fd6c87d2a928cdd80d96af45867d09fd40543cc0328a2d40c84d147937",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s11/report.json": "f0ffdd4c65b41a3843ff4d175955b54bc0cbda32e0171fdd9e21594a81e275ae",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s11/events.jsonl": "1cec266ae9c708c3d737cb433353daac6adc21255919036e6fc13ee589a0bd27",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s11/search-state.pt": "dcd0e1d0557321c931ed42e7de2d2ab9fd0f34be1c17a2a038cede23fb88cfa7"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s29",
+      "policy": "frozen",
+      "seed": 29,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9803,
+        "above_incumbent_plus_extra": 6432,
+        "above_bound_accepted": 4410,
+        "above_bound_anchor_noop": 2022
+      },
+      "statuses": {
+        "accepted": 7093,
+        "anchor_noop": 2710,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 326,
+        "1": 383,
+        "2": 841,
+        "3": 497,
+        "4": 449,
+        "5": 475,
+        "6": 398,
+        "7": 434,
+        "8": 413,
+        "9": 510,
+        "10": 506,
+        "11": 550,
+        "12": 406,
+        "13": 431,
+        "14": 541,
+        "15": 440,
+        "16": 361,
+        "17": 445,
+        "18": 335,
+        "19": 255,
+        "20": 254,
+        "21": 206,
+        "22": 151,
+        "23": 53,
+        "24": 43,
+        "25": 24,
+        "26": 26,
+        "27": 11,
+        "28": 11,
+        "29": 11,
+        "30": 8,
+        "31": 4,
+        "32": 1,
+        "34": 1,
+        "36": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 526,
+          "trajectory": 12,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 10
+        },
+        {
+          "transition": 3486,
+          "trajectory": 79,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 10
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9804,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 56,
+        "unique_known_qasm": 8,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 34,
+          "39": 29
+        },
+        "node_histogram": {
+          "147": 1,
+          "206": 6,
+          "209": 9,
+          "210": 6,
+          "211": 11,
+          "179": 1,
+          "183": 1,
+          "201": 2,
+          "203": 5,
+          "205": 3,
+          "207": 4,
+          "202": 6,
+          "198": 1,
+          "208": 2,
+          "199": 2,
+          "200": 1,
+          "204": 3
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1043,
+          "evictions": 980,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            14
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s29/protocol.json": "94c54d8235fd58d37fd690f9ab457d301e19465b4103bd97b690604704b59e4a",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s29/report.json": "21371fa5c588ad118c60f876f21326e00cd77fdb749c8fca446a21c7d2a1164e",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s29/events.jsonl": "41c251ebc320991af1a356fff155465d0f6c8d2eb8cd5aa7dcb94208e4c475b7",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s29/search-state.pt": "4b6497b9da0c0c110adeaa3e1a1a3a102cf9c6d1ba839d22584b6f3175d1657e"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s47",
+      "policy": "frozen",
+      "seed": 47,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 10129,
+        "above_incumbent_plus_extra": 5619,
+        "above_bound_accepted": 3945,
+        "above_bound_anchor_noop": 1674
+      },
+      "statuses": {
+        "accepted": 7414,
+        "anchor_noop": 2715
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 783,
+        "1": 824,
+        "2": 341,
+        "3": 435,
+        "4": 824,
+        "5": 767,
+        "6": 534,
+        "7": 529,
+        "8": 440,
+        "9": 446,
+        "10": 460,
+        "11": 372,
+        "12": 661,
+        "13": 459,
+        "14": 330,
+        "15": 536,
+        "16": 302,
+        "17": 272,
+        "18": 237,
+        "19": 169,
+        "20": 118,
+        "21": 110,
+        "22": 37,
+        "23": 30,
+        "24": 29,
+        "25": 27,
+        "26": 15,
+        "27": 13,
+        "28": 5,
+        "29": 10,
+        "30": 3,
+        "31": 2,
+        "32": 4,
+        "33": 1,
+        "35": 1,
+        "36": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 162,
+          "trajectory": 3,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        },
+        {
+          "transition": 7489,
+          "trajectory": 167,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 13
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 10129,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 59,
+        "unique_known_qasm": 5,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 40,
+          "38": 23
+        },
+        "node_histogram": {
+          "147": 1,
+          "203": 4,
+          "205": 9,
+          "206": 11,
+          "208": 9,
+          "204": 7,
+          "209": 8,
+          "211": 5,
+          "207": 5,
+          "210": 5
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1353,
+          "evictions": 1290,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s47/protocol.json": "f1cbd3c2ea92b321cd1dcdf2c3b1fb08505cd6af71edcdbd2bad3027e1e1c4ed",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s47/report.json": "d5b4cbcdd5c87fa87293e00b0646ba68c82f302a0de287abd1be201c2252ad77",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s47/events.jsonl": "3787bd85ea6a57b443c92e6c129a8e3f9659abb5a74d7d3a4250e7f1835724b7",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s47/search-state.pt": "e63166d4fa2b26b3b1781d05975723d15bcb9656f360e31fcf9774f6dbb5ba98"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s71",
+      "policy": "frozen",
+      "seed": 71,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 8946,
+        "above_incumbent_plus_extra": 6239,
+        "above_bound_accepted": 4653,
+        "above_bound_anchor_noop": 1586
+      },
+      "statuses": {
+        "accepted": 6983,
+        "anchor_noop": 1963
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 394,
+        "1": 77,
+        "2": 209,
+        "3": 779,
+        "4": 286,
+        "5": 575,
+        "6": 385,
+        "7": 429,
+        "8": 310,
+        "9": 348,
+        "10": 513,
+        "11": 435,
+        "12": 483,
+        "13": 381,
+        "14": 435,
+        "15": 461,
+        "16": 366,
+        "17": 435,
+        "18": 327,
+        "19": 306,
+        "20": 307,
+        "21": 185,
+        "22": 152,
+        "23": 179,
+        "24": 51,
+        "25": 34,
+        "26": 36,
+        "27": 25,
+        "28": 12,
+        "29": 9,
+        "30": 6,
+        "32": 3,
+        "33": 3,
+        "34": 4,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 1125,
+          "trajectory": 31,
+          "before": 40,
+          "after": 38,
+          "trajectory_prefix_max_excess": 16
+        },
+        {
+          "transition": 1214,
+          "trajectory": 34,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 16
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 8946,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 59,
+        "unique_known_qasm": 7,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "37": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "202": 1,
+          "207": 11,
+          "211": 29,
+          "208": 8,
+          "206": 2,
+          "210": 4,
+          "204": 2,
+          "203": 4,
+          "209": 2
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1086,
+          "evictions": 1023,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s71/protocol.json": "e5386f81ebbf3f013c0f9f909959b55cbbec723960b8dda68ea8e1162eabb258",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s71/report.json": "a235323cb7b6e39d3122ade2bf41d441f7cf793538958e8eddc4c8a2e91374b2",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s71/events.jsonl": "64bbd5c1292f739cdd049e6504a37c5e49dc7a3898f72fbea7a75647027d541c",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_frozen_s71/search-state.pt": "f42a3eb0ff99fb160727b2f69c0617ebf2782f02822ce7f45ddf6fdf7946bedc"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s101",
+      "policy": "online",
+      "seed": 101,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9215,
+        "above_incumbent_plus_extra": 2571,
+        "above_bound_accepted": 1465,
+        "above_bound_anchor_noop": 1106
+      },
+      "statuses": {
+        "accepted": 4677,
+        "anchor_noop": 4538
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 2246,
+        "1": 551,
+        "2": 135,
+        "3": 475,
+        "4": 1450,
+        "5": 1691,
+        "6": 95,
+        "7": 1271,
+        "8": 38,
+        "9": 109,
+        "10": 142,
+        "11": 108,
+        "12": 172,
+        "13": 105,
+        "14": 106,
+        "15": 52,
+        "16": 106,
+        "17": 69,
+        "18": 91,
+        "19": 65,
+        "20": 44,
+        "21": 44,
+        "22": 10,
+        "23": 7,
+        "24": 11,
+        "25": 4,
+        "26": 4,
+        "27": 4,
+        "28": 4,
+        "29": 2,
+        "30": 1,
+        "31": 1,
+        "32": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 270,
+          "trajectory": 8,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 6
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9215,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "205": 2,
+          "210": 25,
+          "211": 22,
+          "209": 10,
+          "206": 2,
+          "208": 2
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1353,
+          "evictions": 1290,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            17
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s101/protocol.json": "39be5ea50eef20e3c2739279af645b3f66e2db950afe3db2ac9efd144146ea48",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s101/report.json": "fbb65e2911950aaf94b5f7874422ba49733807fe193699b47ce26cfa798f628b",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s101/events.jsonl": "5b7462956fb9f86f470a93f705989ef3c94c404d9a90cc0321dbc673a04605f1",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s101/search-state.pt": "968e1bf0dc949563346bac4e79f23152f5d4e1f6fbc0e07fab2c949b781b9e78"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s11",
+      "policy": "online",
+      "seed": 11,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 7606,
+        "above_incumbent_plus_extra": 4179,
+        "above_bound_accepted": 3207,
+        "above_bound_anchor_noop": 972
+      },
+      "statuses": {
+        "accepted": 6100,
+        "anchor_noop": 1506,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "0": 173,
+        "1": 206,
+        "2": 1206,
+        "3": 308,
+        "4": 563,
+        "5": 362,
+        "6": 608,
+        "7": 207,
+        "8": 338,
+        "9": 328,
+        "10": 285,
+        "11": 364,
+        "12": 312,
+        "13": 319,
+        "14": 298,
+        "15": 236,
+        "16": 157,
+        "17": 276,
+        "18": 220,
+        "19": 223,
+        "20": 110,
+        "21": 260,
+        "22": 132,
+        "23": 35,
+        "24": 24,
+        "25": 19,
+        "26": 15,
+        "27": 9,
+        "28": 2,
+        "29": 4,
+        "30": 1,
+        "31": 1,
+        "32": 2,
+        "34": 1,
+        "35": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 556,
+          "trajectory": 14,
+          "before": 40,
+          "after": 38,
+          "trajectory_prefix_max_excess": 20
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 7607,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 59,
+        "unique_known_qasm": 7,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 25,
+          "39": 38
+        },
+        "node_histogram": {
+          "147": 1,
+          "207": 9,
+          "210": 13,
+          "208": 7,
+          "211": 10,
+          "206": 3,
+          "204": 2,
+          "181": 1,
+          "209": 4,
+          "205": 4,
+          "192": 1,
+          "202": 2,
+          "182": 1,
+          "191": 1,
+          "200": 2,
+          "196": 1,
+          "201": 1,
+          "203": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1244,
+          "evictions": 1181,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            14
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s11/protocol.json": "2c3855482b3689b968c3197afb36c1404b3213262783ee74f375aab2cdf78c16",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s11/report.json": "6108781f2f401976a15e2aea85d10531726966a746950e6025ffb98e59ba4f48",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s11/events.jsonl": "390c6b482d21f25823fe2b438d76f8dad8655234a30b0b6a7c270ae344a73edb",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s11/search-state.pt": "4632060f551bed3fc9f6b3211b72c6f345e5fbf355624cb4964af37800e6d4f2"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s29",
+      "policy": "online",
+      "seed": 29,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9652,
+        "above_incumbent_plus_extra": 2117,
+        "above_bound_accepted": 1628,
+        "above_bound_anchor_noop": 489
+      },
+      "statuses": {
+        "accepted": 8675,
+        "anchor_noop": 977
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 2643,
+        "1": 3926,
+        "2": 226,
+        "3": 303,
+        "4": 142,
+        "5": 161,
+        "6": 133,
+        "7": 100,
+        "8": 111,
+        "9": 168,
+        "10": 174,
+        "11": 113,
+        "12": 243,
+        "13": 150,
+        "14": 116,
+        "15": 278,
+        "16": 161,
+        "17": 66,
+        "18": 69,
+        "19": 100,
+        "20": 127,
+        "21": 68,
+        "22": 15,
+        "23": 11,
+        "24": 11,
+        "25": 7,
+        "26": 9,
+        "27": 6,
+        "28": 4,
+        "29": 1,
+        "30": 4,
+        "31": 2,
+        "32": 2,
+        "33": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 986,
+          "trajectory": 28,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 20
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9652,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 64,
+        "unique_known_views": 3,
+        "unique_known_qasm": 2,
+        "known_qasm": 64,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "208": 1,
+          "211": 62
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 6076,
+          "evictions": 6013,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s29/protocol.json": "b69117e4bad7507f78047ad2aeec5887174a064718a3da53b6fcd01e5734be9e",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s29/report.json": "062978c5315b6c579de981617f546de577a2939fc35c3a95c3c2eddd156669cf",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s29/events.jsonl": "09dbe25208a354e4891df80b8d248d6df7c6d015ddb55954ee774bb8541d04da",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s29/search-state.pt": "c4be382adc4cdfd59d16b6372a3e36d13fda9bb4db2de8aa6486f445fcdf0d22"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s47",
+      "policy": "online",
+      "seed": 47,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 7950,
+        "above_incumbent_plus_extra": 4955,
+        "above_bound_accepted": 3730,
+        "above_bound_anchor_noop": 1225
+      },
+      "statuses": {
+        "accepted": 6181,
+        "anchor_noop": 1769,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 299,
+        "1": 125,
+        "2": 818,
+        "3": 604,
+        "4": 586,
+        "5": 330,
+        "6": 231,
+        "7": 377,
+        "8": 326,
+        "9": 337,
+        "10": 610,
+        "11": 339,
+        "12": 285,
+        "13": 331,
+        "14": 263,
+        "15": 287,
+        "16": 267,
+        "17": 262,
+        "18": 195,
+        "19": 282,
+        "20": 187,
+        "21": 175,
+        "22": 193,
+        "23": 75,
+        "24": 37,
+        "25": 32,
+        "26": 26,
+        "27": 21,
+        "28": 15,
+        "29": 6,
+        "30": 7,
+        "31": 13,
+        "32": 4,
+        "33": 2,
+        "40": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 362,
+          "trajectory": 8,
+          "before": 40,
+          "after": 38,
+          "trajectory_prefix_max_excess": 10
+        },
+        {
+          "transition": 5307,
+          "trajectory": 155,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 19
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 7951,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 60,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "37": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "209": 17,
+          "205": 8,
+          "202": 1,
+          "211": 6,
+          "210": 13,
+          "208": 6,
+          "206": 5,
+          "201": 1,
+          "207": 4,
+          "204": 1,
+          "203": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1065,
+          "evictions": 1002,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s47/protocol.json": "c64042035cdac4e9a8b16f1685c47b6b201a6f56ddfe50863da637dd8cf9572b",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s47/report.json": "a1fd3ee7b2d7e559c93ffdaaa9e409baf62a83e09ec881f8129c41f1fe583747",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s47/events.jsonl": "fb59486d6a2059090de215d3032ac913cb8156cd912718b0f1116c0969ba3c42",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s47/search-state.pt": "f08124880e4aad5a5c91bc3609b75d85ace8d99d487534e3716dccd286371ad3"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s71",
+      "policy": "online",
+      "seed": 71,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 10240,
+        "above_incumbent_plus_extra": 3415,
+        "above_bound_accepted": 2019,
+        "above_bound_anchor_noop": 1396
+      },
+      "statuses": {
+        "accepted": 5132,
+        "anchor_noop": 5108
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 3418,
+        "1": 219,
+        "2": 1242,
+        "3": 578,
+        "4": 359,
+        "5": 233,
+        "6": 774,
+        "7": 371,
+        "8": 931,
+        "9": 135,
+        "10": 239,
+        "11": 227,
+        "12": 188,
+        "13": 265,
+        "14": 103,
+        "15": 208,
+        "16": 142,
+        "17": 187,
+        "18": 100,
+        "19": 99,
+        "20": 54,
+        "21": 53,
+        "22": 41,
+        "23": 19,
+        "24": 14,
+        "25": 8,
+        "26": 7,
+        "27": 11,
+        "28": 1,
+        "29": 7,
+        "30": 3,
+        "32": 1,
+        "36": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 819,
+          "trajectory": 24,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 6
+        },
+        {
+          "transition": 2246,
+          "trajectory": 56,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 7
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 10240,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 61,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "209": 11,
+          "207": 3,
+          "208": 7,
+          "210": 18,
+          "211": 24
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1750,
+          "evictions": 1687,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            16
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s71/protocol.json": "86a73786db8c70526a05060e468f53953ea50ba8357f232ed90eec9cdd5773de",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s71/report.json": "e8e4ce728cf0699faafef15221d32079c1dde7eb4897cd310e8a95ec7dfe7b0d",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s71/events.jsonl": "011f212880ed03cd923d6491af5c1de7536a7cc7602386b71825be65b7eeaf29",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_lr1e3_online_s71/search-state.pt": "8f886a35ab4126e26db56243626b6ca8b79e005b874f1858910214c08e99171b"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s101",
+      "policy": "online",
+      "seed": 101,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 7163,
+        "above_incumbent_plus_extra": 4997,
+        "above_bound_accepted": 3913,
+        "above_bound_anchor_noop": 1084
+      },
+      "statuses": {
+        "accepted": 5814,
+        "anchor_noop": 1349,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 143,
+        "1": 128,
+        "2": 790,
+        "3": 159,
+        "4": 341,
+        "5": 207,
+        "6": 396,
+        "7": 221,
+        "8": 296,
+        "9": 206,
+        "10": 291,
+        "11": 390,
+        "12": 429,
+        "13": 391,
+        "14": 319,
+        "15": 367,
+        "16": 356,
+        "17": 330,
+        "18": 320,
+        "19": 322,
+        "20": 195,
+        "21": 213,
+        "22": 135,
+        "23": 55,
+        "24": 56,
+        "25": 33,
+        "26": 25,
+        "27": 18,
+        "28": 7,
+        "29": 8,
+        "30": 5,
+        "31": 6,
+        "32": 1,
+        "35": 1,
+        "39": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 130,
+          "trajectory": 5,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 19
+        },
+        {
+          "transition": 626,
+          "trajectory": 28,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 7164,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 61,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 45,
+          "39": 18
+        },
+        "node_histogram": {
+          "147": 1,
+          "209": 8,
+          "211": 35,
+          "207": 4,
+          "210": 5,
+          "208": 4,
+          "200": 1,
+          "204": 2,
+          "205": 1,
+          "203": 3
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 949,
+          "evictions": 886,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s101/protocol.json": "ee9d482cf337fdf935a15af90139325b91bca350165b7da54059e9f48baa6f7a",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s101/report.json": "2d431797d7abe7806348fd0c9d72313da041762ac9fd1b437dcfd129a326a836",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s101/events.jsonl": "34f23aa981f8c59f868e9ac4c14b864970e3d9d190aeb4192461c0369a55615d",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s101/search-state.pt": "449556985b4890149d4f0ab91ab65d54c4bfd19fa9d073d38249c4aade7fa4f8"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s11",
+      "policy": "online",
+      "seed": 11,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 7611,
+        "above_incumbent_plus_extra": 5021,
+        "above_bound_accepted": 3489,
+        "above_bound_anchor_noop": 1532
+      },
+      "statuses": {
+        "accepted": 5520,
+        "anchor_noop": 2091,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 3,
+        "0": 332,
+        "1": 319,
+        "2": 421,
+        "3": 546,
+        "4": 312,
+        "5": 417,
+        "6": 240,
+        "7": 368,
+        "8": 292,
+        "9": 324,
+        "10": 383,
+        "11": 371,
+        "12": 308,
+        "13": 346,
+        "14": 419,
+        "15": 285,
+        "16": 344,
+        "17": 300,
+        "18": 297,
+        "19": 248,
+        "20": 164,
+        "21": 189,
+        "22": 167,
+        "23": 72,
+        "24": 38,
+        "25": 29,
+        "26": 20,
+        "27": 19,
+        "28": 15,
+        "29": 6,
+        "30": 7,
+        "31": 2,
+        "32": 4,
+        "33": 2,
+        "35": 1,
+        "37": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 639,
+          "trajectory": 17,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 14
+        },
+        {
+          "transition": 2790,
+          "trajectory": 78,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 0
+        },
+        {
+          "transition": 4557,
+          "trajectory": 138,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 22
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 7612,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 57,
+        "unique_known_qasm": 4,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 39,
+          "38": 12,
+          "37": 12
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 18,
+          "207": 12,
+          "199": 2,
+          "200": 2,
+          "203": 3,
+          "208": 11,
+          "206": 2,
+          "195": 3,
+          "209": 3,
+          "210": 5,
+          "204": 2
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 791,
+          "evictions": 728,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s11/protocol.json": "ee58efc7b4fce818d908054cdb97f615e41511913bdfbd7cb751d87245294328",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s11/report.json": "cba871cf5f1e961be2c1717186cf606601ecdd488ef85f56f85a48fde93b697f",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s11/events.jsonl": "1382358a7da081cb4bbddf33f492ee75ab185ad136a0186df7e365701dbf2b63",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s11/search-state.pt": "42bfd1b1e07d438838d4060a34f3e8381de11cefa45387b26d85a31c1f445105"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s29",
+      "policy": "online",
+      "seed": 29,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 9952,
+        "above_incumbent_plus_extra": 3558,
+        "above_bound_accepted": 2584,
+        "above_bound_anchor_noop": 974
+      },
+      "statuses": {
+        "accepted": 5985,
+        "anchor_noop": 3967
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 1435,
+        "1": 154,
+        "2": 2955,
+        "3": 286,
+        "4": 449,
+        "5": 456,
+        "6": 657,
+        "7": 170,
+        "8": 306,
+        "9": 622,
+        "10": 347,
+        "11": 270,
+        "12": 217,
+        "13": 310,
+        "14": 145,
+        "15": 260,
+        "16": 194,
+        "17": 159,
+        "18": 103,
+        "19": 141,
+        "20": 92,
+        "21": 80,
+        "22": 58,
+        "23": 19,
+        "24": 17,
+        "25": 14,
+        "26": 8,
+        "27": 6,
+        "28": 9,
+        "29": 3,
+        "30": 2,
+        "31": 2,
+        "32": 1,
+        "33": 2,
+        "35": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 313,
+          "trajectory": 10,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 4
+        },
+        {
+          "transition": 811,
+          "trajectory": 19,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 12
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 9952,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 1,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "208": 8,
+          "210": 15,
+          "211": 23,
+          "207": 4,
+          "209": 9,
+          "203": 1,
+          "206": 2,
+          "204": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1915,
+          "evictions": 1852,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            16
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s29/protocol.json": "6deb365a7551647a986188a013d3bbfb94e134e6b076bfeb5b6adf33f61331b1",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s29/report.json": "e69bf9a1c985291b552d2bebb54d6ffa468d11fbcc4a2a31e5677264c6f7cf79",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s29/events.jsonl": "fec4c34f108463c7c8e848ef634bf19fbb2fe3fda3d7aa7dcd7b11b8e6205311",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s29/search-state.pt": "f61ab090fe7347e97df4dd11a4ef80146e19a7d82649a8ca4f99f33e0ece139e"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s47",
+      "policy": "online",
+      "seed": 47,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 8544,
+        "above_incumbent_plus_extra": 3367,
+        "above_bound_accepted": 2114,
+        "above_bound_anchor_noop": 1253
+      },
+      "statuses": {
+        "accepted": 5258,
+        "anchor_noop": 3286,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 1342,
+        "1": 1164,
+        "2": 1247,
+        "3": 380,
+        "4": 522,
+        "5": 255,
+        "6": 265,
+        "7": 457,
+        "8": 405,
+        "9": 212,
+        "10": 125,
+        "11": 191,
+        "12": 209,
+        "13": 207,
+        "14": 133,
+        "15": 617,
+        "16": 180,
+        "17": 167,
+        "18": 136,
+        "19": 81,
+        "20": 70,
+        "21": 65,
+        "22": 29,
+        "23": 17,
+        "24": 18,
+        "25": 14,
+        "26": 11,
+        "27": 9,
+        "28": 4,
+        "29": 3,
+        "30": 2,
+        "31": 2,
+        "32": 2,
+        "34": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 376,
+          "trajectory": 10,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        },
+        {
+          "transition": 5982,
+          "trajectory": 113,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 21
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 8545,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 6,
+          "39": 57
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 22,
+          "207": 2,
+          "206": 2,
+          "209": 18,
+          "210": 12,
+          "208": 7
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1534,
+          "evictions": 1471,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s47/protocol.json": "dbb22309d4306330f7fac1aeb9b44bff5cee6ce24ab7b287962f465f5671b147",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s47/report.json": "4697c3564a4c880a4be18b67ba2a2cf63216cf919b045a40d4e3e602cc6aba22",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s47/events.jsonl": "e34fc3ec33c2248caa668481554bb1fe827a719743613915f7157db7c59fccb4",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s47/search-state.pt": "2d8f281d40cc4f0e8434e251c3496e8a77a933003fd3d8f1cb5a9d6617d12a31"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s71",
+      "policy": "online",
+      "seed": 71,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "nodes",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 8333,
+        "above_incumbent_plus_extra": 3215,
+        "above_bound_accepted": 2374,
+        "above_bound_anchor_noop": 841
+      },
+      "statuses": {
+        "accepted": 5989,
+        "anchor_noop": 2344,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 1677,
+        "1": 702,
+        "2": 242,
+        "3": 548,
+        "4": 1091,
+        "5": 505,
+        "6": 352,
+        "7": 354,
+        "8": 193,
+        "9": 192,
+        "10": 267,
+        "11": 254,
+        "12": 302,
+        "13": 287,
+        "14": 194,
+        "15": 190,
+        "16": 179,
+        "17": 167,
+        "18": 186,
+        "19": 177,
+        "20": 126,
+        "21": 48,
+        "22": 23,
+        "23": 20,
+        "24": 19,
+        "25": 11,
+        "26": 3,
+        "27": 3,
+        "28": 3,
+        "29": 5,
+        "30": 3,
+        "31": 5,
+        "32": 1,
+        "33": 1,
+        "34": 1,
+        "37": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 2477,
+          "trajectory": 63,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 8334,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 3,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "211": 13,
+          "210": 16,
+          "209": 14,
+          "207": 8,
+          "204": 2,
+          "205": 1,
+          "208": 4,
+          "206": 3,
+          "200": 1,
+          "203": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1573,
+          "evictions": 1510,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s71/protocol.json": "3a097554d49ca42546ce5f0918d097a1e223c564414d82dbec78538e9c1fd58d",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s71/report.json": "aa8cca61726b4584f7ab31fd509d99e112fdbc43fdd57097edb9ea71b6345417",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s71/events.jsonl": "3cfa0cddd17196998abe1b92169e6a76f3019e4a8a8a1e6e4f2d69354e4d98d6",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_nodes_online_s71/search-state.pt": "a4b6d1cf3a38d3be3351b273f21656e24d2931688b5485348b236ea8d32152d1"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s101",
+      "policy": "online",
+      "seed": 101,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 11969,
+        "above_incumbent_plus_extra": 3200,
+        "above_bound_accepted": 1658,
+        "above_bound_anchor_noop": 1542
+      },
+      "statuses": {
+        "accepted": 4817,
+        "anchor_noop": 7152,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 3641,
+        "1": 3572,
+        "2": 287,
+        "3": 341,
+        "4": 366,
+        "5": 391,
+        "6": 170,
+        "7": 265,
+        "8": 222,
+        "9": 203,
+        "10": 250,
+        "11": 233,
+        "12": 270,
+        "13": 236,
+        "14": 201,
+        "15": 224,
+        "16": 230,
+        "17": 185,
+        "18": 248,
+        "19": 141,
+        "20": 97,
+        "21": 87,
+        "22": 29,
+        "23": 20,
+        "24": 13,
+        "25": 12,
+        "26": 11,
+        "27": 12,
+        "28": 4,
+        "29": 3,
+        "30": 1,
+        "32": 1,
+        "33": 1,
+        "36": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 361,
+          "trajectory": 11,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 20
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 11970,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 60,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "208": 5,
+          "211": 39,
+          "207": 2,
+          "210": 11,
+          "209": 6
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2162,
+          "evictions": 2099,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s101/protocol.json": "34172b52fa3a9e99a3404e21b0bf46028bdd64702a4316b4119a05b4b567f403",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s101/report.json": "0304103219cf533f11a26103c6a9735948e4775354567725d1e95e755503ec82",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s101/events.jsonl": "0928f1c671dc0d15f8e1723972c8689554ec2acf6990441bd92b67018c90b67e",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s101/search-state.pt": "fa575d9256018015416758a61a5603e4028e8885a952279c70a9390d1cad5d2e"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s11",
+      "policy": "online",
+      "seed": 11,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 13440,
+        "above_incumbent_plus_extra": 2808,
+        "above_bound_accepted": 1305,
+        "above_bound_anchor_noop": 1503
+      },
+      "statuses": {
+        "accepted": 4362,
+        "anchor_noop": 9078
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 4866,
+        "1": 244,
+        "2": 3915,
+        "3": 451,
+        "4": 330,
+        "5": 286,
+        "6": 538,
+        "7": 152,
+        "8": 257,
+        "9": 895,
+        "10": 147,
+        "11": 241,
+        "12": 122,
+        "13": 118,
+        "14": 109,
+        "15": 84,
+        "16": 116,
+        "17": 113,
+        "18": 129,
+        "19": 77,
+        "20": 120,
+        "21": 46,
+        "22": 37,
+        "23": 8,
+        "24": 12,
+        "25": 5,
+        "26": 7,
+        "27": 1,
+        "28": 4,
+        "29": 2,
+        "30": 3,
+        "31": 1,
+        "32": 2
+      },
+      "strict_improvements": [
+        {
+          "transition": 43,
+          "trajectory": 2,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 2
+        },
+        {
+          "transition": 988,
+          "trajectory": 22,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 20
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 13440,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "208": 5,
+          "209": 11,
+          "210": 16,
+          "211": 28,
+          "205": 3
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2128,
+          "evictions": 2065,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            16
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s11/protocol.json": "7e82f46214b2e4325a0fc001a3c611c71f329a0b3861f84e697a483908ffad94",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s11/report.json": "97c4896f99bae370cc8977c86fb65b217ec14f5c3683c59d1fb63326ee795d05",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s11/events.jsonl": "8ca3ffe3735612e8702030edcd5ae1136a44681553b294031501c0f9ce5350e6",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s11/search-state.pt": "3bd6835bc4f46b59c8ca2f71f8a592158c050e4bcc62f3aa0fb49d37a7102ae6"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s29",
+      "policy": "online",
+      "seed": 29,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 11424,
+        "above_incumbent_plus_extra": 4183,
+        "above_bound_accepted": 2348,
+        "above_bound_anchor_noop": 1835
+      },
+      "statuses": {
+        "accepted": 5530,
+        "anchor_noop": 5894
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 2727,
+        "1": 1035,
+        "2": 2219,
+        "3": 311,
+        "4": 419,
+        "5": 297,
+        "6": 231,
+        "7": 147,
+        "8": 222,
+        "9": 323,
+        "10": 273,
+        "11": 257,
+        "12": 417,
+        "13": 224,
+        "14": 404,
+        "15": 318,
+        "16": 208,
+        "17": 419,
+        "18": 336,
+        "19": 230,
+        "20": 103,
+        "21": 127,
+        "22": 65,
+        "23": 20,
+        "24": 23,
+        "25": 19,
+        "26": 7,
+        "27": 13,
+        "28": 2,
+        "29": 5,
+        "30": 4,
+        "31": 12,
+        "32": 1,
+        "33": 1,
+        "34": 2,
+        "37": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 603,
+          "trajectory": 13,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 5
+        },
+        {
+          "transition": 4565,
+          "trajectory": 124,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 14
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 11424,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 59,
+        "unique_known_qasm": 3,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 44,
+          "38": 19
+        },
+        "node_histogram": {
+          "147": 1,
+          "210": 14,
+          "211": 33,
+          "207": 7,
+          "206": 4,
+          "208": 4,
+          "209": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1920,
+          "evictions": 1857,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            14
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s29/protocol.json": "3506d8fa71ec3a1bff3ce291dff574a51a4bbe86172d5d9985550aa4cb1ed046",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s29/report.json": "ccb03d73b90a19ec3699643f1ff603bd7ff18e338590665e50a492355ffa1ad6",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s29/events.jsonl": "ad3fa8fc50f23971fb7c5229f7b3da26db485870de2e3a36c8cb8d68777ccaf6",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s29/search-state.pt": "2b72e9eaca5641301e720d88e0a11c8386b5e3cf0b0a9eaef035bcd4aa1f19d1"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s47",
+      "policy": "online",
+      "seed": 47,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 11438,
+        "above_incumbent_plus_extra": 5151,
+        "above_bound_accepted": 2165,
+        "above_bound_anchor_noop": 2986
+      },
+      "statuses": {
+        "accepted": 4260,
+        "anchor_noop": 7178
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 3461,
+        "1": 569,
+        "2": 289,
+        "3": 961,
+        "4": 374,
+        "5": 382,
+        "6": 249,
+        "7": 359,
+        "8": 194,
+        "9": 246,
+        "10": 516,
+        "11": 583,
+        "12": 343,
+        "13": 285,
+        "14": 538,
+        "15": 301,
+        "16": 239,
+        "17": 289,
+        "18": 187,
+        "19": 216,
+        "20": 226,
+        "21": 233,
+        "22": 236,
+        "23": 90,
+        "24": 19,
+        "25": 11,
+        "26": 6,
+        "27": 16,
+        "28": 5,
+        "29": 5,
+        "30": 5,
+        "31": 2,
+        "40": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 2149,
+          "trajectory": 46,
+          "before": 40,
+          "after": 38,
+          "trajectory_prefix_max_excess": 19
+        },
+        {
+          "transition": 2552,
+          "trajectory": 57,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 11438,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 59,
+        "unique_known_qasm": 4,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "37": 59,
+          "38": 4
+        },
+        "node_histogram": {
+          "147": 1,
+          "209": 6,
+          "210": 22,
+          "211": 33,
+          "204": 1,
+          "208": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1274,
+          "evictions": 1211,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s47/protocol.json": "f6dfbc74ed6427ebdc22993103f6c6578ee91a9cadc412a6483a0afc131a7453",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s47/report.json": "f8367d42a088742ca73c29edf2e758cc504bfd5ec1a03402e1081dcf0e30f4f0",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s47/events.jsonl": "262615637523237138996c34de00cb03ae0c0932526de4fdb45e7618f0f6542c",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s47/search-state.pt": "ded947cfe05907a5c34b3e06b3eac2c21bd9f5567b8c6e77516f4d2434928fb2"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s71",
+      "policy": "online",
+      "seed": 71,
+      "selection": {
+        "mode": "anchor",
+        "order": "graph encoding -> sample anchor -> rooted matching -> local resource previews -> sample instance",
+        "anchors": "raw nodes/edges/closed wires/global scalar; scoring-view nodes/H edges",
+        "policy": "learned anchor actor and conditional instance actor; joint log probability in PPO; not Quarl critic-based node sampling",
+        "empty": "explicit zero-reward unchanged-state transition; no hidden resampling",
+        "entropy": "anchor entropy plus entropy at sampled anchor; sampled conditional regularizer",
+        "prior": "uniform",
+        "candidate_cap": 8
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 11311,
+        "above_incumbent_plus_extra": 5008,
+        "above_bound_accepted": 2008,
+        "above_bound_anchor_noop": 3000
+      },
+      "statuses": {
+        "accepted": 4784,
+        "anchor_noop": 6527
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 2167,
+        "1": 168,
+        "2": 2827,
+        "3": 115,
+        "4": 509,
+        "5": 219,
+        "6": 296,
+        "7": 299,
+        "8": 342,
+        "9": 532,
+        "10": 360,
+        "11": 448,
+        "12": 338,
+        "13": 594,
+        "14": 326,
+        "15": 345,
+        "16": 387,
+        "17": 260,
+        "18": 147,
+        "19": 182,
+        "20": 169,
+        "21": 142,
+        "22": 67,
+        "23": 18,
+        "24": 21,
+        "25": 6,
+        "26": 5,
+        "27": 5,
+        "28": 7,
+        "29": 3,
+        "30": 1,
+        "31": 1,
+        "32": 3
+      },
+      "strict_improvements": [
+        {
+          "transition": 345,
+          "trajectory": 10,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 18
+        },
+        {
+          "transition": 1040,
+          "trajectory": 22,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 14
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 11311,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 57,
+        "unique_known_qasm": 3,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "209": 2,
+          "208": 1,
+          "210": 17,
+          "211": 42,
+          "207": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2015,
+          "evictions": 1952,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            14
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s71/protocol.json": "07a237716a6820ff9ab513fda94d419ba676adc064ee7d85d12d05ff36d7b72f",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s71/report.json": "f7aa5b92839f4047b4a3e6d154fc5e787f1222f1ec62433889af2c66707db10e",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s71/events.jsonl": "59516bdd83ab72a2d2c7dfbaeec85cfc4fd47605227b49adbff5b4c7f873710e",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/anchor8_online_s71/search-state.pt": "709ea5f9edbd7f2d1ba42e72d8bf146cc56479ebe91156d5fbc8d055b9e099ec"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s101",
+      "policy": "frozen",
+      "seed": 101,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3483,
+        "above_incumbent_plus_extra": 2051,
+        "above_bound_accepted": 2051
+      },
+      "statuses": {
+        "accepted": 3483
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 105,
+        "1": 204,
+        "2": 358,
+        "3": 153,
+        "4": 233,
+        "5": 238,
+        "6": 139,
+        "7": 212,
+        "8": 158,
+        "9": 109,
+        "10": 193,
+        "11": 140,
+        "12": 145,
+        "13": 165,
+        "14": 195,
+        "15": 115,
+        "16": 103,
+        "17": 101,
+        "18": 84,
+        "19": 70,
+        "20": 52,
+        "21": 78,
+        "22": 66,
+        "23": 17,
+        "24": 16,
+        "25": 8,
+        "26": 12,
+        "27": 6,
+        "28": 2,
+        "30": 2,
+        "32": 2
+      },
+      "strict_improvements": [
+        {
+          "transition": 207,
+          "trajectory": 7,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 6
+        },
+        {
+          "transition": 1317,
+          "trajectory": 36,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 14
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3483,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 5,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 32,
+          "38": 31
+        },
+        "node_histogram": {
+          "147": 1,
+          "159": 2,
+          "164": 2,
+          "166": 4,
+          "163": 2,
+          "165": 2,
+          "170": 2,
+          "177": 2,
+          "153": 1,
+          "151": 1,
+          "167": 1,
+          "169": 2,
+          "171": 5,
+          "174": 1,
+          "175": 1,
+          "181": 1,
+          "185": 1,
+          "172": 1,
+          "173": 1,
+          "200": 2,
+          "201": 1,
+          "206": 4,
+          "210": 9,
+          "205": 3,
+          "154": 1,
+          "211": 3,
+          "199": 1,
+          "202": 1,
+          "188": 1,
+          "190": 1,
+          "209": 1,
+          "207": 2,
+          "208": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 545,
+          "evictions": 482,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            16
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s101/protocol.json": "a2180fd11410f6247ace25546ade772d10500fab2a342fbbe266c911f9412d9b",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s101/report.json": "24495afb48cfc73ab5efa3a42d5194b9d2e29407f926e5dc398c56621910aac2",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s101/events.jsonl": "da82afd2cf4c354a2ee0650a965704872afc9b46509a3d393c718f42e272bfa8",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s101/search-state.pt": "e43f55c7bafbeb754ace9c36a95ca5415c2b43aa2da0a2460c436cde558e0b8f"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s11",
+      "policy": "frozen",
+      "seed": 11,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3471,
+        "above_incumbent_plus_extra": 1931,
+        "above_bound_accepted": 1931
+      },
+      "statuses": {
+        "accepted": 3471
+      },
+      "gate_excess_histogram": {
+        "-2": 1,
+        "-1": 1,
+        "0": 365,
+        "1": 126,
+        "2": 65,
+        "3": 210,
+        "4": 345,
+        "5": 201,
+        "6": 226,
+        "7": 217,
+        "8": 165,
+        "9": 122,
+        "10": 130,
+        "11": 181,
+        "12": 144,
+        "13": 172,
+        "14": 183,
+        "15": 91,
+        "16": 136,
+        "17": 82,
+        "18": 36,
+        "19": 52,
+        "20": 74,
+        "21": 44,
+        "22": 36,
+        "23": 27,
+        "24": 9,
+        "25": 13,
+        "26": 6,
+        "28": 2,
+        "29": 3,
+        "30": 3,
+        "33": 2,
+        "36": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 165,
+          "trajectory": 4,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        },
+        {
+          "transition": 2315,
+          "trajectory": 48,
+          "before": 39,
+          "after": 37,
+          "trajectory_prefix_max_excess": 16
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3471,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 3,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 33,
+          "37": 30
+        },
+        "node_histogram": {
+          "147": 1,
+          "202": 3,
+          "206": 6,
+          "210": 4,
+          "205": 6,
+          "209": 6,
+          "198": 4,
+          "208": 3,
+          "207": 2,
+          "204": 1,
+          "201": 2,
+          "199": 4,
+          "191": 2,
+          "188": 1,
+          "194": 5,
+          "197": 2,
+          "192": 1,
+          "200": 2,
+          "195": 3,
+          "203": 2,
+          "211": 4
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 573,
+          "evictions": 510,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s11/protocol.json": "5b8f88e7c147077b202e9ed304e57f6951743de56306d75c0e2339e0c431da10",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s11/report.json": "bce0073ac67880c84d8403e90bc8da5e99d206e8befb16b256c0137527ff688d",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s11/events.jsonl": "3f2fb28aa6dbf69dd2e6e286e4fbe8dae716c50309f95042bcccb04d4e5864d0",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s11/search-state.pt": "39058621b6ecd775d59a89d2fd2e25fd95704e8d21d0f5565fbecdab9c1a134f"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s29",
+      "policy": "frozen",
+      "seed": 29,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3537,
+        "above_incumbent_plus_extra": 2502,
+        "above_bound_accepted": 2502
+      },
+      "statuses": {
+        "accepted": 3537
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 53,
+        "1": 159,
+        "2": 182,
+        "3": 142,
+        "4": 167,
+        "5": 160,
+        "6": 170,
+        "7": 165,
+        "8": 212,
+        "9": 192,
+        "10": 223,
+        "11": 230,
+        "12": 240,
+        "13": 203,
+        "14": 194,
+        "15": 154,
+        "16": 127,
+        "17": 133,
+        "18": 90,
+        "19": 96,
+        "20": 79,
+        "21": 93,
+        "22": 18,
+        "23": 18,
+        "24": 14,
+        "25": 9,
+        "26": 5,
+        "27": 3,
+        "29": 1,
+        "30": 1,
+        "31": 1,
+        "32": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 39,
+          "trajectory": 2,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 11
+        },
+        {
+          "transition": 1957,
+          "trajectory": 46,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3537,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 14,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 24,
+          "39": 24,
+          "38": 16
+        },
+        "node_histogram": {
+          "147": 1,
+          "186": 1,
+          "188": 1,
+          "190": 1,
+          "197": 1,
+          "194": 1,
+          "198": 4,
+          "191": 1,
+          "201": 1,
+          "202": 3,
+          "206": 2,
+          "207": 5,
+          "208": 4,
+          "209": 3,
+          "166": 2,
+          "210": 4,
+          "211": 1,
+          "205": 1,
+          "204": 2,
+          "196": 1,
+          "200": 1,
+          "195": 1,
+          "160": 1,
+          "158": 4,
+          "159": 1,
+          "157": 2,
+          "154": 2,
+          "151": 1,
+          "155": 2,
+          "156": 2,
+          "162": 2,
+          "163": 1,
+          "164": 2,
+          "153": 1,
+          "146": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 306,
+          "evictions": 243,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            14
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s29/protocol.json": "c55970bb7e570c5bddabbf4b0617b22ed33c0908168fd6cf8bdff1f66caa88ad",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s29/report.json": "5ba8ef3e0a201c2ac0bfdfa71d5542d43a64af303163a262dc9204daf3ab8194",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s29/events.jsonl": "510fbb961c6a9c24db52eeab271eeac678b465e235b704201789840ec2145d40",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s29/search-state.pt": "ba173ce9f99547b9cc612fc8df5ec781aadb7a25d097c472fcd7165b56325dab"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s47",
+      "policy": "frozen",
+      "seed": 47,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3555,
+        "above_incumbent_plus_extra": 1917,
+        "above_bound_accepted": 1917
+      },
+      "statuses": {
+        "accepted": 3555
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 135,
+        "1": 605,
+        "2": 114,
+        "3": 291,
+        "4": 125,
+        "5": 237,
+        "6": 130,
+        "7": 161,
+        "8": 132,
+        "9": 194,
+        "10": 129,
+        "11": 119,
+        "12": 139,
+        "13": 143,
+        "14": 158,
+        "15": 107,
+        "16": 79,
+        "17": 86,
+        "18": 70,
+        "19": 127,
+        "20": 104,
+        "21": 74,
+        "22": 26,
+        "23": 24,
+        "24": 17,
+        "25": 12,
+        "26": 3,
+        "27": 6,
+        "28": 3,
+        "29": 3,
+        "32": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 116,
+          "trajectory": 3,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3555,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 60,
+        "unique_known_qasm": 6,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "196": 3,
+          "201": 4,
+          "205": 2,
+          "206": 6,
+          "207": 1,
+          "208": 9,
+          "191": 3,
+          "210": 3,
+          "184": 1,
+          "188": 3,
+          "192": 1,
+          "204": 3,
+          "202": 2,
+          "200": 1,
+          "197": 1,
+          "211": 3,
+          "209": 4,
+          "179": 1,
+          "183": 3,
+          "169": 1,
+          "171": 1,
+          "174": 1,
+          "181": 1,
+          "189": 1,
+          "194": 1,
+          "190": 1,
+          "185": 1,
+          "203": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 679,
+          "evictions": 616,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s47/protocol.json": "7ffe1add2e0e43139c3c3c47164ec0596ca696c42e33638d2d265caa6e7146f7",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s47/report.json": "ff042f1907e89ca638b5d879ffeddbd4ebf21824dc2d2f927ef6ad3f8be824d2",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s47/events.jsonl": "9691d210b709a42a9938f344e4aa99c872a44fc73f3b57d8c972b57f0ca960c4",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s47/search-state.pt": "a481bcf6895f0dafecd191b79608261d17d3e88f7ca0516ac173e677098f9a6d"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s71",
+      "policy": "frozen",
+      "seed": 71,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3518,
+        "above_incumbent_plus_extra": 2562,
+        "above_bound_accepted": 2562
+      },
+      "statuses": {
+        "accepted": 3518,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 3,
+        "0": 57,
+        "1": 111,
+        "2": 77,
+        "3": 255,
+        "4": 128,
+        "5": 174,
+        "6": 151,
+        "7": 219,
+        "8": 138,
+        "9": 195,
+        "10": 156,
+        "11": 147,
+        "12": 179,
+        "13": 151,
+        "14": 165,
+        "15": 136,
+        "16": 236,
+        "17": 120,
+        "18": 177,
+        "19": 103,
+        "20": 77,
+        "21": 102,
+        "22": 95,
+        "23": 63,
+        "24": 23,
+        "25": 17,
+        "26": 17,
+        "27": 5,
+        "28": 13,
+        "29": 7,
+        "30": 10,
+        "31": 2,
+        "32": 3,
+        "33": 4,
+        "34": 2
+      },
+      "strict_improvements": [
+        {
+          "transition": 26,
+          "trajectory": 2,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 19
+        },
+        {
+          "transition": 558,
+          "trajectory": 18,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 21
+        },
+        {
+          "transition": 742,
+          "trajectory": 24,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 18
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 3,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3519,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 64,
+        "unique_known_views": 62,
+        "unique_known_qasm": 6,
+        "known_qasm": 64,
+        "gate_histogram": {
+          "40": 1,
+          "39": 8,
+          "38": 22,
+          "37": 33
+        },
+        "node_histogram": {
+          "147": 1,
+          "159": 1,
+          "160": 1,
+          "163": 2,
+          "164": 1,
+          "184": 4,
+          "175": 2,
+          "179": 4,
+          "183": 4,
+          "185": 2,
+          "186": 1,
+          "187": 9,
+          "189": 2,
+          "165": 1,
+          "167": 3,
+          "191": 3,
+          "192": 3,
+          "193": 1,
+          "194": 2,
+          "177": 1,
+          "178": 1,
+          "195": 2,
+          "182": 1,
+          "188": 1,
+          "200": 2,
+          "204": 2,
+          "208": 2,
+          "202": 1,
+          "196": 1,
+          "205": 1,
+          "203": 1,
+          "206": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 419,
+          "evictions": 356,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s71/protocol.json": "22ffe112c348a22e68e9e27982c5eb253ddb114695ac93a111917aa2bc9b3b52",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s71/report.json": "673c5cd9d615d8a57f58775592e0f8fd5841a6a42104f65a7c20f29fc2370ccc",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s71/events.jsonl": "413a04370081bbf51786b200fb1e96d60d2cf7213be83fadd95bf7de2e657f7d",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_frozen_s71/search-state.pt": "d3bd13c8f2b9a2b1abf7144973898ee47234cef041316ffdcd0ecac0cee01776"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s101",
+      "policy": "online",
+      "seed": 101,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3487,
+        "above_incumbent_plus_extra": 1971,
+        "above_bound_accepted": 1971
+      },
+      "statuses": {
+        "accepted": 3487
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 351,
+        "1": 120,
+        "2": 461,
+        "3": 142,
+        "4": 201,
+        "5": 128,
+        "6": 111,
+        "7": 192,
+        "8": 146,
+        "9": 380,
+        "10": 169,
+        "11": 190,
+        "12": 134,
+        "13": 109,
+        "14": 126,
+        "15": 101,
+        "16": 64,
+        "17": 58,
+        "18": 101,
+        "19": 68,
+        "20": 49,
+        "21": 14,
+        "22": 18,
+        "23": 12,
+        "24": 9,
+        "25": 9,
+        "26": 5,
+        "27": 6,
+        "28": 4,
+        "29": 1,
+        "30": 2,
+        "31": 2,
+        "32": 1,
+        "34": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 207,
+          "trajectory": 7,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 6
+        },
+        {
+          "transition": 688,
+          "trajectory": 16,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 9
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3487,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 5,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "197": 2,
+          "200": 7,
+          "209": 6,
+          "207": 3,
+          "203": 5,
+          "208": 10,
+          "204": 7,
+          "206": 5,
+          "201": 1,
+          "202": 1,
+          "205": 4,
+          "198": 4,
+          "199": 3,
+          "196": 2,
+          "210": 1,
+          "211": 1,
+          "195": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 733,
+          "evictions": 670,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            14
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s101/protocol.json": "8b911d074da2451470b8c9842fd188123bc0c5f851b87833ea60512cd2fbd887",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s101/report.json": "34daba1fc6ef90863e1d26314111380a686ff6f07f1cd2815189cf02e35ee0fc",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s101/events.jsonl": "1909d35a9d978f132ab0cd2deeac8f584aba1673ada77faccb290d768b7a99bc",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s101/search-state.pt": "08d8ec47b5aa16d673470b95cfd3be6b4fc5d28928f50424dfb7ec40c02d3291"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s11",
+      "policy": "online",
+      "seed": 11,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 39,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3469,
+        "above_incumbent_plus_extra": 1274,
+        "above_bound_accepted": 1274
+      },
+      "statuses": {
+        "accepted": 3469,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 1,
+        "0": 497,
+        "1": 350,
+        "2": 213,
+        "3": 268,
+        "4": 597,
+        "5": 152,
+        "6": 117,
+        "7": 103,
+        "8": 54,
+        "9": 141,
+        "10": 111,
+        "11": 230,
+        "12": 78,
+        "13": 99,
+        "14": 179,
+        "15": 43,
+        "16": 43,
+        "17": 57,
+        "18": 34,
+        "19": 14,
+        "20": 47,
+        "21": 12,
+        "22": 8,
+        "23": 6,
+        "24": 3,
+        "25": 2,
+        "26": 3,
+        "27": 1,
+        "28": 4,
+        "32": 1,
+        "34": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 165,
+          "trajectory": 4,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 0,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3470,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 2,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "39": 63
+        },
+        "node_histogram": {
+          "147": 1,
+          "207": 3,
+          "189": 4,
+          "191": 1,
+          "194": 2,
+          "196": 2,
+          "197": 2,
+          "187": 2,
+          "188": 2,
+          "183": 2,
+          "185": 1,
+          "186": 1,
+          "184": 2,
+          "209": 4,
+          "210": 5,
+          "205": 5,
+          "190": 1,
+          "198": 2,
+          "203": 1,
+          "211": 4,
+          "204": 5,
+          "208": 4,
+          "199": 1,
+          "202": 2,
+          "206": 2,
+          "200": 2,
+          "193": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 790,
+          "evictions": 727,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            39,
+            17
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s11/protocol.json": "2b65a9cfbb1c528fb0cf5c783068634bafa81c5e6e40c722dbbc2a6caa14a469",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s11/report.json": "b55ce3ae47acb3d2e721a8b8777a4171bcff9b0732d1e95c17357cb56cd0f2eb",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s11/events.jsonl": "528c2b4a16827ef086d3ca763865d4807fa4a5417d58af1ec6ea8af64fc8c39a",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s11/search-state.pt": "cce062103eca1e7d70c4eb39312d5a081390b4b6ec6ec881332aaaa7f18281c9"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s29",
+      "policy": "online",
+      "seed": 29,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 38,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3408,
+        "above_incumbent_plus_extra": 2328,
+        "above_bound_accepted": 2328
+      },
+      "statuses": {
+        "accepted": 3408
+      },
+      "gate_excess_histogram": {
+        "-1": 2,
+        "0": 70,
+        "1": 197,
+        "2": 170,
+        "3": 159,
+        "4": 104,
+        "5": 179,
+        "6": 199,
+        "7": 133,
+        "8": 159,
+        "9": 125,
+        "10": 168,
+        "11": 202,
+        "12": 178,
+        "13": 167,
+        "14": 251,
+        "15": 127,
+        "16": 133,
+        "17": 181,
+        "18": 162,
+        "19": 75,
+        "20": 62,
+        "21": 70,
+        "22": 79,
+        "23": 18,
+        "24": 9,
+        "25": 11,
+        "26": 7,
+        "27": 2,
+        "28": 3,
+        "29": 1,
+        "31": 3,
+        "33": 2
+      },
+      "strict_improvements": [
+        {
+          "transition": 39,
+          "trajectory": 2,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 11
+        },
+        {
+          "transition": 1317,
+          "trajectory": 34,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 0
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3408,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 63,
+        "unique_known_qasm": 10,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 9,
+          "39": 19,
+          "38": 36
+        },
+        "node_histogram": {
+          "147": 1,
+          "186": 1,
+          "188": 1,
+          "207": 6,
+          "191": 1,
+          "197": 3,
+          "202": 7,
+          "198": 2,
+          "206": 4,
+          "203": 8,
+          "195": 2,
+          "199": 2,
+          "210": 4,
+          "211": 5,
+          "196": 1,
+          "204": 2,
+          "201": 1,
+          "205": 2,
+          "178": 1,
+          "172": 1,
+          "208": 2,
+          "209": 1,
+          "162": 1,
+          "163": 1,
+          "165": 1,
+          "183": 1,
+          "180": 1,
+          "200": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 358,
+          "evictions": 295,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            38,
+            14
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s29/protocol.json": "93e2c42707da1f97c09a56d586605f5d082f0883f1949bc37036e9ff8991a26e",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s29/report.json": "ad440b4e5e8eecc661c327dd9d3dced916691c89e585752b5ef83fd9d3f6dcc8",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s29/events.jsonl": "f723f2578c1b5e71ad3fc7cd514d522ee5b9a576ef45d6efe0782fcae56dc36d",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s29/search-state.pt": "4e545b95beeae9a27c4d095909c3814dac3e50cea9c1ff0d27024bfb424df189"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s47",
+      "policy": "online",
+      "seed": 47,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3277,
+        "above_incumbent_plus_extra": 2131,
+        "above_bound_accepted": 2131
+      },
+      "statuses": {
+        "accepted": 3277,
+        "excluded_after_deadline": 1
+      },
+      "gate_excess_histogram": {
+        "-1": 3,
+        "0": 48,
+        "1": 86,
+        "2": 209,
+        "3": 246,
+        "4": 172,
+        "5": 189,
+        "6": 193,
+        "7": 155,
+        "8": 147,
+        "9": 136,
+        "10": 121,
+        "11": 161,
+        "12": 101,
+        "13": 231,
+        "14": 146,
+        "15": 119,
+        "16": 145,
+        "17": 117,
+        "18": 89,
+        "19": 100,
+        "20": 122,
+        "21": 84,
+        "22": 60,
+        "23": 23,
+        "24": 15,
+        "25": 13,
+        "26": 10,
+        "27": 8,
+        "28": 14,
+        "29": 8,
+        "30": 3,
+        "31": 2,
+        "33": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 116,
+          "trajectory": 3,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 0
+        },
+        {
+          "transition": 548,
+          "trajectory": 16,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 17
+        },
+        {
+          "transition": 1786,
+          "trajectory": 62,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 6
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 1,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3278,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 61,
+        "unique_known_qasm": 8,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 16,
+          "39": 42,
+          "38": 2,
+          "37": 4
+        },
+        "node_histogram": {
+          "147": 3,
+          "179": 2,
+          "180": 2,
+          "194": 2,
+          "182": 2,
+          "183": 2,
+          "211": 2,
+          "208": 1,
+          "167": 2,
+          "171": 3,
+          "172": 2,
+          "175": 3,
+          "198": 1,
+          "200": 2,
+          "202": 1,
+          "185": 1,
+          "186": 2,
+          "188": 1,
+          "189": 5,
+          "184": 2,
+          "187": 2,
+          "190": 1,
+          "196": 2,
+          "193": 1,
+          "164": 3,
+          "159": 2,
+          "156": 1,
+          "168": 1,
+          "181": 1,
+          "206": 1,
+          "152": 1,
+          "173": 1,
+          "169": 1,
+          "161": 1,
+          "148": 1,
+          "160": 1,
+          "158": 1,
+          "155": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 409,
+          "evictions": 346,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s47/protocol.json": "6f69f5358ef354c7cd15bfd0bb33ffc69cefee3e3fb8010edb4f257bc26cd865",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s47/report.json": "a346baa39b0289fb601ef68b5faf488a816e81c86cfaf4eda82221784830e0af",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s47/events.jsonl": "46f34e7a1d8c2235ee06b2bc38db7361e325e27181bb630680135a006d2c77a7",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s47/search-state.pt": "9dfb328cf4732fb45940adbd80f589b63b306e574173cdeb68b7390241768498"
+      }
+    },
+    {
+      "folder": "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s71",
+      "policy": "online",
+      "seed": 71,
+      "selection": {
+        "mode": "global"
+      },
+      "final_best_gates": 37,
+      "hypothetical_extra_gates": 6,
+      "counts": {
+        "transitions": 3340,
+        "above_incumbent_plus_extra": 2125,
+        "above_bound_accepted": 2125
+      },
+      "statuses": {
+        "accepted": 3340
+      },
+      "gate_excess_histogram": {
+        "-1": 3,
+        "0": 76,
+        "1": 143,
+        "2": 152,
+        "3": 267,
+        "4": 128,
+        "5": 218,
+        "6": 228,
+        "7": 172,
+        "8": 160,
+        "9": 174,
+        "10": 128,
+        "11": 173,
+        "12": 181,
+        "13": 189,
+        "14": 150,
+        "15": 98,
+        "16": 120,
+        "17": 107,
+        "18": 90,
+        "19": 72,
+        "20": 101,
+        "21": 45,
+        "22": 54,
+        "23": 39,
+        "24": 24,
+        "25": 11,
+        "26": 9,
+        "27": 8,
+        "28": 8,
+        "29": 6,
+        "30": 2,
+        "31": 3,
+        "34": 1
+      },
+      "strict_improvements": [
+        {
+          "transition": 26,
+          "trajectory": 2,
+          "before": 40,
+          "after": 39,
+          "trajectory_prefix_max_excess": 19
+        },
+        {
+          "transition": 655,
+          "trajectory": 22,
+          "before": 39,
+          "after": 38,
+          "trajectory_prefix_max_excess": 0
+        },
+        {
+          "transition": 1385,
+          "trajectory": 45,
+          "before": 38,
+          "after": 37,
+          "trajectory_prefix_max_excess": 13
+        }
+      ],
+      "improving_trajectory_prefixes_exceeding_bound": 2,
+      "checkpoint_pool": {
+        "checkpoint_transitions": 3340,
+        "size": 64,
+        "raw_keys": 64,
+        "mapped": 63,
+        "unique_known_views": 62,
+        "unique_known_qasm": 4,
+        "known_qasm": 63,
+        "gate_histogram": {
+          "40": 1,
+          "38": 28,
+          "37": 30,
+          "39": 5
+        },
+        "node_histogram": {
+          "147": 1,
+          "158": 1,
+          "171": 2,
+          "173": 1,
+          "178": 4,
+          "182": 6,
+          "183": 6,
+          "179": 2,
+          "184": 3,
+          "187": 4,
+          "175": 2,
+          "192": 2,
+          "185": 1,
+          "181": 1,
+          "180": 1,
+          "188": 1,
+          "190": 3,
+          "189": 2,
+          "191": 4,
+          "195": 3,
+          "194": 3,
+          "172": 2,
+          "174": 2,
+          "193": 1,
+          "199": 1,
+          "196": 1,
+          "169": 1,
+          "170": 2,
+          "186": 1
+        },
+        "summary": {
+          "scored_size": 64,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 519,
+          "evictions": 456,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            37,
+            15
+          ]
+        }
+      },
+      "files_sha256": {
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s71/protocol.json": "982e6db89313e70e654b03ecea564f4e1a9d301f83582033340cf3f282db23e7",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s71/report.json": "1c1dfc8efdc467e4a527d6c5ccc604a04243e27762c6452221ca0e9bb65d3848",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s71/events.jsonl": "ea0843532cc969d07f3e6bd2c55146ddebb6a94ee21cb1b43e3106750489626c",
+        "runs/anchor-prior-launch-20261018/mirror/node22/live-runs/comparison/barenco_tof_3/global32_online_s71/search-state.pt": "05a08d38ad6354e5f6e422284e76bdfd395ba9f944b6c3ead4ada61ebd2df7dd"
+      }
+    }
+  ]
+}

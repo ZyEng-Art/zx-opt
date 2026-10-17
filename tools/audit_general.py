@@ -61,7 +61,9 @@ def audit_one(spec):
 
     root = SearchState(graph(protocol["root_graph"]), protocol["root_cost"], protocol["root_cost"])
     config = protocol["config"]
-    archive = GeneralArchive(root, config["archive"], config["latent_archive"])
+    root_signature = hashlib.sha256((folder/"baseline.qasm").read_bytes()).hexdigest()
+    archive = GeneralArchive(root, config["archive"], config["latent_archive"],
+                             config.get("archive_qasm_cap", 0), root_signature)
     best = dict(root.cost); state = start = None; trajectory = 0
     statuses = Counter(); families = Counter(); repairs = Counter(); score_by_view = {}
     reward_sum = 0.; recoveries = 0; qasm_error = 0.; max_graph_error = 0.; auxiliary = 0
@@ -90,7 +92,7 @@ def audit_one(spec):
             result = VerifiedCompletion(reference).evaluate(views.get(d), config["extraction_timeout"]).result
             assert result is not None
             value = SearchState(d, result["cost"], result["cost"])
-            archive.add(value, value.last_counts)
+            archive.add(value, value.last_counts, result["sha256"])
             if score(value.cost) < score(best):
                 best = dict(value.cost)
         elif source == "latent":
@@ -184,7 +186,7 @@ def audit_one(spec):
         assert abs(reward-event["reward"]) < 1e-12
         assert state.unscored_depth == event["unscored_depth"] <= config["max_unscored"]
         reward_sum += reward
-        admitted = (archive.add(state, start.last_counts)
+        admitted = (archive.add(state, start.last_counts, event.get("sha256"))
                     if state.cost is not None or state.unscored_depth < config["max_unscored"] else False)
         assert admitted == event["admitted"]
         assert archive.summary() == event["buffer"]

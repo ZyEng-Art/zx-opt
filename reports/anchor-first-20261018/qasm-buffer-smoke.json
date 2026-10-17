@@ -1,0 +1,298 @@
+{
+  "status": "passed",
+  "development_allow_dirty": true,
+  "rows": [
+    {
+      "trial": "anchor8_resource_frozen_s137",
+      "transitions": 384,
+      "best": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 71,
+        "evictions": 8,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          40,
+          18
+        ]
+      },
+      "accepted": 341,
+      "sha256": "4187f0e599a14bb8442401c26449363bc15e2b4f570f98cb4599a8114c50d4c2"
+    },
+    {
+      "trial": "anchor8_resource_online_s137",
+      "transitions": 384,
+      "best": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 77,
+        "evictions": 14,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          40,
+          18
+        ]
+      },
+      "accepted": 352,
+      "sha256": "38bb0be2d7a224f45115e6b1ebfd709901412bd8e0f20e8a73c143f10f57683d"
+    },
+    {
+      "trial": "anchor8_resource_qasm2_frozen_s137",
+      "transitions": 384,
+      "best": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "buffer": {
+        "scored_size": 4,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 112,
+        "evictions": 109,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          40,
+          18
+        ],
+        "qasm_capacity": 2,
+        "qasm_groups": 2,
+        "qasm_evictions": 109
+      },
+      "accepted": 374,
+      "sha256": "9790468eabcebc293028ef14afe4f002697ac89841d9943fe58ad28b9875e464"
+    },
+    {
+      "trial": "anchor8_resource_qasm2_online_s137",
+      "transitions": 384,
+      "best": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "buffer": {
+        "scored_size": 4,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 125,
+        "evictions": 122,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          40,
+          18
+        ],
+        "qasm_capacity": 2,
+        "qasm_groups": 2,
+        "qasm_evictions": 122
+      },
+      "accepted": 368,
+      "sha256": "703a5db2290f9ae6b1344fb03dbdb927f5f9ed4fd21a1c102f135acf0d44a6a1"
+    }
+  ],
+  "audit": {
+    "status": "passed",
+    "development_allow_dirty": true,
+    "trials": 4,
+    "records": [
+      {
+        "arm": "anchor8_resource_frozen",
+        "seed": 137,
+        "status": "passed",
+        "transitions": 384,
+        "accepted_rewrites": 341,
+        "replayed_auxiliary": 66,
+        "legal_unscored": 0,
+        "recovered": 0,
+        "saved_qasm": 53,
+        "quarantined_invalid_qasm": 0,
+        "max_graph_operator_error": 1.0447033990410988e-14,
+        "max_qasm_operator_error": 1.339091833983194e-15,
+        "accepted_families": {
+          "EU:forward": 18,
+          "I:backward": 136,
+          "phase_split": 13,
+          "identity_insert": 20,
+          "PVG": 10,
+          "H:forward": 51,
+          "H:backward": 36,
+          "S:backward": 25,
+          "ID": 11,
+          "E:backward": 2,
+          "I:forward": 5,
+          "PV": 8,
+          "spider_split": 4,
+          "S:forward": 1,
+          "gadget_split": 1
+        },
+        "completion_branches": {
+          "clifford_repair": 334,
+          "full_reduce_repair": 7
+        },
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "model": {
+          "parameter_l2_delta": 0.0,
+          "actor_l2_delta": 0.0,
+          "finite": true
+        },
+        "events_sha256": "e164b90db53733a83d47d7b5a922769d423a024ca1c277a76d3d97303c030d8c",
+        "report_sha256": "4187f0e599a14bb8442401c26449363bc15e2b4f570f98cb4599a8114c50d4c2"
+      },
+      {
+        "arm": "anchor8_resource_qasm2_frozen",
+        "seed": 137,
+        "status": "passed",
+        "transitions": 384,
+        "accepted_rewrites": 374,
+        "replayed_auxiliary": 50,
+        "legal_unscored": 0,
+        "recovered": 0,
+        "saved_qasm": 76,
+        "quarantined_invalid_qasm": 0,
+        "max_graph_operator_error": 1.077694535822426e-14,
+        "max_qasm_operator_error": 1.223893601279964e-15,
+        "accepted_families": {
+          "EU:forward": 37,
+          "I:backward": 140,
+          "phase_split": 19,
+          "identity_insert": 54,
+          "PVG": 10,
+          "H:forward": 42,
+          "H:backward": 25,
+          "S:backward": 24,
+          "ID": 8,
+          "E:backward": 3,
+          "I:forward": 5,
+          "PV": 3,
+          "spider_split": 4
+        },
+        "completion_branches": {
+          "clifford_repair": 226,
+          "full_reduce_repair": 114,
+          "primary": 34
+        },
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "model": {
+          "parameter_l2_delta": 0.0,
+          "actor_l2_delta": 0.0,
+          "finite": true
+        },
+        "events_sha256": "e02a496746343de6e60549f174b3a6b871ffed26713b8f7f20267c6d909cf1ef",
+        "report_sha256": "9790468eabcebc293028ef14afe4f002697ac89841d9943fe58ad28b9875e464"
+      },
+      {
+        "arm": "anchor8_resource_online",
+        "seed": 137,
+        "status": "passed",
+        "transitions": 384,
+        "accepted_rewrites": 352,
+        "replayed_auxiliary": 77,
+        "legal_unscored": 0,
+        "recovered": 0,
+        "saved_qasm": 55,
+        "quarantined_invalid_qasm": 0,
+        "max_graph_operator_error": 1.0235594059158008e-14,
+        "max_qasm_operator_error": 1.339091833983194e-15,
+        "accepted_families": {
+          "EU:forward": 19,
+          "I:backward": 139,
+          "phase_split": 12,
+          "identity_insert": 22,
+          "PVG": 10,
+          "H:forward": 58,
+          "H:backward": 39,
+          "S:backward": 21,
+          "ID": 10,
+          "E:backward": 2,
+          "I:forward": 5,
+          "PV": 11,
+          "spider_split": 3,
+          "S:forward": 1
+        },
+        "completion_branches": {
+          "clifford_repair": 344,
+          "full_reduce_repair": 8
+        },
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "model": {
+          "parameter_l2_delta": 0.4809601289680604,
+          "actor_l2_delta": 0.2407464643713043,
+          "finite": true
+        },
+        "events_sha256": "0744ca7448f531e88e0a28166d219a6b3d9831341f8bd54e185235875956ea66",
+        "report_sha256": "38bb0be2d7a224f45115e6b1ebfd709901412bd8e0f20e8a73c143f10f57683d"
+      },
+      {
+        "arm": "anchor8_resource_qasm2_online",
+        "seed": 137,
+        "status": "passed",
+        "transitions": 384,
+        "accepted_rewrites": 368,
+        "replayed_auxiliary": 44,
+        "legal_unscored": 0,
+        "recovered": 0,
+        "saved_qasm": 71,
+        "quarantined_invalid_qasm": 0,
+        "max_graph_operator_error": 1.1109292436913205e-14,
+        "max_qasm_operator_error": 1.3394493154513068e-15,
+        "accepted_families": {
+          "EU:forward": 46,
+          "I:backward": 136,
+          "phase_split": 19,
+          "identity_insert": 51,
+          "PVG": 10,
+          "H:forward": 38,
+          "H:backward": 23,
+          "S:backward": 23,
+          "ID": 6,
+          "E:backward": 2,
+          "I:forward": 5,
+          "PV": 5,
+          "PVB": 2,
+          "spider_split": 2
+        },
+        "completion_branches": {
+          "clifford_repair": 268,
+          "full_reduce_repair": 85,
+          "primary": 15
+        },
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "model": {
+          "parameter_l2_delta": 0.7883684668863581,
+          "actor_l2_delta": 0.1415780747236787,
+          "finite": true
+        },
+        "events_sha256": "d5d30a264483090051f9517a58fa212a5bb5ddc42241617e8e75387f8adbd24e",
+        "report_sha256": "703a5db2290f9ae6b1344fb03dbdb927f5f9ed4fd21a1c102f135acf0d44a6a1"
+      }
+    ],
+    "model_pairs": [],
+    "saved_qasm": 255,
+    "accepted_rewrites": 1435,
+    "caveat": "Quarantined invalid extractions are excluded from candidates, rewards and best gate counts"
+  },
+  "scope": "384-step development smoke; functional verification only, no learning benefit or speedup claim"
+}

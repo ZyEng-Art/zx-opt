@@ -69,7 +69,8 @@ def run(args):
             or args.no_improvement_seconds < 0 or args.checkpoint_seconds < 0 or args.total_candidate_cap < 0
             or args.horizon < 1 or args.max_unscored < 1 or args.max_growth < 0
             or args.candidate_cap < 1 or args.matching_work < 1 or args.rewrite_timeout <= 0
-            or args.anchor_candidate_cap < 1 or args.learning_rate <= 0 or not np.isfinite(args.learning_rate)):
+            or args.anchor_candidate_cap < 1 or args.archive_qasm_cap < 0
+            or args.learning_rate <= 0 or not np.isfinite(args.learning_rate)):
         raise ValueError("Invalid search bounds")
     if args.selection != "anchor" and args.anchor_prior != "uniform":
         raise ValueError("Anchor prior requires --selection anchor")
@@ -110,7 +111,8 @@ def run(args):
     if root_error > 2e-8:
         raise OperatorMismatch("Initial extracted circuit changed the operator")
     root = SearchState(diagram, root_result["cost"], root_result["cost"])
-    pool = GeneralArchive(root, args.archive, args.latent_archive)
+    pool = GeneralArchive(root, args.archive, args.latent_archive,
+                          args.archive_qasm_cap, root_result["sha256"])
     raw_limit = len(diagram.nodes)+args.max_growth
     wire_limit = len(diagram.edges)+args.max_edge_growth
     feasibility = Feasibility(raw_limit, wire_limit) if args.feasibility_mask else None
@@ -175,6 +177,12 @@ def run(args):
                     limits="candidate/node/matching/horizon/latent-depth bounds; extraction failures are legal transitions, verification/resource failures rejected",
                     hh="I_X backward / H forward / I_Z forward proof; every contextual cancellation has a replay receipt")
     protocol["invalid_extraction"] = "quarantined and excluded from all gate costs/rewards; legal raw graph can continue. Raw/repair operator mismatches remain fatal. Repairs apply identically in every arm."
+    if args.archive_qasm_cap:
+        protocol["archive_grouping"] = dict(
+            key="SHA256 of the already verified completion QASM; no extra extraction/lookahead",
+            representatives_per_qasm=args.archive_qasm_cap,
+            preference="fewer raw nodes, then wires, then stable raw digest; root retained",
+            scope="Opt-in search heuristic. Distinct raw representatives may enable different future rewrites; no completeness preservation claim. Latent archive unchanged.")
     protocol["verification_method"] = ("fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors"
                                        if isinstance(reference, ZXReference) else "independent full fixed-wire Qiskit operator, tolerance2e-8")
     protocol["stop_rule"] = dict(no_improvement_seconds=args.no_improvement_seconds,
@@ -240,7 +248,7 @@ def run(args):
                     "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask",
                     "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout",
                     "selection", "anchor_candidate_cap"]
-        semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask"]
+        semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask", "archive_qasm_cap"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -305,7 +313,7 @@ def run(args):
                 else:
                     start, record = imported
                     restart_source = "shared:"+record["key"]
-                    pool.add(start, start.last_counts)
+                    pool.add(start, start.last_counts, record["completion"]["sha256"])
                     save_graph(out/"objects", start.diagram)
                     if score(start.cost) < score(best["cost"]):
                         result = record["completion"]
@@ -501,7 +509,7 @@ def run(args):
                         best_history.write(json.dumps(dict(**best, transition=transition, trajectory=trajectory,
                                              strict_gate_improvement=gate_improvement,
                                              patience=patience.record()))+"\n")
-                admitted = (pool.add(state, start.last_counts)
+                admitted = (pool.add(state, start.last_counts, None if result is None else result["sha256"])
                             if state.cost is not None or state.unscored_depth < args.max_unscored else False)
                 row.update(status="accepted" if result is not None else "accepted_unscored", admitted=admitted,
                            unscored_depth=state.unscored_depth)
@@ -642,6 +650,8 @@ def parser():
     p.add_argument("--max-unscored", type=int, default=8)
     p.add_argument("--archive", type=int, default=64)
     p.add_argument("--latent-archive", type=int, default=128)
+    p.add_argument("--archive-qasm-cap", type=int, default=0,
+                   help="Opt-in per-verified-QASM raw restart representatives; prefer compact graphs;0 preserves the baseline")
     p.add_argument("--rollout", type=int, default=128)
     p.add_argument("--extraction-timeout", type=float, default=2.)
     p.add_argument("--rewrite-timeout", type=float, default=5.)

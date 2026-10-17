@@ -92,3 +92,33 @@ or cross-update cache. The critic is still evaluated for each sampled step,
 and PPO recomputes the actor for every optimizer minibatch. Read-only PPO
 diagnostics also avoid duplicating the same actor forwards. Fixed-step trace
 and parameter comparisons are required before calling this computation-only.
+
+2026-10-18 restart-pool experiment (opt-in)
+  --archive-qasm-cap 2 limits scored restart representatives per SHA256 of an
+  already verified extracted QASM. Within a group, retain fewer raw nodes,
+  then fewer wires, then the stable raw digest; always retain the original
+  root. At the global capacity, gate/CX quality remains primary and raw size
+  breaks ties. Unknown-cost states still use the unchanged latent archive.
+  No extra extraction or cost lookahead is performed. Every legal child can
+  remain active even when not admitted as a future restart. This is a search
+  heuristic: raw diagrams producing the same extracted circuit can offer
+  different future rewrites, so this pruning has no completeness guarantee.
+  The default0 preserves the prior archive behavior. Campaign arms
+  anchor8_qasm2 and anchor8_resource_qasm2 isolate this change against their
+  corresponding anchor8 baselines, with paired frozen/online policies.
+  Full-state checkpoints retain group signatures/counters, and replay audits
+  reconstruct every admission, eviction and restart from verified QASM hashes.
+
+  Diagnostic evidence: prior-path-diagnostics.json covers47 closed reports in
+  the original prior/LR study, which failed overall because3 other trials
+  raised vendor-wrapped deadline alarms. Of438618 recorded transitions,
+  189847 were more than6 gates above the incumbent.52 of89 strict improvement
+  events had a current restart-trajectory prefix crossing that threshold.
+  These are observational counts (some frozen LR controls duplicate paths),
+  not independent samples or a prediction of counterfactual truncated search.
+  Prefixes do not include ancestry before their buffer restart. This evidence
+  does not justify enabling a global incumbent+6 bound without an ablation.
+  The64-state scored pools had median known extracted-QASM counts4.5 frozen
+  and2 online (63mapped states), with most raw states close to the node cap.
+  Different normalized graph keys remain common; exact view dedup alone would
+  not remove most of these completion-equivalent raw variants.

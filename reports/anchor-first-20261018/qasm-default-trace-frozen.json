@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "steps": 384,
+  "model_tensors_bitwise_equal": true,
+  "accepted": 341,
+  "updates": 0,
+  "before_seconds": 31.759951875,
+  "after_seconds": 37.772798084,
+  "speedup": 0.8408154408993345,
+  "best": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "scope": "Fixed steps, identical sampled actions/rewards/buffer/model; timing on this execution only"
+}
