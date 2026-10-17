@@ -42,7 +42,8 @@ def ppo_update(net, optimizer, rollout, bootstrap, config, deadline):
             optimizer.step(); losses.append(float(loss.detach()))
             diagnostics.append(dict(policy_loss=float(policy_loss.detach()), value_loss=float(value_loss.detach()),
                                     entropy=float(entropy.detach().mean()),
-                                    approx_kl=float(((ratio-1)-log_ratio).detach().mean()),
+                                    approx_kl=float((torch.expm1(log_ratio.detach().double())
+                                                     -log_ratio.detach().double()).mean()),
                                     clip_fraction=float(((ratio-1).abs()>.2).float().mean()), gradient_norm=float(grad)))
         if time.perf_counter() >= deadline:
             break
@@ -69,7 +70,8 @@ def ppo_update(net, optimizer, rollout, bootstrap, config, deadline):
                        return_std=variance**.5, reward_mean=float(np.mean(rewards)),
                        nonzero_reward_fraction=float(np.mean(np.asarray(rewards) != 0)),
                        positive_reward_fraction=float(np.mean(np.asarray(rewards) > 0)),
-                       post_approx_kl=float(((logs-old_logs).exp()-1-(logs-old_logs)).mean()))
+                       post_approx_kl=float((torch.expm1((logs-old_logs).double())
+                                             -(logs-old_logs).double()).mean()))
     assert torch.equal(state, torch.get_rng_state()), "Diagnostics must not consume policy RNG"
     return dict(samples=len(rollout), optimizer_steps=len(losses),
                 mean_loss=float(np.mean(losses)) if losses else None,

@@ -1,0 +1,42 @@
+{
+  "time": "2026-10-18T00:47:10.356580+08:00",
+  "event": "anchor_selected_location_pilot_and_indexed_verifier",
+  "local_pilot_trials": 12,
+  "local_pilot_seconds": 30,
+  "local_pilot_source": "b82ec47",
+  "local_pilot_audited": true,
+  "paired_prefixes": 6,
+  "saved_valid_qasm": 455,
+  "anchor8_online_vs_frozen": {
+    "win": 0,
+    "tie": 2,
+    "loss": 0
+  },
+  "anchor8_online_vs_global": {
+    "win": 2,
+    "tie": 0,
+    "loss": 0
+  },
+  "median_anchor8_accepted_speedup": 1.795645632430878,
+  "verifier_microbench": {
+    "graphs": 20,
+    "bitwise_equal": true,
+    "median_speedup": 10.23081487133056
+  },
+  "remote_comparison": {
+    "node": 22,
+    "source": "e3a47f2",
+    "trials": 54,
+    "seconds": 300,
+    "workers": 6,
+    "status": "running"
+  },
+  "resume": {
+    "stage1_steps": 24,
+    "pending_rollout": 24,
+    "stage2_steps": 48,
+    "updates": 1,
+    "remaining_rollout": 16
+  },
+  "scope": "Microbenchmark does not imply10x end-to-end gain; no stable learning advantage from the short pilot"
+}

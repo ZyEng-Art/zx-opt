@@ -69,15 +69,17 @@ class Diagram:
             raise ValueError("Repeated open port")
         if set(self.ports) != {v for v, n in self.nodes.items() if n.kind == "B"}:
             raise ValueError("Ports must enumerate every boundary exactly once")
+        degrees = dict.fromkeys(self.nodes, 0)
         for a, b in self.edges:
             if a not in self.nodes or b not in self.nodes:
                 raise ValueError("Dangling wire")
+            degrees[a] += 1; degrees[b] += 1
         for v, n in self.nodes.items():
             if not self.allow_arbitrary:
                 quarter(n.phase)
-            if n.kind == "B" and self.degree(v) != 1:
+            if n.kind == "B" and degrees[v] != 1:
                 raise ValueError("Boundary must have exactly one wire")
-            if n.kind == "H" and self.degree(v) != 2:
+            if n.kind == "H" and degrees[v] != 2:
                 raise ValueError("H must have exactly two wires")
         return self
 

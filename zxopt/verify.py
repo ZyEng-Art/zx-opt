@@ -45,17 +45,38 @@ def graph_matrix(graph, max_width=20):
             result *= value.reshape(shape)
         return result
 
+    # The primal adjacency gives exactly the same current factor-union scope
+    # as repeatedly scanning every factor for every remaining variable. Keep
+    # insertion order and tie breaks identical to the reference implementation,
+    # including the order of floating-point multiplications.
+    active = dict(enumerate(factors))
+    incident = {v: set() for v in graph.vertices()}
+    adjacent = {v: set() for v in graph.vertices()}
+    for i, (variables, _) in active.items():
+        for v in variables:
+            incident[v].add(i); adjacent[v].update(w for w in variables if w != v)
+    next_id = len(active)
     while interior:
-        scopes = {v: tuple(sorted(set().union(*(set(s) for s, _ in factors if v in s)))) for v in interior}
-        v = min(interior, key=lambda v: (len(scopes[v]), v))
-        scope = scopes[v]
-        joined = [f for f in factors if v in f[0]]
-        factors = [f for f in factors if v not in f[0]]
+        v = min(interior, key=lambda v: (len(adjacent[v])+1, v))
+        scope = tuple(sorted(adjacent[v] | {v}))
+        joined = [active[i] for i in sorted(incident[v])]
+        for i in sorted(incident[v]):
+            variables, _ = active.pop(i)
+            for w in variables:
+                if w != v:
+                    incident[w].remove(i)
+        incident[v].clear()
         value = multiply(joined, scope).sum(axis=scope.index(v))
-        factors.append((tuple(w for w in scope if w != v), value))
+        remaining = tuple(w for w in scope if w != v)
+        active[next_id] = (remaining, value)
+        for w in remaining:
+            incident[w].add(next_id)
+            adjacent[w].discard(v)
+            adjacent[w].update(u for u in remaining if u != w)
+        next_id += 1
         interior.remove(v)
     scope = tuple(sorted(boundary))
-    value = multiply(factors, scope)
+    value = multiply(active.values(), scope)
     if scope:
         value = value.transpose([scope.index(v) for v in order])
     return (value.reshape(2 ** len(graph.outputs()), 2 ** len(graph.inputs()))

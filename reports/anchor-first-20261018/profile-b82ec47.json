@@ -1,0 +1,326 @@
+{
+  "source": "b82ec47",
+  "scope": "cProfile overhead included;256 frozen steps on inputs/barenco_tof_3.qasm; diagnosis only",
+  "rows": [
+    {
+      "file": "general_search.py",
+      "line": 1,
+      "function": "<module>",
+      "calls": 1,
+      "self_seconds": 0.003458918,
+      "cumulative_seconds": 30.445849959
+    },
+    {
+      "file": "general_search.py",
+      "line": 62,
+      "function": "run",
+      "calls": 1,
+      "self_seconds": 0.093612787,
+      "cumulative_seconds": 27.173548750000002
+    },
+    {
+      "file": "general_kernel.py",
+      "line": 38,
+      "function": "get",
+      "calls": 513,
+      "self_seconds": 0.00730365,
+      "cumulative_seconds": 8.41137097
+    },
+    {
+      "file": "scalable_verify.py",
+      "line": 94,
+      "function": "check_graph",
+      "calls": 623,
+      "self_seconds": 0.0035377560000000004,
+      "cumulative_seconds": 7.086115872000001
+    },
+    {
+      "file": "verify.py",
+      "line": 11,
+      "function": "graph_matrix",
+      "calls": 623,
+      "self_seconds": 0.24239752,
+      "cumulative_seconds": 7.057893837000001
+    },
+    {
+      "file": "general_score.py",
+      "line": 73,
+      "function": "evaluate",
+      "calls": 198,
+      "self_seconds": 0.008596458000000001,
+      "cumulative_seconds": 6.58150816
+    },
+    {
+      "file": "complete/diagram.py",
+      "line": 63,
+      "function": "validate",
+      "calls": 7402,
+      "self_seconds": 0.246608875,
+      "cumulative_seconds": 6.506068235000001
+    },
+    {
+      "file": "complete/diagram.py",
+      "line": 60,
+      "function": "degree",
+      "calls": 403920,
+      "self_seconds": 0.08931786900000001,
+      "cumulative_seconds": 6.240027959000001
+    },
+    {
+      "file": "verify.py",
+      "line": 49,
+      "function": "<dictcomp>",
+      "calls": 34859,
+      "self_seconds": 0.88946062,
+      "cumulative_seconds": 5.672688545000001
+    },
+    {
+      "file": "complete/diagram.py",
+      "line": 105,
+      "function": "digest",
+      "calls": 2705,
+      "self_seconds": 0.029954223000000002,
+      "cumulative_seconds": 4.598393365000001
+    },
+    {
+      "file": "complete/diagram.py",
+      "line": 87,
+      "function": "record",
+      "calls": 2905,
+      "self_seconds": 0.0071779650000000006,
+      "cumulative_seconds": 4.4925726280000005
+    },
+    {
+      "file": "verify.py",
+      "line": 49,
+      "function": "<genexpr>",
+      "calls": 5731170,
+      "self_seconds": 4.3812367640000005,
+      "cumulative_seconds": 4.3812367640000005
+    },
+    {
+      "file": "general_feasibility.py",
+      "line": 24,
+      "function": "prepare",
+      "calls": 256,
+      "self_seconds": 0.007446164000000001,
+      "cumulative_seconds": 3.9723167040000003
+    },
+    {
+      "file": "complete/diagram.py",
+      "line": 61,
+      "function": "<genexpr>",
+      "calls": 60715812,
+      "self_seconds": 3.7343035810000003,
+      "cumulative_seconds": 3.7343035810000003
+    },
+    {
+      "file": "general_kernel.py",
+      "line": 195,
+      "function": "preview",
+      "calls": 602,
+      "self_seconds": 0.0028457400000000002,
+      "cumulative_seconds": 3.4889807310000003
+    },
+    {
+      "file": "general_kernel.py",
+      "line": 182,
+      "function": "step",
+      "calls": 610,
+      "self_seconds": 0.003273568,
+      "cumulative_seconds": 3.272853656
+    },
+    {
+      "file": "search.py",
+      "line": 1,
+      "function": "<module>",
+      "calls": 1,
+      "self_seconds": 3.6038e-05,
+      "cumulative_seconds": 2.062983875
+    },
+    {
+      "file": "complete/rewrite.py",
+      "line": 288,
+      "function": "apply",
+      "calls": 337,
+      "self_seconds": 0.002067799,
+      "cumulative_seconds": 1.7511913360000002
+    },
+    {
+      "file": "policy.py",
+      "line": 1,
+      "function": "<module>",
+      "calls": 1,
+      "self_seconds": 1.5875e-05,
+      "cumulative_seconds": 1.6391594170000001
+    },
+    {
+      "file": "general_kernel.py",
+      "line": 119,
+      "function": "prepare",
+      "calls": 256,
+      "self_seconds": 0.0073522380000000005,
+      "cumulative_seconds": 1.388648664
+    },
+    {
+      "file": "complete/rewrite.py",
+      "line": 235,
+      "function": "replace",
+      "calls": 424,
+      "self_seconds": 0.004650884,
+      "cumulative_seconds": 1.3583765790000002
+    },
+    {
+      "file": "jpv_actions.py",
+      "line": 144,
+      "function": "build",
+      "calls": 181,
+      "self_seconds": 0.034532345,
+      "cumulative_seconds": 1.298857286
+    },
+    {
+      "file": "general_policy.py",
+      "line": 23,
+      "function": "observation",
+      "calls": 512,
+      "self_seconds": 0.389222008,
+      "cumulative_seconds": 1.288291904
+    },
+    {
+      "file": "general_archive.py",
+      "line": 18,
+      "function": "key",
+      "calls": 775,
+      "self_seconds": 0.0008022420000000001,
+      "cumulative_seconds": 1.227124579
+    },
+    {
+      "file": "anchor_policy.py",
+      "line": 84,
+      "function": "anchor_observation",
+      "calls": 256,
+      "self_seconds": 0.022286641000000003,
+      "cumulative_seconds": 1.1159817170000002
+    },
+    {
+      "file": "complete/adapter.py",
+      "line": 67,
+      "function": "to_pyzx",
+      "calls": 198,
+      "self_seconds": 0.028207774,
+      "cumulative_seconds": 1.004761169
+    },
+    {
+      "file": "complete/adapter.py",
+      "line": 9,
+      "function": "from_pyzx",
+      "calls": 269,
+      "self_seconds": 0.058442346000000006,
+      "cumulative_seconds": 0.916591416
+    },
+    {
+      "file": "general_policy.py",
+      "line": 136,
+      "function": "actor",
+      "calls": 1024,
+      "self_seconds": 0.032579257,
+      "cumulative_seconds": 0.868097073
+    },
+    {
+      "file": "general_search.py",
+      "line": 46,
+      "function": "save_graph",
+      "calls": 198,
+      "self_seconds": 0.0038422260000000002,
+      "cumulative_seconds": 0.763403581
+    },
+    {
+      "file": "general_policy.py",
+      "line": 107,
+      "function": "forward",
+      "calls": 1280,
+      "self_seconds": 0.16247825600000002,
+      "cumulative_seconds": 0.7424129230000001
+    },
+    {
+      "file": "anchor_policy.py",
+      "line": 89,
+      "function": "conditional_observation",
+      "calls": 256,
+      "self_seconds": 0.009678348,
+      "cumulative_seconds": 0.705046296
+    },
+    {
+      "file": "complete/rewrite.py",
+      "line": 190,
+      "function": "_validate_match",
+      "calls": 424,
+      "self_seconds": 0.006181806000000001,
+      "cumulative_seconds": 0.6612147690000001
+    },
+    {
+      "file": "complete/diagram.py",
+      "line": 144,
+      "function": "suppress",
+      "calls": 424,
+      "self_seconds": 0.0027547,
+      "cumulative_seconds": 0.657538748
+    },
+    {
+      "file": "jpv_actions.py",
+      "line": 73,
+      "function": "cancel_h_pairs",
+      "calls": 602,
+      "self_seconds": 0.0025075360000000003,
+      "cumulative_seconds": 0.592697173
+    },
+    {
+      "file": "legacy.py",
+      "line": 12,
+      "function": "environment",
+      "calls": 1,
+      "self_seconds": 2.0293e-05,
+      "cumulative_seconds": 0.5730045420000001
+    },
+    {
+      "file": "anchor_policy.py",
+      "line": 124,
+      "function": "get_action_and_value",
+      "calls": 256,
+      "self_seconds": 0.0028863110000000003,
+      "cumulative_seconds": 0.564310537
+    },
+    {
+      "file": "complete/rewrite.py",
+      "line": 50,
+      "function": "matches",
+      "calls": 470,
+      "self_seconds": 0.045594293,
+      "cumulative_seconds": 0.550723288
+    },
+    {
+      "file": "complete/adapter.py",
+      "line": 112,
+      "function": "<lambda>",
+      "calls": 556039,
+      "self_seconds": 0.17407496,
+      "cumulative_seconds": 0.503177265
+    },
+    {
+      "file": "anchor_policy.py",
+      "line": 65,
+      "function": "_append",
+      "calls": 512,
+      "self_seconds": 0.082790449,
+      "cumulative_seconds": 0.50077112
+    },
+    {
+      "file": "general_feasibility.py",
+      "line": 11,
+      "function": "signature",
+      "calls": 858,
+      "self_seconds": 0.003095089,
+      "cumulative_seconds": 0.46798952000000005
+    }
+  ]
+}
