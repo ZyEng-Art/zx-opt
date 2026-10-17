@@ -1,0 +1,17 @@
+Frozen research baseline imported from the completed local v49 single-circuit study.
+All imported files are byte-for-byte recorded in ../docs/baseline_sources.json.
+
+upstream_source_v1/zx_env.py and rl_agent.py originate from:
+https://github.com/qilimanjaro-tech/Circopt-RL-ZXCalc
+Riu et al., Reinforcement Learning Based Quantum Circuit Optimization via ZX-Calculus,
+https://arxiv.org/abs/2312.11597
+The upstream repository has no root LICENSE file in the examined main branch;
+this snapshot does not assign a new license to upstream material.
+
+The completion engine uses PyZX (Kissinger, van de Wetering and contributors),
+Apache-2.0, via the pinned jng164 fork specified in requirements.txt.
+Existing attribution/SPDX notices in adapted source files are retained.
+
+Other files are the prior local research harness, not an upstream trainer or a
+claim of reproducing the published experiment. No historical optimized witness
+or trained checkpoint is used to initialize the new search.
