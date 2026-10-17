@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "source": "all deduplicated arms in pilot-20261017; archive replay without rewrites or new search",
+  "runs": [
+    {
+      "run": "expanded_dedup_s11",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "expanded_dedup_s29",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "expanded_dedup_s47",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "expanded_frozen_s11",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "expanded_frozen_s29",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "expanded_frozen_s47",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "expanded_online_s11",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "expanded_online_s29",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "expanded_online_s47",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "legacy_dedup_s11",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "legacy_dedup_s29",
+      "rejected_better_representatives": 0,
+      "examples": []
+    },
+    {
+      "run": "legacy_dedup_s47",
+      "rejected_better_representatives": 0,
+      "examples": []
+    }
+  ],
+  "total_rejected_better_representatives": 0
+}

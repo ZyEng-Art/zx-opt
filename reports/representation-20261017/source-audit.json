@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "trials": 18,
+  "commits": {
+    "11fc4e016f5d692013a5d1cfdf15e5ac721138d3": {
+      "sources": {
+        "zxopt/__init__.py": "d59f50b299eac0a9206238f0716252f50ff8cd604a964ba21595454027f3693f",
+        "zxopt/archive.py": "891d0b3e6fc15d6be6f11a9544cabcf50160e822b5f1aa0c87730bbfbe208e4e",
+        "zxopt/campaign.py": "17d8ecdd291228d29365c2375c416c669cc304b98731543f4c51099b3b76c30b",
+        "zxopt/dedup.py": "ee54c725cc0aa981c966be9485ae1f317782b84ccb4af0e5ca8ba0635a06eb53",
+        "zxopt/kernel.py": "ce6deb5cf65f99e2c7727a8174f7bfee25cc7180d49c319b20cba68f31f1d954",
+        "zxopt/legacy.py": "0794b16c5f6c56dfbb546c26337b036f44a474bcd87e4701dedb66f71fabbbdf",
+        "zxopt/policy.py": "c8f80e08c32502b7afb4b5c2b7a8b634ac6574a5ed635c0925218af71299bc27",
+        "zxopt/rules.py": "318612a702d69239611224838bb60d5504b61e6f12e5aa97fa2b337a5cc9970e",
+        "zxopt/search.py": "aeeb36b839654e5fdeda71386edf4e9ad56ebc531068048d18540827dc2eb9a2",
+        "zxopt/verify.py": "6695a2ac604e9173815a9e23590726e385819fb384073f9a932657c995c11ffc"
+      },
+      "baseline_sha256": "9f64ee6c40f94c8433e05291bd44e213659cf6594a12e0201af3f907b45755dd",
+      "frozen_legacy_files": 28
+    }
+  },
+  "records": [
+    {
+      "arm": "legacy_best_representative",
+      "seed": 11,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_best_representative",
+      "seed": 29,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_best_representative",
+      "seed": 47,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 11,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 29,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 47,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 11,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 29,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 47,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 11,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 29,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 47,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 11,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 29,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 47,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 11,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 29,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 47,
+      "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "status": "passed"
+    }
+  ],
+  "checks": "Every core source against Git objects; identical campaign snapshot; frozen legacy manifest and files; input digest; clean experiment checkout"
+}

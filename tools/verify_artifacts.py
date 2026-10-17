@@ -51,15 +51,15 @@ def main():
         for e in events:
             trajectory=e["trajectory"]
             parent=e["parent_graph_key"]
+            if e.get("restart_source")=="deferred" and trajectory not in deferred_trajectories:
+                assert reserve>0 and e["restart_key"] in last_parent
+                assert last_parent[e["restart_key"]]["available"]>1
+                assert e["trajectory_step"]==1
+                deferred_trajectories.add(trajectory)
             if "deferred" in e:
                 assert e["deferred"]["capacity"]==reserve
                 assert 0<=e["deferred"]["size"]<=reserve
                 assert 0<e["buffer"]["size"]<=e["buffer"]["capacity"]==64
-                if e.get("restart_source")=="deferred" and trajectory not in deferred_trajectories:
-                    assert reserve>0 and e["restart_key"] in last_parent
-                    assert last_parent[e["restart_key"]]["available"]>1
-                    assert e["trajectory_step"]==1
-                    deferred_trajectories.add(trajectory)
                 assert e["deferred"]["resumptions"]==len(deferred_trajectories)
             if parent in serialized_costs:assert serialized_costs[parent]==e["previous_cost"]
             serialized_costs[parent]=e["previous_cost"]
@@ -88,6 +88,7 @@ def main():
                 assert e["reward"]==0.;chain[trajectory]=e["previous_cost"]
                 record_chain[trajectory]=e["previous_record"]
         assert best==row["best"]["cost"]["gates"]
+        if "deferred" in row:assert row["deferred"]["resumptions"]==len(deferred_trajectories)
         records.append(dict(arm=row["arm"],seed=row["seed"],transitions=len(events),accepted=len(accepted),
                             serialized_action_pruning_checked=bool(serialized_scope),
                             deferred_restart_trajectories_checked=len(deferred_trajectories),status="passed"))

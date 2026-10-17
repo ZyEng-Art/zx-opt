@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+  "archive": "zx-opt-11fc4e016f5d-records.tar.gz",
+  "bytes": 30615540,
+  "sha256": "5f2950420fd47d620c74ebb9f7fe9824e6086253eca683b98596f8d4bf7d736d",
+  "run_files": 64539,
+  "controller": {
+    "status": "passed",
+    "commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+    "container": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+    "gpu": false,
+    "restored_stopped": true,
+    "output": "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-11fc4e016f5d/runs/pilot",
+    "time": "2026-10-17T16:02:25.093154+08:00"
+  }
+}

@@ -1,0 +1,2089 @@
+{
+  "status": "passed",
+  "scope": "same-case pilot only; all arms/seeds; no generalization or completeness claim",
+  "campaign_sha256": "35e1e017b2e3de20bce8d06826e2c185de37b7b565c69d407e49e15e0bdcefdc",
+  "summary_sha256": "96106c514ac726782365f09cffd32abef5cdd302c2d520f6dbfb301942bed79b",
+  "budget_seconds": 600.0,
+  "trials": [
+    {
+      "arm": "legacy_best_representative",
+      "seed": 11,
+      "folder": "legacy_best_representative_s11",
+      "status": "retained_frontier_exhausted",
+      "transitions": 8255,
+      "accepted": 8255,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 33
+        },
+        "sha256": "9cd8e738b0cb3f917cd9bed968023672e00ce502bcc746da2fce9bf4407bb1fd",
+        "seconds": 108.16617700702045
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 5122,
+        "ID": 1068,
+        "PV": 993,
+        "PVB": 1072
+      },
+      "accepted_counts": {
+        "PVG": 5122,
+        "ID": 1068,
+        "PV": 993,
+        "PVB": 1072
+      },
+      "rejections": {},
+      "index": {
+        "states": 6151,
+        "hits": 11665,
+        "exact_isomorphism_comparisons": 11665,
+        "attempted_actions": 8255
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 385,
+        "evictions": 322,
+        "objective": "nam",
+        "best": [
+          37,
+          15
+        ],
+        "max_distance": 7,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 4162,
+      "max_graph_operator_error": 3.8880608036874965e-15,
+      "max_qasm_operator_error": 1.554560032361923e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 429.7978591910214,
+      "first_passage_seconds": {
+        "39": 1.6105850919848308,
+        "38": 12.910374477971345,
+        "37": 108.16617700702045,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 2105,
+      "raw_graph_keys": 8157,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "0a41b37c9cd3d4b5a5aa6e1879faf79e129a22dd72d07bbcf1e8e3c76f5aeb56",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "990192f7a2175f76213f860353bdd06f4c7a1ec1bc9d28561d28233d9275f416",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 656,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 1387,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 5163,
+      "untried_logged_actions": 42912,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.204478560961626
+    },
+    {
+      "arm": "legacy_best_representative",
+      "seed": 29,
+      "folder": "legacy_best_representative_s29",
+      "status": "retained_frontier_exhausted",
+      "transitions": 4818,
+      "accepted": 4818,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "9cd1be4082b32c50140479c02e5353a736357c361e7b0da65b5c88a04c9cd547",
+        "seconds": 59.09535303199664
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 3157,
+        "PVB": 508,
+        "PV": 407,
+        "ID": 746
+      },
+      "accepted_counts": {
+        "PVG": 3157,
+        "PVB": 508,
+        "PV": 407,
+        "ID": 746
+      },
+      "rejections": {},
+      "index": {
+        "states": 3852,
+        "hits": 6583,
+        "exact_isomorphism_comparisons": 6583,
+        "attempted_actions": 4818
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 246,
+        "evictions": 183,
+        "objective": "nam",
+        "best": [
+          37,
+          13
+        ],
+        "max_distance": 14,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 2827,
+      "max_graph_operator_error": 3.904539953647383e-15,
+      "max_qasm_operator_error": 1.448085813565212e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 256.8677386799827,
+      "first_passage_seconds": {
+        "39": 5.111495702993125,
+        "38": 21.6240120009752,
+        "37": 36.940737278957386,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 967,
+      "raw_graph_keys": 4760,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "c8e9ea0a94a95f8d249d651513f68d98811f754b1afe5c3fb28093ac51632e61",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "4c50565f1590f0900c60ff1d7b9617ae511aa7a73151266ccfa17b9e35d311b5",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 283,
+      "max_isomorphic_gate_spread": 29,
+      "unretained_successors_without_logged_outgoing_actions": 805,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 3197,
+      "untried_logged_actions": 27775,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.106127074971546
+    },
+    {
+      "arm": "legacy_best_representative",
+      "seed": 47,
+      "folder": "legacy_best_representative_s47",
+      "status": "retained_frontier_exhausted",
+      "transitions": 4301,
+      "accepted": 4301,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84",
+        "seconds": 188.6751409599674
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2700,
+        "ID": 691,
+        "PV": 426,
+        "PVB": 484
+      },
+      "accepted_counts": {
+        "PVG": 2700,
+        "ID": 691,
+        "PV": 426,
+        "PVB": 484
+      },
+      "rejections": {},
+      "index": {
+        "states": 3668,
+        "hits": 5558,
+        "exact_isomorphism_comparisons": 5558,
+        "attempted_actions": 4301
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 254,
+        "evictions": 191,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 12,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 2687,
+      "max_graph_operator_error": 3.6876850200590406e-15,
+      "max_qasm_operator_error": 1.6682232373515109e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 226.0763900829479,
+      "first_passage_seconds": {
+        "39": 14.747130299976561,
+        "38": 15.305970071000047,
+        "37": 64.24791192094563,
+        "36": 188.6751409599674,
+        "35": null
+      },
+      "duplicate_successors": 634,
+      "raw_graph_keys": 4255,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "eb6b6cd6f353e5a57222de61b9ffe9c9a2a9a99c571c9ce6c77506463bb96ee6",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "5ab27317e5b37cf6a2e71a9858d485f3b9bc6a78cd48511b31b881a96080d03b",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 231,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 640,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 3115,
+      "untried_logged_actions": 31510,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 36.471626922086486
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 11,
+      "folder": "legacy_dedup_s11",
+      "status": "retained_frontier_exhausted",
+      "transitions": 8255,
+      "accepted": 8255,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 33
+        },
+        "sha256": "9cd8e738b0cb3f917cd9bed968023672e00ce502bcc746da2fce9bf4407bb1fd",
+        "seconds": 108.85782846598886
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 5122,
+        "ID": 1068,
+        "PV": 993,
+        "PVB": 1072
+      },
+      "accepted_counts": {
+        "PVG": 5122,
+        "ID": 1068,
+        "PV": 993,
+        "PVB": 1072
+      },
+      "rejections": {},
+      "index": {
+        "states": 6151,
+        "hits": 11665,
+        "exact_isomorphism_comparisons": 11665,
+        "attempted_actions": 8255
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 385,
+        "evictions": 322,
+        "objective": "nam",
+        "best": [
+          37,
+          15
+        ],
+        "max_distance": 7,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 4162,
+      "max_graph_operator_error": 3.8880608036874965e-15,
+      "max_qasm_operator_error": 1.554560032361923e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 432.94969725899864,
+      "first_passage_seconds": {
+        "39": 1.5376402779947966,
+        "38": 12.796454695984721,
+        "37": 108.85782846598886,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 2105,
+      "raw_graph_keys": 8157,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "60c27a702739c1c584ab331838c2b5f910b9608ea4ce6271fbd544d6a3b44868",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "bafb1b2b8c83aba52ff47b17b89fda989c60d4aa5bdc964f7eb224fbeb87f47a",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 656,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 1387,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 5163,
+      "untried_logged_actions": 42912,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.20531987239995
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 29,
+      "folder": "legacy_dedup_s29",
+      "status": "retained_frontier_exhausted",
+      "transitions": 4818,
+      "accepted": 4818,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "9cd1be4082b32c50140479c02e5353a736357c361e7b0da65b5c88a04c9cd547",
+        "seconds": 58.85650594596518
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 3157,
+        "PVB": 508,
+        "PV": 407,
+        "ID": 746
+      },
+      "accepted_counts": {
+        "PVG": 3157,
+        "PVB": 508,
+        "PV": 407,
+        "ID": 746
+      },
+      "rejections": {},
+      "index": {
+        "states": 3852,
+        "hits": 6583,
+        "exact_isomorphism_comparisons": 6583,
+        "attempted_actions": 4818
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 246,
+        "evictions": 183,
+        "objective": "nam",
+        "best": [
+          37,
+          13
+        ],
+        "max_distance": 14,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 2827,
+      "max_graph_operator_error": 3.904539953647383e-15,
+      "max_qasm_operator_error": 1.448085813565212e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 254.77150149695808,
+      "first_passage_seconds": {
+        "39": 5.128935923974495,
+        "38": 21.72522983397357,
+        "37": 36.90275483898586,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 967,
+      "raw_graph_keys": 4760,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "48a5ff86db415016be17de1d201fad82f53c0d2049c46a8a7af3e8b272c670b6",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "d142215604578a31f8f368c2338b3d3a1f74cd942ff5de8d23f8dd634dd3b114",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 283,
+      "max_isomorphic_gate_spread": 29,
+      "unretained_successors_without_logged_outgoing_actions": 805,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 3197,
+      "untried_logged_actions": 27775,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.106261534328226
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 47,
+      "folder": "legacy_dedup_s47",
+      "status": "retained_frontier_exhausted",
+      "transitions": 4301,
+      "accepted": 4301,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84",
+        "seconds": 188.97050587798003
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2700,
+        "ID": 691,
+        "PV": 426,
+        "PVB": 484
+      },
+      "accepted_counts": {
+        "PVG": 2700,
+        "ID": 691,
+        "PV": 426,
+        "PVB": 484
+      },
+      "rejections": {},
+      "index": {
+        "states": 3668,
+        "hits": 5558,
+        "exact_isomorphism_comparisons": 5558,
+        "attempted_actions": 4301
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 254,
+        "evictions": 191,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 12,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 2687,
+      "max_graph_operator_error": 3.6876850200590406e-15,
+      "max_qasm_operator_error": 1.6682232373515109e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 226.18922113999724,
+      "first_passage_seconds": {
+        "39": 14.76776602800237,
+        "38": 15.327473299985286,
+        "37": 64.35640082298778,
+        "36": 188.97050587798003,
+        "35": null
+      },
+      "duplicate_successors": 634,
+      "raw_graph_keys": 4255,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "66aa8cba8ba9ec202d24bbe12a7000408edba5b29eae8ec074b5be5473836372",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "2de43957ef8a5f96a2db0431ae5ca877723a519a12ba42de1477a7df295cf857",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 231,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 640,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 3115,
+      "untried_logged_actions": 31510,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 36.47237024338159
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 11,
+      "folder": "legacy_serialized_s11",
+      "status": "retained_frontier_exhausted",
+      "transitions": 8696,
+      "accepted": 8696,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "9cd1be4082b32c50140479c02e5353a736357c361e7b0da65b5c88a04c9cd547",
+        "seconds": 267.2756415559561
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 5411,
+        "ID": 1468,
+        "PV": 747,
+        "PVB": 1070
+      },
+      "accepted_counts": {
+        "PVG": 5411,
+        "ID": 1468,
+        "PV": 747,
+        "PVB": 1070
+      },
+      "rejections": {},
+      "index": {
+        "states": 5539,
+        "hits": 13123,
+        "exact_isomorphism_comparisons": 13123,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 8293,
+        "serialized_attempted_actions": 8696
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 384,
+        "evictions": 321,
+        "objective": "nam",
+        "best": [
+          37,
+          13
+        ],
+        "max_distance": 13,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 3866,
+      "max_graph_operator_error": 3.777001278024757e-15,
+      "max_qasm_operator_error": 1.4957139510615702e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 442.7828282589908,
+      "first_passage_seconds": {
+        "39": 1.5423205039696768,
+        "38": 12.809795815963298,
+        "37": 41.45637445396278,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 3158,
+      "raw_graph_keys": 8588,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "d6bd95a7ee6e5a46ae280db0044367a7611208841131aa20631103963677f0e8",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "e08008bc0d49cf18f24f82c7712f0acf94ee0fc71213c59cc31d2e29bbd46d82",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 637,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 1425,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 6432,
+      "untried_logged_actions": 46919,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.09301415128983
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 29,
+      "folder": "legacy_serialized_s29",
+      "status": "retained_frontier_exhausted",
+      "transitions": 8019,
+      "accepted": 8019,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 34
+        },
+        "sha256": "171ad69d69cf8a808b567ddcf8c606b3050208f174c8f8a923d3e2ef21fd835f",
+        "seconds": 30.159844259964302
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 5093,
+        "PVB": 980,
+        "PV": 720,
+        "ID": 1226
+      },
+      "accepted_counts": {
+        "PVG": 5093,
+        "PVB": 980,
+        "PV": 720,
+        "ID": 1226
+      },
+      "rejections": {},
+      "index": {
+        "states": 5569,
+        "hits": 11695,
+        "exact_isomorphism_comparisons": 11695,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 7646,
+        "serialized_attempted_actions": 8019
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 291,
+        "evictions": 228,
+        "objective": "nam",
+        "best": [
+          37,
+          15
+        ],
+        "max_distance": 6,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 4293,
+      "max_graph_operator_error": 3.902956582889176e-15,
+      "max_qasm_operator_error": 1.5562935128250673e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 430.65227677096846,
+      "first_passage_seconds": {
+        "39": 5.091591514996253,
+        "38": 21.599040839995723,
+        "37": 30.159844259964302,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 2451,
+      "raw_graph_keys": 7842,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "d5a45c72baaf1896bbe8f4020974959dedd3e7a3bc2edced18b3fcafa69e526c",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "495a5435c557ce5599bc2cbc0613e55ccfe8f4591db9bcb7d59ee3e57be1185d",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 496,
+      "max_isomorphic_gate_spread": 25,
+      "unretained_successors_without_logged_outgoing_actions": 1239,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 5938,
+      "untried_logged_actions": 42734,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.09475079435826
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 47,
+      "folder": "legacy_serialized_s47",
+      "status": "retained_frontier_exhausted",
+      "transitions": 3768,
+      "accepted": 3768,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "f467f5db8b4c1dbbbf5954b29fea0b55fc463164fe2b7b3a2d44e789697cb199",
+        "seconds": 158.95034667599248
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2394,
+        "ID": 611,
+        "PV": 325,
+        "PVB": 438
+      },
+      "accepted_counts": {
+        "PVG": 2394,
+        "ID": 611,
+        "PV": 325,
+        "PVB": 438
+      },
+      "rejections": {},
+      "index": {
+        "states": 2991,
+        "hits": 5118,
+        "exact_isomorphism_comparisons": 5118,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 3633,
+        "serialized_attempted_actions": 3768
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 291,
+        "evictions": 228,
+        "objective": "nam",
+        "best": [
+          37,
+          13
+        ],
+        "max_distance": 11,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 2194,
+      "max_graph_operator_error": 3.792083980059936e-15,
+      "max_qasm_operator_error": 1.5553031891404221e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 195.01453810295789,
+      "first_passage_seconds": {
+        "39": 16.974473504989874,
+        "38": 22.284607371955644,
+        "37": 23.02655192394741,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 778,
+      "raw_graph_keys": 3714,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "1e23850257401f27c2587b858e1ea8d4fa87c4055bb15c20fcd2ed8201dd541e",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "8e9bdc7c08476244b5f5472218d5d2adc284d95de02b484197232d63967bff30",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 193,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 545,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 2808,
+      "untried_logged_actions": 23767,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.10380938800149
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 11,
+      "folder": "legacy_serialized_frozen_s11",
+      "status": "retained_frontier_exhausted",
+      "transitions": 7653,
+      "accepted": 7653,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "6112849371486b5b8a8acdaf971a8849ea156bf9dc624fd4a1326287c54de796",
+        "seconds": 67.50327051698696
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 4587,
+        "PVB": 971,
+        "PV": 808,
+        "ID": 1287
+      },
+      "accepted_counts": {
+        "PVG": 4587,
+        "PVB": 971,
+        "PV": 808,
+        "ID": 1287
+      },
+      "rejections": {},
+      "index": {
+        "states": 5403,
+        "hits": 11164,
+        "exact_isomorphism_comparisons": 11164,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 7432,
+        "serialized_attempted_actions": 7653
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 306,
+        "evictions": 243,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 8,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 4118,
+      "max_graph_operator_error": 3.691578940718515e-15,
+      "max_qasm_operator_error": 1.4770556661825108e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 434.3627170959953,
+      "first_passage_seconds": {
+        "39": 1.368745443993248,
+        "38": 9.53727152501233,
+        "37": 9.53727152501233,
+        "36": 67.50327051698696,
+        "35": null
+      },
+      "duplicate_successors": 2251,
+      "raw_graph_keys": 7551,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "745264c8ca7675202306dd3b68539662a27a8462a9052bb62d9d70d43dd3c724",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "62f95f385db6185af28e764b795bb163ecee3cd3eb14e2c91a67aa4f15bd4aa4",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "d16bb3f7e0abe3af82a6690bfd0c9a8e063b2a0af6018ad53c481ac7330665c9",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 563,
+      "max_isomorphic_gate_spread": 21,
+      "unretained_successors_without_logged_outgoing_actions": 1173,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 5595,
+      "untried_logged_actions": 40876,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 36.146577598351676
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 29,
+      "folder": "legacy_serialized_frozen_s29",
+      "status": "retained_frontier_exhausted",
+      "transitions": 4620,
+      "accepted": 4620,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "8a18eb039364ccf222cccb6a34c0cc53d7bb7a55a51ef7869401f78bc72e222c",
+        "seconds": 79.02421517396579
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2910,
+        "PVB": 636,
+        "PV": 282,
+        "ID": 792
+      },
+      "accepted_counts": {
+        "PVG": 2910,
+        "PVB": 636,
+        "PV": 282,
+        "ID": 792
+      },
+      "rejections": {},
+      "index": {
+        "states": 2694,
+        "hits": 7410,
+        "exact_isomorphism_comparisons": 7410,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 4471,
+        "serialized_attempted_actions": 4620
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 223,
+        "evictions": 160,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 7,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 1951,
+      "max_graph_operator_error": 3.805161050039619e-15,
+      "max_qasm_operator_error": 1.448085813565212e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 250.34922331100097,
+      "first_passage_seconds": {
+        "39": 6.591021216998342,
+        "38": 10.359552042966243,
+        "37": 78.72161290200893,
+        "36": 79.02421517396579,
+        "35": null
+      },
+      "duplicate_successors": 1927,
+      "raw_graph_keys": 4552,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "43f70efd347ac2613a58e4dab4f0e0850c00ddb5661b74514a9976a2a543f3a1",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "c5ee89e08c23dc00990db9e1ac9b3bed61757581ef9324b013c78dd1e5a554d3",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "25b2f56b5241c682f96f3913f9bbf1a4f19819261e49741365fcc03094c70fcf",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 369,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 819,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 3210,
+      "untried_logged_actions": 21464,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 36.291160668893234
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 47,
+      "folder": "legacy_serialized_frozen_s47",
+      "status": "retained_frontier_exhausted",
+      "transitions": 5349,
+      "accepted": 5349,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 33
+        },
+        "sha256": "078ba372f13920a67b4c76ee1188e3714c2c11d3d14a23a3224c6992f0ff8b48",
+        "seconds": 145.30280081101228
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 3583,
+        "PV": 340,
+        "PVB": 559,
+        "ID": 867
+      },
+      "accepted_counts": {
+        "PVG": 3583,
+        "PV": 340,
+        "PVB": 559,
+        "ID": 867
+      },
+      "rejections": {},
+      "index": {
+        "states": 2809,
+        "hits": 8736,
+        "exact_isomorphism_comparisons": 8736,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 5029,
+        "serialized_attempted_actions": 5349
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 240,
+        "evictions": 177,
+        "objective": "nam",
+        "best": [
+          37,
+          15
+        ],
+        "max_distance": 4,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 2290,
+      "max_graph_operator_error": 3.774915347157652e-15,
+      "max_qasm_operator_error": 1.5562935128250673e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 295.07492883800296,
+      "first_passage_seconds": {
+        "39": 3.1713313230429776,
+        "38": 14.737000588036608,
+        "37": 145.30280081101228,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 2541,
+      "raw_graph_keys": 5293,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "13f2fd5dbaefba7aaeb25b31dc1cd56a32988316717228e2b55393aa35b6dae7",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "467a77424d9630d3acd53c46dec01740defbee5def375a1f089475cb2ed3612e",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "5603823f4967f105ab7ae38dc176e4f7c4b5722ac4de96e2c9dbd452ed73c95b",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 370,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 967,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 3820,
+      "untried_logged_actions": 25734,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.27201855453682
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 11,
+      "folder": "legacy_serialized_online_s11",
+      "status": "retained_frontier_exhausted",
+      "transitions": 5502,
+      "accepted": 5502,
+      "updates": 42,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 15,
+          "depth": 32
+        },
+        "sha256": "c54ad4178e35b8352b8040ab7fa8feb1dcaa84aad3533a9375b9965c616acd7e",
+        "seconds": 10.015844039036892
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 3627,
+        "PVB": 408,
+        "PV": 394,
+        "ID": 1073
+      },
+      "accepted_counts": {
+        "PVG": 3627,
+        "PVB": 408,
+        "PV": 394,
+        "ID": 1073
+      },
+      "rejections": {},
+      "index": {
+        "states": 3540,
+        "hits": 8503,
+        "exact_isomorphism_comparisons": 8503,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 5286,
+        "serialized_attempted_actions": 5502
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 249,
+        "evictions": 186,
+        "objective": "nam",
+        "best": [
+          37,
+          15
+        ],
+        "max_distance": 12,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 2607,
+      "max_graph_operator_error": 3.579774828149349e-15,
+      "max_qasm_operator_error": 1.4565728360562607e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 335.3877244780306,
+      "first_passage_seconds": {
+        "39": 1.3791508190333843,
+        "38": 10.015844039036892,
+        "37": 10.015844039036892,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 1963,
+      "raw_graph_keys": 5348,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "745264c8ca7675202306dd3b68539662a27a8462a9052bb62d9d70d43dd3c724",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "19ca182824ea6d7a53a53994e9b2bf557ed6d67509f07d2f4446117b325cbbc5",
+      "updates_sha256": "a3fa408055fb833e9f168f96006e4aae8d40097548802e8ccbe4612d27e36387",
+      "protocol_sha256": "da5a55e27f05c3e3cfef0386d341362e03305ffa7e6fafef8862b1a3fadf7ca5",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 359,
+      "max_isomorphic_gate_spread": 25,
+      "unretained_successors_without_logged_outgoing_actions": 909,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 3927,
+      "untried_logged_actions": 26456,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.03568473149518,
+      "learning": {
+        "policy_loss": {
+          "first": -2.896097721531987e-05,
+          "last": -0.00037320473929867146
+        },
+        "value_loss": {
+          "first": 0.5981395559385418,
+          "last": 0.4023581102490425
+        },
+        "entropy": {
+          "first": 2.172625193744898,
+          "last": 1.3398463256657123
+        },
+        "approx_kl": {
+          "first": 9.703217074275017e-08,
+          "last": 2.336314646527171e-05
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.0
+        },
+        "value_explained_variance_after": {
+          "first": -0.002177576553504501,
+          "last": 0.27361373399964606
+        },
+        "normalized_entropy": {
+          "first": 0.9398419666184218,
+          "last": 0.8816553189457432
+        },
+        "conditional_normalized_entropy": {
+          "first": 0.999998053982417,
+          "last": 0.9995680061325825
+        },
+        "forced_action_fraction": {
+          "first": 0.06015625,
+          "last": 0.11796875
+        },
+        "optimizer_steps": 672
+      }
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 29,
+      "folder": "legacy_serialized_online_s29",
+      "status": "retained_frontier_exhausted",
+      "transitions": 5853,
+      "accepted": 5853,
+      "updates": 45,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "8a18eb039364ccf222cccb6a34c0cc53d7bb7a55a51ef7869401f78bc72e222c",
+        "seconds": 108.49744975799695
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 3518,
+        "PVB": 832,
+        "PV": 514,
+        "ID": 989
+      },
+      "accepted_counts": {
+        "PVG": 3518,
+        "PVB": 832,
+        "PV": 514,
+        "ID": 989
+      },
+      "rejections": {},
+      "index": {
+        "states": 3634,
+        "hits": 9057,
+        "exact_isomorphism_comparisons": 9057,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 5655,
+        "serialized_attempted_actions": 5853
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 305,
+        "evictions": 242,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 6,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 2608,
+      "max_graph_operator_error": 3.6954222340646484e-15,
+      "max_qasm_operator_error": 1.6031097647355052e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 350.84445038303966,
+      "first_passage_seconds": {
+        "39": 6.600676098023541,
+        "38": 8.74564823700348,
+        "37": 107.80365237302613,
+        "36": 108.49744975799695,
+        "35": null
+      },
+      "duplicate_successors": 2220,
+      "raw_graph_keys": 5793,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "43f70efd347ac2613a58e4dab4f0e0850c00ddb5661b74514a9976a2a543f3a1",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "3ec94764e5b53977f5dd23592721de67f0c27af9cb599eb5aeb4e89eaa9658d0",
+      "updates_sha256": "c4b763d8971af3bb5cdce4700ec84fe9cfd1d6acc0832d05e9f2701efda58015",
+      "protocol_sha256": "df42db7d8c51387373617d21595b22220ce55d23ef630f640e79eeece9b37e8f",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 430,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 999,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 4239,
+      "untried_logged_actions": 28633,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 36.38607904411008,
+      "learning": {
+        "policy_loss": {
+          "first": -1.9795441238040272e-05,
+          "last": -0.0022958847164938397
+        },
+        "value_loss": {
+          "first": 0.6215371076356281,
+          "last": 0.5998559287664565
+        },
+        "entropy": {
+          "first": 2.1983909627253357,
+          "last": 1.2435924458232792
+        },
+        "approx_kl": {
+          "first": 2.345239574258978e-08,
+          "last": 0.0008841614286542277
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.011541193181818182
+        },
+        "value_explained_variance_after": {
+          "first": 0.001034355134194062,
+          "last": 0.21543807986899832
+        },
+        "normalized_entropy": {
+          "first": 0.9474421686606171,
+          "last": 0.8572369216617995
+        },
+        "conditional_normalized_entropy": {
+          "first": 0.9999989187142561,
+          "last": 0.9931549992111506
+        },
+        "forced_action_fraction": {
+          "first": 0.052556818181818184,
+          "last": 0.13707386363636365
+        },
+        "optimizer_steps": 720
+      }
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 47,
+      "folder": "legacy_serialized_online_s47",
+      "status": "retained_frontier_exhausted",
+      "transitions": 6040,
+      "accepted": 6040,
+      "updates": 47,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "8a18eb039364ccf222cccb6a34c0cc53d7bb7a55a51ef7869401f78bc72e222c",
+        "seconds": 279.6589742730139
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 3937,
+        "PV": 519,
+        "PVB": 612,
+        "ID": 972
+      },
+      "accepted_counts": {
+        "PVG": 3937,
+        "PV": 519,
+        "PVB": 612,
+        "ID": 972
+      },
+      "rejections": {},
+      "index": {
+        "states": 4094,
+        "hits": 9047,
+        "exact_isomorphism_comparisons": 9047,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 5821,
+        "serialized_attempted_actions": 6040
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 328,
+        "evictions": 265,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 7,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 3247,
+      "max_graph_operator_error": 3.900573935804275e-15,
+      "max_qasm_operator_error": 1.5080245615812922e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 367.7862857620348,
+      "first_passage_seconds": {
+        "39": 3.1077252860413864,
+        "38": 46.97139750100905,
+        "37": 79.51209042500705,
+        "36": 279.6589742730139,
+        "35": null
+      },
+      "duplicate_successors": 1947,
+      "raw_graph_keys": 5952,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": "13f2fd5dbaefba7aaeb25b31dc1cd56a32988316717228e2b55393aa35b6dae7",
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "884e3dcd74cf7a405add92c919d0ca977725b5447f7189c4bd79815866d044f4",
+      "updates_sha256": "2dbdb0e0a40d643a4719d3b02de1b22d915a617c8c8f8e04b85ec68a6566682d",
+      "protocol_sha256": "b54afbbc94d931015a7c94e6d46620b2907a56214803838d99ca1f8968798383",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 487,
+      "max_isomorphic_gate_spread": 23,
+      "unretained_successors_without_logged_outgoing_actions": 1026,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 4389,
+      "untried_logged_actions": 32000,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 36.682083645808454,
+      "learning": {
+        "policy_loss": {
+          "first": -1.5125964471901005e-05,
+          "last": -0.0005670985132879155
+        },
+        "value_loss": {
+          "first": 0.6027457940984856,
+          "last": 0.57598303376951
+        },
+        "entropy": {
+          "first": 2.2978612658652393,
+          "last": 1.3110319040715694
+        },
+        "approx_kl": {
+          "first": 1.3250180266120216e-08,
+          "last": 7.404678564688021e-05
+        },
+        "clip_fraction": {
+          "first": 0.0,
+          "last": 0.0
+        },
+        "value_explained_variance_after": {
+          "first": -0.0009342552958507833,
+          "last": 0.2178913131259196
+        },
+        "normalized_entropy": {
+          "first": 0.9495737080570269,
+          "last": 0.8703162046286256
+        },
+        "conditional_normalized_entropy": {
+          "first": 0.9999998325768226,
+          "last": 0.9978436193673542
+        },
+        "forced_action_fraction": {
+          "first": 0.05042613636363636,
+          "last": 0.1278409090909091
+        },
+        "optimizer_steps": 752
+      }
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 11,
+      "folder": "legacy_uniform_s11",
+      "status": "budget_reached",
+      "transitions": 12563,
+      "accepted": 12562,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "8a18eb039364ccf222cccb6a34c0cc53d7bb7a55a51ef7869401f78bc72e222c",
+        "seconds": 153.43636550597148
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 8751,
+        "ID": 1517,
+        "PV": 1056,
+        "PVB": 1239
+      },
+      "accepted_counts": {
+        "PVG": 8750,
+        "ID": 1517,
+        "PV": 1056,
+        "PVB": 1239
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 8466,
+        "hits": 18123,
+        "exact_isomorphism_comparisons": 18123,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 1008,
+        "evictions": 945,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 17,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 5607,
+      "max_graph_operator_error": 3.792522525684307e-15,
+      "max_qasm_operator_error": 1.667183881801782e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0072577099781,
+      "first_passage_seconds": {
+        "39": 2.8914763020002283,
+        "38": 2.8914763020002283,
+        "37": 153.43636550597148,
+        "36": 153.43636550597148,
+        "35": null
+      },
+      "duplicate_successors": 4097,
+      "raw_graph_keys": 9493,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "a4dfef3e581f68ec7f119ed6c790ad406714045adc00cf2d8bbd86b1ab02752d",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "5841e8f310cfae40c2ffb628bdc7914e5411406b67e734e9ea31974296539aaa",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 313,
+      "max_isomorphic_gate_spread": 19,
+      "unretained_successors_without_logged_outgoing_actions": 999,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 0,
+      "untried_logged_actions": 0,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.52109280602657
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 29,
+      "folder": "legacy_uniform_s29",
+      "status": "budget_reached",
+      "transitions": 11763,
+      "accepted": 11762,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "1ad3b2a103d32e83c1d601fa79b0674cc6e2fd867fb8e5ebdbfdc8f3ad17d394",
+        "seconds": 111.39358442800585
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 7850,
+        "PVB": 1057,
+        "PV": 1563,
+        "ID": 1293
+      },
+      "accepted_counts": {
+        "PVG": 7849,
+        "PVB": 1057,
+        "PV": 1563,
+        "ID": 1293
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 9521,
+        "hits": 15273,
+        "exact_isomorphism_comparisons": 15273,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 1130,
+        "evictions": 1067,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 17,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 6272,
+      "max_graph_operator_error": 3.792522525684307e-15,
+      "max_qasm_operator_error": 1.672719648717554e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0033451860072,
+      "first_passage_seconds": {
+        "39": 1.9700944580254145,
+        "38": 40.57426641101483,
+        "37": 78.065988346003,
+        "36": 111.39358442800585,
+        "35": null
+      },
+      "duplicate_successors": 2242,
+      "raw_graph_keys": 10332,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "dc4aa4a28fe3933cc7ddda68acbaf16128603feed62fabf984baa4c3b472814f",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "1a799d91a810f25a94e0bd145106ce97324c5f38b24c11bacb7a89125b97d3ba",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 307,
+      "max_isomorphic_gate_spread": 23,
+      "unretained_successors_without_logged_outgoing_actions": 943,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 0,
+      "untried_logged_actions": 0,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.386673222738416
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 47,
+      "folder": "legacy_uniform_s47",
+      "status": "budget_reached",
+      "transitions": 11919,
+      "accepted": 11918,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 34
+        },
+        "sha256": "60b81305e69df3732fd08a81c292849d5d9385934a7ac3a90134ed3c1f23cff8",
+        "seconds": 530.1315014360007
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 7495,
+        "ID": 1754,
+        "PV": 1382,
+        "PVB": 1288
+      },
+      "accepted_counts": {
+        "PVG": 7495,
+        "ID": 1754,
+        "PV": 1381,
+        "PVB": 1288
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 8615,
+        "hits": 16600,
+        "exact_isomorphism_comparisons": 16600,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "structural",
+        "serialized_registries": 0,
+        "serialized_attempted_actions": 0
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 953,
+        "evictions": 890,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 17,
+        "representative_replacements": 0
+      },
+      "checked_qasm": 5861,
+      "max_graph_operator_error": 3.8927409053194674e-15,
+      "max_qasm_operator_error": 1.7763568394002505e-15,
+      "verification": "passed",
+      "budget_seconds": 600.0,
+      "total_loop_seconds": 600.0033245750237,
+      "first_passage_seconds": {
+        "39": 15.014397778024431,
+        "38": 78.95295654801885,
+        "37": 113.70130928599974,
+        "36": 530.1315014360007,
+        "35": null
+      },
+      "duplicate_successors": 3304,
+      "raw_graph_keys": 9882,
+      "git_commit": "11fc4e016f5d692013a5d1cfdf15e5ac721138d3",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:45:41) [GCC 13.3.0]",
+        "platform": "Linux-5.15.0-47-generic-x86_64-with-glibc2.35",
+        "torch": "2.9.0+cu129",
+        "numpy": "1.26.4"
+      },
+      "events_sha256": "dba57d063f97732675074e40e2dec37f1f75d03b3c0bd95bca974acb0ef89236",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "64f9256e17f36add651f07eef251b698354bf93b2a3fdebc1d6b51d5967b4942",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 325,
+      "max_isomorphic_gate_spread": 29,
+      "unretained_successors_without_logged_outgoing_actions": 1110,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 0,
+      "untried_logged_actions": 0,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 37.22966694174674
+    }
+  ],
+  "aggregate": [
+    {
+      "arm": "legacy_best_representative",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        37,
+        37,
+        36
+      ],
+      "mean_anytime_gates": 36.92741085267322,
+      "mean_transitions": 5791.333333333333,
+      "statuses": [
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted"
+      ],
+      "actual_total_loop_seconds": [
+        429.7978591910214,
+        256.8677386799827,
+        226.0763900829479
+      ],
+      "early_exhausted_runs": 3,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 2832,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 0,
+      "duplicate_successor_fraction": 0.21330724070450097
+    },
+    {
+      "arm": "legacy_dedup",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        37,
+        37,
+        36
+      ],
+      "mean_anytime_gates": 36.927983883369926,
+      "mean_transitions": 5791.333333333333,
+      "statuses": [
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted"
+      ],
+      "actual_total_loop_seconds": [
+        432.94969725899864,
+        254.77150149695808,
+        226.18922113999724
+      ],
+      "early_exhausted_runs": 3,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 2832,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 0,
+      "duplicate_successor_fraction": 0.21330724070450097
+    },
+    {
+      "arm": "legacy_serialized",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        37,
+        37,
+        37
+      ],
+      "mean_anytime_gates": 37.09719144454986,
+      "mean_transitions": 6827.666666666667,
+      "statuses": [
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted"
+      ],
+      "actual_total_loop_seconds": [
+        442.7828282589908,
+        430.65227677096846,
+        195.01453810295789
+      ],
+      "early_exhausted_runs": 3,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 3209,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 0,
+      "duplicate_successor_fraction": 0.31181955768198016
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        36,
+        36,
+        37
+      ],
+      "mean_anytime_gates": 36.56991894059391,
+      "mean_transitions": 5874.0,
+      "statuses": [
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted"
+      ],
+      "actual_total_loop_seconds": [
+        434.3627170959953,
+        250.34922331100097,
+        295.07492883800296
+      ],
+      "early_exhausted_runs": 3,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 2959,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 0,
+      "duplicate_successor_fraction": 0.3812847576892521
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        37,
+        36,
+        36
+      ],
+      "mean_anytime_gates": 36.701282473804575,
+      "mean_transitions": 5798.333333333333,
+      "statuses": [
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted",
+        "retained_frontier_exhausted"
+      ],
+      "actual_total_loop_seconds": [
+        335.3877244780306,
+        350.84445038303966,
+        367.7862857620348
+      ],
+      "early_exhausted_runs": 3,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 2934,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 0,
+      "duplicate_successor_fraction": 0.35240011497556767
+    },
+    {
+      "arm": "legacy_uniform",
+      "seeds": [
+        11,
+        29,
+        47
+      ],
+      "final_gates": [
+        36,
+        36,
+        36
+      ],
+      "mean_anytime_gates": 36.712477656837244,
+      "mean_transitions": 12081.666666666666,
+      "statuses": [
+        "budget_reached",
+        "budget_reached",
+        "budget_reached"
+      ],
+      "actual_total_loop_seconds": [
+        600.0072577099781,
+        600.0033451860072,
+        600.0033245750237
+      ],
+      "early_exhausted_runs": 0,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 3052,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 3,
+      "duplicate_successor_fraction": 0.26607251255449477
+    }
+  ],
+  "best_source": {
+    "arm": "legacy_best_representative",
+    "seed": 47,
+    "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84"
+  }
+}

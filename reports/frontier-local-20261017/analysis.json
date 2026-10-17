@@ -1,0 +1,274 @@
+{
+  "status": "passed",
+  "scope": "same-case pilot only; all arms/seeds; no generalization or completeness claim",
+  "campaign_sha256": "e64676636813d6577c8a70c4bad6f170d9be8764e9aa12bef7f1bca2435c9346",
+  "summary_sha256": "daedbeacc38c7698b92f1260f1b0e17f7de57c9391cea61558633bd6a61b4008",
+  "budget_seconds": 300.0,
+  "trials": [
+    {
+      "arm": "serialized",
+      "seed": 47,
+      "folder": "serialized_s47",
+      "status": "retained_frontier_exhausted",
+      "transitions": 3768,
+      "accepted": 3768,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 37,
+          "cx": 13,
+          "depth": 32
+        },
+        "sha256": "f467f5db8b4c1dbbbf5954b29fea0b55fc463164fe2b7b3a2d44e789697cb199",
+        "seconds": 153.379080917
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 2394,
+        "ID": 611,
+        "PV": 325,
+        "PVB": 438
+      },
+      "accepted_counts": {
+        "PVG": 2394,
+        "ID": 611,
+        "PV": 325,
+        "PVB": 438
+      },
+      "rejections": {},
+      "index": {
+        "states": 2991,
+        "hits": 5118,
+        "exact_isomorphism_comparisons": 5118,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 3633,
+        "serialized_attempted_actions": 3768
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 291,
+        "evictions": 228,
+        "objective": "nam",
+        "best": [
+          37,
+          13
+        ],
+        "max_distance": 11,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 0,
+        "capacity": 0,
+        "insertions": 0,
+        "evictions": 0,
+        "resumptions": 0
+      },
+      "checked_qasm": 2194,
+      "max_graph_operator_error": 3.902613428879243e-15,
+      "max_qasm_operator_error": 1.451804990739938e-15,
+      "verification": "passed",
+      "budget_seconds": 300.0,
+      "total_loop_seconds": 189.289304334,
+      "first_passage_seconds": {
+        "39": 16.351754874999997,
+        "38": 21.233979792,
+        "37": 21.842688209,
+        "36": null,
+        "35": null
+      },
+      "duplicate_successors": 778,
+      "raw_graph_keys": 3714,
+      "git_commit": "aea4f7247fe9dc69e14f4a3864d3b03c6b5bfc2e",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+        "platform": "macOS-15.5-arm64-arm-64bit",
+        "torch": "2.6.0",
+        "numpy": "2.0.2"
+      },
+      "events_sha256": "8ca43549055eed2777db32905f554907cf27f6129963458f0a1556fd5064819e",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "3ac9e2390f3d4f13f44e013446d55fcd7864dc503ffd337d3ca3364d0b77872d",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 0,
+      "isomorphic_states_with_different_extraction_cost": 193,
+      "max_isomorphic_gate_spread": 22,
+      "unretained_successors_without_logged_outgoing_actions": 545,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 2808,
+      "untried_logged_actions": 23767,
+      "deferred_resumptions": 0,
+      "retained_frontier_exhausted": true,
+      "mean_anytime_gates": 37.19809474292001
+    },
+    {
+      "arm": "serialized_frontier",
+      "seed": 47,
+      "folder": "serialized_frontier_s47",
+      "status": "budget_reached",
+      "transitions": 6063,
+      "accepted": 6062,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 36,
+          "cx": 14,
+          "depth": 35
+        },
+        "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84",
+        "seconds": 214.18771049999998
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 3774,
+        "ID": 1049,
+        "PV": 469,
+        "PVB": 771
+      },
+      "accepted_counts": {
+        "PVG": 3773,
+        "ID": 1049,
+        "PV": 469,
+        "PVB": 771
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "index": {
+        "states": 4099,
+        "hits": 8987,
+        "exact_isomorphism_comparisons": 8987,
+        "attempted_actions": 0
+      },
+      "action_registry": {
+        "scope": "serialized",
+        "serialized_registries": 5844,
+        "serialized_attempted_actions": 6063
+      },
+      "buffer": {
+        "size": 64,
+        "capacity": 64,
+        "insertions": 396,
+        "evictions": 333,
+        "objective": "nam",
+        "best": [
+          36,
+          14
+        ],
+        "max_distance": 7,
+        "representative_replacements": 0
+      },
+      "deferred": {
+        "size": 512,
+        "capacity": 512,
+        "insertions": 4793,
+        "evictions": 3951,
+        "resumptions": 262
+      },
+      "checked_qasm": 2974,
+      "max_graph_operator_error": 3.902613428879243e-15,
+      "max_qasm_operator_error": 1.451804990739938e-15,
+      "verification": "passed",
+      "budget_seconds": 300.0,
+      "total_loop_seconds": 300.003775375,
+      "first_passage_seconds": {
+        "39": 16.321443958,
+        "38": 21.198445958,
+        "37": 21.807305875,
+        "36": 214.18771049999998,
+        "35": null
+      },
+      "duplicate_successors": 1964,
+      "raw_graph_keys": 5981,
+      "git_commit": "aea4f7247fe9dc69e14f4a3864d3b03c6b5bfc2e",
+      "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+      "initial_tensor_sha256": null,
+      "software": {
+        "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+        "platform": "macOS-15.5-arm64-arm-64bit",
+        "torch": "2.6.0",
+        "numpy": "2.0.2"
+      },
+      "events_sha256": "b611490b259fa55fc8e0433673ba7b5925ca707ff54db47e196a7c9aaa5dfff7",
+      "updates_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "protocol_sha256": "af4e4ffd45b85c77eef10ef548539b38b5318c01ab799d46744f8910bd9f40b8",
+      "invalid_proposals": 0,
+      "deadline_exclusions": 1,
+      "isomorphic_states_with_different_extraction_cost": 380,
+      "max_isomorphic_gate_spread": 24,
+      "unretained_successors_without_logged_outgoing_actions": 932,
+      "representative_replacements": 0,
+      "registries_with_untried_logged_actions": 4443,
+      "untried_logged_actions": 32159,
+      "deferred_resumptions": 262,
+      "retained_frontier_exhausted": false,
+      "mean_anytime_gates": 36.91171635430336
+    }
+  ],
+  "aggregate": [
+    {
+      "arm": "serialized",
+      "seeds": [
+        47
+      ],
+      "final_gates": [
+        37
+      ],
+      "mean_anytime_gates": 37.19809474292001,
+      "mean_transitions": 3768.0,
+      "statuses": [
+        "retained_frontier_exhausted"
+      ],
+      "actual_total_loop_seconds": [
+        189.289304334
+      ],
+      "early_exhausted_runs": 1,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 545,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 0,
+      "duplicate_successor_fraction": 0.2064755838641189
+    },
+    {
+      "arm": "serialized_frontier",
+      "seeds": [
+        47
+      ],
+      "final_gates": [
+        36
+      ],
+      "mean_anytime_gates": 36.91171635430336,
+      "mean_transitions": 6063.0,
+      "statuses": [
+        "budget_reached"
+      ],
+      "actual_total_loop_seconds": [
+        300.003775375
+      ],
+      "early_exhausted_runs": 0,
+      "representative_replacements": 0,
+      "unretained_successors_without_logged_outgoing_actions": 932,
+      "rejection_fraction": 0.0,
+      "deadline_exclusions": 1,
+      "duplicate_successor_fraction": 0.3239854833388321
+    }
+  ],
+  "best_source": {
+    "arm": "serialized_frontier",
+    "seed": 47,
+    "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84"
+  }
+}

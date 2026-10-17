@@ -1,0 +1,173 @@
+{
+  "status": "passed",
+  "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+  "trials": 18,
+  "saved_qasm_files_checked": 64302,
+  "distinct_qasm_operators_checked": 43388,
+  "max_operator_error": 1.902016510847628e-15,
+  "checks": "NAM gate counts, fixed named wires, all 32x32 operator entries, unit-modulus global phase only, rewards, deadlines, node bounds, transition chains, exact-key cost consistency and serialized action-registry uniqueness",
+  "records": [
+    {
+      "arm": "legacy_best_representative",
+      "seed": 11,
+      "transitions": 8255,
+      "accepted": 8255,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_best_representative",
+      "seed": 29,
+      "transitions": 4818,
+      "accepted": 4818,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_best_representative",
+      "seed": 47,
+      "transitions": 4301,
+      "accepted": 4301,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 11,
+      "transitions": 8255,
+      "accepted": 8255,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 29,
+      "transitions": 4818,
+      "accepted": 4818,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_dedup",
+      "seed": 47,
+      "transitions": 4301,
+      "accepted": 4301,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 11,
+      "transitions": 8696,
+      "accepted": 8696,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 29,
+      "transitions": 8019,
+      "accepted": 8019,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized",
+      "seed": 47,
+      "transitions": 3768,
+      "accepted": 3768,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 11,
+      "transitions": 7653,
+      "accepted": 7653,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 29,
+      "transitions": 4620,
+      "accepted": 4620,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_frozen",
+      "seed": 47,
+      "transitions": 5349,
+      "accepted": 5349,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 11,
+      "transitions": 5502,
+      "accepted": 5502,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 29,
+      "transitions": 5853,
+      "accepted": 5853,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_serialized_online",
+      "seed": 47,
+      "transitions": 6040,
+      "accepted": 6040,
+      "serialized_action_pruning_checked": true,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 11,
+      "transitions": 12563,
+      "accepted": 12562,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 29,
+      "transitions": 11763,
+      "accepted": 11762,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    },
+    {
+      "arm": "legacy_uniform",
+      "seed": 47,
+      "transitions": 11919,
+      "accepted": 11918,
+      "serialized_action_pruning_checked": false,
+      "deferred_restart_trajectories_checked": 0,
+      "status": "passed"
+    }
+  ]
+}

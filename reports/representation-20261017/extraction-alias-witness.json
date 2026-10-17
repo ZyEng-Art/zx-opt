@@ -1,0 +1,727 @@
+{
+  "source_run": "runs/download-20261017/extracted/runs/pilot/legacy_dedup_s29",
+  "source_commit": "90589d2f0847188f7cb01f39b38163193369eb8d",
+  "input_sha256": "fdbc0a1b82dbb2c1f9f05a7501a708e1a220cebb015c41dea9ee0d175694b5ea",
+  "root_graph_key": "6673927020ba7ad506f7e4acab7ecfd446a8c6d1bac205e19a53faa63887f709",
+  "witnesses": [
+    {
+      "state": 1548,
+      "graph_key": "22829a1e2ac01f146224a4bbf233d157bbd53ce8a861605910a8685cac1b6b29",
+      "original_cost": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 33
+      },
+      "steps": [
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              14,
+              13
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 42013,
+          "parent_graph_key": "6673927020ba7ad506f7e4acab7ecfd446a8c6d1bac205e19a53faa63887f709",
+          "graph_key": "484e0b5d85676149083715bdccc160f30ea2e660bac961b7097b035e65e22bbc",
+          "cost": {
+            "gates": 42,
+            "cx": 18,
+            "depth": 37
+          },
+          "transition": 407
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              35,
+              34
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 105034,
+          "parent_graph_key": "484e0b5d85676149083715bdccc160f30ea2e660bac961b7097b035e65e22bbc",
+          "graph_key": "fbfdadcd20778b42cf2fed805eac4f7b51c8522e4276046503d814ae6f79ff60",
+          "cost": {
+            "gates": 42,
+            "cx": 18,
+            "depth": 37
+          },
+          "transition": 408
+        },
+        {
+          "action": {
+            "kind": "PVB",
+            "vertices": [
+              11,
+              6
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 33006,
+          "parent_graph_key": "fbfdadcd20778b42cf2fed805eac4f7b51c8522e4276046503d814ae6f79ff60",
+          "graph_key": "0f44bb010b7a52b126107b7ae6ba8c9b086003a3a3ae8cec29c447dbe728d362",
+          "cost": {
+            "gates": 42,
+            "cx": 18,
+            "depth": 37
+          },
+          "transition": 409
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              7,
+              9
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 21009,
+          "parent_graph_key": "0f44bb010b7a52b126107b7ae6ba8c9b086003a3a3ae8cec29c447dbe728d362",
+          "graph_key": "679c2b8e26c7909a2071bb91c1c2d568a69bd0e1dd9e63d4cbd0bf4274ef7aa6",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "transition": 410
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              27,
+              28
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 81028,
+          "parent_graph_key": "679c2b8e26c7909a2071bb91c1c2d568a69bd0e1dd9e63d4cbd0bf4274ef7aa6",
+          "graph_key": "ca737621788aa6084fcf2f88e5d2ac30d51a1409db5f1cfe8e479c45801ed976",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "transition": 826
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              9,
+              6
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 27006,
+          "parent_graph_key": "ca737621788aa6084fcf2f88e5d2ac30d51a1409db5f1cfe8e479c45801ed976",
+          "graph_key": "e53ff0ad71f7508a14864705c994d5847e8d31387c3c8a7e08ad3f695c01bdac",
+          "cost": {
+            "gates": 42,
+            "cx": 18,
+            "depth": 37
+          },
+          "transition": 1908
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              26,
+              27
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 78027,
+          "parent_graph_key": "e53ff0ad71f7508a14864705c994d5847e8d31387c3c8a7e08ad3f695c01bdac",
+          "graph_key": "400388898d4ad7c1c02babd33ef7fe8870bc83fe393687562120933b0ee994b0",
+          "cost": {
+            "gates": 46,
+            "cx": 18,
+            "depth": 41
+          },
+          "transition": 1909
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              18,
+              17
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 54017,
+          "parent_graph_key": "400388898d4ad7c1c02babd33ef7fe8870bc83fe393687562120933b0ee994b0",
+          "graph_key": "ba22eeab0b74c7dc792da4e4ad11421a37693e8f8639ca07d34f54d4df09f23b",
+          "cost": {
+            "gates": 46,
+            "cx": 18,
+            "depth": 41
+          },
+          "transition": 1910
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              14,
+              15
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 42015,
+          "parent_graph_key": "ba22eeab0b74c7dc792da4e4ad11421a37693e8f8639ca07d34f54d4df09f23b",
+          "graph_key": "bd01e67804ba294fbf3be28ac8209c7e747c1c7a27d0968cceafff1c5c9a64e3",
+          "cost": {
+            "gates": 46,
+            "cx": 18,
+            "depth": 40
+          },
+          "transition": 1911
+        },
+        {
+          "action": {
+            "kind": "ID",
+            "vertices": [
+              7
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 9000007,
+          "parent_graph_key": "bd01e67804ba294fbf3be28ac8209c7e747c1c7a27d0968cceafff1c5c9a64e3",
+          "graph_key": "8fa229e5cc4b405e327362f12847290ceaa4c05c2bbb1dece2832ab8a460bca6",
+          "cost": {
+            "gates": 46,
+            "cx": 18,
+            "depth": 40
+          },
+          "transition": 1912
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              21,
+              20
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 63020,
+          "parent_graph_key": "8fa229e5cc4b405e327362f12847290ceaa4c05c2bbb1dece2832ab8a460bca6",
+          "graph_key": "d9a5087dd1ade07e3dea986b340d9b682a9a831c57041e69ed202a1abdb6f8f0",
+          "cost": {
+            "gates": 47,
+            "cx": 21,
+            "depth": 42
+          },
+          "transition": 1913
+        },
+        {
+          "action": {
+            "kind": "PVB",
+            "vertices": [
+              13,
+              5
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 39005,
+          "parent_graph_key": "d9a5087dd1ade07e3dea986b340d9b682a9a831c57041e69ed202a1abdb6f8f0",
+          "graph_key": "e5f838760bed47de7d17f957942634c3e100059b6c676082dbb590745c33acbe",
+          "cost": {
+            "gates": 54,
+            "cx": 24,
+            "depth": 42
+          },
+          "transition": 1914
+        },
+        {
+          "action": {
+            "kind": "PV",
+            "vertices": [
+              46,
+              47
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 138047,
+          "parent_graph_key": "e5f838760bed47de7d17f957942634c3e100059b6c676082dbb590745c33acbe",
+          "graph_key": "36a40618f3720179007724fbe9fe0c9d3f95cefc33458bc93ec6b4c2a219900a",
+          "cost": {
+            "gates": 46,
+            "cx": 20,
+            "depth": 41
+          },
+          "transition": 1915
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              9,
+              8
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 27008,
+          "parent_graph_key": "36a40618f3720179007724fbe9fe0c9d3f95cefc33458bc93ec6b4c2a219900a",
+          "graph_key": "ed6044cda27cb71c9f8df2160c7473656e7cce31cb961350587f3930a69f0108",
+          "cost": {
+            "gates": 45,
+            "cx": 19,
+            "depth": 39
+          },
+          "transition": 1916
+        },
+        {
+          "action": {
+            "kind": "ID",
+            "vertices": [
+              18
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 9000018,
+          "parent_graph_key": "ed6044cda27cb71c9f8df2160c7473656e7cce31cb961350587f3930a69f0108",
+          "graph_key": "98028422a10cb21bf3ee9ae0420cef6848c0c32813cdeb6920a8de9fa47c4287",
+          "cost": {
+            "gates": 46,
+            "cx": 18,
+            "depth": 41
+          },
+          "transition": 1917
+        },
+        {
+          "action": {
+            "kind": "PV",
+            "vertices": [
+              27,
+              28
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 81028,
+          "parent_graph_key": "98028422a10cb21bf3ee9ae0420cef6848c0c32813cdeb6920a8de9fa47c4287",
+          "graph_key": "8eaebf1ab3656c84da81b2329a9e7fc4dd53a200ca9fe7ff46d2d1cc60030839",
+          "cost": {
+            "gates": 55,
+            "cx": 27,
+            "depth": 47
+          },
+          "transition": 1918
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              12,
+              11
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 36011,
+          "parent_graph_key": "8eaebf1ab3656c84da81b2329a9e7fc4dd53a200ca9fe7ff46d2d1cc60030839",
+          "graph_key": "5723bc3fa7f94b76392550a5138ea36e9492b0cc0ac2481c79ee262e40d5da70",
+          "cost": {
+            "gates": 54,
+            "cx": 26,
+            "depth": 45
+          },
+          "transition": 1919
+        },
+        {
+          "action": {
+            "kind": "PVB",
+            "vertices": [
+              13,
+              10
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 39010,
+          "parent_graph_key": "5723bc3fa7f94b76392550a5138ea36e9492b0cc0ac2481c79ee262e40d5da70",
+          "graph_key": "a6af63874f206a54f1fa3d93abe8d250f87e781ace516256a197c9d1fe032bf4",
+          "cost": {
+            "gates": 38,
+            "cx": 16,
+            "depth": 33
+          },
+          "transition": 1920
+        },
+        {
+          "action": {
+            "kind": "PV",
+            "vertices": [
+              42,
+              43
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 126043,
+          "parent_graph_key": "a6af63874f206a54f1fa3d93abe8d250f87e781ace516256a197c9d1fe032bf4",
+          "graph_key": "22829a1e2ac01f146224a4bbf233d157bbd53ce8a861605910a8685cac1b6b29",
+          "cost": {
+            "gates": 38,
+            "cx": 16,
+            "depth": 33
+          },
+          "transition": 1921
+        }
+      ]
+    },
+    {
+      "state": 1548,
+      "graph_key": "b0cfc4ebe56bc0a0b98c6a464a1126a63dc438dc85b5eb107f66033cc45c8bb1",
+      "original_cost": {
+        "gates": 67,
+        "cx": 35,
+        "depth": 47
+      },
+      "steps": [
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              14,
+              13
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 42013,
+          "parent_graph_key": "6673927020ba7ad506f7e4acab7ecfd446a8c6d1bac205e19a53faa63887f709",
+          "graph_key": "484e0b5d85676149083715bdccc160f30ea2e660bac961b7097b035e65e22bbc",
+          "cost": {
+            "gates": 42,
+            "cx": 18,
+            "depth": 37
+          },
+          "transition": 407
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              35,
+              34
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 105034,
+          "parent_graph_key": "484e0b5d85676149083715bdccc160f30ea2e660bac961b7097b035e65e22bbc",
+          "graph_key": "fbfdadcd20778b42cf2fed805eac4f7b51c8522e4276046503d814ae6f79ff60",
+          "cost": {
+            "gates": 42,
+            "cx": 18,
+            "depth": 37
+          },
+          "transition": 408
+        },
+        {
+          "action": {
+            "kind": "PVB",
+            "vertices": [
+              11,
+              6
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 33006,
+          "parent_graph_key": "fbfdadcd20778b42cf2fed805eac4f7b51c8522e4276046503d814ae6f79ff60",
+          "graph_key": "0f44bb010b7a52b126107b7ae6ba8c9b086003a3a3ae8cec29c447dbe728d362",
+          "cost": {
+            "gates": 42,
+            "cx": 18,
+            "depth": 37
+          },
+          "transition": 409
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              7,
+              9
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 21009,
+          "parent_graph_key": "0f44bb010b7a52b126107b7ae6ba8c9b086003a3a3ae8cec29c447dbe728d362",
+          "graph_key": "679c2b8e26c7909a2071bb91c1c2d568a69bd0e1dd9e63d4cbd0bf4274ef7aa6",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "transition": 410
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              27,
+              28
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 81028,
+          "parent_graph_key": "679c2b8e26c7909a2071bb91c1c2d568a69bd0e1dd9e63d4cbd0bf4274ef7aa6",
+          "graph_key": "ca737621788aa6084fcf2f88e5d2ac30d51a1409db5f1cfe8e479c45801ed976",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "transition": 826
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              18,
+              17
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 54017,
+          "parent_graph_key": "ca737621788aa6084fcf2f88e5d2ac30d51a1409db5f1cfe8e479c45801ed976",
+          "graph_key": "b316864f0fad8103a002fb87c7e52002bbe950deb5d4ce4b2f9f8cbc96996519",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "transition": 860
+        },
+        {
+          "action": {
+            "kind": "PV",
+            "vertices": [
+              18,
+              41
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 54041,
+          "parent_graph_key": "b316864f0fad8103a002fb87c7e52002bbe950deb5d4ce4b2f9f8cbc96996519",
+          "graph_key": "051db189c3dfc5f86372f261a0c07db4f7369412be6bf7c41c59113a78498aa5",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "transition": 2257
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              22,
+              18
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 66018,
+          "parent_graph_key": "051db189c3dfc5f86372f261a0c07db4f7369412be6bf7c41c59113a78498aa5",
+          "graph_key": "37ad20f143d48fe94b17e00f3e15fffa50275b39ce3033b09f570aa43856dea3",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "transition": 2792
+        },
+        {
+          "action": {
+            "kind": "PV",
+            "vertices": [
+              18,
+              37
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 54037,
+          "parent_graph_key": "37ad20f143d48fe94b17e00f3e15fffa50275b39ce3033b09f570aa43856dea3",
+          "graph_key": "14b6956cef0a38f50fdd1b701281f0422d358b9c6d7bb04fddddd1a887603900",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "transition": 3069
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              9,
+              6
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 27006,
+          "parent_graph_key": "14b6956cef0a38f50fdd1b701281f0422d358b9c6d7bb04fddddd1a887603900",
+          "graph_key": "24315083686236aa20d3acdc7d924c19ae713b7b9070454817040e75c2b63d13",
+          "cost": {
+            "gates": 50,
+            "cx": 24,
+            "depth": 44
+          },
+          "transition": 3070
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              22,
+              21
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 66021,
+          "parent_graph_key": "24315083686236aa20d3acdc7d924c19ae713b7b9070454817040e75c2b63d13",
+          "graph_key": "fc225c14cc2aae707da6e3cb3c44e87b0baace0ed020a46a7f5526cacf616597",
+          "cost": {
+            "gates": 50,
+            "cx": 24,
+            "depth": 44
+          },
+          "transition": 3071
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              11,
+              10
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 33010,
+          "parent_graph_key": "fc225c14cc2aae707da6e3cb3c44e87b0baace0ed020a46a7f5526cacf616597",
+          "graph_key": "62f859c7a2a9eee001dfa21ce49b82b0e593e592f574e5dff0446f25cc3b2d87",
+          "cost": {
+            "gates": 48,
+            "cx": 20,
+            "depth": 38
+          },
+          "transition": 3072
+        },
+        {
+          "action": {
+            "kind": "ID",
+            "vertices": [
+              7
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 9000007,
+          "parent_graph_key": "62f859c7a2a9eee001dfa21ce49b82b0e593e592f574e5dff0446f25cc3b2d87",
+          "graph_key": "4edf7dd0a41f8532cdb5ab6dd9019773e3b8ba6dec7ecc7b3a5ef1a89f50ea86",
+          "cost": {
+            "gates": 48,
+            "cx": 20,
+            "depth": 38
+          },
+          "transition": 3073
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              17,
+              16
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 51016,
+          "parent_graph_key": "4edf7dd0a41f8532cdb5ab6dd9019773e3b8ba6dec7ecc7b3a5ef1a89f50ea86",
+          "graph_key": "2df126e13af02c1ecc4db1eec7dcc26d696dec3dbde99d4022b631c97685c500",
+          "cost": {
+            "gates": 47,
+            "cx": 19,
+            "depth": 38
+          },
+          "transition": 3074
+        },
+        {
+          "action": {
+            "kind": "ID",
+            "vertices": [
+              17
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 9000017,
+          "parent_graph_key": "2df126e13af02c1ecc4db1eec7dcc26d696dec3dbde99d4022b631c97685c500",
+          "graph_key": "743be6cc7df1b7ded5dbae18bd9a4d30bb7808b036f351c6b1ba15f5b5e0e022",
+          "cost": {
+            "gates": 45,
+            "cx": 19,
+            "depth": 40
+          },
+          "transition": 3075
+        },
+        {
+          "action": {
+            "kind": "PVG",
+            "vertices": [
+              11,
+              12
+            ],
+            "phase": "0",
+            "subset": []
+          },
+          "legacy_identifier": 33012,
+          "parent_graph_key": "743be6cc7df1b7ded5dbae18bd9a4d30bb7808b036f351c6b1ba15f5b5e0e022",
+          "graph_key": "b0cfc4ebe56bc0a0b98c6a464a1126a63dc438dc85b5eb107f66033cc45c8bb1",
+          "cost": {
+            "gates": 67,
+            "cx": 35,
+            "depth": 47
+          },
+          "transition": 3076
+        }
+      ]
+    }
+  ],
+  "scope": "Offline diagnostic only; never seeded into search"
+}

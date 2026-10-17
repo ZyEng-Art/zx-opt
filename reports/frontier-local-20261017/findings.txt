@@ -1,0 +1,9 @@
+barenco_tof_3 pilot: every arm and seed retained.
+Final gates (seeds in the JSON report), time-averaged best gates, rejection fraction:
+serialized: [37]; anytime=37.198; rejected=0.0%; repeated-successors=20.6%; early-exhausted=1; representative-replacements=0
+serialized_frontier: [36]; anytime=36.912; rejected=0.0%; repeated-successors=32.4%; early-exhausted=0; representative-replacements=0
+Loss and value fit diagnose training; compare the search curves to assess useful learning.
+Early retained-frontier exhaustion is not global exhaustion or training convergence; the last best is held until the fixed budget when integrating curves.
+An unretained successor with no logged outgoing action is only a diagnostic count; it may have no legal outgoing rewrites.
+Learning plots condition normalized entropy on states with more than one legal action; raw legacy averages count forced choices as zero entropy.
+Bounded proposals and extraction rejection do not give a completeness guarantee.

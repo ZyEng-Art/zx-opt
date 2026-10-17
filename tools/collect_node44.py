@@ -22,7 +22,7 @@ def main():
         tf.add(source/"runs",arcname="runs")
         tf.add(controller,arcname="controller.json")
         for old in sorted(args.task_root.glob("zx-opt-*-controller.json")):
-            if old!=controller:tf.add(old,arcname="setup-failures/"+old.name)
+            if old!=controller:tf.add(old,arcname="historical-controllers/"+old.name)
         for prefix in ["91bdc8082f85","20ab7adcc2be"]:
             path=args.task_root/("zx-opt-"+prefix)/"runs"
             if path.exists():tf.add(path,arcname="setup-failures/"+prefix)
