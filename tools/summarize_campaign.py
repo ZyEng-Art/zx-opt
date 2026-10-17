@@ -74,10 +74,23 @@ def main():
                    mean_anytime_gates=area/campaign["seconds"])
         updates=[json.loads(l)for l in(folder/"updates.jsonl").read_text().splitlines()]
         if updates:
+            by_transition={e["transition"]:e for e in events}
+            for update in updates:
+                last=update["transition"];samples=update["samples"]
+                rollout=[by_transition[t] for t in range(last-samples+1,last+1)]
+                choices=sum(e["available"]>1 for e in rollout)
+                # Legacy instrumentation includes forced one-action states as
+                # zero normalized entropy. Recover the conditional entropy so
+                # that changes in legal-action counts cannot mimic learning.
+                update["metrics"]["forced_action_fraction"]=1-choices/samples
+                raw=update["metrics"].get("normalized_entropy")
+                update["metrics"]["conditional_normalized_entropy"]=(raw*samples/choices
+                    if choices and raw is not None else None)
             losses.setdefault(row["arm"],[]).append((row["seed"],updates))
             n=max(1,len(updates)//4)
             keys=["policy_loss","value_loss","entropy","approx_kl","clip_fraction",
-                  "value_explained_variance_after","normalized_entropy"]
+                  "value_explained_variance_after","normalized_entropy",
+                  "conditional_normalized_entropy","forced_action_fraction"]
             trial["learning"]={k:dict(first=metric_mean(updates[:n],k),last=metric_mean(updates[-n:],k))
                                for k in keys}
             trial["learning"]["optimizer_steps"]=sum(u["optimizer_steps"]for u in updates)
@@ -108,9 +121,9 @@ def main():
         for arm,runs in losses.items():
             for seed,updates in runs:
                 xs=[u["seconds"]for u in updates]
-                for axis,key in zip(axs,["value_loss","normalized_entropy","value_explained_variance_after"]):
+                for axis,key in zip(axs,["value_loss","conditional_normalized_entropy","value_explained_variance_after"]):
                     axis.plot(xs,[u["metrics"].get(key)for u in updates],label=f"{arm} s{seed}")
-        for axis,label in zip(axs,["Value MSE","Normalized policy entropy","Value explained variance"]):
+        for axis,label in zip(axs,["Value MSE","Policy entropy (states with >1 action)","Value explained variance"]):
             axis.set(xlabel="Search wall time (seconds)",ylabel=label);axis.grid(alpha=.2)
         axs[0].set_yscale("log")
         axs[1].set_ylim(0,1.05)
@@ -133,6 +146,7 @@ def main():
     lines += ["Loss and value fit diagnose training; compare the search curves to assess useful learning.",
               "Early retained-frontier exhaustion is not global exhaustion or training convergence; the last best is held until the fixed budget when integrating curves.",
               "An unretained successor with no logged outgoing action is only a diagnostic count; it may have no legal outgoing rewrites.",
+              "Learning plots condition normalized entropy on states with more than one legal action; raw legacy averages count forced choices as zero entropy.",
               "Bounded proposals and extraction rejection do not give a completeness guarantee."]
     (out/"findings.txt").write_text("\n".join(lines)+"\n")
     print(json.dumps(result["aggregate"],indent=2))
