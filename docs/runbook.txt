@@ -17,6 +17,15 @@ $PYTHON -m zxopt.search runs/example --expanded --dedup --policy online --second
 六组消融、三种子，全部只搜索同一个电路
 $PYTHON -m zxopt.campaign runs/pilot --seconds 180 --workers 3
 
+提取表示与去重粒度对照（旧规则；每组种子 11/29/47；正式运行前先提交源码）
+$PYTHON -m zxopt.search runs/serialized --dedup --dedup-scope serialized --policy online --seconds 600
+$PYTHON -m zxopt.campaign runs/representation --suite representation --seconds 600 --workers 9
+六组为：无去重随机、原结构去重随机、结构去重加更优代表替换、精确序列化去重随机、
+精确序列化去重冻结策略、精确序列化去重在线 PPO。总状态容量仍为 64，不注入历史解。
+--dedup 默认仍复现原结构去重；--replace-better 只替换严格更优的同键代表。
+--dedup-scope serialized 保留编号、布局、顺序及序列化元数据；不同表示不共享动作记录。
+图同构仍用于诊断统计；精确序列化粒度更保守，也可能保留更多重复结构。
+
 只读进度与结束后的分析
 python tools/progress.py runs/pilot
 $PYTHON tools/summarize_campaign.py runs/pilot reports/new-pilot

@@ -12,16 +12,19 @@ def main():
     torch.set_num_threads(1)
     records=[]
     seeds=json.loads((args.campaign/"campaign.json").read_text())["seeds"]
+    suite=json.loads((args.campaign/"campaign.json").read_text()).get("suite","expansion")
+    arms = (["expanded_frozen","expanded_online"] if suite == "expansion"
+            else ["legacy_serialized_frozen","legacy_serialized_online"])
     for seed in seeds:
         initial_hashes=[];prefixes=[]
-        for arm in ["expanded_frozen","expanded_online"]:
+        for arm in arms:
             folder=args.campaign/(arm+"_s"+str(seed))
             initial=torch.load(folder/"initial.pt",map_location="cpu",weights_only=True)["state_dict"]
             final=torch.load(folder/"final.pt",map_location="cpu",weights_only=True)["state_dict"]
             assert initial.keys()==final.keys()
             delta=sum(float((final[k]-initial[k]).double().square().sum())for k in initial)**.5
             assert all(torch.isfinite(v).all()for v in final.values())
-            assert (delta==0.)if arm=="expanded_frozen"else(delta>0.)
+            assert (delta==0.)if arm.endswith("_frozen")else(delta>0.)
             initial_hashes.append(json.loads((folder/"protocol.json").read_text())["initial_tensor_sha256"])
             events=[json.loads(l)for l in(folder/"events.jsonl").read_text().splitlines()][:128]
             fields=["action","parent_graph_key","graph_key","status","cost","reward","available","restart_key","selection"]

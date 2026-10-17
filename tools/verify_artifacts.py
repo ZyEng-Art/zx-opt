@@ -43,13 +43,28 @@ def main():
             costs[digest]=checked[digest]
         assert checked[row["best"]["sha256"]]==row["best"]["cost"]
         best=protocol["root_cost"]["gates"];chain={};record_chain={}
+        serialized_scope = protocol["config"].get("dedup") and protocol["config"].get("dedup_scope") == "serialized"
+        attempted=set();serialized_costs={}
+        if protocol.get("root_graph_key"):
+            serialized_costs[protocol["root_graph_key"]]=protocol["root_cost"]
         for e in events:
             trajectory=e["trajectory"]
+            parent=e["parent_graph_key"]
+            if parent in serialized_costs:assert serialized_costs[parent]==e["previous_cost"]
+            serialized_costs[parent]=e["previous_cost"]
+            if serialized_scope:
+                assert e["action_registry_key"]==parent
+                action=e["action"]
+                signature=(parent,action["kind"],tuple(action["vertices"]),tuple(sorted(action["subset"])),action["phase"])
+                assert signature not in attempted,(folder,signature)
+                attempted.add(signature)
             if trajectory in chain:assert e["previous_cost"]==chain[trajectory]
             if trajectory in record_chain:assert e["previous_record"]==record_chain[trajectory]
             if e["status"]=="accepted":
                 assert e["seconds"]<=row["budget_seconds"]
                 assert e["sha256"]in costs and e["cost"]==costs[e["sha256"]]
+                if e["graph_key"]in serialized_costs:assert serialized_costs[e["graph_key"]]==e["cost"]
+                serialized_costs[e["graph_key"]]=e["cost"]
                 new_record=min(e["previous_record"],e["cost"]["gates"])
                 expected_reward=((e["previous_cost"]["gates"]-e["cost"]["gates"])if protocol["config"]["reward"]=="current"
                                  else(e["previous_record"]-new_record))/10.
@@ -61,10 +76,11 @@ def main():
                 assert e["reward"]==0.;chain[trajectory]=e["previous_cost"]
                 record_chain[trajectory]=e["previous_record"]
         assert best==row["best"]["cost"]["gates"]
-        records.append(dict(arm=row["arm"],seed=row["seed"],transitions=len(events),accepted=len(accepted),status="passed"))
+        records.append(dict(arm=row["arm"],seed=row["seed"],transitions=len(events),accepted=len(accepted),
+                            serialized_action_pruning_checked=bool(serialized_scope),status="passed"))
     output=dict(status="passed",input_sha256=expected,trials=len(rows),saved_qasm_files_checked=total,
                 distinct_qasm_operators_checked=len(checked),max_operator_error=max_error,
-                checks="NAM gate counts, fixed named wires, all 32x32 operator entries, unit-modulus global phase only, rewards, deadlines, node bounds and transition chains",records=records)
+                checks="NAM gate counts, fixed named wires, all 32x32 operator entries, unit-modulus global phase only, rewards, deadlines, node bounds, transition chains, exact-key cost consistency and serialized action-registry uniqueness",records=records)
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(output,indent=2)+"\n");print(json.dumps(output))
 

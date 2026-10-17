@@ -82,3 +82,30 @@ class StructuralIndex:
 def action_key(action, mapping):
     return (action.kind, tuple(mapping[v] for v in action.vertices),
             tuple(sorted(mapping[v] for v in action.subset)), str(action.phase))
+
+
+class SearchIdentity:
+    """Choose pruning granularity independently of structural diagnostics.
+
+    Serialized scope never shares attempted actions across graph representations.
+    The key is the same conservative pickle SHA used by the completion cache;
+    vertex IDs, layout, insertion order and other serialized attributes survive.
+    """
+    def __init__(self, scope):
+        if scope not in ("structural", "serialized"):
+            raise ValueError("Unknown deduplication scope: " + str(scope))
+        self.scope = scope
+        self.serialized_attempts = {}
+
+    def key(self, state, serialized_key):
+        return str(state.identifier) if self.scope == "structural" else serialized_key
+
+    def actions(self, state, serialized_key, mapping):
+        if self.scope == "structural":
+            return state.attempted, mapping
+        attempted = self.serialized_attempts.setdefault(serialized_key, set())
+        return attempted, {vertex: vertex for vertex in mapping}
+
+    def summary(self):
+        return dict(scope=self.scope, serialized_registries=len(self.serialized_attempts),
+                    serialized_attempted_actions=sum(map(len, self.serialized_attempts.values())))

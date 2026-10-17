@@ -20,6 +20,14 @@ ARMS = {
     "expanded_frozen": ["--expanded", "--dedup", "--policy", "frozen"],
     "expanded_online": ["--expanded", "--dedup", "--policy", "online"],
 }
+REPRESENTATION_ARMS = {
+    "legacy_uniform": [],
+    "legacy_dedup": ["--dedup"],
+    "legacy_best_representative": ["--dedup", "--replace-better"],
+    "legacy_serialized": ["--dedup", "--dedup-scope", "serialized"],
+    "legacy_serialized_frozen": ["--dedup", "--dedup-scope", "serialized", "--policy", "frozen"],
+    "legacy_serialized_online": ["--dedup", "--dedup-scope", "serialized", "--policy", "online"],
+}
 
 
 def main():
@@ -28,13 +36,17 @@ def main():
     p.add_argument("--seconds", type=float, default=180.)
     p.add_argument("--workers", type=int, default=3)
     p.add_argument("--seeds", type=int, nargs="+", default=[11, 29, 47])
+    p.add_argument("--suite", choices=["expansion", "representation"], default="expansion")
     args = p.parse_args()
+    if args.seconds <= 0 or args.workers < 1 or not args.seeds or len(set(args.seeds)) != len(args.seeds):
+        raise ValueError("Expected positive budgets and distinct seeds")
+    arms = ARMS if args.suite == "expansion" else REPRESENTATION_ARMS
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
-    tasks = [(name, seed) for name in ARMS for seed in args.seeds]
+    tasks = [(name, seed) for name in arms for seed in args.seeds]
     random.Random(20261017).shuffle(tasks)
     snapshot = {str(f.relative_to(ROOT)): hashlib.sha256(f.read_bytes()).hexdigest()
                 for f in (ROOT/"zxopt").glob("*.py")}
-    atomic_json(out/"campaign.json", dict(arms=ARMS, seeds=args.seeds, seconds=args.seconds,
+    atomic_json(out/"campaign.json", dict(suite=args.suite, arms=arms, seeds=args.seeds, seconds=args.seconds,
                 workers=args.workers, order=tasks, sources=snapshot,
                 scope="Only barenco_tof_3; all arms/seeds reported; no historical witness seeded",
                 caveat="New verification/timing harness, so legacy_uniform is not a reprint of the old v49 timing"))
@@ -43,7 +55,7 @@ def main():
         name, seed = task
         folder = out/(name+"_s"+str(seed))
         command = [sys.executable, "-m", "zxopt.search", str(folder), "--seed", str(seed),
-                   "--seconds", str(args.seconds)] + ARMS[name]
+                   "--seconds", str(args.seconds)] + arms[name]
         env = dict(os.environ, OMP_NUM_THREADS="1", MKL_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", PYTHONHASHSEED="0")
         with (out/(name+"_s"+str(seed)+".log")).open("w") as log:
             result = subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT)

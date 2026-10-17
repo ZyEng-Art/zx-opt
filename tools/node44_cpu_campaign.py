@@ -20,6 +20,7 @@ def main():
     p.add_argument("--python", default="/workspace/env310/bin/python")
     p.add_argument("--seconds", type=int, default=180)
     p.add_argument("--workers", type=int, default=6)
+    p.add_argument("--suite", choices=["expansion", "representation"], default="expansion")
     args = p.parse_args()
     if not args.task_root.is_absolute() or not all(c in "0123456789abcdef" for c in args.commit):
         raise ValueError("Expected absolute task directory and hexadecimal commit")
@@ -48,14 +49,16 @@ def main():
             "-e","GIT_CONFIG_COUNT=1","-e","GIT_CONFIG_KEY_0=safe.directory",
             "-e","GIT_CONFIG_VALUE_0="+mount,"-w",mount,args.container,args.python]
     record(status="running",commit=commit,container=args.container_id,started_at=started,gpu=False,
-           seconds_per_run=args.seconds,trials=18,workers=args.workers,
+           seconds_per_run=args.seconds,trials=18,workers=args.workers,suite=args.suite,
            bundle_sha256=hashlib.sha256(bundle.read_bytes()).hexdigest())
     status = "failed"
     try:
         run(*base,"-m","unittest","discover","-s","tests","-v")
-        run(*base,"-m","zxopt.search","runs/preflight","--expanded","--dedup",
-            "--policy","online","--seconds","15","--max-steps","128")
-        run(*base,"-m","zxopt.campaign","runs/pilot","--seconds",str(args.seconds),"--workers",str(args.workers))
+        preflight = ["--expanded"] if args.suite == "expansion" else ["--dedup-scope", "serialized"]
+        run(*base,"-m","zxopt.search","runs/preflight","--dedup",*preflight,
+            "--policy","online","--seconds","30","--max-steps","128")
+        run(*base,"-m","zxopt.campaign","runs/pilot","--seconds",str(args.seconds),
+            "--workers",str(args.workers),"--suite",args.suite)
         status = "passed"
     finally:
         latest = inspect(); restored = False
