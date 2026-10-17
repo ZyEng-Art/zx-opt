@@ -1,0 +1,13 @@
+{
+  "workers": {
+    "quarl": {
+      "returncode": 0,
+      "training_updates": 40
+    },
+    "zx": {
+      "returncode": 0,
+      "training_updates": 13
+    }
+  },
+  "seconds": 51.01281361898873
+}

@@ -69,9 +69,29 @@ def audit_one(spec):
     restart_rows = ([json.loads(l) for l in restart_path.read_text().splitlines()] if restart_path.exists() else [])
     restart_cursor = 0
     def restart(record):
+        nonlocal best
         key, source = record["graph_key"], record["source"]
         if source == "root":
             value = archive.root; assert key == value.key
+        elif source.startswith("shared:"):
+            import sqlite3
+            import pyzx as zx
+            from zxopt.complete.adapter import from_pyzx
+            from zxopt.general_score import VerifiedCompletion
+            shared_key = source.split(":", 1)[1]
+            database = Path(config["shared_buffer"])
+            with sqlite3.connect('file:'+str(database)+'?mode=ro', uri=True) as db:
+                qasm = db.execute('SELECT qasm FROM objects WHERE key=?', (shared_key,)).fetchone()[0]
+            assert hashlib.sha256(qasm.encode()).hexdigest() == shared_key
+            assert matrix_error(reference, qiskit_matrix_zx_order(qasm2.loads(qasm))) < 1e-9
+            d = from_pyzx(zx.Circuit.from_qasm(qasm).to_graph())
+            assert d.digest() == key and d.record() == graph(key).record()
+            result = VerifiedCompletion(reference).evaluate(views.get(d), config["extraction_timeout"]).result
+            assert result is not None
+            value = SearchState(d, result["cost"], result["cost"])
+            archive.add(value, value.last_counts)
+            if score(value.cost) < score(best):
+                best = dict(value.cost)
         elif source == "latent":
             value = archive.latent[key]; archive.latent_restarts += 1
         else:

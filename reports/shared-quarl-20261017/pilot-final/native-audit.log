@@ -1,0 +1,5 @@
+XCCL /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/torch_xmlir/libbkcl.so loaded
+[35mSYMBOL_REWRITE [0m[32mtorch success[0m
+/workspace/zengyong/graph-rewrite-dev/graph_rewrite_latest/quarl_upstream/qtz.py:45: UserWarning: enum class GateType not importable from CCore. You are probably using a cpdef enum declared in a .pxd file that does not have a .py  or .pyx file.
+  quartz_context = quartz.QuartzContext(
+{"status": "passed", "edges_replayed": 539, "unique_qasm_checked": 432, "scope": "Native rule replay with fixed-wire signature anchor rebasing; independent complete Qiskit matrix per unique stored QASM, tolerance1e-9"}

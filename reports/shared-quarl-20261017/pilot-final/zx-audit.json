@@ -1,0 +1,40 @@
+{
+  "arm": "shared",
+  "seed": 11,
+  "status": "passed",
+  "transitions": 70,
+  "accepted_rewrites": 70,
+  "replayed_auxiliary": 9,
+  "legal_unscored": 0,
+  "recovered": 0,
+  "saved_qasm": 18,
+  "quarantined_invalid_qasm": 0,
+  "max_graph_operator_error": 7.438878336216875e-15,
+  "max_qasm_operator_error": 9.992007221626409e-16,
+  "accepted_families": {
+    "PV": 8,
+    "PVG": 15,
+    "phase_split": 6,
+    "ID": 10,
+    "PVB": 12,
+    "I:backward": 3,
+    "H:backward": 3,
+    "spider_split": 4,
+    "identity_insert": 3,
+    "gadget_split": 1,
+    "H:forward": 2,
+    "E:backward": 2,
+    "I:forward": 1
+  },
+  "completion_branches": {
+    "primary": 55,
+    "clifford_repair": 15
+  },
+  "model": {
+    "parameter_l2_delta": 0.23413921290803189,
+    "actor_l2_delta": 0.13694188409182223,
+    "finite": true
+  },
+  "events_sha256": "46ad7018432b39322f93095ace7314ba2658e5dc15c027160d19b165ce7eec15",
+  "report_sha256": "c0a278fbc1d79a01aa61c25d391e96069c94e8d9af057a2798cdc362c0a0c753"
+}

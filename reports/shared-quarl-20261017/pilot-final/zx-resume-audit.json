@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "segment_events": 16,
+  "accepted_replayed": 16,
+  "unique_qasm_checked": 9,
+  "source_checkpoint": "/tmp/grs-shared-ir-20261017/pilot-final/zx/search-state.pt"
+}

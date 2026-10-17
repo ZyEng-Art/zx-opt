@@ -1,0 +1,45 @@
+{
+  "arm": "shared",
+  "seed": 11,
+  "status": "passed",
+  "transitions": 211,
+  "accepted_rewrites": 211,
+  "replayed_auxiliary": 12,
+  "legal_unscored": 0,
+  "recovered": 0,
+  "saved_qasm": 52,
+  "quarantined_invalid_qasm": 0,
+  "max_graph_operator_error": 7.795576791965245e-15,
+  "max_qasm_operator_error": 9.992007221626409e-16,
+  "accepted_families": {
+    "PV": 25,
+    "PVG": 59,
+    "phase_split": 18,
+    "ID": 27,
+    "PVB": 19,
+    "I:backward": 10,
+    "H:backward": 5,
+    "spider_split": 12,
+    "identity_insert": 10,
+    "gadget_split": 7,
+    "H:forward": 4,
+    "E:backward": 4,
+    "EU:forward": 2,
+    "I:forward": 4,
+    "S:backward": 2,
+    "spider_nest": 2,
+    "CP:backward": 1
+  },
+  "completion_branches": {
+    "primary": 149,
+    "clifford_repair": 55,
+    "full_reduce_repair": 7
+  },
+  "model": {
+    "parameter_l2_delta": 0.4671751157562732,
+    "actor_l2_delta": 0.3970352082912843,
+    "finite": true
+  },
+  "events_sha256": "d6a52967b343f5e1f8f636cda0cfdffec998473767194f6a04ca1138493e800d",
+  "report_sha256": "cd35d231d5118e709dd4f53122f81970e0ba43ab481b7849992ca2389f25f567"
+}

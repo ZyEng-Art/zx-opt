@@ -1,0 +1,10 @@
+XCCL /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/torch_xmlir/libbkcl.so loaded
+[35mSYMBOL_REWRITE [0m[32mtorch success[0m
+/workspace/zengyong/graph-rewrite-dev/graph_rewrite_latest/quarl_upstream/qtz.py:45: UserWarning: enum class GateType not importable from CCore. You are probably using a cpdef enum declared in a .pxd file that does not have a .py  or .pyx file.
+  quartz_context = quartz.QuartzContext(
+Traceback (most recent call last):
+  File "/tmp/grs-shared-ir-20261017/grs-overlay/audit_quarl_shared_trace.py", line 33, in <module>
+    result=audit(a.trace,a.root);a.output.write_text(json.dumps(result,indent=2));print(json.dumps(result))
+  File "/tmp/grs-shared-ir-20261017/grs-overlay/audit_quarl_shared_trace.py", line 26, in audit
+    assert sorted(_signatures(result.wire_trace_profile()).values())==sorted(_signatures(objects[child][1]).values()),(parent,child,xfer)
+AssertionError: ('cc2f6acc7a284ce40e9f8f89a99509f49afe6c75545d7a9142f00e72b4c6a2c2', 'a5d20e9d7edfd5e79852285d6d4fc3f560d8c0dc953ab31033cd34998936962f', 26)

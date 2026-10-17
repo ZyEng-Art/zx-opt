@@ -1,0 +1,78 @@
+Quarl + general ZX shared restart pool: implementation and validation, 2026-10-17
+
+Implemented on branches feat/quarl-shared-search-buffer (zx-opt) and
+feat/quarl-zx-shared-buffer (graph_rewrite_latest). This is an opt-in training
+integration, not a new default optimizer pass and not a 600-case result.
+
+Both trainers exchange verified circuit restart states through SQLite WAL. Gate
+DAG and general ZX remain distinct native representations; ZX's unextractable
+latent graphs stay local. Each side generates fresh on-policy trajectories and
+performs its own PPO updates. Sharing policy-specific actions/log-probabilities or
+advantages would be incorrect, so those are not mixed. This integration is based
+on the existing Quarl and zx-opt trainers, not a new quantum rewrite algorithm.
+
+Boundary: same root QASM, fixed wires, 1..7 qubits, unconditional H/X/CX/RZ,
+integer pi/4 angles. The angle restriction comes from the present Clifford+T ZX
+kernel; it does not assert that physical hardware or the Nam gate set requires it.
+All unique publications and sampled imports receive complete operator validation
+up to global phase (maximum matrix element error <=1e-9). Raw circuits, native
+provenance, exchange/import/source records, independent checks and checkpoints
+are retained. Producer-provided cost is never trusted as the shared objective.
+
+Actual environment: node5, own container xsgl_zengyong_quarl_node5_20261009,
+CPU affinity2,3 for concurrent pilot; no accelerator training. Launcher starts
+with OMP/MKL/OPENBLAS=1, but historical Quarl config retains omp_num_threads=4;
+no isolated single-thread performance claim. Python3.10.19, Torch2.9.0+cu129
+(XMLIR-installed runtime, forced CPU), Qiskit2.1.2, PyG2.6.1, Gymnasium1.0.0,
+NetworkX3.2.1, NumPy2.2.6. These differ from the repository's suggested Torch2.6 /
+Qiskit2.2.3 environment; record actual versions rather than claiming an exact old
+experiment reproduction. PyZX0.8.0 fork pinned to298693bed2608e84fcb44a672282f873321c70b7;
+all83 library files match upstream Git blob hashes (pyzx-source-audit.json).
+Original Quarl deployment has no.git; quarl-base-source-manifest.json binds its
+actual source files, while launch.json binds the isolated changed modules.
+
+Tests (19 cases): shared SQLite3, general ZX11, policy1, native bridge1,
+existing native full-state pytest3. All passed. The separate legacy unittest
+invocation collected0 pytest tests; it is NOT counted. Full-state pytest receipt
+is separately retained.
+
+First90-second pilot: Quarl100 updates; ZX26 PPO updates/211 accepted rewrites.
+Both directions11 imports; ZX211 rewrites and52 candidate QASMs independently
+audited. Both best38, not a quality improvement over existing optimizer results.
+Resume: Quarl2 updates, ZX211->227 transitions/26->28updates. Model-only warm
+restart is not used for this continuation.
+
+Final30-second pilot, final trace format: Quarl25 updates, ZX8 PPO updates /
+70accepted rewrites. Best Quarl40 and ZX38. Native539edges replayed and432unique
+QASMs checked. ZX70edges/18QASMs passed. Resume Quarliterations25,26; ZX70->86
+transitions and8->10PPO updates. Resumed native31edges/35QASMs and ZX16edges/
+9QASMs also checked. Shared pool after resume32unique QASMs fully checked;
+Quarl5imports, ZX6imports,598actual Quarl restarts from imported roots (repeats,
+not598different circuits). See pilot-final/summary.json and resume audit receipts.
+Different pilot versions/budgets/interleavings are not a controlled comparison.
+No proof of speedup, improved learning, target achievement or generalization.
+
+Debugging retained: the first native trace prototype deduplicated DAG objects but
+stored only action node indices, which depend on a graph's in-memory ordering.
+Its audit failed (pilot-traced/native-audit*.log). Final tracing stores the actual
+anchor's fixed-wire structural signature per edge. Rebased replay passes539edges
+and resumed31edges. No failed prototype result was converted into a success.
+Early runtime setup also needed LD_LIBRARY_PATH and the 'add' gate in Quartz's
+parameterized context; a native process exit0 alone is not a success receipt.
+
+Persistence: full native and shared buffers, ancestry, pending ZX rollout,
+model/Adam/scheduler where applicable, random states and proposal counters saved.
+View/matching/score caches are recomputable. Joint concurrent wall-budget bitwise
+replay is not promised. Checkpoint checksums verified and real continuation tested.
+The watchdog marks incomplete workers as incomplete; only successful workers
+with completion receipts and real PPO updates qualify as the pilot passing.
+
+Raw archive and supplementary audits are durably stored under node5's deployed
+repository runs/quarl_zx_shared_20261017_evidence/. Paths, hashes and per-file
+inventory are in archive-manifest.json and supplement-manifest.json. Redundant
+model-only per-iteration ckpts omitted from the archive; complete full-state
+snapshots are included. Temporary run directories remain available too.
+
+Reproduction and API constraints: ../../docs/shared-quarl-buffer.txt.
+Next scientific validation is paired independent/shared and frozen/online trials
+with matched compute and multiple seeds, not adding standalone pass savings.

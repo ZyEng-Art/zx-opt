@@ -91,6 +91,17 @@ def run(args):
     view_limit = root_view.graph.num_vertices()+args.max_growth
     net = GeneralAgent() if args.policy != "uniform" else None
     optimizer = torch.optim.Adam(net.parameters(), lr=.0003, eps=1e-5) if args.policy == "online" else None
+    if args.resume_model:
+        if net is None:
+            raise ValueError("Model resume requires frozen/online policy")
+        saved = torch.load(args.resume_model, map_location="cpu", weights_only=False)
+        if saved.get("input_sha256") != hashlib.sha256(input_bytes).hexdigest():
+            raise ValueError("Resume model input mismatch")
+        net.load_state_dict(saved["state_dict"])
+        if optimizer is not None:
+            if saved.get("optimizer_state_dict") is None:
+                raise ValueError("Resume checkpoint has no optimizer")
+            optimizer.load_state_dict(saved["optimizer_state_dict"])
     initial_sha = tensor_digest(net) if net is not None else None
     if net is not None:
         torch.save(dict(state_dict=net.state_dict(), seed=args.seed, steps=0), out/"initial.pt")
@@ -141,6 +152,11 @@ def run(args):
     events = (out/"events.jsonl").open("w", buffering=1); updates_file = (out/"updates.jsonl").open("w", buffering=1)
     restart_file = (out/"restarts.jsonl").open("w", buffering=1)
     deadend_file = (out/"deadends.jsonl").open("w", buffering=1)
+    shared = None
+    if args.shared_buffer:
+        from .shared_search import ZXSharedBridge
+        shared = ZXSharedBridge(args.shared_buffer, input_bytes.decode(), args.seed, out)
+        shared.publish(root_result, diagram.digest())
     started = time.perf_counter(); deadline = started+args.seconds
     transition = trajectory = accepted = unscored = recovered = updates = 0
     invalid = Counter(); families = Counter(); accepted_families = Counter(); latent_families = Counter()
@@ -148,10 +164,67 @@ def run(args):
     state = None; status = "budget_reached"; start = None
     first_best = {str(root_result["cost"]["gates"]-k): None for k in range(1, 6)}
 
+    if args.resume_state:
+        if args.resume_model:
+            raise ValueError("Choose complete state or model-only resume")
+        saved = torch.load(args.resume_state, map_location="cpu", weights_only=False)
+        if saved["input_sha256"] != protocol["input_sha256"] or saved["sources"] != sources:
+            raise ValueError("Resume input/source differs")
+        semantic = ["seed", "policy", "jpv", "horizon", "max_unscored", "max_growth", "max_edge_growth",
+                    "candidate_cap", "matching_work", "archive", "latent_archive", "rollout", "feasibility_mask"]
+        if any(saved["config"][k] != protocol["config"][k] for k in semantic):
+            raise ValueError("Resume search options differ")
+        pool, state, start = saved["pool"], saved["state"], saved["start"]
+        step, restart_source = saved["step"], saved["restart_source"]
+        rollout = saved["rollout"]; best = saved["best"]; first_best = saved["first_best"]
+        transition, trajectory, accepted, unscored, recovered, updates = saved["counts"]
+        if net is not None:
+            net.load_state_dict(saved["net"])
+        if optimizer is not None:
+            optimizer.load_state_dict(saved["optimizer"])
+        if kernel.jpv is not None:
+            kernel.jpv.rounds, kernel.jpv.stats = saved["jpv"]
+        rng.bit_generator.state = saved["rng"]
+        random.setstate(saved["python_rng"]); np.random.set_state(saved["numpy_rng"])
+        torch.set_rng_state(saved["torch_rng"])
+        if shared is not None:
+            shared.rng.setstate(saved["exchange_rng"])
+        # Objects and QASMs remain source-bound to the previous immutable segment.
+        protocol["resumed_from"] = str(args.resume_state.resolve())
+        protocol["resume_segment_start_counts"] = saved["counts"]
+        protocol["initial_tensor_sha256"] = tensor_digest(net) if net is not None else None
+        protocol["time_scope"] = "seconds are segment-local; counters include prior checkpoint; best may originate in prior segment"
+        if net is not None:
+            torch.save(dict(state_dict=net.state_dict(), seed=args.seed, steps=transition), out/"initial.pt")
+        atomic_json(out/"protocol.json", protocol)
+        (out/"best.qasm").write_text(saved["best_qasm"])
+        atomic_json(out/"best.json", best)
     try:
         while time.perf_counter() < deadline and (args.max_steps is None or transition < args.max_steps):
             if state is None:
-                start, restart_source = pool.choose(rng); state = start
+                imported = None
+                if shared is not None:
+                    t = time.perf_counter()
+                    imported = shared.choose(views, scorer, args.extraction_timeout)
+                    timers["shared_exchange"] += time.perf_counter()-t
+                if imported is not None and (len(imported[0].diagram.nodes) > raw_limit or len(imported[0].diagram.edges) > wire_limit):
+                    shared.pool.event("conversion_resource_rejected", imported[1]["key"], run=str(out))
+                    imported = None
+                if imported is None:
+                    start, restart_source = pool.choose(rng)
+                else:
+                    start, record = imported
+                    restart_source = "shared:"+record["key"]
+                    pool.add(start, start.last_counts)
+                    save_graph(out/"objects", start.diagram)
+                    if score(start.cost) < score(best["cost"]):
+                        result = record["completion"]
+                        best = dict(cost=start.cost, sha256=result["sha256"],
+                                    seconds=time.perf_counter()-started, graph=start.key,
+                                    origin="shared_import", shared_key=record["key"])
+                        (out/"best.qasm").write_text(result["qasm"])
+                        atomic_json(out/"best.json", best)
+                state = start
                 step = 0; trajectory += 1
                 restart_file.write(json.dumps(dict(trajectory=trajectory, graph_key=start.key,
                                    source=restart_source, buffer=pool.summary()))+"\n")
@@ -249,6 +322,10 @@ def run(args):
                     unscored += 1; latent_families[chosen.family] += 1
                     done = done or state.unscored_depth >= args.max_unscored
                 else:
+                    if shared is not None:
+                        t = time.perf_counter()
+                        shared.publish(result, child.digest())
+                        timers["shared_exchange"] += time.perf_counter()-t
                     if old_unscored:
                         recovered += 1
                     done = done or result["cost"]["gates"] > 1.5*root_result["cost"]["gates"]
@@ -306,7 +383,24 @@ def run(args):
     if net is not None:
         torch.save(dict(state_dict=net.state_dict(), steps=transition, updates=updates,
                         optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
+                        input_sha256=hashlib.sha256(input_bytes).hexdigest(),
                         scope="model/Adam only, not a complete search checkpoint"), out/"final.pt")
+    checkpoint = dict(schema=1, input_sha256=protocol["input_sha256"], sources=sources, config=protocol["config"],
+                      pool=pool, state=state, start=start, step=locals().get("step", 0),
+                      restart_source=locals().get("restart_source"), rollout=rollout, best=best,
+                      best_qasm=(out/"best.qasm").read_text(), first_best=first_best,
+                      counts=(transition, trajectory, accepted, unscored, recovered, updates),
+                      net=None if net is None else net.state_dict(),
+                      optimizer=None if optimizer is None else optimizer.state_dict(),
+                      jpv=None if kernel.jpv is None else (kernel.jpv.rounds, kernel.jpv.stats),
+                      rng=rng.bit_generator.state, python_rng=random.getstate(), numpy_rng=np.random.get_state(),
+                      torch_rng=torch.get_rng_state(), exchange_rng=None if shared is None else shared.rng.getstate(),
+                      scope="Trusted local checkpoint. Native pools, active trajectory, pending on-policy rollout, model/Adam and RNG retained. Recomputable matching/view/score caches excluded; wall-budget bitwise replay not guaranteed.")
+    torch.save(checkpoint, out/"search-state.pt.tmp")
+    (out/"search-state.pt.tmp").replace(out/"search-state.pt")
+    if shared is not None:
+        shared.pool.snapshot(out/"shared-buffer.sqlite")
+        shared.pool.close()
     for name, digest in sources.items():
         if hashlib.sha256((ROOT/name).read_bytes()).hexdigest() != digest:
             raise AssertionError("Source changed during run: "+name)
@@ -329,6 +423,9 @@ def run(args):
 def parser():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("output", type=Path)
+    p.add_argument("--resume-state", type=Path, help="Trusted complete search checkpoint; additional segment budget")
+    p.add_argument("--resume-model", type=Path, help="Model/Adam continuation only; new trajectories, not exact state resume")
+    p.add_argument("--shared-buffer", type=Path, help="Opt-in verified cross-IR SQLite restart pool")
     p.add_argument("--input", type=Path, default=ROOT/"inputs/barenco_tof_3.qasm")
     p.add_argument("--jpv", action="store_true")
     p.add_argument("--policy", choices=["uniform", "frozen", "online"], default="uniform")

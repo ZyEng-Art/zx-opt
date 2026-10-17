@@ -1,0 +1,126 @@
+{
+  "status": "step_limit_reached",
+  "transitions": 227,
+  "accepted": 227,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 28,
+  "best": {
+    "cost": {
+      "gates": 38,
+      "cx": 16,
+      "depth": 37
+    },
+    "sha256": "8a426f01533558277e926e47132190485c6b869a43db877bf7df17e8e1536783",
+    "seconds": 14.034580533043481,
+    "graph": "7115a116124f92df20e18af16038e42421c301e20b2d1fbb9c6713883e8c3187"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "proposal_counts": {
+    "spider_split": 1,
+    "PVB": 3,
+    "PVG": 5,
+    "identity_insert": 2,
+    "CP:backward": 1,
+    "phase_split": 1,
+    "H:forward": 1,
+    "ID": 1,
+    "PV": 1
+  },
+  "accepted_counts": {
+    "spider_split": 1,
+    "PVB": 3,
+    "PVG": 5,
+    "identity_insert": 2,
+    "CP:backward": 1,
+    "phase_split": 1,
+    "H:forward": 1,
+    "ID": 1,
+    "PV": 1
+  },
+  "unscored_counts": {},
+  "rejections": {},
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 129,
+    "evictions": 66,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      38,
+      16
+    ]
+  },
+  "checked_qasm": 9,
+  "view_cache": {
+    "hits": 17,
+    "misses": 18
+  },
+  "jpv_proposals": {
+    "calls": 228,
+    "matching_work_exhausted": 54,
+    "phase_inferred": 2170
+  },
+  "completion": {
+    "requests": 17,
+    "primary_successes": 16,
+    "primary_failures": 1,
+    "clifford_repair_successes": 1,
+    "cache_hits": 1,
+    "unique_valid_qasm": 9,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 5.613217783960923e-16,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 1986,
+    "calls": 16,
+    "proposed": 1986,
+    "eligible": 1893,
+    "resource_masks": 93,
+    "cache_size": 1986,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "spider_nest": 22,
+      "PVB": 22,
+      "PVG": 7,
+      "gadget_split": 11,
+      "PV": 1,
+      "identity_insert": 9,
+      "phase_split": 8,
+      "spider_split": 6,
+      "EU:forward": 3,
+      "CP:backward": 2,
+      "E:backward": 2
+    }
+  },
+  "max_graph_operator_error": 6.90701446917231e-15,
+  "max_qasm_operator_error": 5.613217783960923e-16,
+  "first_passage_seconds": {
+    "39": 11.629532522987574,
+    "38": 14.034580533043481,
+    "37": null,
+    "36": null,
+    "35": null
+  },
+  "budget_seconds": 20.0,
+  "total_loop_seconds": 7.476823652978055,
+  "timers": {
+    "matching": 0.7356105941580608,
+    "feasibility": 5.342634238884784,
+    "inference": 0.08471720956731588,
+    "rewrite_verify": 0.418549069785513,
+    "score": 0.43337992718443274,
+    "shared_exchange": 0.0717457877472043,
+    "ppo": 0.12046872393693775
+  },
+  "verification": "passed"
+}

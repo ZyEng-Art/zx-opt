@@ -1,0 +1,9 @@
+XCCL /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/torch_xmlir/libbkcl.so loaded
+[35mSYMBOL_REWRITE [0m[32mtorch success[0m
+[35mSYMBOL_REWRITE [0m[32mtransformers success[0m
+test_new_actions_share_sampling_and_ppo_density (test_policy.PolicyTest) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.398s
+
+OK

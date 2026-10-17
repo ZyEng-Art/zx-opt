@@ -1,0 +1,8 @@
+test_cost_not_producer_supplied_and_rng_is_explicit (test_shared_buffer.SharedTest) ... ok
+test_foreign_roundtrip_isolation_rejection_and_backup (test_shared_buffer.SharedTest) ... ok
+test_process_writers_keep_bounded_pool_and_all_source_objects (test_shared_buffer.SharedTest) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.064s
+
+OK

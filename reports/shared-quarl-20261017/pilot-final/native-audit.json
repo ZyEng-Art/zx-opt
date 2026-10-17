@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "edges_replayed": 539,
+  "unique_qasm_checked": 432,
+  "scope": "Native rule replay with fixed-wire signature anchor rebasing; independent complete Qiskit matrix per unique stored QASM, tolerance1e-9"
+}

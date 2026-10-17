@@ -1,0 +1,68 @@
+Shared Quarl / ZX restart exchange v1 (2026-10-17)
+
+Purpose: both on-policy trainers search the same fixed-wire circuit equivalence
+class. A durable SQLite WAL pool exchanges verified NAM QASMs. This is training
+infrastructure, not a new default optimizer pass or a claim of 600-case gains.
+
+Protocol:
+- Pin both source revisions and use exactly the same root QASM file.
+- Quarl -> QASM -> PyZX -> general ZX diagram; ZX -> independently verified
+  extracted QASM -> Quartz graph. Recheck the serialized Quartz result too.
+- Each producer samples fresh local actions and computes its own log probabilities,
+  rewards, values and PPO updates. No cross-policy action/advantage replay.
+- Native ZX diagrams that cannot be extracted stay in its latent archive. They
+  cannot safely be consumed by the gate optimizer and have no fabricated gate cost.
+- v1 boundary: 1..7 wires, <=10000 unconditional NAM gates, pi/4 integer RZ grid.
+  The ZX kernel is Clifford+T; accepting pi/8 here would be unsound. This restriction
+  is specific to this shared trainer, not a general NAM hardware constraint.
+- Every unique publication and each sampled import is checked by complete
+  fixed-wire Qiskit operators, up to unit-modulus global phase, max error <=1e-9.
+  This is bounded numerical validation, not an exact formal proof.
+- Pool capacity512. Root/best protected; other high-cost states evicted. Permanent
+  QASM objects and append-only source/import/export events survive active eviction.
+  Costs are recomputed, never accepted from a producer's claimed reward.
+- Exchange RNG is separate from policy sampling. ZX attempts foreign starts at
+  half its episode boundaries. Quarl polls at most every2 seconds at native
+  restart sampling, inserts foreign states into its usual weighted graph pool.
+  There is no guarantee a foreign state is immediately sampled by Quarl.
+- Publication is throttled to one newly considered state per second per producer;
+  not every native transition enters the shared pool. Native trajectory logs remain
+  independent. Imported roots terminate Quartz-only ancestry with Action(-1,-1);
+  shared import records bind those roots to the ZX source graph/run.
+- SQLite transactions serialize publishers; events record actual interleaving.
+  Timing includes exchange/verification during collection. Concurrent timing is
+  diagnostic, not an isolated performance benchmark.
+
+Launch (CPU-only, bounded; the launcher does not allocate accelerators):
+python tools/shared_ir_campaign.py runs/shared-test --input inputs/barenco_tof_3.qasm \
+  --quarl-root /path/to/graph_rewrite_latest --quarl-python /path/to/quarl/python \
+  --zx-python /path/to/zx/python --seconds 120 --iterations 100
+
+Direct ZX: add --shared-buffer /absolute/path/pool.sqlite to general_search.
+Direct Quarl: add --shared-buffer POOL --zx-opt-root CHECKOUT --shared-root INPUT.
+Use one circuit per Quarl process; batched restart snapshots are refused in v1.
+Optional sampler optimizations must not bypass buffer.sample. Existing native
+GraphBuffer/trajectory behavior is retained when shared options are absent.
+
+Persistence:
+- Database backup after both workers stop: shared-final.sqlite, exchange.json.
+- Quarl native-trajectory.sqlite records every non-NOP provenance callback with
+  parent/child QASM objects, fixed-wire profiles, native node GUID order and action.
+  audit_quarl_shared_trace.py replays those edges after rebasing anchors.
+- Quarl retains model/Adam/scheduler/RNG/native buffers/ancestry in existing full
+  checkpoints; adds shared database snapshot, exchange RNG and foreign-root map.
+- ZX search-state.pt retains native scored/latent pools, active trajectory, pending
+  on-policy rollout, model/Adam, policy/restart RNG and JPV visit counters. Resume
+  with --resume-state FILE into a fresh output directory with identical source,
+  input and semantic options; --seconds provides additional segment time.
+- Model-only --resume-model is explicitly distinct; it discards native search state.
+- View/score/matching/feasibility caches are recomputable, not checkpointed. Live
+  concurrent exchange plus wall budgets prevent any bitwise replay guarantee.
+  Stop both workers before choosing a joint DB checkpoint for a controlled resume.
+- Load only trusted locally produced torch checkpoints. Interrupted/incomplete
+  workers are not marked resume-complete by the watchdog.
+
+Outputs: launch.json, both worker logs, SQLite publication/import/sample events;
+Quarl fullseq/progress/checkpoints; ZX objects/candidates/events/restarts/PPO
+updates/protocol/search-state. A shared search improvement is not evidence of
+learning benefit without paired independent vs shared and frozen vs online tests.

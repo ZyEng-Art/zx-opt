@@ -1,0 +1,15 @@
+...                                                                      [100%]
+=============================== warnings summary ===============================
+test_quarl_full_state.py::test_full_state_native_roundtrip_and_corruption[False]
+  /workspace/zengyong/graph-rewrite-dev/graph_rewrite_latest/quarl_upstream/qtz.py:45: UserWarning: enum class GateType not importable from CCore. You are probably using a cpdef enum declared in a .pxd file that does not have a .py  or .pyx file.
+    quartz_context = quartz.QuartzContext(
+
+test_quarl_full_state.py::test_full_state_native_roundtrip_and_corruption[False]
+  /workspace/zengyong/graph-rewrite-dev/graph_rewrite_latest/quarl_upstream/ppo.py:798: UserWarning: 
+  The version_base parameter is not specified.
+  Please specify a compatability version level, or None.
+  Will assume defaults for version 1.1
+    @hydra.main(config_path='config', config_name='config')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 2 warnings in 8.10s

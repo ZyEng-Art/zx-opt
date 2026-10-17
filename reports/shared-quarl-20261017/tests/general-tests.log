@@ -1,0 +1,19 @@
+XCCL /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/torch_xmlir/libbkcl.so loaded
+[35mSYMBOL_REWRITE [0m[32mtorch success[0m
+[35mSYMBOL_REWRITE [0m[32mtransformers success[0m
+test_compact_exact_scalar_import_for_both_power_signs (test_general.GeneralTest) ... ok
+test_compiled_proposals_expose_every_axiom_both_directions (test_general.GeneralTest) ... ok
+test_deterministic_proposals_and_all_root_witnesses (test_general.GeneralTest) ... ok
+test_fast_native_preview_matches_full_rewrite_for_every_root_action (test_general.GeneralTest) ... ok
+test_general_policy_density_gradients_and_ppo (test_general.GeneralTest) ... ok
+test_hh_derivation_and_scalar_feedback (test_general.GeneralTest) ... ok
+test_invalid_extraction_is_excluded_and_repaired_on_a_copy (test_general.GeneralTest) ... ok
+test_legal_unscored_bridge_retention_and_reward_anchor (test_general.GeneralTest) ... ok
+test_other_target_roots_preserve_named_wires_and_qubit_count (test_general.GeneralTest) ... ok
+test_raw_color_change_survives_independent_scoring_view (test_general.GeneralTest) ... ok
+test_resource_mask_excludes_violations_before_policy_density (test_general.GeneralTest) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 3.077s
+
+OK

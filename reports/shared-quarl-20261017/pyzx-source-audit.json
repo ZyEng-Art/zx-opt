@@ -1,0 +1,422 @@
+{
+  "revision": "298693bed2608e84fcb44a672282f873321c70b7",
+  "files": [
+    {
+      "path": "pyzx/__init__.py",
+      "git_blob_sha1": "91a98b5254c392f0c8bb532b3e4b65af488943be",
+      "sha256": "8d9cd66ccec88ed72cb8f2dfb535e74580f4e3469bfa01e6cf7f5d017574debe"
+    },
+    {
+      "path": "pyzx/__main__.py",
+      "git_blob_sha1": "6f45808fae6d76a2fe27bf99ba5bfd8b87fa1280",
+      "sha256": "c52476d21c0998005885df947ad0e9c7c898a5c60ed972c76692aa5350af1064"
+    },
+    {
+      "path": "pyzx/altextract.py",
+      "git_blob_sha1": "71923c23bcc81911b561a6e3488ab99f7296a23b",
+      "sha256": "11c06ad2e58f7c8d42181a6813a3e87dbeea4b43995477752266b1cbad308057"
+    },
+    {
+      "path": "pyzx/basicrules.py",
+      "git_blob_sha1": "cb749122dd17f9bd0195d7baedd9bd1b54747441",
+      "sha256": "c88c56c8a43820b3d655e33340764293e4dcc6722fb438569026b55ed0c2f0ef"
+    },
+    {
+      "path": "pyzx/circuit/__init__.py",
+      "git_blob_sha1": "1d349bf7f360efbebfb51dc12735ad54f5c4325c",
+      "sha256": "797835fb37291d832c30a730f187c9304926e5f77b04d22ae71a2764e07129ac"
+    },
+    {
+      "path": "pyzx/circuit/emojiparser.py",
+      "git_blob_sha1": "924b3b28cd98640ba0660782585f2821943f0e09",
+      "sha256": "e42c15d57a0d3ef6e5e72ce3420f10a3872d5c9eaa0030396960aa48d2e9c6c9"
+    },
+    {
+      "path": "pyzx/circuit/gates.py",
+      "git_blob_sha1": "ae8ecb14248704876d5e2b4309665aba8bd8d975",
+      "sha256": "2f31b2842e874bf31fc6da033e658d158f1acc1e0c60ef8b7444c77090bab44a"
+    },
+    {
+      "path": "pyzx/circuit/graphparser.py",
+      "git_blob_sha1": "1ccea9e6e4bc47d3084dae5d24f3f5497ea75067",
+      "sha256": "1d061ffca4cd7f496b9bcd335c54d3aa108a1a1cca2fe336759b1bd873fb416b"
+    },
+    {
+      "path": "pyzx/circuit/qasmparser.py",
+      "git_blob_sha1": "d5489288e3f0435f56a36e2ee3c08dae7402e010",
+      "sha256": "978963ec1ed67dcfaed74ef6e2ec26697b2c7d0ca76ec774c2c8f3610f527750"
+    },
+    {
+      "path": "pyzx/circuit/qcparser.py",
+      "git_blob_sha1": "adf82d3c4a346d7a8c8ba3219118c2edce679296",
+      "sha256": "8c47b349f60d3e935015cf2039d03f85e71fb2ce5b47895179c90f56713b792f"
+    },
+    {
+      "path": "pyzx/circuit/qsimparser.py",
+      "git_blob_sha1": "e614fd0e0b749729b3efd66287a8190947048bfd",
+      "sha256": "59a4ddf8a540d9acbecb231f35ce6aaf6a33247cbed0a2ca838c1714f8fe0617"
+    },
+    {
+      "path": "pyzx/circuit/quipperparser.py",
+      "git_blob_sha1": "348e47c3e2e3edddd8093d3002b7cc2dee2964d2",
+      "sha256": "745d442d0e8044db62f2d69d713e634b04900afd47777a194e691df490219094"
+    },
+    {
+      "path": "pyzx/circuit/sqasm.py",
+      "git_blob_sha1": "b74656f75fd80780c69a65b13c4dfaddec0c3f80",
+      "sha256": "03c134f166b4bc810619792c4cdf0f76cb3416d783580feebb167d0838906629"
+    },
+    {
+      "path": "pyzx/d3.py",
+      "git_blob_sha1": "da37be5584b80332b4b3434ac73658c4af373e22",
+      "sha256": "a9e56198027da72d5978aa7aa59ebe87bcbec0fa173c33c05389caa7cdb31cf3"
+    },
+    {
+      "path": "pyzx/drawing.py",
+      "git_blob_sha1": "1c619141c04649165ee8718f26e418623d591717",
+      "sha256": "d18d058a366a5dd93267e01711b776dd82b3e8f04b99680d769cb8d83948e468"
+    },
+    {
+      "path": "pyzx/editor.py",
+      "git_blob_sha1": "7d36b63f47a891f158322217b30085976af13c1e",
+      "sha256": "c86849f82cd0a0f6fea42eeb303c0491bba5bbef76124b234cd4b825c4477e39"
+    },
+    {
+      "path": "pyzx/editor_actions.py",
+      "git_blob_sha1": "0090f700f2fcb6156611625f727102eefedbc823",
+      "sha256": "648efcca62977bd15d08d0a6d8b3f3630874b1c098ac0052c51548ea4f63ca27"
+    },
+    {
+      "path": "pyzx/extract.py",
+      "git_blob_sha1": "a038b8ce919d796ba9187ba5f23d2a1291ddf857",
+      "sha256": "04673007ae8bdec68311b4fd22c9c911bcf83a00f4ddb81b6e36cb75397fdfc9"
+    },
+    {
+      "path": "pyzx/flow.py",
+      "git_blob_sha1": "ddedb3f26ac6cb122ff3c5bb32257c1e3a81cf19",
+      "sha256": "a85bb73f2da8f644511275955259f99054120248de6cf5417b67bb8441a74aff"
+    },
+    {
+      "path": "pyzx/gadget_extract.py",
+      "git_blob_sha1": "c7be5b7c2041e8370b3aefd2148799607e62fd27",
+      "sha256": "6bbcb473583c95a452f8b18e92eeb27a63621450975f33217faff34292877f99"
+    },
+    {
+      "path": "pyzx/generate.py",
+      "git_blob_sha1": "53cfcaef46a8bf705eb8d3913f7ffc8099eaaf94",
+      "sha256": "0c35a080dec655420008819d44d3cb5cf3ef18bfd43aa42ccb30a581508ff95c"
+    },
+    {
+      "path": "pyzx/gflow.py",
+      "git_blob_sha1": "2e375839c9b2aeb8d2d6094e5dd86af7c85cef13",
+      "sha256": "91c0f6ebb8a8a0cdddae6589b10475476f6b92eb50183c9455e41807cf443631"
+    },
+    {
+      "path": "pyzx/graph/__init__.py",
+      "git_blob_sha1": "91d72fa288e003ca9f24723da0cdfa17d88c65d0",
+      "sha256": "bcf5e2961ad8aa3ef45f6f07e97f5d772ccdfbbb425ce5bbefa3aceb48acdf88"
+    },
+    {
+      "path": "pyzx/graph/base.py",
+      "git_blob_sha1": "0c333638c1448769b67a0bbe7b23201009dde520",
+      "sha256": "ef2ae1c8de91465aa51393b56c72aa8a2e4fc394ce4c7cd463d2e34748d303f4"
+    },
+    {
+      "path": "pyzx/graph/diff.py",
+      "git_blob_sha1": "4e18ce8cdf8dbb7d9f48258db0d777506f5f62de",
+      "sha256": "45aa67d2ec7798e6aae2bb6f7ec60ba08c35fb2beb54d11017ef93bcb0bf1924"
+    },
+    {
+      "path": "pyzx/graph/graph.py",
+      "git_blob_sha1": "c32c1e4f4dcfd4556bedc1b2e2c8003f6c76393d",
+      "sha256": "861b80957dfe8617e9557ef00ff909cafb54c2206228af36a12cdd1c362f32dd"
+    },
+    {
+      "path": "pyzx/graph/graph_gt.py",
+      "git_blob_sha1": "a7ea077fe2ef654e0cfcdee73844273c6ae316e8",
+      "sha256": "bf56d6ff733b4b8b4daa60a17272b7b86ccc21e5c9946cf8f68f010e9577192e"
+    },
+    {
+      "path": "pyzx/graph/graph_ig.py",
+      "git_blob_sha1": "ab81d89989c5fd49991d72d7ae19696402cccba5",
+      "sha256": "6f3a64a921c2ad85a809d42f4b44eb0f2bf7d077efc6d12cd9fa224224f9923f"
+    },
+    {
+      "path": "pyzx/graph/graph_s.py",
+      "git_blob_sha1": "e04093c9e78c93d98e3b277673e734ff49ef4a2c",
+      "sha256": "bec917aeb4993fcd87fb0e9327f616fa73fe25679873260c6795b41c3cdb1c08"
+    },
+    {
+      "path": "pyzx/graph/jsonparser.py",
+      "git_blob_sha1": "45d282f2d2eb66a9eb192306ceac96840509a140",
+      "sha256": "1f1c4f4e708fb9f28f82c45e174a546494ff8752eedafe4ac9fd45b313431b29"
+    },
+    {
+      "path": "pyzx/graph/scalar.py",
+      "git_blob_sha1": "3d377e48e1c98de5e70d5eaaf6952b5e55e7dd66",
+      "sha256": "d84e617eb25c67ecd9df13cb8e6ef77bbc4a9ef05516e23bbb230a2e35f17aea"
+    },
+    {
+      "path": "pyzx/heuristics.py",
+      "git_blob_sha1": "575bc27e9f0ecbd15ab0c6c1f50c82a82432aa23",
+      "sha256": "7f57b4db856cf6d679b5ee3f5a1079e84a98acfd3e959b9ed6a1380c841d8db3"
+    },
+    {
+      "path": "pyzx/heuristics_korb/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyzx/heuristics_korb/gflow_calculation.py",
+      "git_blob_sha1": "6bcefcc611a262a993750f536086470a7a6a7c9c",
+      "sha256": "f93138f7e72b3910502e786fbb8fb44f8f085c4bcf9a396c4119408e48696cf3"
+    },
+    {
+      "path": "pyzx/heuristics_korb/heuristics.py",
+      "git_blob_sha1": "ce35f52d4ed11b683e73d51123d4e545dfa110fa",
+      "sha256": "1424f2f98d88193ed95bb82fa6dfec57e147dc039d7d9e03cd3530c8833d8490"
+    },
+    {
+      "path": "pyzx/heuristics_korb/neighbor_unfusion.py",
+      "git_blob_sha1": "8208298b1900946d275615ed7e7a47aeb332dcfc",
+      "sha256": "49863d00e8d2868241e18160ddf2417bc4c77874305e83f03fa726619136e0c2"
+    },
+    {
+      "path": "pyzx/heuristics_korb/simplify.py",
+      "git_blob_sha1": "71e67e7bbad6099a0e3bd9d266778fd50d55e490",
+      "sha256": "2c2fa24a0466d02fcb899098d01f06529b62f23c7809eb3b26be69d8d25286f9"
+    },
+    {
+      "path": "pyzx/heuristics_korb/tools.py",
+      "git_blob_sha1": "3e45012f06d74d80168bc41c264888d5cb690a39",
+      "sha256": "e25476b1147e94bd7bc14d0919136c6d8987cad1d8202627bcd472bd3c72d6f4"
+    },
+    {
+      "path": "pyzx/hrules.py",
+      "git_blob_sha1": "cd07c1185d42358404e50689a139c5851aa1e333",
+      "sha256": "fb351a5708786bee34d166e8a2d0b28a3fef3a839bb232f16ebe0588dc64e4d2"
+    },
+    {
+      "path": "pyzx/hsimplify.py",
+      "git_blob_sha1": "25be902ee8a0a7ed7c13585ffd9f83a18c8442b0",
+      "sha256": "3c60a20d9fc707c3e0aca343ebf22bea795b140c37ff23071c363846b0ad4e58"
+    },
+    {
+      "path": "pyzx/io.py",
+      "git_blob_sha1": "2f19d194cca1aea1379017978a2d1a30d9f09426",
+      "sha256": "524f90d028448df25456d44ae0d3e5c9c5e82a76122c0b1abadf7f83b06d8611"
+    },
+    {
+      "path": "pyzx/js/d3.v5.min.inline.js",
+      "git_blob_sha1": "716643ff816f599f01829217e928537c20dbb9da",
+      "sha256": "e6317b2f03f56f7638c23c0ef47592de02159653ddfcb044e216f26e6ba57ec3"
+    },
+    {
+      "path": "pyzx/js/d3.v5.min.js",
+      "git_blob_sha1": "057c258906fe059a925ea8801419ccb2f817b926",
+      "sha256": "9b442622c05770e322113466a53dea836210fe2d2a6b3240da68821f33a64b56"
+    },
+    {
+      "path": "pyzx/js/require.min.inline.js",
+      "git_blob_sha1": "e9651facf8c45426798e09182279b0abd8b683cc",
+      "sha256": "776420d1739825295378b444ee95b54c7d1245f01b6bf7a91ab0335cbe2dda1c"
+    },
+    {
+      "path": "pyzx/js/zx_editor_model.js",
+      "git_blob_sha1": "073f3bc9ffd3d3014361de5d6ef03ff6b4a05dd5",
+      "sha256": "0f7e69915132dd5177bd8f5a80ed3af10346532ce207e6d866608fdbb5f4538c"
+    },
+    {
+      "path": "pyzx/js/zx_editor_widget.js",
+      "git_blob_sha1": "70f426256d17eb1da6ca2e650c6c58dd394cebe8",
+      "sha256": "7caed417f0531912df2bf4b39246f60ffc69e1b3889a0b98b74493af2502fdb8"
+    },
+    {
+      "path": "pyzx/js/zx_viewer.inline.js",
+      "git_blob_sha1": "0d8d36b0eef29c2df9c0ecbe1bc8bcf5a7ee9625",
+      "sha256": "e1e228fbb9baa9e72000ff62a68a22b61ebd69f2169bfab5039e6311b470d123"
+    },
+    {
+      "path": "pyzx/js/zx_viewer.js",
+      "git_blob_sha1": "408eddabad6b9f668a7153c97bc6cdc1d59fe30f",
+      "sha256": "662351c91f9b3898c327333f74aaca73db26d5ff84b34f4bf58270f3dd3e9489"
+    },
+    {
+      "path": "pyzx/linalg.py",
+      "git_blob_sha1": "994bfea790705ea2b1795de51db9a51799039307",
+      "sha256": "a114a57c7ecc6df050bf9cfa9877a5a5982ab2e6e42a091dedc8aa7400417c91"
+    },
+    {
+      "path": "pyzx/linalg_c.pyx",
+      "git_blob_sha1": "7cbc53573ffc11acbde867fe75d9b7f606ecfb93",
+      "sha256": "88a617c651974f045fba4224f98c1a175e27e4777f783d19701860c0118a6bc9"
+    },
+    {
+      "path": "pyzx/local_search/__init__.py",
+      "git_blob_sha1": "df7bc44485090490a93336f6cf5d6755128616c0",
+      "sha256": "dfdec2ad31f64946b86cc672208ccdd2cf27d615f9671fb2b8eca305b780565c"
+    },
+    {
+      "path": "pyzx/local_search/congruences.py",
+      "git_blob_sha1": "ee509b12038290505d8f3e51449c6fa0cb306584",
+      "sha256": "eea6865b400606afa541b46b378a8bbb8e5a59f4530f7f733231649f59c3bb29"
+    },
+    {
+      "path": "pyzx/local_search/genetic.py",
+      "git_blob_sha1": "c347049eb5a51603f0e47cb3b4c250677fcbf3ff",
+      "sha256": "ba26de2909118a4c311bf1c54c9cd13cd8a6e20063a4ec5049312d236f8301f2"
+    },
+    {
+      "path": "pyzx/local_search/scores.py",
+      "git_blob_sha1": "c31653b8a7b841f31081848bfcb565f5384a9691",
+      "sha256": "7c6bc05d33a5cf87abf2bc1db50d830d258cde2aa86311eaf4ceafd1068549f7"
+    },
+    {
+      "path": "pyzx/local_search/simulated_annealing.py",
+      "git_blob_sha1": "06d8eec9b8d1f9ff66ca7b0b9ae7bf1dc9403ec0",
+      "sha256": "984e1e41ef9d551045fec54b15ffb7d5cf3ddb045ec522aba56d8ab84393d3bd"
+    },
+    {
+      "path": "pyzx/mbqc.py",
+      "git_blob_sha1": "c49a04ab52962f4259023d240854dbfbfd0b6b20",
+      "sha256": "4b877301fba2f507a5255318c6e18d0acad39a3c6b66794976b843650f50596d"
+    },
+    {
+      "path": "pyzx/optimize.py",
+      "git_blob_sha1": "f047111ce8766c0edd8b17b91baeee3ccfa95a6d",
+      "sha256": "e60b98f308cbea823923b0d165081c986fcfcdc66ad714c019ec098cc83f3190"
+    },
+    {
+      "path": "pyzx/parity_network.py",
+      "git_blob_sha1": "852c51b5d7c1622c995c65080486b164da14c8b5",
+      "sha256": "dd7d0933f8b1966fda47c2dc2c2b8f52d99c278b1a834906ed7725cb015623f4"
+    },
+    {
+      "path": "pyzx/py.typed",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyzx/pyquil_circuit.py",
+      "git_blob_sha1": "3776b128ca3f68e83ea6ba26bfeb6d36215c8be6",
+      "sha256": "f8d61bc8fbc02d534e4bb74b9637085c803c79456c435951d124f86cc0664614"
+    },
+    {
+      "path": "pyzx/quantomatic.py",
+      "git_blob_sha1": "6e6968bf01bf2937e3b2b80e9e703745117950e7",
+      "sha256": "d06cbca4a70412d3b9feef56deb941867284152c70d4088ff877487cedd359b0"
+    },
+    {
+      "path": "pyzx/quimb.py",
+      "git_blob_sha1": "ac4ecdadb98e57eded34a330021e926cb5ca6c01",
+      "sha256": "0d99bb9c145ce13acf9a528a2ded23eebf8a67bb5633e5dedbc93d701352da19"
+    },
+    {
+      "path": "pyzx/routing/__init__.py",
+      "git_blob_sha1": "30bd738b5b814b8298899a016c7fc605b48e769c",
+      "sha256": "7834a8effb248fb5d5cb88112652dd4a08d9c705313474db8fc019cc3b4494b8"
+    },
+    {
+      "path": "pyzx/routing/architecture.py",
+      "git_blob_sha1": "28fbfce4efef0c6d72901b10cd5c2a0aebabb6c7",
+      "sha256": "afc826c402166e4fb892ced39442533a899d115194dc02a80d32f51c61fc25db"
+    },
+    {
+      "path": "pyzx/routing/cnot_mapper.py",
+      "git_blob_sha1": "690998dc888128cf4994d9d9c5dde1484b1f0365",
+      "sha256": "f98211ac11082b9c1bee7021b166506adaef0b73dd91fb6a8c0efacf87ae349f"
+    },
+    {
+      "path": "pyzx/routing/machine_learning.py",
+      "git_blob_sha1": "87c24bb47ffa4502520d494f5aa513b33fbcb104",
+      "sha256": "15bfaa00b439d6ec1d762774d2e739e030828ccbebc88c0ab9961c6b0472f4fd"
+    },
+    {
+      "path": "pyzx/routing/parity_maps.py",
+      "git_blob_sha1": "f14c8856815dc0640d3ae21eb66a84f446b15ff6",
+      "sha256": "c22cf61e3be68530286feae224caecdb3bce3f80d62b219561d0f5f36a79d5f4"
+    },
+    {
+      "path": "pyzx/routing/phase_poly.py",
+      "git_blob_sha1": "b3ad677b671cd271fec8049e3507df24fcb94d68",
+      "sha256": "2ad83fcb6b0c94025bbe413b1676c39141fcf24cf30d02f7755c63b223f58b17"
+    },
+    {
+      "path": "pyzx/routing/steiner.py",
+      "git_blob_sha1": "4e283217f54ccac46d7b63950d4b0424e0270e68",
+      "sha256": "627ff06d458b3020d20cfbe02f7c36fbc7d964700e87728f01ff6c548be276d2"
+    },
+    {
+      "path": "pyzx/rules.py",
+      "git_blob_sha1": "4d63df4565df169e45d0f80baf1f39908633e1b0",
+      "sha256": "b55cea10abc24d8a1ba9003d4aa2d8d283442d21e83e96a79a1d870fccc7b5f8"
+    },
+    {
+      "path": "pyzx/scripts/__init__.py",
+      "git_blob_sha1": "b549e0d4dba6e7684615f1d47b6aeafa21f60b0f",
+      "sha256": "1507a17114c805c4c05d6296225638178c070e47e5cd0eba8658da6b6cef605d"
+    },
+    {
+      "path": "pyzx/scripts/circ2circ.py",
+      "git_blob_sha1": "640fd449dbc4af410aba4365c2582a8a0a7dd39f",
+      "sha256": "612365a402f4a6aa315178883fab28cfb6f2395683db938eba2da6300f583a5e"
+    },
+    {
+      "path": "pyzx/scripts/circ2tikz.py",
+      "git_blob_sha1": "1fa5248f128c29bc0d8ab3d3d9b9959688704f48",
+      "sha256": "7260449131f4b6cfc3a0539ff9ddf792dfe413a2f4ff4748c23510f926b8e465"
+    },
+    {
+      "path": "pyzx/scripts/circuit_router.py",
+      "git_blob_sha1": "d104e219705aed44c5d9a0f070b63e84deb1dc44",
+      "sha256": "158735127d17f135f5afca09d0a9b8fabdd4ed443371ba302d6570733a2a22fc"
+    },
+    {
+      "path": "pyzx/scripts/cnot_generator.py",
+      "git_blob_sha1": "6b492738ede1161e8889948d0e5b841cfb418de0",
+      "sha256": "eac679384f563b95bac4ca4205fb7772d37c2bcbfbd62f20f4d115d40b3b6cfc"
+    },
+    {
+      "path": "pyzx/scripts/phase_poly_generator.py",
+      "git_blob_sha1": "eb339c217ed3b03c795db9ce5b876980f7323c9b",
+      "sha256": "d153c001bb17a2819435f9696b00685810effe41bc533b56c44c3f14c8698848"
+    },
+    {
+      "path": "pyzx/simplify.py",
+      "git_blob_sha1": "14732fa46f8734a8aab954334583afab018c93c1",
+      "sha256": "c1be8bf821ce863dd51e42797adb491148240ad8268cdceed45a7bdcf5652dad"
+    },
+    {
+      "path": "pyzx/simulate.py",
+      "git_blob_sha1": "89e1771fcf619715c188d701a3f1c65546f50aa2",
+      "sha256": "26087d01e6a7e9110f8ae3d75b969bd98b59cd0fb555d44dbf82492ce52734c9"
+    },
+    {
+      "path": "pyzx/symbolic.py",
+      "git_blob_sha1": "152b8889d782da117d9350a1cae0c5a1eded366e",
+      "sha256": "791da082d7978ec4e5072ee02247b2b4d0703ad8217c4a7f7330f81b737df828"
+    },
+    {
+      "path": "pyzx/tensor.py",
+      "git_blob_sha1": "1e931fc9f1849a4c7407260f51e2205ebf259930",
+      "sha256": "1e7056336b3864aef0666102805dda1cc298f635532fcad5d7e0765dcec9e3fe"
+    },
+    {
+      "path": "pyzx/tikz.py",
+      "git_blob_sha1": "0bd2b9d584e3bad37b380a9397e7808b52a148d3",
+      "sha256": "b017c19f0fb995ab73b05e6d11673241b52b44662084e0bca96401a6a535975f"
+    },
+    {
+      "path": "pyzx/todd.py",
+      "git_blob_sha1": "165e4bdfaf8490f88a590708c0364b970d6372df",
+      "sha256": "7f20e37fd71931dc4c8058e58e7ecdd030d3d59e6570dee45d07bdd488d6b8c7"
+    },
+    {
+      "path": "pyzx/utils.py",
+      "git_blob_sha1": "46464c73a35acf724509dbc20ee6ea2fd5cbe476",
+      "sha256": "791b83b9517a37c69792df520340c9f79b6163884a6d7c548257f79f073ce74e"
+    }
+  ],
+  "all83verified": true,
+  "scope": "Full package subtree verified against GitHub recursive git tree. Full repository archive truncated later in scratchpads; only complete audited library subtree used, no partial package accepted."
+}
