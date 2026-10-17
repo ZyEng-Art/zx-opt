@@ -28,7 +28,9 @@ def main():
                                                  "anchor8_resource_native", "anchor8_nodes_resource_native",
                                                  "anchor8_resource_lr1e4_native", "anchor8_resource_lr1e4_stop_native",
                                                  "anchor8_resource_lr1e4_r128_native", "anchor8_resource_lr1e4_stop_r128_native",
-                                                 "anchor8_resource_lr1e4_neutral32_native"],
+                                                 "anchor8_resource_lr1e4_neutral32_native",
+                                                 "anchor8_resource_lr1e4_r128_mc_native",
+                                                 "anchor8_resource_lr1e4_r128_mc_success_native"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
     p.add_argument("--workers", type=int, default=4)
@@ -94,6 +96,10 @@ def main():
             command += ["--anchor-noop-stop"]
         if "_neutral32" in spec["mode"]:
             command += ["--neutral-stop-steps", "32"]
+        if "_mc" in spec["mode"]:
+            command += ["--discount-factor", "1", "--gae-lambda", "1"]
+        if "_success" in spec["mode"]:
+            command += ["--gate-improvement-stop"]
         if a.save_improvement_models:
             command += ["--save-improvement-models"]
         try:

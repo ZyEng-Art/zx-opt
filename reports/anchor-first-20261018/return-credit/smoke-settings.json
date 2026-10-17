@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "case": "anchor8_resource_lr1e4_r128_mc_native_frozen_s197",
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "updates": 0,
+      "discount_factor": 1.0,
+      "gae_lambda": 1.0,
+      "gate_improvement_stop": false,
+      "success_cutoffs": 0
+    },
+    {
+      "case": "anchor8_resource_lr1e4_r128_mc_native_online_s197",
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "updates": 4,
+      "discount_factor": 1.0,
+      "gae_lambda": 1.0,
+      "gate_improvement_stop": false,
+      "success_cutoffs": 0
+    },
+    {
+      "case": "anchor8_resource_lr1e4_r128_mc_success_native_frozen_s197",
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "updates": 0,
+      "discount_factor": 1.0,
+      "gae_lambda": 1.0,
+      "gate_improvement_stop": true,
+      "success_cutoffs": 1
+    },
+    {
+      "case": "anchor8_resource_lr1e4_r128_mc_success_native_online_s197",
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "updates": 4,
+      "discount_factor": 1.0,
+      "gae_lambda": 1.0,
+      "gate_improvement_stop": true,
+      "success_cutoffs": 1
+    },
+    {
+      "case": "anchor8_resource_lr1e4_r128_native_frozen_s197",
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "updates": 0,
+      "discount_factor": 0.99,
+      "gae_lambda": 0.95,
+      "gate_improvement_stop": false,
+      "success_cutoffs": 0
+    },
+    {
+      "case": "anchor8_resource_lr1e4_r128_native_online_s197",
+      "best": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "updates": 4,
+      "discount_factor": 0.99,
+      "gae_lambda": 0.95,
+      "gate_improvement_stop": false,
+      "success_cutoffs": 0
+    }
+  ],
+  "scope": "Development512step integration and complete replay; not efficacy"
+}

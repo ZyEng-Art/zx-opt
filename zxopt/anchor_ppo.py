@@ -16,7 +16,8 @@ from runtime import gae
 
 def ppo_update(net, optimizer, rollout, bootstrap, config, deadline):
     observations, actions, old_logs, values, rewards, dones = zip(*rollout)
-    advantages, returns = gae(rewards, dones, values, bootstrap)
+    gamma, lam = config.get("discount_factor", .99), config.get("gae_lambda", .95)
+    advantages, returns = gae(rewards, dones, values, bootstrap, gamma=gamma, lam=lam)
     acts, old_logs = torch.tensor(actions), torch.tensor(old_logs)
     before = torch.cat([p.detach().flatten() for p in net.parameters()]).clone()
     actor_before = torch.cat([p.detach().flatten() for p in net.actor_gnn.parameters()]).clone()
@@ -65,7 +66,8 @@ def ppo_update(net, optimizer, rollout, bootstrap, config, deadline):
             normalized.append(float(entropy[i])/max(1e-12, np.log(ka)+np.log(km)))
             normalized_anchor.append(float(ha[i])/np.log(ka) if ka > 1 else 0.)
             normalized_local.append(float(hm[i])/np.log(km) if km > 1 else 0.)
-        metrics.update(anchor_entropy=float(ha.mean()), conditional_action_entropy=float(hm.mean()),
+        metrics.update(discount_factor=gamma, gae_lambda=lam,
+                       anchor_entropy=float(ha.mean()), conditional_action_entropy=float(hm.mean()),
                        post_entropy=float(entropy.mean()), normalized_entropy=float(np.mean(normalized)),
                        normalized_anchor_entropy=float(np.mean(normalized_anchor)),
                        normalized_local_entropy=float(np.mean(normalized_local)),

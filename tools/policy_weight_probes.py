@@ -120,7 +120,9 @@ def command_for(spec, folder, seconds, max_steps=None):
         command += ["--"+key.replace("_", "-"), str(config[key])]
     command += ["--archive-qasm-cap", str(config.get("archive_qasm_cap", 0))]
     command += ["--neutral-stop-steps", str(config.get("neutral_stop_steps", 0))]
-    for key in ("general_zx", "jpv", "allow_arbitrary_angles", "anchor_resource_mask", "anchor_noop_stop"):
+    command += ["--discount-factor", str(config.get("discount_factor", .99)),
+                "--gae-lambda", str(config.get("gae_lambda", .95))]
+    for key in ("general_zx", "jpv", "allow_arbitrary_angles", "anchor_resource_mask", "anchor_noop_stop", "gate_improvement_stop"):
         if config.get(key):
             command += ["--"+key.replace("_", "-")]
     if not config["feasibility_mask"]:

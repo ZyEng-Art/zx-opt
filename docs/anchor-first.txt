@@ -295,3 +295,39 @@ and parameter comparisons are required before calling this computation-only.
   teacher graph, candidate circuit or restart archive enters these searches.
   The model-probe launcher retains this development-demonstration scope. The
   existing policy-probe workflow still requires its complete source PPO audit.
+
+2026-10-18 optional return credit and successful-episode cutoff
+  Anchor PPO accepts --discount-factor and --gae-lambda, retaining .99/.95
+  defaults. With both1, complete-episode returns telescope to the actual final
+  gate improvement; normal value bootstrap remains at collection-window cuts.
+  Recorded gate-delta rewards are unchanged. This removes one arithmetic
+  conflict in temporarily expanding successful paths, but does not establish
+  better policy learning and can increase variance.
+
+  --gate-improvement-stop ends after normal verified scoring/archive admission
+  when the child has strictly fewer total gates than the known actual restart
+  state. Unknown-cost latent restarts never trigger it. The already-visible
+  start/current cost context supports the decision; no feature schema changes.
+  This heuristic can discard useful continuation after a small improvement.
+  All options are checkpoint/snapshot/protocol bound. Global legacy PPO keeps
+  its existing return settings. Default action and weight traces are unchanged.
+
+  123unit tests and eight512step complete replay audits passed. Four default
+  frozen/online trace comparisons have bitwise-equal final weights; changing
+  only credit parameters also preserves the frozen trace exactly. Both success
+  smoke cases exercised the cutoff. Every native rewrite was reference checked.
+  Evidence: reports/anchor-first-20261018/return-credit. These are development
+  integration checks, not learning-efficacy results.
+
+  Planned controlled hour study: barenco_tof_3, fresh seeds941/967/991,
+  resource-masked native anchor8, LR1e-4, rollout128; baseline, gamma1/lambda1,
+  and gamma1/lambda1 plus success cutoff, each frozen/online. 18workers/24CPU,
+  64GiB, audit6 rooted with reference crosscheck101, strict-gate snapshots.
+  Frozen baseline/MC controls are correlated duplicates. Original26 NAM jobs
+  retain their three-hour strict-total-gate-improvement stopping rule.
+
+  The fixed hour18 source completed its whole replay audit first at04:45.
+  Launch the previously planned54 frozen initial/trained-weight probes from
+  that source, irrespective of gate outcomes. Model/search seeds and900s
+  budgets are unchanged. Use18workers/32CPU/64GiB and audit12 rooted/cross101
+  to complete validation before09:00; resources differ from the earlier draft.

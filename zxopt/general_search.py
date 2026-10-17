@@ -77,6 +77,10 @@ def run(args):
         raise ValueError("Anchor resource mask requires --selection anchor")
     if args.selection != "anchor" and args.anchor_noop_stop:
         raise ValueError("Anchor noop termination requires --selection anchor")
+    if not (0 <= args.discount_factor <= 1 and 0 <= args.gae_lambda <= 1):
+        raise ValueError("Discount and GAE lambda must lie in [0,1]")
+    if args.selection != "anchor" and (args.discount_factor != .99 or args.gae_lambda != .95):
+        raise ValueError("Custom return credit is currently supported for anchor PPO")
     if args.verify_native_flow and not args.native_flow_module:
         raise ValueError("Native flow verification requires a native module")
     native_flow = None
@@ -202,6 +206,9 @@ def run(args):
                                 resets_on="strict reduction in total gates only; CX/depth ties do not reset",
                                 overall_cap_seconds=args.seconds or None,
                                 checkpoint_seconds=args.checkpoint_seconds)
+    protocol["return_credit"] = dict(discount_factor=args.discount_factor, gae_lambda=args.gae_lambda,
+        gate_improvement_stop=args.gate_improvement_stop,
+        scope="Gate-delta rewards unchanged. Optional success cutoff requires a strictly lower verified gate count than the known restart cost; unknown restart costs never trigger it. Gamma1/lambda1 gives undiscounted episode returns, with normal value bootstrap at collection-window cuts.")
     if args.neutral_stop_steps:
         protocol["neutral_stop"] = dict(steps=args.neutral_stop_steps,
             counter="Consecutive accepted scored rewrites or scored unchanged-state noops with zero total-gate reward; unscored/rejected steps and restarts reset",
@@ -268,7 +275,8 @@ def run(args):
                     "verification", "no_improvement_seconds", "total_candidate_cap", "rewrite_timeout",
                     "selection", "anchor_candidate_cap"]
         semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask", "archive_qasm_cap",
-                     "native_flow_module", "verify_native_flow", "anchor_noop_stop", "neutral_stop_steps"]
+                     "native_flow_module", "verify_native_flow", "anchor_noop_stop", "neutral_stop_steps",
+                     "discount_factor", "gae_lambda", "gate_improvement_stop"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -544,6 +552,8 @@ def run(args):
                                     anchor_resource_mask=args.anchor_resource_mask,
                                     anchor_noop_stop=args.anchor_noop_stop,
                                     neutral_stop_steps=args.neutral_stop_steps,
+                                    discount_factor=args.discount_factor, gae_lambda=args.gae_lambda,
+                                    gate_improvement_stop=args.gate_improvement_stop,
                                     scope="Policy that generated this strict gate improvement, before this transition's PPO update; no active circuit/archive"), stream)
                             history["policy_snapshot"] = dict(path=str(snapshot.relative_to(out)),
                                 sha256=hashlib.sha256(snapshot.read_bytes()).hexdigest(), steps=transition, updates=updates)
@@ -555,6 +565,13 @@ def run(args):
                            unscored_depth=state.unscored_depth)
             else:
                 row.update(status="rejected", reason=rejected)
+            if args.gate_improvement_stop:
+                success = bool(row["status"] == "accepted" and start.cost is not None
+                               and row["cost"]["gates"] < start.cost["gates"])
+                row["gate_improvement_stop"] = success
+                if success:
+                    done = True
+                    anchor_stats["gate_improvement_terminations"] += 1
             if args.neutral_stop_steps:
                 neutral_streak = (neutral_streak+1 if row["status"] in ("accepted", "anchor_noop")
                                   and row["cost"] is not None and reward == 0 else 0)
@@ -577,7 +594,10 @@ def run(args):
                     next_obs = observation(state.diagram, next_view.graph, [], ctx)
                     with torch.no_grad():
                         bootstrap = float(net.get_value(batch([next_obs])[1])[0])
-                update = update_ppo(net, optimizer, rollout, bootstrap, dict(epochs=4, minibatch=32), deadline)
+                options = dict(epochs=4, minibatch=32)
+                if anchored:
+                    options.update(discount_factor=args.discount_factor, gae_lambda=args.gae_lambda)
+                update = update_ppo(net, optimizer, rollout, bootstrap, options, deadline)
                 choices = [int((r[0][1 if anchored else 0].y != -1).sum()) for r in rollout]
                 fraction = sum(k > 1 for k in choices)/len(choices)
                 local_entropy = update["metrics"]["normalized_local_entropy"] if anchored else update["metrics"]["normalized_entropy"]
@@ -619,6 +639,8 @@ def run(args):
                         anchor_resource_mask=args.anchor_resource_mask,
                         anchor_noop_stop=args.anchor_noop_stop,
                         neutral_stop_steps=args.neutral_stop_steps,
+                        discount_factor=args.discount_factor, gae_lambda=args.gae_lambda,
+                        gate_improvement_stop=args.gate_improvement_stop,
                         scope="model/Adam only, not a complete search checkpoint"), out/"final.pt")
     checkpoint_now()
     if shared is not None:
@@ -688,6 +710,10 @@ def parser():
     p.add_argument("--anchor-prior", choices=["uniform", "nodes"], default="uniform",
                    help="Optional topology-only node-focused category prior, included in the PPO density")
     p.add_argument("--learning-rate", type=float, default=.0003)
+    p.add_argument("--discount-factor", type=float, default=.99)
+    p.add_argument("--gae-lambda", type=float, default=.95)
+    p.add_argument("--gate-improvement-stop", action="store_true",
+                   help="Opt-in terminal after a strict verified gate reduction below the known restart cost")
     p.add_argument("--anchor-resource-mask", action="store_true",
                    help="Before sampling, remove only wire/scalar anchors whose insertion is provably over budget")
     p.add_argument("--anchor-noop-stop", action="store_true",

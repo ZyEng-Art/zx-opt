@@ -1,0 +1,36 @@
+{
+  "source_commit": "1038c2192502bfe3eb611c31ee71383fd4330a5b",
+  "tracked_dirty": true,
+  "cases": [
+    {
+      "name": "barenco_tof_3",
+      "sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92"
+    }
+  ],
+  "plan": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "policy": "frozen",
+      "seed": 197,
+      "arm": "anchor8_resource_lr1e4_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_native_frozen_s197"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "policy": "online",
+      "seed": 197,
+      "arm": "anchor8_resource_lr1e4_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_native_online_s197"
+    }
+  ],
+  "seconds": 900.0,
+  "workers": 2,
+  "audit_workers": 2,
+  "audit_native_replay": "rooted",
+  "audit_crosscheck_native_every": 1,
+  "native_flow_module": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/native-flow-build-local-signals-20261018/zxopt_native_scores.cpython-39-darwin.so",
+  "scope": "independent training/search on each target; no generalization claim; count noops separately",
+  "started_unix": 1792269600.579486
+}

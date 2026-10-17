@@ -1,0 +1,121 @@
+{
+  "status": "passed",
+  "development_allow_dirty": true,
+  "trials": 2,
+  "records": [
+    {
+      "arm": "anchor8_resource_lr1e4_native_frozen",
+      "seed": 197,
+      "status": "passed",
+      "transitions": 512,
+      "accepted_rewrites": 422,
+      "replayed_auxiliary": 104,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 168,
+      "quarantined_invalid_qasm": 0,
+      "max_graph_operator_error": 1.132474226192657e-14,
+      "max_qasm_operator_error": 1.258746133848389e-15,
+      "accepted_families": {
+        "phase_split": 10,
+        "I:backward": 162,
+        "identity_insert": 26,
+        "H:forward": 79,
+        "EU:forward": 31,
+        "spider_split": 4,
+        "H:backward": 53,
+        "PV": 9,
+        "I:forward": 10,
+        "ID": 11,
+        "S:backward": 19,
+        "PVG": 5,
+        "S:forward": 1,
+        "EU:backward": 1,
+        "PVB": 1
+      },
+      "completion_branches": {
+        "primary": 33,
+        "clifford_repair": 77,
+        "full_reduce_repair": 312
+      },
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "model": {
+        "parameter_l2_delta": 0.0,
+        "actor_l2_delta": 0.0,
+        "finite": true
+      },
+      "improvement_model_snapshots": 1,
+      "native_replay": "rooted",
+      "rooted_native_replays": 26,
+      "full_native_crosschecks": 26,
+      "protocol_sha256": "45ced520a9f6c6879915aa5fa44b232ad8f5b34ff45ec9d6ead8ad57f0860fd3",
+      "best_history_sha256": "0036e77c02ce99d84fa1184e9ff16b789912e1544b33adb883c289a14be47158",
+      "initial_model_sha256": "060d8df790f92793a9f004a0a986cd8a00c548569de9b64ff20137353ec7871c",
+      "final_model_sha256": "a234be33b4038e864592c84b513fa8285806d25338b1e30ca93f16d3ff49c219",
+      "improvement_model_receipts": {
+        "improvement-models/g38-t69.pt": "b89350fe182d5234f216e7f0ff73440b56c93ccf8acfc86d409e347f5e321075"
+      },
+      "events_sha256": "d0091b19bf8f7f9b8ac61eaf09dafcef44bd318be50bd4e489ea323ce61002f3",
+      "report_sha256": "ea10f5faa03d83ef01a1e81ed1186d24b1c6f0bba9af7c90b10732feaabb51d0"
+    },
+    {
+      "arm": "anchor8_resource_lr1e4_native_online",
+      "seed": 197,
+      "status": "passed",
+      "transitions": 512,
+      "accepted_rewrites": 431,
+      "replayed_auxiliary": 116,
+      "legal_unscored": 0,
+      "recovered": 0,
+      "saved_qasm": 174,
+      "quarantined_invalid_qasm": 0,
+      "max_graph_operator_error": 1.132474226192657e-14,
+      "max_qasm_operator_error": 1.3610773946825861e-15,
+      "accepted_families": {
+        "phase_split": 12,
+        "I:backward": 159,
+        "identity_insert": 31,
+        "H:forward": 69,
+        "EU:forward": 32,
+        "spider_split": 4,
+        "H:backward": 51,
+        "PV": 12,
+        "I:forward": 16,
+        "ID": 10,
+        "S:backward": 20,
+        "PVG": 14,
+        "EU:backward": 1
+      },
+      "completion_branches": {
+        "primary": 13,
+        "clifford_repair": 130,
+        "full_reduce_repair": 288
+      },
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "model": {
+        "parameter_l2_delta": 0.270868672686032,
+        "actor_l2_delta": 0.06453080588163797,
+        "finite": true
+      },
+      "improvement_model_snapshots": 1,
+      "native_replay": "rooted",
+      "rooted_native_replays": 36,
+      "full_native_crosschecks": 36,
+      "protocol_sha256": "7a908112b4207705c9170f71aa5ebfd805ca4f72af694aadbd39249d10d5cb57",
+      "best_history_sha256": "c7158ed5a1c2e40edcebaa6452d6daf826d3de3cd5014c0770416f96af1ad321",
+      "initial_model_sha256": "060d8df790f92793a9f004a0a986cd8a00c548569de9b64ff20137353ec7871c",
+      "final_model_sha256": "bb9feba1b797ac9b8dc9a5af5f3d408341523d20c7bef65351f573a0b367fb31",
+      "improvement_model_receipts": {
+        "improvement-models/g38-t69.pt": "e76141525a8fd010d20feaf20824aee5687e226c5e265f52bef8ac72f0d42ab4"
+      },
+      "events_sha256": "c52fb26e21a8d7c003c7016f117a99b1d1bb77259d26518c367bfead9c54e4c5",
+      "report_sha256": "0e00416a4d610e99f3a32228d3a8f562503ea61ed85985971d9f12153b02ad6d"
+    }
+  ],
+  "model_pairs": [],
+  "native_replay": "rooted",
+  "crosscheck_native_every": 1,
+  "saved_qasm": 342,
+  "accepted_rewrites": 853,
+  "caveat": "Quarantined invalid extractions are excluded from candidates, rewards and best gate counts"
+}

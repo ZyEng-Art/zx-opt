@@ -19,7 +19,7 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def immediate_terminal(event, config, root_gates):
+def immediate_terminal(event, config, root_gates, restart_gates=None):
     """The recorded step's terminal flag, before any later dead-end discovery."""
     done = event["trajectory_step"] >= config["horizon"]
     if event["status"] == "anchor_noop":
@@ -28,6 +28,8 @@ def immediate_terminal(event, config, root_gates):
         done = done or event["unscored_depth"] >= config["max_unscored"]
     elif event["status"] == "accepted":
         done = done or event["cost"]["gates"] > 1.5*root_gates
+        if config.get("gate_improvement_stop") and restart_gates is not None:
+            done = done or event["cost"]["gates"] < restart_gates
     limit = config.get("neutral_stop_steps", 0)
     return done or bool(limit and event["neutral_streak"] >= limit)
 
@@ -135,7 +137,7 @@ def audit_one(spec):
     restart_cursor = 0
     prior_event = None
     native_calls = native_crosschecks = 0
-    neutral_streak = neutral_terminations = 0
+    neutral_streak = neutral_terminations = success_terminations = 0
     def restart(record):
         nonlocal best
         key, source = record["graph_key"], record["source"]
@@ -211,7 +213,13 @@ def audit_one(spec):
             neutral_stop = neutral_streak >= config["neutral_stop_steps"]
             assert event["neutral_streak"] == neutral_streak and event["neutral_stop"] == neutral_stop
             neutral_terminations += int(neutral_stop)
-        assert event["terminal"] == immediate_terminal(event, config, root.cost["gates"])
+        restart_gates = None if start.cost is None else start.cost["gates"]
+        if config.get("gate_improvement_stop"):
+            success = bool(event["status"] == "accepted" and restart_gates is not None
+                           and event["cost"]["gates"] < restart_gates)
+            assert event["gate_improvement_stop"] == success
+            success_terminations += int(success)
+        assert event["terminal"] == immediate_terminal(event, config, root.cost["gates"], restart_gates)
         prior_event = event
         assert 0 <= event["seconds"] <= event.get("deadline_seconds", config["seconds"])
         if event["status"] == "rejected":
@@ -309,6 +317,8 @@ def audit_one(spec):
         assert report["anchor_stats"].get("noop_terminations", 0) == statuses["anchor_noop"]
     if config.get("neutral_stop_steps", 0):
         assert report["anchor_stats"].get("neutral_terminations", 0) == neutral_terminations
+    if config.get("gate_improvement_stop"):
+        assert report["anchor_stats"].get("gate_improvement_terminations", 0) == success_terminations
     best_circuit = qasm2.loads((folder/"best.qasm").read_text())
     assert check_qasm(reference, (folder/"best.qasm").read_text()) < 2e-8
     if (folder/"initial.pt").exists():
@@ -362,6 +372,8 @@ def audit_one(spec):
         assert saved["selection"] == config["selection"]
         assert saved["anchor_noop_stop"] == config.get("anchor_noop_stop", False)
         assert saved.get("neutral_stop_steps", 0) == config.get("neutral_stop_steps", 0)
+        for key, default in (("discount_factor", .99), ("gae_lambda", .95), ("gate_improvement_stop", False)):
+            assert saved.get(key, default) == config.get(key, default)
         assert saved["anchor_prior"] == config["anchor_prior"]
         assert saved["anchor_resource_mask"] == config["anchor_resource_mask"]
         assert set(saved["state_dict"]) == set(initial)

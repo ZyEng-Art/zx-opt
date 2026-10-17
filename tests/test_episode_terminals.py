@@ -29,3 +29,12 @@ class EpisodeTerminalTest(unittest.TestCase):
             event = dict(status='accepted', trajectory_step=40, neutral_streak=streak, cost=dict(gates=37))
             self.assertEqual(immediate_terminal(event, config, 40), expected)
             self.assertFalse(immediate_terminal(event, dict(config, neutral_stop_steps=0), 40))
+
+    def test_success_cut_uses_known_restart_gates_not_root_or_incumbent(self):
+        config=dict(horizon=70,max_unscored=8,gate_improvement_stop=True)
+        for gates,expected in ((38,False),(37,False),(36,True)):
+            event=dict(status='accepted',trajectory_step=5,cost=dict(gates=gates))
+            self.assertEqual(immediate_terminal(event,config,40,37),expected)
+            self.assertFalse(immediate_terminal(event,config,40,None))
+        event=dict(status='accepted_unscored',trajectory_step=5,unscored_depth=1,cost=None)
+        self.assertFalse(immediate_terminal(event,config,40,37))
