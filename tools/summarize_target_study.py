@@ -18,7 +18,7 @@ def main():
     verification = json.loads((args.audit/"verification.json").read_text())
     assert verification["status"] == "passed"
     targets = []; pairs = []; lines = ["其他电路独立训练搜索，所有目标/方法/种子均保留。", "",
-        "每条电路从原始输入、空状态池和随机网络开始；冻结/在线同初始化。", 
+        "每条电路从原始输入、空状态池和随机网络开始；冻结/在线同初始化。",
         "没有迁移 barenco 的模型，不用本轮结果声称跨电路泛化。", "",
         "目标 | 输入门数 | 预处理基线 | 方法 | 最终门数（各个种子） | 时间平均最低门数"]
     for target in manifest["targets"]:
@@ -57,9 +57,9 @@ def main():
     (args.output/"analysis.json").write_text(json.dumps(result, indent=2)+"\n")
     shutil.copyfile(args.audit/"verification.json", args.output/"verification.json")
     shutil.copyfile(args.study/"campaign.json", args.output/"campaign.json")
-    lines.extend(["", f"在线相对冻结最终成本（总门数优先、CX 次之）：{counts}。", 
-                  "跨电路的绝对门数不合并平均；每个电路的曲线、诊断、全部种子和审计在对应子目录。", 
-                  "共同预处理收益与后续搜索收益分开；value loss 下降不单独证明学习有效。", 
+    lines.extend(["", f"在线相对冻结最终成本（总门数优先、CX 次之）：{counts}。",
+                  "跨电路的绝对门数不合并平均；每个电路的曲线、诊断、全部种子和审计在对应子目录。",
+                  "共同预处理收益与后续搜索收益分开；value loss 下降不单独证明学习有效。",
                   f"共重放 {verification['accepted_rewrites']} 次接受改写，核验 {verification['saved_qasm']} 份保存电路。"])
     (args.output/"findings.txt").write_text("\n".join(lines)+"\n")
     print(json.dumps(dict(status="passed", targets=len(targets), paired_final_outcomes=counts)))
