@@ -1,13 +1,13 @@
 {
-  "phase": "other_circuits_parameterization_and_preflight",
+  "phase": "other_circuits_running",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "scope": "independent target-wise training/search on tof_3, mod5_4, tof_4; total NAM gates; prior barenco results retained",
   "resources": {
-    "node44_owned_cpu_container": "stopped",
+    "node44_owned_cpu_container": "running_for_other_circuits_cpu_study",
     "new_gpu_tasks": 0,
     "persistent_ssh": "retained",
-    "background_jobs": "none; experiments, audits, archives and reports completed"
+    "background_jobs": "owned controller PID 3477129; no GPU"
   },
   "github": {
     "push": "completed",
@@ -28,7 +28,7 @@
     "Improve discovery of lower total-gate records rather than fitting zero-reward loops",
     "Study which bounded JPV rewrite paths yield useful extractable states"
   ],
-  "active_work": "Generalize input snapshots/audits, root checks on 5/5/7 qubits, then 36 independent from-scratch target trials on node44",
+  "active_work": "Node44 3-target preflight then 36 trials x 1200s, full operator/replay/source/model audits, archive and reports",
   "completed_followups": [
     {
       "suite": "representation",
@@ -145,5 +145,30 @@
     "unit_tests": 38,
     "implementation_commit": "c645d8a6afb3f73b20815558c96ec0cd28c6417c",
     "feasibility_fix_commit": "a184ab519a83d75c76faaf9812b9226fc72888e2"
+  },
+  "ongoing_experiment": {
+    "time": "2026-10-17T19:18:34.867819+08:00",
+    "event": "other_circuits_node44_launched",
+    "source_commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270",
+    "controller_pid": 3477129,
+    "bundle_sha256": "72de115c372a3407df4eb5179b4cfb11ef9632940554fa9155a9e3eafd7de80f",
+    "trials": 36,
+    "seconds_per_trial": 1200,
+    "cpu_workers": 36,
+    "gpu": false,
+    "local_unit_tests": 41,
+    "local_checked_rewrites": 24,
+    "local_checked_qasm": 12,
+    "input_gates": [
+      39,
+      51,
+      63
+    ],
+    "common_baseline_gates": [
+      35,
+      41,
+      55
+    ],
+    "transport": "existing persistent socket; no interactive authentication"
   }
 }
