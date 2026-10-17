@@ -1,0 +1,29 @@
+{
+  "status": "training_running",
+  "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+  "method": "RL-ZX general_zx online; Quarl paper Table2 raw NAM benchmarks",
+  "targets": 26,
+  "nodes": [
+    22,
+    23
+  ],
+  "workers_per_node": 13,
+  "gpu": false,
+  "formal_jobs_started": 26,
+  "formal_job_failures": 0,
+  "preflight_cases_passed": 26,
+  "preflight_transitions": 104,
+  "preflight_accepted": 103,
+  "preflight_updates": 26,
+  "unit_tests_per_node": 63,
+  "source_clean": true,
+  "patience_seconds": 10800,
+  "reset": "strict best total gate reduction only",
+  "overall_time_cap": null,
+  "checkpoint_seconds": 300,
+  "collector_pid": 39461,
+  "collector_output": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-nam-patience/runs/nam-patience-launch-20261017/mirror-f5874e497ce1",
+  "snapshot_utc": "2026-10-17T15:48:58.558148+00:00",
+  "scope": "Status snapshot only; training and eventual audits remain running. Initial reductions include preprocessing, separate from on-target gains.",
+  "pending": "Wait for target stagnation10800s, then replay/source/model audits and final archive collection"
+}

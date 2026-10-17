@@ -1,0 +1,26 @@
+{
+  "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+  "bundle_sha256": "55c9724e662a7a5d847b3e81b79e97b5a81ed97eb839a340bd752c78b79d9eb4",
+  "bundle_bytes": 7157201,
+  "nodes": [
+    {
+      "status": "launched",
+      "node": 22,
+      "pid": 1492082,
+      "commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "time": "2026-10-17T23:38:54.427201+08:00",
+      "base": "/tmp/dengzengyong_rlzx_nam_node22_20261017"
+    },
+    {
+      "status": "launched",
+      "node": 23,
+      "pid": 1803064,
+      "commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "time": "2026-10-17T23:38:54.570812+08:00",
+      "base": "/tmp/dengzengyong_rlzx_nam_node23_20261017"
+    }
+  ],
+  "method": "RL-ZX general_zx on paper26 raw NAM inputs",
+  "patience_seconds": 10800,
+  "gpu": false
+}

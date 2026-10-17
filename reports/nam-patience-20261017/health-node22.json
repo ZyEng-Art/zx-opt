@@ -1,0 +1,676 @@
+{
+  "node": 22,
+  "time": "2026-10-17T23:46:09.578225+08:00",
+  "preflight": [
+    {
+      "name": "tof_3",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 0.8372000600211322
+    },
+    {
+      "name": "tof_4",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 1.5128095620311797
+    },
+    {
+      "name": "barenco_tof_4",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 3.314700521994382
+    },
+    {
+      "name": "vbe_adder_3",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 4.848483650013804
+    },
+    {
+      "name": "barenco_tof_5",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 4.875675724819303
+    },
+    {
+      "name": "gf2^4_mult",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 8.603899523150176
+    },
+    {
+      "name": "hwb6",
+      "status": "passed",
+      "accepted": 3,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 13.1659899961669
+    },
+    {
+      "name": "gf2^5_mult",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 17.994098149007186
+    },
+    {
+      "name": "qcla_com_7",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 24.08632619213313
+    },
+    {
+      "name": "barenco_tof_10",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 27.703128207009286
+    },
+    {
+      "name": "qcla_adder_10",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 39.263401929987594
+    },
+    {
+      "name": "gf2^7_mult",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 67.73177849012427
+    },
+    {
+      "name": "adder_8",
+      "status": "passed",
+      "accepted": 4,
+      "updates": 1,
+      "steps": 4,
+      "seconds": 108.09431644901633
+    }
+  ],
+  "jobs": [
+    {
+      "name": "adder_8",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 9,
+      "updates": 0,
+      "best": {
+        "gates": 568,
+        "cx": 271,
+        "depth": 202
+      },
+      "root": {
+        "gates": 568,
+        "cx": 271,
+        "depth": 202
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 568,
+        "last_improvement_unix": 1792251709.855757
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": null
+    },
+    {
+      "name": "barenco_tof_10",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 33,
+      "updates": 1,
+      "best": {
+        "gates": 264,
+        "cx": 126,
+        "depth": 240
+      },
+      "root": {
+        "gates": 264,
+        "cx": 126,
+        "depth": 240
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 264,
+        "last_improvement_unix": 1792251706.422114
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": {
+        "policy_loss": -8.557923138141632e-05,
+        "value_loss": 7.443730115890503,
+        "entropy": 3.3316932320594788,
+        "approx_kl": 2.0954757928848267e-08,
+        "clip_fraction": 0.0,
+        "gradient_norm": 3.2132497429847717,
+        "value_explained_variance_before": 0.0089219468633851,
+        "value_explained_variance_after": 0.008200930869912137,
+        "return_mean": -1.5639455318450928,
+        "return_std": 2.181817985845326,
+        "reward_mean": -0.18750000000000003,
+        "nonzero_reward_fraction": 0.34375,
+        "positive_reward_fraction": 0.15625,
+        "post_entropy": 3.331693172454834,
+        "normalized_entropy": 0.9999999571318844,
+        "stop_probability": 0.0,
+        "post_approx_kl": 1.0058283805847168e-07,
+        "conditional_normalized_entropy": 0.9999999571318844,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "barenco_tof_4",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 289,
+      "updates": 9,
+      "best": {
+        "gates": 73,
+        "cx": 33,
+        "depth": 66
+      },
+      "root": {
+        "gates": 74,
+        "cx": 36,
+        "depth": 70
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 74,
+        "last_improvement_unix": 1792251704.7540553
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "last_metrics": {
+        "policy_loss": -1.6355188563466072e-05,
+        "value_loss": 0.5014174208045006,
+        "entropy": 3.2892648577690125,
+        "approx_kl": 6.05359673500061e-09,
+        "clip_fraction": 0.0,
+        "gradient_norm": 0.3070448189973831,
+        "value_explained_variance_before": 0.013682886482474732,
+        "value_explained_variance_after": 0.015485200544812061,
+        "return_mean": -0.11743079870939255,
+        "return_std": 0.7010143602521994,
+        "reward_mean": 0.0031250000000000028,
+        "nonzero_reward_fraction": 0.5625,
+        "positive_reward_fraction": 0.25,
+        "post_entropy": 3.289264440536499,
+        "normalized_entropy": 0.9999996364469715,
+        "stop_probability": 0.0,
+        "post_approx_kl": 3.5390257835388184e-08,
+        "conditional_normalized_entropy": 0.9999996364469715,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "barenco_tof_5",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 177,
+      "updates": 5,
+      "best": {
+        "gates": 105,
+        "cx": 48,
+        "depth": 94
+      },
+      "root": {
+        "gates": 105,
+        "cx": 51,
+        "depth": 98
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 105,
+        "last_improvement_unix": 1792251704.902813
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": {
+        "policy_loss": -4.252418875694275e-05,
+        "value_loss": 1.1401988565921783,
+        "entropy": 3.4547561407089233,
+        "approx_kl": 4.6566128730773926e-09,
+        "clip_fraction": 0.0,
+        "gradient_norm": 0.22180091217160225,
+        "value_explained_variance_before": 0.03813950372873287,
+        "value_explained_variance_after": 0.03948238663038983,
+        "return_mean": -0.03392261639237404,
+        "return_std": 1.088702297983261,
+        "reward_mean": 0.0,
+        "nonzero_reward_fraction": 0.375,
+        "positive_reward_fraction": 0.1875,
+        "post_entropy": 3.454756259918213,
+        "normalized_entropy": 0.9999997163733126,
+        "stop_probability": 0.0,
+        "post_approx_kl": 4.284083843231201e-08,
+        "conditional_normalized_entropy": 0.9999997163733126,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "gf2^4_mult",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 98,
+      "updates": 3,
+      "best": {
+        "gates": 173,
+        "cx": 95,
+        "depth": 100
+      },
+      "root": {
+        "gates": 176,
+        "cx": 95,
+        "depth": 94
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 176,
+        "last_improvement_unix": 1792251705.3047426
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": {
+        "policy_loss": -5.9219542890787125e-05,
+        "value_loss": 1.5083016753196716,
+        "entropy": 3.354220449924469,
+        "approx_kl": 5.2619725465774536e-08,
+        "clip_fraction": 0.0,
+        "gradient_norm": 1.1213984191417694,
+        "value_explained_variance_before": -0.02074895854667691,
+        "value_explained_variance_after": -0.019548651432710784,
+        "return_mean": -0.5593544840812683,
+        "return_std": 1.0869951106560738,
+        "reward_mean": -0.046874999999999986,
+        "nonzero_reward_fraction": 0.46875,
+        "positive_reward_fraction": 0.21875,
+        "post_entropy": 3.354219913482666,
+        "normalized_entropy": 0.9999997460817687,
+        "stop_probability": 0.0,
+        "post_approx_kl": 2.7008354663848877e-07,
+        "conditional_normalized_entropy": 0.9999997460817687,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "gf2^5_mult",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 50,
+      "updates": 1,
+      "best": {
+        "gates": 272,
+        "cx": 147,
+        "depth": 127
+      },
+      "root": {
+        "gates": 272,
+        "cx": 147,
+        "depth": 127
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 272,
+        "last_improvement_unix": 1792251705.6293635
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": {
+        "policy_loss": -6.946874782443047e-05,
+        "value_loss": 336.0809860229492,
+        "entropy": 3.2703323364257812,
+        "approx_kl": 2.1886080503463745e-08,
+        "clip_fraction": 0.0,
+        "gradient_norm": 24.238291263580322,
+        "value_explained_variance_before": 0.00017245092653794813,
+        "value_explained_variance_after": 0.00011949289139567831,
+        "return_mean": -12.379948616027832,
+        "return_std": 13.451599389033516,
+        "reward_mean": -1.2437500000000001,
+        "nonzero_reward_fraction": 0.34375,
+        "positive_reward_fraction": 0.125,
+        "post_entropy": 3.270332098007202,
+        "normalized_entropy": 0.9999999676322777,
+        "stop_probability": 0.0,
+        "post_approx_kl": 9.685754776000977e-08,
+        "conditional_normalized_entropy": 0.9999999676322777,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "gf2^7_mult",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 16,
+      "updates": 0,
+      "best": {
+        "gates": 514,
+        "cx": 283,
+        "depth": 189
+      },
+      "root": {
+        "gates": 514,
+        "cx": 283,
+        "depth": 189
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 514,
+        "last_improvement_unix": 1792251709.7489014
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": null
+    },
+    {
+      "name": "hwb6",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 74,
+      "updates": 2,
+      "best": {
+        "gates": 219,
+        "cx": 94,
+        "depth": 151
+      },
+      "root": {
+        "gates": 219,
+        "cx": 94,
+        "depth": 151
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 219,
+        "last_improvement_unix": 1792251706.0362515
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "last_metrics": {
+        "policy_loss": -4.518846981227398e-05,
+        "value_loss": 2.250239133834839,
+        "entropy": 3.447779357433319,
+        "approx_kl": 2.0489096641540527e-08,
+        "clip_fraction": 0.0,
+        "gradient_norm": 1.4370366632938385,
+        "value_explained_variance_before": 0.02063235335060709,
+        "value_explained_variance_after": 0.020853540762336364,
+        "return_mean": -0.7192263603210449,
+        "return_std": 1.3037841319136,
+        "reward_mean": -0.046875,
+        "nonzero_reward_fraction": 0.25,
+        "positive_reward_fraction": 0.09375,
+        "post_entropy": 3.4477789402008057,
+        "normalized_entropy": 0.9999998898940239,
+        "stop_probability": 0.0,
+        "post_approx_kl": 1.043081283569336e-07,
+        "conditional_normalized_entropy": 0.9999998898940239,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "qcla_adder_10",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 23,
+      "updates": 0,
+      "best": {
+        "gates": 432,
+        "cx": 186,
+        "depth": 79
+      },
+      "root": {
+        "gates": 432,
+        "cx": 186,
+        "depth": 79
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 432,
+        "last_improvement_unix": 1792251706.4309254
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": null
+    },
+    {
+      "name": "qcla_com_7",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 35,
+      "updates": 1,
+      "best": {
+        "gates": 274,
+        "cx": 122,
+        "depth": 69
+      },
+      "root": {
+        "gates": 278,
+        "cx": 122,
+        "depth": 69
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 278,
+        "last_improvement_unix": 1792251705.897958
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": {
+        "policy_loss": -0.00011263927444815636,
+        "value_loss": 25.445183753967285,
+        "entropy": 3.376074194908142,
+        "approx_kl": 2.2351741790771484e-08,
+        "clip_fraction": 0.0,
+        "gradient_norm": 7.931465744972229,
+        "value_explained_variance_before": 0.005897513687618927,
+        "value_explained_variance_after": 0.005045929286978779,
+        "return_mean": -4.007957458496094,
+        "return_std": 2.957221847700736,
+        "reward_mean": -0.39375000000000004,
+        "nonzero_reward_fraction": 0.40625,
+        "positive_reward_fraction": 0.1875,
+        "post_entropy": 3.3760738372802734,
+        "normalized_entropy": 0.9999999451657464,
+        "stop_probability": 0.0,
+        "post_approx_kl": 1.30385160446167e-07,
+        "conditional_normalized_entropy": 0.9999999451657464,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "tof_3",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 1070,
+      "updates": 33,
+      "best": {
+        "gates": 35,
+        "cx": 14,
+        "depth": 29
+      },
+      "root": {
+        "gates": 35,
+        "cx": 14,
+        "depth": 29
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 35,
+        "last_improvement_unix": 1792251704.31294
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "last_metrics": {
+        "policy_loss": -0.00016153231263160706,
+        "value_loss": 0.12828663736581802,
+        "entropy": 3.262149214744568,
+        "approx_kl": 1.091044396162033e-06,
+        "clip_fraction": 0.0,
+        "gradient_norm": 0.5775444060564041,
+        "value_explained_variance_before": -0.02823700263652973,
+        "value_explained_variance_after": -0.026180692687127083,
+        "return_mean": -0.8021757006645203,
+        "return_std": 0.3004743199023126,
+        "reward_mean": 0.015625,
+        "nonzero_reward_fraction": 0.15625,
+        "positive_reward_fraction": 0.09375,
+        "post_entropy": 3.262113332748413,
+        "normalized_entropy": 0.999907181383684,
+        "stop_probability": 0.0,
+        "post_approx_kl": 4.725530743598938e-06,
+        "conditional_normalized_entropy": 0.999907181383684,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "tof_4",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 543,
+      "updates": 16,
+      "best": {
+        "gates": 55,
+        "cx": 22,
+        "depth": 45
+      },
+      "root": {
+        "gates": 55,
+        "cx": 22,
+        "depth": 45
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 55,
+        "last_improvement_unix": 1792251704.3724616
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "last_metrics": {
+        "policy_loss": -5.008094012737274e-05,
+        "value_loss": 0.4988863095641136,
+        "entropy": 3.1472694277763367,
+        "approx_kl": 6.51925802230835e-09,
+        "clip_fraction": 0.0,
+        "gradient_norm": 1.4567012786865234,
+        "value_explained_variance_before": -0.015306131183507876,
+        "value_explained_variance_after": -0.015395407120783133,
+        "return_mean": -1.3650798797607422,
+        "return_std": 0.4847794198064536,
+        "reward_mean": -0.10625000000000001,
+        "nonzero_reward_fraction": 0.34375,
+        "positive_reward_fraction": 0.125,
+        "post_entropy": 3.147268772125244,
+        "normalized_entropy": 0.9999977805410882,
+        "stop_probability": 0.0,
+        "post_approx_kl": 5.21540641784668e-08,
+        "conditional_normalized_entropy": 0.9999977805410882,
+        "forced_action_fraction": 0.0
+      }
+    },
+    {
+      "name": "vbe_adder_3",
+      "started": true,
+      "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+      "clean": true,
+      "steps": 194,
+      "updates": 6,
+      "best": {
+        "gates": 78,
+        "cx": 35,
+        "depth": 53
+      },
+      "root": {
+        "gates": 84,
+        "cx": 39,
+        "depth": 54
+      },
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 84,
+        "last_improvement_unix": 1792251704.721723
+      },
+      "checkpoint": true,
+      "checkpoint_transition": 0,
+      "failure": false,
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "last_metrics": {
+        "policy_loss": -7.493048906326294e-05,
+        "value_loss": 0.753717914223671,
+        "entropy": 3.024934947490692,
+        "approx_kl": 1.3969838619232178e-08,
+        "clip_fraction": 0.0,
+        "gradient_norm": 0.5052113682031631,
+        "value_explained_variance_before": 0.005818222331915646,
+        "value_explained_variance_after": 0.0055139004191647745,
+        "return_mean": -0.250253826379776,
+        "return_std": 0.8326741273592597,
+        "reward_mean": -0.053125,
+        "nonzero_reward_fraction": 0.59375,
+        "positive_reward_fraction": 0.28125,
+        "post_entropy": 3.024935007095337,
+        "normalized_entropy": 0.99999947420086,
+        "stop_probability": 0.0,
+        "post_approx_kl": 9.313225746154785e-08,
+        "conditional_normalized_entropy": 0.99999947420086,
+        "forced_action_fraction": 0.0
+      }
+    }
+  ]
+}

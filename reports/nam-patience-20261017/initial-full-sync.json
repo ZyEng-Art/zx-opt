@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "node": 22,
+      "status": "passed",
+      "snapshot": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-nam-patience/runs/nam-patience-launch-20261017/mirror-f5874e497ce1/node22/live-runs",
+      "files": 3251
+    },
+    {
+      "node": 23,
+      "status": "passed",
+      "snapshot": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-nam-patience/runs/nam-patience-launch-20261017/mirror-f5874e497ce1/node23/live-runs",
+      "files": 2884
+    }
+  ]
+}
