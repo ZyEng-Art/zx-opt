@@ -1,0 +1,12 @@
+{
+  "status": "saved_circuit_independently_verified",
+  "gates": 36,
+  "cx": 14,
+  "operator_error": 4.085081361151816e-16,
+  "output_sha256": "de09855c2d47c8b25f7fca5f83dfc2fef1590817e13166db6691b7d32ebae450",
+  "source_commit": "4b451ad834b34b2f0e46bb2142ef16084ee08901",
+  "trial": "anchor8_resource_frozen_s211",
+  "discovery_seconds": 771.6695987081621,
+  "training_updates": 0,
+  "scope": "Closed trial from still-running40-trialcampaign; full campaign replay audit pending. Frozen random-initialized network found36withouttraining, so36alone is not learning evidence."
+}

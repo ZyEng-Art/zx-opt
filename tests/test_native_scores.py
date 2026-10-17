@@ -83,6 +83,35 @@ class NativeScoreTest(unittest.TestCase):
         with self.assertRaises(TypeError): self.score({0: {0: 2}}, [], (1, 1, 1))
         with self.assertRaises(TypeError): self.score({'v': {}}, [], (1, 1, 1))
         self.assertEqual(self.score({}, [], (1, 1, 1)), [])
+        with self.assertRaises(OverflowError): self.score({v: {} for v in range(8193)}, [], (1, 1, 1))
+
+    def test_multiple_bitset_words_and_isolated_vertices(self):
+        rng = random.Random(71)
+        for n in (65, 129, 260):
+            ids = rng.sample(range(-1000, 10000), n); graph = GraphStub(ids)
+            for _ in range(n*4):
+                a, b = rng.sample(ids, 2); graph.add(a, b, rng.choice([1, 2]))
+            matches = []
+            for _ in range(100):
+                a = rng.choice(ids); ns = tuple(graph.neighbors(a))
+                matches.append(((a, ns, ns[:2]), None, None))
+                if ns:
+                    b = rng.choice(ns)
+                    matches.append((None, (a, b, (tuple(v for v in ns if v != b)[:2], ())), None))
+                matches.append((None, None, tuple(rng.sample(ids, 3))))
+            self.assertEqual(self.score(graph.graph, matches, (1, 1, 1)),
+                             [match_score_2Q_simp(graph, m) for m in matches])
+
+    def test_native_batch_propagates_budget_alarm_and_restores_handler(self):
+        import signal
+        from zxopt.search import operation_limit
+        matches = [(None, None, None)]*1000000
+        handler = signal.getsignal(signal.SIGALRM)
+        with self.assertRaises(TimeoutError):
+            with operation_limit(.001):
+                self.score({0: {}}, matches, (1, 1, 1))
+        self.assertIs(signal.getsignal(signal.SIGALRM), handler)
+        self.assertEqual(signal.getitimer(signal.ITIMER_REAL)[0], 0)
 
     def test_actual_flow_preserves_full_graph_and_verifies_every_batch(self):
         import cflow_exact

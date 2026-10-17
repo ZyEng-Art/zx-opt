@@ -65,6 +65,7 @@ struct Graph {
         }
         adjacency.assign(size, Bits(words, 0));
         for (std::size_t i = 0; i < rows.size(); ++i) {
+            if ((i & 63) == 0 && PyErr_CheckSignals() < 0) throw PythonError();
             position = 0; PyObject *other, *type;
             while (PyDict_Next(rows[i], &position, &other, &type)) {
                 auto j = index(other);
@@ -180,8 +181,10 @@ PyObject* score_batch(PyObject*, PyObject* args) {
         Owned factors(PySequence_Fast(weights, "CFlow weights must have three entries"));
         if (PySequence_Fast_GET_SIZE(factors.p) != 3) fail(PyExc_TypeError, "Three CFlow weights required");
         Owned result(PyList_New(PySequence_Fast_GET_SIZE(choices.p)));
-        for (Py_ssize_t i = 0; i < PySequence_Fast_GET_SIZE(choices.p); ++i)
+        for (Py_ssize_t i = 0; i < PySequence_Fast_GET_SIZE(choices.p); ++i) {
+            if ((i & 63) == 0 && PyErr_CheckSignals() < 0) throw PythonError();
             PyList_SET_ITEM(result.p, i, score(graph, PySequence_Fast_GET_ITEM(choices.p, i), factors.p));
+        }
         Py_INCREF(result.p); return result.p;
     } catch (const PythonError&) { return nullptr; }
       catch (const std::bad_alloc&) { return PyErr_NoMemory(); }
