@@ -30,9 +30,11 @@ def main():
                PYTHONHASHSEED="0", CUDA_VISIBLE_DEVICES="", XPU_VISIBLE_DEVICES="")
     flags = ["--general-zx", "--policy", "online", "--seed", "11", "--verification", "adaptive",
              "--total-candidate-cap", "32", "--extraction-timeout", "20", "--rewrite-timeout", "30"]
-    atomic_json(out/"campaign.json", dict(plan=plan, node=a.node, cases=names, flags=flags,
+    sources = {str(f.relative_to(ROOT)): hashlib.sha256(f.read_bytes()).hexdigest()
+               for f in sorted((ROOT/"zxopt").rglob("*.py"))}
+    atomic_json(out/"campaign.json", dict(plan=plan, node=a.node, cases=names, flags=flags, sources=sources,
                 patience=a.patience, overall_time_cap=None, gpu=False, source_commit=subprocess.check_output(
-                    ["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()))
+                    ["git", "-c", "safe.directory="+str(ROOT), "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()))
 
     def run(command, log):
         with log.open("x") as stream:
@@ -73,7 +75,7 @@ def main():
                    "--checkpoint-seconds", "300", "--rollout", "32"]
         atomic_json(folder/"campaign.json", dict(circuit=name, seconds=None, seeds=[11],
                     arms={"jpv_online": ["--general-zx", "--policy", "online"]},
-                    patience=a.patience, input_sha256=cases[name]["raw"]["sha256"]))
+                    patience=a.patience, sources=sources, input_sha256=cases[name]["raw"]["sha256"]))
         try:
             run(command, folder/"worker.log")
             report = json.loads((job/"report.json").read_text())

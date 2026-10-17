@@ -116,7 +116,7 @@ def run(args):
         torch.save(dict(state_dict=net.state_dict(), seed=args.seed, steps=0), out/"initial.pt")
     source_paths = list((ROOT/"zxopt").rglob("*.py"))
     sources = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(source_paths)}
-    git = ["git", "--git-dir="+str(ROOT/".git"), "--work-tree="+str(ROOT)]
+    git = ["git", "-c", "safe.directory="+str(ROOT), "--git-dir="+str(ROOT/".git"), "--work-tree="+str(ROOT)]
     revision = subprocess.check_output(git+["rev-parse", "HEAD"], text=True).strip()
     dirty = subprocess.check_output(git+["status", "--porcelain", "--untracked-files=no"], text=True).strip()
     baseline = json.loads((ROOT/"docs/baseline_sources.json").read_text())
