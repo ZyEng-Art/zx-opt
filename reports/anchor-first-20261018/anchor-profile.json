@@ -1,0 +1,294 @@
+{
+  "status": "completed_profile",
+  "steps": 1024,
+  "policy": "frozen",
+  "selection": "anchor",
+  "resource_mask": true,
+  "seed": 197,
+  "source": "6b83cbe",
+  "pstats_sha256": "0184094c1911971a412bf06d8d6f63d8832e5ec67af8e711a30b971b747d1d70",
+  "total_profile_seconds": 118.54688787400119,
+  "hotspots": [
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_score.py",
+      "line": 73,
+      "function": "evaluate",
+      "calls": 876,
+      "self_seconds": 0.069809099,
+      "cumulative_seconds": 50.00627733
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/legacy/quarl_style_rlzx_v10/optimized_backend.py",
+      "line": 159,
+      "function": "evaluate",
+      "calls": 2189,
+      "self_seconds": 0.041540871,
+      "cumulative_seconds": 36.403451385000004
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/legacy/quarl_style_rlzx_v10/optimized_backend.py",
+      "line": 152,
+      "function": "measured",
+      "calls": 10585,
+      "self_seconds": 0.08507774900000001,
+      "cumulative_seconds": 36.016407025
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_kernel.py",
+      "line": 38,
+      "function": "get",
+      "calls": 2049,
+      "self_seconds": 0.074568046,
+      "cumulative_seconds": 17.956651542
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/legacy/quarl_style_rlzx_v10/cflow_exact.py",
+      "line": 183,
+      "function": "flow",
+      "calls": 352,
+      "self_seconds": 0.009383431000000001,
+      "cumulative_seconds": 16.309129799
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/scalable_verify.py",
+      "line": 94,
+      "function": "check_graph",
+      "calls": 3099,
+      "self_seconds": 0.111465979,
+      "cumulative_seconds": 10.423903101
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/verify.py",
+      "line": 11,
+      "function": "graph_matrix",
+      "calls": 3099,
+      "self_seconds": 2.5462281200000003,
+      "cumulative_seconds": 10.160804192
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 107,
+      "function": "digest",
+      "calls": 15723,
+      "self_seconds": 0.40503293500000004,
+      "cumulative_seconds": 9.390858679
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_kernel.py",
+      "line": 195,
+      "function": "preview",
+      "calls": 2842,
+      "self_seconds": 0.021155171,
+      "cumulative_seconds": 8.893386687000001
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_policy.py",
+      "line": 23,
+      "function": "observation",
+      "calls": 2048,
+      "self_seconds": 2.4162766930000004,
+      "cumulative_seconds": 7.760104224000001
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_kernel.py",
+      "line": 182,
+      "function": "step",
+      "calls": 2677,
+      "self_seconds": 0.017067506,
+      "cumulative_seconds": 7.586093266000001
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/legacy/quarl_style_rlzx_v10/cflow_exact.py",
+      "line": 122,
+      "function": "score",
+      "calls": 1353129,
+      "self_seconds": 1.195922128,
+      "cumulative_seconds": 7.526832602000001
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/legacy/quarl_style_rlzx_v10/cflow_exact.py",
+      "line": 187,
+      "function": "update",
+      "calls": 5115,
+      "self_seconds": 0.074935848,
+      "cumulative_seconds": 7.395068119
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/legacy/quarl_style_rlzx_v10/cflow_exact.py",
+      "line": 149,
+      "function": "update_matches",
+      "calls": 5115,
+      "self_seconds": 0.736561153,
+      "cumulative_seconds": 7.320132271
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 89,
+      "function": "record",
+      "calls": 16601,
+      "self_seconds": 0.05463283100000001,
+      "cumulative_seconds": 5.649197966
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/legacy/quarl_style_rlzx_v10/cflow_exact.py",
+      "line": 54,
+      "function": "pivot",
+      "calls": 1084942,
+      "self_seconds": 4.194268027000001,
+      "cumulative_seconds": 5.593196348
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 39,
+      "function": "node",
+      "calls": 504554,
+      "self_seconds": 0.307441417,
+      "cumulative_seconds": 5.381973014000001
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_kernel.py",
+      "line": 119,
+      "function": "prepare",
+      "calls": 1024,
+      "self_seconds": 0.049435112,
+      "cumulative_seconds": 4.575168534
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 22,
+      "function": "__post_init__",
+      "calls": 504554,
+      "self_seconds": 0.36583295600000004,
+      "cumulative_seconds": 3.7526895870000003
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 91,
+      "function": "<dictcomp>",
+      "calls": 16601,
+      "self_seconds": 1.609810468,
+      "cumulative_seconds": 3.2687570970000004
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 63,
+      "function": "validate",
+      "calls": 38301,
+      "self_seconds": 2.297283846,
+      "cumulative_seconds": 3.11153644
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/verify.py",
+      "line": 39,
+      "function": "multiply",
+      "calls": 207858,
+      "self_seconds": 1.818179119,
+      "cumulative_seconds": 2.805515448
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_policy.py",
+      "line": 136,
+      "function": "actor",
+      "calls": 2048,
+      "self_seconds": 0.106869852,
+      "cumulative_seconds": 2.7878285800000002
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_policy.py",
+      "line": 107,
+      "function": "forward",
+      "calls": 3072,
+      "self_seconds": 0.68248618,
+      "cumulative_seconds": 2.670674807
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/scalable_verify.py",
+      "line": 99,
+      "function": "check_qasm",
+      "calls": 327,
+      "self_seconds": 0.0016855680000000001,
+      "cumulative_seconds": 1.5900894220000001
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_score.py",
+      "line": 45,
+      "function": "check",
+      "calls": 862,
+      "self_seconds": 0.002349035,
+      "cumulative_seconds": 1.588908883
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/verify.py",
+      "line": 97,
+      "function": "qiskit_matrix_zx_order",
+      "calls": 328,
+      "self_seconds": 0.008922975000000001,
+      "cumulative_seconds": 1.393600001
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/verify.py",
+      "line": 60,
+      "function": "<lambda>",
+      "calls": 8269812,
+      "self_seconds": 0.9330885130000001,
+      "cumulative_seconds": 1.2003053620000002
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/general_policy.py",
+      "line": 141,
+      "function": "get_value",
+      "calls": 1024,
+      "self_seconds": 0.007783463000000001,
+      "cumulative_seconds": 0.7698289260000001
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 70,
+      "function": "<setcomp>",
+      "calls": 38301,
+      "self_seconds": 0.566615995,
+      "cumulative_seconds": 0.566615995
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 60,
+      "function": "degree",
+      "calls": 128833,
+      "self_seconds": 0.035078532,
+      "cumulative_seconds": 0.537301194
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 164,
+      "function": "z_network",
+      "calls": 882,
+      "self_seconds": 0.21774764800000002,
+      "cumulative_seconds": 0.416790453
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 146,
+      "function": "suppress",
+      "calls": 2099,
+      "self_seconds": 0.018529641,
+      "cumulative_seconds": 0.41472407800000005
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/legacy/quarl_style_rlzx_v10/cflow_exact.py",
+      "line": 40,
+      "function": "prepare",
+      "calls": 5465,
+      "self_seconds": 0.164090475,
+      "cumulative_seconds": 0.36117935700000003
+    },
+    {
+      "file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/zxopt/complete/diagram.py",
+      "line": 93,
+      "function": "<listcomp>",
+      "calls": 16601,
+      "self_seconds": 0.32312192300000003,
+      "cumulative_seconds": 0.32312192300000003
+    }
+  ],
+  "scope": "cProfile attribution includes instrumentation overhead; not an uninstrumented throughput benchmark. Algorithm unchanged."
+}

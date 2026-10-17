@@ -11,6 +11,17 @@ def rows(path):
     return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
 
 
+def require_audit_receipt(folder, spec, verification):
+    report_sha = hashlib.sha256((folder/"report.json").read_bytes()).hexdigest()
+    events_sha = hashlib.sha256((folder/"events.jsonl").read_bytes()).hexdigest()
+    matches = [r for r in verification["records"]
+               if r["report_sha256"] == report_sha and r["events_sha256"] == events_sha
+               and r["arm"] == spec["arm"] and r["seed"] == spec["seed"] and r["status"] == "passed"]
+    if len(matches) != 1:
+        raise ValueError("Report/events do not have one matching completed audit receipt: "+str(folder))
+    return matches[0]
+
+
 def summarize(root, output, baseline_mode=None):
     campaign = json.loads((root/"campaign.json").read_text())
     modes = {r["mode"] for r in campaign["plan"]}
@@ -21,12 +32,20 @@ def summarize(root, output, baseline_mode=None):
         raise RuntimeError("Only summarize a completed audited campaign")
     verification = json.loads((root/"audit/verification.json").read_text())
     assert verification["status"] == "passed"
+    finished = json.loads((root/"finished.json").read_text())
+    assert finished["status"] == "passed"
+    assert finished["trials"] == verification["trials"] == len(verification["records"]) == len(campaign["plan"])
     records, trials = [], {}
     for spec in campaign["plan"]:
         folder = root/spec["folder"]
+        require_audit_receipt(folder, spec, verification)
         report = json.loads((folder/"report.json").read_text())
         protocol = json.loads((folder/"protocol.json").read_text())
         assert not protocol["tracked_dirty"]
+        assert protocol["git_commit"] == campaign["source_commit"]
+        assert protocol["config"]["seed"] == spec["seed"]
+        assert protocol["config"]["policy"] == spec["policy"]
+        assert hashlib.sha256((folder/"input.qasm").read_bytes()).hexdigest() == protocol["input_sha256"]
         updates = rows(folder/"updates.jsonl")
         events = rows(folder/"events.jsonl")
         noops = sum(e["status"] == "anchor_noop" for e in events)
