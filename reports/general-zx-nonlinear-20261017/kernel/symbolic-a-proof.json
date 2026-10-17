@@ -1,0 +1,54 @@
+[
+  {
+    "color": "Z",
+    "side": "left",
+    "residuals": [
+      "0",
+      "0"
+    ],
+    "formula": [
+      "1 + I",
+      "(exp(I*pi*theta1)*cos(pi*alpha) + exp(I*pi*theta2)*cos(pi*beta))*exp(I*pi/4)"
+    ],
+    "status": "proved-by-symbolic-contraction"
+  },
+  {
+    "color": "Z",
+    "side": "right",
+    "residuals": [
+      "0",
+      "0"
+    ],
+    "formula": [
+      "1 + I",
+      "2*exp(I*pi*(theta3 + 1/4))*cos(pi*gamma)"
+    ],
+    "status": "proved-by-symbolic-contraction"
+  },
+  {
+    "color": "X",
+    "side": "left",
+    "residuals": [
+      "0",
+      "0"
+    ],
+    "formula": [
+      "sqrt(2)*((exp(I*pi*theta1)*cos(pi*alpha) + exp(I*pi*theta2)*cos(pi*beta))*exp(I*pi/4) + 1 + I)/2",
+      "sqrt(2)*(-(exp(I*pi*theta1)*cos(pi*alpha) + exp(I*pi*theta2)*cos(pi*beta))*exp(I*pi/4) + 1 + I)/2"
+    ],
+    "status": "proved-by-symbolic-contraction"
+  },
+  {
+    "color": "X",
+    "side": "right",
+    "residuals": [
+      "0",
+      "0"
+    ],
+    "formula": [
+      "sqrt(2)*(2*exp(I*pi*(theta3 + 1/4))*cos(pi*gamma) + 1 + I)/2",
+      "sqrt(2)*(-2*exp(I*pi*(theta3 + 1/4))*cos(pi*gamma) + 1 + I)/2"
+    ],
+    "status": "proved-by-symbolic-contraction"
+  }
+]

@@ -1,0 +1,153 @@
+{
+  "status": "budget_reached",
+  "transitions": 498,
+  "accepted": 497,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 0,
+  "best": {
+    "cost": {
+      "gates": 8,
+      "cx": 2,
+      "depth": 6
+    },
+    "sha256": "21de959de6389589dc076c2ce8d02726af6ecd55050d3a79711eb6f40aaa057e",
+    "seconds": 0.0,
+    "graph": "c32096ea796f684ce0839da5e98e8f50c57f3519733a197818fb3d354ca73e16"
+  },
+  "root_cost": {
+    "gates": 8,
+    "cx": 2,
+    "depth": 6
+  },
+  "proposal_counts": {
+    "spider_split": 41,
+    "ID": 90,
+    "identity_insert": 39,
+    "EU:forward": 11,
+    "PVG": 19,
+    "gadget_split": 19,
+    "H:backward": 25,
+    "phase_split": 51,
+    "phase_transfer": 28,
+    "PV": 36,
+    "H:forward": 24,
+    "S:backward": 25,
+    "I:backward": 23,
+    "CP:backward": 6,
+    "PVB": 12,
+    "E:backward": 17,
+    "GF": 13,
+    "I:forward": 13,
+    "EU:backward": 1,
+    "spider_nest": 5
+  },
+  "accepted_counts": {
+    "spider_split": 41,
+    "ID": 90,
+    "identity_insert": 39,
+    "EU:forward": 11,
+    "PVG": 19,
+    "gadget_split": 19,
+    "H:backward": 25,
+    "phase_split": 51,
+    "phase_transfer": 28,
+    "PV": 36,
+    "H:forward": 24,
+    "S:backward": 25,
+    "I:backward": 23,
+    "CP:backward": 6,
+    "PVB": 12,
+    "E:backward": 17,
+    "GF": 13,
+    "I:forward": 12,
+    "EU:backward": 1,
+    "spider_nest": 5
+  },
+  "unscored_counts": {},
+  "rejections": {},
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 491,
+    "evictions": 428,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      8,
+      2
+    ]
+  },
+  "checked_qasm": 7,
+  "view_cache": {
+    "hits": 501,
+    "misses": 496
+  },
+  "jpv_proposals": {
+    "calls": 498,
+    "matching_work_exhausted": 62,
+    "phase_inferred": 4599,
+    "non_clifford_matches_skipped": 0
+  },
+  "completion": {
+    "requests": 494,
+    "primary_successes": 35,
+    "primary_failures": 459,
+    "clifford_repair_successes": 459,
+    "cache_hits": 5,
+    "invalid_extraction_attempts": 1,
+    "unique_valid_qasm": 7,
+    "unique_invalid_qasm": 1,
+    "max_valid_operator_error": 2.9893669801409083e-16,
+    "max_rejected_operator_error": 0.9999999999999996
+  },
+  "feasibility": {
+    "previews": 37027,
+    "calls": 498,
+    "proposed": 37571,
+    "eligible": 33357,
+    "resource_masks": 4107,
+    "cache_hits": 544,
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "spider_nest": 1545,
+      "gadget_split": 532,
+      "PVB": 184,
+      "identity_insert": 491,
+      "phase_split": 489,
+      "spider_split": 405,
+      "S:backward": 72,
+      "I:backward": 72,
+      "EU:forward": 186,
+      "E:backward": 98,
+      "PVG": 44,
+      "CP:backward": 28,
+      "H:backward": 1,
+      "phase_transfer": 25,
+      "PV": 42
+    }
+  },
+  "max_graph_operator_error": 2.142759199588038e-15,
+  "max_qasm_operator_error": 2.9893669801409083e-16,
+  "first_passage_seconds": {
+    "7": null,
+    "6": null,
+    "5": null,
+    "4": null,
+    "3": null
+  },
+  "budget_seconds": 60.0,
+  "total_loop_seconds": 60.001088208,
+  "timers": {
+    "matching": 12.331073576000016,
+    "feasibility": 39.252625454000004,
+    "inference": 1.536650656999952,
+    "rewrite_verify": 2.9482575340000188,
+    "score": 1.1826929549998901
+  },
+  "verification": "passed"
+}
