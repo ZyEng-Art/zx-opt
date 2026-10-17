@@ -1,0 +1,9 @@
+{
+  "node": 23,
+  "container": "dengzengyong_rlzx_nam_node23_20261017",
+  "id": "f9ea66ad524e5822a26680290bd734e623966ba22fdf88300ceb452abd6f9f79",
+  "base": "/tmp/dengzengyong_rlzx_nam_node23_20261017",
+  "gpu": false,
+  "cpu_limit": 32,
+  "memory_gib": 64
+}

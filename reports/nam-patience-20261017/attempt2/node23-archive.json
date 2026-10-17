@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "archive": "nam-node23-5595e2312d0c-records.tar.gz",
+  "sha256": "76733b3a527b64d405529b198eae53ef81551255c63902e54001de71b3823c2f",
+  "bytes": 6817,
+  "source_commit": "5595e2312d0cc07892dd73b1839aa10a30c14b99",
+  "node": 23
+}

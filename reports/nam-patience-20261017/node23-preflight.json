@@ -1,0 +1,1568 @@
+{
+  "expected": 13,
+  "completed": 13,
+  "records": [
+    {
+      "name": "barenco_tof_3",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 40,
+            "cx": 18,
+            "depth": 39
+          },
+          "sha256": "0a22dbc1a1db6a019cdfe6e5a000b2f3bbf54d2b6305a6cdc529349fad85cbcf",
+          "seconds": 0.0,
+          "graph": "31983b7d496c0ac4ac8b4eafe168c30f9b6bad7f31422579af3a17ab366326c2"
+        },
+        "root_cost": {
+          "gates": 40,
+          "cx": 18,
+          "depth": 39
+        },
+        "proposal_counts": {
+          "I:forward": 1,
+          "PV": 1,
+          "H:forward": 1,
+          "H:backward": 1
+        },
+        "accepted_counts": {
+          "I:forward": 1,
+          "PV": 1,
+          "H:forward": 1,
+          "H:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            40,
+            18
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 2,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 2.8102520310824275e-16,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 6.883423530656373e-15,
+        "max_qasm_operator_error": 2.8102520310824275e-16,
+        "first_passage_seconds": {
+          "39": null,
+          "38": null,
+          "37": null,
+          "36": null,
+          "35": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 0.9377144930003851,
+        "timers": {
+          "checkpoint": 0.008879048000380863,
+          "matching": 0.2874812080008269,
+          "feasibility": 0.4434423929960758,
+          "inference": 0.02161022299696924,
+          "rewrite_verify": 0.09881244900680031,
+          "score": 0.01592875399364857,
+          "ppo": 0.04436302300018724
+        },
+        "verification": "passed",
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 40,
+          "last_improvement_unix": 1792251586.4619763
+        },
+        "certificate_stats": null,
+        "finished_unix": 1792251587.4091375
+      }
+    },
+    {
+      "name": "mod5_4",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 40,
+            "cx": 21,
+            "depth": 35
+          },
+          "sha256": "79c5756e4fdc81b3d0b8ba92ef5d8dd7ab37388ac04b7d14e8f8713326f2e9be",
+          "seconds": 0.0,
+          "graph": "2388b52b2580b333f472bc5918b204b20530a4b4ffcc508aa7759c43a1387da8"
+        },
+        "root_cost": {
+          "gates": 40,
+          "cx": 21,
+          "depth": 35
+        },
+        "proposal_counts": {
+          "H:forward": 1,
+          "E:backward": 1,
+          "S:backward": 1,
+          "I:backward": 1
+        },
+        "accepted_counts": {
+          "H:forward": 1,
+          "E:backward": 1,
+          "S:backward": 1,
+          "I:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            40,
+            21
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 1,
+          "phase_inferred": 34,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 6.849851696944543e-16,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 7.220496087070955e-15,
+        "max_qasm_operator_error": 6.849851696944543e-16,
+        "first_passage_seconds": {
+          "39": null,
+          "38": null,
+          "37": null,
+          "36": null,
+          "35": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 1.1158420080028009,
+        "timers": {
+          "checkpoint": 0.008753312999033369,
+          "matching": 0.440182164998987,
+          "feasibility": 0.4492806019989075,
+          "inference": 0.022480442999949446,
+          "rewrite_verify": 0.11327639500086661,
+          "score": 0.016656236999551766,
+          "ppo": 0.04554978200030746
+        },
+        "verification": "passed",
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 40,
+          "last_improvement_unix": 1792251586.4243765
+        },
+        "certificate_stats": null,
+        "finished_unix": 1792251587.548855
+      }
+    },
+    {
+      "name": "tof_5",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 75,
+            "cx": 30,
+            "depth": 59
+          },
+          "sha256": "e6ca2a1d1d0f71b70df7a66f3c8470bee5d0494482e568d275ed229197114105",
+          "seconds": 0.0,
+          "graph": "5118801dba7f43a3d66de8e95d879b9fc10ce17c5962af6dfda81206c136f91d"
+        },
+        "root_cost": {
+          "gates": 75,
+          "cx": 30,
+          "depth": 59
+        },
+        "proposal_counts": {
+          "H:backward": 1,
+          "S:backward": 1,
+          "H:forward": 2
+        },
+        "accepted_counts": {
+          "H:backward": 1,
+          "S:backward": 1,
+          "H:forward": 2
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            75,
+            30
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 3,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "74": null,
+          "73": null,
+          "72": null,
+          "71": null,
+          "70": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 2.175984616002097,
+        "timers": {
+          "checkpoint": 0.009598386001016479,
+          "matching": 0.547515406000457,
+          "feasibility": 1.1036226629985322,
+          "inference": 0.029109905000950675,
+          "rewrite_verify": 0.33252123100464814,
+          "score": 0.04213220899691805,
+          "ppo": 0.06095023700254387
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 75,
+          "last_improvement_unix": 1792251586.5952132
+        },
+        "certificate_stats": {
+          "passed": 11,
+          "cache_hits": 1
+        },
+        "finished_unix": 1792251588.781155
+      }
+    },
+    {
+      "name": "mod_mult_55",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 92,
+            "cx": 41,
+            "depth": 44
+          },
+          "sha256": "185789df73782847a8a3f60d749be68934c99ba97d6c0b8ff2771a861da7ab80",
+          "seconds": 0.0,
+          "graph": "1fbccf6d5c1365b12236980d65d3fa63bd2ccb3cdb81c856aaab8d63355fa7dc"
+        },
+        "root_cost": {
+          "gates": 92,
+          "cx": 41,
+          "depth": 44
+        },
+        "proposal_counts": {
+          "identity_insert": 1,
+          "S:backward": 1,
+          "PV": 1,
+          "H:backward": 1
+        },
+        "accepted_counts": {
+          "identity_insert": 1,
+          "S:backward": 1,
+          "PV": 1,
+          "H:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 2,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            92,
+            41
+          ]
+        },
+        "checked_qasm": 3,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 2,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 2,
+          "primary_failures": 3,
+          "clifford_repair_successes": 3,
+          "unique_valid_qasm": 3,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 123,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_hits": 5,
+          "cache_size": 123,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "91": null,
+          "90": null,
+          "89": null,
+          "88": null,
+          "87": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 5.255339321000065,
+        "timers": {
+          "checkpoint": 0.009084749999601627,
+          "matching": 0.6207704619992,
+          "feasibility": 1.2725628880034492,
+          "inference": 0.03258500399897457,
+          "rewrite_verify": 0.31580473799840547,
+          "score": 2.8729967269973713,
+          "ppo": 0.06449343900021631
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 92,
+          "last_improvement_unix": 1792251586.6422207
+        },
+        "certificate_stats": {
+          "passed": 14,
+          "cache_hits": 3
+        },
+        "finished_unix": 1792251591.9070675
+      }
+    },
+    {
+      "name": "csla_mux_3",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 169,
+            "cx": 74,
+            "depth": 66
+          },
+          "sha256": "3055717ed9845d6c1edc81ac475e35c9ebcbc857b160efdb5258a2648747dfdd",
+          "seconds": 0.0,
+          "graph": "b0bf3b38f4a0177424603773414387565c7da79f0b87ece71d24aabf6e85a46a"
+        },
+        "root_cost": {
+          "gates": 169,
+          "cx": 74,
+          "depth": 66
+        },
+        "proposal_counts": {
+          "E:backward": 1,
+          "I:forward": 1,
+          "E:forward": 1,
+          "S:backward": 1
+        },
+        "accepted_counts": {
+          "E:backward": 1,
+          "I:forward": 1,
+          "E:forward": 1,
+          "S:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            169,
+            74
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 1,
+          "phase_inferred": 34,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "168": null,
+          "167": null,
+          "166": null,
+          "165": null,
+          "164": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 5.514008571000886,
+        "timers": {
+          "checkpoint": 0.012860705999628408,
+          "matching": 1.2538225960051932,
+          "feasibility": 3.129044808996696,
+          "inference": 0.04895177399885142,
+          "rewrite_verify": 0.7359999850050372,
+          "score": 0.09507548799592769,
+          "ppo": 0.09202566699968884
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 169,
+          "last_improvement_unix": 1792251586.8435066
+        },
+        "certificate_stats": {
+          "passed": 11,
+          "cache_hits": 1
+        },
+        "finished_unix": 1792251592.3695004
+      }
+    },
+    {
+      "name": "rc_adder_6",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 168,
+            "cx": 73,
+            "depth": 98
+          },
+          "sha256": "cf3c5f660296930568e7ced67f873e6f50d717e902d5cd34eaf722263dbea3d5",
+          "seconds": 0.0,
+          "graph": "00bcea6184ffda1d689b22d9b1775ae268a44555e7eafa70020623cfcfa5bc66"
+        },
+        "root_cost": {
+          "gates": 168,
+          "cx": 73,
+          "depth": 98
+        },
+        "proposal_counts": {
+          "PV": 1,
+          "I:forward": 1,
+          "phase_split": 1,
+          "PVB": 1
+        },
+        "accepted_counts": {
+          "PV": 1,
+          "I:forward": 1,
+          "phase_split": 1,
+          "PVB": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            168,
+            73
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 0,
+          "phase_inferred": 34,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "167": null,
+          "166": null,
+          "165": null,
+          "164": null,
+          "163": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 7.246938943000714,
+        "timers": {
+          "checkpoint": 0.024183763001929037,
+          "matching": 1.6071522630045365,
+          "feasibility": 4.086093244000949,
+          "inference": 0.052482282004348235,
+          "rewrite_verify": 0.7362672589952126,
+          "score": 0.4375506830001541,
+          "ppo": 0.11603732599905925
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 168,
+          "last_improvement_unix": 1792251587.013618
+        },
+        "certificate_stats": {
+          "passed": 9,
+          "cache_hits": 3
+        },
+        "finished_unix": 1792251594.2843099
+      }
+    },
+    {
+      "name": "mod_red_21",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 197,
+            "cx": 78,
+            "depth": 139
+          },
+          "sha256": "c91457a7a6fa58bb6d87baf4c234ccf48ab902797f00326ceb081ec91ca728c2",
+          "seconds": 0.0,
+          "graph": "42300775ec828508d3903d35d9f122d9ac68f6a11104858601138980512e3efc"
+        },
+        "root_cost": {
+          "gates": 197,
+          "cx": 78,
+          "depth": 139
+        },
+        "proposal_counts": {
+          "PV": 1,
+          "EU:forward": 1,
+          "identity_insert": 1,
+          "I:backward": 1
+        },
+        "accepted_counts": {
+          "PV": 1,
+          "EU:forward": 1,
+          "identity_insert": 1,
+          "I:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 2,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            197,
+            78
+          ]
+        },
+        "checked_qasm": 2,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 4,
+          "phase_inferred": 34,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 2,
+          "primary_failures": 3,
+          "clifford_repair_successes": 3,
+          "unique_valid_qasm": 2,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "196": null,
+          "195": null,
+          "194": null,
+          "193": null,
+          "192": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 10.666774261000683,
+        "timers": {
+          "checkpoint": 0.021247926000796724,
+          "matching": 2.3634023499944306,
+          "feasibility": 5.404681800006074,
+          "inference": 0.05645174800156383,
+          "rewrite_verify": 0.9765213419959764,
+          "score": 1.4751762710002367,
+          "ppo": 0.11873861400090391
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 197,
+          "last_improvement_unix": 1792251587.2485027
+        },
+        "certificate_stats": {
+          "passed": 12,
+          "cache_hits": 4
+        },
+        "finished_unix": 1792251597.9349017
+      }
+    },
+    {
+      "name": "tof_10",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 175,
+            "cx": 70,
+            "depth": 129
+          },
+          "sha256": "239b22134b170cd63e417b255cb0c70bfc134b572a02ac366b39304e0c5a2327",
+          "seconds": 0.0,
+          "graph": "54ce02cbf48d7aa87612dba00f7d99d8136fcf41d2890e1a443a2c50df5903c0"
+        },
+        "root_cost": {
+          "gates": 175,
+          "cx": 70,
+          "depth": 129
+        },
+        "proposal_counts": {
+          "PV": 1,
+          "EU:forward": 1,
+          "H:backward": 1,
+          "I:backward": 1
+        },
+        "accepted_counts": {
+          "PV": 1,
+          "EU:forward": 1,
+          "H:backward": 1,
+          "I:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 2,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            175,
+            70
+          ]
+        },
+        "checked_qasm": 3,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 3,
+          "phase_inferred": 36,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 2,
+          "primary_failures": 3,
+          "clifford_repair_successes": 3,
+          "unique_valid_qasm": 3,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "174": null,
+          "173": null,
+          "172": null,
+          "171": null,
+          "170": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 11.64424419399802,
+        "timers": {
+          "checkpoint": 0.017571716001839377,
+          "matching": 2.427120800999546,
+          "feasibility": 5.525862312006211,
+          "inference": 0.05644509400008246,
+          "rewrite_verify": 1.1865214369972819,
+          "score": 2.030722818999493,
+          "ppo": 0.12154629499855218
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 175,
+          "last_improvement_unix": 1792251587.1210132
+        },
+        "certificate_stats": {
+          "passed": 15,
+          "cache_hits": 2
+        },
+        "finished_unix": 1792251598.781031
+      }
+    },
+    {
+      "name": "csum_mux_9",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 300,
+            "cx": 148,
+            "depth": 76
+          },
+          "sha256": "c139222cb0542abe6b88c74a1fa5bb616e6821978aebe05b7085842d19a4ee5f",
+          "seconds": 0.0,
+          "graph": "1a5d1f724739d2099c75996570696eacd385c805f3074249a91a60dbd36cecda"
+        },
+        "root_cost": {
+          "gates": 300,
+          "cx": 148,
+          "depth": 76
+        },
+        "proposal_counts": {
+          "E:backward": 1,
+          "PVG": 1,
+          "LC": 1,
+          "phase_split": 1
+        },
+        "accepted_counts": {
+          "E:backward": 1,
+          "PVG": 1,
+          "LC": 1,
+          "phase_split": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            300,
+            148
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 3,
+          "phase_inferred": 36,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "299": null,
+          "298": null,
+          "297": null,
+          "296": null,
+          "295": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 22.77133691900235,
+        "timers": {
+          "checkpoint": 0.03965505700034555,
+          "matching": 5.24846032199639,
+          "feasibility": 13.562587511001766,
+          "inference": 0.08547565700064297,
+          "rewrite_verify": 1.724191155997687,
+          "score": 1.2633962820036686,
+          "ppo": 0.18876762299987604
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 300,
+          "last_improvement_unix": 1792251587.724519
+        },
+        "certificate_stats": {
+          "passed": 10,
+          "cache_hits": 2
+        },
+        "finished_unix": 1792251610.5306544
+      }
+    },
+    {
+      "name": "ham15-low",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 2,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 387,
+            "cx": 214,
+            "depth": 230
+          },
+          "sha256": "9d2cbbb67c2b78a24298fd63db135e126e779d033d3d6d5dba5ec279141e5e18",
+          "seconds": 0.0,
+          "graph": "ef0d2241446240fd7062a1ee59318b2ba603bf56603614366b3e256a911f59bb"
+        },
+        "root_cost": {
+          "gates": 387,
+          "cx": 214,
+          "depth": 230
+        },
+        "proposal_counts": {
+          "ID": 1,
+          "E:backward": 1,
+          "spider_split": 1,
+          "H:forward": 1
+        },
+        "accepted_counts": {
+          "ID": 1,
+          "E:backward": 1,
+          "spider_split": 1,
+          "H:forward": 1
+        },
+        "unscored_counts": {
+          "spider_split": 1,
+          "H:forward": 1
+        },
+        "rejections": {},
+        "buffer": {
+          "scored_size": 3,
+          "scored_capacity": 64,
+          "latent_size": 2,
+          "latent_capacity": 128,
+          "insertions": 2,
+          "evictions": 0,
+          "latent_insertions": 2,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            387,
+            214
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 14,
+          "phase_inferred": 33,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 3,
+          "primary_failures": 2,
+          "clifford_repair_failures": 2,
+          "unscorable": 2,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 127,
+          "resource_masks": 1,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "PVB": 1
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "386": null,
+          "385": null,
+          "384": null,
+          "383": null,
+          "382": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 69.87784433400157,
+        "timers": {
+          "checkpoint": 0.06559690799622331,
+          "matching": 8.07775861600021,
+          "feasibility": 17.670811291001883,
+          "inference": 0.0873613820040191,
+          "rewrite_verify": 2.6877561069959484,
+          "score": 40.22631606499999,
+          "ppo": 0.21585048400083906
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 387,
+          "last_improvement_unix": 1792251590.0749881
+        },
+        "certificate_stats": {
+          "passed": 9,
+          "cache_hits": 5
+        },
+        "finished_unix": 1792251659.9851952
+      }
+    },
+    {
+      "name": "gf2^6_mult",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 2,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 380,
+            "cx": 210,
+            "depth": 158
+          },
+          "sha256": "77575f45290b31548b8c80b72c3dda56041163d9ada56a6de9e31cbb35a66b28",
+          "seconds": 0.0,
+          "graph": "d6871f139873a9a6d20b484f7c9c6cda848fab5a94090e8960ed4db1a1c43e1f"
+        },
+        "root_cost": {
+          "gates": 380,
+          "cx": 210,
+          "depth": 158
+        },
+        "proposal_counts": {
+          "identity_insert": 1,
+          "S:backward": 1,
+          "EU:forward": 1,
+          "CP:backward": 1
+        },
+        "accepted_counts": {
+          "identity_insert": 1,
+          "S:backward": 1,
+          "EU:forward": 1,
+          "CP:backward": 1
+        },
+        "unscored_counts": {
+          "EU:forward": 1,
+          "CP:backward": 1
+        },
+        "rejections": {},
+        "buffer": {
+          "scored_size": 1,
+          "scored_capacity": 64,
+          "latent_size": 2,
+          "latent_capacity": 128,
+          "insertions": 0,
+          "evictions": 0,
+          "latent_insertions": 2,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            380,
+            210
+          ]
+        },
+        "checked_qasm": 3,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 7,
+          "phase_inferred": 40,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 1,
+          "primary_failures": 4,
+          "clifford_repair_successes": 2,
+          "clifford_repair_failures": 2,
+          "full_reduce_repair_failures": 2,
+          "unscorable": 2,
+          "unique_valid_qasm": 3,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 125,
+          "resource_masks": 3,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "PVB": 3
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "379": null,
+          "378": null,
+          "377": null,
+          "376": null,
+          "375": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 82.7795031429996,
+        "timers": {
+          "checkpoint": 0.05366685799890547,
+          "matching": 8.874238454001897,
+          "feasibility": 19.914355983004498,
+          "inference": 0.09913842600144562,
+          "rewrite_verify": 5.1872327080018295,
+          "score": 47.395242031001544,
+          "ppo": 0.23269720600001165
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 380,
+          "last_improvement_unix": 1792251589.879512
+        },
+        "certificate_stats": {
+          "passed": 18,
+          "cache_hits": 2
+        },
+        "finished_unix": 1792251672.6840518
+      }
+    },
+    {
+      "name": "qcla_mod_7",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 694,
+            "cx": 295,
+            "depth": 188
+          },
+          "sha256": "56f8f9aeb6fdcda4d7384d09f1b57e37d21fd837f47c153d85fe871dcda2a116",
+          "seconds": 0.0,
+          "graph": "21ce6e10444c342dd4d0286c1cc57bd18e5c81557c772572ec05ff5af3d92dc8"
+        },
+        "root_cost": {
+          "gates": 694,
+          "cx": 295,
+          "depth": 188
+        },
+        "proposal_counts": {
+          "ID": 1,
+          "phase_split": 1,
+          "I:forward": 1,
+          "H:forward": 1
+        },
+        "accepted_counts": {
+          "ID": 1,
+          "phase_split": 1,
+          "I:forward": 1,
+          "H:forward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            694,
+            295
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 17,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 4,
+          "primary_successes": 4,
+          "cache_hits": 1,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 127,
+          "resource_masks": 1,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "LC": 1
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "693": null,
+          "692": null,
+          "691": null,
+          "690": null,
+          "689": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 96.15731900500032,
+        "timers": {
+          "checkpoint": 0.15968586199596757,
+          "matching": 28.047938540996256,
+          "feasibility": 55.917628317998606,
+          "inference": 0.15215861000615405,
+          "rewrite_verify": 7.492453346007096,
+          "score": 0.8691630159992201,
+          "ppo": 0.45589750799990725
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 694,
+          "last_improvement_unix": 1792251593.2816246
+        },
+        "certificate_stats": {
+          "passed": 8,
+          "cache_hits": 4
+        },
+        "finished_unix": 1792251689.4893866
+      }
+    },
+    {
+      "name": "gf2^8_mult",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 667,
+            "cx": 383,
+            "depth": 228
+          },
+          "sha256": "09ad647f1e694d849d4e9f2a48143eca358516207187cf824fbc733ddd125d8e",
+          "seconds": 0.0,
+          "graph": "9c6edcbcf636f4b4e6999431eb3e242a131add5805a72c514944527011aa0e92"
+        },
+        "root_cost": {
+          "gates": 667,
+          "cx": 383,
+          "depth": 228
+        },
+        "proposal_counts": {
+          "spider_split": 1,
+          "S:backward": 1,
+          "PVG": 1,
+          "identity_insert": 1
+        },
+        "accepted_counts": {
+          "spider_split": 1,
+          "S:backward": 1,
+          "PVG": 1,
+          "identity_insert": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 4,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 3,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            667,
+            383
+          ]
+        },
+        "checked_qasm": 2,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 13,
+          "phase_inferred": 37,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 4,
+          "primary_failures": 1,
+          "clifford_repair_successes": 1,
+          "unique_valid_qasm": 2,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "resource_masks": 6,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 122,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "PVB": 6
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "666": null,
+          "665": null,
+          "664": null,
+          "663": null,
+          "662": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 131.63289203300155,
+        "timers": {
+          "checkpoint": 0.23170198899970273,
+          "matching": 30.562635733997013,
+          "feasibility": 60.63411548500153,
+          "inference": 0.3307704329963599,
+          "rewrite_verify": 19.76655502200083,
+          "score": 16.385640495002008,
+          "ppo": 0.49784653299866477
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 667,
+          "last_improvement_unix": 1792251601.7119439
+        },
+        "certificate_stats": {
+          "passed": 10,
+          "cache_hits": 4
+        },
+        "finished_unix": 1792251733.4090967
+      }
+    }
+  ]
+}

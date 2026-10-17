@@ -1,0 +1,313 @@
+XCCL /root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/torch_xmlir/libbkcl.so loaded
+[35mSYMBOL_REWRITE [0m[32mtorch success[0m
+test_arbitrary_angles (unittest.loader._FailedTest) ... ERROR
+test_all_axioms_both_colors_independent_semantics (test_complete.CompleteTest) ... ok
+test_all_clifford_t_phase_parameters (test_complete.CompleteTest) ... ok
+test_arbitrary_outside_contexts_and_feedback (test_complete.CompleteTest) ... ok
+test_empty_context_scalar_insertion_preserves_existing_graph (test_complete.CompleteTest) ... ok
+test_every_axiom_both_directions_and_serialized_receipts (test_complete.CompleteTest) ... ok
+test_exact_ring_and_phase_domain (test_complete.CompleteTest) ... ok
+test_fair_stages_cover_phase_colors_and_large_arity (test_complete.CompleteTest) ... ok
+test_identity_insertion_on_self_loop_and_bare_circle (test_complete.CompleteTest) ... ok
+test_pyzx_import_export_scalar_parallel_and_boundary_semantics (test_complete.CompleteTest) ... ok
+test_rejects_forged_stale_or_incomplete_matches (test_complete.CompleteTest) ... ok
+test_unbounded_arity_schema_representatives (test_complete.CompleteTest) ... ok
+test_better_representative_replaces_payload_counts_and_root (test_dedup.DedupTest) ... ok
+test_phase_edge_scalar_and_wire_order_are_distinct (test_dedup.DedupTest) ... ok
+test_relabel_layout_and_action_mapping (test_dedup.DedupTest) ... ok
+test_representative_replacement_respects_trajectory_admission (test_dedup.DedupTest) ... ok
+test_serialized_actions_do_not_prune_isomorphic_representations (test_dedup.DedupTest) ... ERROR
+test_wl_collision_requires_exact_isomorphism (test_dedup.DedupTest) ... ok
+test_portable_snapshot_and_tamper_detection (test_experiment_input.InputTest) ... ok
+test_snapshot_path_cannot_resolve_another_run (test_experiment_input.InputTest) ... ok
+test_capacity_is_bounded_and_disabled_mode_retains_nothing (test_frontier.FrontierTest) ... ok
+test_resumes_remaining_parent_and_drops_exhausted_states (test_frontier.FrontierTest) ... ok
+test_general (unittest.loader._FailedTest) ... ERROR
+test_general_zx (unittest.loader._FailedTest) ... ERROR
+test_adaptive_small_independent_matrix_large_reduction (test_patience_verify.PatienceVerifyTest) ... ok
+test_bounded_menu_is_deterministic_and_resumeable (test_patience_verify.PatienceVerifyTest) ... ERROR
+test_scalable_identity_fixed_wires_and_scalar_amplitude (test_patience_verify.PatienceVerifyTest) ... ok
+test_strict_total_gate_reset_and_downtime_resume (test_patience_verify.PatienceVerifyTest) ... ok
+test_zero_patience_disables_timeout (test_patience_verify.PatienceVerifyTest) ... ok
+test_policy (unittest.loader._FailedTest) ... ERROR
+test_all_split_phases_and_partitions (test_rules.RulesTest) ... ok
+test_bounds (test_rules.RulesTest) ... ok
+test_full_and_partial_spider_nests (test_rules.RulesTest) ... ok
+test_gadget_split_scalars_for_every_arity (test_rules.RulesTest) ... ok
+test_independent_contraction_agrees_with_pyzx (test_rules.RulesTest) ... ok
+test_phase_transfer (test_rules.RulesTest) ... ok
+test_cost_not_producer_supplied_and_rng_is_explicit (test_shared_buffer.SharedTest) ... ok
+test_foreign_roundtrip_isolation_rejection_and_backup (test_shared_buffer.SharedTest) ... ok
+test_general_mode_cannot_silently_enter_ct_exchange (test_shared_buffer.SharedTest) ... ERROR
+test_process_writers_keep_bounded_pool_and_all_source_objects (test_shared_buffer.SharedTest) ... ok
+test_amplitude_changes_are_not_global_phase (test_verify.VerifyTest) ... ok
+test_named_wire_conventions (test_verify.VerifyTest) ... FAIL
+
+======================================================================
+ERROR: test_arbitrary_angles (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_arbitrary_angles
+Traceback (most recent call last):
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/tests/test_arbitrary_angles.py", line 15, in <module>
+    from zxopt.general_kernel import GeneralKernel, Views
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/zxopt/general_kernel.py", line 16, in <module>
+    from runtime import graph_key
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/quarl_style_rlzx_v10/runtime.py", line 27, in <module>
+    from cflow_transfer_probe import complete, direct_cflow, nam, cost, clean
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/cflow_transfer_probe.py", line 10, in <module>
+    from pyzx.rules import apply_rule,lcomp,pivot,match_lcomp_parallel,match_pivot_parallel
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+ModuleNotFoundError: No module named 'pyzx.rules'
+
+
+======================================================================
+ERROR: test_serialized_actions_do_not_prune_isomorphic_representations (test_dedup.DedupTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/task/zx-opt-2f336260ddf5/tests/test_dedup.py", line 55, in test_serialized_actions_do_not_prune_isomorphic_representations
+    from runtime import graph_key
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/quarl_style_rlzx_v10/runtime.py", line 27, in <module>
+    from cflow_transfer_probe import complete, direct_cflow, nam, cost, clean
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/cflow_transfer_probe.py", line 10, in <module>
+    from pyzx.rules import apply_rule,lcomp,pivot,match_lcomp_parallel,match_pivot_parallel
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+ModuleNotFoundError: No module named 'pyzx.rules'
+
+======================================================================
+ERROR: test_general (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_general
+Traceback (most recent call last):
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/tests/test_general.py", line 15, in <module>
+    from zxopt.general_kernel import Views, GeneralKernel
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/zxopt/general_kernel.py", line 16, in <module>
+    from runtime import graph_key
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/quarl_style_rlzx_v10/runtime.py", line 27, in <module>
+    from cflow_transfer_probe import complete, direct_cflow, nam, cost, clean
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/cflow_transfer_probe.py", line 10, in <module>
+    from pyzx.rules import apply_rule,lcomp,pivot,match_lcomp_parallel,match_pivot_parallel
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+ModuleNotFoundError: No module named 'pyzx.rules'
+
+
+======================================================================
+ERROR: test_general_zx (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_general_zx
+Traceback (most recent call last):
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/tests/test_general_zx.py", line 18, in <module>
+    from zxopt.general_kernel import GeneralKernel, Views
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/zxopt/general_kernel.py", line 16, in <module>
+    from runtime import graph_key
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/quarl_style_rlzx_v10/runtime.py", line 27, in <module>
+    from cflow_transfer_probe import complete, direct_cflow, nam, cost, clean
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/cflow_transfer_probe.py", line 10, in <module>
+    from pyzx.rules import apply_rule,lcomp,pivot,match_lcomp_parallel,match_pivot_parallel
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+ModuleNotFoundError: No module named 'pyzx.rules'
+
+
+======================================================================
+ERROR: test_bounded_menu_is_deterministic_and_resumeable (test_patience_verify.PatienceVerifyTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/task/zx-opt-2f336260ddf5/tests/test_patience_verify.py", line 63, in test_bounded_menu_is_deterministic_and_resumeable
+    from zxopt.general_kernel import GeneralKernel, Views
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/zxopt/general_kernel.py", line 16, in <module>
+    from runtime import graph_key
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/quarl_style_rlzx_v10/runtime.py", line 27, in <module>
+    from cflow_transfer_probe import complete, direct_cflow, nam, cost, clean
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/cflow_transfer_probe.py", line 10, in <module>
+    from pyzx.rules import apply_rule,lcomp,pivot,match_lcomp_parallel,match_pivot_parallel
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+ModuleNotFoundError: No module named 'pyzx.rules'
+
+======================================================================
+ERROR: test_policy (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_policy
+Traceback (most recent call last):
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/tests/test_policy.py", line 6, in <module>
+    from zxopt.policy import ExpandedAgent, observation, batch
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/zxopt/policy.py", line 10, in <module>
+    from runtime import data, batch, source_classes
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/quarl_style_rlzx_v10/runtime.py", line 27, in <module>
+    from cflow_transfer_probe import complete, direct_cflow, nam, cost, clean
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/cflow_transfer_probe.py", line 10, in <module>
+    from pyzx.rules import apply_rule,lcomp,pivot,match_lcomp_parallel,match_pivot_parallel
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+ModuleNotFoundError: No module named 'pyzx.rules'
+
+
+======================================================================
+ERROR: test_general_mode_cannot_silently_enter_ct_exchange (test_shared_buffer.SharedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/task/zx-opt-2f336260ddf5/tests/test_shared_buffer.py", line 55, in test_general_mode_cannot_silently_enter_ct_exchange
+    from zxopt.general_search import parser, run
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/zxopt/general_search.py", line 19, in <module>
+    from .search import atomic_json, operation_limit
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/zxopt/search.py", line 26, in <module>
+    from .policy import ExpandedAgent, observation, batch
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/zxopt/policy.py", line 10, in <module>
+    from runtime import data, batch, source_classes
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/quarl_style_rlzx_v10/runtime.py", line 27, in <module>
+    from cflow_transfer_probe import complete, direct_cflow, nam, cost, clean
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+  File "/workspace/task/zx-opt-2f336260ddf5/legacy/cflow_transfer_probe.py", line 10, in <module>
+    from pyzx.rules import apply_rule,lcomp,pivot,match_lcomp_parallel,match_pivot_parallel
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/xpytorch_import_hook.py", line 141, in _custom_import
+    module = builtins.__origin__import__(
+  File "/root/miniconda/envs/python310_torch29_cuda/lib/python3.10/site-packages/vllm_custom_import_hook.py", line 448, in _custom_import
+    module = builtin_hook(
+ModuleNotFoundError: No module named 'pyzx.rules'
+
+======================================================================
+FAIL: test_named_wire_conventions (test_verify.VerifyTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/task/zx-opt-2f336260ddf5/tests/test_verify.py", line 14, in test_named_wire_conventions
+    self.assertLess(matrix_error(qiskit_matrix_zx_order(c), graph_matrix(g)), 1e-12)
+AssertionError: 1.3880568160579615e-12 not less than 1e-12
+
+----------------------------------------------------------------------
+Ran 42 tests in 31.453s
+
+FAILED (failures=1, errors=7)

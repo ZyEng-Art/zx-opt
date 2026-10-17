@@ -1,0 +1,13 @@
+{
+  "status": "failed",
+  "node": 22,
+  "source_commit": "2f336260ddf54585ef0011d35e1ec8d129ff1e0e",
+  "container_id": "b8091b120a52fea5f33539f7973cfc048441dff85012e4f097de7c351f7a39d9",
+  "started_at": "2026-10-17T15:13:16.209422824Z",
+  "gpu": false,
+  "workers": 13,
+  "patience_seconds": 10800,
+  "updated_at": "2026-10-17T23:32:27.680014+08:00",
+  "error": "CalledProcessError(1, ['docker', 'exec', '-e', 'CUDA_VISIBLE_DEVICES=', '-e', 'XPU_VISIBLE_DEVICES=', '-e', 'OPENBLAS_NUM_THREADS=1', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'PYTHONHASHSEED=0', '-e', 'PYTHONPATH=/workspace/task/offline-deps:/workspace/task/pyzx-pin', '-e', 'GIT_CONFIG_COUNT=1', '-e', 'GIT_CONFIG_KEY_0=safe.directory', '-e', 'GIT_CONFIG_VALUE_0=/workspace/task/zx-opt-2f336260ddf5', '-w', '/workspace/task/zx-opt-2f336260ddf5', 'dengzengyong_rlzx_nam_node22_20261017', '/root/miniconda/envs/python310_torch29_cuda/bin/python', '-m', 'unittest', 'discover', '-s', 'tests', '-v'])",
+  "restored_stopped": true
+}

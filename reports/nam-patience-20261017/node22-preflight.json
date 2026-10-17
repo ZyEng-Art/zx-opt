@@ -1,0 +1,1556 @@
+{
+  "expected": 13,
+  "completed": 13,
+  "records": [
+    {
+      "name": "tof_3",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 35,
+            "cx": 14,
+            "depth": 29
+          },
+          "sha256": "6440376383de678851669db9df175e6725367bfc1893277e1048c70004ae60aa",
+          "seconds": 0.0,
+          "graph": "a939e2a8509665edc13c7936f7351341ac98de3ee63d6cfecf65a6fd149c6004"
+        },
+        "root_cost": {
+          "gates": 35,
+          "cx": 14,
+          "depth": 29
+        },
+        "proposal_counts": {
+          "H:backward": 1,
+          "PV": 1,
+          "ID": 1,
+          "S:backward": 1
+        },
+        "accepted_counts": {
+          "H:backward": 1,
+          "PV": 1,
+          "ID": 1,
+          "S:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            35,
+            14
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 5,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 4.335559509131367e-16,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 5.343218645685051e-15,
+        "max_qasm_operator_error": 4.335559509131367e-16,
+        "first_passage_seconds": {
+          "34": null,
+          "33": null,
+          "32": null,
+          "31": null,
+          "30": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 0.8372000600211322,
+        "timers": {
+          "checkpoint": 0.008345694048330188,
+          "matching": 0.3503700189758092,
+          "feasibility": 0.3219149101059884,
+          "inference": 0.01813278580084443,
+          "rewrite_verify": 0.0653949212282896,
+          "score": 0.02492557279765606,
+          "ppo": 0.03635080112144351
+        },
+        "verification": "passed",
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 35,
+          "last_improvement_unix": 1792251586.336856
+        },
+        "certificate_stats": null,
+        "finished_unix": 1792251587.1838737
+      }
+    },
+    {
+      "name": "tof_4",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 55,
+            "cx": 22,
+            "depth": 45
+          },
+          "sha256": "40026b80b3d09a41f79d9579acecc0d38af9b6f5e7711e459cd811fda56d2ca6",
+          "seconds": 0.0,
+          "graph": "f6c455bfb83f7a4d036104719cc5c34798533ca59761fb7ab79fc9e2034f6408"
+        },
+        "root_cost": {
+          "gates": 55,
+          "cx": 22,
+          "depth": 45
+        },
+        "proposal_counts": {
+          "H:forward": 2,
+          "identity_insert": 1,
+          "I:backward": 1
+        },
+        "accepted_counts": {
+          "H:forward": 2,
+          "identity_insert": 1,
+          "I:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            55,
+            22
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 4,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 5.23691153334427e-16,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 8.77234276586887e-15,
+        "max_qasm_operator_error": 5.23691153334427e-16,
+        "first_passage_seconds": {
+          "54": null,
+          "53": null,
+          "52": null,
+          "51": null,
+          "50": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 1.5128095620311797,
+        "timers": {
+          "checkpoint": 0.009333163034170866,
+          "matching": 0.48026952310465276,
+          "feasibility": 0.6924255220219493,
+          "inference": 0.023258734960108995,
+          "rewrite_verify": 0.2088108288589865,
+          "score": 0.02588676568120718,
+          "ppo": 0.04451163997873664
+        },
+        "verification": "passed",
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 55,
+          "last_improvement_unix": 1792251586.4562733
+        },
+        "certificate_stats": null,
+        "finished_unix": 1792251587.9789515
+      }
+    },
+    {
+      "name": "barenco_tof_4",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 74,
+            "cx": 36,
+            "depth": 70
+          },
+          "sha256": "92ee234dc744a7602467013b9a8c7be5c0553c08ae8570d787b1d9e99402613f",
+          "seconds": 0.0,
+          "graph": "6558ba3496144b9cbe74e6b053296a87c85a81404794cf7f509ff90aeae8426d"
+        },
+        "root_cost": {
+          "gates": 74,
+          "cx": 36,
+          "depth": 70
+        },
+        "proposal_counts": {
+          "spider_split": 1,
+          "EU:forward": 1,
+          "I:forward": 1,
+          "E:backward": 1
+        },
+        "accepted_counts": {
+          "spider_split": 1,
+          "EU:forward": 1,
+          "I:forward": 1,
+          "E:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 2,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 1,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            74,
+            36
+          ]
+        },
+        "checked_qasm": 3,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 2,
+          "phase_inferred": 36,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 2,
+          "primary_failures": 3,
+          "clifford_repair_successes": 3,
+          "unique_valid_qasm": 3,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 1.5969733499052517e-15,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 1.477234840574525e-14,
+        "max_qasm_operator_error": 1.5969733499052517e-15,
+        "first_passage_seconds": {
+          "73": null,
+          "72": null,
+          "71": null,
+          "70": null,
+          "69": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 3.314700521994382,
+        "timers": {
+          "checkpoint": 0.01199745712801814,
+          "matching": 0.7749898149631917,
+          "feasibility": 1.3325706028845161,
+          "inference": 0.030435685068368912,
+          "rewrite_verify": 0.6947326571680605,
+          "score": 0.3486081911250949,
+          "ppo": 0.057957343058660626
+        },
+        "verification": "passed",
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 74,
+          "last_improvement_unix": 1792251586.752261
+        },
+        "certificate_stats": null,
+        "finished_unix": 1792251590.0782726
+      }
+    },
+    {
+      "name": "vbe_adder_3",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 84,
+            "cx": 39,
+            "depth": 54
+          },
+          "sha256": "60e0b854dcdfb615112607a1174fccc7759012fa5302b5e3bcb79eaf8dfe2680",
+          "seconds": 0.0,
+          "graph": "1d8f0bb587443011a3b8fb9a60689fabe798029cf67de4986c943c64126279d3"
+        },
+        "root_cost": {
+          "gates": 84,
+          "cx": 39,
+          "depth": 54
+        },
+        "proposal_counts": {
+          "PVG": 1,
+          "S:backward": 1,
+          "PVB": 1,
+          "E:backward": 1
+        },
+        "accepted_counts": {
+          "PVG": 1,
+          "S:backward": 1,
+          "PVB": 1,
+          "E:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 1,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 0,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            84,
+            39
+          ]
+        },
+        "checked_qasm": 3,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 2,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 3,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 127,
+          "resource_masks": 1,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "PVB": 1
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "83": null,
+          "82": null,
+          "81": null,
+          "80": null,
+          "79": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 4.848483650013804,
+        "timers": {
+          "checkpoint": 0.01372507493942976,
+          "matching": 1.1370002701878548,
+          "feasibility": 2.5736062459181994,
+          "inference": 0.041583175072446465,
+          "rewrite_verify": 0.47520586173050106,
+          "score": 0.40584766026586294,
+          "ppo": 0.0788733740337193
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 84,
+          "last_improvement_unix": 1792251586.7870064
+        },
+        "certificate_stats": {
+          "passed": 12,
+          "cache_hits": 2
+        },
+        "finished_unix": 1792251591.6483514
+      }
+    },
+    {
+      "name": "barenco_tof_5",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 105,
+            "cx": 51,
+            "depth": 98
+          },
+          "sha256": "f91da9db58e5107c9c1ead0cf0146d2746d7ac39cc1df6175d1f12ba103505b6",
+          "seconds": 0.0,
+          "graph": "0363b942d7613a2c1b8046762fb7a20b0c30e2347ab63ccaf74723be4f3474cd"
+        },
+        "root_cost": {
+          "gates": 105,
+          "cx": 51,
+          "depth": 98
+        },
+        "proposal_counts": {
+          "EU:forward": 1,
+          "S:forward": 1,
+          "phase_split": 1,
+          "PV": 1
+        },
+        "accepted_counts": {
+          "EU:forward": 1,
+          "S:forward": 1,
+          "phase_split": 1,
+          "PV": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 1,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 0,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            105,
+            51
+          ]
+        },
+        "checked_qasm": 2,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 4,
+          "phase_inferred": 34,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 2,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "104": null,
+          "103": null,
+          "102": null,
+          "101": null,
+          "100": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 4.875675724819303,
+        "timers": {
+          "checkpoint": 0.013325683074072003,
+          "matching": 1.1606811438687146,
+          "feasibility": 2.654651747085154,
+          "inference": 0.042264870600774884,
+          "rewrite_verify": 0.553962744306773,
+          "score": 0.25014273705892265,
+          "ppo": 0.078248823992908
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 105,
+          "last_improvement_unix": 1792251586.8273017
+        },
+        "certificate_stats": {
+          "passed": 10,
+          "cache_hits": 3
+        },
+        "finished_unix": 1792251591.7157404
+      }
+    },
+    {
+      "name": "gf2^4_mult",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 176,
+            "cx": 95,
+            "depth": 94
+          },
+          "sha256": "55ca75ccdc9d1b1ac44ee677e9453d49aa699406a8e12fbca23047d9782ca9d8",
+          "seconds": 0.0,
+          "graph": "7eb734990205020d68284657d611b88ad44192c7412dd3712ca43367898f0a79"
+        },
+        "root_cost": {
+          "gates": 176,
+          "cx": 95,
+          "depth": 94
+        },
+        "proposal_counts": {
+          "spider_split": 1,
+          "CP:backward": 1,
+          "E:backward": 1,
+          "H:forward": 1
+        },
+        "accepted_counts": {
+          "spider_split": 1,
+          "CP:backward": 1,
+          "E:backward": 1,
+          "H:forward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            176,
+            95
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 0,
+          "phase_inferred": 43,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "175": null,
+          "174": null,
+          "173": null,
+          "172": null,
+          "171": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 8.603899523150176,
+        "timers": {
+          "checkpoint": 0.017757204128429294,
+          "matching": 1.957050166092813,
+          "feasibility": 4.637392945354804,
+          "inference": 0.054399919928982854,
+          "rewrite_verify": 1.5120670679025352,
+          "score": 0.10043106088414788,
+          "ppo": 0.10356209496967494
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 176,
+          "last_improvement_unix": 1792251587.2531593
+        },
+        "certificate_stats": {
+          "passed": 10,
+          "cache_hits": 2
+        },
+        "finished_unix": 1792251595.873496
+      }
+    },
+    {
+      "name": "hwb6",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 3,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 219,
+            "cx": 94,
+            "depth": 151
+          },
+          "sha256": "f23d3834441f66fe2056f9aefe0eb16a69a8bb8f36fbcf9172bda761338b5275",
+          "seconds": 0.0,
+          "graph": "a87a394a0e1d22a3c2ef1924271e0c99079dd6e1a7924416383deae6e8f5cf18"
+        },
+        "root_cost": {
+          "gates": 219,
+          "cx": 94,
+          "depth": 151
+        },
+        "proposal_counts": {
+          "PV": 1,
+          "H:backward": 1,
+          "EU:forward": 1,
+          "ID": 1
+        },
+        "accepted_counts": {
+          "H:backward": 1,
+          "EU:forward": 1,
+          "ID": 1
+        },
+        "unscored_counts": {},
+        "rejections": {
+          "MemoryError: ZX verification width exceeds configured bound": 1
+        },
+        "buffer": {
+          "scored_size": 4,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 3,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            219,
+            94
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 3,
+          "phase_inferred": 34,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 4,
+          "primary_successes": 4,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 4.0961813528580004e-15,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 122,
+          "resource_masks": 1,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 126,
+          "cache_hits": 6,
+          "cache_size": 122,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "LC": 2
+          }
+        },
+        "max_graph_operator_error": 3.0657035291446097e-14,
+        "max_qasm_operator_error": 4.0961813528580004e-15,
+        "first_passage_seconds": {
+          "218": null,
+          "217": null,
+          "216": null,
+          "215": null,
+          "214": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 13.1659899961669,
+        "timers": {
+          "checkpoint": 0.018475987948477268,
+          "matching": 2.1599983538035303,
+          "feasibility": 6.269848107127473,
+          "inference": 0.051955349277704954,
+          "rewrite_verify": 4.123596049612388,
+          "score": 0.23240751586854458,
+          "ppo": 0.09649362484924495
+        },
+        "verification": "passed",
+        "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 219,
+          "last_improvement_unix": 1792251588.1453233
+        },
+        "certificate_stats": null,
+        "finished_unix": 1792251601.3277633
+      }
+    },
+    {
+      "name": "gf2^5_mult",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 272,
+            "cx": 147,
+            "depth": 127
+          },
+          "sha256": "e8917cb772514953ffe03bf2ca31a13882aa2358b994a7c0d8697d0b08d9d6ec",
+          "seconds": 0.0,
+          "graph": "3f49569f131b73ff66542a3393c122ca41c37ca94369dd1848381fea2f42eb3b"
+        },
+        "root_cost": {
+          "gates": 272,
+          "cx": 147,
+          "depth": 127
+        },
+        "proposal_counts": {
+          "H:forward": 1,
+          "PVG": 1,
+          "identity_insert": 1,
+          "PV": 1
+        },
+        "accepted_counts": {
+          "H:forward": 1,
+          "PVG": 1,
+          "identity_insert": 1,
+          "PV": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 4,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 3,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            272,
+            147
+          ]
+        },
+        "checked_qasm": 2,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 5,
+          "phase_inferred": 34,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 4,
+          "primary_successes": 3,
+          "cache_hits": 1,
+          "primary_failures": 1,
+          "clifford_repair_successes": 1,
+          "unique_valid_qasm": 2,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "271": null,
+          "270": null,
+          "269": null,
+          "268": null,
+          "267": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 17.994098149007186,
+        "timers": {
+          "checkpoint": 0.029704727930948138,
+          "matching": 4.291624537901953,
+          "feasibility": 9.839276474434882,
+          "inference": 0.16936029284261167,
+          "rewrite_verify": 0.9030748333316296,
+          "score": 2.127053489908576,
+          "ppo": 0.15114001207984984
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 272,
+          "last_improvement_unix": 1792251587.830448
+        },
+        "certificate_stats": {
+          "passed": 8,
+          "cache_hits": 6
+        },
+        "finished_unix": 1792251605.849327
+      }
+    },
+    {
+      "name": "qcla_com_7",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 274,
+            "cx": 122,
+            "depth": 69
+          },
+          "sha256": "10c9f02c5477ee68bab7a26e9e2ca6b6612f63357b872b1698dbb551160a4356",
+          "seconds": 23.82387659093365,
+          "graph": "9fea64ebaa0f529495a76ecc174e29c9fd2665ac63c67e3625ae7027040742d9"
+        },
+        "root_cost": {
+          "gates": 278,
+          "cx": 122,
+          "depth": 69
+        },
+        "proposal_counts": {
+          "S:backward": 2,
+          "I:backward": 1,
+          "PVG": 1
+        },
+        "accepted_counts": {
+          "S:backward": 2,
+          "I:backward": 1,
+          "PVG": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            274,
+            122
+          ]
+        },
+        "checked_qasm": 2,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 7,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 2,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 128,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {}
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "277": 23.82387659093365,
+          "276": 23.82387659093365,
+          "275": 23.82387659093365,
+          "274": 23.82387659093365,
+          "273": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 24.08632619213313,
+        "timers": {
+          "checkpoint": 0.028509272960945964,
+          "matching": 6.453935589175671,
+          "feasibility": 13.19885490112938,
+          "inference": 0.21206157724373043,
+          "rewrite_verify": 2.0755505971610546,
+          "score": 1.0177577149588615,
+          "ppo": 0.18626169092021883
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 274,
+          "last_improvement_unix": 1792251611.6871662
+        },
+        "certificate_stats": {
+          "passed": 11,
+          "cache_hits": 2
+        },
+        "finished_unix": 1792251611.9729626
+      }
+    },
+    {
+      "name": "barenco_tof_10",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 264,
+            "cx": 126,
+            "depth": 240
+          },
+          "sha256": "3acfe9e431917b20a9ceee9d5540d6f03eeef1f9ce6836bc35f84ebc0338935a",
+          "seconds": 0.0,
+          "graph": "88ae47eb15ea28237e0ded6d3911b846258cb85eacf874cbea6f1c030b7c7484"
+        },
+        "root_cost": {
+          "gates": 264,
+          "cx": 126,
+          "depth": 240
+        },
+        "proposal_counts": {
+          "S:backward": 1,
+          "PV": 1,
+          "I:backward": 1,
+          "PVB": 1
+        },
+        "accepted_counts": {
+          "S:backward": 1,
+          "PV": 1,
+          "I:backward": 1,
+          "PVB": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            264,
+            126
+          ]
+        },
+        "checked_qasm": 1,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 10,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 1,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "resource_masks": 3,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 125,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "PVB": 3
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "263": null,
+          "262": null,
+          "261": null,
+          "260": null,
+          "259": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 27.703128207009286,
+        "timers": {
+          "checkpoint": 0.03578986180946231,
+          "matching": 6.784052485600114,
+          "feasibility": 15.342724843882024,
+          "inference": 0.08579198643565178,
+          "rewrite_verify": 3.2175528269726783,
+          "score": 1.2865054178982973,
+          "ppo": 0.1913494721520692
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 264,
+          "last_improvement_unix": 1792251588.4777796
+        },
+        "certificate_stats": {
+          "passed": 10,
+          "cache_hits": 2
+        },
+        "finished_unix": 1792251616.2116237
+      }
+    },
+    {
+      "name": "qcla_adder_10",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 432,
+            "cx": 186,
+            "depth": 79
+          },
+          "sha256": "4c0dcb36c4c937ee5eec369d9006698e7d178a3d1b5733a4b77fd04aca6ba8b1",
+          "seconds": 0.0,
+          "graph": "52f0cfa82b634c09400af30284fcbaa1d8906a3adc230fda401de5b945de0349"
+        },
+        "root_cost": {
+          "gates": 432,
+          "cx": 186,
+          "depth": 79
+        },
+        "proposal_counts": {
+          "PVG": 1,
+          "phase_split": 1,
+          "S:backward": 1,
+          "EU:forward": 1
+        },
+        "accepted_counts": {
+          "PVG": 1,
+          "phase_split": 1,
+          "S:backward": 1,
+          "EU:forward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            432,
+            186
+          ]
+        },
+        "checked_qasm": 2,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 7,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 2,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "resource_masks": 12,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 116,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "PVG": 2,
+            "PVB": 5,
+            "LC": 2,
+            "spider_nest": 2,
+            "gadget_split": 1
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "431": null,
+          "430": null,
+          "429": null,
+          "428": null,
+          "427": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 39.263401929987594,
+        "timers": {
+          "checkpoint": 0.07473784708417952,
+          "matching": 10.041015994967893,
+          "feasibility": 22.593334174947813,
+          "inference": 0.10095833498053253,
+          "rewrite_verify": 2.887121476000175,
+          "score": 2.1652566550765187,
+          "ppo": 0.2422585200984031
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 432,
+          "last_improvement_unix": 1792251588.5210385
+        },
+        "certificate_stats": {
+          "passed": 10,
+          "cache_hits": 3
+        },
+        "finished_unix": 1792251627.8196964
+      }
+    },
+    {
+      "name": "gf2^7_mult",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 514,
+            "cx": 283,
+            "depth": 189
+          },
+          "sha256": "ef7e48924bea4d960df4bcf3635dd080017c04bccffe4706709306f833594cd6",
+          "seconds": 0.0,
+          "graph": "dc77d0882512ca9d59c7d08cee7c4fa1ca5e59dec1cca6ebe8849b104b469cd3"
+        },
+        "root_cost": {
+          "gates": 514,
+          "cx": 283,
+          "depth": 189
+        },
+        "proposal_counts": {
+          "H:backward": 1,
+          "spider_split": 1,
+          "S:backward": 1,
+          "PV": 1
+        },
+        "accepted_counts": {
+          "H:backward": 1,
+          "spider_split": 1,
+          "S:backward": 1,
+          "PV": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 5,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 4,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            514,
+            283
+          ]
+        },
+        "checked_qasm": 2,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 9,
+          "phase_inferred": 32,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 5,
+          "unique_valid_qasm": 2,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "resource_masks": 8,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 120,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "PVB": 8
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "513": null,
+          "512": null,
+          "511": null,
+          "510": null,
+          "509": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 67.73177849012427,
+        "timers": {
+          "checkpoint": 0.12192079238593578,
+          "matching": 15.235255319159478,
+          "feasibility": 37.477324825013056,
+          "inference": 0.11982354684732854,
+          "rewrite_verify": 9.937583041144535,
+          "score": 2.765180682297796,
+          "ppo": 0.31635576812550426
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 514,
+          "last_improvement_unix": 1792251591.9593537
+        },
+        "certificate_stats": {
+          "passed": 10,
+          "cache_hits": 3
+        },
+        "finished_unix": 1792251659.7345753
+      }
+    },
+    {
+      "name": "adder_8",
+      "status": "passed",
+      "transitions": 4,
+      "updates": 1,
+      "report": {
+        "status": "step_limit_reached",
+        "transitions": 4,
+        "accepted": 4,
+        "unscored": 0,
+        "recovered": 0,
+        "updates": 1,
+        "best": {
+          "cost": {
+            "gates": 568,
+            "cx": 271,
+            "depth": 202
+          },
+          "sha256": "23be9e36d261860ee1e841a1626f72e82f21944f5d98acdc0c16aac6dd1321c2",
+          "seconds": 0.0,
+          "graph": "74a12f85116c55b24d07166107c3c85e5af2895009bc1e0e6c5ae64cd7e310a9"
+        },
+        "root_cost": {
+          "gates": 568,
+          "cx": 271,
+          "depth": 202
+        },
+        "proposal_counts": {
+          "I:forward": 1,
+          "H:backward": 1,
+          "EU:forward": 1,
+          "E:backward": 1
+        },
+        "accepted_counts": {
+          "I:forward": 1,
+          "H:backward": 1,
+          "EU:forward": 1,
+          "E:backward": 1
+        },
+        "unscored_counts": {},
+        "rejections": {},
+        "buffer": {
+          "scored_size": 3,
+          "scored_capacity": 64,
+          "latent_size": 0,
+          "latent_capacity": 128,
+          "insertions": 2,
+          "evictions": 0,
+          "latent_insertions": 0,
+          "latent_evictions": 0,
+          "latent_restarts": 0,
+          "best": [
+            568,
+            271
+          ]
+        },
+        "checked_qasm": 2,
+        "view_cache": {
+          "hits": 5,
+          "misses": 5
+        },
+        "jpv_proposals": {
+          "calls": 4,
+          "matching_work_exhausted": 25,
+          "phase_inferred": 34,
+          "non_clifford_matches_skipped": 0
+        },
+        "completion": {
+          "requests": 5,
+          "primary_successes": 3,
+          "primary_failures": 2,
+          "clifford_repair_failures": 2,
+          "full_reduce_repair_successes": 2,
+          "unique_valid_qasm": 2,
+          "unique_invalid_qasm": 0,
+          "max_valid_operator_error": 0.0,
+          "max_rejected_operator_error": 0.0
+        },
+        "feasibility": {
+          "previews": 128,
+          "calls": 4,
+          "proposed": 128,
+          "eligible": 127,
+          "resource_masks": 1,
+          "cache_size": 128,
+          "cache_capacity": 8192,
+          "masked_families": {
+            "PVG": 1
+          }
+        },
+        "max_graph_operator_error": 0.0,
+        "max_qasm_operator_error": 0.0,
+        "first_passage_seconds": {
+          "567": null,
+          "566": null,
+          "565": null,
+          "564": null,
+          "563": null
+        },
+        "budget_seconds": 600.0,
+        "total_loop_seconds": 108.09431644901633,
+        "timers": {
+          "checkpoint": 0.0982995533850044,
+          "matching": 30.966092294314876,
+          "feasibility": 55.85399432689883,
+          "inference": 0.14685643301345408,
+          "rewrite_verify": 8.930546508170664,
+          "score": 8.694980547996238,
+          "ppo": 0.4111589379608631
+        },
+        "verification": "passed",
+        "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+        "patience": {
+          "seconds": 0.0,
+          "gates": 568,
+          "last_improvement_unix": 1792251591.9843442
+        },
+        "certificate_stats": {
+          "passed": 16,
+          "cache_hits": 1
+        },
+        "finished_unix": 1792251700.1065836
+      }
+    }
+  ]
+}

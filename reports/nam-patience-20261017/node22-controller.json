@@ -1,0 +1,11 @@
+{
+  "status": "preflight_then_training",
+  "node": 22,
+  "source_commit": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+  "container_id": "b8091b120a52fea5f33539f7973cfc048441dff85012e4f097de7c351f7a39d9",
+  "started_at": "2026-10-17T15:38:49.930689843Z",
+  "gpu": false,
+  "workers": 13,
+  "patience_seconds": 10800,
+  "updated_at": "2026-10-17T23:39:40.261730+08:00"
+}
