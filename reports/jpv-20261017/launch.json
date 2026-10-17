@@ -1,0 +1,38 @@
+{
+  "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+  "short": "4524b4f8a657",
+  "local_clean": true,
+  "bundle_sha256": "900de08abc011db171267d5658bc3173851fbc61a637a845d77c469561562e45",
+  "host": "wxtky02-p800-8nic-vd-node44.wxtky02",
+  "task_root": "/tmp/dengzengyong_rlzx_node44_20261016",
+  "container": "dengzengyong_rlzx_node44_20261016",
+  "container_id": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+  "trials": 18,
+  "seconds_per_trial": 1200,
+  "workers": 18,
+  "gpu": false,
+  "launch": {
+    "pid": 3027081,
+    "command": [
+      "python3",
+      "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-4524b4f8a657-controller.py",
+      "--task-root",
+      "/tmp/dengzengyong_rlzx_node44_20261016",
+      "--commit",
+      "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "--container",
+      "dengzengyong_rlzx_node44_20261016",
+      "--container-id",
+      "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+      "--suite",
+      "jpv",
+      "--seconds",
+      "1200",
+      "--workers",
+      "18"
+    ],
+    "log": "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-4524b4f8a657-controller.log",
+    "time": "2026-10-17T18:00:23.113648+08:00"
+  },
+  "launch_transport": "existing SSH multiplex socket; python3 stdin; previous -c invocation failed before any process/log artifact"
+}

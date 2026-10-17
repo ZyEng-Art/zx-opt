@@ -1,0 +1,23 @@
+{
+  "status": "postprocessing_pending",
+  "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+  "postprocess_locally": true,
+  "archive": "zx-opt-4524b4f8a657-records.tar.gz",
+  "bytes": 259672023,
+  "sha256": "aacce6a6efb499633eac6160e0174cab875ee77eb26d353e4b9f079141a87c73",
+  "run_files": 205018,
+  "controller": {
+    "status": "failed",
+    "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+    "container": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+    "gpu": false,
+    "restored_stopped": true,
+    "output": "/tmp/dengzengyong_rlzx_node44_20261016/zx-opt-4524b4f8a657/runs/pilot",
+    "suite": "jpv",
+    "seconds_per_run": 1200,
+    "workers": 18,
+    "trials": 18,
+    "bundle_sha256": "900de08abc011db171267d5658bc3173851fbc61a637a845d77c469561562e45",
+    "time": "2026-10-17T18:33:47.395811+08:00"
+  }
+}

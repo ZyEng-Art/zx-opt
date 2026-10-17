@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "completed_at": "2026-10-17T18:42:30.196412+08:00",
+  "experiment_commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+  "original_controller_status": "failed",
+  "original_failure": "Git dubious ownership during source audit, after all search/replay/operator/model checks passed",
+  "controller_receipt_preserved": true,
+  "remaining_checks_completed_locally": {
+    "source_audit_trials": 18,
+    "fixed_root_policy_probes": 6,
+    "independent_final_qasm_checks": 18
+  },
+  "source_auditor_fix_commit": "0a4f161",
+  "archive_sha256": "aacce6a6efb499633eac6160e0174cab875ee77eb26d353e4b9f079141a87c73",
+  "container_restarted_for_recovery": false,
+  "gpu_used": false,
+  "tools_sha256": {
+    "tools/audit_sources.py": "109c2dd6295a227c646edddcfc385e59005e9c96a9f15509912b22ba9cf74951",
+    "tools/probe_general_policy.py": "76e6ed3e335797ca117a254586cfbdf5dc983b938d02148aee58b31e2a9d7245",
+    "tools/summarize_general.py": "15e1ba5b7ef49218c6eacffc2da7d43c4830d1bae34648bb0d77738912b595c6"
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "phase": "jpv_main_archive_transfer_and_local_postprocessing",
+  "phase": "jpv_search_and_ppo_integration_complete",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
-  "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO; independent complete Clifford+T JPV axiom kernel",
+  "scope": "barenco_tof_3 only; total NAM gates; general ZX states and verified scoring; complete Clifford+T JPV kernel connected through bounded proposals",
   "resources": {
     "node44_owned_cpu_container": "stopped",
     "new_gpu_tasks": 0,
     "persistent_ssh": "retained",
-    "background_jobs": "only local archive transfer; local mask diagnostic completed"
+    "background_jobs": "none; experiments, audits, archives and reports completed"
   },
   "github": {
     "push": "completed",
@@ -17,17 +17,18 @@
     "previous_failure": "HTTPS username credential unavailable; SSH publickey authentication rejected; resolved after public-key authorization"
   },
   "research_findings": [
-    "All saved circuits pass fixed-wire full-operator checks",
-    "No stable online-search advantage in this short pilot",
+    "Saved circuits pass fixed-wire full-operator checks; invalid extraction outputs quarantined",
+    "No stable online-search advantage in paired single-target trials",
     "Graph isomorphism does not guarantee equal heuristic extraction cost",
-    "Bounded rule proposals do not establish ZX completeness"
+    "Complete Clifford+T axiom kernel connected; bounded search remains incomplete",
+    "Feasibility mask removes resource-invalid self-loops, but costs 69-71% of classified pilot time"
   ],
   "next_research_priorities": [
-    "Separate repeated-computation deduplication from hard action suppression",
-    "Align reward and observations with the global extracted-gate objective",
-    "Expand reliably extractable rewrite paths"
+    "Reduce exact resource-mask preview cost without changing sampling/PPO density",
+    "Improve discovery of lower total-gate records rather than fitting zero-reward loops",
+    "Study which bounded JPV rewrite paths yield useful extractable states"
   ],
-  "active_work": "Main search and all semantic/model/replay audits passed on node44; preserve failed source-audit controller receipt, finish source audit and fixed-root policy probes locally after SHA-verified archive download",
+  "active_work": null,
   "completed_followups": [
     {
       "suite": "representation",
@@ -68,18 +69,25 @@
     "raw_data": "runs/download-20261017/extracted/runs/pilot",
     "raw_archive_sha256": "10f5f0a0f217ac66d3c23b787ef449d7ceca8c5c63bae00eb9350d2275103e24"
   },
-  "latest_experiment_commit": "5b556664ed8744a51e0f006939e1017cd0bd1e64",
-  "latest_report": "reports/frontier-20261017/interpretation.txt",
+  "latest_experiment_commit": "a184ab519a83d75c76faaf9812b9226fc72888e2",
+  "latest_report": "reports/jpv-mask-20261017/interpretation.txt",
   "current_findings": {
     "best_total_gates": 36,
-    "new_saved_qasm_files_verified": 116291,
-    "reserved_runs_using_full_budget": 9,
+    "main_total_proposals": 240477,
+    "formal_replayed_rewrites_this_turn": 164642,
+    "formal_saved_qasm_verified_this_turn": 49699,
     "online_policy_preferences_changed": true,
     "stable_online_search_advantage": false,
-    "frozen_vs_online_anytime_gates": [
-      36.42518338508435,
-      36.700445913465394
-    ]
+    "jpv_frozen_vs_online_anytime_gates": [
+      37.47702116857996,
+      37.56108461399139
+    ],
+    "macro_frozen_vs_online_anytime_gates": [
+      36.99956117306134,
+      37.200764962991464
+    ],
+    "masked_resource_rejections": 0,
+    "caveat": "Mask followup is selected seed29 diagnostic, not independent efficacy evidence"
   },
   "rule_completeness": {
     "fragment": "Clifford+T (pi/4)",
@@ -103,18 +111,6 @@
     "replayed": 2105,
     "checked_qasm": 881
   },
-  "ongoing_experiment": {
-    "suite": "jpv",
-    "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
-    "trials": 18,
-    "workers": 18,
-    "seconds_per_trial": 1200,
-    "controller_pid": 3027081,
-    "host": "wxtky02-p800-8nic-vd-node44.wxtky02",
-    "task_root": "/tmp/dengzengyong_rlzx_node44_20261016",
-    "container_id": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
-    "bundle_sha256": "900de08abc011db171267d5658bc3173851fbc61a637a845d77c469561562e45"
-  },
   "jpv_mask": {
     "source_commit": "a184ab519a83d75c76faaf9812b9226fc72888e2",
     "trials": 4,
@@ -125,5 +121,29 @@
     "checked_qasm": 1885,
     "resource_rejections": 0,
     "unit_tests": 38
+  },
+  "previous_followup_verified_qasm": 116291,
+  "primary_jpv_report": "reports/jpv-20261017/interpretation.txt",
+  "jpv_main": {
+    "source_commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+    "trials": 18,
+    "seconds_per_trial": 1200,
+    "report": "reports/jpv-20261017",
+    "replayed": 159998,
+    "checked_qasm": 47814,
+    "accepted_jpv_actions": 17839,
+    "completed_postprocessing": "reports/jpv-20261017/postprocessing.json",
+    "original_controller_failed_during_source_audit": true,
+    "raw_archive_sha256": "aacce6a6efb499633eac6160e0174cab875ee77eb26d353e4b9f079141a87c73"
+  },
+  "general_search_integration": {
+    "entry": "zxopt.general_search",
+    "jpv_flag": "--jpv",
+    "finite_proposals": true,
+    "legal_unscored_bridges": true,
+    "resource_mask_default": true,
+    "unit_tests": 38,
+    "implementation_commit": "c645d8a6afb3f73b20815558c96ec0cd28c6417c",
+    "feasibility_fix_commit": "a184ab519a83d75c76faaf9812b9226fc72888e2"
   }
 }

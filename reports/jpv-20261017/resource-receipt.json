@@ -1,0 +1,46 @@
+{
+  "files": [
+    [
+      "zx-opt-4524b4f8a657-launcher.json",
+      632
+    ],
+    [
+      "zx-opt-4524b4f8a657-collector.py",
+      1985
+    ],
+    [
+      "zx-opt-4524b4f8a657-controller.json",
+      503
+    ],
+    [
+      "zx-opt-4524b4f8a657-controller.log",
+      15978
+    ],
+    [
+      "zx-opt-4524b4f8a657-controller.py",
+      5098
+    ],
+    [
+      "zx-opt-4524b4f8a657-archive.json",
+      851
+    ],
+    [
+      "zx-opt-4524b4f8a657-records.tar.gz",
+      259672023
+    ],
+    [
+      "zx-opt-4524b4f8a657-collector-recovery-0a4f161.py",
+      2638
+    ],
+    [
+      "zx-opt-4524b4f8a657.bundle",
+      1479083
+    ]
+  ],
+  "resource": {
+    "id": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607",
+    "running": false,
+    "finished_at": "2026-10-17T10:33:47.006477833Z"
+  },
+  "checked_at": "2026-10-17T18:43:58.150920+08:00"
+}

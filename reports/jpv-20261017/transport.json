@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "bytes": 259672023,
+  "sha256": "aacce6a6efb499633eac6160e0174cab875ee77eb26d353e4b9f079141a87c73",
+  "archive": "runs/download-jpv-20261017/zx-opt-4524b4f8a657-records.tar.gz",
+  "extracted": "runs/download-jpv-20261017/extracted",
+  "resource_restored": true
+}

@@ -1,0 +1,41 @@
+test_all_axioms_both_colors_independent_semantics (test_complete.CompleteTest) ... ok
+test_all_clifford_t_phase_parameters (test_complete.CompleteTest) ... ok
+test_arbitrary_outside_contexts_and_feedback (test_complete.CompleteTest) ... ok
+test_empty_context_scalar_insertion_preserves_existing_graph (test_complete.CompleteTest) ... ok
+test_every_axiom_both_directions_and_serialized_receipts (test_complete.CompleteTest) ... ok
+test_exact_ring_and_phase_domain (test_complete.CompleteTest) ... ok
+test_fair_stages_cover_phase_colors_and_large_arity (test_complete.CompleteTest) ... ok
+test_identity_insertion_on_self_loop_and_bare_circle (test_complete.CompleteTest) ... ok
+test_pyzx_import_export_scalar_parallel_and_boundary_semantics (test_complete.CompleteTest) ... ok
+test_rejects_forged_stale_or_incomplete_matches (test_complete.CompleteTest) ... ok
+test_unbounded_arity_schema_representatives (test_complete.CompleteTest) ... ok
+test_better_representative_replaces_payload_counts_and_root (test_dedup.DedupTest) ... ok
+test_phase_edge_scalar_and_wire_order_are_distinct (test_dedup.DedupTest) ... ok
+test_relabel_layout_and_action_mapping (test_dedup.DedupTest) ... ok
+test_representative_replacement_respects_trajectory_admission (test_dedup.DedupTest) ... ok
+test_serialized_actions_do_not_prune_isomorphic_representations (test_dedup.DedupTest) ... ok
+test_wl_collision_requires_exact_isomorphism (test_dedup.DedupTest) ... ok
+test_capacity_is_bounded_and_disabled_mode_retains_nothing (test_frontier.FrontierTest) ... ok
+test_resumes_remaining_parent_and_drops_exhausted_states (test_frontier.FrontierTest) ... ok
+test_compact_exact_scalar_import_for_both_power_signs (test_general.GeneralTest) ... ok
+test_compiled_proposals_expose_every_axiom_both_directions (test_general.GeneralTest) ... ok
+test_deterministic_proposals_and_all_root_witnesses (test_general.GeneralTest) ... ok
+test_general_policy_density_gradients_and_ppo (test_general.GeneralTest) ... ok
+test_hh_derivation_and_scalar_feedback (test_general.GeneralTest) ... ok
+test_invalid_extraction_is_excluded_and_repaired_on_a_copy (test_general.GeneralTest) ... ok
+test_legal_unscored_bridge_retention_and_reward_anchor (test_general.GeneralTest) ... ok
+test_raw_color_change_survives_independent_scoring_view (test_general.GeneralTest) ... ok
+test_new_actions_share_sampling_and_ppo_density (test_policy.PolicyTest) ... ok
+test_all_split_phases_and_partitions (test_rules.RulesTest) ... ok
+test_bounds (test_rules.RulesTest) ... ok
+test_full_and_partial_spider_nests (test_rules.RulesTest) ... ok
+test_gadget_split_scalars_for_every_arity (test_rules.RulesTest) ... ok
+test_independent_contraction_agrees_with_pyzx (test_rules.RulesTest) ... ok
+test_phase_transfer (test_rules.RulesTest) ... ok
+test_amplitude_changes_are_not_global_phase (test_verify.VerifyTest) ... ok
+test_named_wire_conventions (test_verify.VerifyTest) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 30.032s
+
+OK

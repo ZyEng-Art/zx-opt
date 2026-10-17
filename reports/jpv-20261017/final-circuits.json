@@ -1,0 +1,205 @@
+{
+  "status": "passed",
+  "circuits": 18,
+  "max_operator_error": 4.561993730764281e-16,
+  "records": [
+    {
+      "arm": "jpv_frozen",
+      "seed": 11,
+      "sha256": "77df2c597e107cca572e1fd5e4b5c743d094a002e28fd0ecf23f56e5cbbd3b84",
+      "cost": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 35
+      },
+      "operator_error": 2.6673667785360456e-16
+    },
+    {
+      "arm": "jpv_frozen",
+      "seed": 29,
+      "sha256": "79ad137354d092c9bc927a14c4fe00f6e6c47d34f9f2038e5627e721ed5a2d1c",
+      "cost": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 35
+      },
+      "operator_error": 2.8782997307853465e-16
+    },
+    {
+      "arm": "jpv_frozen",
+      "seed": 47,
+      "sha256": "437558b3be3731f482c1c35edb70175565addb36b58fd7b486322f98a5511ff6",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 33
+      },
+      "operator_error": 3.4850962352057547e-16
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 11,
+      "sha256": "9f0260dc47996cd58e7026023d7936b08ec4bf755143c4372f9a9a7997e402fa",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 33
+      },
+      "operator_error": 4.509034169768476e-16
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 29,
+      "sha256": "92daaa2f6381b8988ea011d004d3a75d8123a3b4a731473ee6261489398eb941",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 35
+      },
+      "operator_error": 3.032216144737462e-16
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 47,
+      "sha256": "b931c6858aa0016de73ac23d1b478d89677c92845b6c100f41b2d22502af9faf",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "operator_error": 3.9102050129701813e-16
+    },
+    {
+      "arm": "jpv_uniform",
+      "seed": 11,
+      "sha256": "e7ece25bed33f463dc56ac3d5ec5564f6e938345f0eda3892945b7166b720263",
+      "cost": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "operator_error": 3.4756500670595367e-16
+    },
+    {
+      "arm": "jpv_uniform",
+      "seed": 29,
+      "sha256": "c21ec070a67333666aa20d1e49f39a3acb050dcb841e43eee0837e99cb33ea41",
+      "cost": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 34
+      },
+      "operator_error": 3.4000282779766985e-16
+    },
+    {
+      "arm": "jpv_uniform",
+      "seed": 47,
+      "sha256": "c54ad4178e35b8352b8040ab7fa8feb1dcaa84aad3533a9375b9965c616acd7e",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "operator_error": 4.509034169768476e-16
+    },
+    {
+      "arm": "macros_frozen",
+      "seed": 11,
+      "sha256": "7987f4eb83bf7b774dfdcfe8787fa1ff54551fc1637830b3b322dcdcc1b521ee",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "operator_error": 3.4756500670595367e-16
+    },
+    {
+      "arm": "macros_frozen",
+      "seed": 29,
+      "sha256": "19e9786b5f130d28f8b08021d612cf2edf0054c602b9930fb7003f62d22e8721",
+      "cost": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 34
+      },
+      "operator_error": 3.4850962352057547e-16
+    },
+    {
+      "arm": "macros_frozen",
+      "seed": 47,
+      "sha256": "e03afa1ab98e5db470fcc01200e65c0b7015a1d0a09b7d3d5be406aaae63dc62",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "operator_error": 3.4756500670595367e-16
+    },
+    {
+      "arm": "macros_online",
+      "seed": 11,
+      "sha256": "7bbd186a8ca73c89f566e136855ca525b56094963b10c5c5fb08ec95f041384b",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 33
+      },
+      "operator_error": 4.561993730764281e-16
+    },
+    {
+      "arm": "macros_online",
+      "seed": 29,
+      "sha256": "22ce3f3358509cfcf3ca6a1e427abf871f95488bc22c0eccabbb7bf275f5f294",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 35
+      },
+      "operator_error": 3.4756500670595367e-16
+    },
+    {
+      "arm": "macros_online",
+      "seed": 47,
+      "sha256": "e03afa1ab98e5db470fcc01200e65c0b7015a1d0a09b7d3d5be406aaae63dc62",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "operator_error": 3.4756500670595367e-16
+    },
+    {
+      "arm": "macros_uniform",
+      "seed": 11,
+      "sha256": "4ccf51ef17f03dcdc9ce5cb1ab38d26e5c701bbe7b99d9ef56da698dd01f58bd",
+      "cost": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 37
+      },
+      "operator_error": 3.8140796830622673e-16
+    },
+    {
+      "arm": "macros_uniform",
+      "seed": 29,
+      "sha256": "ed542db80939ae369a5f5364beee9541d88d530c17064cf82a30c81894d1b2f0",
+      "cost": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "operator_error": 3.3537189618722464e-16
+    },
+    {
+      "arm": "macros_uniform",
+      "seed": 47,
+      "sha256": "171ad69d69cf8a808b567ddcf8c606b3050208f174c8f8a923d3e2ef21fd835f",
+      "cost": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "operator_error": 3.607500564592624e-16
+    }
+  ]
+}

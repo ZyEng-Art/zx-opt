@@ -1,0 +1,147 @@
+{
+  "status": "passed",
+  "trials": 18,
+  "commits": {
+    "4524b4f8a6570f08bf99b306a3d3b79928707d69": {
+      "sources": {
+        "zxopt/__init__.py": "49f66970629850f9e71721957a4723f03650331fc5240d3d02e5bf00e2f6c6b8",
+        "zxopt/archive.py": "c7d316492919a4ebeb5ebac66236b0d4ec09a1b577256054238b4219854cacff",
+        "zxopt/campaign.py": "5f5eddf651ebea56820786ade267f80dd3d69a4e210cbd102962faeae386b767",
+        "zxopt/complete/__init__.py": "5876d8d4a9fdd89a6665770d492c5484718cfe45c1b68487bd22ad53479e6914",
+        "zxopt/complete/__main__.py": "b20e58b20159198149a6ce4da8b7202b469f8e55fde81e5afca624a704655a57",
+        "zxopt/complete/adapter.py": "62d1750e391cd53b39a3659370705fdfbe0b3f1c539c10a23a3118ff25467c09",
+        "zxopt/complete/axioms.py": "4ff0fe47d8af47544d7b6ed673d83a627d69d7fede9a87b616bf52e4cd358fa5",
+        "zxopt/complete/diagram.py": "2a1d84c01c9d0fd30eb8b97bf97a0f19b1f27f4c245a721e6e87973c4168d2ac",
+        "zxopt/complete/rewrite.py": "e28f6009d665182849f33c28c445eb505247e504550b82941e0bca7e0fd649c8",
+        "zxopt/complete/ring.py": "5e1349922e4e7c826b34565f18926b3c3121a5bf7ff0bfeb73cc89f6938a019b",
+        "zxopt/dedup.py": "ee54c725cc0aa981c966be9485ae1f317782b84ccb4af0e5ca8ba0635a06eb53",
+        "zxopt/general_archive.py": "a31b446db73afaaeba7ab9b21717a4e5a390b1ba4012348b3c0c82f95b027c35",
+        "zxopt/general_campaign.py": "ce47212b23cbd0835f565c6441522a47183a95959bedb4b7925101f7938b8f96",
+        "zxopt/general_kernel.py": "30c0525c1661197f14a61e09e8bb472532b102493f818395c6773f9fcae4cbe9",
+        "zxopt/general_policy.py": "beb1f73e7424ef258485056e17e330028a67e37a8f040f9aefc9cea22232ce81",
+        "zxopt/general_score.py": "d155c0a56201d6ca82c2a7b71b197ac9c78c96163b8d9eb6242989fe8979ae67",
+        "zxopt/general_search.py": "99b9e1068ca0ea6c85d44b2963812599a46e17b45a45166d0f9fe52ca2aaf86a",
+        "zxopt/jpv_actions.py": "3b0875349e0d46e3bda9e524ae6f091e5459fdad1d3a58c92971907014a6c98e",
+        "zxopt/kernel.py": "ce6deb5cf65f99e2c7727a8174f7bfee25cc7180d49c319b20cba68f31f1d954",
+        "zxopt/legacy.py": "0794b16c5f6c56dfbb546c26337b036f44a474bcd87e4701dedb66f71fabbbdf",
+        "zxopt/policy.py": "c8f80e08c32502b7afb4b5c2b7a8b634ac6574a5ed635c0925218af71299bc27",
+        "zxopt/rules.py": "318612a702d69239611224838bb60d5504b61e6f12e5aa97fa2b337a5cc9970e",
+        "zxopt/search.py": "db5432edaefb4c80dbd11c65d6b967c022fdbb6e5b2544f9c92219170d3ec4be",
+        "zxopt/verify.py": "6695a2ac604e9173815a9e23590726e385819fb384073f9a932657c995c11ffc"
+      },
+      "baseline_sha256": "9f64ee6c40f94c8433e05291bd44e213659cf6594a12e0201af3f907b45755dd",
+      "frozen_legacy_files": 28
+    }
+  },
+  "records": [
+    {
+      "arm": "jpv_frozen",
+      "seed": 11,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "jpv_frozen",
+      "seed": 29,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "jpv_frozen",
+      "seed": 47,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 11,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 29,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "jpv_online",
+      "seed": 47,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "jpv_uniform",
+      "seed": 11,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "jpv_uniform",
+      "seed": 29,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "jpv_uniform",
+      "seed": 47,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_frozen",
+      "seed": 11,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_frozen",
+      "seed": 29,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_frozen",
+      "seed": 47,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_online",
+      "seed": 11,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_online",
+      "seed": 29,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_online",
+      "seed": 47,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_uniform",
+      "seed": 11,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_uniform",
+      "seed": 29,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    },
+    {
+      "arm": "macros_uniform",
+      "seed": 47,
+      "commit": "4524b4f8a6570f08bf99b306a3d3b79928707d69",
+      "status": "passed"
+    }
+  ],
+  "checks": "Every core source against Git objects; identical campaign snapshot; frozen legacy manifest and files; input digest; clean experiment checkout"
+}
