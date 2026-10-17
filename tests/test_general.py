@@ -18,6 +18,7 @@ from zxopt.legacy import environment
 from zxopt.verify import graph_matrix
 from zxopt.general_search import candidate_digest
 from zxopt.general_score import VerifiedCompletion
+from zxopt.general_feasibility import Feasibility
 from monitored_ppo import ppo_update
 
 
@@ -153,6 +154,39 @@ class GeneralTest(unittest.TestCase):
         again = completion.evaluate(view)
         self.assertTrue(again.hit)
         self.assertEqual(again.result["sha256"], e.result["sha256"])
+
+    def test_resource_mask_excludes_violations_before_policy_density(self):
+        kernel = GeneralKernel(self.env)
+        available = kernel.prepare(self.raw, self.view, self.view.graph.num_vertices()+64)
+        vertices, edges = len(self.raw.nodes), len(self.raw.edges)
+        mask = Feasibility(vertices, edges)
+        eligible, previews = mask.prepare(self.raw, self.view, available, kernel)
+        self.assertTrue(eligible)
+        self.assertLess(len(eligible), len(available))
+        for action in eligible:
+            child, _ = kernel.step(self.raw, self.view, action)
+            self.assertLessEqual(len(child.nodes), vertices)
+            self.assertLessEqual(len(child.edges), edges)
+        count = mask.stats["previews"]
+        again, _ = mask.prepare(self.raw, self.view, available, kernel)
+        self.assertEqual(mask.stats["previews"], count)
+        self.assertEqual([a.record() for a in again], [a.record() for a in eligible])
+        obs = observation(self.raw, self.view.graph, eligible, [0., 0., 0., 0., 1., 1., 0., 0.])
+        net = GeneralAgent(); packed = batch([obs]); slot = torch.tensor([0])
+        _, log, _, _, _, _ = net.get_action_and_value(packed, action=slot)
+        logits = net.actor(packed[0]).flatten()[packed[0].y != -1]
+        torch.testing.assert_close(log[0], logits.log_softmax(0)[0])
+
+    def test_fast_native_preview_matches_full_rewrite_for_every_root_action(self):
+        kernel = GeneralKernel(self.env)
+        actions = kernel.prepare(self.raw, self.view, self.view.graph.num_vertices()+64)
+        for action in actions:
+            if action.mode != "legacy":
+                continue
+            child, receipts = kernel.step(self.raw, self.view, action)
+            preview, preview_receipts = kernel.preview(self.raw, self.view, action)
+            self.assertEqual(child.record(), preview.record(), action.family)
+            self.assertEqual(receipts, preview_receipts)
 
 
 if __name__ == "__main__":

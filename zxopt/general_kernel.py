@@ -98,12 +98,26 @@ class GeneralKernel:
         self.native = Kernel(env)
         self.jpv = Proposals(seed, candidate_cap, matching_work) if jpv else None
         self.candidate_cap = candidate_cap
+        from optimized_backend import compile_rewrite_prefix
+        wrapper = next(c for c in type(env).__mro__ if "rewrite_prefix_sha256" in c.__dict__)
+        original = wrapper.__mro__[1]
+        self.preview_prefix, self.preview_prefix_sha256 = compile_rewrite_prefix(original)
+        if self.preview_prefix_sha256 != env.rewrite_prefix_sha256:
+            raise AssertionError("Preview prefix differs from the frozen native rewrite")
+        self.prepared_key = None; self.prepared_fields = None
+
+    def remember_matches(self, view):
+        e = self.native.env
+        self.prepared_key = view.key
+        self.prepared_fields = (dict(e.pivot_info_dict), dict(e.gadget_info_dict),
+                                dict(e.gadgets), list(e.gadget_fusion_ids))
 
     def prepare(self, raw, view, max_view_vertices):
         result = []
         if view.graph is not None:
             before = graph_key(view.graph)
             _, native = self.native.prepare(view.graph)
+            self.remember_matches(view)
             extra = candidates(view.graph, max_view_vertices, self.candidate_cap)
             for _, identifier, action in native:
                 result.append(HybridAction("legacy", action.kind, action, identifier, view.key,
@@ -143,3 +157,18 @@ class GeneralKernel:
             child = from_pyzx(pg)
         child, receipts = cancel_h_pairs(child)
         return child, receipts
+
+    def preview(self, raw, view, action):
+        if action.mode != "legacy":
+            return self.step(raw, view, action)
+        if view.graph is None or graph_key(view.graph) != action.parent_view_key:
+            raise ValueError("Preview belongs to a different scoring view")
+        if self.prepared_key != view.key:
+            self.native.prepare(view.graph); self.remember_matches(view)
+        e = self.native.env
+        e.graph = view.graph.clone()
+        e.pivot_info_dict, e.gadget_info_dict, e.gadgets, e.gadget_fusion_ids = self.prepared_fields
+        e._matching_graph = e._cached_lcomp = e._cached_ids = None
+        e.episode_len = 0; e.episode_stats = dict(e.episode_stats)
+        self.preview_prefix(e, action.identifier)
+        return cancel_h_pairs(from_pyzx(e.graph))

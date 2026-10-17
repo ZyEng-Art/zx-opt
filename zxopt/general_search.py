@@ -22,6 +22,7 @@ from .general_kernel import GeneralKernel, Views, OperatorMismatch
 from .general_archive import SearchState, GeneralArchive, following_state, score
 from .general_policy import GeneralAgent, observation, batch
 from .general_score import VerifiedCompletion
+from .general_feasibility import Feasibility, FeasibilityMismatch, signature as feasibility_signature
 from .jpv_actions import hh_identity
 from .verify import qiskit_matrix_zx_order, matrix_error
 from monitored_ppo import ppo_update
@@ -82,6 +83,8 @@ def run(args):
     root = SearchState(diagram, root_result["cost"], root_result["cost"])
     pool = GeneralArchive(root, args.archive, args.latent_archive)
     raw_limit = len(diagram.nodes)+args.max_growth
+    wire_limit = len(diagram.edges)+args.max_edge_growth
+    feasibility = Feasibility(raw_limit, wire_limit) if args.feasibility_mask else None
     view_limit = root_view.graph.num_vertices()+args.max_growth
     net = GeneralAgent() if args.policy != "uniform" else None
     optimizer = torch.optim.Adam(net.parameters(), lr=.0003, eps=1e-5) if args.policy == "online" else None
@@ -118,6 +121,8 @@ def run(args):
                     limits="candidate/node/matching/horizon/latent-depth bounds; extraction failures are legal transitions, verification/resource failures rejected",
                     hh="I_X backward / H forward / I_Z forward proof; every contextual cancellation has a replay receipt")
     protocol["invalid_extraction"] = "quarantined and excluded from all gate costs/rewards; legal raw graph can continue. Raw/repair operator mismatches remain fatal. Repairs apply identically in every arm."
+    protocol["feasibility_mask"] = "When enabled, rewrite-only previews exclude node/wire-budget violations before categorical sampling; no extraction/cost lookahead. Exact-state/action LRU; all preview work inside budget."
+    protocol["preview_native_prefix_sha256"] = kernel.preview_prefix_sha256
     atomic_json(out/"protocol.json", protocol)
     atomic_json(out/"hh-derivation.json", hh_identity()[2])
     save_graph(out/"objects", diagram)
@@ -125,6 +130,8 @@ def run(args):
     best = dict(cost=root_result["cost"], sha256=root_result["sha256"], seconds=0., graph=diagram.digest())
     atomic_json(out/"best.json", best)
     events = (out/"events.jsonl").open("w", buffering=1); updates_file = (out/"updates.jsonl").open("w", buffering=1)
+    restart_file = (out/"restarts.jsonl").open("w", buffering=1)
+    deadend_file = (out/"deadends.jsonl").open("w", buffering=1)
     started = time.perf_counter(); deadline = started+args.seconds
     transition = trajectory = accepted = unscored = recovered = updates = 0
     invalid = Counter(); families = Counter(); accepted_families = Counter(); latent_families = Counter()
@@ -137,11 +144,25 @@ def run(args):
             if state is None:
                 start, restart_source = pool.choose(rng); state = start
                 step = 0; trajectory += 1
+                restart_file.write(json.dumps(dict(trajectory=trajectory, graph_key=start.key,
+                                   source=restart_source, buffer=pool.summary()))+"\n")
             t = time.perf_counter()
             view = views.get(state.diagram)
             available = kernel.prepare(state.diagram, view, view_limit)
             timers["matching"] += time.perf_counter()-t
+            previews = {}
+            if feasibility is not None:
+                t = time.perf_counter()
+                try:
+                    with operation_limit(max(.001, deadline-time.perf_counter())):
+                        available, previews = feasibility.prepare(state.diagram, view, available, kernel)
+                except TimeoutError:
+                    timers["feasibility"] += time.perf_counter()-t
+                    break
+                timers["feasibility"] += time.perf_counter()-t
             if not available:
+                deadend_file.write(json.dumps(dict(trajectory=trajectory, graph_key=state.key,
+                                                  seconds=time.perf_counter()-started))+"\n")
                 if rollout:
                     previous = list(rollout[-1]); previous[-1] = True; rollout[-1] = tuple(previous)
                 state = None
@@ -168,13 +189,21 @@ def run(args):
             t = time.perf_counter()
             try:
                 with operation_limit(min(5., max(.001, deadline-time.perf_counter()))):
-                    child, auxiliary = kernel.step(state.diagram, view, chosen)
+                    preview_key = feasibility_signature(state.diagram, chosen) if feasibility is not None else None
+                    if preview_key in previews:
+                        child, auxiliary = previews[preview_key]
+                    else:
+                        child, auxiliary = kernel.step(state.diagram, view, chosen)
                     if len(child.nodes) > raw_limit:
+                        if feasibility is not None:
+                            raise FeasibilityMismatch("A masked action exceeded its node budget")
                         raise ValueError("raw vertex growth bound exceeded")
-                    if len(child.edges) > len(diagram.edges)+args.max_edge_growth:
+                    if len(child.edges) > wire_limit:
+                        if feasibility is not None:
+                            raise FeasibilityMismatch("A masked action exceeded its wire budget")
                         raise ValueError("raw wire growth bound exceeded")
                     child_view = views.get(child)
-            except OperatorMismatch:
+            except (OperatorMismatch, FeasibilityMismatch):
                 raise
             except Exception as exc:
                 rejected = type(exc).__name__+": "+str(exc); invalid[rejected] += 1
@@ -262,6 +291,8 @@ def run(args):
     finally:
         events.flush(); os.fsync(events.fileno()); events.close()
         updates_file.flush(); os.fsync(updates_file.fileno()); updates_file.close()
+        restart_file.flush(); os.fsync(restart_file.fileno()); restart_file.close()
+        deadend_file.flush(); os.fsync(deadend_file.fileno()); deadend_file.close()
     loop_seconds = time.perf_counter()-started
     if net is not None:
         torch.save(dict(state_dict=net.state_dict(), steps=transition, updates=updates,
@@ -277,6 +308,7 @@ def run(args):
                   view_cache=dict(hits=views.hits, misses=views.misses),
                   jpv_proposals=None if kernel.jpv is None else kernel.jpv.stats,
                   completion=scorer.summary(),
+                  feasibility=None if feasibility is None else feasibility.summary(),
                   max_graph_operator_error=views.max_error, max_qasm_operator_error=scorer.max_valid_error,
                   first_passage_seconds=first_best, budget_seconds=args.seconds,
                   total_loop_seconds=loop_seconds, timers=dict(timers), verification="passed")
@@ -304,6 +336,8 @@ def parser():
     p.add_argument("--rollout", type=int, default=128)
     p.add_argument("--extraction-timeout", type=float, default=2.)
     p.add_argument("--max-steps", type=int)
+    p.add_argument("--no-feasibility-mask", dest="feasibility_mask", action="store_false")
+    p.set_defaults(feasibility_mask=True)
     return p
 
 

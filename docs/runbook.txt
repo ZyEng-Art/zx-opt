@@ -21,6 +21,9 @@ $PYTHON -m zxopt.general_search runs/general-online --jpv --policy online --seco
 $PYTHON -m zxopt.general_campaign runs/general-campaign --seconds 1200 --workers 18
 $PYTHON tools/audit_general.py runs/general-campaign runs/general-audit --workers 3
 详见 docs/general-search.txt。省略 --jpv 时用于相同一般图接口下的宏动作对照。
+默认先过滤资源超预算动作；--no-feasibility-mask 复现旧机制。
+修复诊断：
+$PYTHON -m zxopt.general_campaign runs/general-mask --seconds 600 --workers 4 --arms macros_frozen macros_online jpv_frozen jpv_online --seeds 29
 
 单次运行，输出目录须不存在
 $PYTHON -m zxopt.search runs/example --expanded --dedup --policy online --seconds 180 --seed 11

@@ -21,6 +21,7 @@ def main():
     from zxopt.general_kernel import Views, GeneralKernel
     from zxopt.general_policy import GeneralAgent, observation, batch
     from zxopt.general_search import candidate_digest
+    from zxopt.general_feasibility import Feasibility
     from zxopt.verify import qiskit_matrix_zx_order
     torch.set_num_threads(1)
     summary = json.loads((a.campaign/"summary.json").read_text()); results = []
@@ -34,6 +35,8 @@ def main():
         views = Views(5, ref); view = views.get(raw)
         kernel = GeneralKernel(environment(), config["seed"], config["jpv"], config["candidate_cap"], config["matching_work"])
         available = kernel.prepare(raw, view, protocol["root_view_vertices"]+config["max_growth"])
+        if config.get("feasibility_mask", False):
+            available, _ = Feasibility(protocol["max_vertices"], len(raw.edges)+config["max_edge_growth"]).prepare(raw, view, available, kernel)
         first = json.loads((folder/"events.jsonl").read_text().splitlines()[0])
         assert candidate_digest(available) == first["candidate_sha256"]
         obs = observation(raw, view.graph, available, first["context"]); packed = batch([obs])

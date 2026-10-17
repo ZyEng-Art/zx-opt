@@ -1,5 +1,5 @@
 {
-  "phase": "jpv_long_campaign_running",
+  "phase": "jpv_main_auditing_and_resource_mask_correction",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
   "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO; independent complete Clifford+T JPV axiom kernel",
@@ -27,7 +27,7 @@
     "Align reward and observations with the global extracted-gate objective",
     "Expand reliably extractable rewrite paths"
   ],
-  "active_work": "node44 tests/preflight then 18x1200s CPU trials, full replay/operator/model audit, collect reports",
+  "active_work": "18-run main campaign finished search and is replay-auditing; commit feasibility correction, run local four-arm seed29 diagnostic",
   "completed_followups": [
     {
       "suite": "representation",

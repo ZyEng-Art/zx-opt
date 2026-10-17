@@ -61,20 +61,33 @@ def audit_one(spec):
     statuses = Counter(); families = Counter(); repairs = Counter(); score_by_view = {}
     reward_sum = 0.; recoveries = 0; qasm_error = 0.; max_graph_error = 0.; auxiliary = 0
     events = [json.loads(line) for line in (folder/"events.jsonl").read_text().splitlines()]
+    restart_path = folder/"restarts.jsonl"
+    restart_rows = ([json.loads(l) for l in restart_path.read_text().splitlines()] if restart_path.exists() else [])
+    restart_cursor = 0
+    def restart(record):
+        key, source = record["graph_key"], record["source"]
+        if source == "root":
+            value = archive.root; assert key == value.key
+        elif source == "latent":
+            value = archive.latent[key]; archive.latent_restarts += 1
+        else:
+            value = archive.scored[key]
+            if source == "best":
+                assert score(value.cost) == min(score(s.cost) for s in archive.scored.values())
+        if "buffer" in record:
+            assert archive.summary() == record["buffer"]
+        return value
     for i, event in enumerate(events, 1):
         assert event["transition"] == i
         statuses[event["status"]] += 1
         if event["trajectory"] != trajectory:
-            trajectory = event["trajectory"]; key = event["restart_graph_key"]
-            source = event["restart_source"]
-            if source == "root":
-                start = archive.root; assert key == start.key
-            elif source == "latent":
-                start = archive.latent[key]; archive.latent_restarts += 1
+            trajectory = event["trajectory"]
+            if restart_rows:
+                while restart_cursor < len(restart_rows) and restart_rows[restart_cursor]["trajectory"] <= trajectory:
+                    start = restart(restart_rows[restart_cursor]); restart_cursor += 1
+                assert start.key == event["restart_graph_key"]
             else:
-                start = archive.scored[key]
-                if source == "best":
-                    assert score(start.cost) == min(score(s.cost) for s in archive.scored.values())
+                start = restart(dict(graph_key=event["restart_graph_key"], source=event["restart_source"]))
             state = start
         assert state.key == event["parent_graph_key"]
         assert event["last_scored_cost"] == state.last_counts
@@ -145,6 +158,8 @@ def audit_one(spec):
     assert statuses["accepted_unscored"] == report["unscored"]
     assert recoveries == report["recovered"]
     assert best == report["best"]["cost"]
+    while restart_cursor < len(restart_rows):
+        restart(restart_rows[restart_cursor]); restart_cursor += 1
     assert archive.summary() == report["buffer"]
     best_circuit = qasm2.loads((folder/"best.qasm").read_text())
     assert matrix_error(reference, qiskit_matrix_zx_order(best_circuit)) < 2e-8
