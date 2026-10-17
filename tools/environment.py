@@ -8,7 +8,7 @@ import sys
 import pyzx
 
 versions={}
-for name in ["numpy","networkx","qiskit","torch","torch-geometric","gymnasium","matplotlib"]:
+for name in ["numpy","networkx","qiskit","torch","torch-geometric","gymnasium","matplotlib","sympy","mpmath"]:
     try:versions[name]=importlib.metadata.version(name)
     except importlib.metadata.PackageNotFoundError:versions[name]=None
 root=Path(pyzx.__file__).parent

@@ -15,6 +15,7 @@ def main():
     p.add_argument("--commit", required=True)
     p.add_argument("--container", required=True)
     p.add_argument("--container-id", required=True)
+    p.add_argument("--sympy-wheel", type=Path, required=True)
     a = p.parse_args()
     if not a.task_root.is_absolute() or len(a.commit) != 40 or any(c not in "0123456789abcdef" for c in a.commit):
         raise ValueError("Absolute path and full commit required")
@@ -37,13 +38,17 @@ def main():
     run(["docker", "start", a.container]); started = inspect()["State"]["StartedAt"]
     base = ["docker", "exec", "-e", "OPENBLAS_NUM_THREADS=1", "-e", "OMP_NUM_THREADS=1",
             "-e", "MKL_NUM_THREADS=1", "-e", "PYTHONHASHSEED=0", "-e", "CUDA_VISIBLE_DEVICES=",
-            "-e", "PYTHONPATH=/workspace/pyzx-298693bed2608e84fcb44a672282f873321c70b7",
+            "-e", "PYTHONPATH="+mount+"/.deps:/workspace/pyzx-298693bed2608e84fcb44a672282f873321c70b7",
             "-e", "GIT_CONFIG_COUNT=1", "-e", "GIT_CONFIG_KEY_0=safe.directory",
             "-e", "GIT_CONFIG_VALUE_0="+mount, "-w", mount, a.container, "/workspace/env310/bin/python"]
     status = "failed"; error = None
     try:
         record(status="checking_runtime", started_at=started)
         (dest/"runs").mkdir()
+        if a.sympy_wheel.name != "sympy-1.13.1-py3-none-any.whl" or not a.sympy_wheel.is_file():
+            raise ValueError("Require the pinned SymPy wheel")
+        run(base+["-m", "pip", "install", "--no-deps", "--target", mount+"/.deps",
+                  "/workspace/"+a.sympy_wheel.name])
         (dest/"runs/environment.json").write_bytes(subprocess.check_output(base+["tools/environment.py"]))
         run(base+["-c", "import sympy; assert sympy.__version__ == '1.13.1', sympy.__version__"])
         run(base+["-m", "unittest", "discover", "-s", "tests", "-v"])
