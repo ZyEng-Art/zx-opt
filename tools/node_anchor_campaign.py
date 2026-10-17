@@ -8,6 +8,31 @@ import subprocess
 import tarfile
 
 
+def archive_records(base, commit, study_status):
+    """Seal terminal records, including failed trials, without claiming success."""
+    if study_status not in ("passed", "failed"):
+        raise ValueError("Only terminal study records can be archived")
+    archive = base/("anchor-"+commit[:12]+"-"+study_status+"-records.tar.gz")
+    with archive.open("xb") as stream:
+        with tarfile.open(fileobj=stream, mode="w:gz", compresslevel=1) as tar:
+            if (base/"source/runs").exists():
+                tar.add(base/"source/runs", arcname="runs")
+            for name in ("unit-tests.log", "pyzx-pin.log", "comparison.log", "ownership.json",
+                         "launch.json", "controller.json"):
+                if (base/name).exists():
+                    tar.add(base/name, arcname=name)
+    digest = hashlib.sha256()
+    with archive.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(8 << 20), b""):
+            digest.update(chunk)
+    metadata = dict(path=str(archive), bytes=archive.stat().st_size, sha256=digest.hexdigest(),
+                    study_status=study_status, source_commit=commit)
+    temp = base/"archive.json.tmp"
+    temp.write_text(json.dumps(metadata, indent=2)+"\n")
+    temp.replace(base/"archive.json")
+    return metadata
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("base", type=Path)
@@ -48,6 +73,7 @@ def main():
         with (base/log).open("x") as stream:
             subprocess.run(cmd, stdout=stream, stderr=subprocess.STDOUT, check=True)
 
+    failure = None
     try:
         inspect()
         actual = subprocess.check_output(["git", "-C", str(base/"source"), "rev-parse", "HEAD"], text=True).strip()
@@ -65,26 +91,26 @@ def main():
         if finished["status"] != "passed":
             raise RuntimeError("Comparison did not pass its event and circuit audits")
         status("archiving", trials=finished["trials"])
-        archive = base/("anchor-"+a.commit[:12]+"-records.tar.gz")
-        with tarfile.open(archive, "w:gz", compresslevel=1) as tar:
-            tar.add(base/"source/runs", arcname="runs")
-            for name in ("unit-tests.log", "pyzx-pin.log", "comparison.log", "ownership.json"):
-                tar.add(base/name, arcname=name)
-        digest = hashlib.sha256()
-        with archive.open("rb") as stream:
-            for chunk in iter(lambda: stream.read(8 << 20), b""):
-                digest.update(chunk)
-        metadata = dict(path=str(archive), bytes=archive.stat().st_size, sha256=digest.hexdigest())
-        (base/"archive.json").write_text(json.dumps(metadata, indent=2)+"\n")
+        metadata = archive_records(base, a.commit, "passed")
         status("passed", trials=finished["trials"], archive=metadata)
     except BaseException as exc:
-        status("failed", error=repr(exc), artifacts_retained=True)
+        failure = repr(exc)
+        status("failed", error=failure, artifacts_retained=True)
         raise
     finally:
         # Only this task's exact recorded container incarnation is stopped.
         data = inspect()
         if data["State"]["Running"]:
             subprocess.run(["docker", "stop", "-t", "30", container_id], check=True)
+        if failure is not None:
+            # Stop owned workers before reading their files. Collection success
+            # must remain distinguishable from experiment success.
+            try:
+                metadata = archive_records(base, a.commit, "failed")
+            except Exception as exc:
+                status("failed", error=failure, artifacts_retained=True, archive_error=repr(exc))
+            else:
+                status("failed", error=failure, artifacts_retained=True, archive=metadata)
 
 
 if __name__ == "__main__":

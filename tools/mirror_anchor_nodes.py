@@ -59,8 +59,10 @@ def main():
             except Exception as exc:
                 history.append(dict(node=node, error=repr(exc), time=time.time()))
             state = dict(status="finished" if len(finished) == len(a.nodes) else "running", finished=finished,
+                         study_outcomes={node: meta.get("study_status", "legacy_archive_check_controller")
+                                         for node, meta in finished.items()},
                          updated_unix=time.time(), history=history[-20:],
-                         scope="Live rsync copies are monitoring snapshots; checksum-verified final archives are authoritative")
+                         scope="Status describes collection only. See study_outcomes/controller for experiment validity. Live rsync copies are monitoring snapshots; final archives are checksum-verified.")
             temp = out/"status.tmp"; temp.write_text(json.dumps(state, indent=2)+"\n"); temp.replace(out/"status.json")
         if len(finished) != len(a.nodes):
             time.sleep(a.interval)

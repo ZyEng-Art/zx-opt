@@ -41,12 +41,36 @@ def atomic_json(path, value):
 
 @contextlib.contextmanager
 def operation_limit(seconds):
+    timeout = TimeoutError("candidate operation exceeded deadline")
+    fired = False
     def alarm(signum, frame):
-        raise TimeoutError("candidate operation exceeded deadline")
+        nonlocal fired
+        fired = True
+        raise timeout
     handler = signal.signal(signal.SIGALRM, alarm)
     signal.setitimer(signal.ITIMER_REAL, max(.001, seconds))
     try:
-        yield
+        try:
+            yield
+        except BaseException as exc:
+            # Vendor import hooks may wrap the alarm in RuntimeError. Match
+            # this context's exact exception object through the cause/context
+            # chain; never classify an unrelated error by its message text.
+            pending = [exc]; seen = set(); caused_by_alarm = False
+            while pending:
+                current = pending.pop()
+                if id(current) in seen:
+                    continue
+                seen.add(id(current))
+                if current is timeout:
+                    caused_by_alarm = True; break
+                pending.extend(e for e in (current.__cause__, current.__context__) if e is not None)
+            if caused_by_alarm and exc is not timeout:
+                raise TimeoutError("candidate operation exceeded deadline") from exc
+            raise
+        else:
+            if fired:
+                raise timeout  # a library swallowed the alarm and returned
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)
         signal.signal(signal.SIGALRM, handler)

@@ -1,0 +1,326 @@
+{
+  "time": "2026-10-18T01:56:33.791352+08:00",
+  "failed": [
+    {
+      "folder": "barenco_tof_3/anchor8_nodes_frozen_s47",
+      "error": "CalledProcessError(1, ['/root/miniconda/envs/python310_torch29_cuda/bin/python', '-m', 'zxopt.general_search', '/workspace/task/source/runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s47', '--input', '/workspace/task/source/inputs/quarl-nam-raw/barenco_tof_3.qasm', '--general-zx', '--policy', 'frozen', '--seed', '47', '--selection', 'anchor', '--anchor-candidate-cap', '8', '--anchor-prior', 'nodes', '--learning-rate', '.0003', '--seconds', '600.0', '--rollout', '32', '--total-candidate-cap', '32', '--verification', 'adaptive', '--extraction-timeout', '20', '--rewrite-timeout', '30', '--checkpoint-seconds', '300'])",
+      "failure": {
+        "type": "RuntimeError",
+        "message": "xvllm import hook failed for angles: candidate operation exceeded deadline",
+        "transition": 10017,
+        "last_proposal": {
+          "transition": 10017,
+          "trajectory": 233,
+          "trajectory_step": 53,
+          "parent_graph_key": "4e15c6bed2b30c04514e080af1e69dff108fcba63ceaefaa5177db2a7be52948",
+          "restart_graph_key": "d72d72e97faaa05b3f1eac4ac640cc0b67b61c71c8099ff1aa8201f9b82b594a",
+          "restart_source": "diverse",
+          "action": {
+            "mode": "noop",
+            "family": "anchor_noop",
+            "action": {
+              "kind": "anchor_noop",
+              "vertices": [],
+              "phase": "0",
+              "subset": []
+            },
+            "identifier": null,
+            "parent_view_key": null
+          },
+          "available": 1,
+          "candidate_sha256": "0a312f0368d6a68430ce465f695872825ae9590f93ba408b2246c36c75adcea1",
+          "selection": {
+            "slot": 0,
+            "log_probability": -5.309443950653076,
+            "value": 0.006178060546517372,
+            "anchor_slot": 484,
+            "anchors": 611,
+            "anchor_log_probability": -5.309443950653076,
+            "conditional_log_probability": 0.0
+          },
+          "context": [
+            0.475,
+            -0.05,
+            0.7428571428571429,
+            0.0,
+            1.0,
+            0.975,
+            0.9375,
+            0.0
+          ],
+          "parent_cost": {
+            "gates": 59,
+            "cx": 30,
+            "depth": 40
+          },
+          "last_scored_cost": {
+            "gates": 59,
+            "cx": 30,
+            "depth": 40
+          },
+          "unscored_depth_before": 0,
+          "deadline_seconds": 600.0,
+          "anchor": {
+            "space": "view",
+            "kind": "node",
+            "position": 83
+          },
+          "seconds": 599.9988140740898,
+          "status": "anchor_noop",
+          "admitted": false,
+          "unscored_depth": 0,
+          "graph_key": "4e15c6bed2b30c04514e080af1e69dff108fcba63ceaefaa5177db2a7be52948",
+          "cost": {
+            "gates": 59,
+            "cx": 30,
+            "depth": 40
+          },
+          "view_key": "5569fa13de11c0aa0453637a02148aeeb234b057552efcd4fde67d13c832fdb1",
+          "raw_operator_error": 9.579799087740384e-15,
+          "vertices": 207,
+          "edges": 213,
+          "reward": 0.0,
+          "terminal": false,
+          "best": {
+            "gates": 38,
+            "cx": 15,
+            "depth": 35
+          },
+          "buffer": {
+            "scored_size": 64,
+            "scored_capacity": 64,
+            "latent_size": 0,
+            "latent_capacity": 128,
+            "insertions": 1339,
+            "evictions": 1276,
+            "latent_insertions": 0,
+            "latent_evictions": 0,
+            "latent_restarts": 0,
+            "best": [
+              38,
+              15
+            ]
+          }
+        }
+      },
+      "log_tail": null
+    },
+    {
+      "folder": "barenco_tof_3/anchor8_nodes_frozen_s71",
+      "error": "CalledProcessError(1, ['/root/miniconda/envs/python310_torch29_cuda/bin/python', '-m', 'zxopt.general_search', '/workspace/task/source/runs/comparison/barenco_tof_3/anchor8_nodes_frozen_s71', '--input', '/workspace/task/source/inputs/quarl-nam-raw/barenco_tof_3.qasm', '--general-zx', '--policy', 'frozen', '--seed', '71', '--selection', 'anchor', '--anchor-candidate-cap', '8', '--anchor-prior', 'nodes', '--learning-rate', '.0003', '--seconds', '600.0', '--rollout', '32', '--total-candidate-cap', '32', '--verification', 'adaptive', '--extraction-timeout', '20', '--rewrite-timeout', '30', '--checkpoint-seconds', '300'])",
+      "failure": {
+        "type": "RuntimeError",
+        "message": "xvllm import hook failed for relational: candidate operation exceeded deadline",
+        "transition": 8979,
+        "last_proposal": {
+          "transition": 8979,
+          "trajectory": 254,
+          "trajectory_step": 2,
+          "parent_graph_key": "d70f1ae7ec772adc12c9e01c218f4f26bfdfc376a36f05b2888c4bb8ef7111fe",
+          "restart_graph_key": "31983b7d496c0ac4ac8b4eafe168c30f9b6bad7f31422579af3a17ab366326c2",
+          "restart_source": "root",
+          "action": {
+            "mode": "legacy",
+            "family": "PVG",
+            "action": {
+              "kind": "PVG",
+              "vertices": [
+                41,
+                42
+              ],
+              "phase": "0",
+              "subset": []
+            },
+            "identifier": 123042,
+            "parent_view_key": "7c17b4360dccb9b5f100006bb4ae260bf461b52f31c6eb410650648f9a3f02f5"
+          },
+          "available": 8,
+          "candidate_sha256": "a1f0edb3aaa94e7e0c335cdfece26a195606a1ae63734881f3df1371c15faa9a",
+          "selection": {
+            "slot": 2,
+            "log_probability": -7.221556663513184,
+            "value": -0.23823440074920654,
+            "anchor_slot": 384,
+            "anchors": 513,
+            "anchor_log_probability": -5.142315864562988,
+            "conditional_log_probability": -2.0792410373687744
+          },
+          "context": [
+            0.0,
+            -0.075,
+            0.014285714285714285,
+            0.0,
+            1.0,
+            1.0,
+            0.40625,
+            0.0
+          ],
+          "parent_cost": {
+            "gates": 40,
+            "cx": 18,
+            "depth": 39
+          },
+          "last_scored_cost": {
+            "gates": 40,
+            "cx": 18,
+            "depth": 39
+          },
+          "unscored_depth_before": 0,
+          "deadline_seconds": 600.0,
+          "anchor": {
+            "space": "view",
+            "kind": "node",
+            "position": 41
+          },
+          "completion_branch": "primary",
+          "completion_failures": [],
+          "graph_key": "b622170239bb71c2669e6e2f5b947d5d2dfbfb2a5b02d103ac4e3a66ec665742",
+          "cost": {
+            "gates": 44,
+            "cx": 18,
+            "depth": 43
+          },
+          "auxiliary": [],
+          "score_failure": null,
+          "cache_hit": false,
+          "view_key": "49b7f385ec0ea3b86cd9b1a32d28d0a074ccf56e6ad63ff927a3f08e3d0c4b6f",
+          "raw_operator_error": 7.660644815774727e-15,
+          "vertices": 171,
+          "edges": 182,
+          "sha256": "efb4be0616bc5e4191e8bc3eb3e1023d3fcb1f04c57a23231dd28f7c11541bcb",
+          "seconds": 599.9934280710295,
+          "status": "accepted",
+          "admitted": false,
+          "unscored_depth": 0,
+          "reward": -0.4,
+          "terminal": false,
+          "best": {
+            "gates": 37,
+            "cx": 15,
+            "depth": 34
+          },
+          "buffer": {
+            "scored_size": 64,
+            "scored_capacity": 64,
+            "latent_size": 0,
+            "latent_capacity": 128,
+            "insertions": 1091,
+            "evictions": 1028,
+            "latent_insertions": 0,
+            "latent_evictions": 0,
+            "latent_restarts": 0,
+            "best": [
+              37,
+              15
+            ]
+          }
+        }
+      },
+      "log_tail": null
+    },
+    {
+      "folder": "barenco_tof_3/anchor8_frozen_s101",
+      "error": "CalledProcessError(1, ['/root/miniconda/envs/python310_torch29_cuda/bin/python', '-m', 'zxopt.general_search', '/workspace/task/source/runs/comparison/barenco_tof_3/anchor8_frozen_s101', '--input', '/workspace/task/source/inputs/quarl-nam-raw/barenco_tof_3.qasm', '--general-zx', '--policy', 'frozen', '--seed', '101', '--selection', 'anchor', '--anchor-candidate-cap', '8', '--anchor-prior', 'uniform', '--learning-rate', '.0003', '--seconds', '600.0', '--rollout', '32', '--total-candidate-cap', '32', '--verification', 'adaptive', '--extraction-timeout', '20', '--rewrite-timeout', '30', '--checkpoint-seconds', '300'])",
+      "failure": {
+        "type": "RuntimeError",
+        "message": "xvllm import hook failed for angles: candidate operation exceeded deadline",
+        "transition": 14026,
+        "last_proposal": {
+          "transition": 14026,
+          "trajectory": 254,
+          "trajectory_step": 48,
+          "parent_graph_key": "f33e29870a8dcf172d4999de6356a920799f7108c5227479684266ff39ed18e4",
+          "restart_graph_key": "ec85c5a2dbbfaa3af04f035bd6b39b35b1b3106f2fd921eab9e8741d05465939",
+          "restart_source": "diverse",
+          "action": {
+            "mode": "noop",
+            "family": "anchor_noop",
+            "action": {
+              "kind": "anchor_noop",
+              "vertices": [],
+              "phase": "0",
+              "subset": []
+            },
+            "identifier": null,
+            "parent_view_key": null
+          },
+          "available": 1,
+          "candidate_sha256": "0a312f0368d6a68430ce465f695872825ae9590f93ba408b2246c36c75adcea1",
+          "selection": {
+            "slot": 0,
+            "log_probability": -6.462951183319092,
+            "value": -0.03453300893306732,
+            "anchor_slot": 67,
+            "anchors": 641,
+            "anchor_log_probability": -6.462951183319092,
+            "conditional_log_probability": 0.0
+          },
+          "context": [
+            -0.025,
+            -0.025,
+            0.6714285714285714,
+            0.0,
+            1.0,
+            0.975,
+            1.0,
+            0.0
+          ],
+          "parent_cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "last_scored_cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "unscored_depth_before": 0,
+          "deadline_seconds": 600.0,
+          "anchor": {
+            "space": "raw",
+            "kind": "node",
+            "position": 1372
+          },
+          "seconds": 599.9984242138453,
+          "status": "anchor_noop",
+          "admitted": false,
+          "unscored_depth": 0,
+          "graph_key": "f33e29870a8dcf172d4999de6356a920799f7108c5227479684266ff39ed18e4",
+          "cost": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "view_key": "346b0e09a5e03a0b491f0543c75124ec0ff25b1891ae0675e13d41061731f501",
+          "raw_operator_error": 1.0108721834398258e-14,
+          "vertices": 211,
+          "edges": 218,
+          "reward": 0.0,
+          "terminal": false,
+          "best": {
+            "gates": 39,
+            "cx": 17,
+            "depth": 37
+          },
+          "buffer": {
+            "scored_size": 64,
+            "scored_capacity": 64,
+            "latent_size": 0,
+            "latent_capacity": 128,
+            "insertions": 3617,
+            "evictions": 3554,
+            "latent_insertions": 0,
+            "latent_evictions": 0,
+            "latent_restarts": 0,
+            "best": [
+              39,
+              17
+            ]
+          }
+        }
+      },
+      "log_tail": null
+    }
+  ]
+}
