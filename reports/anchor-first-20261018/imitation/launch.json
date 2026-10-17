@@ -1,0 +1,58 @@
+{
+  "node": 23,
+  "tag": "anchor_imitation",
+  "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+  "seconds": 900.0,
+  "workers": 12,
+  "cpus": 16,
+  "memory_gib": 48,
+  "circuits": [
+    "barenco_tof_3"
+  ],
+  "seeds": [
+    "853",
+    "877",
+    "911"
+  ],
+  "modes": [
+    "manifest"
+  ],
+  "experiment": "model-probe",
+  "probe_source_tag": null,
+  "training_seeds": [
+    "137",
+    "163",
+    "197"
+  ],
+  "audit_workers": 6,
+  "audit_native_replay": "rooted",
+  "audit_crosscheck_native_every": 101,
+  "build_native_flow": false,
+  "model_bundle_sha256": "1c1aeb0d4b97a2577f0b46b23d09abb21ad59a7670f06787943a904f96ea229c",
+  "model_files": [
+    "models.json",
+    "initial.pt",
+    "full.pt",
+    "positive.pt",
+    "single.pt"
+  ],
+  "development_models": true,
+  "save_improvement_models": false,
+  "base": "/tmp/dengzengyong_rlzx_anchor_imitation_node23_20261018",
+  "bundle_sha256": "4e48c1e4fdde6aff14e07b0ee40028887762245d30cd4b39d54fb9f4efebebb7",
+  "runtime": {
+    "container_name": "dengzengyong_rlzx_anchor_imitation_node23_20261018",
+    "container_id": "3f0af1f782af66691fcfdbd9d908d782010ad886ef71437f0fba47e40b6500a7",
+    "started_at": "2026-10-17T20:24:14.014404589Z",
+    "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+    "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+    "cpus": 16,
+    "memory_gib": 48,
+    "workers": 12,
+    "gpu": false,
+    "node": 23,
+    "experiment": "model-probe",
+    "probe_source": null,
+    "controller_pid": 2955309
+  }
+}

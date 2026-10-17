@@ -116,7 +116,7 @@ def main():
                             for key, value in values.items() if key.startswith(("actor_encoder.", "actor_head."))).sqrt())
     assert updates > 0 and actor_delta > 0
     package = {k: v for k, v in initial.items() if k != "state_dict"}
-    package.update(state_dict=values, steps=updates*a.minibatch, updates=updates,
+    package.update(state_dict=values, steps=updates*min(a.minibatch, len(targets)), updates=updates,
                    optimizer_state_dict=optimizer.state_dict(),
                    probe_origin=dict(stage="path_imitation", training_protocol_sha256=sha(out/"protocol.json"),
                                      demonstration_sha256=sha(metadata_path), source_initial_sha256=sha(out/"initial-model.pt"),

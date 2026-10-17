@@ -1,0 +1,505 @@
+{
+  "status": "descriptive_closed_training_reward_analysis",
+  "gamma": 0.99,
+  "records": [
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_frozen_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 197,
+      "counters": {
+        "episodes": 464,
+        "completed_episodes": 463,
+        "gate_neutral_episodes": 1,
+        "gate_neutral_but_negative_discounted_return": 1,
+        "open_final_episode": 1
+      },
+      "examples": [],
+      "events_sha256": "3a0d101e73c83252255a4f0b02ee4a53cfb69a07c0b57d22df310c312965c2b8",
+      "report_sha256": "b23251b592bd1843f2a2c395589f3a1fb65ee056052bd21d81db6094a2b8b30e"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_frozen_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 163,
+      "counters": {
+        "episodes": 548,
+        "completed_episodes": 547,
+        "gate_neutral_episodes": 4,
+        "gate_improving_episodes": 2,
+        "gate_improving_but_negative_discounted_return": 2,
+        "gate_neutral_but_negative_discounted_return": 2,
+        "open_final_episode": 1
+      },
+      "examples": [
+        {
+          "trajectory": 231,
+          "first_transition": 9033,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 46,
+          "undiscounted_return": 0.10000000000000003,
+          "discounted_return": -0.06585857250779431,
+          "explicit_terminal": true
+        },
+        {
+          "trajectory": 476,
+          "first_transition": 16890,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 46,
+          "undiscounted_return": 0.09999999999999998,
+          "discounted_return": -0.08045849061561178,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "a889b1e3977f7efc053d2083b0a6fef01af4a9dd538fb2b737233849a0ba311e",
+      "report_sha256": "cc80e397a229315235ac4e5be716abea963e908ee2d49eebb48558d77105f23c"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_frozen_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 197,
+      "counters": {
+        "episodes": 1456,
+        "completed_episodes": 1456,
+        "gate_improving_episodes": 1,
+        "gate_improving_but_negative_discounted_return": 1,
+        "gate_neutral_episodes": 11,
+        "gate_neutral_but_negative_discounted_return": 11
+      },
+      "examples": [
+        {
+          "trajectory": 1,
+          "first_transition": 1,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 38,
+          "peak_gates": 59,
+          "undiscounted_return": 0.19999999999999996,
+          "discounted_return": -0.2285969625305696,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "3901d33cae51b315af6fb9c760786ae07d52bf1ec052be52097374c1f7213995",
+      "report_sha256": "98b09f6fbff11620610ba6f3ae1275032c37154afbfafa1cf5971983aafae0e2"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_frozen_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 163,
+      "counters": {
+        "episodes": 1175,
+        "completed_episodes": 1174,
+        "gate_neutral_episodes": 133,
+        "gate_neutral_but_negative_discounted_return": 110,
+        "open_final_episode": 1
+      },
+      "examples": [],
+      "events_sha256": "1874de4ddeabe54bf04bcd2acf8696ab86e5aa980c5f943cc490079fe2fcdaed",
+      "report_sha256": "304c64d6bd91d00886a1791732dc8cc2bc6a91d469b6c05fdf9025d3046c0f00"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_frozen_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 137,
+      "counters": {
+        "episodes": 1430,
+        "completed_episodes": 1429,
+        "gate_neutral_episodes": 53,
+        "gate_neutral_but_negative_discounted_return": 52,
+        "gate_improving_episodes": 1,
+        "gate_improving_but_negative_discounted_return": 1,
+        "open_final_episode": 1
+      },
+      "examples": [
+        {
+          "trajectory": 1360,
+          "first_transition": 53527,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 55,
+          "undiscounted_return": 0.10000000000000009,
+          "discounted_return": -0.12700275878210826,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "c4475eb32d0390d47ff7eea7955d6f30aa21d77165dfa91cbaba659698a9fda8",
+      "report_sha256": "b5339a1decfe96838a7eec16527d7fb73afabcbdb3c5d85859aa6d878a8e01d7"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_frozen_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 137,
+      "counters": {
+        "episodes": 411,
+        "completed_episodes": 410,
+        "gate_neutral_episodes": 1,
+        "gate_neutral_but_negative_discounted_return": 1,
+        "completed_with_unknown_final_cost": 1,
+        "completed_with_unknown_start_cost": 5,
+        "open_final_episode": 1
+      },
+      "examples": [],
+      "events_sha256": "9eea789ff3fd1a8f6251d2fb2afc73e35f030cf4ea7406c2b29c1ce6e50c54c0",
+      "report_sha256": "36618e930b0c11ba57da4468684b5c4da177c696e6cecc6a5b78254c66147dc0"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_frozen_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 197,
+      "counters": {
+        "episodes": 1483,
+        "completed_episodes": 1482,
+        "gate_improving_episodes": 1,
+        "gate_improving_but_negative_discounted_return": 1,
+        "gate_neutral_episodes": 11,
+        "gate_neutral_but_negative_discounted_return": 11,
+        "open_final_episode": 1
+      },
+      "examples": [
+        {
+          "trajectory": 1,
+          "first_transition": 1,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 38,
+          "peak_gates": 59,
+          "undiscounted_return": 0.19999999999999996,
+          "discounted_return": -0.2285969625305696,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "d7f4187a326353e1fe1fad7e7cb3854d3de728975b8fa562fad56d0aaee45023",
+      "report_sha256": "70ffd1b58b173d4d1ec591bf44fd973cdedb638f720a74ed96a11258daa86f11"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_frozen_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 137,
+      "counters": {
+        "episodes": 1426,
+        "completed_episodes": 1425,
+        "gate_neutral_episodes": 53,
+        "gate_neutral_but_negative_discounted_return": 52,
+        "gate_improving_episodes": 1,
+        "gate_improving_but_negative_discounted_return": 1,
+        "open_final_episode": 1
+      },
+      "examples": [
+        {
+          "trajectory": 1360,
+          "first_transition": 53527,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 55,
+          "undiscounted_return": 0.10000000000000009,
+          "discounted_return": -0.12700275878210826,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "589ee363dd805cf7f3251b2166107e9a2e224a20cf3b26a28b6752de6e69d07b",
+      "report_sha256": "a2118e8c6e88ba8c1389a691fefabcddcfd806ce61c0406412a3388eae957f58"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_frozen_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "frozen",
+      "seed": 163,
+      "counters": {
+        "episodes": 1169,
+        "completed_episodes": 1168,
+        "gate_neutral_episodes": 133,
+        "gate_neutral_but_negative_discounted_return": 110,
+        "open_final_episode": 1
+      },
+      "examples": [],
+      "events_sha256": "b47296775ad4e5fbc03c0b65cd7ba1526c89d14a86c675d4fb08820f896a7211",
+      "report_sha256": "2c35bc99dcb7f84f52c6e925578e04396f7452062f5002fef2cb1192805e76b3"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 137,
+      "counters": {
+        "episodes": 1074,
+        "completed_episodes": 1073,
+        "gate_neutral_episodes": 44,
+        "gate_neutral_but_negative_discounted_return": 40,
+        "open_final_episode": 1
+      },
+      "examples": [],
+      "events_sha256": "638a2b366ef9dd75f9b05cc001c687ef0934da037f78cd9ec35c3c66bab1d887",
+      "report_sha256": "3c478440162d14485b282ece20d67f7bfb50e385918741e77180a34b596da568"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_online_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 137,
+      "counters": {
+        "episodes": 1055,
+        "completed_episodes": 1054,
+        "gate_neutral_episodes": 427,
+        "gate_neutral_but_negative_discounted_return": 31,
+        "gate_improving_episodes": 2,
+        "open_final_episode": 1
+      },
+      "examples": [],
+      "events_sha256": "055c545fc98ce974e7f85af67289a8b93f2f59749950fada343d35d6c0cf4009",
+      "report_sha256": "e44c0d635e163eff50c96fb20ec30e526206dca1b1d3ef78b3488775fd6a8a31"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 197,
+      "counters": {
+        "episodes": 983,
+        "completed_episodes": 982,
+        "gate_improving_episodes": 1,
+        "gate_improving_but_negative_discounted_return": 1,
+        "gate_neutral_episodes": 8,
+        "gate_neutral_but_negative_discounted_return": 8,
+        "open_final_episode": 1
+      },
+      "examples": [
+        {
+          "trajectory": 1,
+          "first_transition": 1,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 38,
+          "peak_gates": 59,
+          "undiscounted_return": 0.19999999999999996,
+          "discounted_return": -0.2285969625305696,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "76871e6dd11443970c43f64539fc17e918dca0c39327cf67ce324ae2b9617f2b",
+      "report_sha256": "6d1a3738bf7eee3e483317b916291df342e6f1786c22637b10e7bbf9f66b6a82"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_online_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 197,
+      "counters": {
+        "episodes": 946,
+        "completed_episodes": 945,
+        "gate_improving_episodes": 4,
+        "gate_improving_but_negative_discounted_return": 3,
+        "gate_neutral_episodes": 316,
+        "gate_neutral_but_negative_discounted_return": 36,
+        "open_final_episode": 1
+      },
+      "examples": [
+        {
+          "trajectory": 1,
+          "first_transition": 1,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 38,
+          "peak_gates": 59,
+          "undiscounted_return": 0.19999999999999996,
+          "discounted_return": -0.2285969625305696,
+          "explicit_terminal": true
+        },
+        {
+          "trajectory": 377,
+          "first_transition": 14056,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 48,
+          "undiscounted_return": 0.09999999999999998,
+          "discounted_return": -0.08219401466391366,
+          "explicit_terminal": true
+        },
+        {
+          "trajectory": 690,
+          "first_transition": 34939,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 49,
+          "undiscounted_return": 0.09999999999999987,
+          "discounted_return": -0.19577179754703594,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "99de8d6b094d8d1b2f774f560547bf5f0eda5f9b0b1e3d2c6847f099878465c2",
+      "report_sha256": "7fa31094f28a992cf79a1ee5034697cf609ccb5772bca161474314b92e2fd8f5"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_online_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 163,
+      "counters": {
+        "episodes": 421,
+        "completed_episodes": 421,
+        "gate_improving_episodes": 1,
+        "gate_improving_but_negative_discounted_return": 1,
+        "gate_neutral_episodes": 61,
+        "gate_neutral_but_negative_discounted_return": 30
+      },
+      "examples": [
+        {
+          "trajectory": 76,
+          "first_transition": 3292,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 44,
+          "undiscounted_return": 0.09999999999999998,
+          "discounted_return": -0.06470221351405403,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "efdce12c01b973b1c1eb42d073d871f2be8d5f1405a789ab8b0d7145dade9bef",
+      "report_sha256": "eaaa9f2e60991f3aae7f36183a9d307bc786b758f5e482930c228a7481666265"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_online_s197",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 197,
+      "counters": {
+        "episodes": 533,
+        "completed_episodes": 532,
+        "gate_neutral_episodes": 38,
+        "gate_neutral_but_negative_discounted_return": 23,
+        "open_final_episode": 1
+      },
+      "examples": [],
+      "events_sha256": "edba908b81c016f8020cfa4c856a01e4dfde3a982cdb968ab0668560bee246dd",
+      "report_sha256": "f8915f2852b74fcb4b122fb6bab0213d6e25714e71f70ca5c190581f43aadb68"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 163,
+      "counters": {
+        "episodes": 967,
+        "completed_episodes": 966,
+        "gate_neutral_episodes": 96,
+        "gate_neutral_but_negative_discounted_return": 62,
+        "gate_improving_episodes": 1,
+        "open_final_episode": 1
+      },
+      "examples": [],
+      "events_sha256": "a3b10ad7363f1f43863574b73370114a3932295e416bd47021b6976b666e5d9f",
+      "report_sha256": "a82c6d327d3512e6671b11fa60787e96865da67f4d13e2e55f2bd50c15a4cc54"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/global32_online_s137",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 137,
+      "counters": {
+        "episodes": 325,
+        "completed_episodes": 324,
+        "gate_neutral_episodes": 34,
+        "gate_neutral_but_negative_discounted_return": 13,
+        "gate_improving_episodes": 2,
+        "gate_improving_but_negative_discounted_return": 2,
+        "open_final_episode": 1
+      },
+      "examples": [
+        {
+          "trajectory": 78,
+          "first_transition": 4137,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 53,
+          "undiscounted_return": 0.09999999999999987,
+          "discounted_return": -0.12842046141623664,
+          "explicit_terminal": true
+        },
+        {
+          "trajectory": 185,
+          "first_transition": 10562,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 44,
+          "undiscounted_return": 0.09999999999999998,
+          "discounted_return": -0.035094171891440706,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "8c463c1318257ebeaf982ade0c561e603bea4df4abf5055170e6d35230f72e6c",
+      "report_sha256": "43e6f4265c513a61889373b3507174635f36e5f6240637e8a19aa9544a79578a"
+    },
+    {
+      "trial": "runs/anchor-long-launch-20261018/mirror/node23/live-runs/comparison/barenco_tof_3/anchor8_resource_online_s163",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "policy": "online",
+      "seed": 163,
+      "counters": {
+        "episodes": 1330,
+        "completed_episodes": 1329,
+        "gate_neutral_episodes": 98,
+        "gate_neutral_but_negative_discounted_return": 37,
+        "gate_improving_episodes": 4,
+        "gate_improving_but_negative_discounted_return": 2,
+        "open_final_episode": 1
+      },
+      "examples": [
+        {
+          "trajectory": 511,
+          "first_transition": 16803,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 56,
+          "undiscounted_return": 0.09999999999999998,
+          "discounted_return": -0.05661716363047414,
+          "explicit_terminal": true
+        },
+        {
+          "trajectory": 943,
+          "first_transition": 28242,
+          "steps": 70,
+          "start_gates": 40,
+          "final_gates": 39,
+          "peak_gates": 44,
+          "undiscounted_return": 0.09999999999999998,
+          "discounted_return": -0.038927238742866105,
+          "explicit_terminal": true
+        }
+      ],
+      "events_sha256": "95e8ea8b05605596789adaaa7db81586a5017b20f1ea7472cf0dc2f2862cf6ea",
+      "report_sha256": "9599290cbfc3d1a94f2d4915995f1a6789d6670acadc93ca049390aee5216352"
+    }
+  ],
+  "totals": {
+    "episodes": 17196,
+    "completed_episodes": 17180,
+    "gate_neutral_episodes": 1522,
+    "gate_neutral_but_negative_discounted_return": 630,
+    "open_final_episode": 16,
+    "gate_improving_episodes": 21,
+    "gate_improving_but_negative_discounted_return": 15,
+    "completed_with_unknown_final_cost": 1,
+    "completed_with_unknown_start_cost": 5
+  },
+  "analyzer_sha256": "7ce378247bcbdeb75e8d51f8214c54a996514bbed99f386d5ce59d386135ec7b",
+  "source_whole_audit_passed": false,
+  "scope": "Arithmetic on recorded gate-delta rewards, not a PPO efficacy/convergence claim. Complete episode boundaries follow explicit terminals or subsequent observed restarts; final open episodes and unknown start/final costs excluded from endpoint comparisons. Shared frozen controls/related seeds introduce dependence. Discounted return shown has zero terminal bootstrap; lambda/value estimates are not evaluated here. Whole source audit may still be pending."
+}
