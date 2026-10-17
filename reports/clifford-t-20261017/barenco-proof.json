@@ -1,0 +1,157 @@
+{
+  "status": "passed",
+  "input": "inputs/barenco_tof_3.qasm",
+  "qubits": 5,
+  "chain": [
+    {
+      "step": 1,
+      "action": {
+        "axiom": {
+          "name": "E",
+          "parameters": {
+            "color": "Z"
+          }
+        },
+        "direction": "backward",
+        "match": {
+          "vertices": [],
+          "internal_edges": [],
+          "port_halves": [],
+          "wire_edges": []
+        },
+        "parent_sha256": "ba79dc52b4e2e996560ac24af66db07558e82b7fe1c1f30e5beb84b1685576df"
+      },
+      "child_sha256": "d300ab57174264e62f5df1ad7f87071f382cf48d832e2ab0781189d2e1d71918",
+      "vertices": 141,
+      "wires": 135,
+      "exported_vertices": 255,
+      "exact_operator": "passed",
+      "export_error": 7.065405018168899e-15
+    },
+    {
+      "step": 2,
+      "action": {
+        "axiom": {
+          "name": "I",
+          "parameters": {
+            "color": "Z"
+          }
+        },
+        "direction": "backward",
+        "match": {
+          "vertices": [],
+          "internal_edges": [],
+          "port_halves": [],
+          "wire_edges": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "parent_sha256": "d300ab57174264e62f5df1ad7f87071f382cf48d832e2ab0781189d2e1d71918"
+      },
+      "child_sha256": "2665d141a087308b1cddd804ce21b15a53c464868f796d2a2a767058500c4401",
+      "vertices": 142,
+      "wires": 136,
+      "exported_vertices": 258,
+      "exact_operator": "passed",
+      "export_error": 7.065405018168899e-15
+    },
+    {
+      "step": 3,
+      "action": {
+        "axiom": {
+          "name": "S",
+          "parameters": {
+            "color": "Z",
+            "alpha": "1/4",
+            "beta": "7/4",
+            "right_legs": 1,
+            "links": 1,
+            "left_legs": 1
+          }
+        },
+        "direction": "backward",
+        "match": {
+          "vertices": [
+            [
+              0,
+              41
+            ]
+          ],
+          "internal_edges": [],
+          "port_halves": [
+            [
+              1,
+              111,
+              1
+            ],
+            [
+              2,
+              112,
+              0
+            ]
+          ],
+          "wire_edges": []
+        },
+        "parent_sha256": "2665d141a087308b1cddd804ce21b15a53c464868f796d2a2a767058500c4401"
+      },
+      "child_sha256": "1f7cc89d12b290404cb243820eac3809c293c0d6a0756d22e01699febf164e01",
+      "vertices": 143,
+      "wires": 137,
+      "exported_vertices": 261,
+      "exact_operator": "passed",
+      "export_error": 7.065405018168899e-15
+    },
+    {
+      "step": 4,
+      "action": {
+        "axiom": {
+          "name": "H",
+          "parameters": {
+            "color": "Z",
+            "alpha": "1/4",
+            "arity": 2
+          }
+        },
+        "direction": "backward",
+        "match": {
+          "vertices": [
+            [
+              0,
+              10
+            ]
+          ],
+          "internal_edges": [],
+          "port_halves": [
+            [
+              1,
+              17,
+              1
+            ],
+            [
+              2,
+              33,
+              0
+            ]
+          ],
+          "wire_edges": []
+        },
+        "parent_sha256": "1f7cc89d12b290404cb243820eac3809c293c0d6a0756d22e01699febf164e01"
+      },
+      "child_sha256": "2f62bad67ccd5a72ba4df5e763aef105a1f0e76839859a1cd8a7c7c414a31f54",
+      "vertices": 145,
+      "wires": 139,
+      "exported_vertices": 261,
+      "exact_operator": "passed",
+      "export_error": 7.065405018168899e-15
+    }
+  ],
+  "root_graph_error": 4.119196133842429e-15,
+  "input_operator_error": 1.1146582586145565e-15,
+  "max_export_error": 7.065405018168899e-15,
+  "validation": "Exact equality to root at every step; independent exported full operators and replay SHA",
+  "extraction_required": false
+}

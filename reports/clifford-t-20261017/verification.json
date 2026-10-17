@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "git_commit": "40f2fc33d0f349e8f6abf7531c88ac78e5c86a38",
+  "tracked_dirty": false,
+  "unit_tests": 28,
+  "exact_axiom_instances": 4668,
+  "real_circuit_rewrites": 4,
+  "best_gate_claim": null,
+  "scope": "Clifford+T axiom kernel; existing bounded RL runner is unchanged",
+  "elapsed_seconds": 63.76466404200001,
+  "artifacts": {
+    "axiom-catalog.json": "30d24cc6c5346026a785254bb48730979c13dfb071959a983215861a3178b777",
+    "barenco-proof.json": "b1f7e6cda190fa1c204defef87f56773fb52ef8fe84ee16fdce55b9660a87c59",
+    "barenco-root.json": "3befef629fffc25ee62494c8e0636418b769b9e1c42281d13572dcdbb8221574",
+    "barenco-step-1.json": "d824277c87595dbceea4f391404304bd3511327dd63512a92c29d351ccef7228",
+    "barenco-step-2.json": "c2fa7145279972efb17a3245713222c1cfdcb9bddb6871dd102952a3bb32dffd",
+    "barenco-step-3.json": "7bbc4f830bbdf287a87448a32b7a70abe7a1ebb9a3461e2fdeac01a58afa8117",
+    "barenco-step-4.json": "1b3ce4ef188230d33f419fcbf1c5edc2df399f3b7ff4ab3d2033fc24ce97dd62",
+    "exact-axioms.json": "1bdd6697d0033540831f10d808522df55c6b82e340fbe6fa3e8ec1baa75fe7df",
+    "protocol.json": "75cf696d978af8d7b2f39b739e2be4c13aad418d5c8f2269f41e0ec95279b533",
+    "unit-tests.json": "ee1b9feb903b2f95ab55ff8742c49bd0d4f728ace10d4754427e2192ec1c1460",
+    "unit-tests.txt": "66b5be89bfcf941defb39c0a61bf3af43f119091feb7eb70cb8dd4e5cab92567"
+  }
+}

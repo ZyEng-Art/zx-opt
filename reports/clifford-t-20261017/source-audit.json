@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "experiment_commit": "40f2fc33d0f349e8f6abf7531c88ac78e5c86a38",
+  "tracked_dirty_at_validation": false,
+  "checked_sources": {
+    "tests/test_complete.py": "d19ef7c10a4c6bbf72fd5cea5d6a9314ba41f7a2517c981d9009a2210578a764",
+    "tests/test_dedup.py": "ae1e6894079a38b5f81a458dcd2ad76efa66e818d0da9422fecd02aecf617fa4",
+    "tests/test_frontier.py": "95bdec62262b56daeb2412ddacbe18afe466fd4917b4c826e23fee8a9ef2784f",
+    "tests/test_policy.py": "3301121960f85e3c521f73a19ee720f6c887b611f8c081d639a9e5b2c53dd7c6",
+    "tests/test_rules.py": "d26e81891597854e00dca8a90f21324ed988c6d2c9263762066304d7d755a162",
+    "tests/test_verify.py": "ab7180080ad5d3c4b3e1027f088ed3d58c4348f1d4bbf7611450bb8419be53d2",
+    "tools/verify_complete.py": "2410ecd3875f0a0452c500cf9b3aa2977d572d37607f97511260b31250571beb",
+    "zxopt/complete/__init__.py": "5876d8d4a9fdd89a6665770d492c5484718cfe45c1b68487bd22ad53479e6914",
+    "zxopt/complete/__main__.py": "b20e58b20159198149a6ce4da8b7202b469f8e55fde81e5afca624a704655a57",
+    "zxopt/complete/adapter.py": "5934084b6866c07a6c273905a1f44ff4606f333ce812c3dd8c3126f74c723e1e",
+    "zxopt/complete/axioms.py": "4ff0fe47d8af47544d7b6ed673d83a627d69d7fede9a87b616bf52e4cd358fa5",
+    "zxopt/complete/diagram.py": "2a1d84c01c9d0fd30eb8b97bf97a0f19b1f27f4c245a721e6e87973c4168d2ac",
+    "zxopt/complete/rewrite.py": "173e66c3c9f4f623d1a6a258bb3f16bb2350832bcd1a2c058174f2b42e78d21d",
+    "zxopt/complete/ring.py": "5e1349922e4e7c826b34565f18926b3c3121a5bf7ff0bfeb73cc89f6938a019b"
+  },
+  "frozen_legacy_files": 28,
+  "artifact_digests": "all matched",
+  "new_training_jobs": 0,
+  "node44_owned_cpu_container": "d6f04cb2ab933c6582a73fc031f35e4dd23acdbc0212f1d8dfac3e924bc91607 stopped; persistent socket read-only inspection passed",
+  "pyzx_source_files": 74,
+  "pyzx_sources_match_previous_pinned_environment": true
+}

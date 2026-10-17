@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "commands": [
+    [
+      "import-qasm",
+      "inputs/barenco_tof_3.qasm",
+      "runs/completeness-20261017/cli-40f2fc3/root.json"
+    ],
+    [
+      "apply",
+      "runs/completeness-20261017/cli-40f2fc3/root.json",
+      "runs/completeness-20261017/cli-40f2fc3/child.json",
+      "--axiom",
+      "E",
+      "--direction",
+      "backward"
+    ],
+    [
+      "replay",
+      "runs/completeness-20261017/cli-40f2fc3/root.json",
+      "runs/completeness-20261017/cli-40f2fc3/child.json.receipt.json",
+      "runs/completeness-20261017/cli-40f2fc3/replay.json"
+    ],
+    [
+      "export-pyzx",
+      "runs/completeness-20261017/cli-40f2fc3/child.json",
+      "runs/completeness-20261017/cli-40f2fc3/pyzx.json",
+      "--num-inputs",
+      "5"
+    ]
+  ],
+  "replay_identical": true,
+  "export_operator_error": 7.673154996706839e-15,
+  "artifacts": {
+    "pyzx.json": "2d682882c8aa26f8637d3947ca47db72092feeef38dfc50f874cdb8bff7467b2",
+    "child.json.receipt.json": "1bc4ca7e295b4ac3f5f1739e251f1cdcf186377fa5ff8f272f5b917c5adf0d47",
+    "replay.json": "a9581e677e66cb8e5ce82ad1cdf4b4820705340c594bae5ec911bd6e918abab4",
+    "child.json": "a9581e677e66cb8e5ce82ad1cdf4b4820705340c594bae5ec911bd6e918abab4",
+    "root.json": "0633a7efdd04afd003466f64781e8976bd9a9a81c4370261d0381188fab58b80"
+  }
+}

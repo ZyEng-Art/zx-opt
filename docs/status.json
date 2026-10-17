@@ -1,8 +1,8 @@
 {
-  "phase": "clifford_t_axiom_implementation",
+  "phase": "clifford_t_axiom_kernel_complete",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "main",
-  "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO",
+  "scope": "barenco_tof_3 only; total NAM gates; controlled rewrites; extraction-sensitive identities; bounded deferred frontier; on-target PPO; independent complete Clifford+T JPV axiom kernel",
   "resources": {
     "node44_owned_cpu_container": "restored_stopped",
     "new_gpu_tasks": 0,
@@ -27,7 +27,7 @@
     "Align reward and observations with the global extracted-gate objective",
     "Expand reliably extractable rewrite paths"
   ],
-  "active_work": "Implement JPV Figure 1/2 bidirectional contextual axiom kernel and verify exact semantics",
+  "active_work": null,
   "completed_followups": [
     {
       "suite": "representation",
@@ -80,5 +80,20 @@
       36.42518338508435,
       36.700445913465394
     ]
+  },
+  "rule_completeness": {
+    "fragment": "Clifford+T (pi/4)",
+    "basis": "JPV 1903.06035v3, Theorem 1.1 and Figures 1/2",
+    "axiom_families": 11,
+    "both_colors": true,
+    "both_directions": true,
+    "arbitrary_finite_arity": true,
+    "contextual_application": true,
+    "exact_verified_instances": 4668,
+    "unit_tests": 28,
+    "report": "reports/clifford-t-20261017/interpretation.txt",
+    "implementation_commit": "40f2fc33d0f349e8f6abf7531c88ac78e5c86a38",
+    "existing_ppo_runner": "bounded legacy/macro actions; JPV kernel not connected to policy yet",
+    "formal_proof_assistant": false
   }
 }

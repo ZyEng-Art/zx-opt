@@ -1,0 +1,19 @@
+{
+  "action": {
+    "axiom": {
+      "name": "E",
+      "parameters": {
+        "color": "Z"
+      }
+    },
+    "direction": "backward",
+    "match": {
+      "vertices": [],
+      "internal_edges": [],
+      "port_halves": [],
+      "wire_edges": []
+    },
+    "parent_sha256": "a9873795fcb6f832469ef1c21136982cf7903204cfe0e5c48a93423f756575d7"
+  },
+  "child_sha256": "2be8f2c80467855f77f5e7ff9fc5f2b2129ea1f9ea7f9a9cbfafb3cc6069285e"
+}

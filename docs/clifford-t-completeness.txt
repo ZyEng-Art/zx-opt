@@ -76,6 +76,11 @@ $PYTHON -m zxopt.complete export-pyzx runs/jpv-next.json runs/jpv-next-pyzx.json
 
 可复现校验
 $PYTHON tools/verify_complete.py runs/jpv-verification --paper runs/completeness-20261017/jpv.pdf
-脚本执行整个测试集，独立检查 4,768 个精确实例，保存默认模板图和同电路四步改写证据。
+脚本执行整个测试集，独立检查 4,668 个精确实例，保存默认模板图和同电路四步改写证据。
 四步为 E 反向插入、I 反向插入、S 相位拆分、H 颜色转换；每步精确等于原图，
 并经导出的 PyZX 图独立核验全算子。它是规则/适配器检查，不是优化成绩或泛化评估。
+
+适配器输入限制
+导入要求 pi/4 精确相位、纯 ZX 类型及已知标量；PyZX 的 floatfactor 仅接收 0、1、-1、i、-i。
+其他浮点标量显式拒绝，不会猜测其精确值；这不限制内核用显式 ZX 标量子图表达相同算子。
+本次正式报告：reports/clifford-t-20261017/interpretation.txt。

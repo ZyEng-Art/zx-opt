@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "instances": 4668,
+  "by_axiom": {
+    "S": 3456,
+    "I": 2,
+    "CP": 2,
+    "B": 2,
+    "K": 16,
+    "EU": 2,
+    "H": 144,
+    "SUP": 16,
+    "E": 2,
+    "C": 1024,
+    "BW": 2
+  },
+  "arithmetic": "Exact dyadic Q[zeta8]/(zeta8^4+1), full tensor equality including global phase/amplitude",
+  "infinite_schema_argument": "S: repeated Kronecker deltas fuse for every finite arity/positive link multiplicity. H: H^2=I and the tensor definition of X for every finite arity.",
+  "finite_arity_checks": "S legs 0..2, links 1/2/5; H arity 0..8; these test ranges do not cap the implementation"
+}
