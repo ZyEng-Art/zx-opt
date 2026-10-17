@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "checks": 12,
+  "initial_frozen_online_first128_identical": true,
+  "note": "Draft mechanism runs before final campaign commit; not an optimization-quality claim",
+  "reports": {
+    "online": {
+      "status": "step_limit_reached",
+      "transitions": 256,
+      "accepted": 229,
+      "updates": 2,
+      "best": {
+        "cost": {
+          "gates": 40,
+          "cx": 16,
+          "depth": 35
+        },
+        "sha256": "b8745b923eede0faa4cdfb52c15a0269d2cc51c49e64e3801230855455c72bf0",
+        "seconds": 0.9325187919999998
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 70,
+        "spider_split": 25,
+        "phase_split": 28,
+        "PV": 27,
+        "gadget_split": 20,
+        "spider_nest": 6,
+        "PVB": 13,
+        "identity_insert": 26,
+        "ID": 24,
+        "phase_transfer": 16,
+        "GF": 1
+      },
+      "accepted_counts": {
+        "PVG": 70,
+        "spider_split": 15,
+        "phase_split": 28,
+        "PV": 27,
+        "gadget_split": 20,
+        "PVB": 12,
+        "identity_insert": 14,
+        "ID": 24,
+        "phase_transfer": 16,
+        "spider_nest": 2,
+        "GF": 1
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 26,
+        "ValueError: vertex growth bound exceeded": 1
+      },
+      "index": {
+        "states": 227,
+        "hits": 261,
+        "exact_isomorphism_comparisons": 261,
+        "attempted_actions": 256
+      },
+      "checked_qasm": 69,
+      "max_graph_operator_error": 5.236410054879665e-15,
+      "max_qasm_operator_error": 1.3687748718835772e-15,
+      "verification": "passed",
+      "budget_seconds": 60.0,
+      "total_loop_seconds": 14.398481707999998
+    },
+    "frozen": {
+      "status": "step_limit_reached",
+      "transitions": 128,
+      "accepted": 114,
+      "updates": 0,
+      "best": {
+        "cost": {
+          "gates": 40,
+          "cx": 16,
+          "depth": 35
+        },
+        "sha256": "b8745b923eede0faa4cdfb52c15a0269d2cc51c49e64e3801230855455c72bf0",
+        "seconds": 0.958623792
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PVG": 35,
+        "spider_split": 12,
+        "phase_split": 13,
+        "PV": 12,
+        "gadget_split": 10,
+        "spider_nest": 6,
+        "PVB": 8,
+        "identity_insert": 12,
+        "ID": 10,
+        "phase_transfer": 10
+      },
+      "accepted_counts": {
+        "PVG": 35,
+        "spider_split": 7,
+        "phase_split": 13,
+        "PV": 12,
+        "gadget_split": 10,
+        "PVB": 8,
+        "identity_insert": 7,
+        "ID": 10,
+        "phase_transfer": 10,
+        "spider_nest": 2
+      },
+      "rejections": {
+        "Exception: No extractable vertex found. Something went wrong": 14
+      },
+      "index": {
+        "states": 113,
+        "hits": 130,
+        "exact_isomorphism_comparisons": 130,
+        "attempted_actions": 128
+      },
+      "checked_qasm": 41,
+      "max_graph_operator_error": 5.236410054879665e-15,
+      "max_qasm_operator_error": 1.00447534405158e-15,
+      "verification": "passed",
+      "budget_seconds": 60.0,
+      "total_loop_seconds": 6.132350499999999
+    }
+  }
+}

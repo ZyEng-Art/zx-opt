@@ -1,9 +1,8 @@
 """Bridge frozen legacy rewrites and explicit expansion actions."""
 import contextlib
 import io
-from dataclasses import dataclass
 
-from .rules import Action, candidates, apply
+from .rules import Action, apply
 
 
 class Kernel:

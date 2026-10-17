@@ -1,0 +1,40 @@
+运行环境
+Python 3.9+；建议新环境使用 Python 3.11。
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt
+
+本机已安装依赖的复用方式（本次开发）
+export PYTHONPATH=/tmp/rlzx-paper-source/pyzx-298693bed2608e84fcb44a672282f873321c70b7
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+PYTHON=/tmp/rlzx-diagnostic-env-20261015/bin/python
+
+规则、去重、矩阵和策略概率检查
+$PYTHON -m unittest discover -s tests -v
+
+单次运行，输出目录须不存在
+$PYTHON -m zxopt.search runs/example --expanded --dedup --policy online --seconds 180 --seed 11
+
+六组消融、三种子，全部只搜索同一个电路
+$PYTHON -m zxopt.campaign runs/pilot --seconds 180 --workers 3
+
+六组分别为：旧动作随机、旧动作随机+结构去重、新动作随机、新动作随机+去重、
+新动作冻结策略+去重、新动作在线 PPO+去重。后两组使用相同随机初始化。
+旧动作组仍使用本轮全矩阵检查和日志，不能直接与历史 v49 每秒步数相比。
+
+每次运行文件
+protocol.json：提交号、源码 SHA、输入 SHA、配置、计时与检查口径。
+events.jsonl：逐提案动作、状态、成本、拒绝原因、奖励、上下文、策略概率与 buffer 摘要。
+updates.jsonl：每次 PPO 的 policy/value loss、熵、KL、clip fraction、EV、权重变化。
+progress.json：每 128 步保存的进度；best.json / best.qasm：当前最好结果。
+candidates/：通过全矩阵检查的不同 QASM；每次唯一 QASM 都独立核验。
+initial.pt / final.pt：初始/结束模型；结束模型含 Adam，不是完整搜索断点。
+report.json：结束状态、最佳门数、提取失败、动作计数、检查误差和索引规模。
+failure.json：真正的等价性错误或异常导致运行失败时保存最后提案。
+
+审计原则
+- 代码提交后再开始正式计时实验；运行期间核对源码未变。
+- 输出按行落盘，结束时 fsync；结果摘要可提交，原始数据和模型默认忽略。
+- 所有方法报告，所有种子报告；不只保留最好一次。
+- 只允许整体相位对齐，不允许幅值归一化或输入输出自由置换。
+- 图同构只控制搜索状态池与已尝试动作；成本缓存仍用精确序列化。
+- 每次失败试运行和修复写入 work-log；不覆盖旧输出目录。
