@@ -24,13 +24,15 @@ def group(family):
 
 
 def history(evidence):
-    old = {}; rows = []; selected = Counter(); accepted = Counter(); timers = Counter(); wall = 0.
+    old = {}; rows = []; selected = Counter(); accepted = Counter(); timers = Counter(); feasibility = Counter(); wall = 0.
     for node in (22, 23):
         for row in json.loads((ROOT/"reports/anchor-first-20261018/original-nam26"/("node"+str(node)+".json")).read_text())["records"]:
             old[row["circuit"]] = row
             selected.update(row["report"]["proposal_counts"])
             accepted.update(row["report"]["accepted_counts"])
             timers.update(row["report"]["timers"]); wall += row["report"]["total_loop_seconds"]
+            feasibility.update({k: row["report"]["feasibility"].get(k, 0) for k in
+                                ("previews", "calls", "proposed", "eligible", "resource_masks", "cache_hits")})
         rows += json.loads((evidence/("usage-node"+str(node)+".json")).read_text())["rows"]
     groups = defaultdict(Counter); families = defaultdict(Counter)
     for family, n in selected.items():
@@ -54,6 +56,8 @@ def history(evidence):
     return dict(circuits=len(rows), sampled=sum(selected.values()), accepted=sum(accepted.values()),
         groups={k: dict(v) for k, v in groups.items()}, families={k: dict(v) for k, v in families.items()},
         summed_search_seconds=wall, timers=dict(timers),
+        feasibility=dict(feasibility),
+        feasibility_cache_hit_fraction=feasibility["cache_hits"]/feasibility["proposed"],
         timer_percent={k: 100*v/wall for k, v in timers.items()},
         caveat="Final improvement actions and path presence describe observed traces, not necessary causal rule benefits. Matching includes view normalization.")
 
