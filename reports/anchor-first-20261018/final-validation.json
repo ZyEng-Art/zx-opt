@@ -17,5 +17,7 @@
     "original-nam26/summary.csv": "9e034d755d9c31e852637e2ba64f9e43619511b5106acc4d523fb828295f0184",
     "reporting/final-unit-tests.log": "3817f5591de7cf7fa988d982f2f21a9e0391b7a08262868e276e0ddaad311c03"
   },
-  "scope": "Review snapshot before09:00deadline. Local large-archive transfers remain separately pending; remote full source/audit/trajectory records retained."
+  "scope": "Review snapshot before09:00deadline. Local large-archive transfers remain separately pending; remote full source/audit/trajectory records retained.",
+  "snapshot_commit": "203a6a3",
+  "later_scope_clarification": "Interpretation text was clarified after this snapshot:26completed circuits refer to earlierglobal-selection sourcef5874e4. Latest-anchor3hourpatience full-suite count remains0. Original snapshot hashes refer to snapshot_commit."
 }

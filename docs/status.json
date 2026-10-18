@@ -109,7 +109,9 @@
       "improved_after_root": 17
     },
     "final_unit_tests": 124,
-    "imitation_replication": "Not launched; exploratory1win2tie remains unreplicated"
+    "imitation_replication": "Not launched; exploratory1win2tie remains unreplicated",
+    "latest_anchor_scheme_full_suite_completed_under_3h_patience": 0,
+    "original26_scope": "Earlier sourcef5874e4 global-selection runs,13parallel pernode; individual3hwallclockpatience verified fromclosed reports; not latest-anchor reruns"
   },
   "rule_completeness": {
     "fragment": "Clifford+T (pi/4)",
