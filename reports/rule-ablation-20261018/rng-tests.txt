@@ -1,0 +1,22 @@
+/private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:64: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+  prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+/private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+  parse = parser.parseString(pattern)
+/private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+  parser.resetCache()
+/private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/_mathtext.py:45: PyparsingDeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'
+  ParserElement.enablePackrat()
+In /private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+In /private/tmp/rlzx-diagnostic-env-20261015/lib/python3.9/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+test_disabling_absent_a_keeps_other_candidates_exactly_paired (test_rule_profiles.RuleProfilesTest) ... ok
+test_explicit_full_matches_default_actions (test_rule_profiles.RuleProfilesTest) ... ok
+test_macros_retain_expansion_candidates_without_jpv (test_rule_profiles.RuleProfilesTest) ... ok
+test_native_skips_macro_generation_and_jpv_initialization (test_rule_profiles.RuleProfilesTest) ... ok
+test_no_a_skips_the_matcher_before_construction (test_rule_profiles.RuleProfilesTest) ... ok
+test_optional_timers_do_not_change_proposals_or_rng (test_rule_profiles.RuleProfilesTest) ... ok
+test_profile_guards_replay_and_invalid_profiles (test_rule_profiles.RuleProfilesTest) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.754s
+
+OK

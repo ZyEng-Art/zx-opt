@@ -1,0 +1,141 @@
+{
+  "status": "budget_reached",
+  "transitions": 4567,
+  "accepted": 4566,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 0,
+  "best": {
+    "cost": {
+      "gates": 38,
+      "cx": 16,
+      "depth": 37
+    },
+    "sha256": "f6b440ad6d5f96bc5121af12defb3aef960cfc70fa071ba2999458b9a70e77aa",
+    "seconds": 486.10031755594537,
+    "graph": "2be432ce5dc4106fd88707193e0bb59a1aff53348e81fa4ace960b05e2914385"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "proposal_counts": {
+    "spider_split": 383,
+    "ID": 754,
+    "PVB": 347,
+    "PVG": 606,
+    "gadget_split": 264,
+    "PV": 771,
+    "phase_split": 402,
+    "identity_insert": 383,
+    "GF": 86,
+    "phase_transfer": 506,
+    "spider_nest": 62,
+    "LC": 3
+  },
+  "accepted_counts": {
+    "spider_split": 383,
+    "ID": 754,
+    "PVB": 347,
+    "PVG": 606,
+    "gadget_split": 264,
+    "PV": 771,
+    "phase_split": 402,
+    "identity_insert": 383,
+    "GF": 86,
+    "phase_transfer": 505,
+    "spider_nest": 62,
+    "LC": 3
+  },
+  "unscored_counts": {},
+  "rejections": {
+    "TimeoutError: candidate operation exceeded deadline": 1
+  },
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 509,
+    "evictions": 446,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      38,
+      16
+    ]
+  },
+  "checked_qasm": 1393,
+  "view_cache": {
+    "hits": 4538,
+    "misses": 4597
+  },
+  "jpv_proposals": null,
+  "anchor_stats": {},
+  "completion": {
+    "requests": 4543,
+    "primary_successes": 1078,
+    "primary_failures": 3465,
+    "clifford_repair_successes": 3431,
+    "cache_hits": 24,
+    "clifford_repair_failures": 34,
+    "full_reduce_repair_successes": 34,
+    "unique_valid_qasm": 1393,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 1.3337180333699095e-15,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 145032,
+    "calls": 4567,
+    "proposed": 146144,
+    "eligible": 105985,
+    "resource_masks": 39981,
+    "cache_hits": 1112,
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "spider_nest": 11067,
+      "PVG": 2162,
+      "PVB": 6184,
+      "gadget_split": 6678,
+      "spider_split": 4483,
+      "identity_insert": 4447,
+      "phase_split": 4488,
+      "PV": 265,
+      "phase_transfer": 337,
+      "LC": 32,
+      "ID": 16
+    }
+  },
+  "max_graph_operator_error": 1.0005163159662007e-14,
+  "max_qasm_operator_error": 1.3337180333699095e-15,
+  "first_passage_seconds": {
+    "39": 68.34276370191947,
+    "38": 486.10031755594537,
+    "37": null,
+    "36": null,
+    "35": null
+  },
+  "budget_seconds": 600.0,
+  "total_loop_seconds": 600.0066045639105,
+  "timers": {
+    "checkpoint": 0.19557944289408624,
+    "matching": 82.33902469091117,
+    "feasibility": 318.3080443236977,
+    "inference": 27.46376421255991,
+    "rewrite_verify": 36.09082621987909,
+    "score": 114.685307495296
+  },
+  "verification": "passed",
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "patience": {
+    "seconds": 0.0,
+    "gates": 38,
+    "last_improvement_unix": 1792287993.5545702
+  },
+  "certificate_stats": null,
+  "finished_unix": 1792288107.5637064
+}

@@ -1,0 +1,153 @@
+{
+  "status": "budget_reached",
+  "transitions": 4329,
+  "accepted": 4328,
+  "unscored": 61,
+  "recovered": 0,
+  "updates": 0,
+  "best": {
+    "cost": {
+      "gates": 36,
+      "cx": 14,
+      "depth": 34
+    },
+    "sha256": "1a9197657e20a5887e7dbe8d5eca2f578a589b1e7ccad5baf28f096d97afa1d4",
+    "seconds": 108.45597244706005,
+    "graph": "455a41221ca2eb1df78e9227d8664ba7bee042af872bcf04eb549d7102cf66fe"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "proposal_counts": {
+    "identity_insert": 334,
+    "ID": 728,
+    "spider_split": 373,
+    "PV": 770,
+    "PVB": 323,
+    "phase_split": 322,
+    "gadget_split": 243,
+    "phase_transfer": 557,
+    "PVG": 460,
+    "GF": 123,
+    "spider_nest": 88,
+    "LC": 8
+  },
+  "accepted_counts": {
+    "identity_insert": 334,
+    "ID": 728,
+    "spider_split": 372,
+    "PV": 770,
+    "PVB": 323,
+    "phase_split": 322,
+    "gadget_split": 243,
+    "phase_transfer": 557,
+    "PVG": 460,
+    "GF": 123,
+    "spider_nest": 88,
+    "LC": 8
+  },
+  "unscored_counts": {
+    "spider_nest": 3,
+    "PVB": 8,
+    "PVG": 7,
+    "PV": 18,
+    "phase_split": 3,
+    "phase_transfer": 8,
+    "spider_split": 3,
+    "identity_insert": 1,
+    "ID": 5,
+    "gadget_split": 3,
+    "GF": 2
+  },
+  "rejections": {},
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 47,
+    "latent_capacity": 128,
+    "insertions": 317,
+    "evictions": 254,
+    "latent_insertions": 47,
+    "latent_evictions": 0,
+    "latent_restarts": 12,
+    "best": [
+      36,
+      14
+    ]
+  },
+  "checked_qasm": 1350,
+  "view_cache": {
+    "hits": 4303,
+    "misses": 4356
+  },
+  "jpv_proposals": null,
+  "anchor_stats": {},
+  "completion": {
+    "requests": 4287,
+    "primary_successes": 1155,
+    "primary_failures": 3132,
+    "clifford_repair_successes": 2984,
+    "cache_hits": 43,
+    "clifford_repair_failures": 148,
+    "full_reduce_repair_failures": 61,
+    "unscorable": 62,
+    "full_reduce_repair_successes": 86,
+    "unique_valid_qasm": 1350,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 1.5182071523486653e-15,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 137360,
+    "calls": 4329,
+    "proposed": 138528,
+    "eligible": 97638,
+    "resource_masks": 40547,
+    "cache_hits": 1168,
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "PVG": 1946,
+      "PVB": 5513,
+      "identity_insert": 4912,
+      "spider_split": 4922,
+      "PV": 277,
+      "phase_split": 4929,
+      "gadget_split": 7084,
+      "spider_nest": 10947,
+      "phase_transfer": 300,
+      "ID": 20,
+      "LC": 40
+    }
+  },
+  "max_graph_operator_error": 1.0106221072408209e-14,
+  "max_qasm_operator_error": 1.5182071523486653e-15,
+  "first_passage_seconds": {
+    "39": 22.608134556096047,
+    "38": 92.51760847610421,
+    "37": 108.45597244706005,
+    "36": 108.45597244706005,
+    "35": null
+  },
+  "budget_seconds": 600.0,
+  "total_loop_seconds": 600.0112566889729,
+  "timers": {
+    "checkpoint": 0.2750554613303393,
+    "matching": 116.6073006996885,
+    "feasibility": 299.45055663981475,
+    "inference": 23.791881225304678,
+    "rewrite_verify": 33.86618460970931,
+    "score": 109.33258759672754
+  },
+  "verification": "passed",
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "patience": {
+    "seconds": 0.0,
+    "gates": 36,
+    "last_improvement_unix": 1792287615.790814
+  },
+  "certificate_stats": null,
+  "finished_unix": 1792288107.501558
+}

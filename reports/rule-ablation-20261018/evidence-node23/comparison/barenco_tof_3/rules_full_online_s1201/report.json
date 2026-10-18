@@ -1,0 +1,181 @@
+{
+  "status": "budget_reached",
+  "transitions": 3589,
+  "accepted": 3588,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 112,
+  "best": {
+    "cost": {
+      "gates": 37,
+      "cx": 13,
+      "depth": 32
+    },
+    "sha256": "3fb9b3511bc14c63215a9cbf823d8bbfdc37a5312613fd10f5af350544419875",
+    "seconds": 76.96644881399698,
+    "graph": "a4b2c89233031ef04d3225976f06e8faea3e347fa3ee380fa66a1700377a4c2c"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "proposal_counts": {
+    "H:forward": 229,
+    "PVG": 216,
+    "spider_split": 187,
+    "I:backward": 250,
+    "phase_split": 141,
+    "spider_nest": 23,
+    "gadget_split": 122,
+    "S:backward": 246,
+    "CP:backward": 141,
+    "identity_insert": 141,
+    "phase_transfer": 162,
+    "I:forward": 287,
+    "E:backward": 248,
+    "S:forward": 51,
+    "GF": 32,
+    "H:backward": 236,
+    "EU:forward": 194,
+    "E:forward": 33,
+    "EU:backward": 38,
+    "ID": 245,
+    "PV": 221,
+    "PVB": 115,
+    "CP:forward": 20,
+    "LC": 9,
+    "B:backward": 2
+  },
+  "accepted_counts": {
+    "H:forward": 229,
+    "PVG": 216,
+    "spider_split": 187,
+    "I:backward": 249,
+    "phase_split": 141,
+    "spider_nest": 23,
+    "gadget_split": 122,
+    "S:backward": 246,
+    "CP:backward": 141,
+    "identity_insert": 141,
+    "phase_transfer": 162,
+    "I:forward": 287,
+    "E:backward": 248,
+    "S:forward": 51,
+    "GF": 32,
+    "H:backward": 236,
+    "EU:forward": 194,
+    "E:forward": 33,
+    "EU:backward": 38,
+    "ID": 245,
+    "PV": 221,
+    "PVB": 115,
+    "CP:forward": 20,
+    "LC": 9,
+    "B:backward": 2
+  },
+  "unscored_counts": {},
+  "rejections": {
+    "TimeoutError: candidate operation exceeded deadline": 1
+  },
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 382,
+    "evictions": 319,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      37,
+      13
+    ]
+  },
+  "checked_qasm": 1264,
+  "view_cache": {
+    "hits": 3662,
+    "misses": 3624
+  },
+  "jpv_proposals": {
+    "calls": 3589,
+    "matching_work_exhausted": 1533,
+    "phase_inferred": 36215,
+    "non_clifford_matches_skipped": 0
+  },
+  "anchor_stats": {},
+  "completion": {
+    "requests": 3521,
+    "primary_successes": 424,
+    "cache_hits": 68,
+    "primary_failures": 3097,
+    "clifford_repair_successes": 1610,
+    "clifford_repair_failures": 1487,
+    "full_reduce_repair_successes": 1487,
+    "unique_valid_qasm": 1264,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 1.458852544650288e-15,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 114264,
+    "calls": 3589,
+    "proposed": 114848,
+    "eligible": 93726,
+    "resource_masks": 21037,
+    "cache_hits": 584,
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "spider_nest": 4843,
+      "PVB": 2923,
+      "spider_split": 1943,
+      "gadget_split": 2516,
+      "phase_split": 1961,
+      "identity_insert": 1959,
+      "EU:forward": 1155,
+      "E:backward": 754,
+      "CP:backward": 461,
+      "S:backward": 387,
+      "I:backward": 377,
+      "PVG": 1039,
+      "phase_transfer": 269,
+      "ID": 221,
+      "PV": 192,
+      "H:backward": 15,
+      "GF": 21,
+      "B:backward": 54,
+      "LC": 32
+    }
+  },
+  "max_graph_operator_error": 1.0991357027388912e-14,
+  "max_qasm_operator_error": 1.458852544650288e-15,
+  "first_passage_seconds": {
+    "39": 13.178293033997761,
+    "38": 76.96644881399698,
+    "37": 76.96644881399698,
+    "36": null,
+    "35": null
+  },
+  "budget_seconds": 600.0,
+  "total_loop_seconds": 600.0151042020007,
+  "timers": {
+    "checkpoint": 0.15348154200182762,
+    "matching": 172.91796239561518,
+    "feasibility": 214.30414832122915,
+    "inference": 23.7335644166742,
+    "rewrite_verify": 31.181470194947906,
+    "score": 115.1699786252866,
+    "ppo": 24.62978194709285
+  },
+  "verification": "passed",
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "patience": {
+    "seconds": 0.0,
+    "gates": 37,
+    "last_improvement_unix": 1792287823.0503514
+  },
+  "certificate_stats": null,
+  "finished_unix": 1792288346.188846
+}

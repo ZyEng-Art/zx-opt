@@ -61,6 +61,7 @@ def main():
                 ax.plot([x-.07, x+.07], [statistics.median(ys)]*2, color="black", lw=1)
         ax.set_xticks(range(4), profiles); ax.set_ylabel("Best total NAM gates (lower is better)")
         ax.set_title("D. barenco_tof_3; 600 s, 3 seeds per policy")
+        ax.set_xlabel("No-a arm changes shuffle; strict A pairs reported separately", fontsize=8)
         ax.legend(fontsize=9)
     else:
         ax.axis("off"); ax.text(.1, .5, "Training results await complete replay audit")

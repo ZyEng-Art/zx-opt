@@ -1,0 +1,212 @@
+{
+  "source_commit": "2587970a3777157386625c4d1f625feb6f9d2794",
+  "tracked_dirty": false,
+  "cases": [
+    {
+      "name": "barenco_tof_3",
+      "sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92"
+    }
+  ],
+  "plan": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_native",
+      "policy": "frozen",
+      "seed": 1201,
+      "arm": "rules_native_frozen",
+      "folder": "barenco_tof_3/rules_native_frozen_s1201"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 1201,
+      "arm": "rules_native_online",
+      "folder": "barenco_tof_3/rules_native_online_s1201"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_macros",
+      "policy": "frozen",
+      "seed": 1201,
+      "arm": "rules_macros_frozen",
+      "folder": "barenco_tof_3/rules_macros_frozen_s1201"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_macros",
+      "policy": "online",
+      "seed": 1201,
+      "arm": "rules_macros_online",
+      "folder": "barenco_tof_3/rules_macros_online_s1201"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_no_a",
+      "policy": "frozen",
+      "seed": 1201,
+      "arm": "rules_no_a_frozen",
+      "folder": "barenco_tof_3/rules_no_a_frozen_s1201"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_no_a",
+      "policy": "online",
+      "seed": 1201,
+      "arm": "rules_no_a_online",
+      "folder": "barenco_tof_3/rules_no_a_online_s1201"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_full",
+      "policy": "frozen",
+      "seed": 1201,
+      "arm": "rules_full_frozen",
+      "folder": "barenco_tof_3/rules_full_frozen_s1201"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_full",
+      "policy": "online",
+      "seed": 1201,
+      "arm": "rules_full_online",
+      "folder": "barenco_tof_3/rules_full_online_s1201"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_native",
+      "policy": "frozen",
+      "seed": 1231,
+      "arm": "rules_native_frozen",
+      "folder": "barenco_tof_3/rules_native_frozen_s1231"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 1231,
+      "arm": "rules_native_online",
+      "folder": "barenco_tof_3/rules_native_online_s1231"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_macros",
+      "policy": "frozen",
+      "seed": 1231,
+      "arm": "rules_macros_frozen",
+      "folder": "barenco_tof_3/rules_macros_frozen_s1231"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_macros",
+      "policy": "online",
+      "seed": 1231,
+      "arm": "rules_macros_online",
+      "folder": "barenco_tof_3/rules_macros_online_s1231"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_no_a",
+      "policy": "frozen",
+      "seed": 1231,
+      "arm": "rules_no_a_frozen",
+      "folder": "barenco_tof_3/rules_no_a_frozen_s1231"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_no_a",
+      "policy": "online",
+      "seed": 1231,
+      "arm": "rules_no_a_online",
+      "folder": "barenco_tof_3/rules_no_a_online_s1231"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_full",
+      "policy": "frozen",
+      "seed": 1231,
+      "arm": "rules_full_frozen",
+      "folder": "barenco_tof_3/rules_full_frozen_s1231"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_full",
+      "policy": "online",
+      "seed": 1231,
+      "arm": "rules_full_online",
+      "folder": "barenco_tof_3/rules_full_online_s1231"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_native",
+      "policy": "frozen",
+      "seed": 1277,
+      "arm": "rules_native_frozen",
+      "folder": "barenco_tof_3/rules_native_frozen_s1277"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 1277,
+      "arm": "rules_native_online",
+      "folder": "barenco_tof_3/rules_native_online_s1277"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_macros",
+      "policy": "frozen",
+      "seed": 1277,
+      "arm": "rules_macros_frozen",
+      "folder": "barenco_tof_3/rules_macros_frozen_s1277"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_macros",
+      "policy": "online",
+      "seed": 1277,
+      "arm": "rules_macros_online",
+      "folder": "barenco_tof_3/rules_macros_online_s1277"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_no_a",
+      "policy": "frozen",
+      "seed": 1277,
+      "arm": "rules_no_a_frozen",
+      "folder": "barenco_tof_3/rules_no_a_frozen_s1277"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_no_a",
+      "policy": "online",
+      "seed": 1277,
+      "arm": "rules_no_a_online",
+      "folder": "barenco_tof_3/rules_no_a_online_s1277"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_full",
+      "policy": "frozen",
+      "seed": 1277,
+      "arm": "rules_full_frozen",
+      "folder": "barenco_tof_3/rules_full_frozen_s1277"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_full",
+      "policy": "online",
+      "seed": 1277,
+      "arm": "rules_full_online",
+      "folder": "barenco_tof_3/rules_full_online_s1277"
+    }
+  ],
+  "seconds": 600.0,
+  "workers": 12,
+  "audit_workers": 8,
+  "audit_native_replay": "rooted",
+  "audit_crosscheck_native_every": 101,
+  "native_flow_module": null,
+  "scope": "independent training/search on each target; no generalization claim; count noops separately",
+  "started_unix": 1792287504.2922156
+}

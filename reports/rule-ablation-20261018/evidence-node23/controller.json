@@ -1,0 +1,14 @@
+{
+  "phase": "passed",
+  "commit": "2bee07db376cdbd6842b0a40eeb82e533dfac48f",
+  "container_id": "41a818556ea26ee4bfefac7cb8b37eb5d47be16c7f976383e2d9a455367c532a",
+  "time": "2026-10-18T09:55:01.513849+08:00",
+  "trials": 12,
+  "archive": {
+    "path": "/tmp/dengzengyong_rlzx_rule_a_paired_node23_20261018/anchor-2bee07db376c-passed-records.tar.gz",
+    "bytes": 107292948,
+    "sha256": "96f6fb1b6d0aeda8b6012063c7213c05edc5183de2100f78fee04034a922b6fd",
+    "study_status": "passed",
+    "source_commit": "2bee07db376cdbd6842b0a40eeb82e533dfac48f"
+  }
+}

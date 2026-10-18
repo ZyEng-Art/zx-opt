@@ -1,0 +1,14 @@
+{
+  "container_name": "dengzengyong_rlzx_rule_a_paired_node23_20261018",
+  "container_id": "41a818556ea26ee4bfefac7cb8b37eb5d47be16c7f976383e2d9a455367c532a",
+  "started_at": "2026-10-18T01:41:36.168960152Z",
+  "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+  "source_commit": "2bee07db376cdbd6842b0a40eeb82e533dfac48f",
+  "cpus": 16,
+  "memory_gib": 48,
+  "workers": 12,
+  "gpu": false,
+  "node": 23,
+  "experiment": "search",
+  "probe_source": null
+}

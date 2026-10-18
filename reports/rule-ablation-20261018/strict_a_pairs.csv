@@ -1,0 +1,7 @@
+policy,seed,full_gates,no_a_gates,common_steps,identical_semantics,full_over_no_a_time,identical_best_qasm
+frozen,1201,37,37,3744,True,1.0080369095378547,True
+online,1201,37,37,3552,True,1.0130232067601093,True
+frozen,1231,39,39,3840,True,1.011836335987671,True
+online,1231,38,38,3616,True,0.9813619371498346,True
+frozen,1277,38,38,3936,True,0.9837562806035363,True
+online,1277,38,38,3552,True,1.041719258674538,True

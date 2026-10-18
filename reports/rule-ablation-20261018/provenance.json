@@ -1,0 +1,73 @@
+{
+  "created": "2026-10-18T11:03:50.532874+08:00",
+  "cohorts": {
+    "four_layer_campaign": {
+      "node": 22,
+      "source_commit": "2587970a3777157386625c4d1f625feb6f9d2794",
+      "trials": 24,
+      "status": "passed",
+      "audit_sha256": "29614c613ee6c59c566989d25676ae99dceb2d8278a88169f6c33d88abd70ec4",
+      "accepted_rewrites": 128892,
+      "saved_qasm": 33687,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_rule_ablation_fixed_node22_20261018/anchor-2587970a3777-passed-records.tar.gz",
+        "bytes": 254854757,
+        "sha256": "62255a94ed4b1b967ce69c4d41fe0c42eedde052501457b4fd33b54ce2f536f0",
+        "study_status": "passed",
+        "source_commit": "2587970a3777157386625c4d1f625feb6f9d2794"
+      },
+      "local_complete_archive": "runs/rule-ablation-fixed-launch-20261018/mirror/node22/anchor-2587970a3777-passed-records.tar.gz",
+      "local_archive_sha256_verified": true,
+      "repository_evidence_scope": "Reports, protocols, audits, best histories, update logs and best QASMs. Full events, graphs and models are in the complete archive.",
+      "observed_container_running": false,
+      "observed_container_oom_killed": false,
+      "container_stop": "Controller stops its own container after sealing results; exit 137 follows docker stop timeout, not training failure."
+    },
+    "strict_a_campaign": {
+      "node": 23,
+      "source_commit": "2bee07db376cdbd6842b0a40eeb82e533dfac48f",
+      "trials": 12,
+      "status": "passed",
+      "audit_sha256": "2e2926dcb03e139d03a313854ed91c46c9fdfc954ef2680e1a92b77bc40b75b7",
+      "accepted_rewrites": 45475,
+      "saved_qasm": 11594,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_rule_a_paired_node23_20261018/anchor-2bee07db376c-passed-records.tar.gz",
+        "bytes": 107292948,
+        "sha256": "96f6fb1b6d0aeda8b6012063c7213c05edc5183de2100f78fee04034a922b6fd",
+        "study_status": "passed",
+        "source_commit": "2bee07db376cdbd6842b0a40eeb82e533dfac48f"
+      },
+      "local_complete_archive": "runs/rule-a-paired-launch-20261018/mirror/node23/anchor-2bee07db376c-passed-records.tar.gz",
+      "local_archive_sha256_verified": true,
+      "repository_evidence_scope": "Reports, protocols, audits, best histories, update logs and best QASMs. Full events, graphs and models are in the complete archive.",
+      "observed_container_running": false,
+      "observed_container_oom_killed": false,
+      "container_stop": "Controller stops its own container after sealing results; exit 137 follows docker stop timeout, not training failure."
+    }
+  },
+  "historical_scope": "Original 26 NAM runs at f5874e497ce17b6bacddadb8e907763a9eb299f6; descriptive only, not an anchor-first rerun.",
+  "excluded": [
+    {
+      "scope": "Pretrial naming collision at 5ddaf84",
+      "trials": 0,
+      "reason": "Controller rejected mode before starting trials; failed records preserved."
+    },
+    {
+      "scope": "Local four-layer frozen/online 40-step smoke",
+      "trials": 8,
+      "reason": "Validation only; excluded from performance tables."
+    },
+    {
+      "scope": "Four-step smoke",
+      "reason": "Too short to execute online PPO update; excluded."
+    }
+  ],
+  "component_scope": "16 identical historical graph states, three repeats and one untimed warmup per profile/state; shuffled order and cold feasibility caches. Primary files: *.strict-warm-profile.json. Earlier .profile.json/.warm-profile.json retained as exploratory measurements.",
+  "limitations": [
+    "Global selection, not anchor-first.",
+    "One training circuit, three seeds per policy, 600-second budget; no generalization claim.",
+    "Four-layer no-a at 2587970 changes candidate shuffle; use the 2bee07d strict A cohort for causal A comparisons.",
+    "Shared node and 12 workers; timings are observations, not exclusive-core benchmark confidence intervals."
+  ]
+}

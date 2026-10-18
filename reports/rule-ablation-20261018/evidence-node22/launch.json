@@ -1,0 +1,15 @@
+{
+  "container_name": "dengzengyong_rlzx_rule_ablation_fixed_node22_20261018",
+  "container_id": "a52bca399351aeb43bf218e5c1f75bdfad515d80c2d51fdc9dd42d26b313cfcc",
+  "started_at": "2026-10-18T01:37:39.185664603Z",
+  "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+  "source_commit": "2587970a3777157386625c4d1f625feb6f9d2794",
+  "cpus": 16,
+  "memory_gib": 48,
+  "workers": 12,
+  "gpu": false,
+  "node": 22,
+  "experiment": "search",
+  "probe_source": null,
+  "controller_pid": 418221
+}
