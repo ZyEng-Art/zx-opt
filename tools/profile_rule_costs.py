@@ -32,7 +32,7 @@ def pack(trial, output, count):
             if row["status"] in ("accepted", "accepted_unscored") and row["graph_key"] not in seen:
                 keys.append(row["graph_key"]); seen.add(row["graph_key"])
     chosen = [keys[round(i*(len(keys)-1)/max(1, count-1))] for i in range(count)]
-    best = report["best"].get("graph_key", report["best"].get("key"))
+    best = report["best"].get("graph", report["best"].get("graph_key", report["best"].get("key")))
     if best and best not in chosen:
         chosen[-1] = best
     states = []
@@ -114,7 +114,8 @@ def profile(pack_path, output, repeats):
                 jpv=None if k.jpv is None else k.jpv.stats,
                 preview_families=dict(previews[p]))
     result = dict(circuit=data["circuit"], input_sha256=data["input_sha256"], pack_sha256=sha(pack_path),
-        source_commit=data["source_commit"], repeats=repeats, states=len(data["states"]),
+        source_commit=data["source_commit"], profiler_sha256=sha(Path(__file__)),
+        repeats=repeats, states=len(data["states"]),
         timing_scope="identical saved states, full bounded menus, cold feasibility cache; no extraction, PPO or end-to-end speed claim",
         order="fixed seeded randomized interleave", rows=rows, totals=totals)
     with output.open("x") as stream:
