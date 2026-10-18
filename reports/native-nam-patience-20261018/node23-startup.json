@@ -1,0 +1,313 @@
+{
+  "controller": {
+    "phase": "comparison",
+    "commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+    "container_id": "06d891d85eefdba65f2220e9a79386c4521bfb2549bcfbb1a5dd1a7d892c6636",
+    "time": "2026-10-18T21:22:01.978977+08:00",
+    "experiment": "search",
+    "circuits": [
+      "barenco_tof_3",
+      "csla_mux_3",
+      "csum_mux_9",
+      "gf2^6_mult",
+      "gf2^8_mult",
+      "ham15-low",
+      "mod5_4",
+      "mod_mult_55",
+      "mod_red_21",
+      "qcla_mod_7",
+      "rc_adder_6",
+      "tof_10",
+      "tof_5"
+    ],
+    "seeds": [
+      "11"
+    ],
+    "modes": [
+      "rules_native"
+    ],
+    "policies": [
+      "online"
+    ],
+    "seconds": 0.0,
+    "no_improvement_seconds": 10800.0,
+    "workers": 13
+  },
+  "ownership": {
+    "container_name": "dengzengyong_rlzx_native_nam_v3_node23_20261018",
+    "container_id": "06d891d85eefdba65f2220e9a79386c4521bfb2549bcfbb1a5dd1a7d892c6636",
+    "started_at": "2026-10-18T13:21:16.402485729Z",
+    "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+    "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+    "cpus": 16,
+    "memory_gib": 48,
+    "workers": 13,
+    "gpu": false,
+    "node": 23,
+    "experiment": "search",
+    "probe_source": null
+  },
+  "records": [
+    {
+      "circuit": "barenco_tof_3",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 944292,
+      "updates_bytes": 15088
+    },
+    {
+      "circuit": "csla_mux_3",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 122637,
+      "updates_bytes": 1901
+    },
+    {
+      "circuit": "csum_mux_9",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 58090,
+      "updates_bytes": 0
+    },
+    {
+      "circuit": "gf2^6_mult",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 27322,
+      "updates_bytes": 0
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 7220,
+      "updates_bytes": 0
+    },
+    {
+      "circuit": "ham15-low",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 20108,
+      "updates_bytes": 0
+    },
+    {
+      "circuit": "mod5_4",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 566845,
+      "updates_bytes": 8471
+    },
+    {
+      "circuit": "mod_mult_55",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 206132,
+      "updates_bytes": 2818
+    },
+    {
+      "circuit": "mod_red_21",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 85874,
+      "updates_bytes": 946
+    },
+    {
+      "circuit": "qcla_mod_7",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 14470,
+      "updates_bytes": 0
+    },
+    {
+      "circuit": "rc_adder_6",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 116989,
+      "updates_bytes": 1865
+    },
+    {
+      "circuit": "tof_10",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 105381,
+      "updates_bytes": 949
+    },
+    {
+      "circuit": "tof_5",
+      "rule_profile": "native",
+      "policy": "online",
+      "stop_rule": {
+        "no_improvement_seconds": 10800.0,
+        "resets_on": "strict reduction in total gates only; CX/depth ties do not reset",
+        "overall_cap_seconds": null,
+        "checkpoint_seconds": 300.0
+      },
+      "active_rules": {
+        "profile": "native",
+        "macros": false,
+        "jpv": false,
+        "nonlinear_a": false,
+        "scope": "Rules disabled before proposal construction; bounded menus do not imply complete search"
+      },
+      "events_bytes": 297659,
+      "updates_bytes": 4684
+    }
+  ],
+  "tests_tail": "est_named_wire_conventions (test_verify.VerifyTest) ... ok\n\n----------------------------------------------------------------------\nRan 140 tests in 41.116s\n\nOK\n"
+}

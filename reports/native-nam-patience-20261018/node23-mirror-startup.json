@@ -1,0 +1,15 @@
+{
+  "status": "running",
+  "finished": {},
+  "study_outcomes": {},
+  "updated_unix": 1792329832.671424,
+  "history": [
+    {
+      "node": 23,
+      "status": "mirrored",
+      "time": 1792329832.6714098
+    }
+  ],
+  "remote_archive_only": true,
+  "scope": "Status describes collection only. See study_outcomes/controller for experiment validity. Live rsync copies are monitoring snapshots; final archives are checksum-verified."
+}

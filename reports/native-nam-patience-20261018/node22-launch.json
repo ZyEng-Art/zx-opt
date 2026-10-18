@@ -1,0 +1,67 @@
+{
+  "node": 22,
+  "tag": "native_nam_v3",
+  "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "seconds": 0.0,
+  "no_improvement_seconds": 10800.0,
+  "policies": [
+    "online"
+  ],
+  "workers": 13,
+  "cpus": 16,
+  "memory_gib": 48,
+  "circuits": [
+    "adder_8",
+    "barenco_tof_10",
+    "barenco_tof_4",
+    "barenco_tof_5",
+    "gf2^4_mult",
+    "gf2^5_mult",
+    "gf2^7_mult",
+    "hwb6",
+    "qcla_adder_10",
+    "qcla_com_7",
+    "tof_3",
+    "tof_4",
+    "vbe_adder_3"
+  ],
+  "seeds": [
+    "11"
+  ],
+  "modes": [
+    "rules_native"
+  ],
+  "storage_root": "/ssd2/dengzengyong-rlzx-native-20261018",
+  "experiment": "search",
+  "probe_source_tag": null,
+  "training_seeds": [
+    "137",
+    "163",
+    "197"
+  ],
+  "audit_workers": 4,
+  "audit_native_replay": "reference",
+  "audit_crosscheck_native_every": 0,
+  "build_native_flow": false,
+  "model_bundle_sha256": null,
+  "model_files": [],
+  "development_models": false,
+  "save_improvement_models": true,
+  "base": "/tmp/dengzengyong_rlzx_native_nam_v3_node22_20261018",
+  "bundle_sha256": "25912bb8aae98c864c9a0445d6e462902683c4895439d973bf4f1dc61294e55e",
+  "runtime": {
+    "container_name": "dengzengyong_rlzx_native_nam_v3_node22_20261018",
+    "container_id": "ffe2a6649b2a9a7efe0e088e2ca3993c339220e087b3af2eecce7192cf12b0e1",
+    "started_at": "2026-10-18T13:21:15.842302674Z",
+    "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+    "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+    "cpus": 16,
+    "memory_gib": 48,
+    "workers": 13,
+    "gpu": false,
+    "node": 22,
+    "experiment": "search",
+    "probe_source": null,
+    "controller_pid": 3890517
+  }
+}
