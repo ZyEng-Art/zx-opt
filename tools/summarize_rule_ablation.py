@@ -179,13 +179,13 @@ def main():
         if name in result:
             rows = result[name]["rows"]
             with (a.evidence/(name+".csv")).open("w", newline="") as stream:
-                writer = csv.DictWriter(stream, fieldnames=[k for k in rows[0] if k != "timers"])
+                writer = csv.DictWriter(stream, fieldnames=[k for k in rows[0] if k != "timers"], lineterminator="\n")
                 writer.writeheader(); writer.writerows({k:v for k,v in r.items() if k != "timers"} for r in rows)
     for key in ("components",):
         rows = result[key]
         if rows:
             with (a.evidence/(key+".csv")).open("w", newline="") as stream:
-                writer = csv.DictWriter(stream, fieldnames=[k for k in rows[0] if k != "runtime_sources"])
+                writer = csv.DictWriter(stream, fieldnames=[k for k in rows[0] if k != "runtime_sources"], lineterminator="\n")
                 writer.writeheader(); writer.writerows({k:v for k,v in r.items() if k != "runtime_sources"} for r in rows)
     print(json.dumps({"history_circuits":result["history"]["circuits"], "component_rows":len(result["components"])}))
 
