@@ -24,9 +24,9 @@
     "Feasibility mask removes resource-invalid self-loops, but costs 69-71% of classified pilot time"
   ],
   "next_research_priorities": [
-    "Finish audit-bound initial/trained frozen-weight probes",
-    "Evaluate undiscounted credit and success cutoffs on newseeds",
-    "Replicate exploratory supervised single-action result without changing weights"
+    "Align reward with the best circuit discovered during search, with visible state and controlled comparisons",
+    "Evaluate successful-path replay/self-imitation and critic-guided node selection",
+    "Run the prepared unchanged single-action5seed replication as a separately authorized future continuation"
   ],
   "active_work": {
     "updated_at": "2026-10-18T08:53:06.975980+08:00",

@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-18T08:55:42.278064+08:00",
+  "status": "final_review_passed",
+  "all_report_json_parsed": 237,
+  "full_unit_tests": 124,
+  "formal_weight_pairs": {
+    "win": 2,
+    "tie": 8,
+    "loss": 17
+  },
+  "figure_visually_inspected": true,
+  "files": {
+    "interpretation-0900.txt": "eb5a8dc4ca043fa26772614b78a4e66721be483902db1e53c7bce79d1303a064",
+    "learning-diagnostics/training-and-utility.png": "c5ce454f3a1bfe63f42e9c18811641aa82308e5a1126e7a68930e1b2565aef11",
+    "ppo-weight54/weight-comparison.json": "82b6c0d0152011fbe169f0fea09131f580ba259922b8ec6a7de4153a3b88a38e",
+    "mc-hour18/comparison.json": "0557e84872d71c32cd64f02afa1b203b08ea2c53b0abc8dfb4f4202085938991",
+    "original-nam26/summary.csv": "9e034d755d9c31e852637e2ba64f9e43619511b5106acc4d523fb828295f0184",
+    "reporting/final-unit-tests.log": "3817f5591de7cf7fa988d982f2f21a9e0391b7a08262868e276e0ddaad311c03"
+  },
+  "scope": "Review snapshot before09:00deadline. Local large-archive transfers remain separately pending; remote full source/audit/trajectory records retained."
+}
