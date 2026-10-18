@@ -59,6 +59,32 @@ def main():
         ax.spines[["top", "right"]].set_visible(False)
     fig.savefig(a.evidence/"resource-cost.pdf")
     fig.savefig(a.evidence/"resource-cost.png", dpi=180)
+    control = [r for r in d["records"] if r.get("cohort") == "native-control"]
+    if control:
+        fig, axes = plt.subplots(1, 2, figsize=(10, 4), constrained_layout=True)
+        modes = ("rules_native", "cost_staged")
+        values = [statistics.median(r["accepted_per_second"] for r in control if r["mode"] == m) for m in modes]
+        axes[0].bar(range(2), values, color=["#427aa1", "#718f59"])
+        for i,v in enumerate(values):
+            axes[0].text(i, v+.15, f"{v:.2f}", ha="center")
+        axes[0].set_ylim(0, max(values)*1.2)
+        axes[0].set_ylabel("Median accepted rewrites / second")
+        axes[0].set_title("Matched native-only control; node22")
+        for j,policy in enumerate(("frozen", "online")):
+            for i,mode in enumerate(modes):
+                rows = sorted((r for r in control if r["mode"] == mode and r["policy"] == policy), key=lambda r:r["seed"])
+                x = i+(j-.5)*.24; ys = [r["best_gates"] for r in rows]
+                axes[1].scatter(x+np.linspace(-.04, .04, len(ys)), ys,
+                    marker="o" if j == 0 else "x", color="#335c67" if j == 0 else "#9e2a2b",
+                    label=policy if i == 0 else None, s=40)
+                axes[1].plot([x-.08,x+.08],[statistics.median(ys)]*2,color="black",lw=1.)
+        axes[1].set_ylabel("Best total NAM gates (lower is better)")
+        axes[1].set_title("600 s; 3 seeds per policy"); axes[1].legend()
+        for ax in axes:
+            ax.set_xticks(range(2), ["native only", "staged library"])
+            ax.spines[["top", "right"]].set_visible(False)
+        fig.savefig(a.evidence/"native-control.pdf")
+        fig.savefig(a.evidence/"native-control.png", dpi=180)
 
 
 if __name__ == "__main__":

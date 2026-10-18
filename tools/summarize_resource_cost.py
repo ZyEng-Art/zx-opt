@@ -34,18 +34,23 @@ def main():
     p.add_argument("--node22", type=Path, required=True)
     p.add_argument("--node23", type=Path, required=True)
     p.add_argument("--component", type=Path, required=True)
+    p.add_argument("--native-control", type=Path)
     a = p.parse_args(); a.output.mkdir(parents=True, exist_ok=True)
     components = json.loads(a.component.read_text())
     records = []; cohorts = {}; prefixes = []; summaries = []; training = []; learning_steps = []
-    for node, root, baseline in ((22, a.node22, "cost_reference"), (23, a.node23, "cost_bounds")):
-        result = summarize(root, a.output/("node"+str(node)), baseline)
+    studies = [("node22", 22, a.node22, "cost_reference"), ("node23", 23, a.node23, "cost_bounds")]
+    if a.native_control is not None:
+        studies.append(("native-control", 22, a.native_control, "rules_native"))
+    for cohort, node, root, baseline in studies:
+        result = summarize(root, a.output/cohort, baseline)
         plan = json.loads((root/"campaign.json").read_text())
         initial = {}
         for spec in plan["plan"]:
             folder = root/spec["folder"]
             protocol = json.loads((folder/"protocol.json").read_text()); config = protocol["config"]
-            assert config["selection"] == "global" and config["rule_profile"] == "full"
-            assert config["feasibility_mode"] == ("reference" if spec["mode"] == "cost_reference" else "bounds")
+            assert config["selection"] == "global"
+            assert config["rule_profile"] == ("native" if spec["mode"] == "rules_native" else "full")
+            assert config["feasibility_mode"] == ("reference" if spec["mode"] in ("cost_reference", "rules_native") else "bounds")
             assert config["rule_schedule"] == ("staged" if "staged" in spec["mode"] else "static")
             assert config["candidate_allocation"] == ("native-heavy" if "quota" in spec["mode"] else "balanced")
             assert config["seconds"] == plan["seconds"]
@@ -68,7 +73,7 @@ def main():
                         if schedule:
                             phases["expanded" if schedule["expanded"] else "native"] += 1
                             phases["fallback"] += schedule["native_empty_fallback"]
-            row.update(node=node, bound_accepts=f.get("bound_accepts", 0),
+            row.update(node=node, cohort=cohort, bound_accepts=f.get("bound_accepts", 0),
                        proposed=f.get("proposed", 0), feasibility_cache_hits=f.get("cache_hits", 0),
                        previews_per_transition=row["previews"]/row["transitions"],
                        median_vertices=statistics.median(vertices),
@@ -83,7 +88,7 @@ def main():
             local.append(row); records.append(row)
             updates = [json.loads(line) for line in (folder/"updates.jsonl").read_text().splitlines()]
             if updates:
-                entry = dict(node=node, mode=row["mode"], seed=row["seed"], updates=len(updates))
+                entry = dict(node=node, cohort=cohort, mode=row["mode"], seed=row["seed"], updates=len(updates))
                 for metric in ("value_loss", "value_explained_variance_after", "normalized_entropy", "approx_kl", "return_mean"):
                     values = [u["metrics"][metric] for u in updates if u["metrics"].get(metric) is not None]
                     assert all(math.isfinite(v) for v in values)
@@ -98,11 +103,11 @@ def main():
                 limit = max(1, (min(r["transitions"] for r in rows)//32-1)*32)
                 values = {r["mode"]:event_prefix(root/r["folder"], limit) for r in rows}
                 identical = len({v["semantics_sha256"] for v in values.values()}) == 1
-                if node == 22:
+                if cohort == "node22":
                     assert identical, (seed, policy, "Bounds altered the semantic prefix")
                 for row in rows:
                     v = values[row["mode"]]
-                    prefixes.append(dict(node=node, seed=seed, policy=policy, mode=row["mode"],
+                    prefixes.append(dict(node=node, cohort=cohort, seed=seed, policy=policy, mode=row["mode"],
                         common_steps=limit, best_gates=v["best"], seconds=v["seconds"],
                         semantics_sha256=v["semantics_sha256"], identical_semantics=identical,
                         same_steps_speedup=values[baseline]["seconds"]/v["seconds"]))
@@ -113,12 +118,12 @@ def main():
                 limit = max(1, (min(r["transitions"] for r in pair.values())//32-1)*32)
                 costs = {pol:event_prefix(root/r["folder"], limit)["best"] for pol,r in pair.items()}
                 difference = costs["online"]-costs["frozen"]
-                learning_steps.append(dict(node=node, mode=mode, seed=seed, common_steps=limit,
+                learning_steps.append(dict(node=node, cohort=cohort, mode=mode, seed=seed, common_steps=limit,
                     frozen_gates=costs["frozen"], online_gates=costs["online"],
                     outcome="win" if difference < 0 else "loss" if difference > 0 else "tie"))
             base = {(r["seed"],r["policy"]):r for r in local if r["mode"] == baseline}
             differences = [r["best_gates"]-base[r["seed"],r["policy"]]["best_gates"] for r in rows]
-            summaries.append(dict(node=node, mode=mode, trials=len(rows),
+            summaries.append(dict(node=node, cohort=cohort, mode=mode, trials=len(rows),
                 frozen_gates="/".join(str(r["best_gates"]) for r in rows if r["policy"] == "frozen"),
                 online_gates="/".join(str(r["best_gates"]) for r in rows if r["policy"] == "online"),
                 mean_best_gates=statistics.mean(r["best_gates"] for r in rows), best_gates=min(r["best_gates"] for r in rows),
@@ -126,7 +131,7 @@ def main():
                 median_paired_speedup=statistics.median(r["accepted_per_second"]/base[r["seed"],r["policy"]]["accepted_per_second"] for r in rows),
                 mean_previews_per_transition=statistics.mean(r["previews_per_transition"] for r in rows),
                 wins=sum(v < 0 for v in differences), ties=sum(v == 0 for v in differences), losses=sum(v > 0 for v in differences)))
-        cohorts["node"+str(node)] = dict(source_commit=result["source_commit"], trials=result["trials"],
+        cohorts[cohort] = dict(node=node, source_commit=result["source_commit"], trials=result["trials"],
             baseline_mode=baseline, evidence=result["evidence"], learning=result["learning"],
             config_sha256=sha(root/"campaign.json"))
     output = dict(cohorts=cohorts, records=records, summaries=summaries, common_prefixes=prefixes,
