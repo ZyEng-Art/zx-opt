@@ -141,7 +141,7 @@ if spec['experiment']=='model-probe':
     extra_mounts=['-v',str(models)+':/workspace/models:ro']
 cid=run(['docker','create','--name',name,'--label','owner=dengzengyong','--label','task=rlzx-anchor-20261018',
          '--cpus',str(spec['cpus']),'--memory',str(spec['memory_gib'])+'g','--shm-size','4g','--pids-limit','4096',
-         '-v',str(base)+':/workspace/task','-v',str(old/'pyzx-pin')+':/workspace/pin:ro',
+         '-v',str(base.resolve())+':/workspace/task','-v',str(old/'pyzx-pin')+':/workspace/pin:ro',
          '-v',str(old/'offline-deps')+':/workspace/offline:ro',*extra_mounts,
          '--entrypoint','/bin/bash',image,'-lc','sleep infinity'])
 run(['docker','start',cid])
