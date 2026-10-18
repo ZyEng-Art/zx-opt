@@ -14,7 +14,7 @@ def state_dict_digest(values):
     return digest.hexdigest()
 
 
-def read_model_snapshot(path, input_sha256, selection, anchor_prior, anchor_resource_mask, neutral_stop_steps=0, rule_profile="full"):
+def read_model_snapshot(path, input_sha256, selection, anchor_prior, anchor_resource_mask, neutral_stop_steps=0, rule_profile="full", rule_schedule="static", native_steps=256, expanded_steps=64, candidate_allocation="balanced"):
     """Hash and decode exactly the same bytes, before any state is installed."""
     payload = path.read_bytes()
     saved = torch.load(io.BytesIO(payload), map_location="cpu", weights_only=True)
@@ -30,6 +30,12 @@ def read_model_snapshot(path, input_sha256, selection, anchor_prior, anchor_reso
         raise ValueError("Resume model uses a different neutral-stop context")
     if saved.get("rule_profile", "full") != rule_profile:
         raise ValueError("Resume model uses a different rule profile")
+    for key, default, value in (("rule_schedule", "static", rule_schedule),
+                                ("native_steps", 256, native_steps),
+                                ("expanded_steps", 64, expanded_steps),
+                                ("candidate_allocation", "balanced", candidate_allocation)):
+        if saved.get(key, default) != value:
+            raise ValueError("Resume model uses a different rule allocation: "+key)
     if not saved.get("state_dict") or not all(
             isinstance(value, torch.Tensor) and bool(torch.isfinite(value).all())
             for value in saved["state_dict"].values()):

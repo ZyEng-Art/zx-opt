@@ -122,6 +122,9 @@ def audit_one(spec):
 
     root = SearchState(graph(protocol["root_graph"]), protocol["root_cost"], protocol["root_cost"])
     config = protocol["config"]
+    from zxopt.rule_schedule import RuleSchedule
+    rule_schedule = RuleSchedule(config.get("rule_schedule", "static"),
+                                 config.get("native_steps", 256), config.get("expanded_steps", 64))
     root_signature = hashlib.sha256((folder/"baseline.qasm").read_bytes()).hexdigest()
     archive = GeneralArchive(root, config["archive"], config["latent_archive"],
                              config.get("archive_qasm_cap", 0), root_signature)
@@ -208,6 +211,14 @@ def audit_one(spec):
         if event["status"] == "excluded_after_deadline":
             assert event["seconds"] > event.get("deadline_seconds", config["seconds"])
             continue
+        if config.get("rule_schedule", "static") != "static":
+            schedule = event["rule_schedule"]
+            assert schedule["without_improvement"] == rule_schedule.without_improvement
+            assert schedule["expanded"] == rule_schedule.expanded()
+            if not schedule["expanded"] and not schedule["native_empty_fallback"]:
+                assert event["action"]["mode"] == "legacy"
+            assert not schedule["expanded"] or not schedule["native_empty_fallback"]
+        rule_schedule.observe(event["status"] == "accepted" and event["cost"]["gates"] < best["gates"])
         if config.get("neutral_stop_steps", 0):
             assert abs(event["context"][-1]-neutral_streak/config["neutral_stop_steps"]) < 1e-12
             neutral_streak = (neutral_streak+1 if event["status"] in ("accepted", "anchor_noop")
@@ -328,6 +339,9 @@ def audit_one(spec):
         initial = torch.load(folder/"initial.pt", map_location="cpu", weights_only=True)["state_dict"]
         final_package = torch.load(folder/"final.pt", map_location="cpu", weights_only=True)
         assert final_package.get("rule_profile", "full") == config.get("rule_profile", "full")
+        for key, default in (("rule_schedule", "static"), ("native_steps", 256),
+                             ("expanded_steps", 64), ("candidate_allocation", "balanced")):
+            assert final_package.get(key, default) == config.get(key, default)
         final = final_package["state_dict"]
         assert state_dict_digest(initial) == protocol["initial_tensor_sha256"]
         if protocol.get("model_resume"):

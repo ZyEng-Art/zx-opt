@@ -8,7 +8,7 @@ import pyzx as zx
 
 from .complete.adapter import from_pyzx, to_pyzx
 from .kernel import Kernel
-from .rules import candidates, growth
+from .rules import candidates, growth, gadgets, nest_matches
 from .jpv_actions import Proposals, cancel_h_pairs
 from .verify import graph_matrix, matrix_error
 from .complete.angles import Phase
@@ -109,9 +109,13 @@ def rule_allowed(profile, mode, family):
 
 
 class GeneralKernel:
-    def __init__(self, env, seed=11, jpv=True, candidate_cap=32, matching_work=2048, general_zx=False, total_candidate_cap=0, rule_profile="full"):
+    def __init__(self, env, seed=11, jpv=True, candidate_cap=32, matching_work=2048, general_zx=False, total_candidate_cap=0, rule_profile="full", candidate_allocation="balanced"):
         rule_allowed(rule_profile, "noop", "anchor_noop")
         self.rule_profile = rule_profile
+        if candidate_allocation not in ("balanced", "native-heavy"):
+            raise ValueError("Unknown candidate allocation")
+        self.candidate_allocation = candidate_allocation
+        self.resource_view = None; self.resource_base = None
         self.native = Kernel(env)
         self.jpv = (Proposals(seed, candidate_cap, matching_work, general=general_zx,
                               include_a=rule_profile != "no-a")
@@ -132,7 +136,7 @@ class GeneralKernel:
         self.prepared_fields = (dict(e.pivot_info_dict), dict(e.gadget_info_dict),
                                 dict(e.gadgets), list(e.gadget_fusion_ids))
 
-    def prepare(self, raw, view, max_view_vertices, anchor=None):
+    def prepare(self, raw, view, max_view_vertices, anchor=None, expanded=True):
         result = []
         # An evaluated scoring view must never erase the symbolic proof state.
         # Native/macro transitions remain exact rational transitions only.
@@ -145,7 +149,7 @@ class GeneralKernel:
                 native = self.native.prepare_at(view.graph, anchor[2]) if anchor[1] == "node" else []
             if anchor is None or anchor[1] == "node":
                 self.remember_matches(view)
-            extra = ([] if self.rule_profile == "native" else
+            extra = ([] if self.rule_profile == "native" or not expanded else
                      candidates(view.graph, max_view_vertices, self.candidate_cap,
                                 None if anchor is None else (anchor[1], anchor[2])))
             for _, identifier, action in native:
@@ -158,7 +162,7 @@ class GeneralKernel:
                                            growth(view.graph, action)))
             if graph_key(view.graph) != before:
                 raise AssertionError("Macro preparation mutated its independent scoring view")
-        if self.jpv is not None and (anchor is None or anchor[0] == "raw"):
+        if expanded and self.jpv is not None and (anchor is None or anchor[0] == "raw"):
             for action in self.jpv.build(raw, None if anchor is None else (anchor[1], anchor[2])):
                 rule = action.axiom
                 l, r = (rule.left, rule.right) if action.direction == "forward" else (rule.right, rule.left)
@@ -187,6 +191,23 @@ class GeneralKernel:
                 rng.shuffle(values)
             families = sorted(buckets); rng.shuffle(families)
             bounded = []
+            if self.candidate_allocation == "native-heavy":
+                # Family-balanced within each space; half the bounded menu is
+                # reserved for native rules, one quarter each for macro/JPV.
+                ordered = [buckets[f][offset] for offset in range(max(map(len, buckets.values())))
+                           for f in families if offset < len(buckets[f])]
+                modes = ("legacy", "macro", "jpv")
+                quotas = (self.total_candidate_cap//2, self.total_candidate_cap//4,
+                          self.total_candidate_cap-self.total_candidate_cap//2-self.total_candidate_cap//4)
+                chosen = set()
+                for mode, quota in zip(modes, quotas):
+                    positions = [i for i, a in enumerate(ordered) if a.mode == mode][:quota]
+                    chosen.update(positions)
+                for i in range(len(ordered)):
+                    if len(chosen) == self.total_candidate_cap:
+                        break
+                    chosen.add(i)
+                return [a for i, a in enumerate(ordered) if i in chosen]
             for offset in range(max(map(len, buckets.values()))):
                 for family in families:
                     if offset < len(buckets[family]):
@@ -195,6 +216,63 @@ class GeneralKernel:
                             return bounded
             return bounded
         return result
+
+    def resource_upper_bound(self, raw, view, action, parent_key):
+        """Counts before proven HH cancellation, which only removes resources.
+
+        This is an acceptance certificate for trusted, freshly generated
+        actions, not an applicability or semantic proof. Chosen actions still
+        run the ordinary checked rewrite and all operator verification.
+        Unknown/native cases use the exact preview.
+        """
+        if action.mode == "jpv":
+            a = action.payload
+            if a.parent_sha256 != parent_key or a.direction not in ("forward", "backward"):
+                return None
+            target = a.axiom.right if a.direction == "forward" else a.axiom.left
+            # Removing each temporary degree-two interface junction reduces
+            # the edge count by exactly one, including all-junction circles.
+            return (len(raw.nodes)-len(a.match.vertices)+len(target.nodes)-len(target.ports),
+                    len(raw.edges)-len(a.match.internal_edges)+len(a.match.wire_edges)
+                    +len(target.edges)-len(target.ports))
+        if action.mode != "macro" or view.graph is None or action.parent_view_key != view.key:
+            return None
+        if self.resource_view is not view:
+            try:
+                base = from_pyzx(view.graph, allow_arbitrary=raw.allow_arbitrary)
+                self.resource_base = len(base.nodes), len(base.edges)
+            except ValueError:
+                self.resource_base = None
+            self.resource_view = view
+        if self.resource_base is None:
+            return None
+        nv, ne = self.resource_base; g = view.graph; a = action.payload
+        delta_power = 0
+        if a.kind in ("identity_insert", "phase_split", "spider_split"):
+            dn, de = 4, 4
+        elif a.kind == "phase_transfer":
+            dn, de = 0, 0
+        elif a.kind == "gadget_split":
+            targets = next((t for r, l, t in gadgets(g) if (r, l) == a.vertices), None)
+            if targets is None:
+                return None
+            dn, de = len(targets)+3, 2*(len(targets)+1)
+            delta_power = len(targets)-1
+        elif a.kind == "spider_nest":
+            matched, missing = nest_matches(g, a.vertices, int(a.phase))
+            dn = sum(len(t)+3 for t, _ in missing)-sum(len(t)+3 for _, _, t in matched)
+            de = 2*(sum(len(t)+1 for t, _ in missing)-sum(len(t)+1 for _, _, t in matched))
+            delta_power = sum(len(t)-1 for t, _ in missing)-sum(len(t)-1 for _, _, t in matched)
+        else:
+            return None
+        if delta_power and not (g.scalar.is_zero or g.scalar.floatfactor == 0):
+            def power_size(p):
+                return ((2, (2 if p % 2 else 4)-p) if p < 0 else
+                        (p//2+2*(p % 2), p % 2))
+            old_n, old_e = power_size(g.scalar.power2)
+            new_n, new_e = power_size(g.scalar.power2+delta_power)
+            dn += new_n-old_n; de += new_e-old_e
+        return nv+dn, ne+de
 
     def step(self, raw, view, action):
         if not rule_allowed(self.rule_profile, action.mode, action.family):

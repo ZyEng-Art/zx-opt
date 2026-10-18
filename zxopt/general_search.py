@@ -28,6 +28,7 @@ from .verify import qiskit_matrix_zx_order, matrix_error
 from monitored_ppo import ppo_update
 from .scalable_verify import reference_for, check_qasm, ZXReference
 from .patience import GatePatience
+from .rule_schedule import RuleSchedule
 from .model_snapshot import read_model_snapshot, state_dict_digest
 from . import anchor_policy
 
@@ -69,12 +70,16 @@ def run(args):
             or args.candidate_cap < 1 or args.matching_work < 1 or args.rewrite_timeout <= 0
             or args.anchor_candidate_cap < 1 or args.archive_qasm_cap < 0 or args.rollout < 1
             or args.neutral_stop_steps < 0
+            or args.native_steps < 1 or args.expanded_steps < 1
             or args.learning_rate <= 0 or not np.isfinite(args.learning_rate)):
         raise ValueError("Invalid search bounds")
     if args.selection != "anchor" and args.anchor_prior != "uniform":
         raise ValueError("Anchor prior requires --selection anchor")
     if args.rule_profile != "full" and (args.selection != "global" or not args.general_zx):
         raise ValueError("Rule ablations require global selection and --general-zx")
+    if (args.rule_schedule != "static" or args.candidate_allocation != "balanced") and (
+            args.selection != "global" or not args.general_zx or args.rule_profile != "full"):
+        raise ValueError("Rule scheduling/allocation require global general-ZX with the full library")
     if args.selection != "anchor" and args.anchor_resource_mask:
         raise ValueError("Anchor resource mask requires --selection anchor")
     if args.selection != "anchor" and args.anchor_noop_stop:
@@ -106,7 +111,8 @@ def run(args):
     if args.verify_native_flow:
         scorer.primary.scorer.verify_flow = scorer.repair.scorer.verify_flow = True
     kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work,
-                           args.general_zx, args.total_candidate_cap, args.rule_profile)
+                           args.general_zx, args.total_candidate_cap, args.rule_profile, args.candidate_allocation)
+    rule_schedule = RuleSchedule(args.rule_schedule, args.native_steps, args.expanded_steps)
     anchored = args.selection == "anchor"
     if anchored:
         kernel.candidate_cap = min(args.candidate_cap, args.anchor_candidate_cap)
@@ -134,7 +140,7 @@ def run(args):
                           args.archive_qasm_cap, root_result["sha256"])
     raw_limit = len(diagram.nodes)+args.max_growth
     wire_limit = len(diagram.edges)+args.max_edge_growth
-    feasibility = Feasibility(raw_limit, wire_limit) if args.feasibility_mask else None
+    feasibility = Feasibility(raw_limit, wire_limit, mode=args.feasibility_mode) if args.feasibility_mask else None
     view_limit = root_view.graph.num_vertices()+args.max_growth
     net = Agent(general_zx=args.general_zx) if args.policy != "uniform" else None
     optimizer = torch.optim.Adam(net.parameters(), lr=args.learning_rate, eps=1e-5) if args.policy == "online" else None
@@ -144,7 +150,8 @@ def run(args):
             raise ValueError("Model resume requires frozen/online policy")
         saved, payload, model_resume = read_model_snapshot(
             args.resume_model, hashlib.sha256(input_bytes).hexdigest(),
-            args.selection, args.anchor_prior, args.anchor_resource_mask, args.neutral_stop_steps, args.rule_profile)
+            args.selection, args.anchor_prior, args.anchor_resource_mask, args.neutral_stop_steps, args.rule_profile,
+            args.rule_schedule, args.native_steps, args.expanded_steps, args.candidate_allocation)
         net.load_state_dict(saved["state_dict"])
         (out/"resume-model.pt").write_bytes(payload)
         if optimizer is not None:
@@ -222,6 +229,11 @@ def run(args):
             context="The eighth context entry is neutral_streak/limit instead of the redundant latent-depth flag; checkpoints and model capsules retain the limit",
             scope="Optional trajectory allocation heuristic; reward, legal actions and archive rules unchanged. It can discard useful longer plateaus; no completeness or convergence claim.")
     protocol["feasibility_mask"] = "When enabled, rewrite-only previews exclude node/wire-budget violations before categorical sampling; no extraction/cost lookahead. Exact-state/action LRU; all preview work inside budget."
+    protocol["resource_bounds"] = dict(mode=args.feasibility_mode,
+        scope="Bounds only certify candidates inside both resource budgets; uncertain cases use exact previews. Chosen rewrites retain all proof/operator checks.")
+    protocol["rule_schedule"] = dict(mode=args.rule_schedule, native_steps=args.native_steps,
+        expanded_steps=args.expanded_steps, candidate_allocation=args.candidate_allocation,
+        scope="Past strict total-gate improvements reset a sampled-transition counter. Staged mode alternates native-only and expanded windows; an empty native menu falls back to expanded rules. No completeness claim.")
     protocol["preview_native_prefix_sha256"] = kernel.preview_prefix_sha256
     protocol["angle_support"] = dict(
         allow_arbitrary=args.allow_arbitrary_angles,
@@ -283,7 +295,8 @@ def run(args):
                     "selection", "anchor_candidate_cap"]
         semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask", "archive_qasm_cap",
                      "native_flow_module", "verify_native_flow", "anchor_noop_stop", "neutral_stop_steps",
-                     "discount_factor", "gae_lambda", "gate_improvement_stop", "rule_profile"]
+                     "discount_factor", "gae_lambda", "gate_improvement_stop", "rule_profile",
+                     "feasibility_mode", "rule_schedule", "native_steps", "expanded_steps", "candidate_allocation"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -300,6 +313,8 @@ def run(args):
         if kernel.jpv is not None:
             kernel.jpv.rounds, kernel.jpv.stats = saved["jpv"]
         kernel.cap_rounds = saved.get("proposal_cap_rounds", {})
+        rule_schedule = RuleSchedule(args.rule_schedule, args.native_steps, args.expanded_steps,
+                                     saved.get("rule_schedule"))
         anchor_stats = Counter(saved.get("anchor_stats", {}))
         rng.bit_generator.state = saved["rng"]
         random.setstate(saved["python_rng"]); np.random.set_state(saved["numpy_rng"])
@@ -323,6 +338,7 @@ def run(args):
                                          rollout, best, (out/"best.qasm").read_text(), first_best,
                                          (transition, trajectory, accepted, unscored, recovered, updates),
                                          net, optimizer, kernel, rng, shared, patience)
+        checkpoint["rule_schedule"] = rule_schedule.record()
         checkpoint["anchor_stats"] = dict(anchor_stats)
         checkpoint["neutral_streak"] = neutral_streak
         torch.save(checkpoint, out/"search-state.pt.tmp")
@@ -406,8 +422,12 @@ def run(args):
                 t = time.perf_counter()
             try:
                 with operation_limit(max(.001, deadline-time.perf_counter())):
+                    expanded = rule_schedule.expanded(); native_empty_fallback = False
                     available = kernel.prepare(state.diagram, view, view_limit,
-                                               None if anchor is None else anchor.query())
+                                               None if anchor is None else anchor.query(), expanded=expanded)
+                    if not available and not expanded:
+                        native_empty_fallback = True
+                        available = kernel.prepare(state.diagram, view, view_limit, expanded=True)
             except TimeoutError:
                 timers["matching"] += time.perf_counter()-t
                 break
@@ -424,6 +444,25 @@ def run(args):
                     timers["feasibility"] += time.perf_counter()-t
                     break
                 timers["feasibility"] += time.perf_counter()-t
+            if not available and not expanded and not native_empty_fallback:
+                native_empty_fallback = True
+                t = time.perf_counter()
+                try:
+                    with operation_limit(max(.001, deadline-time.perf_counter())):
+                        available = kernel.prepare(state.diagram, view, view_limit, expanded=True)
+                except TimeoutError:
+                    timers["matching"] += time.perf_counter()-t
+                    break
+                timers["matching"] += time.perf_counter()-t
+                if feasibility is not None:
+                    t = time.perf_counter()
+                    try:
+                        with operation_limit(max(.001, deadline-time.perf_counter())):
+                            available, previews = feasibility.prepare(state.diagram, view, available, kernel)
+                    except TimeoutError:
+                        timers["feasibility"] += time.perf_counter()-t
+                        break
+                    timers["feasibility"] += time.perf_counter()-t
             if anchored:
                 anchor_stats["eligible_candidates"] += len(available)
                 if not available:
@@ -457,12 +496,16 @@ def run(args):
                     old_log = float(logs[0]); value = float(values[0])
             timers["inference"] += time.perf_counter()-t
             chosen = available[slot]; transition += 1; step += 1; families[chosen.family] += 1
+            strict_rule_improvement = False
             row = dict(transition=transition, trajectory=trajectory, trajectory_step=step,
                        parent_graph_key=state.key, restart_graph_key=start.key, restart_source=restart_source,
                        action=chosen.record(), available=len(available), candidate_sha256=candidate_digest(available),
                        selection=dict(slot=slot, log_probability=old_log, value=value), context=context,
                        parent_cost=state.cost, last_scored_cost=state.last_counts, unscored_depth_before=state.unscored_depth,
                        deadline_seconds=deadline-started)
+            if args.rule_schedule != "static":
+                row["rule_schedule"] = dict(**rule_schedule.record(), expanded=expanded,
+                                             native_empty_fallback=native_empty_fallback)
             if anchored:
                 row["anchor"] = anchor.record()
                 row["selection"].update(anchor_slot=anchor_slot, anchors=len(anchors),
@@ -542,6 +585,7 @@ def run(args):
                             first_best[target] = elapsed
                     if score(result["cost"]) < score(best["cost"]):
                         gate_improvement = patience.observe(result["cost"]["gates"])
+                        strict_rule_improvement = gate_improvement
                         deadline = min(budget_deadline, time.perf_counter()+patience.remaining())
                         best = dict(cost=result["cost"], sha256=result["sha256"], seconds=elapsed, graph=state.key)
                         (out/"best.qasm.tmp").write_text(result["qasm"]); (out/"best.qasm.tmp").replace(out/"best.qasm")
@@ -556,6 +600,8 @@ def run(args):
                                     optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
                                     input_sha256=protocol["input_sha256"], source_commit=revision,
                                     selection=args.selection, anchor_prior=args.anchor_prior, rule_profile=args.rule_profile,
+                                    rule_schedule=args.rule_schedule, native_steps=args.native_steps,
+                                    expanded_steps=args.expanded_steps, candidate_allocation=args.candidate_allocation,
                                     anchor_resource_mask=args.anchor_resource_mask,
                                     anchor_noop_stop=args.anchor_noop_stop,
                                     neutral_stop_steps=args.neutral_stop_steps,
@@ -589,6 +635,7 @@ def run(args):
                     anchor_stats["neutral_terminations"] += 1
             row.update(reward=reward, terminal=done, best=best["cost"], buffer=pool.summary())
             events.write(json.dumps(row)+"\n")
+            rule_schedule.observe(strict_rule_improvement)
             if optimizer is not None:
                 rollout.append((obs, slot, old_log, value, reward, done))
             if done:
@@ -642,6 +689,8 @@ def run(args):
                         optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
                         input_sha256=hashlib.sha256(input_bytes).hexdigest(),
                         selection=args.selection, rule_profile=args.rule_profile,
+                        rule_schedule=args.rule_schedule, native_steps=args.native_steps,
+                        expanded_steps=args.expanded_steps, candidate_allocation=args.candidate_allocation,
                         anchor_prior=args.anchor_prior, learning_rate=args.learning_rate,
                         anchor_resource_mask=args.anchor_resource_mask,
                         anchor_noop_stop=args.anchor_noop_stop,
@@ -712,6 +761,12 @@ def parser():
     p.add_argument("--policy", choices=["uniform", "frozen", "online"], default="uniform")
     p.add_argument("--rule-profile", choices=["full", "no-a", "macros", "native"], default="full",
                    help="Opt-in global-selection rule ablation; model schema remains general ZX")
+    p.add_argument("--feasibility-mode", choices=["reference", "bounds"], default="reference",
+                   help="Bounds certify resource-safe candidates without constructing every child; uncertain cases use exact previews")
+    p.add_argument("--rule-schedule", choices=["static", "staged"], default="static")
+    p.add_argument("--native-steps", type=int, default=256)
+    p.add_argument("--expanded-steps", type=int, default=64)
+    p.add_argument("--candidate-allocation", choices=["balanced", "native-heavy"], default="balanced")
     p.add_argument("--selection", choices=["global", "anchor"], default="global",
                    help="Sample a topology-only anchor before any rule matching; global preserves the baseline")
     p.add_argument("--anchor-candidate-cap", type=int, default=8,

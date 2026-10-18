@@ -14,6 +14,8 @@ def main():
     p.add_argument("--interval", type=int, default=300)
     p.add_argument("--task-prefix", default="rlzx_anchor")
     p.add_argument("--nodes", nargs="+", type=int, choices=[22, 23], default=[22, 23])
+    p.add_argument("--metadata-only", action="store_true",
+                   help="Live copy omits graph/circuit objects and full state; final sealed archive is still fetched")
     a = p.parse_args(); out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     finished = {}; history = []
     while len(finished) != len(a.nodes):
@@ -28,8 +30,10 @@ def main():
                    "-o", "BatchMode=yes", "-o", "ConnectTimeout=8"]
             try:
                 with (target/"mirror.log").open("a") as log:
+                    exclusions = (["--exclude="+s for s in ("objects/", "candidates/", "invalid-extractions/", "search-state.pt")]
+                                  if a.metadata_only else [])
                     result = subprocess.run(["rsync", "-az", "--partial", "--timeout=120", "--no-owner", "--no-group",
-                                             "--exclude=*.tmp", "-e", shlex.join(ssh), host+":"+base+"/source/runs/",
+                                             "--exclude=*.tmp", *exclusions, "-e", shlex.join(ssh), host+":"+base+"/source/runs/",
                                              str(live)+"/"], stdout=log, stderr=subprocess.STDOUT, timeout=1200)
                 if result.returncode:
                     raise RuntimeError("rsync failed: "+str(result.returncode))

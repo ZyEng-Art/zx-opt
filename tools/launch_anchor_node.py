@@ -29,6 +29,7 @@ def main():
     p.add_argument("--audit-crosscheck-native-every", type=int, default=0)
     p.add_argument("--build-native-flow", action="store_true")
     p.add_argument("--save-improvement-models", action="store_true")
+    p.add_argument("--metadata-only-mirror", action="store_true")
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3"])
     p.add_argument("--seeds", nargs="+", default=["11", "29", "47", "71", "101"])
     p.add_argument("--modes", nargs="+", default=["global32", "anchor8", "anchor8_nodes",
@@ -168,7 +169,8 @@ print(json.dumps(meta))
     (out/"launch.json").write_text(json.dumps(launch, indent=2)+"\n")
     with (out/"collector.log").open("x") as stream:
         proc = subprocess.Popen([sys.executable, str(ROOT/"tools/mirror_anchor_nodes.py"), str(out/"mirror"),
-                                 "--task-prefix", "rlzx_"+a.tag, "--nodes", str(a.node), "--interval", "300"],
+                                 "--task-prefix", "rlzx_"+a.tag, "--nodes", str(a.node), "--interval", "300",
+                                 *(["--metadata-only"] if a.metadata_only_mirror else [])],
                                 cwd=ROOT, stdin=subprocess.DEVNULL, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
     (out/"collector-launch.json").write_text(json.dumps(dict(pid=proc.pid, interval=300), indent=2)+"\n")
     print(json.dumps(launch))

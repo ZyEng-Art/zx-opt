@@ -51,6 +51,12 @@ class ModelSnapshotTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "neutral-stop context"):
                 read_model_snapshot(path, "input", "anchor", "uniform", True, 64)
 
+    def test_rule_allocation_is_bound_to_model_continuations(self):
+        for key, value in (("rule_schedule", "staged"), ("native_steps", 32),
+                           ("expanded_steps", 16), ("candidate_allocation", "native-heavy")):
+            with self.subTest(key=key), self.assertRaisesRegex(ValueError, "rule allocation"):
+                self.read(self.package(**{key: value}))
+
     def test_nan_weights_cannot_enter_search(self):
         with self.assertRaisesRegex(ValueError, "non-finite"):
             self.read(self.package(state_dict={"weight": torch.tensor([float('nan')])}))

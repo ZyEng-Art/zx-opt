@@ -31,7 +31,8 @@ def main():
                                                  "anchor8_resource_lr1e4_neutral32_native",
                                                  "anchor8_resource_lr1e4_r128_mc_native",
                                                  "anchor8_resource_lr1e4_r128_mc_success_native",
-                                                 "rules_native", "rules_macros", "rules_no_a", "rules_full"],
+                                                 "rules_native", "rules_macros", "rules_no_a", "rules_full",
+                                                 "cost_reference", "cost_bounds", "cost_staged", "cost_quota", "cost_staged_quota"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
     p.add_argument("--workers", type=int, default=4)
@@ -39,6 +40,8 @@ def main():
     p.add_argument("--audit-native-replay", choices=["reference", "rooted"], default="reference")
     p.add_argument("--audit-crosscheck-native-every", type=int, default=0)
     p.add_argument("--max-steps", type=int)
+    p.add_argument("--native-steps", type=int, default=256)
+    p.add_argument("--expanded-steps", type=int, default=64)
     p.add_argument("--native-flow-module", type=Path)
     p.add_argument("--save-improvement-models", action="store_true")
     p.add_argument("--allow-dirty", action="store_true")
@@ -76,7 +79,7 @@ def main():
         command = [sys.executable, "-m", "zxopt.general_search", str(folder),
                    "--input", str(ROOT/"inputs/quarl-nam-raw"/(spec["circuit"]+".qasm")),
                    "--general-zx", "--policy", spec["policy"], "--seed", str(spec["seed"]),
-                   "--selection", "global" if spec["mode"] == "global32" or spec["mode"].startswith("rules_") else "anchor",
+                   "--selection", "global" if spec["mode"] == "global32" or spec["mode"].startswith(("rules_", "cost_")) else "anchor",
                    "--anchor-candidate-cap", "32" if spec["mode"] == "anchor32" else "8",
                    "--anchor-prior", "nodes" if "_nodes" in spec["mode"] else "uniform",
                    "--learning-rate", ".0001" if "_lr1e4" in spec["mode"] else
@@ -89,6 +92,13 @@ def main():
             command += ["--max-steps", str(a.max_steps)]
         if spec["mode"].startswith("rules_"):
             command += ["--rule-profile", spec["mode"][6:].replace("_", "-")]
+        if spec["mode"].startswith("cost_") and spec["mode"] != "cost_reference":
+            command += ["--feasibility-mode", "bounds"]
+        if "staged" in spec["mode"]:
+            command += ["--rule-schedule", "staged", "--native-steps", str(a.native_steps),
+                        "--expanded-steps", str(a.expanded_steps)]
+        if "quota" in spec["mode"]:
+            command += ["--candidate-allocation", "native-heavy"]
         if "_resource" in spec["mode"]:
             command += ["--anchor-resource-mask"]
         if spec["mode"].endswith("_qasm2"):
