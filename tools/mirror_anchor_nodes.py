@@ -33,7 +33,7 @@ def main():
                 with (target/"mirror.log").open("a") as log:
                     exclusions = (["--exclude="+s for s in ("objects/", "candidates/", "invalid-extractions/", "search-state.pt")]
                                   if a.metadata_only else [])
-                    result = subprocess.run(["rsync", "-az", "--partial", "--timeout=120", "--no-owner", "--no-group",
+                    result = subprocess.run(["rsync", "--rsync-path=rsync --protocol=29", "-az", "--partial", "--timeout=120", "--no-owner", "--no-group",
                                              "--exclude=*.tmp", *exclusions, "-e", shlex.join(ssh), host+":"+base+"/source/runs/",
                                              str(live)+"/"], stdout=log, stderr=subprocess.STDOUT, timeout=1200)
                 if result.returncode:
@@ -53,7 +53,7 @@ def main():
                     if meta["path"] != base+"/"+filename:
                         raise ValueError("Archive must belong to this exact task directory")
                     part = target/(filename+".partial")
-                    subprocess.run(["rsync", "--partial", "--inplace", "--timeout=120", "-e", shlex.join(ssh),
+                    subprocess.run(["rsync", "--rsync-path=rsync --protocol=29", "--partial", "--inplace", "--timeout=120", "-e", shlex.join(ssh),
                                     host+":"+meta["path"], str(part)], check=True, timeout=3600)
                     digest = hashlib.sha256()
                     with part.open("rb") as stream:
