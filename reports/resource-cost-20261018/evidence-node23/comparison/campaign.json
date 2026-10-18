@@ -1,0 +1,212 @@
+{
+  "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df",
+  "tracked_dirty": false,
+  "cases": [
+    {
+      "name": "barenco_tof_3",
+      "sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92"
+    }
+  ],
+  "plan": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_bounds",
+      "policy": "frozen",
+      "seed": 1409,
+      "arm": "cost_bounds_frozen",
+      "folder": "barenco_tof_3/cost_bounds_frozen_s1409"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_bounds",
+      "policy": "online",
+      "seed": 1409,
+      "arm": "cost_bounds_online",
+      "folder": "barenco_tof_3/cost_bounds_online_s1409"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged",
+      "policy": "frozen",
+      "seed": 1409,
+      "arm": "cost_staged_frozen",
+      "folder": "barenco_tof_3/cost_staged_frozen_s1409"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged",
+      "policy": "online",
+      "seed": 1409,
+      "arm": "cost_staged_online",
+      "folder": "barenco_tof_3/cost_staged_online_s1409"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_quota",
+      "policy": "frozen",
+      "seed": 1409,
+      "arm": "cost_quota_frozen",
+      "folder": "barenco_tof_3/cost_quota_frozen_s1409"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_quota",
+      "policy": "online",
+      "seed": 1409,
+      "arm": "cost_quota_online",
+      "folder": "barenco_tof_3/cost_quota_online_s1409"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged_quota",
+      "policy": "frozen",
+      "seed": 1409,
+      "arm": "cost_staged_quota_frozen",
+      "folder": "barenco_tof_3/cost_staged_quota_frozen_s1409"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged_quota",
+      "policy": "online",
+      "seed": 1409,
+      "arm": "cost_staged_quota_online",
+      "folder": "barenco_tof_3/cost_staged_quota_online_s1409"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_bounds",
+      "policy": "frozen",
+      "seed": 1423,
+      "arm": "cost_bounds_frozen",
+      "folder": "barenco_tof_3/cost_bounds_frozen_s1423"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_bounds",
+      "policy": "online",
+      "seed": 1423,
+      "arm": "cost_bounds_online",
+      "folder": "barenco_tof_3/cost_bounds_online_s1423"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged",
+      "policy": "frozen",
+      "seed": 1423,
+      "arm": "cost_staged_frozen",
+      "folder": "barenco_tof_3/cost_staged_frozen_s1423"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged",
+      "policy": "online",
+      "seed": 1423,
+      "arm": "cost_staged_online",
+      "folder": "barenco_tof_3/cost_staged_online_s1423"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_quota",
+      "policy": "frozen",
+      "seed": 1423,
+      "arm": "cost_quota_frozen",
+      "folder": "barenco_tof_3/cost_quota_frozen_s1423"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_quota",
+      "policy": "online",
+      "seed": 1423,
+      "arm": "cost_quota_online",
+      "folder": "barenco_tof_3/cost_quota_online_s1423"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged_quota",
+      "policy": "frozen",
+      "seed": 1423,
+      "arm": "cost_staged_quota_frozen",
+      "folder": "barenco_tof_3/cost_staged_quota_frozen_s1423"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged_quota",
+      "policy": "online",
+      "seed": 1423,
+      "arm": "cost_staged_quota_online",
+      "folder": "barenco_tof_3/cost_staged_quota_online_s1423"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_bounds",
+      "policy": "frozen",
+      "seed": 1451,
+      "arm": "cost_bounds_frozen",
+      "folder": "barenco_tof_3/cost_bounds_frozen_s1451"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_bounds",
+      "policy": "online",
+      "seed": 1451,
+      "arm": "cost_bounds_online",
+      "folder": "barenco_tof_3/cost_bounds_online_s1451"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged",
+      "policy": "frozen",
+      "seed": 1451,
+      "arm": "cost_staged_frozen",
+      "folder": "barenco_tof_3/cost_staged_frozen_s1451"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged",
+      "policy": "online",
+      "seed": 1451,
+      "arm": "cost_staged_online",
+      "folder": "barenco_tof_3/cost_staged_online_s1451"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_quota",
+      "policy": "frozen",
+      "seed": 1451,
+      "arm": "cost_quota_frozen",
+      "folder": "barenco_tof_3/cost_quota_frozen_s1451"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_quota",
+      "policy": "online",
+      "seed": 1451,
+      "arm": "cost_quota_online",
+      "folder": "barenco_tof_3/cost_quota_online_s1451"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged_quota",
+      "policy": "frozen",
+      "seed": 1451,
+      "arm": "cost_staged_quota_frozen",
+      "folder": "barenco_tof_3/cost_staged_quota_frozen_s1451"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "cost_staged_quota",
+      "policy": "online",
+      "seed": 1451,
+      "arm": "cost_staged_quota_online",
+      "folder": "barenco_tof_3/cost_staged_quota_online_s1451"
+    }
+  ],
+  "seconds": 600.0,
+  "workers": 12,
+  "audit_workers": 8,
+  "audit_native_replay": "rooted",
+  "audit_crosscheck_native_every": 101,
+  "native_flow_module": null,
+  "scope": "independent training/search on each target; no generalization claim; count noops separately",
+  "started_unix": 1792295021.708976
+}

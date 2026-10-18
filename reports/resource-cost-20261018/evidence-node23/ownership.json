@@ -1,0 +1,14 @@
+{
+  "container_name": "dengzengyong_rlzx_resource_schedule_node23_20261018",
+  "container_id": "51cddc6c4b5da4d73db8cd8f35f48550eca260f08def2ea1dd1a6d454d60bad5",
+  "started_at": "2026-10-18T03:42:53.027185765Z",
+  "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+  "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df",
+  "cpus": 16,
+  "memory_gib": 48,
+  "workers": 12,
+  "gpu": false,
+  "node": 23,
+  "experiment": "search",
+  "probe_source": null
+}

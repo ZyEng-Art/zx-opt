@@ -1,0 +1,34 @@
+{
+  "smoke": {
+    "status": "passed",
+    "trials": 10,
+    "accepted": 400,
+    "saved_qasm": 190,
+    "scope": "40 steps each; staged windows shortened to16+8 for validation; excluded from performance tables"
+  },
+  "resume": {
+    "first_transition": 41,
+    "first_schedule_counter": 40,
+    "last_transition": 80,
+    "last_schedule_counter": 79,
+    "scope": "Full-state staged counter and active rollout continuation; excluded from performance tables"
+  },
+  "initial_source_unit_tests": 139,
+  "final_unit_tests": 140,
+  "default_promotion": {
+    "source_commit": "763020db6c621dbe02db52cab1f0f11c04717ec8",
+    "default_feasibility_mode": "bounds",
+    "rule_schedule": "static",
+    "candidate_allocation": "balanced",
+    "scope": "Only the verified preview optimization becomes default; rule scheduling remains optional"
+  },
+  "default_entry_smoke": {
+    "status": "passed",
+    "trials": 4,
+    "accepted": 160,
+    "saved_qasm": 64,
+    "explicit_modes_and_semantic_prefix_verified": true,
+    "steps": 40,
+    "scope": "Excluded from performance metrics"
+  }
+}

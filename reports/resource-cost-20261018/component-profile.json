@@ -1,0 +1,3245 @@
+{
+  "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df",
+  "profiler_sha256": "fd3b02ae30b37a89b092df44256478c95ee063159140ec0d46d534cc71b55773",
+  "runtime_sources": {
+    "zxopt/general_kernel.py": "d1e77d05e22e41b618b85d77f7f5f51fb0c8e0d8245d76e0cd3839f73d6c9406",
+    "zxopt/general_feasibility.py": "bd03d10f5bb846094fc34c289153733c665e55e3b2a5e0a0fc36cfcd624dea34"
+  },
+  "scope": "Identical full-rule bounded menus, randomized interleaving, cold caches, no extraction/PPO; all eligible menus must match exactly",
+  "records": [
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "31983b7d496c0ac4ac8b4eafe168c30f9b6bad7f31422579af3a17ab366326c2",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "62312e98d019f000ed23dcb9ebfcac7b36ba0c098387350ad65b8b2d9d0181d3",
+      "families": {
+        "H:backward": 3,
+        "I:forward": 3,
+        "H:forward": 3,
+        "spider_split": 3,
+        "EU:forward": 2,
+        "PV": 2,
+        "ID": 2,
+        "PVB": 2,
+        "E:backward": 2,
+        "phase_split": 2,
+        "PVG": 2,
+        "I:backward": 2,
+        "S:backward": 2,
+        "identity_insert": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.012125375000000105,
+          "stats": {
+            "bound_accepts": 24,
+            "bound_accepts_jpv": 17,
+            "bound_accepts_macro": 7,
+            "previews": 8,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.044264124999999765,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "31983b7d496c0ac4ac8b4eafe168c30f9b6bad7f31422579af3a17ab366326c2",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "50b449a1622296eb77681e64f35d300c493f21cd1d6d54196a9b212946d91534",
+      "families": {
+        "E:backward": 2,
+        "PVG": 3,
+        "H:forward": 3,
+        "spider_split": 3,
+        "S:backward": 3,
+        "ID": 2,
+        "H:backward": 2,
+        "phase_split": 2,
+        "PVB": 2,
+        "I:forward": 2,
+        "PV": 2,
+        "EU:forward": 2,
+        "identity_insert": 2,
+        "I:backward": 2
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.03888287500000054,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "bounds": {
+          "seconds": 0.013758791999999964,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_jpv": 16,
+            "previews": 9,
+            "bound_accepts_macro": 7,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "31983b7d496c0ac4ac8b4eafe168c30f9b6bad7f31422579af3a17ab366326c2",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "912ce9614b3ba401e6c666f9c5b474b66ab08817b70c2b7a250beb47285b0bd2",
+      "families": {
+        "spider_split": 3,
+        "PVB": 3,
+        "identity_insert": 3,
+        "EU:forward": 3,
+        "phase_split": 2,
+        "H:backward": 2,
+        "S:backward": 2,
+        "ID": 2,
+        "I:backward": 2,
+        "PVG": 2,
+        "E:backward": 2,
+        "I:forward": 2,
+        "H:forward": 2,
+        "PV": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.013674125000000537,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_macro": 8,
+            "previews": 9,
+            "bound_accepts_jpv": 15,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.04286458400000015,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "841b11b647cb3805b0b5157a93f5352bb419c06dd398e2b4c569d0fa24fe2e0f",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 21,
+      "menu_sha256": "395acbfef13a7a8032b5cb187eb25fcbfc1a2c350ac955adf8f2e849aee59c2f",
+      "families": {
+        "spider_split": 2,
+        "gadget_split": 2,
+        "H:forward": 2,
+        "S:forward": 2,
+        "H:backward": 2,
+        "spider_nest": 2,
+        "E:forward": 2,
+        "S:backward": 2,
+        "PVB": 2,
+        "EU:forward": 2,
+        "ID": 2,
+        "CP:backward": 2,
+        "PV": 2,
+        "identity_insert": 1,
+        "I:forward": 1,
+        "PVG": 1,
+        "I:backward": 1,
+        "phase_split": 1,
+        "E:backward": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.05056541599999953,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 11,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 21,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_split": 2,
+              "gadget_split": 2,
+              "spider_nest": 2,
+              "PVB": 2,
+              "identity_insert": 1,
+              "PVG": 1,
+              "phase_split": 1
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.03172329199999968,
+          "stats": {
+            "previews": 15,
+            "resource_masks": 11,
+            "bound_accepts": 17,
+            "bound_accepts_jpv": 17,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 21,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_split": 2,
+              "gadget_split": 2,
+              "spider_nest": 2,
+              "PVB": 2,
+              "identity_insert": 1,
+              "PVG": 1,
+              "phase_split": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "841b11b647cb3805b0b5157a93f5352bb419c06dd398e2b4c569d0fa24fe2e0f",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 20,
+      "menu_sha256": "ebeabf4cb66a8519c048ac9887f0aeb08261458515d2539974a857c4ae07ecb5",
+      "families": {
+        "I:backward": 2,
+        "S:backward": 2,
+        "E:forward": 2,
+        "gadget_split": 2,
+        "S:forward": 2,
+        "PV": 2,
+        "EU:forward": 2,
+        "PVG": 2,
+        "PVB": 2,
+        "I:forward": 2,
+        "E:backward": 2,
+        "identity_insert": 2,
+        "spider_nest": 2,
+        "H:backward": 1,
+        "ID": 1,
+        "phase_split": 1,
+        "H:forward": 1,
+        "spider_split": 1,
+        "CP:backward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.030859458000000117,
+          "stats": {
+            "bound_accepts": 17,
+            "bound_accepts_jpv": 17,
+            "previews": 15,
+            "resource_masks": 12,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 20,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "gadget_split": 2,
+              "PVG": 2,
+              "PVB": 2,
+              "identity_insert": 2,
+              "spider_nest": 2,
+              "phase_split": 1,
+              "spider_split": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.04756283299999975,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 12,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 20,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "gadget_split": 2,
+              "PVG": 2,
+              "PVB": 2,
+              "identity_insert": 2,
+              "spider_nest": 2,
+              "phase_split": 1,
+              "spider_split": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "841b11b647cb3805b0b5157a93f5352bb419c06dd398e2b4c569d0fa24fe2e0f",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 22,
+      "menu_sha256": "7774972aeec911bd8074c0fa209d0c67aa95cc9b000b3e6ee6e544cec952dac8",
+      "families": {
+        "I:backward": 2,
+        "identity_insert": 2,
+        "PVG": 2,
+        "spider_split": 2,
+        "E:forward": 2,
+        "H:backward": 2,
+        "PVB": 2,
+        "ID": 2,
+        "I:forward": 2,
+        "CP:backward": 2,
+        "E:backward": 2,
+        "S:backward": 2,
+        "S:forward": 2,
+        "spider_nest": 1,
+        "PV": 1,
+        "phase_split": 1,
+        "H:forward": 1,
+        "gadget_split": 1,
+        "EU:forward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.028831709000000316,
+          "stats": {
+            "bound_accepts": 18,
+            "bound_accepts_jpv": 18,
+            "previews": 14,
+            "resource_masks": 10,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 22,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "identity_insert": 2,
+              "spider_split": 2,
+              "PVB": 2,
+              "spider_nest": 1,
+              "PV": 1,
+              "phase_split": 1,
+              "gadget_split": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.04382162500000053,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 10,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 22,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "identity_insert": 2,
+              "spider_split": 2,
+              "PVB": 2,
+              "spider_nest": 1,
+              "PV": 1,
+              "phase_split": 1,
+              "gadget_split": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "96ee7b04ad3556aec7f6b141c8ea69a93a8f8a1a35aa894284c9a8e83615055f",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "f38831e39b8dc5279631d441076bbd156f8cad0e251430e6626bcadce463372e",
+      "families": {
+        "spider_split": 2,
+        "PVG": 2,
+        "CP:backward": 2,
+        "I:backward": 2,
+        "E:backward": 2,
+        "H:backward": 2,
+        "E:forward": 1,
+        "identity_insert": 2,
+        "PV": 2,
+        "I:forward": 2,
+        "gadget_split": 2,
+        "phase_transfer": 2,
+        "EU:forward": 2,
+        "S:backward": 1,
+        "spider_nest": 1,
+        "PVB": 1,
+        "S:forward": 1,
+        "H:forward": 1,
+        "phase_split": 1,
+        "ID": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.014334083000000497,
+          "stats": {
+            "bound_accepts": 26,
+            "bound_accepts_macro": 10,
+            "previews": 6,
+            "bound_accepts_jpv": 16,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.13396333300000052,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "96ee7b04ad3556aec7f6b141c8ea69a93a8f8a1a35aa894284c9a8e83615055f",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "938230efa304486cf8cfc10004b8e1484a3656eba4aeff905c94305242566849",
+      "families": {
+        "spider_split": 2,
+        "S:forward": 1,
+        "phase_transfer": 2,
+        "PVG": 2,
+        "phase_split": 2,
+        "H:forward": 2,
+        "PVB": 2,
+        "spider_nest": 2,
+        "PV": 2,
+        "identity_insert": 2,
+        "E:backward": 2,
+        "I:forward": 2,
+        "CP:backward": 2,
+        "H:backward": 1,
+        "E:forward": 1,
+        "S:backward": 1,
+        "gadget_split": 1,
+        "ID": 1,
+        "I:backward": 1,
+        "EU:forward": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.054757834000000116,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.014688500000000104,
+          "stats": {
+            "bound_accepts": 25,
+            "bound_accepts_macro": 11,
+            "bound_accepts_jpv": 14,
+            "previews": 7,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "96ee7b04ad3556aec7f6b141c8ea69a93a8f8a1a35aa894284c9a8e83615055f",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "cdc4abea8e050d0b8a46be9822bb8147ab1244bda0a6491396e4176583fa5ac5",
+      "families": {
+        "phase_split": 2,
+        "CP:backward": 2,
+        "spider_nest": 2,
+        "identity_insert": 2,
+        "H:forward": 2,
+        "E:forward": 1,
+        "spider_split": 2,
+        "ID": 2,
+        "H:backward": 2,
+        "phase_transfer": 2,
+        "S:backward": 2,
+        "S:forward": 1,
+        "E:backward": 2,
+        "I:forward": 2,
+        "PVB": 1,
+        "gadget_split": 1,
+        "PVG": 1,
+        "EU:forward": 1,
+        "I:backward": 1,
+        "PV": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.049436791000000646,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "spider_nest": 1
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.011717707999999938,
+          "stats": {
+            "bound_accepts": 26,
+            "bound_accepts_macro": 10,
+            "bound_accepts_jpv": 16,
+            "previews": 6,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "spider_nest": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "582850ee247cdb5e1a967455f743c52be32e33260c1e32909095822e073bf37e",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "eac91b4d5615f3acd092e205061ccea1ea4b643d2c90a78aa7e16a777d6bd89b",
+      "families": {
+        "H:backward": 3,
+        "spider_split": 3,
+        "PVB": 3,
+        "E:backward": 2,
+        "phase_split": 3,
+        "identity_insert": 2,
+        "EU:forward": 2,
+        "ID": 2,
+        "S:backward": 2,
+        "S:forward": 2,
+        "PV": 2,
+        "PVG": 2,
+        "H:forward": 2,
+        "I:backward": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.010938792000000142,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_jpv": 15,
+            "bound_accepts_macro": 8,
+            "previews": 9,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.030178790999999983,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "582850ee247cdb5e1a967455f743c52be32e33260c1e32909095822e073bf37e",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "f6dcbe40284fbad5ec11b0fcc0ffd4f1280928b855c89ab318411df91d739ab2",
+      "families": {
+        "spider_split": 3,
+        "S:backward": 3,
+        "E:backward": 2,
+        "phase_split": 3,
+        "EU:forward": 3,
+        "PVB": 2,
+        "identity_insert": 2,
+        "ID": 2,
+        "H:forward": 2,
+        "I:backward": 2,
+        "S:forward": 2,
+        "H:backward": 2,
+        "PVG": 2,
+        "PV": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.009449124999999725,
+          "stats": {
+            "bound_accepts": 24,
+            "bound_accepts_macro": 8,
+            "bound_accepts_jpv": 16,
+            "previews": 8,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.027475624999999226,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "582850ee247cdb5e1a967455f743c52be32e33260c1e32909095822e073bf37e",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "800d5b7771a4f7fa4ada47602ecba116faab04440f82c253c01b07dcb24051b2",
+      "families": {
+        "PV": 3,
+        "S:backward": 3,
+        "EU:forward": 3,
+        "PVB": 3,
+        "E:backward": 2,
+        "H:forward": 2,
+        "phase_split": 2,
+        "identity_insert": 2,
+        "PVG": 2,
+        "ID": 2,
+        "S:forward": 2,
+        "spider_split": 2,
+        "H:backward": 2,
+        "I:backward": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.011763832999999835,
+          "stats": {
+            "previews": 10,
+            "bound_accepts": 22,
+            "bound_accepts_jpv": 16,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.02482787500000061,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "30d02a828a7b9ee28f6520ef230e3770c4f35dbbc0263ac57c8fb4e6b6f58376",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "9ce3f0cfa0ec46ca3ee29cca25778ed40349043978c9c1e2ca07b95176505cd7",
+      "families": {
+        "spider_nest": 2,
+        "ID": 2,
+        "PVG": 2,
+        "H:forward": 2,
+        "S:backward": 2,
+        "gadget_split": 2,
+        "PVB": 2,
+        "I:backward": 2,
+        "phase_split": 2,
+        "H:backward": 2,
+        "E:backward": 2,
+        "identity_insert": 2,
+        "EU:forward": 2,
+        "S:forward": 2,
+        "spider_split": 2,
+        "PV": 1,
+        "CP:backward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.011667916999999584,
+          "stats": {
+            "bound_accepts": 25,
+            "bound_accepts_macro": 10,
+            "previews": 7,
+            "bound_accepts_jpv": 15,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.036795875000000144,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "30d02a828a7b9ee28f6520ef230e3770c4f35dbbc0263ac57c8fb4e6b6f58376",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 31,
+      "menu_sha256": "8d486d5a48968a535bea44f9d106986c51a8d2648c2eb5a9ec6f94a081aee51d",
+      "families": {
+        "H:backward": 2,
+        "S:backward": 2,
+        "E:backward": 2,
+        "CP:backward": 2,
+        "spider_split": 2,
+        "identity_insert": 2,
+        "phase_split": 2,
+        "PVG": 2,
+        "PV": 2,
+        "EU:forward": 2,
+        "H:forward": 2,
+        "spider_nest": 2,
+        "S:forward": 2,
+        "PVB": 2,
+        "gadget_split": 2,
+        "I:backward": 1,
+        "ID": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.01293254100000052,
+          "stats": {
+            "bound_accepts": 24,
+            "bound_accepts_jpv": 15,
+            "bound_accepts_macro": 9,
+            "previews": 8,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.03487550000000006,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "30d02a828a7b9ee28f6520ef230e3770c4f35dbbc0263ac57c8fb4e6b6f58376",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "28613ae818c98746a3964f4fce9f68295fd2a2c83b27ea2f09e0de4c440e72ed",
+      "families": {
+        "ID": 2,
+        "S:forward": 2,
+        "CP:backward": 2,
+        "spider_split": 2,
+        "H:backward": 2,
+        "S:backward": 2,
+        "identity_insert": 2,
+        "E:backward": 2,
+        "phase_split": 2,
+        "gadget_split": 2,
+        "PVB": 2,
+        "spider_nest": 2,
+        "EU:forward": 2,
+        "H:forward": 2,
+        "I:backward": 2,
+        "PV": 1,
+        "PVG": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.008753249999999824,
+          "stats": {
+            "previews": 6,
+            "bound_accepts": 26,
+            "bound_accepts_jpv": 16,
+            "bound_accepts_macro": 10,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.09866712500000041,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "5a1646835faf218f590a5b33e38b908dca213bf2060bf1f248110becdd8288c7",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "de70ef70b94651cc280b4f2f0a8028194c274d2e8ec48c56385676c88c9a2a1b",
+      "families": {
+        "spider_nest": 2,
+        "ID": 2,
+        "E:forward": 1,
+        "spider_split": 2,
+        "I:backward": 2,
+        "EU:forward": 2,
+        "gadget_split": 2,
+        "PVB": 2,
+        "E:backward": 2,
+        "S:forward": 1,
+        "H:forward": 2,
+        "I:forward": 2,
+        "phase_transfer": 2,
+        "PVG": 2,
+        "phase_split": 1,
+        "identity_insert": 1,
+        "S:backward": 1,
+        "CP:backward": 1,
+        "PV": 1,
+        "H:backward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.01674762500000071,
+          "stats": {
+            "bound_accepts": 25,
+            "bound_accepts_macro": 10,
+            "previews": 7,
+            "bound_accepts_jpv": 15,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.05316479200000046,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "5a1646835faf218f590a5b33e38b908dca213bf2060bf1f248110becdd8288c7",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 31,
+      "menu_sha256": "1d5b0d3f6047c0bf6d7a34baf19777deafd620be060ef205c2383b4f725fd806",
+      "families": {
+        "EU:forward": 2,
+        "gadget_split": 2,
+        "H:forward": 2,
+        "I:backward": 2,
+        "I:forward": 2,
+        "identity_insert": 2,
+        "H:backward": 2,
+        "S:backward": 2,
+        "E:forward": 1,
+        "phase_split": 2,
+        "spider_nest": 2,
+        "PVB": 2,
+        "E:backward": 2,
+        "ID": 1,
+        "spider_split": 1,
+        "phase_transfer": 1,
+        "PVG": 1,
+        "CP:backward": 1,
+        "S:forward": 1,
+        "PV": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.010398125000000036,
+          "stats": {
+            "bound_accepts": 27,
+            "bound_accepts_jpv": 17,
+            "bound_accepts_macro": 10,
+            "previews": 5,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.06199591599999987,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "pack_sha256": "c265d26b616cedbd5f845283e118d2b82bbc26cf05fdf6acd2ecf52b4df9ba5c",
+      "state": "5a1646835faf218f590a5b33e38b908dca213bf2060bf1f248110becdd8288c7",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "2176ebd9283df115fa62eeed1c8bd1e458edf404d32f3a30a292f93cd86e4f2f",
+      "families": {
+        "PVB": 2,
+        "I:forward": 2,
+        "EU:forward": 2,
+        "PV": 2,
+        "phase_transfer": 2,
+        "E:backward": 2,
+        "gadget_split": 2,
+        "phase_split": 2,
+        "H:backward": 2,
+        "S:forward": 1,
+        "PVG": 2,
+        "E:forward": 1,
+        "CP:backward": 2,
+        "spider_nest": 2,
+        "S:backward": 1,
+        "identity_insert": 1,
+        "I:backward": 1,
+        "ID": 1,
+        "spider_split": 1,
+        "H:forward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.016318000000000055,
+          "stats": {
+            "previews": 7,
+            "resource_masks": 2,
+            "bound_accepts": 25,
+            "bound_accepts_jpv": 15,
+            "bound_accepts_macro": 10,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "PV": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.05347658399999933,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "PV": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "2388b52b2580b333f472bc5918b204b20530a4b4ffcc508aa7759c43a1387da8",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "4fbdf6b43c1171d7ac091c94fe4b6e24ff445247eeb1209f916d1c42421449aa",
+      "families": {
+        "H:forward": 3,
+        "PV": 3,
+        "H:backward": 2,
+        "PVB": 2,
+        "I:forward": 2,
+        "E:backward": 2,
+        "phase_split": 2,
+        "LC": 2,
+        "identity_insert": 2,
+        "S:backward": 2,
+        "spider_split": 2,
+        "I:backward": 2,
+        "PVG": 2,
+        "ID": 2,
+        "EU:forward": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.017254416000000106,
+          "stats": {
+            "bound_accepts": 21,
+            "bound_accepts_jpv": 15,
+            "previews": 11,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.042320624999999445,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "2388b52b2580b333f472bc5918b204b20530a4b4ffcc508aa7759c43a1387da8",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "8d119a3e05d07ee54835354230e488f06fe4b023d4a4133abbdb5317b1eaf648",
+      "families": {
+        "I:backward": 3,
+        "I:forward": 3,
+        "LC": 2,
+        "EU:forward": 2,
+        "H:forward": 2,
+        "E:backward": 2,
+        "S:backward": 2,
+        "PVB": 2,
+        "PVG": 2,
+        "H:backward": 2,
+        "spider_split": 2,
+        "ID": 2,
+        "PV": 2,
+        "identity_insert": 2,
+        "phase_split": 2
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.04064183400000054,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "bounds": {
+          "seconds": 0.014246124999999665,
+          "stats": {
+            "bound_accepts": 22,
+            "bound_accepts_jpv": 16,
+            "previews": 10,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "2388b52b2580b333f472bc5918b204b20530a4b4ffcc508aa7759c43a1387da8",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "2d051cb19e0fb9bf6d843f3449a7a7cde81d92c8c8d5e07d531e4e0ec3884fc1",
+      "families": {
+        "spider_split": 3,
+        "EU:forward": 3,
+        "H:forward": 2,
+        "E:backward": 2,
+        "S:backward": 2,
+        "PVG": 2,
+        "ID": 2,
+        "PVB": 2,
+        "I:backward": 2,
+        "phase_split": 2,
+        "I:forward": 2,
+        "PV": 2,
+        "identity_insert": 2,
+        "LC": 2,
+        "H:backward": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.014517166999999276,
+          "stats": {
+            "bound_accepts": 22,
+            "bound_accepts_macro": 7,
+            "bound_accepts_jpv": 15,
+            "previews": 10,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.040581709000000465,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "2ef8c0b7bbc3bc048fb355cfd5041f1989e027ec41d5d3826ce8db837ed83bba",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "187ce12c1b285b3f7b6d7c16f866178ca18e8ad80726c39b995d89b5f1b3c1c8",
+      "families": {
+        "EU:forward": 2,
+        "identity_insert": 2,
+        "I:backward": 2,
+        "PVB": 2,
+        "E:backward": 2,
+        "spider_nest": 2,
+        "PVG": 2,
+        "phase_split": 2,
+        "H:forward": 2,
+        "PV": 2,
+        "I:forward": 2,
+        "S:backward": 2,
+        "ID": 2,
+        "spider_split": 2,
+        "gadget_split": 2,
+        "H:backward": 1,
+        "phase_transfer": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.022872124999999244,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_jpv": 13,
+            "bound_accepts_macro": 10,
+            "previews": 9,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "spider_nest": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.06477058300000049,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "spider_nest": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "2ef8c0b7bbc3bc048fb355cfd5041f1989e027ec41d5d3826ce8db837ed83bba",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 31,
+      "menu_sha256": "2b5bf2746b26ffb0d5f5de22b6f1339aa567a54ded39e469a84b254f57d58ac5",
+      "families": {
+        "spider_split": 2,
+        "PVG": 2,
+        "PVB": 2,
+        "H:forward": 2,
+        "I:backward": 2,
+        "spider_nest": 2,
+        "S:backward": 2,
+        "gadget_split": 2,
+        "I:forward": 2,
+        "H:backward": 2,
+        "identity_insert": 2,
+        "E:backward": 2,
+        "phase_transfer": 2,
+        "phase_split": 2,
+        "PV": 2,
+        "ID": 1,
+        "EU:forward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.01812233299999999,
+          "stats": {
+            "bound_accepts": 24,
+            "bound_accepts_macro": 11,
+            "previews": 8,
+            "bound_accepts_jpv": 13,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.060782666000000596,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "2ef8c0b7bbc3bc048fb355cfd5041f1989e027ec41d5d3826ce8db837ed83bba",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 29,
+      "menu_sha256": "3312a0e4b07242ffd409198a94734381b1f941af8fa08bc3e32a6ccf8b74e7ee",
+      "families": {
+        "PV": 2,
+        "phase_split": 2,
+        "I:forward": 2,
+        "gadget_split": 2,
+        "H:forward": 2,
+        "S:backward": 2,
+        "PVB": 2,
+        "spider_split": 2,
+        "spider_nest": 2,
+        "phase_transfer": 2,
+        "I:backward": 2,
+        "ID": 2,
+        "E:backward": 2,
+        "EU:forward": 2,
+        "H:backward": 2,
+        "identity_insert": 1,
+        "PVG": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.01869979100000041,
+          "stats": {
+            "previews": 8,
+            "bound_accepts": 24,
+            "bound_accepts_macro": 10,
+            "bound_accepts_jpv": 14,
+            "resource_masks": 3,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 29,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2,
+              "spider_nest": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.05607120799999965,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 3,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 29,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2,
+              "spider_nest": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "923a433cc9abc45f9b5a99ee223059efd41cc8274dd8af1fefca0162352efd27",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "96d5e9ee1f51bc0e49507fe48683576575b75d9afeb7b017aff744259e16dbf9",
+      "families": {
+        "E:backward": 2,
+        "H:backward": 2,
+        "EU:forward": 2,
+        "PV": 2,
+        "PVG": 2,
+        "identity_insert": 2,
+        "PVB": 2,
+        "ID": 2,
+        "S:backward": 2,
+        "spider_split": 2,
+        "CP:backward": 2,
+        "LC": 2,
+        "I:backward": 2,
+        "H:forward": 2,
+        "gadget_split": 2,
+        "I:forward": 1,
+        "phase_split": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.01714837499999966,
+          "stats": {
+            "bound_accepts": 22,
+            "bound_accepts_jpv": 15,
+            "previews": 10,
+            "bound_accepts_macro": 7,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.0433602500000001,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "923a433cc9abc45f9b5a99ee223059efd41cc8274dd8af1fefca0162352efd27",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "99c30560942c749e6d2b476d3b7867871e10b3a7b00564f77c18ce7c1e5b2397",
+      "families": {
+        "I:forward": 2,
+        "H:backward": 2,
+        "I:backward": 2,
+        "CP:backward": 2,
+        "EU:forward": 2,
+        "gadget_split": 2,
+        "S:backward": 2,
+        "LC": 2,
+        "spider_split": 2,
+        "H:forward": 2,
+        "ID": 2,
+        "PVG": 2,
+        "PVB": 2,
+        "identity_insert": 2,
+        "phase_split": 2,
+        "E:backward": 1,
+        "PV": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.01440433299999988,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_jpv": 15,
+            "bound_accepts_macro": 8,
+            "previews": 9,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.04370283300000022,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "923a433cc9abc45f9b5a99ee223059efd41cc8274dd8af1fefca0162352efd27",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "71985192cbf892b7d85d7bb4a52d34756cd19a3947b749386007d8eddc836832",
+      "families": {
+        "PV": 2,
+        "PVG": 2,
+        "S:backward": 2,
+        "ID": 2,
+        "gadget_split": 2,
+        "LC": 2,
+        "EU:forward": 2,
+        "PVB": 2,
+        "H:backward": 2,
+        "identity_insert": 2,
+        "H:forward": 2,
+        "phase_split": 2,
+        "spider_split": 2,
+        "I:forward": 2,
+        "E:backward": 2,
+        "I:backward": 1,
+        "CP:backward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.01507016700000019,
+          "stats": {
+            "previews": 10,
+            "bound_accepts": 22,
+            "bound_accepts_jpv": 14,
+            "bound_accepts_macro": 8,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 0.11250025000000008,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "375f4f38831df3700b2ca2de9864b05270f751f58c258fe94da27a5d510ef3ce",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 31,
+      "menu_sha256": "b3650e4e0b46e994a0a95ad963cdafe749830b93480091d16b2c2b7f86c1ff4d",
+      "families": {
+        "EU:forward": 2,
+        "LC": 2,
+        "H:backward": 2,
+        "S:backward": 2,
+        "phase_split": 2,
+        "I:backward": 2,
+        "ID": 2,
+        "E:backward": 2,
+        "CP:backward": 1,
+        "PVG": 2,
+        "PVB": 2,
+        "spider_nest": 1,
+        "spider_split": 1,
+        "S:forward": 1,
+        "PV": 1,
+        "I:forward": 1,
+        "identity_insert": 1,
+        "E:forward": 1,
+        "gadget_split": 1,
+        "phase_transfer": 1,
+        "B:backward": 1,
+        "H:forward": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.05864024999999984,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.01879045899999987,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_jpv": 16,
+            "previews": 9,
+            "bound_accepts_macro": 7,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "375f4f38831df3700b2ca2de9864b05270f751f58c258fe94da27a5d510ef3ce",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "3ca6b4cda1273352099ab7b36fffcc33eb5c6d2d8d64638cfabf9b8bba68c848",
+      "families": {
+        "phase_split": 2,
+        "LC": 2,
+        "E:backward": 2,
+        "identity_insert": 2,
+        "B:backward": 2,
+        "S:forward": 2,
+        "EU:forward": 2,
+        "PVG": 2,
+        "spider_nest": 2,
+        "PVB": 2,
+        "phase_transfer": 2,
+        "H:backward": 1,
+        "spider_split": 1,
+        "E:forward": 1,
+        "I:forward": 1,
+        "I:backward": 1,
+        "S:backward": 1,
+        "ID": 1,
+        "gadget_split": 1,
+        "PV": 1,
+        "H:forward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.016858041999999962,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_macro": 9,
+            "previews": 9,
+            "bound_accepts_jpv": 14,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "spider_nest": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.05100474999999971,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "spider_nest": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "375f4f38831df3700b2ca2de9864b05270f751f58c258fe94da27a5d510ef3ce",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 31,
+      "menu_sha256": "e40da30db7dc2c412d1c0f18c8405254fd69c71d947dc44a4801219b26167376",
+      "families": {
+        "phase_transfer": 2,
+        "H:backward": 2,
+        "B:backward": 2,
+        "EU:forward": 2,
+        "E:forward": 1,
+        "S:forward": 2,
+        "PVG": 2,
+        "S:backward": 2,
+        "gadget_split": 2,
+        "identity_insert": 2,
+        "PV": 2,
+        "I:forward": 1,
+        "E:backward": 1,
+        "LC": 1,
+        "ID": 1,
+        "CP:backward": 1,
+        "spider_nest": 1,
+        "H:forward": 1,
+        "I:backward": 1,
+        "spider_split": 1,
+        "phase_split": 1,
+        "PVB": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.04841408299999994,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.013965624999999982,
+          "stats": {
+            "bound_accepts": 25,
+            "bound_accepts_macro": 9,
+            "bound_accepts_jpv": 16,
+            "previews": 7,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "e307812b6676f27a41ea333817cd9d316bf2448923a76872a9f7198e91f3205e",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 28,
+      "menu_sha256": "302640fd3925b5eec8feb0d3ab8581c5f1f1bead8b75d47d5b374ed72d33d5b2",
+      "families": {
+        "PVB": 2,
+        "spider_nest": 1,
+        "I:forward": 2,
+        "identity_insert": 2,
+        "H:forward": 2,
+        "H:backward": 2,
+        "EU:forward": 2,
+        "gadget_split": 2,
+        "S:backward": 2,
+        "E:forward": 2,
+        "spider_split": 2,
+        "PVG": 2,
+        "PV": 2,
+        "phase_split": 2,
+        "E:backward": 2,
+        "ID": 2,
+        "I:backward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.024411249999999995,
+          "stats": {
+            "previews": 11,
+            "resource_masks": 4,
+            "bound_accepts": 21,
+            "bound_accepts_jpv": 15,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 28,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1,
+              "gadget_split": 2,
+              "PVB": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.05593179199999998,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 4,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 28,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1,
+              "gadget_split": 2,
+              "PVB": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "e307812b6676f27a41ea333817cd9d316bf2448923a76872a9f7198e91f3205e",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 26,
+      "menu_sha256": "cb89549985d973d68ba9348f5dc71cda46dd18f1ec3ee89055ad99ad1028d3c3",
+      "families": {
+        "EU:forward": 2,
+        "spider_nest": 1,
+        "S:backward": 2,
+        "ID": 2,
+        "gadget_split": 2,
+        "E:forward": 2,
+        "PVG": 2,
+        "phase_split": 2,
+        "E:backward": 2,
+        "I:forward": 2,
+        "spider_split": 2,
+        "H:backward": 2,
+        "PVB": 2,
+        "PV": 2,
+        "CP:backward": 1,
+        "identity_insert": 2,
+        "I:backward": 1,
+        "H:forward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.03425441700000054,
+          "stats": {
+            "bound_accepts": 21,
+            "bound_accepts_jpv": 15,
+            "previews": 11,
+            "resource_masks": 6,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 26,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1,
+              "gadget_split": 2,
+              "PVG": 2,
+              "PV": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.08710395900000023,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 26,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1,
+              "gadget_split": 2,
+              "PVG": 2,
+              "PV": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "e307812b6676f27a41ea333817cd9d316bf2448923a76872a9f7198e91f3205e",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 29,
+      "menu_sha256": "839907f46f26f2db4728c2a4053facb13da74dee1255450f8c30b1926b4c24f6",
+      "families": {
+        "ID": 2,
+        "gadget_split": 2,
+        "spider_nest": 1,
+        "S:backward": 2,
+        "I:backward": 2,
+        "E:backward": 2,
+        "E:forward": 2,
+        "PV": 2,
+        "EU:forward": 2,
+        "CP:backward": 1,
+        "PVB": 2,
+        "identity_insert": 2,
+        "phase_split": 2,
+        "spider_split": 2,
+        "I:forward": 2,
+        "H:forward": 2,
+        "PVG": 1,
+        "H:backward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.021214666999999743,
+          "stats": {
+            "previews": 10,
+            "resource_masks": 3,
+            "bound_accepts": 22,
+            "bound_accepts_jpv": 16,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 29,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "gadget_split": 2,
+              "spider_nest": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.12067412500000074,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 3,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 29,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "gadget_split": 2,
+              "spider_nest": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "6063a7485ac127abf4bb480a5995696dfc6ccdc5bd7fefcf2900f6dff8b6a7a8",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 31,
+      "menu_sha256": "196441445a93a17819b46e0174ba340dc429dbe6a2d88e7b26dbff773227544b",
+      "families": {
+        "H:forward": 2,
+        "phase_split": 2,
+        "S:backward": 2,
+        "PV": 2,
+        "gadget_split": 2,
+        "I:backward": 2,
+        "phase_transfer": 2,
+        "ID": 2,
+        "PVG": 2,
+        "I:forward": 2,
+        "EU:forward": 2,
+        "E:backward": 2,
+        "H:backward": 2,
+        "CP:backward": 2,
+        "PVB": 1,
+        "identity_insert": 1,
+        "spider_nest": 1,
+        "spider_split": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.05631524999999993,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVG": 1
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.016027041000000075,
+          "stats": {
+            "bound_accepts": 25,
+            "bound_accepts_jpv": 16,
+            "bound_accepts_macro": 9,
+            "previews": 7,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVG": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "6063a7485ac127abf4bb480a5995696dfc6ccdc5bd7fefcf2900f6dff8b6a7a8",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 29,
+      "menu_sha256": "2f3159b45799c386c355f8b7ae11d6adf8af22834b8ce62a2ee362c7696cbeb2",
+      "families": {
+        "H:backward": 2,
+        "H:forward": 2,
+        "gadget_split": 2,
+        "I:forward": 2,
+        "S:backward": 2,
+        "ID": 2,
+        "phase_split": 2,
+        "spider_split": 2,
+        "PVB": 2,
+        "PVG": 2,
+        "phase_transfer": 2,
+        "spider_nest": 2,
+        "CP:backward": 2,
+        "EU:forward": 2,
+        "E:backward": 1,
+        "PV": 1,
+        "I:backward": 1,
+        "identity_insert": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.01870804100000001,
+          "stats": {
+            "bound_accepts": 24,
+            "bound_accepts_jpv": 14,
+            "bound_accepts_macro": 10,
+            "previews": 8,
+            "resource_masks": 3,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 29,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "PVG": 1,
+              "spider_nest": 1
+            }
+          }
+        },
+        "reference": {
+          "seconds": 0.05600370799999954,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 3,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 29,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1,
+              "PVG": 1,
+              "spider_nest": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "mod5_4",
+      "pack_sha256": "5beee0efd1667fe1fec885c4471389d19630f927c89cde681d7fae77425deff2",
+      "state": "6063a7485ac127abf4bb480a5995696dfc6ccdc5bd7fefcf2900f6dff8b6a7a8",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "6f0a6072d92afcf2d4f0d99f8edaa5f3cd3a5bb2ba3e171f830e5a310503ad1c",
+      "families": {
+        "phase_transfer": 2,
+        "ID": 2,
+        "identity_insert": 2,
+        "spider_nest": 2,
+        "PVG": 2,
+        "spider_split": 2,
+        "PVB": 2,
+        "H:forward": 2,
+        "CP:backward": 1,
+        "EU:forward": 2,
+        "S:backward": 2,
+        "E:backward": 2,
+        "H:backward": 2,
+        "I:backward": 2,
+        "PV": 2,
+        "phase_split": 1,
+        "gadget_split": 1,
+        "I:forward": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 0.053539916000000076,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1,
+              "PVG": 1
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.018942292000000194,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_macro": 9,
+            "previews": 9,
+            "bound_accepts_jpv": 14,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "spider_nest": 1,
+              "PVG": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "adder_8",
+      "pack_sha256": "37aa6ffa02a3044d509fcb1bf1bd2741a4e997883d3809d3d79758623e1b715e",
+      "state": "74a12f85116c55b24d07166107c3c85e5af2895009bc1e0e6c5ae64cd7e310a9",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "4cf3c8c966440a184c17abd0283c85c27a40319451267ccaef6fa44860e60215",
+      "families": {
+        "I:forward": 3,
+        "ID": 3,
+        "identity_insert": 2,
+        "spider_split": 2,
+        "LC": 2,
+        "S:backward": 2,
+        "phase_split": 2,
+        "PVG": 2,
+        "PVB": 2,
+        "H:forward": 2,
+        "E:backward": 2,
+        "PV": 2,
+        "H:backward": 2,
+        "I:backward": 2,
+        "EU:forward": 2
+      },
+      "measured": {
+        "reference": {
+          "seconds": 1.1645419169999993,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "bounds": {
+          "seconds": 0.6841809170000008,
+          "stats": {
+            "bound_accepts": 21,
+            "bound_accepts_jpv": 15,
+            "previews": 11,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "adder_8",
+      "pack_sha256": "37aa6ffa02a3044d509fcb1bf1bd2741a4e997883d3809d3d79758623e1b715e",
+      "state": "74a12f85116c55b24d07166107c3c85e5af2895009bc1e0e6c5ae64cd7e310a9",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "8c166e3ac4f1575ef7cfc74316beea4a645d122adb752dd397d2aaf252ea8b11",
+      "families": {
+        "I:forward": 3,
+        "PVG": 3,
+        "LC": 2,
+        "E:backward": 2,
+        "PV": 2,
+        "ID": 2,
+        "PVB": 2,
+        "identity_insert": 2,
+        "spider_split": 2,
+        "phase_split": 2,
+        "EU:forward": 2,
+        "H:forward": 2,
+        "S:backward": 2,
+        "H:backward": 2,
+        "I:backward": 2
+      },
+      "measured": {
+        "reference": {
+          "seconds": 1.163468416999999,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "bounds": {
+          "seconds": 0.6133187079999995,
+          "stats": {
+            "bound_accepts": 21,
+            "bound_accepts_jpv": 15,
+            "previews": 11,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "adder_8",
+      "pack_sha256": "37aa6ffa02a3044d509fcb1bf1bd2741a4e997883d3809d3d79758623e1b715e",
+      "state": "74a12f85116c55b24d07166107c3c85e5af2895009bc1e0e6c5ae64cd7e310a9",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "76baf7deda4a2c90579a855bb93db5b652d01c85d76c8388660ab7a260443db7",
+      "families": {
+        "EU:forward": 3,
+        "PVB": 3,
+        "S:backward": 2,
+        "phase_split": 2,
+        "I:backward": 2,
+        "PVG": 2,
+        "H:backward": 2,
+        "ID": 2,
+        "H:forward": 2,
+        "identity_insert": 2,
+        "E:backward": 2,
+        "spider_split": 2,
+        "LC": 2,
+        "PV": 2,
+        "I:forward": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.7031227920000003,
+          "stats": {
+            "bound_accepts": 21,
+            "bound_accepts_jpv": 15,
+            "previews": 11,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 1.1519426670000001,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "adder_8",
+      "pack_sha256": "37aa6ffa02a3044d509fcb1bf1bd2741a4e997883d3809d3d79758623e1b715e",
+      "state": "74cabaa28f53bd5573ae884125ee948f74d5227edd43af59f9764c3cdd3afbfd",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "c914d2aab2b6f4769bb4529be2fe36e859efeec27bb8477a83b0a687f9da8fd1",
+      "families": {
+        "H:backward": 2,
+        "EU:forward": 2,
+        "LC": 2,
+        "PVG": 2,
+        "PV": 2,
+        "E:backward": 2,
+        "identity_insert": 2,
+        "S:forward": 2,
+        "ID": 2,
+        "PVB": 2,
+        "I:forward": 2,
+        "phase_split": 2,
+        "spider_split": 2,
+        "I:backward": 2,
+        "H:forward": 2,
+        "S:backward": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.5613574999999997,
+          "stats": {
+            "bound_accepts": 22,
+            "bound_accepts_jpv": 16,
+            "previews": 10,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 1.204075624999998,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "adder_8",
+      "pack_sha256": "37aa6ffa02a3044d509fcb1bf1bd2741a4e997883d3809d3d79758623e1b715e",
+      "state": "74cabaa28f53bd5573ae884125ee948f74d5227edd43af59f9764c3cdd3afbfd",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "c1b7cc64565551c2950d04abb199e87a88fbdf1b97ff98af341a766d2a8a1daf",
+      "families": {
+        "spider_split": 2,
+        "identity_insert": 2,
+        "I:backward": 2,
+        "PVG": 2,
+        "PV": 2,
+        "H:backward": 2,
+        "LC": 2,
+        "I:forward": 2,
+        "E:backward": 2,
+        "S:backward": 2,
+        "phase_split": 2,
+        "ID": 2,
+        "EU:forward": 2,
+        "PVB": 2,
+        "H:forward": 2,
+        "S:forward": 2
+      },
+      "measured": {
+        "reference": {
+          "seconds": 1.4539669589999988,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "bounds": {
+          "seconds": 0.5618500420000032,
+          "stats": {
+            "bound_accepts": 22,
+            "bound_accepts_macro": 6,
+            "bound_accepts_jpv": 16,
+            "previews": 10,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "adder_8",
+      "pack_sha256": "37aa6ffa02a3044d509fcb1bf1bd2741a4e997883d3809d3d79758623e1b715e",
+      "state": "74cabaa28f53bd5573ae884125ee948f74d5227edd43af59f9764c3cdd3afbfd",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 32,
+      "menu_sha256": "2e4f72a85e6eee323bfe70e0fee4fca67c50fa8a8b2c67c73ed499c2175a4b6e",
+      "families": {
+        "PVB": 2,
+        "H:forward": 2,
+        "S:forward": 2,
+        "EU:forward": 2,
+        "H:backward": 2,
+        "I:forward": 2,
+        "spider_split": 2,
+        "E:backward": 2,
+        "phase_split": 2,
+        "LC": 2,
+        "S:backward": 2,
+        "PV": 2,
+        "ID": 2,
+        "identity_insert": 2,
+        "I:backward": 2,
+        "PVG": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.47607337500000213,
+          "stats": {
+            "previews": 10,
+            "bound_accepts": 22,
+            "bound_accepts_jpv": 16,
+            "bound_accepts_macro": 6,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        },
+        "reference": {
+          "seconds": 1.1582009169999985,
+          "stats": {
+            "previews": 32,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 32,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {}
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "pack_sha256": "5417942760af75d259f18f6b37a7fcec8858c1c09a3acd2bdea4290da70a4ba1",
+      "state": "9c6edcbcf636f4b4e6999431eb3e242a131add5805a72c514944527011aa0e92",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "7a1d3937c9c0f2ca8ec44e7a8932f9364681702c6083e321a95af28a4d227a20",
+      "families": {
+        "ID": 3,
+        "spider_split": 3,
+        "PVG": 3,
+        "H:forward": 3,
+        "H:backward": 2,
+        "I:forward": 2,
+        "phase_split": 2,
+        "I:backward": 2,
+        "PV": 2,
+        "PVB": 2,
+        "identity_insert": 2,
+        "E:backward": 2,
+        "EU:forward": 2,
+        "S:backward": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.6739983750000036,
+          "stats": {
+            "previews": 10,
+            "bound_accepts": 22,
+            "bound_accepts_macro": 7,
+            "bound_accepts_jpv": 15,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        },
+        "reference": {
+          "seconds": 1.1577209999999951,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "pack_sha256": "5417942760af75d259f18f6b37a7fcec8858c1c09a3acd2bdea4290da70a4ba1",
+      "state": "9c6edcbcf636f4b4e6999431eb3e242a131add5805a72c514944527011aa0e92",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "268968bb20f4ab7d347043391f3aee3ef42102ce0c010ff9ed5ebff19efe179f",
+      "families": {
+        "spider_split": 3,
+        "I:forward": 3,
+        "identity_insert": 3,
+        "ID": 3,
+        "I:backward": 2,
+        "H:forward": 2,
+        "H:backward": 2,
+        "PV": 2,
+        "PVG": 2,
+        "phase_split": 2,
+        "S:backward": 2,
+        "EU:forward": 2,
+        "E:backward": 2,
+        "PVB": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.4500476250000034,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_macro": 8,
+            "bound_accepts_jpv": 15,
+            "previews": 9,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        },
+        "reference": {
+          "seconds": 1.3017250000000047,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "pack_sha256": "5417942760af75d259f18f6b37a7fcec8858c1c09a3acd2bdea4290da70a4ba1",
+      "state": "9c6edcbcf636f4b4e6999431eb3e242a131add5805a72c514944527011aa0e92",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 29,
+      "menu_sha256": "2e2fd82d31a7d8b555554da1f87f9273c54de4d8652ce0befb473d1f09aad844",
+      "families": {
+        "H:backward": 3,
+        "EU:forward": 3,
+        "PVB": 3,
+        "phase_split": 3,
+        "S:backward": 2,
+        "identity_insert": 2,
+        "PVG": 2,
+        "E:backward": 2,
+        "I:forward": 2,
+        "I:backward": 2,
+        "ID": 2,
+        "spider_split": 2,
+        "PV": 2,
+        "H:forward": 2
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.6134361659999996,
+          "stats": {
+            "bound_accepts": 23,
+            "bound_accepts_jpv": 16,
+            "previews": 9,
+            "resource_masks": 3,
+            "bound_accepts_macro": 7,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 29,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 3
+            }
+          }
+        },
+        "reference": {
+          "seconds": 1.210884084,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 3,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 29,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 3
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "pack_sha256": "5417942760af75d259f18f6b37a7fcec8858c1c09a3acd2bdea4290da70a4ba1",
+      "state": "95077d5a9a53c72d6459dc97ed8ff4d59ba2db66952284e2aa2124fd09c231b3",
+      "repeat": 0,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "4f25e1c15d14bdf3d846f28fd021b5b2e37bd16c2049aae2a2582b194e784b9f",
+      "families": {
+        "H:forward": 2,
+        "H:backward": 2,
+        "PVG": 2,
+        "EU:forward": 2,
+        "E:backward": 2,
+        "S:forward": 1,
+        "phase_split": 2,
+        "phase_transfer": 2,
+        "PVB": 2,
+        "I:backward": 2,
+        "spider_split": 2,
+        "identity_insert": 2,
+        "PV": 2,
+        "CP:backward": 2,
+        "S:backward": 1,
+        "GF": 1,
+        "ID": 1,
+        "gadget_split": 1,
+        "I:forward": 1
+      },
+      "measured": {
+        "bounds": {
+          "seconds": 0.6225552909999976,
+          "stats": {
+            "bound_accepts": 24,
+            "bound_accepts_jpv": 15,
+            "previews": 8,
+            "bound_accepts_macro": 9,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        },
+        "reference": {
+          "seconds": 1.1432283339999998,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "pack_sha256": "5417942760af75d259f18f6b37a7fcec8858c1c09a3acd2bdea4290da70a4ba1",
+      "state": "95077d5a9a53c72d6459dc97ed8ff4d59ba2db66952284e2aa2124fd09c231b3",
+      "repeat": 1,
+      "candidates": 32,
+      "eligible": 30,
+      "menu_sha256": "5e15a976463ab92bc5740c754f972e8f89b98cbfd21fcfe896db3d51e6d57e0c",
+      "families": {
+        "CP:backward": 2,
+        "PVB": 2,
+        "S:forward": 1,
+        "EU:forward": 2,
+        "H:backward": 2,
+        "PVG": 2,
+        "H:forward": 2,
+        "GF": 1,
+        "ID": 2,
+        "gadget_split": 2,
+        "phase_transfer": 2,
+        "I:backward": 2,
+        "S:backward": 2,
+        "identity_insert": 2,
+        "spider_split": 2,
+        "PV": 1,
+        "I:forward": 1,
+        "E:backward": 1,
+        "phase_split": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 1.2020134999999996,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 2,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.40135079200000234,
+          "stats": {
+            "bound_accepts": 24,
+            "bound_accepts_jpv": 15,
+            "previews": 8,
+            "resource_masks": 2,
+            "bound_accepts_macro": 9,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 30,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 2
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "pack_sha256": "5417942760af75d259f18f6b37a7fcec8858c1c09a3acd2bdea4290da70a4ba1",
+      "state": "95077d5a9a53c72d6459dc97ed8ff4d59ba2db66952284e2aa2124fd09c231b3",
+      "repeat": 2,
+      "candidates": 32,
+      "eligible": 31,
+      "menu_sha256": "2769ffc034f93a4b18fde6f748c08e0acdb1d1cc290c8d18de8d28b17d03b9f0",
+      "families": {
+        "CP:backward": 2,
+        "I:backward": 2,
+        "spider_split": 2,
+        "E:backward": 2,
+        "PVG": 2,
+        "identity_insert": 2,
+        "PVB": 2,
+        "S:forward": 1,
+        "gadget_split": 2,
+        "ID": 2,
+        "I:forward": 2,
+        "GF": 1,
+        "S:backward": 2,
+        "phase_split": 2,
+        "EU:forward": 2,
+        "H:backward": 1,
+        "PV": 1,
+        "phase_transfer": 1,
+        "H:forward": 1
+      },
+      "measured": {
+        "reference": {
+          "seconds": 1.2830593340000007,
+          "stats": {
+            "previews": 32,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "reference",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1
+            }
+          }
+        },
+        "bounds": {
+          "seconds": 0.3976679169999997,
+          "stats": {
+            "bound_accepts": 24,
+            "bound_accepts_jpv": 15,
+            "bound_accepts_macro": 9,
+            "previews": 8,
+            "resource_masks": 1,
+            "calls": 1,
+            "proposed": 32,
+            "eligible": 31,
+            "mode": "bounds",
+            "cache_size": 0,
+            "cache_capacity": 0,
+            "masked_families": {
+              "PVB": 1
+            }
+          }
+        }
+      },
+      "identical_eligible_menu": true
+    }
+  ],
+  "totals": {
+    "adder_8": {
+      "reference": {
+        "seconds": 7.296196501999994,
+        "calls": 6,
+        "stats": {
+          "previews": 192,
+          "calls": 6,
+          "proposed": 192,
+          "eligible": 192,
+          "cache_size": 0,
+          "cache_capacity": 0
+        }
+      },
+      "bounds": {
+        "seconds": 3.5999033340000057,
+        "calls": 6,
+        "stats": {
+          "bound_accepts": 129,
+          "bound_accepts_jpv": 93,
+          "previews": 63,
+          "bound_accepts_macro": 36,
+          "calls": 6,
+          "proposed": 192,
+          "eligible": 192,
+          "cache_size": 0,
+          "cache_capacity": 0
+        }
+      }
+    },
+    "barenco_tof_3": {
+      "reference": {
+        "seconds": 0.9275774990000016,
+        "calls": 18,
+        "stats": {
+          "previews": 576,
+          "calls": 18,
+          "proposed": 576,
+          "eligible": 533,
+          "cache_size": 0,
+          "cache_capacity": 0,
+          "resource_masks": 43
+        }
+      },
+      "bounds": {
+        "seconds": 0.2806822500000017,
+        "calls": 18,
+        "stats": {
+          "bound_accepts": 420,
+          "bound_accepts_jpv": 286,
+          "bound_accepts_macro": 134,
+          "previews": 156,
+          "calls": 18,
+          "proposed": 576,
+          "eligible": 533,
+          "cache_size": 0,
+          "cache_capacity": 0,
+          "resource_masks": 43
+        }
+      }
+    },
+    "gf2^8_mult": {
+      "reference": {
+        "seconds": 7.298631252,
+        "calls": 6,
+        "stats": {
+          "previews": 192,
+          "resource_masks": 12,
+          "calls": 6,
+          "proposed": 192,
+          "eligible": 180,
+          "cache_size": 0,
+          "cache_capacity": 0
+        }
+      },
+      "bounds": {
+        "seconds": 3.1590561660000063,
+        "calls": 6,
+        "stats": {
+          "previews": 52,
+          "bound_accepts": 140,
+          "bound_accepts_macro": 49,
+          "bound_accepts_jpv": 91,
+          "resource_masks": 12,
+          "calls": 6,
+          "proposed": 192,
+          "eligible": 180,
+          "cache_size": 0,
+          "cache_capacity": 0
+        }
+      }
+    },
+    "mod5_4": {
+      "reference": {
+        "seconds": 1.0923597910000016,
+        "calls": 18,
+        "stats": {
+          "previews": 576,
+          "calls": 18,
+          "proposed": 576,
+          "eligible": 547,
+          "cache_size": 0,
+          "cache_capacity": 0,
+          "resource_masks": 29
+        }
+      },
+      "bounds": {
+        "seconds": 0.3355066659999988,
+        "calls": 18,
+        "stats": {
+          "bound_accepts": 410,
+          "bound_accepts_jpv": 266,
+          "previews": 166,
+          "bound_accepts_macro": 144,
+          "calls": 18,
+          "proposed": 576,
+          "eligible": 547,
+          "cache_size": 0,
+          "cache_capacity": 0,
+          "resource_masks": 29
+        }
+      }
+    }
+  }
+}

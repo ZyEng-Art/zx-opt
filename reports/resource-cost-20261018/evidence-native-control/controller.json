@@ -1,0 +1,14 @@
+{
+  "phase": "passed",
+  "commit": "32c5da847bc3cece8b529d0739b8a111ac4499df",
+  "container_id": "34567260fd1c0bad7c15c0dafafa8cad206b3c6a57c014b10cb2875db9931c81",
+  "time": "2026-10-18T12:16:36.091207+08:00",
+  "trials": 12,
+  "archive": {
+    "path": "/tmp/dengzengyong_rlzx_resource_native_node22_20261018/anchor-32c5da847bc3-passed-records.tar.gz",
+    "bytes": 156097141,
+    "sha256": "2e683ce9cfbea73933312fd669df81ddb54deaea108edc8cff56fe597e2c085b",
+    "study_status": "passed",
+    "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df"
+  }
+}

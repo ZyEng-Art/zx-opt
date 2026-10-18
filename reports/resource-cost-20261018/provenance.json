@@ -1,0 +1,61 @@
+{
+  "cohorts": {
+    "resource-pair": {
+      "node": 22,
+      "campaign": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/resource-pair-launch-20261018/mirror/node22/live-runs/comparison",
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_resource_pair_node22_20261018/anchor-32c5da847bc3-passed-records.tar.gz",
+        "bytes": 121440006,
+        "sha256": "8fb4b628738b3191fb6a450898af47927803c46dcdef9c38fcdb5cccfbc4c79f",
+        "study_status": "passed",
+        "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df"
+      },
+      "local_archive": "runs/resource-pair-launch-20261018/mirror/node22/anchor-32c5da847bc3-passed-records.tar.gz",
+      "local_sha256_verified": true,
+      "container_running": false
+    },
+    "resource-schedule": {
+      "node": 23,
+      "campaign": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/resource-schedule-launch-20261018/mirror/node23/live-runs/comparison",
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_resource_schedule_node23_20261018/anchor-32c5da847bc3-passed-records.tar.gz",
+        "bytes": 263909223,
+        "sha256": "9c08718d9537fbaf20b5ec499d01df0e5cdaebefae5aee37fa2474b1e2540750",
+        "study_status": "passed",
+        "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df"
+      },
+      "local_archive": "runs/resource-schedule-launch-20261018/mirror/node23/anchor-32c5da847bc3-passed-records.tar.gz",
+      "local_sha256_verified": true,
+      "container_running": false
+    },
+    "resource-native": {
+      "node": 22,
+      "campaign": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/resource-native-launch-20261018/mirror/node22/live-runs/comparison",
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_resource_native_node22_20261018/anchor-32c5da847bc3-passed-records.tar.gz",
+        "bytes": 156097141,
+        "sha256": "2e683ce9cfbea73933312fd669df81ddb54deaea108edc8cff56fe597e2c085b",
+        "study_status": "passed",
+        "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df"
+      },
+      "local_archive": "runs/resource-native-launch-20261018/mirror/node22/anchor-32c5da847bc3-passed-records.tar.gz",
+      "local_sha256_verified": true,
+      "container_running": false
+    }
+  },
+  "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df",
+  "evidence_scope": "Complete archives verified locally; repository retains protocols, reports, audits, update logs, best circuits and improvement histories. Full events/objects/models remain in archives.",
+  "excluded": [
+    "10 development 40-step smoke trials, one 40-step resumed segment, exploratory dirty-source component profile"
+  ],
+  "scope": "One-target 600-second rule-cost/control ablation, not a three-hour patience benchmark rerun",
+  "default_promotion": {
+    "source_commit": "763020db6c621dbe02db52cab1f0f11c04717ec8",
+    "feasibility_mode": "bounds",
+    "rule_schedule": "static",
+    "candidate_allocation": "balanced",
+    "full_unit_tests_passed": 140,
+    "default_entry_smoke_trials_passed": 4
+  },
+  "verified_report_and_training_hashes": 96
+}

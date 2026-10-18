@@ -1,0 +1,112 @@
+{
+  "status": "budget_reached",
+  "transitions": 8906,
+  "accepted": 8906,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 0,
+  "best": {
+    "cost": {
+      "gates": 36,
+      "cx": 14,
+      "depth": 34
+    },
+    "sha256": "1a29a9cbaf1e94d018c3311bfcfdd5a179a0e2fa5f5a6473bddd3970046fecfd",
+    "seconds": 384.1969245111104,
+    "graph": "ceced0ec83be4ef2eeeab56c2593fc527d6079a508975d7985412d87efbd3583"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "proposal_counts": {
+    "PVG": 762,
+    "PVB": 2045,
+    "PV": 1588,
+    "ID": 4511
+  },
+  "accepted_counts": {
+    "PVG": 762,
+    "PVB": 2045,
+    "PV": 1588,
+    "ID": 4511
+  },
+  "unscored_counts": {},
+  "rejections": {},
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 533,
+    "evictions": 470,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      36,
+      14
+    ]
+  },
+  "checked_qasm": 2587,
+  "view_cache": {
+    "hits": 9114,
+    "misses": 8700
+  },
+  "jpv_proposals": null,
+  "anchor_stats": {},
+  "completion": {
+    "requests": 8510,
+    "primary_successes": 8510,
+    "cache_hits": 397,
+    "unique_valid_qasm": 2587,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 1.455849559831065e-15,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 167181,
+    "calls": 8906,
+    "proposed": 173126,
+    "eligible": 172631,
+    "resource_masks": 490,
+    "cache_hits": 5952,
+    "mode": "reference",
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "PVB": 301,
+      "PVG": 169,
+      "PV": 25
+    }
+  },
+  "max_graph_operator_error": 9.658965183995955e-15,
+  "max_qasm_operator_error": 1.455849559831065e-15,
+  "first_passage_seconds": {
+    "39": 8.551689906977117,
+    "38": 76.3367249679286,
+    "37": 135.3386250990443,
+    "36": 384.1969245111104,
+    "35": null
+  },
+  "budget_seconds": 600.0,
+  "total_loop_seconds": 600.0013168561272,
+  "timers": {
+    "checkpoint": 0.1325464858673513,
+    "matching": 35.84490298316814,
+    "feasibility": 255.83508565905504,
+    "inference": 41.526501496555284,
+    "rewrite_verify": 47.89999682200141,
+    "score": 191.22798382421024
+  },
+  "verification": "passed",
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "patience": {
+    "seconds": 0.0,
+    "gates": 36,
+    "last_improvement_unix": 1792296548.0294056
+  },
+  "certificate_stats": null,
+  "finished_unix": 1792296763.8997626
+}

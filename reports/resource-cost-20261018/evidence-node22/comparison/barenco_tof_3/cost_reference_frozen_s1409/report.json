@@ -1,0 +1,183 @@
+{
+  "status": "budget_reached",
+  "transitions": 4087,
+  "accepted": 4086,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 0,
+  "best": {
+    "cost": {
+      "gates": 38,
+      "cx": 14,
+      "depth": 31
+    },
+    "sha256": "bbdcbc67a9c482f9be966b1e0559ddcdcd52ad4bc5db8e00e2aef224d32a817f",
+    "seconds": 541.5404300810769,
+    "graph": "cd323b6710989a4c408ba87301b89e43ef39cb57a3a7e7829f111c2f9279f602"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "proposal_counts": {
+    "identity_insert": 152,
+    "S:backward": 285,
+    "E:backward": 257,
+    "spider_split": 150,
+    "EU:forward": 216,
+    "ID": 318,
+    "gadget_split": 141,
+    "phase_split": 135,
+    "PVB": 126,
+    "spider_nest": 33,
+    "H:backward": 348,
+    "I:backward": 281,
+    "I:forward": 323,
+    "H:forward": 333,
+    "CP:backward": 106,
+    "CP:forward": 13,
+    "EU:backward": 44,
+    "PVG": 204,
+    "PV": 284,
+    "phase_transfer": 147,
+    "GF": 56,
+    "S:forward": 73,
+    "B:backward": 10,
+    "E:forward": 27,
+    "LC": 22,
+    "B:forward": 3
+  },
+  "accepted_counts": {
+    "identity_insert": 152,
+    "S:backward": 285,
+    "E:backward": 257,
+    "spider_split": 150,
+    "EU:forward": 216,
+    "ID": 318,
+    "gadget_split": 141,
+    "phase_split": 135,
+    "PVB": 126,
+    "spider_nest": 33,
+    "H:backward": 347,
+    "I:backward": 281,
+    "I:forward": 323,
+    "H:forward": 333,
+    "CP:backward": 106,
+    "CP:forward": 13,
+    "EU:backward": 44,
+    "PVG": 204,
+    "PV": 284,
+    "phase_transfer": 147,
+    "GF": 56,
+    "S:forward": 73,
+    "B:backward": 10,
+    "E:forward": 27,
+    "LC": 22,
+    "B:forward": 3
+  },
+  "unscored_counts": {},
+  "rejections": {
+    "TimeoutError: candidate operation exceeded deadline": 1
+  },
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 1059,
+    "evictions": 996,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      38,
+      14
+    ]
+  },
+  "checked_qasm": 826,
+  "view_cache": {
+    "hits": 4084,
+    "misses": 4091
+  },
+  "jpv_proposals": {
+    "calls": 4087,
+    "matching_work_exhausted": 1536,
+    "phase_inferred": 40538,
+    "non_clifford_matches_skipped": 0
+  },
+  "anchor_stats": {},
+  "completion": {
+    "requests": 4032,
+    "primary_successes": 289,
+    "primary_failures": 3743,
+    "clifford_repair_successes": 3153,
+    "clifford_repair_failures": 590,
+    "full_reduce_repair_successes": 590,
+    "cache_hits": 55,
+    "unique_valid_qasm": 826,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 1.5553031891404221e-15,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 130087,
+    "calls": 4087,
+    "proposed": 130784,
+    "eligible": 102795,
+    "resource_masks": 27854,
+    "cache_hits": 697,
+    "mode": "reference",
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "spider_nest": 5543,
+      "PVB": 3833,
+      "identity_insert": 2740,
+      "gadget_split": 3513,
+      "phase_split": 2753,
+      "spider_split": 2740,
+      "PVG": 1705,
+      "EU:forward": 1380,
+      "I:backward": 406,
+      "E:backward": 892,
+      "S:backward": 394,
+      "phase_transfer": 413,
+      "CP:backward": 364,
+      "LC": 417,
+      "ID": 242,
+      "B:backward": 200,
+      "PV": 409,
+      "GF": 36,
+      "H:backward": 9
+    }
+  },
+  "max_graph_operator_error": 1.0636033552569398e-14,
+  "max_qasm_operator_error": 1.5553031891404221e-15,
+  "first_passage_seconds": {
+    "39": 229.5558503039647,
+    "38": 416.473791717086,
+    "37": null,
+    "36": null,
+    "35": null
+  },
+  "budget_seconds": 600.0,
+  "total_loop_seconds": 600.0009576559532,
+  "timers": {
+    "checkpoint": 0.11119763506576419,
+    "matching": 196.1879206900485,
+    "feasibility": 233.79440610855818,
+    "inference": 21.985805199947208,
+    "rewrite_verify": 32.00360562792048,
+    "score": 88.51588026667014
+  },
+  "verification": "passed",
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "patience": {
+    "seconds": 0.0,
+    "gates": 38,
+    "last_improvement_unix": 1792295438.492585
+  },
+  "certificate_stats": null,
+  "finished_unix": 1792295622.0786164
+}

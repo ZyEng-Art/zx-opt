@@ -1,0 +1,15 @@
+{
+  "container_name": "dengzengyong_rlzx_resource_native_node22_20261018",
+  "container_id": "34567260fd1c0bad7c15c0dafafa8cad206b3c6a57c014b10cb2875db9931c81",
+  "started_at": "2026-10-18T04:01:53.738614676Z",
+  "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+  "source_commit": "32c5da847bc3cece8b529d0739b8a111ac4499df",
+  "cpus": 16,
+  "memory_gib": 48,
+  "workers": 12,
+  "gpu": false,
+  "node": 22,
+  "experiment": "search",
+  "probe_source": null,
+  "controller_pid": 1145071
+}
