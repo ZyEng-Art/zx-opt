@@ -6,7 +6,7 @@ Each circuit: seconds=0, no_improvement_seconds=10800. Only strict total gate im
 Checkpoint every300 seconds; save model on each best improvement.
 Profile native, macros/jpv/nonlinear_a all disabled before proposal generation. Global selection, cap32, rollout32. Existing results and rule implementations retained.
 Each node16CPU/48GiB, 13 training workers, no GPU. Both nodes passed140 tests; local5 patience tests and12-second plateau smoke/replay passed.
-Formal jobs started about21:22 CST. All26 protocols checked; all produced events and PPO updates.
+Formal jobs started about21:22 CST. All26 protocols checked and all produced events. At the startup snapshot, 15/26 had already written PPO updates; larger-circuit jobs were still collecting their first rollout.
 Full trajectories/models: /ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node{22,23}_20261018/source/runs/comparison
 Local metadata mirrors every300s: runs/native-nam-launch-node{22,23}-20261018-v3/mirror-v2.
 Complete remote archives retain events, objects, models and SHA256 receipts. Independent audit runs after training; owned container stops after completion. Full archives are not downloaded automatically due limited local space.
