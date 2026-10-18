@@ -1,0 +1,15 @@
+{
+  "time": "2026-10-18T08:52:19.892376+08:00",
+  "pid": 53467,
+  "queue_order": [
+    "anchor-long-fixed",
+    "anchor-probes",
+    "anchor-long",
+    "anchor-credit",
+    "anchor-neutral",
+    "anchor-mc"
+  ],
+  "queue_sha256": "90c53735f06495ead6560d19d7d589c773c250fc85d4061c84060cfbc8ec5bc2",
+  "source_fetcher_sha256": "a763d5097f47fd63a27d597770b399952b7e6fff4be91944836b8079612fc142",
+  "scope": "Single sequential archive-only queue with2GiBfree-space reserve, partial resumption and independent fullSHA verification; remote training/audits completed, full remote records retained. May continue after09, no GPU or training restarted."
+}

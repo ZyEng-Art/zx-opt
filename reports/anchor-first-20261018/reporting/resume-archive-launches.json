@@ -1,0 +1,96 @@
+{
+  "time": "2026-10-18T08:49:16.597229+08:00",
+  "records": [
+    {
+      "study": "anchor-probes",
+      "node": 23,
+      "old_collector_pid": 8938,
+      "resume_pid": 52593,
+      "source": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+      "remote_archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_probes_node23_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+        "bytes": 1392839704,
+        "sha256": "c0fd709257a7a911f43e8c63e00038aca224b3a3a15e27736a16df78234289b0",
+        "study_status": "passed",
+        "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+      },
+      "partial_file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-probes-launch-20261018/mirror/node23/anchor-06ef566f69c5-passed-records.tar.gz.partial"
+    },
+    {
+      "study": "anchor-mc",
+      "node": 22,
+      "old_collector_pid": 8998,
+      "resume_pid": 52595,
+      "source": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+      "remote_archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_mc_node22_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+        "bytes": 2058299601,
+        "sha256": "f0d9bef87c9d1e267a72fe553bed584923f09ed8b0df37f0ea514c4fe7ec7065",
+        "study_status": "passed",
+        "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+      },
+      "partial_file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-mc-launch-20261018/mirror/node22/anchor-06ef566f69c5-passed-records.tar.gz.partial"
+    },
+    {
+      "study": "anchor-credit",
+      "node": 23,
+      "old_collector_pid": 88010,
+      "resume_pid": 52597,
+      "source": "87bb830c59e3e793a488603aa9d75ad07be87c02",
+      "remote_archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_credit_node23_20261018/anchor-87bb830c59e3-passed-records.tar.gz",
+        "bytes": 2191405694,
+        "sha256": "22c3b7dd07a768ffe3e4a1cc3d01659142071c21f3e75cf8829f626d57d926f3",
+        "study_status": "passed",
+        "source_commit": "87bb830c59e3e793a488603aa9d75ad07be87c02"
+      },
+      "partial_file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-credit-launch-20261018/mirror/node23/anchor-87bb830c59e3-passed-records.tar.gz.partial"
+    },
+    {
+      "study": "anchor-neutral",
+      "node": 22,
+      "old_collector_pid": 96020,
+      "resume_pid": 52599,
+      "source": "de9a7da27c230319467a16c3da8f698269dc7c94",
+      "remote_archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_neutral_node22_20261018/anchor-de9a7da27c23-passed-records.tar.gz",
+        "bytes": 1604286763,
+        "sha256": "e741cdde85afaa7d4eefe4bd6a1d9016d879020379dd9292ba9583967752a3eb",
+        "study_status": "passed",
+        "source_commit": "de9a7da27c230319467a16c3da8f698269dc7c94"
+      },
+      "partial_file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-neutral-launch-20261018/mirror/node22/anchor-de9a7da27c23-passed-records.tar.gz.partial"
+    },
+    {
+      "study": "anchor-long-fixed",
+      "node": 23,
+      "old_collector_pid": 79600,
+      "resume_pid": 52602,
+      "source": "f3576a117bca450a01f10dc90a62945de45cc7e3",
+      "remote_archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_long_fixed_node23_20261018/anchor-f3576a117bca-passed-records.tar.gz",
+        "bytes": 1299973477,
+        "sha256": "770d3e46f2aa6c441654748c8cc5f749cb5aa1966368049529803c7c36e2b712",
+        "study_status": "passed",
+        "source_commit": "f3576a117bca450a01f10dc90a62945de45cc7e3"
+      },
+      "partial_file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-long-fixed-launch-20261018/mirror/node23/anchor-f3576a117bca-passed-records.tar.gz.partial"
+    },
+    {
+      "study": "anchor-long",
+      "node": 23,
+      "old_collector_pid": 69710,
+      "resume_pid": 52605,
+      "source": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "remote_archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_long_node23_20261018/anchor-0c605a8fd2e2-records.tar.gz",
+        "bytes": 1313182679,
+        "sha256": "8189580463a08634660f865009b17f9c6eed5845f4c5b39864bdf0e3e8b1f2bb"
+      },
+      "partial_file": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/anchor-long-launch-20261018/mirror/node23/anchor-0c605a8fd2e2-records.tar.gz.partial"
+    }
+  ],
+  "wrapper_sha256": "4f6d54a10830cc8934fb3b7ac0c680d6c79b1eee5407f410b97e317460f8832e",
+  "fetcher_sha256": "a763d5097f47fd63a27d597770b399952b7e6fff4be91944836b8079612fc142",
+  "scope": "Replaced only six owned local transport process groups after terminal remote passes. No training/rewrite/audit/source mutation. Existing partial bytes retained; independent fullSHA required to publish. Background archive copies may continue past09; full remote trajectories and local live monitoring records already retained."
+}

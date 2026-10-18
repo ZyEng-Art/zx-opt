@@ -1,0 +1,14 @@
+{
+  "container_name": "dengzengyong_rlzx_anchor_credit_node23_20261018",
+  "container_id": "105602b591ab503c2469ad727b416073934444cd7bc445aead0ee6d09120cdbc",
+  "started_at": "2026-10-17T19:01:37.964316472Z",
+  "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+  "source_commit": "87bb830c59e3e793a488603aa9d75ad07be87c02",
+  "cpus": 32,
+  "memory_gib": 64,
+  "workers": 24,
+  "gpu": false,
+  "node": 23,
+  "experiment": "search",
+  "probe_source": null
+}

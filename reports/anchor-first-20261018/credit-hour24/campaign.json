@@ -1,0 +1,209 @@
+{
+  "source_commit": "87bb830c59e3e793a488603aa9d75ad07be87c02",
+  "tracked_dirty": false,
+  "cases": [
+    {
+      "name": "barenco_tof_3",
+      "sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92"
+    }
+  ],
+  "plan": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "policy": "frozen",
+      "seed": 523,
+      "arm": "anchor8_resource_lr1e4_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_native_frozen_s523"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "policy": "online",
+      "seed": 523,
+      "arm": "anchor8_resource_lr1e4_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_native_online_s523"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "policy": "frozen",
+      "seed": 523,
+      "arm": "anchor8_resource_lr1e4_stop_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_native_frozen_s523"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "policy": "online",
+      "seed": 523,
+      "arm": "anchor8_resource_lr1e4_stop_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_native_online_s523"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "policy": "frozen",
+      "seed": 523,
+      "arm": "anchor8_resource_lr1e4_r128_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_r128_native_frozen_s523"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "policy": "online",
+      "seed": 523,
+      "arm": "anchor8_resource_lr1e4_r128_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_r128_native_online_s523"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "policy": "frozen",
+      "seed": 523,
+      "arm": "anchor8_resource_lr1e4_stop_r128_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_r128_native_frozen_s523"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "policy": "online",
+      "seed": 523,
+      "arm": "anchor8_resource_lr1e4_stop_r128_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_r128_native_online_s523"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "policy": "frozen",
+      "seed": 557,
+      "arm": "anchor8_resource_lr1e4_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_native_frozen_s557"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "policy": "online",
+      "seed": 557,
+      "arm": "anchor8_resource_lr1e4_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_native_online_s557"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "policy": "frozen",
+      "seed": 557,
+      "arm": "anchor8_resource_lr1e4_stop_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_native_frozen_s557"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "policy": "online",
+      "seed": 557,
+      "arm": "anchor8_resource_lr1e4_stop_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_native_online_s557"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "policy": "frozen",
+      "seed": 557,
+      "arm": "anchor8_resource_lr1e4_r128_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_r128_native_frozen_s557"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "policy": "online",
+      "seed": 557,
+      "arm": "anchor8_resource_lr1e4_r128_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_r128_native_online_s557"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "policy": "frozen",
+      "seed": 557,
+      "arm": "anchor8_resource_lr1e4_stop_r128_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_r128_native_frozen_s557"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "policy": "online",
+      "seed": 557,
+      "arm": "anchor8_resource_lr1e4_stop_r128_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_r128_native_online_s557"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "policy": "frozen",
+      "seed": 593,
+      "arm": "anchor8_resource_lr1e4_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_native_frozen_s593"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "policy": "online",
+      "seed": 593,
+      "arm": "anchor8_resource_lr1e4_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_native_online_s593"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "policy": "frozen",
+      "seed": 593,
+      "arm": "anchor8_resource_lr1e4_stop_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_native_frozen_s593"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "policy": "online",
+      "seed": 593,
+      "arm": "anchor8_resource_lr1e4_stop_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_native_online_s593"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "policy": "frozen",
+      "seed": 593,
+      "arm": "anchor8_resource_lr1e4_r128_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_r128_native_frozen_s593"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "policy": "online",
+      "seed": 593,
+      "arm": "anchor8_resource_lr1e4_r128_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_r128_native_online_s593"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "policy": "frozen",
+      "seed": 593,
+      "arm": "anchor8_resource_lr1e4_stop_r128_native_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_r128_native_frozen_s593"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "policy": "online",
+      "seed": 593,
+      "arm": "anchor8_resource_lr1e4_stop_r128_native_online",
+      "folder": "barenco_tof_3/anchor8_resource_lr1e4_stop_r128_native_online_s593"
+    }
+  ],
+  "seconds": 3600.0,
+  "workers": 24,
+  "native_flow_module": "/workspace/task/source/runs/native-backend/zxopt_native_scores.cpython-310-x86_64-linux-gnu.so",
+  "scope": "independent training/search on each target; no generalization claim; count noops separately",
+  "started_unix": 1792263751.5433187
+}

@@ -1,0 +1,14 @@
+{
+  "phase": "passed",
+  "commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+  "container_id": "5fa3ff27d01931bc516d96f878ec1adee551316a631ed7b5725ee96583c10645",
+  "time": "2026-10-18T06:54:42.176977+08:00",
+  "trials": 18,
+  "archive": {
+    "path": "/tmp/dengzengyong_rlzx_anchor_mc_node22_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+    "bytes": 2058299601,
+    "sha256": "f0d9bef87c9d1e267a72fe553bed584923f09ed8b0df37f0ea514c4fe7ec7065",
+    "study_status": "passed",
+    "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "pairs": [
+    {
+      "stage": "full",
+      "seed": 853,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "stage": "positive",
+      "seed": 853,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "stage": "single",
+      "seed": 853,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "stage": "full",
+      "seed": 877,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 33
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "stage": "positive",
+      "seed": 877,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 33
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 15,
+        "depth": 35
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "stage": "single",
+      "seed": 877,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 33
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "stage": "full",
+      "seed": 911,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "stage": "positive",
+      "seed": 911,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 33
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "stage": "single",
+      "seed": 911,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 36,
+        "cx": 14,
+        "depth": 35
+      },
+      "saved_gates": 1,
+      "outcome": "win"
+    }
+  ],
+  "development_models": true,
+  "scope": "Audited frozen initial versus demonstration-trained weights on the training circuit, from the original root and fresh search pools. Shared initial controls and selected demonstrations introduce dependence. No original-PPO or generalization claim."
+}

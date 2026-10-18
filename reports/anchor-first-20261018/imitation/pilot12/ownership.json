@@ -1,0 +1,14 @@
+{
+  "container_name": "dengzengyong_rlzx_anchor_imitation_node23_20261018",
+  "container_id": "3f0af1f782af66691fcfdbd9d908d782010ad886ef71437f0fba47e40b6500a7",
+  "started_at": "2026-10-17T20:24:14.014404589Z",
+  "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+  "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+  "cpus": 16,
+  "memory_gib": 48,
+  "workers": 12,
+  "gpu": false,
+  "node": 23,
+  "experiment": "model-probe",
+  "probe_source": null
+}

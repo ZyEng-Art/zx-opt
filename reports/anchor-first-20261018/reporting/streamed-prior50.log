@@ -1,0 +1,19 @@
+{"trials": 50, "grouped": {"anchor8": {"online_vs_frozen": {"win": 1, "tie": 2, "loss": 2}, "median_online_accepted_speedup": 1.4383274693323398, "online_vs_baseline": {"win": 1, "tie": 2, "loss": 2}, "online_vs_global": {"win": 1, "tie": 2, "loss": 2}}, "anchor8_lr1e3": {"online_vs_frozen": {"win": 3, "tie": 0, "loss": 2}, "median_online_accepted_speedup": 1.4057156659238164, "online_vs_baseline": {"win": 0, "tie": 3, "loss": 2}, "online_vs_global": {"win": 0, "tie": 3, "loss": 2}}, "anchor8_nodes": {"online_vs_frozen": {"win": 0, "tie": 3, "loss": 2}, "median_online_accepted_speedup": 1.723410699626183, "online_vs_baseline": {"win": 1, "tie": 2, "loss": 2}, "online_vs_global": {"win": 1, "tie": 2, "loss": 2}}, "anchor8_nodes_lr1e3": {"online_vs_frozen": {"win": 1, "tie": 0, "loss": 4}, "median_online_accepted_speedup": 1.82376244936778, "online_vs_baseline": {"win": 1, "tie": 1, "loss": 3}, "online_vs_global": {"win": 1, "tie": 1, "loss": 3}}, "global32": {"online_vs_frozen": {"win": 1, "tie": 3, "loss": 1}, "median_online_accepted_speedup": null, "online_vs_baseline": {"win": 0, "tie": 0, "loss": 0}, "online_vs_global": {"win": 0, "tie": 0, "loss": 0}}}}
+       10.50 real         8.37 user         0.59 sys
+           232407040  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               15403  page reclaims
+                  23  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1415  voluntary context switches
+               33979  involuntary context switches
+        104773451053  instructions retired
+         26392632092  cycles elapsed
+            62145920  peak memory footprint

@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "trials": 90,
+  "checks": [
+    {
+      "study": "prior-fixed50",
+      "file": "comparison.json",
+      "sha256": "b35b6327ce9a1ff4533288ecacb62fb011410e24cf34a9386025ccc7e9c54c3f"
+    },
+    {
+      "study": "prior-fixed50",
+      "file": "trials.csv",
+      "sha256": "5c0ea9acf48baee120119c5cc816f67cbbc336232965d4b08718db4d1365f2d7"
+    },
+    {
+      "study": "resource-fixed40",
+      "file": "comparison.json",
+      "sha256": "edacba6705f80be5357b2142881f3e9ba1afad1f972e8b78283c3289be565314"
+    },
+    {
+      "study": "resource-fixed40",
+      "file": "trials.csv",
+      "sha256": "9f6f50de2f33675fb4cdb851da37c8d3a534658b26c20ef7f9e56610a26e933a"
+    }
+  ],
+  "scope": "Streaming event summaries exactly match prior retained outputs for all90 audited cases; full trajectories unchanged"
+}

@@ -1,13 +1,13 @@
 {
-  "phase": "other_circuits_study_complete",
+  "phase": "anchor_first_overnight_finalizing",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
-  "branch": "main",
-  "scope": "independent target-wise training/search on tof_3, mod5_4, tof_4; total NAM gates; prior barenco results retained",
+  "branch": "feat/anchor-first-zx",
+  "scope": "Same-target barenco_tof_3 anchor-first search/learning; original26 NAM searches preserved separately",
   "resources": {
     "node44_owned_cpu_container": "stopped",
     "new_gpu_tasks": 0,
     "persistent_ssh": "retained",
-    "background_jobs": "none; all 36 trials, audits, archive transfer and reports complete"
+    "background_jobs": "All new experiment containers stopped after complete audits. Original26 searches closed, owned idle containers retained. Sequential local archive-only transport queue active."
   },
   "github": {
     "push": "completed",
@@ -24,11 +24,20 @@
     "Feasibility mask removes resource-invalid self-loops, but costs 69-71% of classified pilot time"
   ],
   "next_research_priorities": [
-    "Reduce exact resource-mask preview cost without changing sampling/PPO density",
-    "Improve discovery of lower total-gate records rather than fitting zero-reward loops",
-    "Study which bounded JPV rewrite paths yield useful extractable states"
+    "Finish audit-bound initial/trained frozen-weight probes",
+    "Evaluate undiscounted credit and success cutoffs on newseeds",
+    "Replicate exploratory supervised single-action result without changing weights"
   ],
-  "active_work": null,
+  "active_work": {
+    "updated_at": "2026-10-18T08:53:06.975980+08:00",
+    "deadline": "2026-10-18T09:00:00+08:00",
+    "date_scope": "Assumed from overnight session; optional clarification unanswered",
+    "goal": "active",
+    "source": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+    "studies": "All launched new studies terminal; two known failed early cohorts retained as failed",
+    "replication": "Prepared unchanged-model5seed replication NOT launched before deadline",
+    "archival": "Sequential resumption with2GiBreserve; full remote records and live trajectories retained"
+  },
   "completed_followups": [
     {
       "suite": "representation",
@@ -76,31 +85,40 @@
     "raw_data": "runs/download-20261017/extracted/runs/pilot",
     "raw_archive_sha256": "10f5f0a0f217ac66d3c23b787ef449d7ceca8c5c63bae00eb9350d2275103e24"
   },
-  "latest_experiment_commit": "282005ba2c9cce68c55e9a713ab41dfbde1f5270",
-  "latest_report": "reports/other-circuits-20261017/interpretation.txt",
+  "latest_experiment_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+  "latest_report": "reports/anchor-first-20261018/interpretation-0900.txt",
   "current_findings": {
-    "scope": "three independent target-wise training studies",
-    "best_total_gates": {
-      "tof_3": 33,
-      "mod5_4": 22,
-      "tof_4": 52
-    },
-    "common_baseline_gates": {
-      "tof_3": 35,
-      "mod5_4": 41,
-      "tof_4": 55
-    },
-    "verified_saved_qasm": 39190,
-    "replayed_accepted_rewrites": 98954,
-    "paired_online_vs_frozen_final": {
-      "win": 3,
-      "tie": 5,
-      "loss": 1
-    },
-    "all_three_mean_online_anytime_curves_better_than_frozen": true,
+    "scope": "same-target barenco_tof_3; completed studies only",
+    "best_total_gates": 36,
+    "root_gates": 40,
     "stable_online_search_advantage_established": false,
-    "policy_preference_changes_small": true,
-    "source_input_snapshot_and_arity_audits_passed": true
+    "prior50_audited": true,
+    "resource40_audited": true,
+    "imitation12_audited": true,
+    "imitation_single_pilot": "1win2ties over3seeds, exploratory; replication pending",
+    "exact_export_controlled_median_accepted_speedup": {
+      "frozen": 1.11526,
+      "online": 1.09514
+    },
+    "scope_caveats": "Related seeds/shared controls; supervised demonstrations separate from original PPO; no convergence, completeness-of-search, optimality or generalization claim",
+    "ppo_frozen_weight_probes": {
+      "trials": 54,
+      "pairs": 27,
+      "win": 2,
+      "tie": 8,
+      "loss": 17,
+      "scope": "Related seeds/controls, same target, model only"
+    },
+    "mc_hour18": "All18 audited; eachonlinearm37gates,0win2tie1loss versus frozen; no improvement over default",
+    "credit_hour24": "All12onlinefrozenpairslose at equalwall andequalsteps; correlatedcontrols",
+    "original_nam26": {
+      "searches_closed": 26,
+      "runtime_verification_passed": 26,
+      "failures": 0,
+      "improved_after_root": 17
+    },
+    "final_unit_tests": 124,
+    "imitation_replication": "Not launched; exploratory1win2tie remains unreplicated"
   },
   "rule_completeness": {
     "fragment": "Clifford+T (pi/4)",
@@ -196,5 +214,29 @@
     "gpu_used": false,
     "model_transfer": false,
     "scope": "small positive on-target online signal, no convergence or stable-learning/generalization claim"
+  },
+  "previous_current_findings": {
+    "scope": "three independent target-wise training studies",
+    "best_total_gates": {
+      "tof_3": 33,
+      "mod5_4": 22,
+      "tof_4": 52
+    },
+    "common_baseline_gates": {
+      "tof_3": 35,
+      "mod5_4": 41,
+      "tof_4": 55
+    },
+    "verified_saved_qasm": 39190,
+    "replayed_accepted_rewrites": 98954,
+    "paired_online_vs_frozen_final": {
+      "win": 3,
+      "tie": 5,
+      "loss": 1
+    },
+    "all_three_mean_online_anytime_curves_better_than_frozen": true,
+    "stable_online_search_advantage_established": false,
+    "policy_preference_changes_small": true,
+    "source_input_snapshot_and_arity_audits_passed": true
   }
 }

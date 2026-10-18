@@ -1,0 +1,54 @@
+{
+  "node": 22,
+  "tag": "anchor_mc",
+  "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+  "seconds": 3600.0,
+  "workers": 18,
+  "cpus": 24,
+  "memory_gib": 64,
+  "circuits": [
+    "barenco_tof_3"
+  ],
+  "seeds": [
+    "941",
+    "967",
+    "991"
+  ],
+  "modes": [
+    "anchor8_resource_lr1e4_r128_native",
+    "anchor8_resource_lr1e4_r128_mc_native",
+    "anchor8_resource_lr1e4_r128_mc_success_native"
+  ],
+  "experiment": "search",
+  "probe_source_tag": null,
+  "training_seeds": [
+    "137",
+    "163",
+    "197"
+  ],
+  "audit_workers": 6,
+  "audit_native_replay": "rooted",
+  "audit_crosscheck_native_every": 101,
+  "build_native_flow": true,
+  "model_bundle_sha256": null,
+  "model_files": [],
+  "development_models": false,
+  "save_improvement_models": true,
+  "base": "/tmp/dengzengyong_rlzx_anchor_mc_node22_20261018",
+  "bundle_sha256": "0dbbc2bded4cecf89602a189271aa185b42d3a9a0ebd499b7912d51acd48b1ad",
+  "runtime": {
+    "container_name": "dengzengyong_rlzx_anchor_mc_node22_20261018",
+    "container_id": "5fa3ff27d01931bc516d96f878ec1adee551316a631ed7b5725ee96583c10645",
+    "started_at": "2026-10-17T20:48:06.830993236Z",
+    "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+    "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+    "cpus": 24,
+    "memory_gib": 64,
+    "workers": 18,
+    "gpu": false,
+    "node": 22,
+    "experiment": "search",
+    "probe_source": null,
+    "controller_pid": 3133177
+  }
+}

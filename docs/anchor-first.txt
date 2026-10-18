@@ -331,3 +331,73 @@ and parameter comparisons are required before calling this computation-only.
   that source, irrespective of gate outcomes. Model/search seeds and900s
   budgets are unchanged. Use18workers/32CPU/64GiB and audit12 rooted/cross101
   to complete validation before09:00; resources differ from the earlier draft.
+
+2026-10-18 completed prior50/resource40 and equal-step diagnostics
+  Both repaired600s cohorts passed their full50/40trial audits. The prior50
+  anchor8 default online/frozen outcome is1win/2ties/2losses; node-focused
+  prior0/3/2. Higher LR gives mixed3/0/2, and combining nodes/highLR1/0/4.
+  Resource40 default anchor8 is1/2/2, resource-masked1/1/3, nodes0/3/2,
+  nodes+resource1/3/1. Reused seeds/initial controls across cohorts are related.
+  Matching throughput gains therefore do not imply a learned gate advantage.
+
+  compare_equal_steps.py requires complete source-bound audit receipts, then
+  compares best accepted gates within the common sampled-action prefix.
+  Noops/rejections consume steps; later or deadline-excluded candidates cannot
+  improve the prefix. Equal steps do not equal computation. Every prior50
+  pair has the same gate outcome at equal steps and equal wall time. In
+  resource40, default anchor8 changes to3wins/1tie/1loss at equal steps; the
+  other three conditions retain their wall-budget outcomes. Training overhead
+  can matter, but it does not explain all observed policy losses.
+
+  summarize_anchor.py now streams events and retains only each pre-update
+  prefix, rather than all full parsed trajectories. JSON/CSV outputs for all90
+  cases are byte-identical to the pre-change retained outputs. New summaries
+  used142/232MB maximum RSS in these two local invocations. This is a reporting
+  memory improvement; search/training and saved trajectories are unchanged.
+
+  Source06ef566 launched the54formal PPO probes on node23 and18MC hour cases
+  on node22. Both Linux environments passed123tests. All18MC protocol options
+  were verified: rollout128, no accidental empty-anchor/neutral cutoff, all
+  six credit/policy cells represented three times, strict-gate snapshots on.
+  Probes use the fully audited fixed-hour source and a read-only source mount.
+
+  The12case imitation pilot also passed its complete replay audit. Full-path
+  weights tie the initial weights on all3gate outcomes; positive-only weights
+  lose2and tie1. The single-action diagnostic wins1(seed911:36versus37)and
+  ties2. All cases keep parameters frozen and start from the original40gate
+  root. This selected exploratory signal is insufficient for a utility claim.
+  Replicate initial/single with the exact same model bytes,900s each, newseeds
+  1031/1061/1093/1123/1151,10workers/16CPU/48GiB,audit6rooted/cross101.
+  This remains same-circuit development demonstration learning, distinct from
+  original PPO; no teacher circuit or search archive is transferred.
+
+2026-10-18 final audited overnight outcomes
+  All54model-only frozen PPO probes passed: trainingafterweights give2wins,
+  8ties,17losses across27relatedpairs. Defaultanchorresource has0/2/7;
+  lowLRanchorresource1/3/5; global1/3/5. The intended weight-utility test is
+  negative overall, despite training loss reductions. These are same-target
+  tests with related training seeds/reused controls, not independent samples.
+
+  All18MC hour cases passed: online baselineR128/MC/MCsuccess all37gates,
+  each0wins/2ties/1loss against pairedfrozen. Equal-step outcomes are the same.
+  All24earliercredit cases also passed; all12onlinepairslose, including at
+  equalsteps. Neutral16 andbuffer40 fullaudits passed; no stablePPOadvantage.
+  Keep experimental credit/stopping settings opt-in. Bestbarenco remains36,
+  also achieved by frozen search. No optimality/completeness-of-search claim.
+
+  Imitation5seed replication was prepared but NOT launched before the deadline.
+  The exploratory single-action1win/2tie result is still unreplicated. Teacher
+  wholecohort subsequently passed, but development provenance is retained.
+  Original26NAM searches all closed normally by3hstrictgatepatience, runtime
+  verification26passed/failures0,17improved after their respective roots.
+  This report does not claim a new fulltrajectory reaudit for those26.
+
+  Final124unit tests passed. Full interpretation, model-weight results,
+  loss/entropy figure, source-bound summaries and all audit receipts live in
+  reports/anchor-first-20261018. Two early failed cohorts remain failed.
+  Raw remote records retained. Local large-archive copies explicitly pending
+  where final SHA is not yet checked; archive transport now resumes partial
+  bytes with rsync instead of truncating after each timeout. A single queue
+  with2GiBfree-space reserve replaces six concurrent copies after an ENOSPC
+  event. Only checksum-backed duplicate local mirrors and one unverified
+  transport partial were removed; no unique trajectory or model was deleted.

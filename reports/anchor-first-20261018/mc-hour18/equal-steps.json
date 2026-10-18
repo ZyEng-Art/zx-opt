@@ -1,0 +1,221 @@
+{
+  "status": "passed",
+  "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+  "pairs": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "seed": 941,
+      "common_sampled_actions": 61500,
+      "online_transitions": 61500,
+      "frozen_transitions": 66882,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 1422
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 31251
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_mc_native",
+      "seed": 941,
+      "common_sampled_actions": 60102,
+      "online_transitions": 60102,
+      "frozen_transitions": 66849,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 45014
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 31251
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_mc_success_native",
+      "seed": 941,
+      "common_sampled_actions": 54784,
+      "online_transitions": 54784,
+      "frozen_transitions": 65747,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 4667
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 13604
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "seed": 967,
+      "common_sampled_actions": 55901,
+      "online_transitions": 55901,
+      "frozen_transitions": 69145,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 44348
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 3055
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_mc_native",
+      "seed": 967,
+      "common_sampled_actions": 56296,
+      "online_transitions": 56296,
+      "frozen_transitions": 68997,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 38036
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 3055
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_mc_success_native",
+      "seed": 967,
+      "common_sampled_actions": 54288,
+      "online_transitions": 54288,
+      "frozen_transitions": 66865,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 1925
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 41296
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "seed": 991,
+      "common_sampled_actions": 54234,
+      "online_transitions": 54234,
+      "frozen_transitions": 68161,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 13970
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 52947
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_mc_native",
+      "seed": 991,
+      "common_sampled_actions": 54732,
+      "online_transitions": 54732,
+      "frozen_transitions": 67746,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 32735
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 52947
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_mc_success_native",
+      "seed": 991,
+      "common_sampled_actions": 54649,
+      "online_transitions": 54649,
+      "frozen_transitions": 67698,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 52129
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 25642
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    }
+  ],
+  "by_mode": {
+    "anchor8_resource_lr1e4_r128_mc_native": {
+      "equal_steps_outcome": {
+        "tie": 2,
+        "loss": 1
+      },
+      "equal_wall_outcome": {
+        "tie": 2,
+        "loss": 1
+      }
+    },
+    "anchor8_resource_lr1e4_r128_mc_success_native": {
+      "equal_steps_outcome": {
+        "tie": 2,
+        "loss": 1
+      },
+      "equal_wall_outcome": {
+        "tie": 2,
+        "loss": 1
+      }
+    },
+    "anchor8_resource_lr1e4_r128_native": {
+      "equal_steps_outcome": {
+        "tie": 2,
+        "loss": 1
+      },
+      "equal_wall_outcome": {
+        "tie": 2,
+        "loss": 1
+      }
+    }
+  },
+  "verification_sha256": "21b0309ad8b3104f80b85ccb8543855462a53cf93070c4cf52c9b15d9dc5dd19",
+  "analyzer_sha256": "6b42855b2c75f400c60239a0c6e1de9aee33a4dfcbf1de0c100251984e728131",
+  "scope": "Completed audited on-target trials only. Common sampled-action prefix includes noops/rejections and excludes unaccepted deadline candidates. Equal steps do not equal compute. This complements the equal-wall primary result; related frozen controls introduce dependence. No generalization or convergence claim."
+}

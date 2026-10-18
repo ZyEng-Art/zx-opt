@@ -58,16 +58,24 @@ def summarize(root, output, baseline_mode=None):
         assert protocol["config"]["policy"] == spec["policy"]
         assert hashlib.sha256((folder/"input.qasm").read_bytes()).hexdigest() == protocol["input_sha256"]
         updates = rows(folder/"updates.jsonl")
-        events = rows(folder/"events.jsonl")
-        noops = sum(e["status"] == "anchor_noop" for e in events)
-        gated = [e for e in events if e["status"] == "accepted"]
-        first_best = (0. if report["root_cost"]["gates"] == report["best"]["cost"]["gates"] else
-                      next((e["seconds"] for e in gated if e["cost"]["gates"] == report["best"]["cost"]["gates"]), None))
+        # Only the pre-update prefix is needed for the paired policy check.
+        # Keep full trajectories on disk, rather than retaining every parsed
+        # event for every trial until the entire campaign has been summarized.
+        events = []; event_count = noops = 0
+        first_best = 0. if report["root_cost"]["gates"] == report["best"]["cost"]["gates"] else None
+        with (folder/"events.jsonl").open() as stream:
+            for line in stream:
+                event = json.loads(line); event_count += 1
+                noops += event["status"] == "anchor_noop"
+                if first_best is None and event["status"] == "accepted" and event["cost"]["gates"] == report["best"]["cost"]["gates"]:
+                    first_best = event["seconds"]
+                if len(events) < protocol["config"]["rollout"]:
+                    events.append(event)
         t = report["timers"]; wall = report["total_loop_seconds"]
         row = dict(**spec, input_gates=protocol["input_gates"], root_gates=report["root_cost"]["gates"],
                    best_gates=report["best"]["cost"]["gates"], first_best_seconds=first_best,
                    wall_seconds=wall, transitions=report["transitions"], accepted=report["accepted"], noops=noops,
-                   accepted_per_second=report["accepted"]/wall, noop_fraction=noops/max(1, len(events)),
+                   accepted_per_second=report["accepted"]/wall, noop_fraction=noops/max(1, event_count),
                    updates=report["updates"], matching_and_views_seconds=t.get("matching", 0)+t.get("views", 0),
                    feasibility_seconds=t.get("feasibility", 0), rewrite_verify_seconds=t.get("rewrite_verify", 0),
                    score_seconds=t.get("score", 0), neural_seconds=t.get("anchor_inference", 0)+t.get("inference", 0)+t.get("ppo", 0),

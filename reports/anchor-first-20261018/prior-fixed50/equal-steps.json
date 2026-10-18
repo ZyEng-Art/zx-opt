@@ -1,0 +1,565 @@
+{
+  "status": "passed",
+  "source_commit": "7168fa3b8fc63fe81cf34e2048939147931d91b1",
+  "pairs": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "seed": 11,
+      "common_sampled_actions": 3475,
+      "online_transitions": 3501,
+      "frozen_transitions": 3475,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 165
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 2315
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 11,
+      "common_sampled_actions": 13009,
+      "online_transitions": 14401,
+      "frozen_transitions": 13009,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 988
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 4817
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 11,
+      "common_sampled_actions": 7822,
+      "online_transitions": 7822,
+      "frozen_transitions": 9258,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 4557
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 826
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_lr1e3",
+      "seed": 11,
+      "common_sampled_actions": 12913,
+      "online_transitions": 14976,
+      "frozen_transitions": 12913,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 43
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 4817
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_lr1e3",
+      "seed": 11,
+      "common_sampled_actions": 7936,
+      "online_transitions": 7936,
+      "frozen_transitions": 9263,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 556
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 826
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "seed": 29,
+      "common_sampled_actions": 3392,
+      "online_transitions": 3392,
+      "frozen_transitions": 3515,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 1317
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 1957
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 29,
+      "common_sampled_actions": 12258,
+      "online_transitions": 12258,
+      "frozen_transitions": 13913,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 4565
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 10065
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 29,
+      "common_sampled_actions": 10005,
+      "online_transitions": 10332,
+      "frozen_transitions": 10005,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 811
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 3486
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_lr1e3",
+      "seed": 29,
+      "common_sampled_actions": 13896,
+      "online_transitions": 13896,
+      "frozen_transitions": 13901,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 3980
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 10065
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_lr1e3",
+      "seed": 29,
+      "common_sampled_actions": 9942,
+      "online_transitions": 9942,
+      "frozen_transitions": 9979,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 986
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 3486
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "seed": 47,
+      "common_sampled_actions": 3274,
+      "online_transitions": 3274,
+      "frozen_transitions": 3522,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 1786
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 116
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 37,
+      "frozen_final_gates": 39,
+      "equal_wall_outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 47,
+      "common_sampled_actions": 11893,
+      "online_transitions": 11893,
+      "frozen_transitions": 14302,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 2552
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 278
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 37,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 47,
+      "common_sampled_actions": 8923,
+      "online_transitions": 8923,
+      "frozen_transitions": 10456,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 5982
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 7489
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_lr1e3",
+      "seed": 47,
+      "common_sampled_actions": 13975,
+      "online_transitions": 14624,
+      "frozen_transitions": 13975,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 4169
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 278
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 38,
+      "frozen_final_gates": 39,
+      "equal_wall_outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_lr1e3",
+      "seed": 47,
+      "common_sampled_actions": 8219,
+      "online_transitions": 8219,
+      "frozen_transitions": 10446,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 5307
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 7489
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 37,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "seed": 71,
+      "common_sampled_actions": 3357,
+      "online_transitions": 3357,
+      "frozen_transitions": 3499,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 1385
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 742
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 71,
+      "common_sampled_actions": 12128,
+      "online_transitions": 12128,
+      "frozen_transitions": 13182,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 1040
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 10909
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 71,
+      "common_sampled_actions": 8498,
+      "online_transitions": 8498,
+      "frozen_transitions": 9183,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 2477
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 1214
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_lr1e3",
+      "seed": 71,
+      "common_sampled_actions": 10419,
+      "online_transitions": 10419,
+      "frozen_transitions": 13200,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 5887
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 806
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 37,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_lr1e3",
+      "seed": 71,
+      "common_sampled_actions": 9022,
+      "online_transitions": 10402,
+      "frozen_transitions": 9022,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 2246
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 1214
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "seed": 101,
+      "common_sampled_actions": 3417,
+      "online_transitions": 3431,
+      "frozen_transitions": 3417,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 688
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 1317
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 101,
+      "common_sampled_actions": 12917,
+      "online_transitions": 12917,
+      "frozen_transitions": 14423,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 361
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 377
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 39,
+      "frozen_final_gates": 39,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 101,
+      "common_sampled_actions": 7301,
+      "online_transitions": 7301,
+      "frozen_transitions": 9848,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 626
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 1033
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_lr1e3",
+      "seed": 101,
+      "common_sampled_actions": 12704,
+      "online_transitions": 12704,
+      "frozen_transitions": 14329,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 4518
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 377
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 38,
+      "frozen_final_gates": 39,
+      "equal_wall_outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_lr1e3",
+      "seed": 101,
+      "common_sampled_actions": 9472,
+      "online_transitions": 9472,
+      "frozen_transitions": 9879,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 270
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 1033
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    }
+  ],
+  "by_mode": {
+    "anchor8": {
+      "equal_steps_outcome": {
+        "loss": 2,
+        "win": 1,
+        "tie": 2
+      },
+      "equal_wall_outcome": {
+        "loss": 2,
+        "win": 1,
+        "tie": 2
+      }
+    },
+    "anchor8_lr1e3": {
+      "equal_steps_outcome": {
+        "loss": 2,
+        "win": 3
+      },
+      "equal_wall_outcome": {
+        "loss": 2,
+        "win": 3
+      }
+    },
+    "anchor8_nodes": {
+      "equal_steps_outcome": {
+        "tie": 3,
+        "loss": 2
+      },
+      "equal_wall_outcome": {
+        "tie": 3,
+        "loss": 2
+      }
+    },
+    "anchor8_nodes_lr1e3": {
+      "equal_steps_outcome": {
+        "loss": 4,
+        "win": 1
+      },
+      "equal_wall_outcome": {
+        "loss": 4,
+        "win": 1
+      }
+    },
+    "global32": {
+      "equal_steps_outcome": {
+        "loss": 1,
+        "tie": 3,
+        "win": 1
+      },
+      "equal_wall_outcome": {
+        "loss": 1,
+        "tie": 3,
+        "win": 1
+      }
+    }
+  },
+  "verification_sha256": "9e39fd56e71d70849ecb25363e1c163cf256ac9f661443b7f4948a81e2c6d1f0",
+  "analyzer_sha256": "6b42855b2c75f400c60239a0c6e1de9aee33a4dfcbf1de0c100251984e728131",
+  "scope": "Completed audited on-target trials only. Common sampled-action prefix includes noops/rejections and excludes unaccepted deadline candidates. Equal steps do not equal compute. This complements the equal-wall primary result; related frozen controls introduce dependence. No generalization or convergence claim."
+}

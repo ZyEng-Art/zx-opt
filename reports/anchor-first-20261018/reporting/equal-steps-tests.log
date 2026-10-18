@@ -1,0 +1,6 @@
+test_cut_and_status_do_not_import_later_or_unaccepted_improvements (test_equal_steps.EqualStepTest) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.016s
+
+OK

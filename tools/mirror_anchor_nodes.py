@@ -44,8 +44,8 @@ def main():
                     if meta["path"] != base+"/"+filename:
                         raise ValueError("Archive must belong to this exact task directory")
                     part = target/(filename+".partial")
-                    with part.open("wb") as stream:
-                        subprocess.run(ssh+[host, "cat", meta["path"]], stdout=stream, check=True, timeout=3600)
+                    subprocess.run(["rsync", "--partial", "--inplace", "--timeout=120", "-e", shlex.join(ssh),
+                                    host+":"+meta["path"], str(part)], check=True, timeout=3600)
                     digest = hashlib.sha256()
                     with part.open("rb") as stream:
                         for block in iter(lambda: stream.read(8 << 20), b""):

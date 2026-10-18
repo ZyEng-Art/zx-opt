@@ -1,0 +1,225 @@
+{
+  "status": "completed_audited_training_descriptive_diagnostics",
+  "source_commit": "f3576a117bca450a01f10dc90a62945de45cc7e3",
+  "training": [
+    {
+      "mode": "global32",
+      "seed": 137,
+      "updates": 581,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.15023747645318508,
+          "last100_median": 0.03117244364693761,
+          "minimum": 0.0009766507137101144,
+          "maximum": 1.7706474959850311
+        },
+        "value_explained_variance_after": {
+          "first100_median": 0.08324648940731255,
+          "last100_median": 0.6651224333185659,
+          "minimum": -21.182435344909344,
+          "maximum": 0.9718455167417736
+        }
+      },
+      "updates_sha256": "0b3ec9f4b7245669e4c5cb24248b46f74bf70d80aa3c0d4f3a507ff937dcf9ca"
+    },
+    {
+      "mode": "anchor8_resource",
+      "seed": 137,
+      "updates": 1673,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.1795964576303959,
+          "last100_median": 0.0007722856898908503,
+          "minimum": 1.6065662293840433e-06,
+          "maximum": 2.244877815246582
+        },
+        "normalized_anchor_entropy": {
+          "first100_median": 0.9999849670512718,
+          "last100_median": 0.5173747461161534,
+          "minimum": 0.4205631936187123,
+          "maximum": 1.0000000197709875
+        },
+        "value_explained_variance_after": {
+          "first100_median": 0.0938125469652461,
+          "last100_median": 0.04766380869016823,
+          "minimum": -97.6505305052214,
+          "maximum": 0.9969109504653472
+        }
+      },
+      "updates_sha256": "6abeb33995853582d0cc3f45513d99163c55a0633b1af0a50902660fb7f76c47"
+    },
+    {
+      "mode": "anchor8_resource_lr1e4",
+      "seed": 137,
+      "updates": 1314,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.1299089640378952,
+          "last100_median": 0.11182511877268553,
+          "minimum": 0.0018280938384123147,
+          "maximum": 1.5354121327400208
+        },
+        "normalized_anchor_entropy": {
+          "first100_median": 0.9999999817338479,
+          "last100_median": 0.8476783991876637,
+          "minimum": 0.7388265651586738,
+          "maximum": 1.0000000392866863
+        },
+        "value_explained_variance_after": {
+          "first100_median": 0.0610167534958041,
+          "last100_median": 0.6179962634644917,
+          "minimum": -36.77553979837541,
+          "maximum": 0.9767132399033653
+        }
+      },
+      "updates_sha256": "72ec8d744b669a12ed112e96cb6763b4239c08c50bdcf5d55f013d1af6cd07e8"
+    },
+    {
+      "mode": "global32",
+      "seed": 163,
+      "updates": 609,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.2716316394507885,
+          "last100_median": 0.02530441270209849,
+          "minimum": 0.0016640728863421828,
+          "maximum": 1.2119705080986023
+        },
+        "value_explained_variance_after": {
+          "first100_median": 0.02859002100314295,
+          "last100_median": 0.31749768135412004,
+          "minimum": -25.5377937242191,
+          "maximum": 0.9862396785992511
+        }
+      },
+      "updates_sha256": "a4f49bb22c37b055b7ed89cfe558f111cf175d762596d54f840df113f89c17bf"
+    },
+    {
+      "mode": "anchor8_resource",
+      "seed": 163,
+      "updates": 1329,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.09815204981714487,
+          "last100_median": 0.041723186150193214,
+          "minimum": 0.0012569537502713501,
+          "maximum": 1.652918517589569
+        },
+        "normalized_anchor_entropy": {
+          "first100_median": 0.9999973176332426,
+          "last100_median": 0.8995472585319282,
+          "minimum": 0.8136822233752988,
+          "maximum": 1.0000000240920586
+        },
+        "value_explained_variance_after": {
+          "first100_median": 0.009039076566315918,
+          "last100_median": 0.3559262183732128,
+          "minimum": -117.9650351105177,
+          "maximum": 0.9859233404271047
+        }
+      },
+      "updates_sha256": "c4a729a14f0fb39b05f483a9b68646a36d2a1abb0804aa4eb51bc62c2d87cf50"
+    },
+    {
+      "mode": "anchor8_resource_lr1e4",
+      "seed": 163,
+      "updates": 1361,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.1968019437044859,
+          "last100_median": 0.09802874084562063,
+          "minimum": 0.0014654462574981153,
+          "maximum": 1.3098403811454773
+        },
+        "normalized_anchor_entropy": {
+          "first100_median": 0.9999999208263529,
+          "last100_median": 0.9416458509647878,
+          "minimum": 0.910293363907906,
+          "maximum": 1.0000000345824374
+        },
+        "value_explained_variance_after": {
+          "first100_median": 0.004230097779609865,
+          "last100_median": 0.3976719839152361,
+          "minimum": -38.48951187210988,
+          "maximum": 0.9845967780004644
+        }
+      },
+      "updates_sha256": "9a7b3cbde3aabf911e466020cf5d7c09856481067f60701f85f800ba00d85f86"
+    },
+    {
+      "mode": "global32",
+      "seed": 197,
+      "updates": 557,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.26266056299209595,
+          "last100_median": 0.06782948784530163,
+          "minimum": 0.004761622287333012,
+          "maximum": 1.616802304983139
+        },
+        "value_explained_variance_after": {
+          "first100_median": 0.015718817068250623,
+          "last100_median": 0.42344154992889893,
+          "minimum": -18.39050653105264,
+          "maximum": 0.9536342144313219
+        }
+      },
+      "updates_sha256": "a2c685132299811c04b3bb11486ca55a971cdf7b8f606cf091deda1b261bef0f"
+    },
+    {
+      "mode": "anchor8_resource",
+      "seed": 197,
+      "updates": 1651,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.35220224782824516,
+          "last100_median": 0.002099935205478687,
+          "minimum": 5.200178975428571e-05,
+          "maximum": 1.6723122000694275
+        },
+        "normalized_anchor_entropy": {
+          "first100_median": 0.999995948353342,
+          "last100_median": 0.8392136675701629,
+          "minimum": 0.6097765530584731,
+          "maximum": 1.000000015346981
+        },
+        "value_explained_variance_after": {
+          "first100_median": 0.008589719278059516,
+          "last100_median": 0.22846630117975114,
+          "minimum": -55.063611710914785,
+          "maximum": 0.9880586875537171
+        }
+      },
+      "updates_sha256": "7dd4df08e5226302b1607d9880ad2e5c96491d09a8e1dabbfdeaaecfa65f2a01"
+    },
+    {
+      "mode": "anchor8_resource_lr1e4",
+      "seed": 197,
+      "updates": 1406,
+      "metrics": {
+        "value_loss": {
+          "first100_median": 0.37627631053328514,
+          "last100_median": 0.067206927575171,
+          "minimum": 0.0029536099173128605,
+          "maximum": 1.9174346625804901
+        },
+        "normalized_anchor_entropy": {
+          "first100_median": 0.99999998236962,
+          "last100_median": 0.9317075065486758,
+          "minimum": 0.9165852835487682,
+          "maximum": 1.0000000810155627
+        },
+        "value_explained_variance_after": {
+          "first100_median": -0.004071603867276008,
+          "last100_median": 0.6707969094614203,
+          "minimum": -23.510003407211656,
+          "maximum": 0.9900937002102959
+        }
+      },
+      "updates_sha256": "44d931d63a1862a47534abc5676b2606118e9a426360a7272d5929cce23640de"
+    }
+  ],
+  "weights_sha256": "82b6c0d0152011fbe169f0fea09131f580ba259922b8ec6a7de4153a3b88a38e",
+  "plotter_sha256": "b8e883e8bfa3d56f49baafd178be9a8b7456ce0b5bc4a1bb4e1f6eb16e0357fc",
+  "scope": "Training-set diagnostics and separate frozen model-only utility searches on the same circuit. Lines differ by training seed, controls are related; no convergence/generalization claim. Single-action conditional menus have zero entropy without implying policy collapse."
+}

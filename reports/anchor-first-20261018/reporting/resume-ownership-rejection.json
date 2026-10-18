@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "different_container_rejected_before_any_output_write": true,
+  "all_preexisting_bytes_unchanged": true
+}

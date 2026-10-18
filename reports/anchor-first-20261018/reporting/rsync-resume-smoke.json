@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "partial_bytes": 155327,
+  "final_bytes": 1048576,
+  "same_inode": true,
+  "sha256": "04f5832117c81c5eccbe16f48db680e47f59e1b81fe1abb030ab97bc4fef66a2",
+  "scope": "Installed rsync2.6.9-compatible local interrupted-prefix recovery; remote final archives still require independent size/SHA verification"
+}

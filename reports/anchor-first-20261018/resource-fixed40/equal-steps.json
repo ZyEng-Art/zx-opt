@@ -1,0 +1,457 @@
+{
+  "status": "passed",
+  "source_commit": "6b83cbe6d94786cc1a974d9ea2b8eb1622ffbb8a",
+  "pairs": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 11,
+      "common_sampled_actions": 11015,
+      "online_transitions": 11015,
+      "frozen_transitions": 11514,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 988
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 4817
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "seed": 11,
+      "common_sampled_actions": 8192,
+      "online_transitions": 8192,
+      "frozen_transitions": 9521,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 808
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 813
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 11,
+      "common_sampled_actions": 6720,
+      "online_transitions": 6720,
+      "frozen_transitions": 8347,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 4557
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 826
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "seed": 11,
+      "common_sampled_actions": 6773,
+      "online_transitions": 6773,
+      "frozen_transitions": 8413,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 2564
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 3316
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 37,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 29,
+      "common_sampled_actions": 9024,
+      "online_transitions": 9024,
+      "frozen_transitions": 12108,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 4565
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 9002
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "seed": 29,
+      "common_sampled_actions": 7904,
+      "online_transitions": 7904,
+      "frozen_transitions": 9279,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 5118
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 3093
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 29,
+      "common_sampled_actions": 8014,
+      "online_transitions": 8014,
+      "frozen_transitions": 8691,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 811
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 3486
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "seed": 29,
+      "common_sampled_actions": 6658,
+      "online_transitions": 6658,
+      "frozen_transitions": 8435,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 2642
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 5071
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 47,
+      "common_sampled_actions": 9664,
+      "online_transitions": 9664,
+      "frozen_transitions": 12826,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 2552
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 278
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 37,
+      "frozen_final_gates": 39,
+      "equal_wall_outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "seed": 47,
+      "common_sampled_actions": 7894,
+      "online_transitions": 7894,
+      "frozen_transitions": 9995,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 3966
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 716
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 39,
+      "frozen_final_gates": 39,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 47,
+      "common_sampled_actions": 7687,
+      "online_transitions": 7687,
+      "frozen_transitions": 9361,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 5982
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 7489
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "seed": 47,
+      "common_sampled_actions": 7233,
+      "online_transitions": 7233,
+      "frozen_transitions": 8579,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 5519
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 2404
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 71,
+      "common_sampled_actions": 9920,
+      "online_transitions": 9920,
+      "frozen_transitions": 11901,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 1040
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 806
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 38,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "seed": 71,
+      "common_sampled_actions": 7945,
+      "online_transitions": 7945,
+      "frozen_transitions": 10341,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 5605
+      },
+      "frozen_prefix": {
+        "gates": 40,
+        "first_best_transition": 0
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 38,
+      "frozen_final_gates": 39,
+      "equal_wall_outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 71,
+      "common_sampled_actions": 7471,
+      "online_transitions": 7471,
+      "frozen_transitions": 8418,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 2477
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 1214
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "seed": 71,
+      "common_sampled_actions": 6685,
+      "online_transitions": 6685,
+      "frozen_transitions": 8271,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 433
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 5999
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "seed": 101,
+      "common_sampled_actions": 10176,
+      "online_transitions": 10176,
+      "frozen_transitions": 12963,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 361
+      },
+      "frozen_prefix": {
+        "gates": 39,
+        "first_best_transition": 377
+      },
+      "equal_steps_outcome": "tie",
+      "online_final_gates": 39,
+      "frozen_final_gates": 39,
+      "equal_wall_outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "seed": 101,
+      "common_sampled_actions": 7639,
+      "online_transitions": 7639,
+      "frozen_transitions": 9289,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 3786
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 3170
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "seed": 101,
+      "common_sampled_actions": 6377,
+      "online_transitions": 6377,
+      "frozen_transitions": 8972,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 626
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 1033
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "seed": 101,
+      "common_sampled_actions": 6733,
+      "online_transitions": 6733,
+      "frozen_transitions": 8389,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 2684
+      },
+      "frozen_prefix": {
+        "gates": 38,
+        "first_best_transition": 1083
+      },
+      "equal_steps_outcome": "win",
+      "online_final_gates": 37,
+      "frozen_final_gates": 38,
+      "equal_wall_outcome": "win"
+    }
+  ],
+  "by_mode": {
+    "anchor8": {
+      "equal_steps_outcome": {
+        "loss": 1,
+        "win": 3,
+        "tie": 1
+      },
+      "equal_wall_outcome": {
+        "loss": 2,
+        "win": 1,
+        "tie": 2
+      }
+    },
+    "anchor8_nodes": {
+      "equal_steps_outcome": {
+        "tie": 3,
+        "loss": 2
+      },
+      "equal_wall_outcome": {
+        "tie": 3,
+        "loss": 2
+      }
+    },
+    "anchor8_nodes_resource": {
+      "equal_steps_outcome": {
+        "tie": 3,
+        "loss": 1,
+        "win": 1
+      },
+      "equal_wall_outcome": {
+        "tie": 3,
+        "loss": 1,
+        "win": 1
+      }
+    },
+    "anchor8_resource": {
+      "equal_steps_outcome": {
+        "loss": 3,
+        "tie": 1,
+        "win": 1
+      },
+      "equal_wall_outcome": {
+        "loss": 3,
+        "tie": 1,
+        "win": 1
+      }
+    }
+  },
+  "verification_sha256": "daa57e239581243c14338391cdf8ca2af6aa125e26b3bdd4076a393559b31f97",
+  "analyzer_sha256": "6b42855b2c75f400c60239a0c6e1de9aee33a4dfcbf1de0c100251984e728131",
+  "scope": "Completed audited on-target trials only. Common sampled-action prefix includes noops/rejections and excludes unaccepted deadline candidates. Equal steps do not equal compute. This complements the equal-wall primary result; related frozen controls introduce dependence. No generalization or convergence claim."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "study": "prior-fixed50",
+      "archive": "runs/anchor-prior-fixed-launch-20261018/mirror/node22/anchor-7168fa3b8fc6-passed-records.tar.gz",
+      "sha256": "8f17bd9da84819e50a79c544cfbaf3ac9dc94d091490d835ff97fa38bb15c545",
+      "bytes": 708705109,
+      "live_copy": "runs/anchor-prior-fixed-launch-20261018/mirror/node22/live-runs",
+      "local_duplicate_removed": true
+    },
+    {
+      "study": "resource-fixed40",
+      "archive": "runs/anchor-resource-fixed-launch-20261018/mirror/node23/anchor-6b83cbe6d947-passed-records.tar.gz",
+      "sha256": "341f03314cad09afe4cabec651f10f29d3da3092bed98c30b84452f0215452f7",
+      "bytes": 585655668,
+      "live_copy": "runs/anchor-resource-fixed-launch-20261018/mirror/node23/live-runs",
+      "local_duplicate_removed": true
+    }
+  ],
+  "scope": "Only terminal duplicate local live mirrors removed after all90 source-bound summaries/equal-step comparisons and full retained-archive SHA checks. Compressed full trajectories and remote source copies remain. Original26, teacher, active studies untouched.",
+  "time": "2026-10-18T04:55:03.040847+08:00"
+}

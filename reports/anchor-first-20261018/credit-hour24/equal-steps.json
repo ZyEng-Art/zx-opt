@@ -1,0 +1,283 @@
+{
+  "status": "passed",
+  "source_commit": "87bb830c59e3e793a488603aa9d75ad07be87c02",
+  "pairs": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "seed": 523,
+      "common_sampled_actions": 47695,
+      "online_transitions": 47695,
+      "frozen_transitions": 56441,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 2924
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 24772
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "seed": 523,
+      "common_sampled_actions": 46741,
+      "online_transitions": 46741,
+      "frozen_transitions": 53854,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 4697
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 4945
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "seed": 523,
+      "common_sampled_actions": 44165,
+      "online_transitions": 44165,
+      "frozen_transitions": 56245,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 1752
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 24772
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "seed": 523,
+      "common_sampled_actions": 46680,
+      "online_transitions": 46680,
+      "frozen_transitions": 54338,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 3004
+      },
+      "frozen_prefix": {
+        "gates": 37,
+        "first_best_transition": 4945
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 37,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "seed": 557,
+      "common_sampled_actions": 50048,
+      "online_transitions": 50048,
+      "frozen_transitions": 54067,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 6023
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 24283
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "seed": 557,
+      "common_sampled_actions": 47281,
+      "online_transitions": 47281,
+      "frozen_transitions": 53559,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 2354
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 3903
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "seed": 557,
+      "common_sampled_actions": 43264,
+      "online_transitions": 43264,
+      "frozen_transitions": 54050,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 13806
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 24283
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "seed": 557,
+      "common_sampled_actions": 47531,
+      "online_transitions": 47531,
+      "frozen_transitions": 53787,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 8737
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 3903
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_native",
+      "seed": 593,
+      "common_sampled_actions": 47086,
+      "online_transitions": 47086,
+      "frozen_transitions": 54066,
+      "online_prefix": {
+        "gates": 38,
+        "first_best_transition": 1429
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 42352
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 38,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_native",
+      "seed": 593,
+      "common_sampled_actions": 45728,
+      "online_transitions": 45728,
+      "frozen_transitions": 54089,
+      "online_prefix": {
+        "gates": 39,
+        "first_best_transition": 695
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 11239
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 39,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_r128_native",
+      "seed": 593,
+      "common_sampled_actions": 44672,
+      "online_transitions": 44672,
+      "frozen_transitions": 54611,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 10691
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 42352
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4_stop_r128_native",
+      "seed": 593,
+      "common_sampled_actions": 47616,
+      "online_transitions": 47616,
+      "frozen_transitions": 54170,
+      "online_prefix": {
+        "gates": 37,
+        "first_best_transition": 3290
+      },
+      "frozen_prefix": {
+        "gates": 36,
+        "first_best_transition": 11239
+      },
+      "equal_steps_outcome": "loss",
+      "online_final_gates": 37,
+      "frozen_final_gates": 36,
+      "equal_wall_outcome": "loss"
+    }
+  ],
+  "by_mode": {
+    "anchor8_resource_lr1e4_native": {
+      "equal_steps_outcome": {
+        "loss": 3
+      },
+      "equal_wall_outcome": {
+        "loss": 3
+      }
+    },
+    "anchor8_resource_lr1e4_r128_native": {
+      "equal_steps_outcome": {
+        "loss": 3
+      },
+      "equal_wall_outcome": {
+        "loss": 3
+      }
+    },
+    "anchor8_resource_lr1e4_stop_native": {
+      "equal_steps_outcome": {
+        "loss": 3
+      },
+      "equal_wall_outcome": {
+        "loss": 3
+      }
+    },
+    "anchor8_resource_lr1e4_stop_r128_native": {
+      "equal_steps_outcome": {
+        "loss": 3
+      },
+      "equal_wall_outcome": {
+        "loss": 3
+      }
+    }
+  },
+  "verification_sha256": "24c1bb331a27d3ebe0c896f02c7a20e4b2c1dd6ff2b72c04d8aa57c13869844b",
+  "analyzer_sha256": "6b42855b2c75f400c60239a0c6e1de9aee33a4dfcbf1de0c100251984e728131",
+  "scope": "Completed audited on-target trials only. Common sampled-action prefix includes noops/rejections and excludes unaccepted deadline candidates. Equal steps do not equal compute. This complements the equal-wall primary result; related frozen controls introduce dependence. No generalization or convergence claim."
+}

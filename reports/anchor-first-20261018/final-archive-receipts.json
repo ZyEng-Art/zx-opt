@@ -1,0 +1,130 @@
+{
+  "time": "2026-10-18T08:53:06.975980+08:00",
+  "records": [
+    {
+      "study": "anchor-probes",
+      "node": 23,
+      "experiment_status": "passed",
+      "source": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+      "expected": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_probes_node23_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+        "bytes": 1392839704,
+        "sha256": "c0fd709257a7a911f43e8c63e00038aca224b3a3a15e27736a16df78234289b0",
+        "study_status": "passed",
+        "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+      },
+      "local_final": "runs/anchor-probes-launch-20261018/mirror/node23/anchor-06ef566f69c5-passed-records.tar.gz",
+      "local_verified": false,
+      "local_status": "Queued sequential resumable transfer; complete remote archive and live trajectories retained"
+    },
+    {
+      "study": "anchor-mc",
+      "node": 22,
+      "experiment_status": "passed",
+      "source": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+      "expected": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_mc_node22_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+        "bytes": 2058299601,
+        "sha256": "f0d9bef87c9d1e267a72fe553bed584923f09ed8b0df37f0ea514c4fe7ec7065",
+        "study_status": "passed",
+        "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+      },
+      "local_final": "runs/anchor-mc-launch-20261018/mirror/node22/anchor-06ef566f69c5-passed-records.tar.gz",
+      "local_verified": false,
+      "local_status": "Queued sequential resumable transfer; complete remote archive and live trajectories retained"
+    },
+    {
+      "study": "anchor-credit",
+      "node": 23,
+      "experiment_status": "passed",
+      "source": "87bb830c59e3e793a488603aa9d75ad07be87c02",
+      "expected": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_credit_node23_20261018/anchor-87bb830c59e3-passed-records.tar.gz",
+        "bytes": 2191405694,
+        "sha256": "22c3b7dd07a768ffe3e4a1cc3d01659142071c21f3e75cf8829f626d57d926f3",
+        "study_status": "passed",
+        "source_commit": "87bb830c59e3e793a488603aa9d75ad07be87c02"
+      },
+      "local_final": "runs/anchor-credit-launch-20261018/mirror/node23/anchor-87bb830c59e3-passed-records.tar.gz",
+      "local_verified": false,
+      "local_status": "Queued sequential resumable transfer; complete remote archive and live trajectories retained"
+    },
+    {
+      "study": "anchor-neutral",
+      "node": 22,
+      "experiment_status": "passed",
+      "source": "de9a7da27c230319467a16c3da8f698269dc7c94",
+      "expected": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_neutral_node22_20261018/anchor-de9a7da27c23-passed-records.tar.gz",
+        "bytes": 1604286763,
+        "sha256": "e741cdde85afaa7d4eefe4bd6a1d9016d879020379dd9292ba9583967752a3eb",
+        "study_status": "passed",
+        "source_commit": "de9a7da27c230319467a16c3da8f698269dc7c94"
+      },
+      "local_final": "runs/anchor-neutral-launch-20261018/mirror/node22/anchor-de9a7da27c23-passed-records.tar.gz",
+      "local_verified": false,
+      "local_status": "Queued sequential resumable transfer; complete remote archive and live trajectories retained"
+    },
+    {
+      "study": "anchor-buffer",
+      "node": 22,
+      "experiment_status": "passed",
+      "source": "4b451ad834b34b2f0e46bb2142ef16084ee08901",
+      "expected": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_buffer_node22_20261018/anchor-4b451ad834b3-passed-records.tar.gz",
+        "bytes": 1011630152,
+        "sha256": "3548b1a9df4f011be96ee9d4939550000efd7b81d49b859bf2c8d19407f4feea",
+        "study_status": "passed",
+        "source_commit": "4b451ad834b34b2f0e46bb2142ef16084ee08901"
+      },
+      "local_final": "runs/anchor-buffer-launch-20261018/mirror/node22/anchor-4b451ad834b3-passed-records.tar.gz",
+      "local_verified": true
+    },
+    {
+      "study": "anchor-long-fixed",
+      "node": 23,
+      "experiment_status": "passed",
+      "source": "f3576a117bca450a01f10dc90a62945de45cc7e3",
+      "expected": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_long_fixed_node23_20261018/anchor-f3576a117bca-passed-records.tar.gz",
+        "bytes": 1299973477,
+        "sha256": "770d3e46f2aa6c441654748c8cc5f749cb5aa1966368049529803c7c36e2b712",
+        "study_status": "passed",
+        "source_commit": "f3576a117bca450a01f10dc90a62945de45cc7e3"
+      },
+      "local_final": "runs/anchor-long-fixed-launch-20261018/mirror/node23/anchor-f3576a117bca-passed-records.tar.gz",
+      "local_verified": false,
+      "local_status": "Queued sequential resumable transfer; complete remote archive and live trajectories retained"
+    },
+    {
+      "study": "anchor-long",
+      "node": 23,
+      "experiment_status": "passed",
+      "source": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "expected": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_long_node23_20261018/anchor-0c605a8fd2e2-records.tar.gz",
+        "bytes": 1313182679,
+        "sha256": "8189580463a08634660f865009b17f9c6eed5845f4c5b39864bdf0e3e8b1f2bb"
+      },
+      "local_final": "runs/anchor-long-launch-20261018/mirror/node23/anchor-0c605a8fd2e2-records.tar.gz",
+      "local_verified": false,
+      "local_status": "Queued sequential resumable transfer; complete remote archive and live trajectories retained"
+    },
+    {
+      "study": "anchor-imitation",
+      "node": 23,
+      "experiment_status": "passed",
+      "source": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+      "expected": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_imitation_node23_20261018/anchor-a3bf987d139a-passed-records.tar.gz",
+        "bytes": 362631682,
+        "sha256": "2164c79ca1d983b8ed8f5d4c642cafa62cf441b057e1c9085a39fd05ffe7f062",
+        "study_status": "passed",
+        "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746"
+      },
+      "local_final": "runs/anchor-imitation-launch-20261018/mirror/node23/anchor-a3bf987d139a-passed-records.tar.gz",
+      "local_verified": true
+    }
+  ],
+  "scope": "Full remote audits passed for these8studies. Only local_verified=true indicates completed checksum-verified local archive transport; all remaining copies explicitly pending."
+}

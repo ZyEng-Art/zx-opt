@@ -1,0 +1,60 @@
+{
+  "circuit": "barenco_tof_3",
+  "input_sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92",
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "config": {
+    "output": "/workspace/task/source/runs/comparison/barenco_tof_3/anchor8_resource_lr1e4_online_s197",
+    "resume_state": null,
+    "resume_model": null,
+    "shared_buffer": null,
+    "input": "/workspace/task/source/inputs/quarl-nam-raw/barenco_tof_3.qasm",
+    "jpv": true,
+    "general_zx": true,
+    "allow_arbitrary_angles": true,
+    "policy": "online",
+    "selection": "anchor",
+    "anchor_candidate_cap": 8,
+    "anchor_prior": "uniform",
+    "learning_rate": 0.0001,
+    "anchor_resource_mask": true,
+    "seconds": 3600.0,
+    "no_improvement_seconds": 0.0,
+    "checkpoint_seconds": 300.0,
+    "verification": "adaptive",
+    "seed": 197,
+    "max_growth": 64,
+    "max_edge_growth": 256,
+    "candidate_cap": 32,
+    "total_candidate_cap": 32,
+    "matching_work": 2048,
+    "horizon": 70,
+    "max_unscored": 8,
+    "archive": 64,
+    "latent_archive": 128,
+    "rollout": 32,
+    "extraction_timeout": 20.0,
+    "rewrite_timeout": 30.0,
+    "max_steps": null,
+    "feasibility_mask": true
+  },
+  "development_source": true,
+  "baseline_stage": "initial",
+  "models": [
+    {
+      "stage": "initial",
+      "model": "initial.pt",
+      "sha256": "06a7f3d4dd82ecfad462c8a6f385b7f8f6122d9307669ff902bb646ce5ea822e"
+    },
+    {
+      "stage": "single",
+      "model": "single.pt",
+      "sha256": "94fcee7cc2e010e762946596870f3a37514a262f278b108e595afd3d99550f74"
+    }
+  ],
+  "demonstration_sha256": "531a68e241384dd94ef2a794f55612fc4dd3f50673b7410f7ff56eeaee5f2042",
+  "scope": "Fresh-seed replication of the completed12case supervised pilot. Select initial/single stages after observing1win2ties for single on pilot seeds853877911; replication seeds preregistered1031/1061/1093/1123/1151,900s each. Same unchanged model bytes, original40gate circuit, fresh pools. Development demonstration source; separate from PPO efficacy and no generalization claim."
+}

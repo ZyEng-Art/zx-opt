@@ -1,0 +1,54 @@
+{
+  "node": 23,
+  "tag": "anchor_probes",
+  "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+  "seconds": 900.0,
+  "workers": 18,
+  "cpus": 32,
+  "memory_gib": 64,
+  "circuits": [
+    "barenco_tof_3"
+  ],
+  "seeds": [
+    "401",
+    "431",
+    "461"
+  ],
+  "modes": [
+    "global32",
+    "anchor8_resource",
+    "anchor8_resource_lr1e4"
+  ],
+  "experiment": "policy-probe",
+  "probe_source_tag": "anchor_long_fixed",
+  "training_seeds": [
+    "137",
+    "163",
+    "197"
+  ],
+  "audit_workers": 12,
+  "audit_native_replay": "rooted",
+  "audit_crosscheck_native_every": 101,
+  "build_native_flow": false,
+  "model_bundle_sha256": null,
+  "model_files": [],
+  "development_models": false,
+  "save_improvement_models": false,
+  "base": "/tmp/dengzengyong_rlzx_anchor_probes_node23_20261018",
+  "bundle_sha256": "ac3c302193a1ba39cbc368be9049bb63bbc7586a3a8c30ca9b115a3dc3c9cdcb",
+  "runtime": {
+    "container_name": "dengzengyong_rlzx_anchor_probes_node23_20261018",
+    "container_id": "489a1ba12f1e11ba4f02136826f4b8f7fa0ce5f9027a227834707a2cf2fee525",
+    "started_at": "2026-10-17T20:47:41.551014071Z",
+    "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+    "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+    "cpus": 32,
+    "memory_gib": 64,
+    "workers": 18,
+    "gpu": false,
+    "node": 23,
+    "experiment": "policy-probe",
+    "probe_source": "/tmp/dengzengyong_rlzx_anchor_long_fixed_node23_20261018/source/runs/comparison",
+    "controller_pid": 3056741
+  }
+}

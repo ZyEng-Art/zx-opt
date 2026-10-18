@@ -1,0 +1,7 @@
+{
+  "status": "all26_searches_closed",
+  "trials": 26,
+  "improved_after_root": 17,
+  "failures": 0,
+  "scope": "Runtime verified results, not a newly completed full-trajectory audit. Original immutable sources and trajectories retained, no jobs stopped or restarted."
+}

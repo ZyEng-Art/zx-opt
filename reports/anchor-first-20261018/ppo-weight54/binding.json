@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "trials": 54,
+  "all_final_tensors_unchanged": true,
+  "root": "canonical original input with fresh archive and RNG",
+  "verification_sha256": "4b9bbda39b299ad00544ade6c29bfa4b60d1ea7b38ccea4ac82b83f5b1f10539",
+  "scope": "Initial/trained models selected from the earliest whole-audited hour cohort, not by outcomes; training/search seeds correlated; no generalization claim"
+}

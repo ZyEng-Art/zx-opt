@@ -1,0 +1,262 @@
+{
+  "time": "2026-10-18T08:53:06.975980+08:00",
+  "studies": [
+    {
+      "node": 22,
+      "tag": "anchor",
+      "source_commit": "e3a47f2fcba0fb80e322c51582ba6f53675e6409",
+      "phase": "passed",
+      "trials": 54,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_node22_20261018/anchor-e3a47f2fcba0-records.tar.gz",
+        "bytes": 201686484,
+        "sha256": "32a1a18a5261312113280b63a380caef26cea56e831f8a912fe7c3631abfbc26"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 22,
+      "tag": "anchor_prior",
+      "source_commit": "34a35c880b83e074c8b3194fa0a93c8d303faee5",
+      "phase": "failed",
+      "trials": null,
+      "container_running": false,
+      "archive": null,
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 22,
+      "tag": "anchor_prior_fixed",
+      "source_commit": "7168fa3b8fc63fe81cf34e2048939147931d91b1",
+      "phase": "passed",
+      "trials": 50,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_prior_fixed_node22_20261018/anchor-7168fa3b8fc6-passed-records.tar.gz",
+        "bytes": 708705109,
+        "sha256": "8f17bd9da84819e50a79c544cfbaf3ac9dc94d091490d835ff97fa38bb15c545",
+        "study_status": "passed",
+        "source_commit": "7168fa3b8fc63fe81cf34e2048939147931d91b1"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 22,
+      "tag": "anchor_buffer",
+      "source_commit": "4b451ad834b34b2f0e46bb2142ef16084ee08901",
+      "phase": "passed",
+      "trials": 40,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_buffer_node22_20261018/anchor-4b451ad834b3-passed-records.tar.gz",
+        "bytes": 1011630152,
+        "sha256": "3548b1a9df4f011be96ee9d4939550000efd7b81d49b859bf2c8d19407f4feea",
+        "study_status": "passed",
+        "source_commit": "4b451ad834b34b2f0e46bb2142ef16084ee08901"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 22,
+      "tag": "anchor_native",
+      "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+      "phase": "passed",
+      "trials": 24,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_native_node22_20261018/anchor-60e20456bb34-passed-records.tar.gz",
+        "bytes": 413369775,
+        "sha256": "89c62f4aebce8d36c421cd74c23341ebb1b97274eb3c986bc2566532b212a37a",
+        "study_status": "passed",
+        "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 22,
+      "tag": "anchor_neutral",
+      "source_commit": "de9a7da27c230319467a16c3da8f698269dc7c94",
+      "phase": "passed",
+      "trials": 16,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_neutral_node22_20261018/anchor-de9a7da27c23-passed-records.tar.gz",
+        "bytes": 1604286763,
+        "sha256": "e741cdde85afaa7d4eefe4bd6a1d9016d879020379dd9292ba9583967752a3eb",
+        "study_status": "passed",
+        "source_commit": "de9a7da27c230319467a16c3da8f698269dc7c94"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 22,
+      "tag": "anchor_export_reference",
+      "source_commit": "d047dd2c856302ff67ed0167cfab0dcbb7ebf90c",
+      "phase": "passed",
+      "trials": 8,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_export_reference_node22_20261018/anchor-d047dd2c8563-passed-records.tar.gz",
+        "bytes": 145272000,
+        "sha256": "0c5263ac85f55b9176e30c317c63a517492cc3d7b3e206d2ef07683bb7bcf928",
+        "study_status": "passed",
+        "source_commit": "d047dd2c856302ff67ed0167cfab0dcbb7ebf90c"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 22,
+      "tag": "anchor_export_indexed",
+      "source_commit": "0f25b74a1c177720b0edf6759faab500209386c8",
+      "phase": "passed",
+      "trials": 8,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_export_indexed_node22_20261018/anchor-0f25b74a1c17-passed-records.tar.gz",
+        "bytes": 161112530,
+        "sha256": "d3181888f856897424ac89ec6362884af75e3384b85e89679c0856dc9b9fec3f",
+        "study_status": "passed",
+        "source_commit": "0f25b74a1c177720b0edf6759faab500209386c8"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 22,
+      "tag": "anchor_mc",
+      "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+      "phase": "passed",
+      "trials": 18,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_mc_node22_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+        "bytes": 2058299601,
+        "sha256": "f0d9bef87c9d1e267a72fe553bed584923f09ed8b0df37f0ea514c4fe7ec7065",
+        "study_status": "passed",
+        "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 23,
+      "tag": "anchor",
+      "source_commit": "64e61def1b92c53ca296677e1cc1f250e347b8d3",
+      "phase": "passed",
+      "trials": 54,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_node23_20261018/anchor-64e61def1b92-records.tar.gz",
+        "bytes": 319575552,
+        "sha256": "dd77c57e9500cc89f138e7e3b5606d49337fe113a5cba2c9ab99317b032c8028"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 23,
+      "tag": "anchor_resource",
+      "source_commit": "d4a9147e278ef89dc1b9619b4e3314880663b233",
+      "phase": "failed",
+      "trials": null,
+      "container_running": false,
+      "archive": null,
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 23,
+      "tag": "anchor_long",
+      "source_commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+      "phase": "passed",
+      "trials": 18,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_long_node23_20261018/anchor-0c605a8fd2e2-records.tar.gz",
+        "bytes": 1313182679,
+        "sha256": "8189580463a08634660f865009b17f9c6eed5845f4c5b39864bdf0e3e8b1f2bb"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 23,
+      "tag": "anchor_resource_fixed",
+      "source_commit": "6b83cbe6d94786cc1a974d9ea2b8eb1622ffbb8a",
+      "phase": "passed",
+      "trials": 40,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_resource_fixed_node23_20261018/anchor-6b83cbe6d947-passed-records.tar.gz",
+        "bytes": 585655668,
+        "sha256": "341f03314cad09afe4cabec651f10f29d3da3092bed98c30b84452f0215452f7",
+        "study_status": "passed",
+        "source_commit": "6b83cbe6d94786cc1a974d9ea2b8eb1622ffbb8a"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 23,
+      "tag": "anchor_long_fixed",
+      "source_commit": "f3576a117bca450a01f10dc90a62945de45cc7e3",
+      "phase": "passed",
+      "trials": 18,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_long_fixed_node23_20261018/anchor-f3576a117bca-passed-records.tar.gz",
+        "bytes": 1299973477,
+        "sha256": "770d3e46f2aa6c441654748c8cc5f749cb5aa1966368049529803c7c36e2b712",
+        "study_status": "passed",
+        "source_commit": "f3576a117bca450a01f10dc90a62945de45cc7e3"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 23,
+      "tag": "anchor_credit",
+      "source_commit": "87bb830c59e3e793a488603aa9d75ad07be87c02",
+      "phase": "passed",
+      "trials": 24,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_credit_node23_20261018/anchor-87bb830c59e3-passed-records.tar.gz",
+        "bytes": 2191405694,
+        "sha256": "22c3b7dd07a768ffe3e4a1cc3d01659142071c21f3e75cf8829f626d57d926f3",
+        "study_status": "passed",
+        "source_commit": "87bb830c59e3e793a488603aa9d75ad07be87c02"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 23,
+      "tag": "anchor_imitation",
+      "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+      "phase": "passed",
+      "trials": 12,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_imitation_node23_20261018/anchor-a3bf987d139a-passed-records.tar.gz",
+        "bytes": 362631682,
+        "sha256": "2164c79ca1d983b8ed8f5d4c642cafa62cf441b057e1c9085a39fd05ffe7f062",
+        "study_status": "passed",
+        "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    },
+    {
+      "node": 23,
+      "tag": "anchor_probes",
+      "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+      "phase": "passed",
+      "trials": 54,
+      "container_running": false,
+      "archive": {
+        "path": "/tmp/dengzengyong_rlzx_anchor_probes_node23_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+        "bytes": 1392839704,
+        "sha256": "c0fd709257a7a911f43e8c63e00038aca224b3a3a15e27736a16df78234289b0",
+        "study_status": "passed",
+        "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+      },
+      "scope": "Study audit status, distinct from local archive download status"
+    }
+  ],
+  "passed_trial_count": 438,
+  "failed_cohorts_retained": 2,
+  "original_nam26": "All26 searches closed with runtimeverificationpassed; distinct from full trajectory reaudit"
+}

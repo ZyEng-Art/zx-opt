@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import shlex
 import subprocess
 
 
@@ -12,6 +13,7 @@ def main():
     p.add_argument("output", type=Path)
     p.add_argument("--node", type=int, choices=[22, 23], required=True)
     p.add_argument("--tag", required=True)
+    p.add_argument("--resume", action="store_true", help="Resume this exact owned study's existing output directory")
     a = p.parse_args()
     if not re.fullmatch(r"[a-z0-9_]{1,32}", a.tag):
         raise ValueError("Use a short owned-study tag")
@@ -38,19 +40,37 @@ def main():
     filename = Path(meta["path"]).name
     if not re.fullmatch(r"[a-zA-Z0-9_.-]+", filename) or meta["path"] != base+"/"+filename:
         raise ValueError("Archive must belong to the exact owned task directory")
-    out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
+    out = a.output.resolve(); out.mkdir(parents=True, exist_ok=a.resume)
+    for name, record in records.items():
+        existing = out/(name+".json")
+        if existing.exists():
+            old = json.loads(existing.read_text())
+            keys = {"ownership": ("source_commit", "container_id"),
+                    "controller": ("commit", "container_id"),
+                    "archive": ("path", "sha256", "bytes")}[name]
+            if any(old.get(key) != record.get(key) for key in keys):
+                raise ValueError("Existing output belongs to a different study/archive: "+name)
     for name, record in records.items():
         (out/(name+".json")).write_text(json.dumps(record, indent=2)+"\n")
     part = out/(filename+".partial")
-    with part.open("wb") as stream:
-        subprocess.run(ssh+[host, "cat", meta["path"]], stdout=stream, check=True, timeout=3600)
+    final = out/filename
+    if part.is_symlink() or final.is_symlink():
+        raise ValueError("Archive destination must be a regular local file")
+    if not final.exists():
+        # A timeout must preserve the already received bytes. In-place rsync
+        # reuses that partial file as its delta basis on the next invocation;
+        # only the independent size/SHA check below publishes a final archive.
+        subprocess.run(["rsync", "--partial", "--inplace", "--timeout=120", "-e", shlex.join(ssh),
+                        host+":"+meta["path"], str(part)], check=True, timeout=3600)
+    downloaded = final if final.exists() else part
     digest = hashlib.sha256()
-    with part.open("rb") as stream:
+    with downloaded.open("rb") as stream:
         for chunk in iter(lambda: stream.read(8 << 20), b""):
             digest.update(chunk)
-    if part.stat().st_size != meta["bytes"] or digest.hexdigest() != meta["sha256"]:
+    if downloaded.stat().st_size != meta["bytes"] or digest.hexdigest() != meta["sha256"]:
         raise ValueError("Final archive transport size/checksum mismatch; partial file retained")
-    part.replace(out/filename)
+    if downloaded == part:
+        part.replace(final)
     receipt = dict(status="final_archive_transport_verified", node=a.node, tag=a.tag,
                    source_commit=owner["source_commit"], recorded_study_status=controller["phase"],
                    archive_sha256=meta["sha256"], bytes=meta["bytes"],

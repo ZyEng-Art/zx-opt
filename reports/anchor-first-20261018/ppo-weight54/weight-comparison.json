@@ -1,0 +1,508 @@
+{
+  "status": "passed",
+  "pairs": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 137,
+      "search_seed": 401,
+      "initial": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "saved_gates": 1,
+      "outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 137,
+      "search_seed": 431,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 39,
+        "cx": 15,
+        "depth": 31
+      },
+      "saved_gates": -2,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 137,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 35
+      },
+      "trained": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "saved_gates": -3,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 163,
+      "search_seed": 401,
+      "initial": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 36
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 163,
+      "search_seed": 431,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 32
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 163,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 14,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 39,
+        "cx": 17,
+        "depth": 37
+      },
+      "saved_gates": -2,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 197,
+      "search_seed": 401,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 197,
+      "search_seed": 431,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 34
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "global32",
+      "training_seed": 197,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 137,
+      "search_seed": 401,
+      "initial": {
+        "gates": 38,
+        "cx": 15,
+        "depth": 35
+      },
+      "trained": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "saved_gates": -2,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 137,
+      "search_seed": 431,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "saved_gates": -3,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 137,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "saved_gates": -3,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 163,
+      "search_seed": 401,
+      "initial": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 36
+      },
+      "trained": {
+        "gates": 39,
+        "cx": 17,
+        "depth": 37
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 163,
+      "search_seed": 431,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 163,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 39,
+        "cx": 17,
+        "depth": 37
+      },
+      "saved_gates": -2,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 197,
+      "search_seed": 401,
+      "initial": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 197,
+      "search_seed": 431,
+      "initial": {
+        "gates": 38,
+        "cx": 13,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 31
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "training_seed": 197,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 137,
+      "search_seed": 401,
+      "initial": {
+        "gates": 38,
+        "cx": 15,
+        "depth": 35
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "saved_gates": 1,
+      "outcome": "win"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 137,
+      "search_seed": 431,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 137,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 163,
+      "search_seed": 401,
+      "initial": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 36
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 163,
+      "search_seed": 431,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 39,
+        "cx": 17,
+        "depth": 37
+      },
+      "saved_gates": -2,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 163,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 15,
+        "depth": 34
+      },
+      "trained": {
+        "gates": 39,
+        "cx": 17,
+        "depth": 37
+      },
+      "saved_gates": -2,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 197,
+      "search_seed": 401,
+      "initial": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 14,
+        "depth": 31
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 197,
+      "search_seed": 431,
+      "initial": {
+        "gates": 38,
+        "cx": 13,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 36
+      },
+      "saved_gates": 0,
+      "outcome": "tie"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource_lr1e4",
+      "training_seed": 197,
+      "search_seed": 461,
+      "initial": {
+        "gates": 37,
+        "cx": 13,
+        "depth": 32
+      },
+      "trained": {
+        "gates": 38,
+        "cx": 16,
+        "depth": 37
+      },
+      "saved_gates": -1,
+      "outcome": "loss"
+    }
+  ],
+  "by_mode": {
+    "global32": {
+      "win": 1,
+      "loss": 5,
+      "tie": 3
+    },
+    "anchor8_resource": {
+      "loss": 7,
+      "tie": 2
+    },
+    "anchor8_resource_lr1e4": {
+      "win": 1,
+      "loss": 5,
+      "tie": 3
+    }
+  },
+  "scope": "Gate-count comparison of audited frozen initial/trained weights on the training circuit; training seeds and reused controls introduce dependence. No convergence or generalization claim."
+}

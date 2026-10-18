@@ -1,0 +1,10 @@
+{
+  "status": "final_archive_transport_verified",
+  "node": 23,
+  "tag": "anchor_imitation",
+  "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+  "recorded_study_status": "passed",
+  "archive_sha256": "2164c79ca1d983b8ed8f5d4c642cafa62cf441b057e1c9085a39fd05ffe7f062",
+  "bytes": 362631682,
+  "scope": "Transport receipt only. See the archived finished marker and complete replay audit for study validity; failed archives remain failed."
+}

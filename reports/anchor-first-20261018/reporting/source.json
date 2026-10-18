@@ -1,0 +1,9 @@
+{
+  "base_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+  "files": {
+    "tools/summarize_anchor.py": "9c55c32760dbfc3daa73ad7540cd101b87b405e960229b9ca36f750dc0425081",
+    "tools/compare_equal_steps.py": "6b42855b2c75f400c60239a0c6e1de9aee33a4dfcbf1de0c100251984e728131",
+    "tests/test_equal_steps.py": "59876a375737a3d19badaa352ffa37efdcc60f4de71ec7e876bda02ad6d05a36"
+  },
+  "scope": "Exact development bytes for post-run read-only analyses; no source or artifact mutation in sealed studies"
+}

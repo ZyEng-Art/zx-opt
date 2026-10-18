@@ -1,0 +1,336 @@
+{
+  "source_commit": "6b83cbe6d94786cc1a974d9ea2b8eb1622ffbb8a",
+  "tracked_dirty": false,
+  "cases": [
+    {
+      "name": "barenco_tof_3",
+      "sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92"
+    }
+  ],
+  "plan": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "frozen",
+      "seed": 11,
+      "arm": "anchor8_frozen",
+      "folder": "barenco_tof_3/anchor8_frozen_s11"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "online",
+      "seed": 11,
+      "arm": "anchor8_online",
+      "folder": "barenco_tof_3/anchor8_online_s11"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "frozen",
+      "seed": 11,
+      "arm": "anchor8_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_frozen_s11"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "online",
+      "seed": 11,
+      "arm": "anchor8_resource_online",
+      "folder": "barenco_tof_3/anchor8_resource_online_s11"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "frozen",
+      "seed": 11,
+      "arm": "anchor8_nodes_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_frozen_s11"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "online",
+      "seed": 11,
+      "arm": "anchor8_nodes_online",
+      "folder": "barenco_tof_3/anchor8_nodes_online_s11"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "frozen",
+      "seed": 11,
+      "arm": "anchor8_nodes_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_frozen_s11"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "online",
+      "seed": 11,
+      "arm": "anchor8_nodes_resource_online",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_online_s11"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "frozen",
+      "seed": 29,
+      "arm": "anchor8_frozen",
+      "folder": "barenco_tof_3/anchor8_frozen_s29"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "online",
+      "seed": 29,
+      "arm": "anchor8_online",
+      "folder": "barenco_tof_3/anchor8_online_s29"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "frozen",
+      "seed": 29,
+      "arm": "anchor8_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_frozen_s29"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "online",
+      "seed": 29,
+      "arm": "anchor8_resource_online",
+      "folder": "barenco_tof_3/anchor8_resource_online_s29"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "frozen",
+      "seed": 29,
+      "arm": "anchor8_nodes_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_frozen_s29"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "online",
+      "seed": 29,
+      "arm": "anchor8_nodes_online",
+      "folder": "barenco_tof_3/anchor8_nodes_online_s29"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "frozen",
+      "seed": 29,
+      "arm": "anchor8_nodes_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_frozen_s29"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "online",
+      "seed": 29,
+      "arm": "anchor8_nodes_resource_online",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_online_s29"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "frozen",
+      "seed": 47,
+      "arm": "anchor8_frozen",
+      "folder": "barenco_tof_3/anchor8_frozen_s47"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "online",
+      "seed": 47,
+      "arm": "anchor8_online",
+      "folder": "barenco_tof_3/anchor8_online_s47"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "frozen",
+      "seed": 47,
+      "arm": "anchor8_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_frozen_s47"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "online",
+      "seed": 47,
+      "arm": "anchor8_resource_online",
+      "folder": "barenco_tof_3/anchor8_resource_online_s47"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "frozen",
+      "seed": 47,
+      "arm": "anchor8_nodes_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_frozen_s47"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "online",
+      "seed": 47,
+      "arm": "anchor8_nodes_online",
+      "folder": "barenco_tof_3/anchor8_nodes_online_s47"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "frozen",
+      "seed": 47,
+      "arm": "anchor8_nodes_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_frozen_s47"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "online",
+      "seed": 47,
+      "arm": "anchor8_nodes_resource_online",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_online_s47"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "frozen",
+      "seed": 71,
+      "arm": "anchor8_frozen",
+      "folder": "barenco_tof_3/anchor8_frozen_s71"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "online",
+      "seed": 71,
+      "arm": "anchor8_online",
+      "folder": "barenco_tof_3/anchor8_online_s71"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "frozen",
+      "seed": 71,
+      "arm": "anchor8_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_frozen_s71"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "online",
+      "seed": 71,
+      "arm": "anchor8_resource_online",
+      "folder": "barenco_tof_3/anchor8_resource_online_s71"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "frozen",
+      "seed": 71,
+      "arm": "anchor8_nodes_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_frozen_s71"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "online",
+      "seed": 71,
+      "arm": "anchor8_nodes_online",
+      "folder": "barenco_tof_3/anchor8_nodes_online_s71"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "frozen",
+      "seed": 71,
+      "arm": "anchor8_nodes_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_frozen_s71"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "online",
+      "seed": 71,
+      "arm": "anchor8_nodes_resource_online",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_online_s71"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "frozen",
+      "seed": 101,
+      "arm": "anchor8_frozen",
+      "folder": "barenco_tof_3/anchor8_frozen_s101"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8",
+      "policy": "online",
+      "seed": 101,
+      "arm": "anchor8_online",
+      "folder": "barenco_tof_3/anchor8_online_s101"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "frozen",
+      "seed": 101,
+      "arm": "anchor8_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_resource_frozen_s101"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_resource",
+      "policy": "online",
+      "seed": 101,
+      "arm": "anchor8_resource_online",
+      "folder": "barenco_tof_3/anchor8_resource_online_s101"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "frozen",
+      "seed": 101,
+      "arm": "anchor8_nodes_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_frozen_s101"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes",
+      "policy": "online",
+      "seed": 101,
+      "arm": "anchor8_nodes_online",
+      "folder": "barenco_tof_3/anchor8_nodes_online_s101"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "frozen",
+      "seed": 101,
+      "arm": "anchor8_nodes_resource_frozen",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_frozen_s101"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "anchor8_nodes_resource",
+      "policy": "online",
+      "seed": 101,
+      "arm": "anchor8_nodes_resource_online",
+      "folder": "barenco_tof_3/anchor8_nodes_resource_online_s101"
+    }
+  ],
+  "seconds": 600.0,
+  "workers": 8,
+  "scope": "independent training/search on each target; no generalization claim; count noops separately",
+  "started_unix": 1792260893.8766708
+}

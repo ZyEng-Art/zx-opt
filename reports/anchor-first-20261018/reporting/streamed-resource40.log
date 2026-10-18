@@ -1,0 +1,19 @@
+{"trials": 40, "grouped": {"anchor8": {"online_vs_frozen": {"win": 1, "tie": 2, "loss": 2}, "median_online_accepted_speedup": null, "online_vs_baseline": {"win": 0, "tie": 0, "loss": 0}}, "anchor8_nodes": {"online_vs_frozen": {"win": 0, "tie": 3, "loss": 2}, "median_online_accepted_speedup": 1.1819590868593923, "online_vs_baseline": {"win": 2, "tie": 1, "loss": 2}}, "anchor8_nodes_resource": {"online_vs_frozen": {"win": 1, "tie": 3, "loss": 1}, "median_online_accepted_speedup": 1.1825710785840458, "online_vs_baseline": {"win": 2, "tie": 2, "loss": 1}}, "anchor8_resource": {"online_vs_frozen": {"win": 1, "tie": 1, "loss": 3}, "median_online_accepted_speedup": 1.4565582668754884, "online_vs_baseline": {"win": 1, "tie": 2, "loss": 2}}}}
+        7.97 real         6.28 user         0.45 sys
+           142393344  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                9855  page reclaims
+                  18  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 929  voluntary context switches
+               29293  involuntary context switches
+         78206682299  instructions retired
+         19732167634  cycles elapsed
+            57476416  peak memory footprint
