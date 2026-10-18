@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-18T09:00:27.748610+08:00",
+  "requested_deadline": "2026-10-18T09:00:00+08:00",
+  "status": "completed",
+  "training_search_processes": 0,
+  "new_experiment_containers_running": 0,
+  "original_nam_searches_closed": 26,
+  "original_nam_runtime_failures": 0,
+  "full_unit_tests": 124,
+  "formal_frozen_weight_pairs": {
+    "win": 2,
+    "tie": 8,
+    "loss": 17
+  },
+  "best_barenco_gates": 36,
+  "stable_PPO_gain_established": false,
+  "local_archives_verified": 3,
+  "local_archives_in_receipt": 8,
+  "remaining_background_work": "Archive copies only, source trajectories retained remotely; sequential resumablequeue53467",
+  "imitation5seed_replication": "prepared but not launched",
+  "scope": "Time-bounded optimization work complete; no optimality, convergence or generalization claim"
+}

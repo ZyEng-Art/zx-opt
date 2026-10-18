@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-18T08:53:06.975980+08:00",
+  "time": "2026-10-18T09:00:27.748610+08:00",
   "records": [
     {
       "study": "anchor-probes",
@@ -93,8 +93,17 @@
         "source_commit": "f3576a117bca450a01f10dc90a62945de45cc7e3"
       },
       "local_final": "runs/anchor-long-fixed-launch-20261018/mirror/node23/anchor-f3576a117bca-passed-records.tar.gz",
-      "local_verified": false,
-      "local_status": "Queued sequential resumable transfer; complete remote archive and live trajectories retained"
+      "local_verified": true,
+      "transport_receipt": {
+        "status": "final_archive_transport_verified",
+        "node": 23,
+        "tag": "anchor_long_fixed",
+        "source_commit": "f3576a117bca450a01f10dc90a62945de45cc7e3",
+        "recorded_study_status": "passed",
+        "archive_sha256": "770d3e46f2aa6c441654748c8cc5f749cb5aa1966368049529803c7c36e2b712",
+        "bytes": 1299973477,
+        "scope": "Transport receipt only. See the archived finished marker and complete replay audit for study validity; failed archives remain failed."
+      }
     },
     {
       "study": "anchor-long",
@@ -123,7 +132,17 @@
         "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746"
       },
       "local_final": "runs/anchor-imitation-launch-20261018/mirror/node23/anchor-a3bf987d139a-passed-records.tar.gz",
-      "local_verified": true
+      "local_verified": true,
+      "transport_receipt": {
+        "status": "final_archive_transport_verified",
+        "node": 23,
+        "tag": "anchor_imitation",
+        "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+        "recorded_study_status": "passed",
+        "archive_sha256": "2164c79ca1d983b8ed8f5d4c642cafa62cf441b057e1c9085a39fd05ffe7f062",
+        "bytes": 362631682,
+        "scope": "Transport receipt only. See the archived finished marker and complete replay audit for study validity; failed archives remain failed."
+      }
     }
   ],
   "scope": "Full remote audits passed for these8studies. Only local_verified=true indicates completed checksum-verified local archive transport; all remaining copies explicitly pending."

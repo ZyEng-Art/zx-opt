@@ -1,0 +1,668 @@
+{
+  "time_unix": 1792285149.870914,
+  "nodes": [
+    {
+      "node": 22,
+      "time": "2026-10-18T08:59:09.580106+08:00",
+      "studies": [
+        {
+          "tag": "anchor",
+          "base": "/tmp/dengzengyong_rlzx_anchor_node22_20261018",
+          "expected_source": "e3a47f2fcba0fb80e322c51582ba6f53675e6409",
+          "controller_pid": 1795824,
+          "controller_live": false,
+          "container_id": "8c9b182d4efec105d5f228fe4043e7be85b288eb303489e114a2940631c5e74e",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "e3a47f2fcba0fb80e322c51582ba6f53675e6409",
+            "container_id": "8c9b182d4efec105d5f228fe4043e7be85b288eb303489e114a2940631c5e74e",
+            "time": "2026-10-18T02:30:52.873297+08:00",
+            "trials": 54,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_node22_20261018/anchor-e3a47f2fcba0-records.tar.gz",
+              "bytes": 201686484,
+              "sha256": "32a1a18a5261312113280b63a380caef26cea56e831f8a912fe7c3631abfbc26"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 54,
+            "completed": 54
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 54,
+            "expected": 54
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 54,
+            "finished_unix": 1792261836.722102
+          }
+        },
+        {
+          "tag": "anchor_prior",
+          "base": "/tmp/dengzengyong_rlzx_anchor_prior_node22_20261018",
+          "expected_source": "34a35c880b83e074c8b3194fa0a93c8d303faee5",
+          "controller_pid": 1885805,
+          "controller_live": false,
+          "container_id": "117637e0ebe813934f7fcf30c83de5bfced7eb625d8a0ecb061a0f0db51b7f14",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "failed",
+            "commit": "34a35c880b83e074c8b3194fa0a93c8d303faee5",
+            "container_id": "117637e0ebe813934f7fcf30c83de5bfced7eb625d8a0ecb061a0f0db51b7f14",
+            "time": "2026-10-18T01:48:22.631127+08:00",
+            "error": "CalledProcessError(1, ['docker', 'exec', '-w', '/workspace/task/source', '-e', 'PYTHONPATH=/workspace/pin:/workspace/offline', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'OPENBLAS_NUM_THREADS=1', '117637e0ebe813934f7fcf30c83de5bfced7eb625d8a0ecb061a0f0db51b7f14', '/root/miniconda/envs/python310_torch29_cuda/bin/python', 'tools/anchor_campaign.py', 'runs/comparison', '--seconds', '600.0', '--workers', '10', '--audit-workers', '2', '--circuits', 'barenco_tof_3', '--seeds', '11', '29', '47', '71', '101', '--modes', 'global32', 'anchor8', 'anchor8_nodes', 'anchor8_lr1e3', 'anchor8_nodes_lr1e3', '--policies', 'frozen', 'online'])",
+            "artifacts_retained": true
+          },
+          "case_failure_files": 3,
+          "summary.json": {
+            "expected": 50,
+            "completed": 50
+          },
+          "training_failures": 3,
+          "failure_tail": "117637e0ebe813934f7fcf30c83de5bfced7eb625d8a0ecb061a0f0db51b7f14\nTraceback (most recent call last):\n  File \"/tmp/dengzengyong_rlzx_anchor_prior_node22_20261018/source/tools/node_anchor_campaign.py\", line 91, in <module>\n    main()\n  File \"/tmp/dengzengyong_rlzx_anchor_prior_node22_20261018/source/tools/node_anchor_campaign.py\", line 60, in main\n    run([\"tools/anchor_campaign.py\", \"runs/comparison\", \"--seconds\", str(a.seconds),\n  File \"/tmp/dengzengyong_rlzx_anchor_prior_node22_20261018/source/tools/node_anchor_campaign.py\", line 49, in run\n    subprocess.run(cmd, stdout=stream, stderr=subprocess.STDOUT, check=True)\n  File \"/usr/lib/python3.10/subprocess.py\", line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['docker', 'exec', '-w', '/workspace/task/source', '-e', 'PYTHONPATH=/workspace/pin:/workspace/offline', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'OPENBLAS_NUM_THREADS=1', '117637e0ebe813934f7fcf30c83de5bfced7eb625d8a0ecb061a0f0db51b7f14', '/root/miniconda/envs/python310_torch29_cuda/bin/python', 'tools/anchor_campaign.py', 'runs/comparison', '--seconds', '600.0', '--workers', '10', '--audit-workers', '2', '--circuits', 'barenco_tof_3', '--seeds', '11', '29', '47', '71', '101', '--modes', 'global32', 'anchor8', 'anchor8_nodes', 'anchor8_lr1e3', 'anchor8_nodes_lr1e3', '--policies', 'frozen', 'online']' returned non-zero exit status 1.\n"
+        },
+        {
+          "tag": "anchor_prior_fixed",
+          "base": "/tmp/dengzengyong_rlzx_anchor_prior_fixed_node22_20261018",
+          "expected_source": "7168fa3b8fc63fe81cf34e2048939147931d91b1",
+          "controller_pid": 2210348,
+          "controller_live": false,
+          "container_id": "4bc768ca37a202d142d54fa7078d23b4cedb5664519ed777f88672f905809fa3",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "7168fa3b8fc63fe81cf34e2048939147931d91b1",
+            "container_id": "4bc768ca37a202d142d54fa7078d23b4cedb5664519ed777f88672f905809fa3",
+            "time": "2026-10-18T04:02:54.702035+08:00",
+            "trials": 50,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_prior_fixed_node22_20261018/anchor-7168fa3b8fc6-passed-records.tar.gz",
+              "bytes": 708705109,
+              "sha256": "8f17bd9da84819e50a79c544cfbaf3ac9dc94d091490d835ff97fa38bb15c545",
+              "study_status": "passed",
+              "source_commit": "7168fa3b8fc63fe81cf34e2048939147931d91b1"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 50,
+            "completed": 50
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 50,
+            "expected": 50
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 50,
+            "finished_unix": 1792267312.3873103
+          }
+        },
+        {
+          "tag": "anchor_buffer",
+          "base": "/tmp/dengzengyong_rlzx_anchor_buffer_node22_20261018",
+          "expected_source": "4b451ad834b34b2f0e46bb2142ef16084ee08901",
+          "controller_pid": 2246696,
+          "controller_live": false,
+          "container_id": "4fe3f8140d85c382c2bbdfc6f25017c71f9b13d948f4192e3e9eef9f799fb916",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "4b451ad834b34b2f0e46bb2142ef16084ee08901",
+            "container_id": "4fe3f8140d85c382c2bbdfc6f25017c71f9b13d948f4192e3e9eef9f799fb916",
+            "time": "2026-10-18T05:04:54.640792+08:00",
+            "trials": 40,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_buffer_node22_20261018/anchor-4b451ad834b3-passed-records.tar.gz",
+              "bytes": 1011630152,
+              "sha256": "3548b1a9df4f011be96ee9d4939550000efd7b81d49b859bf2c8d19407f4feea",
+              "study_status": "passed",
+              "source_commit": "4b451ad834b34b2f0e46bb2142ef16084ee08901"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 40,
+            "completed": 40
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 40,
+            "expected": 40
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 40,
+            "finished_unix": 1792271005.0914495
+          }
+        },
+        {
+          "tag": "anchor_native",
+          "base": "/tmp/dengzengyong_rlzx_anchor_native_node22_20261018",
+          "expected_source": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+          "controller_pid": 2455716,
+          "controller_live": false,
+          "container_id": "0648e30f8300de9628f09a343421d5f586e1119df232c34ec77ac3c3430ee98a",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "60e20456bb348bf4210f0bea9689e8687c679bfd",
+            "container_id": "0648e30f8300de9628f09a343421d5f586e1119df232c34ec77ac3c3430ee98a",
+            "time": "2026-10-18T03:39:21.592346+08:00",
+            "trials": 24,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_native_node22_20261018/anchor-60e20456bb34-passed-records.tar.gz",
+              "bytes": 413369775,
+              "sha256": "89c62f4aebce8d36c421cd74c23341ebb1b97274eb3c986bc2566532b212a37a",
+              "study_status": "passed",
+              "source_commit": "60e20456bb348bf4210f0bea9689e8687c679bfd"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 24,
+            "completed": 24
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 24,
+            "expected": 24
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 24,
+            "finished_unix": 1792265926.3476243
+          }
+        },
+        {
+          "tag": "anchor_neutral",
+          "base": "/tmp/dengzengyong_rlzx_anchor_neutral_node22_20261018",
+          "expected_source": "de9a7da27c230319467a16c3da8f698269dc7c94",
+          "controller_pid": 2774001,
+          "controller_live": false,
+          "container_id": "da6c36c659198cb1af94ba4608e76dfd86a0ac5743cc66e588eafce578113024",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "de9a7da27c230319467a16c3da8f698269dc7c94",
+            "container_id": "da6c36c659198cb1af94ba4608e76dfd86a0ac5743cc66e588eafce578113024",
+            "time": "2026-10-18T06:19:55.792271+08:00",
+            "trials": 16,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_neutral_node22_20261018/anchor-de9a7da27c23-passed-records.tar.gz",
+              "bytes": 1604286763,
+              "sha256": "e741cdde85afaa7d4eefe4bd6a1d9016d879020379dd9292ba9583967752a3eb",
+              "study_status": "passed",
+              "source_commit": "de9a7da27c230319467a16c3da8f698269dc7c94"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 16,
+            "completed": 16
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 16,
+            "expected": 16
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 16,
+            "finished_unix": 1792275461.062427
+          }
+        },
+        {
+          "tag": "anchor_export_reference",
+          "base": "/tmp/dengzengyong_rlzx_anchor_export_reference_node22_20261018",
+          "expected_source": "d047dd2c856302ff67ed0167cfab0dcbb7ebf90c",
+          "controller_pid": 2847479,
+          "controller_live": false,
+          "container_id": "f977055b1f928ca914b96a74dbb3cdb8d19acb95d6ccabf4698123e24ae23f37",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "d047dd2c856302ff67ed0167cfab0dcbb7ebf90c",
+            "container_id": "f977055b1f928ca914b96a74dbb3cdb8d19acb95d6ccabf4698123e24ae23f37",
+            "time": "2026-10-18T04:14:24.852699+08:00",
+            "trials": 8,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_export_reference_node22_20261018/anchor-d047dd2c8563-passed-records.tar.gz",
+              "bytes": 145272000,
+              "sha256": "0c5263ac85f55b9176e30c317c63a517492cc3d7b3e206d2ef07683bb7bcf928",
+              "study_status": "passed",
+              "source_commit": "d047dd2c856302ff67ed0167cfab0dcbb7ebf90c"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 8,
+            "completed": 8
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 8,
+            "expected": 8
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 8,
+            "finished_unix": 1792268052.1940155
+          }
+        },
+        {
+          "tag": "anchor_export_indexed",
+          "base": "/tmp/dengzengyong_rlzx_anchor_export_indexed_node22_20261018",
+          "expected_source": "0f25b74a1c177720b0edf6759faab500209386c8",
+          "controller_pid": 2847733,
+          "controller_live": false,
+          "container_id": "09df4dd0770df5049d4d1ac7749bb0447c8b6b9ec5edd3eb54a82317d9bdccfc",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "0f25b74a1c177720b0edf6759faab500209386c8",
+            "container_id": "09df4dd0770df5049d4d1ac7749bb0447c8b6b9ec5edd3eb54a82317d9bdccfc",
+            "time": "2026-10-18T04:13:21.422299+08:00",
+            "trials": 8,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_export_indexed_node22_20261018/anchor-0f25b74a1c17-passed-records.tar.gz",
+              "bytes": 161112530,
+              "sha256": "d3181888f856897424ac89ec6362884af75e3384b85e89679c0856dc9b9fec3f",
+              "study_status": "passed",
+              "source_commit": "0f25b74a1c177720b0edf6759faab500209386c8"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 8,
+            "completed": 8
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 8,
+            "expected": 8
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 8,
+            "finished_unix": 1792267987.5495026
+          }
+        },
+        {
+          "tag": "anchor_mc",
+          "base": "/tmp/dengzengyong_rlzx_anchor_mc_node22_20261018",
+          "expected_source": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+          "controller_pid": 3133177,
+          "controller_live": false,
+          "container_id": "5fa3ff27d01931bc516d96f878ec1adee551316a631ed7b5725ee96583c10645",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+            "container_id": "5fa3ff27d01931bc516d96f878ec1adee551316a631ed7b5725ee96583c10645",
+            "time": "2026-10-18T06:54:42.176977+08:00",
+            "trials": 18,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_mc_node22_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+              "bytes": 2058299601,
+              "sha256": "f0d9bef87c9d1e267a72fe553bed584923f09ed8b0df37f0ea514c4fe7ec7065",
+              "study_status": "passed",
+              "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 18,
+            "completed": 18
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 18,
+            "expected": 18
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 18,
+            "finished_unix": 1792277507.0532942
+          }
+        }
+      ],
+      "disk": {
+        "free_bytes": 15349317632,
+        "free_inodes": 8123359
+      },
+      "preserved_nam": {
+        "container_running": true,
+        "jobs": 13,
+        "finished": 13,
+        "failed": 0,
+        "search_processes": 0
+      }
+    },
+    {
+      "node": 23,
+      "time": "2026-10-18T08:59:09.687767+08:00",
+      "studies": [
+        {
+          "tag": "anchor",
+          "base": "/tmp/dengzengyong_rlzx_anchor_node23_20261018",
+          "expected_source": "64e61def1b92c53ca296677e1cc1f250e347b8d3",
+          "controller_pid": 2040777,
+          "controller_live": false,
+          "container_id": "6b620a2c8319521c569d45e1e605c699beccfbbca4a16dfeb35df57f5ac1ad29",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "64e61def1b92c53ca296677e1cc1f250e347b8d3",
+            "container_id": "6b620a2c8319521c569d45e1e605c699beccfbbca4a16dfeb35df57f5ac1ad29",
+            "time": "2026-10-18T02:14:51.967670+08:00",
+            "trials": 54,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_node23_20261018/anchor-64e61def1b92-records.tar.gz",
+              "bytes": 319575552,
+              "sha256": "dd77c57e9500cc89f138e7e3b5606d49337fe113a5cba2c9ab99317b032c8028"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 54,
+            "completed": 54
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 54,
+            "expected": 54
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 54,
+            "finished_unix": 1792260864.2289958
+          }
+        },
+        {
+          "tag": "anchor_resource",
+          "base": "/tmp/dengzengyong_rlzx_anchor_resource_node23_20261018",
+          "expected_source": "d4a9147e278ef89dc1b9619b4e3314880663b233",
+          "controller_pid": 2155565,
+          "controller_live": false,
+          "container_id": "6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "failed",
+            "commit": "d4a9147e278ef89dc1b9619b4e3314880663b233",
+            "container_id": "6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9",
+            "time": "2026-10-18T02:11:54.780953+08:00",
+            "error": "CalledProcessError(1, ['docker', 'exec', '-w', '/workspace/task/source', '-e', 'PYTHONPATH=/workspace/pin:/workspace/offline', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'OPENBLAS_NUM_THREADS=1', '6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9', '/root/miniconda/envs/python310_torch29_cuda/bin/python', 'tools/anchor_campaign.py', 'runs/comparison', '--seconds', '600.0', '--workers', '8', '--audit-workers', '2', '--circuits', 'barenco_tof_3', '--seeds', '11', '29', '47', '71', '101', '--modes', 'anchor8', 'anchor8_resource', 'anchor8_nodes', 'anchor8_nodes_resource', '--policies', 'frozen', 'online'])",
+            "artifacts_retained": true
+          },
+          "case_failure_files": 1,
+          "summary.json": {
+            "expected": 40,
+            "completed": 40
+          },
+          "training_failures": 1,
+          "failure_tail": "6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9\nTraceback (most recent call last):\n  File \"/tmp/dengzengyong_rlzx_anchor_resource_node23_20261018/source/tools/node_anchor_campaign.py\", line 91, in <module>\n    main()\n  File \"/tmp/dengzengyong_rlzx_anchor_resource_node23_20261018/source/tools/node_anchor_campaign.py\", line 60, in main\n    run([\"tools/anchor_campaign.py\", \"runs/comparison\", \"--seconds\", str(a.seconds),\n  File \"/tmp/dengzengyong_rlzx_anchor_resource_node23_20261018/source/tools/node_anchor_campaign.py\", line 49, in run\n    subprocess.run(cmd, stdout=stream, stderr=subprocess.STDOUT, check=True)\n  File \"/usr/lib/python3.10/subprocess.py\", line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['docker', 'exec', '-w', '/workspace/task/source', '-e', 'PYTHONPATH=/workspace/pin:/workspace/offline', '-e', 'OMP_NUM_THREADS=1', '-e', 'MKL_NUM_THREADS=1', '-e', 'OPENBLAS_NUM_THREADS=1', '6603a8c05e6742754c43966e84a7a264d2dd89a5fc68227d36c37b40cd1971f9', '/root/miniconda/envs/python310_torch29_cuda/bin/python', 'tools/anchor_campaign.py', 'runs/comparison', '--seconds', '600.0', '--workers', '8', '--audit-workers', '2', '--circuits', 'barenco_tof_3', '--seeds', '11', '29', '47', '71', '101', '--modes', 'anchor8', 'anchor8_resource', 'anchor8_nodes', 'anchor8_nodes_resource', '--policies', 'frozen', 'online']' returned non-zero exit status 1.\n"
+        },
+        {
+          "tag": "anchor_long",
+          "base": "/tmp/dengzengyong_rlzx_anchor_long_node23_20261018",
+          "expected_source": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+          "controller_pid": 2247344,
+          "controller_live": false,
+          "container_id": "6f0ead90d5acaa69e71a37c7fbf535263a2e78ac8e5f758440956d52b70811d8",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "0c605a8fd2e29ac808a86507488b0b3d495a77af",
+            "container_id": "6f0ead90d5acaa69e71a37c7fbf535263a2e78ac8e5f758440956d52b70811d8",
+            "time": "2026-10-18T05:22:09.721066+08:00",
+            "trials": 18,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_long_node23_20261018/anchor-0c605a8fd2e2-records.tar.gz",
+              "bytes": 1313182679,
+              "sha256": "8189580463a08634660f865009b17f9c6eed5845f4c5b39864bdf0e3e8b1f2bb"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 18,
+            "completed": 18
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 18,
+            "expected": 18
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 18,
+            "finished_unix": 1792272013.8990881
+          }
+        },
+        {
+          "tag": "anchor_resource_fixed",
+          "base": "/tmp/dengzengyong_rlzx_anchor_resource_fixed_node23_20261018",
+          "expected_source": "6b83cbe6d94786cc1a974d9ea2b8eb1622ffbb8a",
+          "controller_pid": 2405321,
+          "controller_live": false,
+          "container_id": "0578de741ddab1666846c316c938ef6f9923072b10edeb5ed15af035dae02113",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "6b83cbe6d94786cc1a974d9ea2b8eb1622ffbb8a",
+            "container_id": "0578de741ddab1666846c316c938ef6f9923072b10edeb5ed15af035dae02113",
+            "time": "2026-10-18T04:10:35.277358+08:00",
+            "trials": 40,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_resource_fixed_node23_20261018/anchor-6b83cbe6d947-passed-records.tar.gz",
+              "bytes": 585655668,
+              "sha256": "341f03314cad09afe4cabec651f10f29d3da3092bed98c30b84452f0215452f7",
+              "study_status": "passed",
+              "source_commit": "6b83cbe6d94786cc1a974d9ea2b8eb1622ffbb8a"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 40,
+            "completed": 40
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 40,
+            "expected": 40
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 40,
+            "finished_unix": 1792267783.8458655
+          }
+        },
+        {
+          "tag": "anchor_long_fixed",
+          "base": "/tmp/dengzengyong_rlzx_anchor_long_fixed_node23_20261018",
+          "expected_source": "f3576a117bca450a01f10dc90a62945de45cc7e3",
+          "controller_pid": 2440544,
+          "controller_live": false,
+          "container_id": "41a34266b5c717d086b2bf144dfa45c3d28f0487d78b4b17afb19bebbe8f277c",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "f3576a117bca450a01f10dc90a62945de45cc7e3",
+            "container_id": "41a34266b5c717d086b2bf144dfa45c3d28f0487d78b4b17afb19bebbe8f277c",
+            "time": "2026-10-18T04:47:27.021359+08:00",
+            "trials": 18,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_long_fixed_node23_20261018/anchor-f3576a117bca-passed-records.tar.gz",
+              "bytes": 1299973477,
+              "sha256": "770d3e46f2aa6c441654748c8cc5f749cb5aa1966368049529803c7c36e2b712",
+              "study_status": "passed",
+              "source_commit": "f3576a117bca450a01f10dc90a62945de45cc7e3"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 18,
+            "completed": 18
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 18,
+            "expected": 18
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 18,
+            "finished_unix": 1792269932.7106943
+          }
+        },
+        {
+          "tag": "anchor_credit",
+          "base": "/tmp/dengzengyong_rlzx_anchor_credit_node23_20261018",
+          "expected_source": "87bb830c59e3e793a488603aa9d75ad07be87c02",
+          "controller_pid": 2608802,
+          "controller_live": false,
+          "container_id": "105602b591ab503c2469ad727b416073934444cd7bc445aead0ee6d09120cdbc",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "87bb830c59e3e793a488603aa9d75ad07be87c02",
+            "container_id": "105602b591ab503c2469ad727b416073934444cd7bc445aead0ee6d09120cdbc",
+            "time": "2026-10-18T06:29:29.541335+08:00",
+            "trials": 24,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_credit_node23_20261018/anchor-87bb830c59e3-passed-records.tar.gz",
+              "bytes": 2191405694,
+              "sha256": "22c3b7dd07a768ffe3e4a1cc3d01659142071c21f3e75cf8829f626d57d926f3",
+              "study_status": "passed",
+              "source_commit": "87bb830c59e3e793a488603aa9d75ad07be87c02"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 24,
+            "completed": 24
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 24,
+            "expected": 24
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 24,
+            "finished_unix": 1792275975.7460968
+          }
+        },
+        {
+          "tag": "anchor_imitation",
+          "base": "/tmp/dengzengyong_rlzx_anchor_imitation_node23_20261018",
+          "expected_source": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+          "controller_pid": 2955309,
+          "controller_live": false,
+          "container_id": "3f0af1f782af66691fcfdbd9d908d782010ad886ef71437f0fba47e40b6500a7",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "a3bf987d139af2bc71dfa61f2b1417db21169746",
+            "container_id": "3f0af1f782af66691fcfdbd9d908d782010ad886ef71437f0fba47e40b6500a7",
+            "time": "2026-10-18T04:52:21.036121+08:00",
+            "trials": 12,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_imitation_node23_20261018/anchor-a3bf987d139a-passed-records.tar.gz",
+              "bytes": 362631682,
+              "sha256": "2164c79ca1d983b8ed8f5d4c642cafa62cf441b057e1c9085a39fd05ffe7f062",
+              "study_status": "passed",
+              "source_commit": "a3bf987d139af2bc71dfa61f2b1417db21169746"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 12,
+            "completed": 12
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 12,
+            "expected": 12
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 12,
+            "finished_unix": 1792270308.995334
+          }
+        },
+        {
+          "tag": "anchor_probes",
+          "base": "/tmp/dengzengyong_rlzx_anchor_probes_node23_20261018",
+          "expected_source": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+          "controller_pid": 3056741,
+          "controller_live": false,
+          "container_id": "489a1ba12f1e11ba4f02136826f4b8f7fa0ce5f9027a227834707a2cf2fee525",
+          "container_running": false,
+          "same_incarnation": true,
+          "controller": {
+            "phase": "passed",
+            "commit": "06ef566f69c5e59925fc60b40464ce42117a6b87",
+            "container_id": "489a1ba12f1e11ba4f02136826f4b8f7fa0ce5f9027a227834707a2cf2fee525",
+            "time": "2026-10-18T06:00:49.159097+08:00",
+            "trials": 54,
+            "archive": {
+              "path": "/tmp/dengzengyong_rlzx_anchor_probes_node23_20261018/anchor-06ef566f69c5-passed-records.tar.gz",
+              "bytes": 1392839704,
+              "sha256": "c0fd709257a7a911f43e8c63e00038aca224b3a3a15e27736a16df78234289b0",
+              "study_status": "passed",
+              "source_commit": "06ef566f69c5e59925fc60b40464ce42117a6b87"
+            }
+          },
+          "case_failure_files": 0,
+          "summary.json": {
+            "expected": 54,
+            "completed": 54
+          },
+          "training_failures": 0,
+          "audit/progress.json": {
+            "completed": 54,
+            "expected": 54
+          },
+          "finished.json": {
+            "status": "passed",
+            "trials": 54,
+            "finished_unix": 1792274328.503334
+          }
+        }
+      ],
+      "disk": {
+        "free_bytes": 14975148032,
+        "free_inodes": 7468716
+      },
+      "preserved_nam": {
+        "container_running": true,
+        "jobs": 13,
+        "finished": 13,
+        "failed": 0,
+        "search_processes": 0
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "phase": "anchor_first_overnight_finalizing",
+  "phase": "anchor_first_overnight_complete",
   "repository": "https://github.com/ZyEng-Art/zx-opt.git",
   "branch": "feat/anchor-first-zx",
   "scope": "Same-target barenco_tof_3 anchor-first search/learning; original26 NAM searches preserved separately",
@@ -28,16 +28,7 @@
     "Evaluate successful-path replay/self-imitation and critic-guided node selection",
     "Run the prepared unchanged single-action5seed replication as a separately authorized future continuation"
   ],
-  "active_work": {
-    "updated_at": "2026-10-18T08:53:06.975980+08:00",
-    "deadline": "2026-10-18T09:00:00+08:00",
-    "date_scope": "Assumed from overnight session; optional clarification unanswered",
-    "goal": "active",
-    "source": "06ef566f69c5e59925fc60b40464ce42117a6b87",
-    "studies": "All launched new studies terminal; two known failed early cohorts retained as failed",
-    "replication": "Prepared unchanged-model5seed replication NOT launched before deadline",
-    "archival": "Sequential resumption with2GiBreserve; full remote records and live trajectories retained"
-  },
+  "active_work": null,
   "completed_followups": [
     {
       "suite": "representation",
@@ -238,5 +229,28 @@
     "stable_online_search_advantage_established": false,
     "policy_preference_changes_small": true,
     "source_input_snapshot_and_arity_audits_passed": true
+  },
+  "completed_at": "2026-10-18T09:00:27.748610+08:00",
+  "overnight_closeout": {
+    "time": "2026-10-18T09:00:27.748610+08:00",
+    "requested_deadline": "2026-10-18T09:00:00+08:00",
+    "status": "completed",
+    "training_search_processes": 0,
+    "new_experiment_containers_running": 0,
+    "original_nam_searches_closed": 26,
+    "original_nam_runtime_failures": 0,
+    "full_unit_tests": 124,
+    "formal_frozen_weight_pairs": {
+      "win": 2,
+      "tie": 8,
+      "loss": 17
+    },
+    "best_barenco_gates": 36,
+    "stable_PPO_gain_established": false,
+    "local_archives_verified": 3,
+    "local_archives_in_receipt": 8,
+    "remaining_background_work": "Archive copies only, source trajectories retained remotely; sequential resumablequeue53467",
+    "imitation5seed_replication": "prepared but not launched",
+    "scope": "Time-bounded optimization work complete; no optimality, convergence or generalization claim"
   }
 }
