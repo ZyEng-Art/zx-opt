@@ -54,7 +54,8 @@ def main():
         path = a.manifest.resolve().parent/relative
         assert sha(path) == row["sha256"]
         read_model_snapshot(path, manifest["input_sha256"], config["selection"], config["anchor_prior"],
-                            config["anchor_resource_mask"], config.get("neutral_stop_steps", 0))
+                            config["anchor_resource_mask"], config.get("neutral_stop_steps", 0),
+                            config.get("rule_profile", "full"))
         models[stage] = dict(stage=stage, model=str(path), sha256=row["sha256"])
     assert len(models) >= 2 and baseline in models
     out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)

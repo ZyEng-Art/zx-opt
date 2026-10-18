@@ -129,12 +129,15 @@ def compiled(name, direction, color, arity=0):
 
 
 class Proposals:
-    def __init__(self, seed=11, cap=32, matching_work=2048, general=False):
+    def __init__(self, seed=11, cap=32, matching_work=2048, general=False, include_a=True, profile=False):
         self.seed = seed; self.cap = cap; self.matching_work = matching_work
         self.general = general
+        self.include_a = include_a; self.profile = profile
         self.domain = "general" if general else "clifford_t"
         self.rounds = {}; self.stats = dict(calls=0, matching_work_exhausted=0, phase_inferred=0,
                                            non_clifford_matches_skipped=0)
+        if profile:
+            self.stats.update(profile_seconds={}, profile_calls={})
         # Compilation depends on the calculus, not on observations or rewards.
         for name in ("CP", "B", "K", "EU", "SUP", "E", "C", "BW"):
             for direction, color in product(("forward", "backward"), ("Z", "X")):
@@ -183,6 +186,7 @@ class Proposals:
             if len(buckets.get(family, ())) < per:
                 buckets.setdefault(family, []).append(RuleAction(rule, direction, match, parent))
 
+        fast_started = time.monotonic() if self.profile else None
         # Spider fusion: all direct same-color neighbors, including parallel wires.
         pairs = {}
         edge_ids = (range(len(graph.edges)) if anchor is None else
@@ -239,10 +243,12 @@ class Proposals:
             rule = axiom("I", color="Z" if rng.integers(2) else "X")
             add(rule, "backward", Match(wire_edges=((0, -anchor[1]-1, 0),)))
 
+        if self.profile:
+            self._profile("S/I/H direct", fast_started)
         # Fixed branch-count bounds preserve paired prefixes across machine load.
         jobs = [(name, direction, color, 0) for name in ("CP", "B", "K", "EU", "SUP", "E", "C", "BW")
                 for direction, color in product(("forward", "backward"), ("Z", "X"))]
-        if self.general:
+        if self.general and self.include_a:
             jobs += [("A", direction, color, 0)
                      for direction, color in product(("forward", "backward"), ("Z", "X"))]
         arities = sorted({len(hs[v]) for v in graph.nodes if graph.nodes[v].kind in ("Z", "X")})
@@ -251,6 +257,7 @@ class Proposals:
         for name, direction, color, arity in jobs:
             if len(buckets.get(name+":"+direction, ())) >= per:
                 continue
+            job_started = time.monotonic() if self.profile else None
             try:
                 if self.general:
                     from .general_angles import compiled as general_compiled, inferred_rules
@@ -294,6 +301,9 @@ class Proposals:
                         break
             except MatchLimit:
                 self.stats["matching_work_exhausted"] += 1
+            finally:
+                if self.profile:
+                    self._profile(name+":"+direction, job_started)
         result = []; signatures = set()
         # Rotate the family order every visit. A bucket with many scalar matches
         # cannot consume the entire global proposal cap.
@@ -311,6 +321,11 @@ class Proposals:
                     return result
         self.stats["calls"] += 1
         return result
+
+    def _profile(self, name, started):
+        seconds = self.stats["profile_seconds"]; calls = self.stats["profile_calls"]
+        seconds[name] = seconds.get(name, 0.) + time.monotonic() - started
+        calls[name] = calls.get(name, 0) + 1
 
     @staticmethod
     def _pin(graph, pattern, anchor):

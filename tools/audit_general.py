@@ -87,7 +87,7 @@ def audit_one(spec):
     from qiskit import qasm2
     from zxopt.complete import Diagram
     from zxopt.legacy import environment
-    from zxopt.general_kernel import Views, GeneralKernel, HybridAction
+    from zxopt.general_kernel import Views, GeneralKernel, HybridAction, rule_allowed
     from zxopt.general_archive import SearchState, GeneralArchive, following_state, score
     from zxopt.jpv_actions import replay_h_pairs
     from zxopt.verify import qiskit_matrix_zx_order, matrix_error
@@ -173,6 +173,8 @@ def audit_one(spec):
         return value
     for i, event in enumerate(events, 1):
         assert event["transition"] == i
+        assert rule_allowed(config.get("rule_profile", "full"),
+                            event["action"]["mode"], event["action"]["family"])
         statuses[event["status"]] += 1
         if prior_event is not None and prior_event.get("terminal"):
             assert event["trajectory"] > prior_event["trajectory"]
@@ -324,7 +326,9 @@ def audit_one(spec):
     if (folder/"initial.pt").exists():
         from zxopt.model_snapshot import state_dict_digest
         initial = torch.load(folder/"initial.pt", map_location="cpu", weights_only=True)["state_dict"]
-        final = torch.load(folder/"final.pt", map_location="cpu", weights_only=True)["state_dict"]
+        final_package = torch.load(folder/"final.pt", map_location="cpu", weights_only=True)
+        assert final_package.get("rule_profile", "full") == config.get("rule_profile", "full")
+        final = final_package["state_dict"]
         assert state_dict_digest(initial) == protocol["initial_tensor_sha256"]
         if protocol.get("model_resume"):
             origin = protocol["model_resume"]

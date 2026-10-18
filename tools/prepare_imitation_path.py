@@ -109,7 +109,8 @@ def main():
     for event, previous_visits in path:
         raw = graph(event["parent_graph_key"]); view = views.get(raw)
         kernel = GeneralKernel(env, config["seed"], config["jpv"], config["candidate_cap"],
-                               config["matching_work"], config["general_zx"], config["total_candidate_cap"])
+                               config["matching_work"], config["general_zx"], config["total_candidate_cap"],
+                               config.get("rule_profile", "full"))
         kernel.candidate_cap = min(config["candidate_cap"], config["anchor_candidate_cap"])
         kernel.total_candidate_cap = min(config["total_candidate_cap"] or config["anchor_candidate_cap"],
                                          config["anchor_candidate_cap"])

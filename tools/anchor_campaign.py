@@ -30,7 +30,8 @@ def main():
                                                  "anchor8_resource_lr1e4_r128_native", "anchor8_resource_lr1e4_stop_r128_native",
                                                  "anchor8_resource_lr1e4_neutral32_native",
                                                  "anchor8_resource_lr1e4_r128_mc_native",
-                                                 "anchor8_resource_lr1e4_r128_mc_success_native"],
+                                                 "anchor8_resource_lr1e4_r128_mc_success_native",
+                                                 "rules_native", "rules_macros", "rules_no_a", "rules_full"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
     p.add_argument("--workers", type=int, default=4)
@@ -75,7 +76,7 @@ def main():
         command = [sys.executable, "-m", "zxopt.general_search", str(folder),
                    "--input", str(ROOT/"inputs/quarl-nam-raw"/(spec["circuit"]+".qasm")),
                    "--general-zx", "--policy", spec["policy"], "--seed", str(spec["seed"]),
-                   "--selection", "global" if spec["mode"] == "global32" else "anchor",
+                   "--selection", "global" if spec["mode"] == "global32" or spec["mode"].startswith("rules_") else "anchor",
                    "--anchor-candidate-cap", "32" if spec["mode"] == "anchor32" else "8",
                    "--anchor-prior", "nodes" if "_nodes" in spec["mode"] else "uniform",
                    "--learning-rate", ".0001" if "_lr1e4" in spec["mode"] else
@@ -86,6 +87,8 @@ def main():
                    "--checkpoint-seconds", "300"]
         if a.max_steps is not None:
             command += ["--max-steps", str(a.max_steps)]
+        if spec["mode"].startswith("rules_"):
+            command += ["--rule-profile", spec["mode"][6:].replace("_", "-")]
         if "_resource" in spec["mode"]:
             command += ["--anchor-resource-mask"]
         if spec["mode"].endswith("_qasm2"):

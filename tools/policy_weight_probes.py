@@ -71,7 +71,7 @@ def prepare_pair(source, circuit, mode, training_seed, output, allow_dirty=False
             or trained["input_sha256"] != protocol["input_sha256"]):
         raise ValueError("Final model does not belong to the selected completed report")
     for key, default in (("selection", "global"), ("anchor_prior", "uniform"), ("anchor_resource_mask", False),
-                         ("neutral_stop_steps", 0)):
+                         ("neutral_stop_steps", 0), ("rule_profile", "full")):
         if trained.get(key, default) != config.get(key, default):
             raise ValueError("Final training model policy support differs: "+key)
     if set(initial["state_dict"]) != set(trained["state_dict"]):
@@ -96,6 +96,7 @@ def prepare_pair(source, circuit, mode, training_seed, output, allow_dirty=False
                        anchor_prior=config.get("anchor_prior", "uniform"),
                        anchor_resource_mask=config.get("anchor_resource_mask", False),
                        neutral_stop_steps=config.get("neutral_stop_steps", 0),
+                       rule_profile=config.get("rule_profile", "full"),
                        steps=0 if stage == "initial" else trained["steps"],
                        updates=0 if stage == "initial" else trained["updates"], probe_origin=origin,
                        scope="Frozen same-circuit weight probe; optimizer/archive/active circuit not transferred")
@@ -113,6 +114,7 @@ def command_for(spec, folder, seconds, max_steps=None):
                "--input", str(ROOT/"inputs/quarl-nam-raw"/(spec["circuit"]+".qasm")),
                "--policy", "frozen", "--resume-model", spec["model"],
                "--seed", str(spec["seed"]), "--seconds", str(seconds), "--checkpoint-seconds", "300"]
+    command += ["--rule-profile", config.get("rule_profile", "full")]
     for key in ("selection", "anchor_candidate_cap", "anchor_prior", "learning_rate", "max_growth",
                 "max_edge_growth", "candidate_cap", "total_candidate_cap", "matching_work", "horizon",
                 "max_unscored", "archive", "latent_archive", "rollout", "extraction_timeout", "rewrite_timeout",

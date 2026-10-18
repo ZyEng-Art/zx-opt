@@ -73,6 +73,8 @@ def run(args):
         raise ValueError("Invalid search bounds")
     if args.selection != "anchor" and args.anchor_prior != "uniform":
         raise ValueError("Anchor prior requires --selection anchor")
+    if args.rule_profile != "full" and (args.selection != "global" or not args.general_zx):
+        raise ValueError("Rule ablations require global selection and --general-zx")
     if args.selection != "anchor" and args.anchor_resource_mask:
         raise ValueError("Anchor resource mask requires --selection anchor")
     if args.selection != "anchor" and args.anchor_noop_stop:
@@ -103,7 +105,8 @@ def run(args):
     views = Views(n, reference); scorer = VerifiedCompletion(reference, out/"invalid-extractions")
     if args.verify_native_flow:
         scorer.primary.scorer.verify_flow = scorer.repair.scorer.verify_flow = True
-    kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work, args.general_zx, args.total_candidate_cap)
+    kernel = GeneralKernel(env, args.seed, args.jpv, args.candidate_cap, args.matching_work,
+                           args.general_zx, args.total_candidate_cap, args.rule_profile)
     anchored = args.selection == "anchor"
     if anchored:
         kernel.candidate_cap = min(args.candidate_cap, args.anchor_candidate_cap)
@@ -141,7 +144,7 @@ def run(args):
             raise ValueError("Model resume requires frozen/online policy")
         saved, payload, model_resume = read_model_snapshot(
             args.resume_model, hashlib.sha256(input_bytes).hexdigest(),
-            args.selection, args.anchor_prior, args.anchor_resource_mask, args.neutral_stop_steps)
+            args.selection, args.anchor_prior, args.anchor_resource_mask, args.neutral_stop_steps, args.rule_profile)
         net.load_state_dict(saved["state_dict"])
         (out/"resume-model.pt").write_bytes(payload)
         if optimizer is not None:
@@ -189,6 +192,10 @@ def run(args):
                     limits="candidate/node/matching/horizon/latent-depth bounds; extraction failures are legal transitions, verification/resource failures rejected",
                     hh="I_X backward / H forward / I_Z forward proof; every contextual cancellation has a replay receipt")
     protocol["invalid_extraction"] = "quarantined and excluded from all gate costs/rewards; legal raw graph can continue. Raw/repair operator mismatches remain fatal. Repairs apply identically in every arm."
+    protocol["active_rules"] = dict(profile=args.rule_profile,
+        macros=args.rule_profile != "native", jpv=args.jpv and args.rule_profile in ("full", "no-a"),
+        nonlinear_a=args.general_zx and args.rule_profile == "full",
+        scope="Rules disabled before proposal construction; bounded menus do not imply complete search")
     if native_flow is not None:
         protocol["native_flow"] = native_flow
     if model_resume is not None:
@@ -276,7 +283,7 @@ def run(args):
                     "selection", "anchor_candidate_cap"]
         semantic += ["anchor_prior", "learning_rate", "anchor_resource_mask", "archive_qasm_cap",
                      "native_flow_module", "verify_native_flow", "anchor_noop_stop", "neutral_stop_steps",
-                     "discount_factor", "gae_lambda", "gate_improvement_stop"]
+                     "discount_factor", "gae_lambda", "gate_improvement_stop", "rule_profile"]
         if any(saved["config"][k] != protocol["config"][k] for k in semantic):
             raise ValueError("Resume search options differ")
         pool, state, start = saved["pool"], saved["state"], saved["start"]
@@ -548,7 +555,7 @@ def run(args):
                                 torch.save(dict(state_dict=net.state_dict(), steps=transition, updates=updates,
                                     optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
                                     input_sha256=protocol["input_sha256"], source_commit=revision,
-                                    selection=args.selection, anchor_prior=args.anchor_prior,
+                                    selection=args.selection, anchor_prior=args.anchor_prior, rule_profile=args.rule_profile,
                                     anchor_resource_mask=args.anchor_resource_mask,
                                     anchor_noop_stop=args.anchor_noop_stop,
                                     neutral_stop_steps=args.neutral_stop_steps,
@@ -634,7 +641,7 @@ def run(args):
         torch.save(dict(state_dict=net.state_dict(), steps=transition, updates=updates,
                         optimizer_state_dict=None if optimizer is None else optimizer.state_dict(),
                         input_sha256=hashlib.sha256(input_bytes).hexdigest(),
-                        selection=args.selection,
+                        selection=args.selection, rule_profile=args.rule_profile,
                         anchor_prior=args.anchor_prior, learning_rate=args.learning_rate,
                         anchor_resource_mask=args.anchor_resource_mask,
                         anchor_noop_stop=args.anchor_noop_stop,
@@ -703,6 +710,8 @@ def parser():
     p.add_argument("--allow-arbitrary-angles", action="store_true",
                    help="Preserve non-pi/4 phases as context; skip inapplicable JPV matches")
     p.add_argument("--policy", choices=["uniform", "frozen", "online"], default="uniform")
+    p.add_argument("--rule-profile", choices=["full", "no-a", "macros", "native"], default="full",
+                   help="Opt-in global-selection rule ablation; model schema remains general ZX")
     p.add_argument("--selection", choices=["global", "anchor"], default="global",
                    help="Sample a topology-only anchor before any rule matching; global preserves the baseline")
     p.add_argument("--anchor-candidate-cap", type=int, default=8,

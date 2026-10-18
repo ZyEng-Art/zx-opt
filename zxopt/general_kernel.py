@@ -96,10 +96,26 @@ class HybridAction:
                    (), (F(0),)*3, (0., 0., 0.), 0)
 
 
+def rule_allowed(profile, mode, family):
+    if profile not in ("full", "no-a", "macros", "native"):
+        raise ValueError("Unknown rule profile: "+profile)
+    if profile == "native":
+        return mode in ("legacy", "noop")
+    if profile == "macros":
+        return mode != "jpv"
+    if profile == "no-a":
+        return family not in ("A:forward", "A:backward")
+    return True
+
+
 class GeneralKernel:
-    def __init__(self, env, seed=11, jpv=True, candidate_cap=32, matching_work=2048, general_zx=False, total_candidate_cap=0):
+    def __init__(self, env, seed=11, jpv=True, candidate_cap=32, matching_work=2048, general_zx=False, total_candidate_cap=0, rule_profile="full"):
+        rule_allowed(rule_profile, "noop", "anchor_noop")
+        self.rule_profile = rule_profile
         self.native = Kernel(env)
-        self.jpv = Proposals(seed, candidate_cap, matching_work, general=general_zx) if jpv else None
+        self.jpv = (Proposals(seed, candidate_cap, matching_work, general=general_zx,
+                              include_a=rule_profile != "no-a")
+                    if jpv and rule_profile in ("full", "no-a") else None)
         self.candidate_cap = candidate_cap
         self.total_candidate_cap = total_candidate_cap; self.cap_seed = seed; self.cap_rounds = {}
         from optimized_backend import compile_rewrite_prefix
@@ -129,8 +145,9 @@ class GeneralKernel:
                 native = self.native.prepare_at(view.graph, anchor[2]) if anchor[1] == "node" else []
             if anchor is None or anchor[1] == "node":
                 self.remember_matches(view)
-            extra = candidates(view.graph, max_view_vertices, self.candidate_cap,
-                               None if anchor is None else (anchor[1], anchor[2]))
+            extra = ([] if self.rule_profile == "native" else
+                     candidates(view.graph, max_view_vertices, self.candidate_cap,
+                                None if anchor is None else (anchor[1], anchor[2])))
             for _, identifier, action in native:
                 result.append(HybridAction("legacy", action.kind, action, identifier, view.key,
                                            action.vertices, (F(0),)*3, (0., 0., 0.), 0))
@@ -180,6 +197,8 @@ class GeneralKernel:
         return result
 
     def step(self, raw, view, action):
+        if not rule_allowed(self.rule_profile, action.mode, action.family):
+            raise ValueError("Action excluded by rule profile: "+action.family)
         if action.mode == "noop":
             return raw.clone(), []
         if action.mode == "jpv":

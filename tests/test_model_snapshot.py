@@ -34,6 +34,15 @@ class ModelSnapshotTest(unittest.TestCase):
             with self.subTest(key=key), self.assertRaises(ValueError):
                 self.read(self.package(**{key: value}))
 
+    def test_rule_profiles_are_bound_and_old_capsules_default_to_full(self):
+        self.read(self.package())
+        with self.assertRaisesRegex(ValueError, "rule profile"):
+            self.read(self.package(rule_profile="native"))
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/"model.pt"; torch.save(self.package(rule_profile="native"), path)
+            saved, _, _ = read_model_snapshot(path, "input", "anchor", "uniform", True, 0, "native")
+            self.assertEqual(saved["rule_profile"], "native")
+
     def test_neutral_context_capsules_accept_only_the_same_limit(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp)/"model.pt"; torch.save(self.package(neutral_stop_steps=32), path)
