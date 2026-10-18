@@ -56,6 +56,7 @@ def profile(pack_path, output, repeats, warmup=False):
     from zxopt.general_kernel import GeneralKernel, Views
     from zxopt.general_feasibility import Feasibility
     from zxopt.legacy import environment
+    from zxopt.legacy import ROOT as code_root
     from zxopt.scalable_verify import reference_for
     torch.set_num_threads(1)
     data = json.loads(pack_path.read_text()); config = data["config"]
@@ -124,6 +125,8 @@ def profile(pack_path, output, repeats, warmup=False):
                 preview_families=dict(previews[p]))
     result = dict(circuit=data["circuit"], input_sha256=data["input_sha256"], pack_sha256=sha(pack_path),
         source_commit=data["source_commit"], profiler_sha256=sha(Path(__file__)),
+        runtime_sources={str(p): sha(code_root/p) for p in
+            (Path("zxopt/general_kernel.py"), Path("zxopt/jpv_actions.py"), Path("zxopt/general_feasibility.py"))},
         repeats=repeats, states=len(data["states"]),
         warmups=warmups,
         timing_scope="identical saved states, full bounded menus, cold feasibility cache; no extraction, PPO or end-to-end speed claim",

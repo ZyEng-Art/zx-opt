@@ -248,13 +248,17 @@ class Proposals:
         # Fixed branch-count bounds preserve paired prefixes across machine load.
         jobs = [(name, direction, color, 0) for name in ("CP", "B", "K", "EU", "SUP", "E", "C", "BW")
                 for direction, color in product(("forward", "backward"), ("Z", "X"))]
-        if self.general and self.include_a:
+        if self.general:
             jobs += [("A", direction, color, 0)
                      for direction, color in product(("forward", "backward"), ("Z", "X"))]
         arities = sorted({len(hs[v]) for v in graph.nodes if graph.nodes[v].kind in ("Z", "X")})
         jobs += [("H", "forward", color, arity) for color in ("Z", "X") for arity in arities]
         rng.shuffle(jobs)
         for name, direction, color, arity in jobs:
+            # Keep the full menu's RNG schedule when disabling A. If A has no
+            # witnesses, all other proposals remain exactly paired.
+            if name == "A" and not self.include_a:
+                continue
             if len(buckets.get(name+":"+direction, ())) >= per:
                 continue
             job_started = time.monotonic() if self.profile else None

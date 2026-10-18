@@ -56,6 +56,15 @@ class RuleProfilesTest(unittest.TestCase):
         self.assertNotIn("profile_seconds", plain.stats)
         self.assertGreater(timed.stats["profile_seconds"]["A:forward"], 0)
 
+    def test_disabling_absent_a_keeps_other_candidates_exactly_paired(self):
+        full = Proposals(general=True, matching_work=64)
+        no_a = Proposals(general=True, include_a=False, matching_work=64)
+        raw = axiom("I").left
+        for _ in range(4):
+            left, right = full.build(raw), no_a.build(raw)
+            self.assertFalse(any(a.axiom.name == "A" for a in left))
+            self.assertEqual([a.record() for a in left], [a.record() for a in right])
+
     def test_profile_guards_replay_and_invalid_profiles(self):
         self.assertTrue(rule_allowed("full", "jpv", "A:forward"))
         self.assertFalse(rule_allowed("no-a", "jpv", "A:backward"))
