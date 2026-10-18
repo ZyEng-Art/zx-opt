@@ -45,7 +45,7 @@ def main():
     a = p.parse_args()
     if a.audit_crosscheck_native_every < 0 or (a.audit_crosscheck_native_every and a.audit_native_replay != "rooted"):
         raise ValueError("Native crosschecks require rooted replay and a nonnegative interval")
-    if any(mode.endswith("_native") for mode in a.modes) and a.native_flow_module is None:
+    if any(mode.endswith("_native") and not mode.startswith("rules_") for mode in a.modes) and a.native_flow_module is None:
         raise ValueError("Native comparison modes require --native-flow-module")
     out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     cases = []
@@ -93,7 +93,7 @@ def main():
             command += ["--anchor-resource-mask"]
         if spec["mode"].endswith("_qasm2"):
             command += ["--archive-qasm-cap", "2"]
-        if spec["mode"].endswith("_native"):
+        if spec["mode"].endswith("_native") and not spec["mode"].startswith("rules_"):
             command += ["--native-flow-module", str(a.native_flow_module.resolve())]
         if "_stop" in spec["mode"]:
             command += ["--anchor-noop-stop"]
