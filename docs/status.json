@@ -254,5 +254,17 @@
     "remaining_background_work": "Archive copies only, source trajectories retained remotely; sequential resumablequeue53467",
     "imitation5seed_replication": "prepared but not launched",
     "scope": "Time-bounded optimization work complete; no optimality, convergence or generalization claim"
+  },
+  "paper_style_result_table": {
+    "pdf": "reports/nam-results-table-20261018/table.pdf",
+    "csv": "reports/nam-results-table-20261018/table-full.csv",
+    "own_source": "f5874e497ce17b6bacddadb8e907763a9eb299f6",
+    "scope": "Original26cohort only, notlatestanchorsuite",
+    "own_geo_reduction": 30.782716027059298,
+    "quarl_rm_outcomes": {
+      "tie": 1,
+      "loss": 24,
+      "win": 1
+    }
   }
 }
