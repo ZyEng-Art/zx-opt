@@ -125,6 +125,17 @@ def campaign(root, strict_a=False):
         with (folder/"events.jsonl").open() as stream:
             for line in stream:
                 event = json.loads(line)
+                action = event["action"]; mode = action["mode"]
+                if mode == "jpv":
+                    actual = action["action"]["axiom"]["name"]+":"+action["action"]["direction"]
+                    assert action["family"] == actual
+                    assert protocol["config"]["rule_profile"] not in ("native", "macros")
+                    if protocol["config"]["rule_profile"] == "no-a":
+                        assert not actual.startswith("A:")
+                else:
+                    assert action["family"] == action["action"]["kind"]
+                    if mode == "macro":
+                        assert protocol["config"]["rule_profile"] != "native"
                 if event["status"] not in ("accepted", "accepted_unscored"):
                     continue
                 vertices.append(event["vertices"]); edges.append(event["edges"])
@@ -164,6 +175,12 @@ def main():
     if a.strict_a_campaign:
         result["strict_a_campaign"] = campaign(a.strict_a_campaign, True)
     (a.evidence/"analysis.json").write_text(json.dumps(result, indent=2)+"\n")
+    for name in ("four_layer_campaign", "strict_a_campaign"):
+        if name in result:
+            rows = result[name]["rows"]
+            with (a.evidence/(name+".csv")).open("w", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=[k for k in rows[0] if k != "timers"])
+                writer.writeheader(); writer.writerows({k:v for k,v in r.items() if k != "timers"} for r in rows)
     for key in ("components",):
         rows = result[key]
         if rows:
