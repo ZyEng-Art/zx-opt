@@ -50,7 +50,7 @@ def pack(trial, output, count):
         json.dump(value, stream, indent=2); stream.write("\n")
 
 
-def profile(pack_path, output, repeats):
+def profile(pack_path, output, repeats, warmup=False):
     import torch
     from zxopt.complete import Diagram
     from zxopt.general_kernel import GeneralKernel, Views
@@ -62,7 +62,7 @@ def profile(pack_path, output, repeats):
     assert hashlib.sha256(data["input_qasm"].encode()).hexdigest() == data["input_sha256"]
     # environment needs a real QASM path; preserve the exact packed input bytes.
     import tempfile
-    rows = []; totals = {}; previews = defaultdict(Counter)
+    rows = []; warmups = []; totals = {}; previews = defaultdict(Counter)
     with tempfile.TemporaryDirectory() as tmp:
         input_path = Path(tmp)/"input.qasm"; input_path.write_text(data["input_qasm"])
         reference = reference_for(data["input_qasm"], config.get("verification", "matrix"))
@@ -89,6 +89,15 @@ def profile(pack_path, output, repeats):
         rng = random.Random(911)
         for state in data["states"]:
             raw = Diagram.from_record(state["record"]); assert raw.digest() == state["key"]
+            if warmup:
+                view = Views(len(raw.ports)//2, reference).get(raw)
+                for p, k in kernels.items():
+                    if k.jpv:
+                        k.jpv.profile = False
+                    start = time.perf_counter(); k.prepare(raw, view, view_limit)
+                    warmups.append(dict(state=state["key"], profile=p, seconds=time.perf_counter()-start))
+                    if k.jpv:
+                        k.jpv.profile = True
             for repeat in range(repeats):
                 start = time.perf_counter(); view = Views(len(raw.ports)//2, reference).get(raw)
                 view_seconds = time.perf_counter()-start
@@ -116,6 +125,7 @@ def profile(pack_path, output, repeats):
     result = dict(circuit=data["circuit"], input_sha256=data["input_sha256"], pack_sha256=sha(pack_path),
         source_commit=data["source_commit"], profiler_sha256=sha(Path(__file__)),
         repeats=repeats, states=len(data["states"]),
+        warmups=warmups,
         timing_scope="identical saved states, full bounded menus, cold feasibility cache; no extraction, PPO or end-to-end speed claim",
         order="fixed seeded randomized interleave", rows=rows, totals=totals)
     with output.open("x") as stream:
@@ -127,13 +137,14 @@ def main():
     p.add_argument("mode", choices=["pack", "profile"])
     p.add_argument("input", type=Path); p.add_argument("output", type=Path)
     p.add_argument("--states", type=int, default=6); p.add_argument("--repeats", type=int, default=3)
+    p.add_argument("--warmup", action="store_true", help="One untimed preparation per profile/state, retained separately")
     a = p.parse_args()
     if a.states < 2 or a.repeats < 1:
         raise ValueError("At least two states and one repeat required")
     if a.mode == "pack":
         pack(a.input, a.output, a.states)
     else:
-        profile(a.input, a.output, a.repeats)
+        profile(a.input, a.output, a.repeats, a.warmup)
 
 
 if __name__ == "__main__":
