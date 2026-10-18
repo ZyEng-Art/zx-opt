@@ -92,8 +92,8 @@ def main():
             command += ["--max-steps", str(a.max_steps)]
         if spec["mode"].startswith("rules_"):
             command += ["--rule-profile", spec["mode"][6:].replace("_", "-")]
-        if spec["mode"].startswith("cost_") and spec["mode"] != "cost_reference":
-            command += ["--feasibility-mode", "bounds"]
+        if spec["mode"].startswith("cost_"):
+            command += ["--feasibility-mode", "reference" if spec["mode"] == "cost_reference" else "bounds"]
         if "staged" in spec["mode"]:
             command += ["--rule-schedule", "staged", "--native-steps", str(a.native_steps),
                         "--expanded-steps", str(a.expanded_steps)]

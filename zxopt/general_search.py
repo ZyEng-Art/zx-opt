@@ -761,7 +761,7 @@ def parser():
     p.add_argument("--policy", choices=["uniform", "frozen", "online"], default="uniform")
     p.add_argument("--rule-profile", choices=["full", "no-a", "macros", "native"], default="full",
                    help="Opt-in global-selection rule ablation; model schema remains general ZX")
-    p.add_argument("--feasibility-mode", choices=["reference", "bounds"], default="reference",
+    p.add_argument("--feasibility-mode", choices=["reference", "bounds"], default="bounds",
                    help="Bounds certify resource-safe candidates without constructing every child; uncertain cases use exact previews")
     p.add_argument("--rule-schedule", choices=["static", "staged"], default="static")
     p.add_argument("--native-steps", type=int, default=256)

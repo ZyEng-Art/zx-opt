@@ -95,6 +95,15 @@ class ResourceBoundsTest(unittest.TestCase):
         restored.observe(True)
         self.assertEqual(restored.without_improvement, 0)
 
+    def test_search_defaults_enable_bounds_and_keep_reference_available(self):
+        from zxopt.general_search import parser
+        default = parser().parse_args(["unused-output"])
+        reference = parser().parse_args(["unused-output", "--feasibility-mode", "reference"])
+        self.assertEqual(default.feasibility_mode, "bounds")
+        self.assertEqual(reference.feasibility_mode, "reference")
+        self.assertEqual(default.rule_schedule, "static")
+        self.assertEqual(default.candidate_allocation, "balanced")
+
     def test_native_windows_skip_generation_and_quotas_preserve_diversity(self):
         from unittest.mock import patch
         kernel = GeneralKernel(self.env, general_zx=True, total_candidate_cap=32)

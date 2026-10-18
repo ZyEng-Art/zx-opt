@@ -7,6 +7,7 @@ import statistics
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import numpy as np
 
 
@@ -33,7 +34,7 @@ def main():
                    color="#335c67" if j == 0 else "#9e2a2b", label=policy, s=45)
     ax.axhline(1., color="gray", lw=.8); ax.set_xticks(range(3), ["1409", "1423", "1451"])
     ax.set_xlabel("Seed"); ax.set_ylabel("Reference / bounds time for identical steps")
-    ax.set_title("B. End-to-end; identical semantic prefixes"); ax.legend()
+    ax.set_title("B. End-to-end; identical semantic prefixes"); ax.legend(loc="lower right")
     modes = ["cost_bounds", "cost_staged", "cost_quota", "cost_staged_quota"]
     labels = ["bounds", "+ staged", "+ quota", "+ both"]
     ax = axes[1, 0]
@@ -55,6 +56,7 @@ def main():
             ax.plot([x-.08, x+.08], [statistics.median(ys)]*2, color="black", lw=1.)
     ax.set_xticks(range(4), labels); ax.set_ylabel("Best total NAM gates (lower is better)")
     ax.set_title("D. barenco_tof_3; 3 seeds per policy"); ax.legend()
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
     for ax in axes.flat:
         ax.spines[["top", "right"]].set_visible(False)
     fig.savefig(a.evidence/"resource-cost.pdf")
@@ -80,6 +82,7 @@ def main():
                 axes[1].plot([x-.08,x+.08],[statistics.median(ys)]*2,color="black",lw=1.)
         axes[1].set_ylabel("Best total NAM gates (lower is better)")
         axes[1].set_title("600 s; 3 seeds per policy"); axes[1].legend()
+        axes[1].yaxis.set_major_locator(MaxNLocator(integer=True))
         for ax in axes:
             ax.set_xticks(range(2), ["native only", "staged library"])
             ax.spines[["top", "right"]].set_visible(False)
