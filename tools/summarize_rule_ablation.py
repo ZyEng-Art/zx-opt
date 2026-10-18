@@ -84,7 +84,8 @@ def event_prefix(folder, limit):
     """Hash event semantics, excluding wall-time/cache implementation counters."""
     keys = ("parent_graph_key", "restart_graph_key", "restart_source", "action", "available",
             "candidate_sha256", "selection", "context", "status", "graph_key", "cost", "reward", "terminal")
-    digest = hashlib.sha256(); best = None; end = 0.; count = 0
+    digest = hashlib.sha256(); best = json.loads((folder/"protocol.json").read_text())["root_cost"]["gates"]
+    end = 0.; count = 0
     with (folder/"events.jsonl").open() as stream:
         for line in stream:
             event = json.loads(line)
@@ -96,7 +97,7 @@ def event_prefix(folder, limit):
             count += 1; end = event["seconds"]
             if event["status"] == "accepted":
                 gates = event["cost"]["gates"]
-                best = gates if best is None else min(best, gates)
+                best = min(best, gates)
     return dict(transitions=count, seconds=end, best=best, semantics_sha256=digest.hexdigest())
 
 
