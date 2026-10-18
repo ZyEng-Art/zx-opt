@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "fixture": "Copy of completed 12-second native smoke, with a documented two-second consumed plateau to exercise active resume",
+  "source_steps": 146,
+  "final_steps": 248,
+  "source_updates": 4,
+  "final_updates": 7,
+  "segment_events": 102,
+  "accepted_replayed": 101,
+  "unique_qasm_checked": 43,
+  "scope": "Local segment runner and independent small-circuit replay; not a live-node interruption drill"
+}

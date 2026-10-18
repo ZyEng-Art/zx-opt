@@ -1,0 +1,100 @@
+{
+  "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "container_running": true,
+  "original_controller_alive": true,
+  "exclude_downtime": false,
+  "records": [
+    {
+      "folder": "adder_8/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/adder_8/rules_native_online_s11",
+      "checkpoint_bytes": 19343497,
+      "checkpoint_mtime": 1792333683.6014364
+    },
+    {
+      "folder": "barenco_tof_10/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/barenco_tof_10/rules_native_online_s11",
+      "checkpoint_bytes": 5639952,
+      "checkpoint_mtime": 1792333651.6427753
+    },
+    {
+      "folder": "barenco_tof_4/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/barenco_tof_4/rules_native_online_s11",
+      "checkpoint_bytes": 5207151,
+      "checkpoint_mtime": 1792333630.5236602
+    },
+    {
+      "folder": "barenco_tof_5/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/barenco_tof_5/rules_native_online_s11",
+      "checkpoint_bytes": 10118637,
+      "checkpoint_mtime": 1792333632.2155893
+    },
+    {
+      "folder": "gf2^4_mult/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/gf2^4_mult/rules_native_online_s11",
+      "checkpoint_bytes": 4889117,
+      "checkpoint_mtime": 1792333639.8472695
+    },
+    {
+      "folder": "gf2^5_mult/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/gf2^5_mult/rules_native_online_s11",
+      "checkpoint_bytes": 19722369,
+      "checkpoint_mtime": 1792333651.818768
+    },
+    {
+      "folder": "gf2^7_mult/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/gf2^7_mult/rules_native_online_s11",
+      "checkpoint_bytes": 33049129,
+      "checkpoint_mtime": 1792333676.6337283
+    },
+    {
+      "folder": "hwb6/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/hwb6/rules_native_online_s11",
+      "checkpoint_bytes": 8408791,
+      "checkpoint_mtime": 1792333640.0352616
+    },
+    {
+      "folder": "qcla_adder_10/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/qcla_adder_10/rules_native_online_s11",
+      "checkpoint_bytes": 26184489,
+      "checkpoint_mtime": 1792333655.3146214
+    },
+    {
+      "folder": "qcla_com_7/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/qcla_com_7/rules_native_online_s11",
+      "checkpoint_bytes": 19849213,
+      "checkpoint_mtime": 1792333645.0950496
+    },
+    {
+      "folder": "tof_3/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/tof_3/rules_native_online_s11",
+      "checkpoint_bytes": 1480177,
+      "checkpoint_mtime": 1792333627.975767
+    },
+    {
+      "folder": "tof_4/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/tof_4/rules_native_online_s11",
+      "checkpoint_bytes": 4704757,
+      "checkpoint_mtime": 1792333629.4957032
+    },
+    {
+      "folder": "vbe_adder_3/rules_native_online_s11",
+      "status": "recoverable",
+      "source_segment": "source/runs/comparison/vbe_adder_3/rules_native_online_s11",
+      "checkpoint_bytes": 4446409,
+      "checkpoint_mtime": 1792333632.8275635
+    }
+  ],
+  "execute": false
+}

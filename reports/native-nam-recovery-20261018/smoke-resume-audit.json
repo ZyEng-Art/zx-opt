@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "segment_events": 102,
+  "accepted_replayed": 101,
+  "unique_qasm_checked": 43,
+  "source_checkpoint": "/Users/klx-pc/ComateProjects/Default Project/dengzengyong/zx-opt-anchor-first/runs/native-recovery-fixture-20261018/recovery-native-recovery-active-smoke-20261018.pt"
+}

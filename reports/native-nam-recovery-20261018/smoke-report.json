@@ -1,0 +1,114 @@
+{
+  "status": "no_improvement_timeout",
+  "transitions": 248,
+  "accepted": 246,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 7,
+  "best": {
+    "cost": {
+      "gates": 40,
+      "cx": 16,
+      "depth": 35
+    },
+    "sha256": "695005cfd38a86769b2ee49bd9f873e207c9d57df6934abbb22ac5927650ce6a",
+    "seconds": 9.222634249999999,
+    "graph": "bcb92b149e5876046a19344f8818f1dfab9a3cb71836c2fbabd18192cb84fab8"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 18,
+    "depth": 39
+  },
+  "proposal_counts": {
+    "PV": 21,
+    "PVG": 25,
+    "PVB": 19,
+    "ID": 37
+  },
+  "accepted_counts": {
+    "PV": 21,
+    "PVG": 25,
+    "PVB": 18,
+    "ID": 37
+  },
+  "unscored_counts": {},
+  "rejections": {
+    "TimeoutError: candidate operation exceeded deadline": 1
+  },
+  "buffer": {
+    "scored_size": 22,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 21,
+    "evictions": 0,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      40,
+      16
+    ]
+  },
+  "checked_qasm": 43,
+  "view_cache": {
+    "hits": 108,
+    "misses": 100
+  },
+  "jpv_proposals": null,
+  "anchor_stats": {},
+  "completion": {
+    "requests": 97,
+    "primary_successes": 97,
+    "cache_hits": 5,
+    "unique_valid_qasm": 43,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 1.2500540599433706e-15,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 2660,
+    "calls": 102,
+    "proposed": 2759,
+    "eligible": 2754,
+    "cache_hits": 99,
+    "resource_masks": 5,
+    "mode": "bounds",
+    "cache_size": 2660,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "PVG": 1,
+      "PVB": 4
+    }
+  },
+  "max_graph_operator_error": 8.550697163116065e-15,
+  "max_qasm_operator_error": 1.2500540599433706e-15,
+  "first_passage_seconds": {
+    "39": null,
+    "38": null,
+    "37": null,
+    "36": null,
+    "35": null
+  },
+  "budget_seconds": 0,
+  "total_loop_seconds": 9.475838667,
+  "timers": {
+    "checkpoint": 0.07273975000000066,
+    "matching": 0.49759592699999367,
+    "feasibility": 4.310385090999997,
+    "inference": 0.5446007460000013,
+    "rewrite_verify": 0.5157697450000072,
+    "score": 2.5302618750000034,
+    "ppo": 0.6466510009999986
+  },
+  "verification": "passed",
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "patience": {
+    "seconds": 12.0,
+    "gates": 40,
+    "last_improvement_unix": 1792333849.7095613
+  },
+  "certificate_stats": null,
+  "finished_unix": 1792333861.766453
+}
