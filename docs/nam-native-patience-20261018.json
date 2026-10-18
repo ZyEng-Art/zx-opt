@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "method": "Native rules only; independent online PPO per paper NAM target",
+  "assignments": {
+    "22": [
+      "adder_8",
+      "barenco_tof_10",
+      "barenco_tof_4",
+      "barenco_tof_5",
+      "gf2^4_mult",
+      "gf2^5_mult",
+      "gf2^7_mult",
+      "hwb6",
+      "qcla_adder_10",
+      "qcla_com_7",
+      "tof_3",
+      "tof_4",
+      "vbe_adder_3"
+    ],
+    "23": [
+      "barenco_tof_3",
+      "csla_mux_3",
+      "csum_mux_9",
+      "gf2^6_mult",
+      "gf2^8_mult",
+      "ham15-low",
+      "mod5_4",
+      "mod_mult_55",
+      "mod_red_21",
+      "qcla_mod_7",
+      "rc_adder_6",
+      "tof_10",
+      "tof_5"
+    ]
+  },
+  "raw_gate_load": {
+    "22": 4368,
+    "23": 4373
+  },
+  "seed": 11,
+  "patience_seconds": 10800,
+  "reset": "strict total NAM gate reduction only; CX/depth ties do not reset",
+  "overall_time_cap": null,
+  "total_candidate_cap": 32,
+  "checkpoint_seconds": 300,
+  "verification": "Full matrices up to7 wires; sufficient ordered ZX miter identity reduction above7; inconclusive rejected",
+  "cpu_workers_per_node": 13,
+  "gpu": false,
+  "scope": "Independent target learning/search, no pretrained model or state transfer, no held-out generalization claim",
+  "rollout": 32,
+  "rule_profile": "native",
+  "selection": "global",
+  "new_axioms": false,
+  "expansion_macros": false,
+  "policies": [
+    "online"
+  ],
+  "previous_results": "Preserved; new campaign in independent directories",
+  "storage_root": "/home/dengzengyong/rlzx-studies",
+  "archive_policy": "Complete remote archives with SHA256 receipts; local metadata mirror only due local disk capacity",
+  "save_improvement_models": true,
+  "preflight": {
+    "patience_tests_passed": 5,
+    "short_patience_seconds": 12,
+    "short_campaign": "runs/native-patience-preflight-20261018",
+    "short_campaign_status": "passed"
+  }
+}

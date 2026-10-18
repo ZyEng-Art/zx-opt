@@ -35,6 +35,7 @@ def main():
                                                  "cost_reference", "cost_bounds", "cost_staged", "cost_quota", "cost_staged_quota"],
                    default=["global32", "anchor8"])
     p.add_argument("--seconds", type=float, default=300)
+    p.add_argument("--no-improvement-seconds", type=float, default=0.)
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--audit-workers", type=int, default=2)
     p.add_argument("--audit-native-replay", choices=["reference", "rooted"], default="reference")
@@ -46,6 +47,8 @@ def main():
     p.add_argument("--save-improvement-models", action="store_true")
     p.add_argument("--allow-dirty", action="store_true")
     a = p.parse_args()
+    if a.seconds < 0 or a.no_improvement_seconds < 0 or (a.seconds == 0 and a.no_improvement_seconds == 0):
+        raise ValueError("Provide a positive wall budget or positive per-target patience")
     if a.audit_crosscheck_native_every < 0 or (a.audit_crosscheck_native_every and a.audit_native_replay != "rooted"):
         raise ValueError("Native crosschecks require rooted replay and a nonnegative interval")
     if any(mode.endswith("_native") and not mode.startswith("rules_") for mode in a.modes) and a.native_flow_module is None:
@@ -65,7 +68,7 @@ def main():
                  arm=m+"_"+pol, folder=c+"/"+m+"_"+pol+"_s"+str(s))
             for s in a.seeds for c in a.circuits for m in a.modes for pol in a.policies]
     atomic_json(out/"campaign.json", dict(source_commit=revision, tracked_dirty=bool(dirty),
-                cases=cases, plan=plan, seconds=a.seconds, workers=a.workers,
+                cases=cases, plan=plan, seconds=a.seconds, no_improvement_seconds=a.no_improvement_seconds, workers=a.workers,
                 audit_workers=a.audit_workers, audit_native_replay=a.audit_native_replay,
                 audit_crosscheck_native_every=a.audit_crosscheck_native_every,
                 native_flow_module=None if a.native_flow_module is None else str(a.native_flow_module.resolve()),
@@ -84,7 +87,7 @@ def main():
                    "--anchor-prior", "nodes" if "_nodes" in spec["mode"] else "uniform",
                    "--learning-rate", ".0001" if "_lr1e4" in spec["mode"] else
                                       ".001" if "_lr1e3" in spec["mode"] else ".0003",
-                   "--seconds", str(a.seconds), "--rollout", "128" if "_r128" in spec["mode"] else "32",
+                   "--seconds", str(a.seconds), "--no-improvement-seconds", str(a.no_improvement_seconds), "--rollout", "128" if "_r128" in spec["mode"] else "32",
                    "--total-candidate-cap", "32",
                    "--verification", "adaptive", "--extraction-timeout", "20", "--rewrite-timeout", "30",
                    "--checkpoint-seconds", "300"]
@@ -119,6 +122,9 @@ def main():
             with (out/(spec["folder"].replace("/", "__")+".log")).open("x") as log:
                 subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
             report = json.loads((folder/"report.json").read_text())
+            if a.seconds == 0 and a.no_improvement_seconds > 0:
+                assert report["status"] == "no_improvement_timeout", report["status"]
+                assert report["finished_unix"] - report["patience"]["last_improvement_unix"] >= a.no_improvement_seconds
             return dict(**spec, status="passed", report=report)
         except Exception as exc:
             return dict(**spec, status="failed", error=repr(exc), artifacts_retained=True)

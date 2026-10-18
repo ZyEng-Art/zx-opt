@@ -39,6 +39,8 @@ def main():
     p.add_argument("--container", required=True)
     p.add_argument("--commit", required=True)
     p.add_argument("--seconds", type=float, default=300)
+    p.add_argument("--no-improvement-seconds", type=float, default=0.)
+    p.add_argument("--policies", nargs="+", choices=["frozen", "online"], default=["frozen", "online"])
     p.add_argument("--workers", type=int, default=6)
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3", "mod5_4", "tof_5"])
     p.add_argument("--seeds", nargs="+", default=["11", "29", "47"])
@@ -100,12 +102,16 @@ def main():
             native_library = build["library"]
         run(["-m", "unittest", "discover", "-s", "tests", "-v"], "unit-tests.log")
         status("comparison", experiment=a.experiment, circuits=a.circuits, seeds=a.seeds,
-               modes=a.modes, seconds=a.seconds, workers=a.workers)
-        common = ["--seconds", str(a.seconds), "--workers", str(a.workers),
+               modes=a.modes, policies=a.policies, seconds=a.seconds, no_improvement_seconds=a.no_improvement_seconds, workers=a.workers)
+        common = ["--no-improvement-seconds", str(a.no_improvement_seconds), "--seconds", str(a.seconds), "--workers", str(a.workers),
                   "--audit-workers", str(a.audit_workers), "--circuits", *a.circuits,
                   "--seeds", *a.seeds, "--modes", *a.modes,
                   "--audit-native-replay", a.audit_native_replay,
                   "--audit-crosscheck-native-every", str(a.audit_crosscheck_native_every)]
+        if a.experiment != "search" and a.no_improvement_seconds:
+            raise ValueError("Patience supported only for search")
+        if a.experiment != "search":
+            common = common[2:]
         if a.experiment == "model-probe":
             if a.model_manifest is None:
                 raise ValueError("Demonstration model probes require a read-only model manifest")
@@ -127,7 +133,7 @@ def main():
             if a.save_improvement_models:
                 common += ["--save-improvement-models"]
             run(["tools/anchor_campaign.py", "runs/comparison", *common,
-                 "--policies", "frozen", "online"], "comparison.log")
+                 "--policies", *a.policies], "comparison.log")
         finished = json.loads((base/"source/runs/comparison/finished.json").read_text())
         if finished["status"] != "passed":
             raise RuntimeError("Comparison did not pass its event and circuit audits")

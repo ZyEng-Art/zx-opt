@@ -16,6 +16,7 @@ def main():
     p.add_argument("--nodes", nargs="+", type=int, choices=[22, 23], default=[22, 23])
     p.add_argument("--metadata-only", action="store_true",
                    help="Live copy omits graph/circuit objects and full state; final sealed archive is still fetched")
+    p.add_argument("--remote-archive-only", action="store_true", help="Keep full archive remotely; mirror its receipt and live metadata")
     a = p.parse_args(); out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     finished = {}; history = []
     while len(finished) != len(a.nodes):
@@ -43,6 +44,10 @@ def main():
                         (target/name).write_bytes(result.stdout)
                 result = subprocess.run(ssh+[host, "cat", base+"/archive.json"], capture_output=True, text=True, timeout=30)
                 meta = json.loads(result.stdout) if result.stdout.strip().startswith("{") else None
+                if meta and a.remote_archive_only:
+                    (target/"archive.json").write_text(json.dumps(meta, indent=2)+"\n")
+                    finished[str(node)] = meta
+                    meta = None
                 if meta:
                     filename = Path(meta["path"]).name
                     if meta["path"] != base+"/"+filename:
@@ -66,7 +71,7 @@ def main():
                          study_outcomes={node: meta.get("study_status", "legacy_archive_check_controller")
                                          for node, meta in finished.items()},
                          updated_unix=time.time(), history=history[-20:],
-                         scope="Status describes collection only. See study_outcomes/controller for experiment validity. Live rsync copies are monitoring snapshots; final archives are checksum-verified.")
+                         remote_archive_only=a.remote_archive_only, scope="Status describes collection only. See study_outcomes/controller for experiment validity. Live rsync copies are monitoring snapshots; final archives are checksum-verified.")
             temp = out/"status.tmp"; temp.write_text(json.dumps(state, indent=2)+"\n"); temp.replace(out/"status.json")
         if len(finished) != len(a.nodes):
             time.sleep(a.interval)

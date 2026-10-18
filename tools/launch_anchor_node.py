@@ -17,6 +17,8 @@ def main():
     p.add_argument("--node", type=int, choices=[22, 23], required=True)
     p.add_argument("--tag", default="anchor_prior")
     p.add_argument("--seconds", type=float, default=600)
+    p.add_argument("--no-improvement-seconds", type=float, default=0.)
+    p.add_argument("--policies", nargs="+", choices=["frozen", "online"], default=["frozen", "online"])
     p.add_argument("--workers", type=int, default=10)
     p.add_argument("--cpus", type=int, default=16)
     p.add_argument("--memory-gib", type=int, default=48)
@@ -30,11 +32,15 @@ def main():
     p.add_argument("--build-native-flow", action="store_true")
     p.add_argument("--save-improvement-models", action="store_true")
     p.add_argument("--metadata-only-mirror", action="store_true")
+    p.add_argument("--storage-root", help="Remote durable directory; task keeps a /tmp symlink for existing collectors")
+    p.add_argument("--remote-archive-only", action="store_true")
     p.add_argument("--circuits", nargs="+", default=["barenco_tof_3"])
     p.add_argument("--seeds", nargs="+", default=["11", "29", "47", "71", "101"])
     p.add_argument("--modes", nargs="+", default=["global32", "anchor8", "anchor8_nodes",
                                                   "anchor8_lr1e3", "anchor8_nodes_lr1e3"])
     a = p.parse_args()
+    if a.seconds < 0 or a.no_improvement_seconds < 0 or (a.seconds == 0 and a.no_improvement_seconds == 0):
+        raise ValueError("Provide a positive wall budget or positive per-target patience")
     if a.audit_crosscheck_native_every < 0 or (a.audit_crosscheck_native_every and a.audit_native_replay != "rooted"):
         raise ValueError("Native crosschecks require rooted replay and a nonnegative interval")
     if not re.fullmatch(r"[a-z0-9_]{1,32}", a.tag):
@@ -67,8 +73,8 @@ def main():
     bundle = out/"source.bundle"
     subprocess.run(["git", "-C", str(ROOT), "bundle", "create", str(bundle), "HEAD"], check=True)
     spec = dict(node=a.node, tag=a.tag, source_commit=revision, seconds=a.seconds,
-                workers=a.workers, cpus=a.cpus, memory_gib=a.memory_gib, circuits=a.circuits, seeds=a.seeds, modes=a.modes,
-                experiment=a.experiment, probe_source_tag=a.probe_source_tag,
+                no_improvement_seconds=a.no_improvement_seconds, policies=a.policies, workers=a.workers, cpus=a.cpus, memory_gib=a.memory_gib, circuits=a.circuits, seeds=a.seeds, modes=a.modes,
+                storage_root=a.storage_root, experiment=a.experiment, probe_source_tag=a.probe_source_tag,
                 training_seeds=a.training_seeds, audit_workers=a.audit_workers,
                 audit_native_replay=a.audit_native_replay,
                 audit_crosscheck_native_every=a.audit_crosscheck_native_every,
@@ -88,7 +94,12 @@ def main():
             stream.write(result.stdout+"\n"+result.stderr)
         return result
 
-    prepared = remote("from pathlib import Path\np=Path("+repr(spec["base"])+")\np.mkdir(exist_ok=False)\nprint('prepared')\n")
+    preparation = "from pathlib import Path\np=Path("+repr(spec["base"])+")\n"
+    if a.storage_root:
+        preparation += "target=Path("+repr(a.storage_root)+")/p.name\ntarget.mkdir(parents=True,exist_ok=False)\np.symlink_to(target,target_is_directory=True)\n"
+    else:
+        preparation += "p.mkdir(exist_ok=False)\n"
+    prepared = remote(preparation+"print('prepared')\n")
     if "prepared" not in prepared.stdout:
         raise RuntimeError("Remote directory creation failed; inspect setup.log without overwriting another task")
     subprocess.run(["scp", "-o", "ControlPath="+socket, "-o", "ProxyCommand=false", "-o", "BatchMode=yes",
@@ -142,6 +153,7 @@ meta=dict(container_name=name,container_id=cid,started_at=data['State']['Started
 run(['docker','exec',cid,'git','config','--global','--add','safe.directory','/workspace/task/source'])
 command=['python3',str(base/'source/tools/node_anchor_campaign.py'),str(base),'--container',name,
          '--commit',revision,'--seconds',str(spec['seconds']),'--workers',str(spec['workers']),
+         '--no-improvement-seconds',str(spec['no_improvement_seconds']),'--policies',*spec['policies'],
          '--circuits',*spec['circuits'],'--seeds',*spec['seeds'],'--modes',*spec['modes'],
          '--experiment',spec['experiment'],'--audit-workers',str(spec['audit_workers']),
          '--audit-native-replay',spec['audit_native_replay'],
@@ -170,7 +182,8 @@ print(json.dumps(meta))
     with (out/"collector.log").open("x") as stream:
         proc = subprocess.Popen([sys.executable, str(ROOT/"tools/mirror_anchor_nodes.py"), str(out/"mirror"),
                                  "--task-prefix", "rlzx_"+a.tag, "--nodes", str(a.node), "--interval", "300",
-                                 *(["--metadata-only"] if a.metadata_only_mirror else [])],
+                                 *(["--metadata-only"] if a.metadata_only_mirror else []),
+                                 *(["--remote-archive-only"] if a.remote_archive_only else [])],
                                 cwd=ROOT, stdin=subprocess.DEVNULL, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
     (out/"collector-launch.json").write_text(json.dumps(dict(pid=proc.pid, interval=300), indent=2)+"\n")
     print(json.dumps(launch))
