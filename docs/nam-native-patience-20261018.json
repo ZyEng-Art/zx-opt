@@ -56,7 +56,7 @@
     "online"
   ],
   "previous_results": "Preserved; new campaign in independent directories",
-  "storage_root": "/home/dengzengyong/rlzx-studies",
+  "storage_root": "/ssd2/dengzengyong-rlzx-native-20261018",
   "archive_policy": "Complete remote archives with SHA256 receipts; local metadata mirror only due local disk capacity",
   "save_improvement_models": true,
   "preflight": {
