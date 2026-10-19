@@ -1,0 +1,569 @@
+{
+  "source_table": "reports/nam-results-table-20261018/table-full.csv",
+  "source_table_sha256": "15247b4dfe27899360c02a24ec6acaf1d10fc1170d6f24308686aa67a41cf4c1",
+  "columns": [
+    "Circuit",
+    "Orig.",
+    "Nam",
+    "VOQC",
+    "Qiskit",
+    "Tket",
+    "Quartz w/ RM",
+    "Quartz w/o RM",
+    "Quarl w/ RM",
+    "Quarl w/o RM",
+    "RL-ZX (original cohort)",
+    "RL-ZX native (2026-10-19, audit pending)"
+  ],
+  "rows": [
+    [
+      "tof_3",
+      "45",
+      "35",
+      "35",
+      "43",
+      "39",
+      "35",
+      "35",
+      "33",
+      "33",
+      "33",
+      "33"
+    ],
+    [
+      "barenco_tof_3",
+      "58",
+      "40",
+      "40",
+      "54",
+      "49",
+      "40",
+      "46",
+      "35",
+      "36",
+      "37",
+      "38"
+    ],
+    [
+      "mod5_4",
+      "63",
+      "51",
+      "51",
+      "61",
+      "57",
+      "37",
+      "39",
+      "24",
+      "24",
+      "22",
+      "23"
+    ],
+    [
+      "tof_4",
+      "75",
+      "55",
+      "55",
+      "71",
+      "64",
+      "55",
+      "55",
+      "51",
+      "51",
+      "55",
+      "53"
+    ],
+    [
+      "barenco_tof_4",
+      "114",
+      "72",
+      "72",
+      "106",
+      "97",
+      "72",
+      "90",
+      "62",
+      "62",
+      "69",
+      "64"
+    ],
+    [
+      "tof_5",
+      "105",
+      "75",
+      "75",
+      "99",
+      "89",
+      "75",
+      "75",
+      "69",
+      "69",
+      "75",
+      "71"
+    ],
+    [
+      "mod_mult_55",
+      "119",
+      "91",
+      "92",
+      "115",
+      "103",
+      "90",
+      "94",
+      "84",
+      "84",
+      "88",
+      "88"
+    ],
+    [
+      "vbe_adder_3",
+      "150",
+      "89",
+      "89",
+      "189",
+      "130",
+      "89",
+      "112",
+      "71",
+      "71",
+      "76",
+      "74"
+    ],
+    [
+      "barenco_tof_5",
+      "170",
+      "104",
+      "104",
+      "158",
+      "145",
+      "104",
+      "134",
+      "90",
+      "96",
+      "101",
+      "99"
+    ],
+    [
+      "csla_mux_3",
+      "170",
+      "155",
+      "158",
+      "249",
+      "149",
+      "148",
+      "146",
+      "141",
+      "141",
+      "150",
+      "148"
+    ],
+    [
+      "rc_adder_6",
+      "200",
+      "140",
+      "152",
+      "226",
+      "172",
+      "152",
+      "170",
+      "134",
+      "148",
+      "157",
+      "156"
+    ],
+    [
+      "gf2^4_mult",
+      "225",
+      "187",
+      "186",
+      "212",
+      "205",
+      "176",
+      "215",
+      "160",
+      "163",
+      "168",
+      "167"
+    ],
+    [
+      "tof_10",
+      "255",
+      "175",
+      "175",
+      "239",
+      "214",
+      "175",
+      "175",
+      "169",
+      "169",
+      "175",
+      "173"
+    ],
+    [
+      "mod_red_21",
+      "278",
+      "180",
+      "184",
+      "256",
+      "223",
+      "198",
+      "268",
+      "179",
+      "177",
+      "195",
+      "188"
+    ],
+    [
+      "hwb6",
+      "259",
+      "-",
+      "209",
+      "258",
+      "217",
+      "214",
+      "250",
+      "193",
+      "196",
+      "204",
+      "198"
+    ],
+    [
+      "gf2^5_mult",
+      "347",
+      "296",
+      "287",
+      "327",
+      "319",
+      "274",
+      "334",
+      "257",
+      "266",
+      "272",
+      "268"
+    ],
+    [
+      "csum_mux_9",
+      "420",
+      "266",
+      "280",
+      "420",
+      "365",
+      "256",
+      "420",
+      "224",
+      "282",
+      "299",
+      "289"
+    ],
+    [
+      "barenco_tof_10",
+      "450",
+      "264",
+      "264",
+      "418",
+      "385",
+      "264",
+      "450",
+      "236",
+      "274",
+      "257",
+      "254"
+    ],
+    [
+      "qcla_com_7",
+      "443",
+      "284",
+      "269",
+      "498",
+      "377",
+      "288",
+      "431",
+      "258",
+      "277",
+      "273",
+      "259"
+    ],
+    [
+      "ham15-low",
+      "443",
+      "-",
+      "348",
+      "421",
+      "392",
+      "360",
+      "435",
+      "323",
+      "322",
+      "384",
+      "362"
+    ],
+    [
+      "gf2^6_mult",
+      "495",
+      "403",
+      "401",
+      "464",
+      "453",
+      "391",
+      "485",
+      "352",
+      "386",
+      "378",
+      "375"
+    ],
+    [
+      "qcla_adder_10",
+      "521",
+      "399",
+      "416",
+      "630",
+      "444",
+      "404",
+      "518",
+      "380",
+      "391",
+      "432",
+      "419"
+    ],
+    [
+      "gf2^7_mult",
+      "669",
+      "555",
+      "543",
+      "627",
+      "614",
+      "531",
+      "657",
+      "484",
+      "530",
+      "514",
+      "513"
+    ],
+    [
+      "gf2^8_mult",
+      "883",
+      "712",
+      "706",
+      "819",
+      "806",
+      "703",
+      "883",
+      "648",
+      "755",
+      "667",
+      "665"
+    ],
+    [
+      "qcla_mod_7",
+      "884",
+      "624",
+      "678",
+      "933",
+      "759",
+      "652",
+      "884",
+      "629",
+      "664",
+      "694",
+      "677"
+    ],
+    [
+      "adder_8",
+      "900",
+      "606",
+      "596",
+      "1001",
+      "802",
+      "624",
+      "874",
+      "560",
+      "669",
+      "568",
+      "541"
+    ]
+  ],
+  "geometric_mean_reduction_percent": 32.193749554369745,
+  "outcomes": {
+    "Quarl w/ RM": {
+      "tie": 1,
+      "loss": 23,
+      "win": 2
+    },
+    "Quarl w/o RM": {
+      "tie": 1,
+      "loss": 18,
+      "win": 7
+    },
+    "RL-ZX (original cohort)": {
+      "tie": 2,
+      "loss": 2,
+      "win": 22
+    }
+  },
+  "bindings": [
+    {
+      "circuit": "tof_3",
+      "report_sha256": "217954b25f0fdf59a11ac799e23f172bf5953cfe1aafe0088e1fb2636b98a705",
+      "protocol_sha256": "ca4e3c698a415bfe9b462ee9cc1ad733e47af02e221d84ab4b57afcfd3f05448",
+      "best_qasm_sha256": "6d5241c87bbd8a0ebfbe7526edf3d4db2c066d4d9dfb435d2512b96c00ac7a20"
+    },
+    {
+      "circuit": "barenco_tof_3",
+      "report_sha256": "5ad1502b09e4277a3ad2596398e3c60ecb83c7b7f9e7d64e0530ee7e60761cb3",
+      "protocol_sha256": "1c16d78892c472226deafcefa4e7114a1022267763c50d31398c110a51359583",
+      "best_qasm_sha256": "ef1365929851d3f2de1a7a96e2eb3bd206aad0f4698157df6e6f249f72a5090d"
+    },
+    {
+      "circuit": "mod5_4",
+      "report_sha256": "654e64c3e5b437eb0b01452331b083a7d56fc7b96b73b0b665cc95ea9fca36e1",
+      "protocol_sha256": "b57764ce47f3d62e829ec1ddda847c7efd871612129d314b3163729ba74e7dcb",
+      "best_qasm_sha256": "33a42a86f99c3a525af8188e65c7a63e574b816e3b014b817e803d665eb00cda"
+    },
+    {
+      "circuit": "tof_4",
+      "report_sha256": "e19efb96c1ff39f47cac62a7b0cf21b32bf3bc2cb9d9f02c16f2d880f2a5bbc5",
+      "protocol_sha256": "7411c246ffb82ae4db5a58ee08bae2e124c550f7031f1a0d9c0784b135d2577c",
+      "best_qasm_sha256": "9dee23b09034322056369f3fc7f3e1cfb755d8487b277608aecf96ac6e2d02ba"
+    },
+    {
+      "circuit": "barenco_tof_4",
+      "report_sha256": "b9e5e006bfb34b04b5049ac2e708fe453d18f6878eafcf7b7c9467df5b1a0d12",
+      "protocol_sha256": "0a8028343e0dede10bce31829afd13d67a9aba9d39e80a15724c8f89aa4c1635",
+      "best_qasm_sha256": "3ecd0e651c81193fba01e79e3e600290abf57a5fd1caa81757e82162f2e74f33"
+    },
+    {
+      "circuit": "tof_5",
+      "report_sha256": "a77d39175acfaba452be2188da5660db1a83eab397cf325a6382999ec187848a",
+      "protocol_sha256": "f9a28995dbbb30618833210d99826c2f67a8f21f5922812fd6bcdbab09779e8c",
+      "best_qasm_sha256": "ded7adf4f635be5f6a85d05e9567ccd02cbe0866d16e54d32841eb6464fd25f1"
+    },
+    {
+      "circuit": "mod_mult_55",
+      "report_sha256": "fe127a8b8ed6a0131b1454fb512ae742d9ce8b49fc3c61afc5af424a8d1e2959",
+      "protocol_sha256": "9b234072f2e60ef907b90e71f79ffbbb0d19cb575f23ef24f553cf700f3703bf",
+      "best_qasm_sha256": "20bb30afb22d74084ebb2f97835d0d5a92b52e42ecacfa780cf0133475be1ba2"
+    },
+    {
+      "circuit": "vbe_adder_3",
+      "report_sha256": "afd9ce82b6714484922a346708dfd21c6932a4c3ec2cbd4f4974e27d1a340064",
+      "protocol_sha256": "009250fed2fe83e8f8fee505c13fc728ad60bfd0cd1698538227f22ff627cb54",
+      "best_qasm_sha256": "195056b3b2664f716506da0d73e185237001338bf3dd7017e4104abd0d2c0b92"
+    },
+    {
+      "circuit": "barenco_tof_5",
+      "report_sha256": "1f869d65bd6cdd2e1e3e505836a5a1dd13e236c5d31507bc414f1872c01165f1",
+      "protocol_sha256": "14a13cdd158e914481c97286c8ded38b6434a400047d0866a6cbda8ddd537bf6",
+      "best_qasm_sha256": "c524635d5812476e0fbcc0c89484cd2a46381da26bf45efc69f5ef2cc38dca4e"
+    },
+    {
+      "circuit": "csla_mux_3",
+      "report_sha256": "0118ed0ead4d00f0d2c3200d14badd105e27cb72b7d37296997abc415e1ad23c",
+      "protocol_sha256": "91af4e1a44dafe167d59b37952764840c2541235012c3216a13131cc66fbd6fb",
+      "best_qasm_sha256": "3d6a2ca0be61efa91db3210952a0fbb8c657327821f5187409311d1cdac28ddb"
+    },
+    {
+      "circuit": "rc_adder_6",
+      "report_sha256": "a12daec1e9cf3c413c01b1f0ae0d3d746a0f04a11512a3179296262fe4bfbe3a",
+      "protocol_sha256": "91b1c7d1b7d6ece0fce2043f40db483e9213f731c0c29f9d33da4e6752b98c3f",
+      "best_qasm_sha256": "7c448feda70afc8570a810a3cac8af55bc20a78be82f12df544dc7eb1c41db5f"
+    },
+    {
+      "circuit": "gf2^4_mult",
+      "report_sha256": "438b8c29abdcf04bfdcef0eb9b2fe7707ffb85503a90ca6faabdf36e1cb34a68",
+      "protocol_sha256": "e50a2c51fd8c36d32c6ace91c1a1c8c795ced25baa7d0f131c0f9a2e858f081b",
+      "best_qasm_sha256": "aebc59cd3faa8b297228d118e790d670b50ffb1506d023569d07ef850302c145"
+    },
+    {
+      "circuit": "tof_10",
+      "report_sha256": "2a3d341421e588d9a42ccdd54938a4a85e5a3344fe5cc92b5d31413c42901a65",
+      "protocol_sha256": "43ad159753694530807637002a5fa5d2b540a0efddd2a8e4249e732792764768",
+      "best_qasm_sha256": "ab65956710230e18432b0b237ada2348ec8405c725e164a1cb69c90270f879ce"
+    },
+    {
+      "circuit": "mod_red_21",
+      "report_sha256": "c433b2c291991934eaf396c8f99e6cadaf479ce502afa723be45d00948ed07d9",
+      "protocol_sha256": "38a8d26d13b4e9f29657e92f5a6465fa8c58ed6e6aef8623af67a34167cdd94e",
+      "best_qasm_sha256": "8226c588f67d43811cc8031df1757b7c8879f36f70a631e01e72b72ce6710943"
+    },
+    {
+      "circuit": "hwb6",
+      "report_sha256": "f67550963b9894449ac56c113c2f67f09ce16fe4bec2a73d79ff6fd44722aa02",
+      "protocol_sha256": "da5a7dd56463cc09bb9c666aa4322cc93dbe3d5f496030562656a783fe8f4eaf",
+      "best_qasm_sha256": "3a5d7c0cb6883d11d2684812b95a861f253bf6ccfe77725e2ed59a500b892a3b"
+    },
+    {
+      "circuit": "gf2^5_mult",
+      "report_sha256": "f30e654bb0fe1c38953664452db4945c2bb8a09d43f2ed0eee1485b9df4e65d0",
+      "protocol_sha256": "1e54d983542b7f2e0abbb0cb0329effca9bb4ddf0167800672b1a52e3fdcf21a",
+      "best_qasm_sha256": "e908f410a8e50617a1a680759dc1400de3ab0ed688c09b919e5aa8ebc46fb698"
+    },
+    {
+      "circuit": "csum_mux_9",
+      "report_sha256": "96a0d33a5257a6627d58eb9edd01dbec3ee851ec7ab8c6584e2f01374e3ac5d1",
+      "protocol_sha256": "62ea39b4775c8e807816cc610a18734e5c645490653dabc2a44578d64e9c8c0b",
+      "best_qasm_sha256": "01932afc03e57d409e725f4f18797cf9dfee907e4899c74397c73e2f29d1e850"
+    },
+    {
+      "circuit": "barenco_tof_10",
+      "report_sha256": "eeb0053c8262f299cbb165f25edc3b6da6fc1775cf8ad6d4b9cd24588f264c15",
+      "protocol_sha256": "871a55c7ecd972fd600ef08c7c24bf6ad302dd594a66f9b6d7fb740f0825a5f9",
+      "best_qasm_sha256": "6580465c426d09dcbe84ecdf563ff8b5f9937d62c5fea469977922e165104729"
+    },
+    {
+      "circuit": "qcla_com_7",
+      "report_sha256": "a96e1b9f94b4fdf913bd86730890d09fe80f6079da80c3ff0444bfd427cfc641",
+      "protocol_sha256": "e99a17471259f599d5f99b5c039ab52a6846d2dbdb72e5d4577f27dd36494977",
+      "best_qasm_sha256": "9b5a727fe905da73176fa11396cd3cf66d4ea6361ae4faba3fff78373115cecb"
+    },
+    {
+      "circuit": "ham15-low",
+      "report_sha256": "0bebf445a31c25fb1323eb7616675406ac4cb35c0b366568ce7c61438b290a6f",
+      "protocol_sha256": "52e6399259dfc973fce6e6273ee810955f3e82f2ce34b94524737ded64b0f188",
+      "best_qasm_sha256": "d9c0926c69adc152b4516701fa0242c06077fe13a67658fdf6e539e9f575f092"
+    },
+    {
+      "circuit": "gf2^6_mult",
+      "report_sha256": "5bbd2c83fdd87a9fa025c769ac56fa584ffed8a8fd410de140e6075a2ae23622",
+      "protocol_sha256": "35108b626ee2950d66cb5888421090b00e0fe14562c28b661df4eb8f2f543258",
+      "best_qasm_sha256": "b8ff7a64d136525ece7df6c928cf8c0a4886ef8998747001eefde853c9d52409"
+    },
+    {
+      "circuit": "qcla_adder_10",
+      "report_sha256": "368177d1f88e4e340427c573ecc91f951f66dfd6481368fa8a9f25ebd4a841c4",
+      "protocol_sha256": "083c65aa8fa900a47ede8f9d23f1eee3a4e4f78ccda39c432418722f92f45527",
+      "best_qasm_sha256": "b093f98d44f55c34f9a6d8ec3bbdfe4156a9c85c901efe30ad2efda0c0bf7775"
+    },
+    {
+      "circuit": "gf2^7_mult",
+      "report_sha256": "faa10625ee8e96060f31bdea8cc566d7d16e97733a7989e36e097d94d9bf710b",
+      "protocol_sha256": "8beb56a43b26c40bbfe719616cbb0e10a3d5a934a2d45edd3c7969edc6f13c25",
+      "best_qasm_sha256": "65613c6b326daf4ec30e9c64a534fc38760397d6be913aa433ca01f5964f26a7"
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "report_sha256": "da12e16156b4f6ebd60eeb669a11e4eba8bf527b71ca2184d68d23a666bfcc07",
+      "protocol_sha256": "d594df2842ae2b5575499d72d7878f9987ca577bd7e1be350c0636b7776d39bf",
+      "best_qasm_sha256": "cbe547d01cca81a162530a78b88302acdf153d6e4bd4b01252eeb96b961e84f4"
+    },
+    {
+      "circuit": "qcla_mod_7",
+      "report_sha256": "6641bd9837f1c284095d036782e2c97045f237785b632fc9567b96954ea48856",
+      "protocol_sha256": "587e209bcd0b2eeb3e67532305bf451783717e6ec155f9fb941b0c9707f61ac6",
+      "best_qasm_sha256": "063b3b05f2053c4f3f43c9d65fae4426eebd26ba8222dcde8279ea54979d131b"
+    },
+    {
+      "circuit": "adder_8",
+      "report_sha256": "627613791b54b0c2e259313f013659681f51d33ac84948cd6803e0947c76ed9e",
+      "protocol_sha256": "49be68573e379cc70b83918455facda52fd21e7db7e3045b3e77d81ab843f9cf",
+      "best_qasm_sha256": "ced7713f630d0bc52556ad086d3741754879deef3c8924eb8e7310a80d815ae0"
+    }
+  ],
+  "independent_audit_status": "pending cohort completion; snapshot status retained",
+  "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "caveats": [
+    "Published paper columns are unchanged; not rerun on current hardware.",
+    "Old RL-ZX cohort remains unchanged; new native cohort is the last column.",
+    "One online seed11 per circuit; strict 3h gate plateau, no overall cap.",
+    "Includes deterministic preprocessing/extraction/postprocessing; not isolated learning benefit.",
+    "Total-sum reduction and geometric mean reduction are different metrics."
+  ]
+}
