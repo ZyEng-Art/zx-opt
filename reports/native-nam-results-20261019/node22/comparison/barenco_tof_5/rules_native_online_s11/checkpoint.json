@@ -1,0 +1,12 @@
+{
+  "path": "search-state.pt",
+  "transition": 33516,
+  "updates": 1047,
+  "patience": {
+    "seconds": 10800.0,
+    "gates": 99,
+    "last_improvement_unix": 1792332122.6422153
+  },
+  "saved_unix": 1792342922.8632638,
+  "input_sha256": "a2869353fab91cfaa7026f9e061358eeff06a9a7f1f13e544886f0ca075046d6"
+}

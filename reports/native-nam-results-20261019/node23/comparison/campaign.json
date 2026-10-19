@@ -1,0 +1,173 @@
+{
+  "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "tracked_dirty": false,
+  "cases": [
+    {
+      "name": "barenco_tof_3",
+      "sha256": "e6fb69e39cb232e5551322f10cbf9ef48852882dce8233f226db0e8126aabc92"
+    },
+    {
+      "name": "csla_mux_3",
+      "sha256": "0bcf835df8584ab10127e60b20ffc091cbd60107149676a317b00198c48c28c3"
+    },
+    {
+      "name": "csum_mux_9",
+      "sha256": "18ec6fae4a3541d69cc1cf820e3b7c79f4e18f997ddd6fcae0671d85471845de"
+    },
+    {
+      "name": "gf2^6_mult",
+      "sha256": "d6fb4194a16aa508447529640066faa2a2d56293447dee3f54f415ee07a7945c"
+    },
+    {
+      "name": "gf2^8_mult",
+      "sha256": "6015ea15cc499823644561b2d71ae176733e938e91f1cf3017c190c58e050d67"
+    },
+    {
+      "name": "ham15-low",
+      "sha256": "c67613bb2760ed3a1e253e9c2f6e1fa2fd84459ae624b4e82b1fb9fd5ab42281"
+    },
+    {
+      "name": "mod5_4",
+      "sha256": "027e0503fd046e37525c4011de2359f2f7e2161d2752096bbf821b6c3d283641"
+    },
+    {
+      "name": "mod_mult_55",
+      "sha256": "dc42c2d600907cbba3b284398a0e5f4f456da765f87339e6b6763a0c799dd388"
+    },
+    {
+      "name": "mod_red_21",
+      "sha256": "e77aeb66059063b96bb113133bfc0ecd0375ba60dc9fbcd8969f2c77f7e0600e"
+    },
+    {
+      "name": "qcla_mod_7",
+      "sha256": "a26c52be1b2c0fef0dc369cb0cce428297f2eb5c2f84e808e5eea44044a6429c"
+    },
+    {
+      "name": "rc_adder_6",
+      "sha256": "7c255071adeb4dc61d8bdd15522485a17449af7f84f4291ba8ac8208252fbda9"
+    },
+    {
+      "name": "tof_10",
+      "sha256": "82b8d0e426b45f4a690aac385e0488f9e0c7dc7bd0e24076f60b40a5ea750469"
+    },
+    {
+      "name": "tof_5",
+      "sha256": "3f7a89ddd0c85394403bee09726b682fdb2aeaafb2a606b1ab59c856c762fe69"
+    }
+  ],
+  "plan": [
+    {
+      "circuit": "barenco_tof_3",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "barenco_tof_3/rules_native_online_s11"
+    },
+    {
+      "circuit": "csla_mux_3",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "csla_mux_3/rules_native_online_s11"
+    },
+    {
+      "circuit": "csum_mux_9",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "csum_mux_9/rules_native_online_s11"
+    },
+    {
+      "circuit": "gf2^6_mult",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "gf2^6_mult/rules_native_online_s11"
+    },
+    {
+      "circuit": "gf2^8_mult",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "gf2^8_mult/rules_native_online_s11"
+    },
+    {
+      "circuit": "ham15-low",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "ham15-low/rules_native_online_s11"
+    },
+    {
+      "circuit": "mod5_4",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "mod5_4/rules_native_online_s11"
+    },
+    {
+      "circuit": "mod_mult_55",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "mod_mult_55/rules_native_online_s11"
+    },
+    {
+      "circuit": "mod_red_21",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "mod_red_21/rules_native_online_s11"
+    },
+    {
+      "circuit": "qcla_mod_7",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "qcla_mod_7/rules_native_online_s11"
+    },
+    {
+      "circuit": "rc_adder_6",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "rc_adder_6/rules_native_online_s11"
+    },
+    {
+      "circuit": "tof_10",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "tof_10/rules_native_online_s11"
+    },
+    {
+      "circuit": "tof_5",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "tof_5/rules_native_online_s11"
+    }
+  ],
+  "seconds": 0.0,
+  "no_improvement_seconds": 10800.0,
+  "workers": 13,
+  "audit_workers": 4,
+  "audit_native_replay": "reference",
+  "audit_crosscheck_native_every": 0,
+  "native_flow_module": null,
+  "scope": "independent training/search on each target; no generalization claim; count noops separately",
+  "started_unix": 1792329724.722714
+}

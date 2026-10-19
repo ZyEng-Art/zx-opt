@@ -1,0 +1,125 @@
+{
+  "status": "no_improvement_timeout",
+  "transitions": 1135,
+  "accepted": 1134,
+  "unscored": 26,
+  "recovered": 3,
+  "updates": 35,
+  "best": {
+    "cost": {
+      "gates": 665,
+      "cx": 381,
+      "depth": 235
+    },
+    "sha256": "cbe547d01cca81a162530a78b88302acdf153d6e4bd4b01252eeb96b961e84f4",
+    "seconds": 1502.9357209570007,
+    "graph": "a5dc0639e23d75e23279836d1037317d282e53f3ae0cb077fedb4696e2b94d84"
+  },
+  "root_cost": {
+    "gates": 667,
+    "cx": 383,
+    "depth": 228
+  },
+  "proposal_counts": {
+    "ID": 387,
+    "PVG": 323,
+    "PV": 357,
+    "PVB": 68
+  },
+  "accepted_counts": {
+    "ID": 387,
+    "PVG": 323,
+    "PV": 357,
+    "PVB": 67
+  },
+  "unscored_counts": {
+    "PVG": 5,
+    "ID": 11,
+    "PV": 7,
+    "PVB": 3
+  },
+  "rejections": {
+    "TimeoutError: candidate operation exceeded deadline": 1
+  },
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 24,
+    "latent_capacity": 128,
+    "insertions": 68,
+    "evictions": 5,
+    "latent_insertions": 24,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      665,
+      381
+    ]
+  },
+  "checked_qasm": 610,
+  "view_cache": {
+    "hits": 1164,
+    "misses": 1142
+  },
+  "jpv_proposals": null,
+  "anchor_stats": {},
+  "completion": {
+    "requests": 1135,
+    "primary_successes": 1109,
+    "primary_failures": 26,
+    "unscorable": 26,
+    "unique_valid_qasm": 610,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 0.0,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 36297,
+    "resource_masks": 7538,
+    "calls": 1135,
+    "proposed": 36320,
+    "eligible": 28777,
+    "cache_hits": 23,
+    "mode": "bounds",
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "PVB": 7054,
+      "PV": 244,
+      "PVG": 245
+    }
+  },
+  "max_graph_operator_error": 0.0,
+  "max_qasm_operator_error": 0.0,
+  "first_passage_seconds": {
+    "666": 1502.9357209570007,
+    "665": 1502.9357209570007,
+    "664": null,
+    "663": null,
+    "662": null
+  },
+  "budget_seconds": 0.0,
+  "total_loop_seconds": 12302.937560220991,
+  "timers": {
+    "checkpoint": 33.656597685054294,
+    "matching": 143.5681379341404,
+    "feasibility": 1833.3330265179538,
+    "inference": 54.36508874720312,
+    "rewrite_verify": 4191.737000480076,
+    "score": 5881.421348877106,
+    "ppo": 108.04854933396564,
+    "improvement_model": 0.003547661006450653
+  },
+  "verification": "passed",
+  "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+  "patience": {
+    "seconds": 10800.0,
+    "gates": 665,
+    "last_improvement_unix": 1792331245.885674
+  },
+  "certificate_stats": {
+    "passed": 1990,
+    "cache_hits": 904
+  },
+  "finished_unix": 1792342047.445834
+}

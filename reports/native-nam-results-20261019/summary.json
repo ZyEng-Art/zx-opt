@@ -1,0 +1,21 @@
+{
+  "trials": 26,
+  "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "input_gates": 8741,
+  "fixed_baseline_gates": 6460,
+  "best_gates": 6195,
+  "transitions": 1333657,
+  "ppo_updates": 41664,
+  "audit_progress_snapshot": {
+    "22": {
+      "completed": 0,
+      "status": "pending"
+    },
+    "23": {
+      "completed": 7,
+      "expected": 13
+    }
+  },
+  "independent_audit_status": "in_progress; per-trial runtime verification is not final independent replay certification",
+  "scope": "One online seed11 per target; no frozen control in this campaign; search improvement does not establish PPO benefit"
+}

@@ -1,0 +1,117 @@
+{
+  "status": "no_improvement_timeout",
+  "transitions": 131947,
+  "accepted": 131945,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 4123,
+  "best": {
+    "cost": {
+      "gates": 64,
+      "cx": 26,
+      "depth": 63
+    },
+    "sha256": "3ecd0e651c81193fba01e79e3e600290abf57a5fd1caa81757e82162f2e74f33",
+    "seconds": 12572.574947179062,
+    "graph": "0a274d338f743c0c4ef99729d9aadf1ba2e38ae1e9a215bd323032e44026ecc3"
+  },
+  "root_cost": {
+    "gates": 74,
+    "cx": 36,
+    "depth": 70
+  },
+  "proposal_counts": {
+    "ID": 116731,
+    "PV": 5904,
+    "PVB": 5294,
+    "PVG": 4018
+  },
+  "accepted_counts": {
+    "ID": 116731,
+    "PV": 5904,
+    "PVB": 5294,
+    "PVG": 4016
+  },
+  "unscored_counts": {},
+  "rejections": {
+    "MemoryError: ZX verification width exceeds configured bound": 2
+  },
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 74829,
+    "evictions": 74766,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      64,
+      26
+    ]
+  },
+  "checked_qasm": 11717,
+  "view_cache": {
+    "hits": 150627,
+    "misses": 117386
+  },
+  "jpv_proposals": null,
+  "anchor_stats": {},
+  "completion": {
+    "requests": 116697,
+    "primary_successes": 116697,
+    "cache_hits": 15249,
+    "unique_valid_qasm": 11717,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 2.7187050137862717e-15,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 3946532,
+    "calls": 131947,
+    "proposed": 4211079,
+    "eligible": 3966964,
+    "resource_masks": 221851,
+    "cache_hits": 264558,
+    "mode": "bounds",
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "PVB": 190507,
+      "PV": 2306,
+      "PVG": 51207,
+      "ID": 95
+    }
+  },
+  "max_graph_operator_error": 1.7098073370941006e-14,
+  "max_qasm_operator_error": 2.7187050137862717e-15,
+  "first_passage_seconds": {
+    "73": 0.501849734922871,
+    "72": 18.195130777079612,
+    "71": 18.195130777079612,
+    "70": 34.69402871490456,
+    "69": 92.01696303789504
+  },
+  "budget_seconds": 0.0,
+  "total_loop_seconds": 23372.604675118113,
+  "timers": {
+    "checkpoint": 14.889741100603715,
+    "matching": 1171.0421276111156,
+    "feasibility": 12546.861711393576,
+    "inference": 990.7469332572073,
+    "rewrite_verify": 2178.929101917194,
+    "score": 2702.313895033207,
+    "improvement_model": 0.02359894011169672,
+    "ppo": 980.3895161990076
+  },
+  "verification": "passed",
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "patience": {
+    "seconds": 10800.0,
+    "gates": 64,
+    "last_improvement_unix": 1792342299.5866086
+  },
+  "certificate_stats": null,
+  "finished_unix": 1792353099.8619125
+}

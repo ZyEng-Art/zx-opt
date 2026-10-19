@@ -1,0 +1,173 @@
+{
+  "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "tracked_dirty": false,
+  "cases": [
+    {
+      "name": "adder_8",
+      "sha256": "4620e911d0dfb6709d84f0bee954791831ee43825358735964f5bf0cf04d8d80"
+    },
+    {
+      "name": "barenco_tof_10",
+      "sha256": "623eb1f277dc7c2966b5ac836cefb93bf12ec234fb5f1dbc16168e03ca308d21"
+    },
+    {
+      "name": "barenco_tof_4",
+      "sha256": "51708309fc33830f148ff22567e97135c33f103b2969d2fb812d137f9157fae9"
+    },
+    {
+      "name": "barenco_tof_5",
+      "sha256": "a2869353fab91cfaa7026f9e061358eeff06a9a7f1f13e544886f0ca075046d6"
+    },
+    {
+      "name": "gf2^4_mult",
+      "sha256": "aac240d9414afc35eb927d0e2154f7558f8c184d46d7777a4606e468421ede53"
+    },
+    {
+      "name": "gf2^5_mult",
+      "sha256": "59408663a930ed8d7ac30c0187439c963f83f1b93f4ba74b297a717273b486a4"
+    },
+    {
+      "name": "gf2^7_mult",
+      "sha256": "a46e7f91303e9a4fbd89a7496ad4a3fe1c75beca2827ca23c0a1e3381fea0eb2"
+    },
+    {
+      "name": "hwb6",
+      "sha256": "b40302894129713a6e20e81d1827e480db8fed42c02d208df41d9595b60045c3"
+    },
+    {
+      "name": "qcla_adder_10",
+      "sha256": "63ee8b3d9b4f59d629dd4d9152c3166c1b1489be86a7f6b91e6ad35219b77938"
+    },
+    {
+      "name": "qcla_com_7",
+      "sha256": "c9796142b4b8efe5ecc89d8bf3fa91a9bfbdd9d1bbb4db2106e24c7a249b04fd"
+    },
+    {
+      "name": "tof_3",
+      "sha256": "1ef85ff33abe0849d7397718a0469a5b4667e47842e4ecb54688c8db76de94d6"
+    },
+    {
+      "name": "tof_4",
+      "sha256": "1510fc43fe60ab2e0ad02e654585aa86b962e90be434edd06b03d8e92f4ab0bc"
+    },
+    {
+      "name": "vbe_adder_3",
+      "sha256": "dd404097d3af94cc126391265a4710694e99fa6b3c9008ddcb17cb1ff36f6bcf"
+    }
+  ],
+  "plan": [
+    {
+      "circuit": "adder_8",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "adder_8/rules_native_online_s11"
+    },
+    {
+      "circuit": "barenco_tof_10",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "barenco_tof_10/rules_native_online_s11"
+    },
+    {
+      "circuit": "barenco_tof_4",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "barenco_tof_4/rules_native_online_s11"
+    },
+    {
+      "circuit": "barenco_tof_5",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "barenco_tof_5/rules_native_online_s11"
+    },
+    {
+      "circuit": "gf2^4_mult",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "gf2^4_mult/rules_native_online_s11"
+    },
+    {
+      "circuit": "gf2^5_mult",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "gf2^5_mult/rules_native_online_s11"
+    },
+    {
+      "circuit": "gf2^7_mult",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "gf2^7_mult/rules_native_online_s11"
+    },
+    {
+      "circuit": "hwb6",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "hwb6/rules_native_online_s11"
+    },
+    {
+      "circuit": "qcla_adder_10",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "qcla_adder_10/rules_native_online_s11"
+    },
+    {
+      "circuit": "qcla_com_7",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "qcla_com_7/rules_native_online_s11"
+    },
+    {
+      "circuit": "tof_3",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "tof_3/rules_native_online_s11"
+    },
+    {
+      "circuit": "tof_4",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "tof_4/rules_native_online_s11"
+    },
+    {
+      "circuit": "vbe_adder_3",
+      "mode": "rules_native",
+      "policy": "online",
+      "seed": 11,
+      "arm": "rules_native_online",
+      "folder": "vbe_adder_3/rules_native_online_s11"
+    }
+  ],
+  "seconds": 0.0,
+  "no_improvement_seconds": 10800.0,
+  "workers": 13,
+  "audit_workers": 4,
+  "audit_native_replay": "reference",
+  "audit_crosscheck_native_every": 0,
+  "native_flow_module": null,
+  "scope": "independent training/search on each target; no generalization claim; count noops separately",
+  "started_unix": 1792329723.3227856
+}

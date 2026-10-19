@@ -1,0 +1,1620 @@
+{
+  "expected": 13,
+  "completed": 13,
+  "rows": [
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 137084,
+      "accepted": 137084,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 4283,
+      "best": {
+        "cost": {
+          "gates": 38,
+          "cx": 16,
+          "depth": 34
+        },
+        "sha256": "ef1365929851d3f2de1a7a96e2eb3bd206aad0f4698157df6e6f249f72a5090d",
+        "seconds": 213.02893796800345,
+        "graph": "2da48dc02c2547baee3401e943675ba5ea655da3f153b689ae20dad0d5b459cc"
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 18,
+        "depth": 39
+      },
+      "proposal_counts": {
+        "PV": 6983,
+        "ID": 127430,
+        "PVB": 1725,
+        "PVG": 946
+      },
+      "accepted_counts": {
+        "PV": 6983,
+        "ID": 127430,
+        "PVB": 1725,
+        "PVG": 946
+      },
+      "unscored_counts": {},
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 107015,
+        "evictions": 106952,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          38,
+          16
+        ]
+      },
+      "checked_qasm": 2160,
+      "view_cache": {
+        "hits": 174660,
+        "misses": 103675
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 103367,
+        "primary_successes": 103367,
+        "cache_hits": 33718,
+        "unique_valid_qasm": 2160,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 1.4632206559104307e-15,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 3339035,
+        "calls": 137084,
+        "proposed": 4236806,
+        "eligible": 4236389,
+        "cache_hits": 897771,
+        "resource_masks": 414,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVG": 153,
+          "PVB": 246,
+          "PV": 14,
+          "ID": 4
+        }
+      },
+      "max_graph_operator_error": 9.119857579680535e-15,
+      "max_qasm_operator_error": 1.4632206559104307e-15,
+      "first_passage_seconds": {
+        "39": 46.90474448900204,
+        "38": 213.02893796800345,
+        "37": null,
+        "36": null,
+        "35": null
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 11013.030967172992,
+      "timers": {
+        "checkpoint": 3.804559191004955,
+        "matching": 693.7150241334894,
+        "feasibility": 5396.460721726544,
+        "inference": 707.604919166668,
+        "rewrite_verify": 905.6256528357626,
+        "score": 607.4981677835458,
+        "ppo": 646.4341912339005,
+        "improvement_model": 0.007974395004566759
+      },
+      "verification": "passed",
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 38,
+        "last_improvement_unix": 1792329941.6938803
+      },
+      "certificate_stats": null,
+      "finished_unix": 1792340741.826563,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "barenco_tof_3/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 248672,
+      "accepted": 248672,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 7771,
+      "best": {
+        "cost": {
+          "gates": 23,
+          "cx": 12,
+          "depth": 13
+        },
+        "sha256": "33a42a86f99c3a525af8188e65c7a63e574b816e3b014b817e803d665eb00cda",
+        "seconds": 311.24221347399,
+        "graph": "4f565fdce0ec9bc648f73e9782d837c485774d0b612b73b302a05803ae6a2a48"
+      },
+      "root_cost": {
+        "gates": 40,
+        "cx": 21,
+        "depth": 35
+      },
+      "proposal_counts": {
+        "PVB": 1798,
+        "PV": 57238,
+        "LC": 138,
+        "ID": 188359,
+        "PVG": 1139
+      },
+      "accepted_counts": {
+        "PVB": 1798,
+        "PV": 57238,
+        "LC": 138,
+        "ID": 188359,
+        "PVG": 1139
+      },
+      "unscored_counts": {},
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 105750,
+        "evictions": 105687,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          23,
+          12
+        ]
+      },
+      "checked_qasm": 3797,
+      "view_cache": {
+        "hits": 385169,
+        "misses": 119797
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 119309,
+        "primary_successes": 119309,
+        "cache_hits": 129364,
+        "unique_valid_qasm": 3797,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 1.777170651644396e-15,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 2576414,
+        "calls": 248672,
+        "proposed": 5535560,
+        "eligible": 5533568,
+        "resource_masks": 1964,
+        "cache_hits": 2959146,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVG": 455,
+          "PVB": 1351,
+          "PV": 174,
+          "LC": 12
+        }
+      },
+      "max_graph_operator_error": 9.770760951138452e-15,
+      "max_qasm_operator_error": 1.777170651644396e-15,
+      "first_passage_seconds": {
+        "39": 0.6934942049992969,
+        "38": 0.6934942049992969,
+        "37": 0.6934942049992969,
+        "36": 0.6934942049992969,
+        "35": 0.6934942049992969
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 11111.246066998996,
+      "timers": {
+        "checkpoint": 2.709402036984102,
+        "matching": 937.5813008338155,
+        "feasibility": 3557.0468084500317,
+        "inference": 1116.7847026626841,
+        "rewrite_verify": 1504.8344116750377,
+        "score": 821.5323051862651,
+        "improvement_model": 0.00494839801103808,
+        "ppo": 991.8331928038097
+      },
+      "verification": "passed",
+      "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 23,
+        "last_improvement_unix": 1792330039.837311
+      },
+      "certificate_stats": null,
+      "finished_unix": 1792340839.926694,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "mod5_4/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 45331,
+      "accepted": 45331,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 1416,
+      "best": {
+        "cost": {
+          "gates": 71,
+          "cx": 26,
+          "depth": 53
+        },
+        "sha256": "ded7adf4f635be5f6a85d05e9567ccd02cbe0866d16e54d32841eb6464fd25f1",
+        "seconds": 326.41141871399304,
+        "graph": "3de6667863be2dfd692ccb4e3e49895dcbcf77f9289c44d9a95e809951c156fe"
+      },
+      "root_cost": {
+        "gates": 75,
+        "cx": 30,
+        "depth": 59
+      },
+      "proposal_counts": {
+        "ID": 23292,
+        "PV": 11687,
+        "PVB": 9244,
+        "PVG": 1108
+      },
+      "accepted_counts": {
+        "ID": 23292,
+        "PV": 11687,
+        "PVB": 9244,
+        "PVG": 1108
+      },
+      "unscored_counts": {},
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 8101,
+        "evictions": 8038,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          71,
+          26
+        ]
+      },
+      "checked_qasm": 3466,
+      "view_cache": {
+        "hits": 47760,
+        "misses": 44281
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 43601,
+        "primary_successes": 43601,
+        "cache_hits": 1731,
+        "unique_valid_qasm": 3466,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 1423441,
+        "calls": 45332,
+        "proposed": 1450026,
+        "eligible": 1376776,
+        "resource_masks": 71707,
+        "cache_hits": 26585,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVG": 22303,
+          "PVB": 46896,
+          "PV": 3484,
+          "ID": 567
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "74": 129.82020616700174,
+        "73": 285.81611082699965,
+        "72": 325.94925327200326,
+        "71": 326.41141871399304,
+        "70": null
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 11126.455604620991,
+      "timers": {
+        "checkpoint": 6.575375681059086,
+        "matching": 470.1328597018728,
+        "feasibility": 5245.14754161195,
+        "inference": 425.4269128040469,
+        "rewrite_verify": 2768.4954122771596,
+        "score": 1246.9723574418895,
+        "ppo": 454.470506138794,
+        "improvement_model": 0.015093462992808782
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 71,
+        "last_improvement_unix": 1792330055.137936
+      },
+      "certificate_stats": {
+        "passed": 77579,
+        "cache_hits": 14450
+      },
+      "finished_unix": 1792340855.3785987,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "tof_5/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 39561,
+      "accepted": 39561,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 1236,
+      "best": {
+        "cost": {
+          "gates": 88,
+          "cx": 40,
+          "depth": 42
+        },
+        "sha256": "20bb30afb22d74084ebb2f97835d0d5a92b52e42ecacfa780cf0133475be1ba2",
+        "seconds": 871.009753544,
+        "graph": "59dc36e60fad525ff64f25fd484d00dfa6d62569fc7ca6280143b40d03783145"
+      },
+      "root_cost": {
+        "gates": 92,
+        "cx": 41,
+        "depth": 44
+      },
+      "proposal_counts": {
+        "PV": 1096,
+        "PVB": 3276,
+        "PVG": 941,
+        "ID": 34193,
+        "LC": 55
+      },
+      "accepted_counts": {
+        "PV": 1096,
+        "PVB": 3276,
+        "PVG": 941,
+        "ID": 34193,
+        "LC": 55
+      },
+      "unscored_counts": {},
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 28524,
+        "evictions": 28461,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          88,
+          40
+        ]
+      },
+      "checked_qasm": 2185,
+      "view_cache": {
+        "hits": 43404,
+        "misses": 36953
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 36681,
+        "primary_successes": 36681,
+        "cache_hits": 2881,
+        "unique_valid_qasm": 2185,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 1220044,
+        "calls": 39561,
+        "proposed": 1265753,
+        "eligible": 840840,
+        "resource_masks": 408863,
+        "cache_hits": 45709,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 249048,
+          "LC": 13380,
+          "PVG": 129124,
+          "PV": 32316,
+          "ID": 1045
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "91": 56.77194378699642,
+        "90": 78.63473751599668,
+        "89": 136.7674353129987,
+        "88": 871.009753544,
+        "87": null
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 11671.040273938997,
+      "timers": {
+        "checkpoint": 7.158582139963983,
+        "matching": 445.70926812227117,
+        "feasibility": 4936.605646137803,
+        "inference": 372.0691674812115,
+        "rewrite_verify": 3098.2614713348885,
+        "score": 1243.98409013536,
+        "ppo": 447.2690896871063,
+        "improvement_model": 0.013901341997552663
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 88,
+        "last_improvement_unix": 1792330599.748214
+      },
+      "certificate_stats": {
+        "passed": 71935,
+        "cache_hits": 4157
+      },
+      "finished_unix": 1792341399.9868994,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "mod_mult_55/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 19034,
+      "accepted": 19033,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 594,
+      "best": {
+        "cost": {
+          "gates": 148,
+          "cx": 68,
+          "depth": 65
+        },
+        "sha256": "3d6a2ca0be61efa91db3210952a0fbb8c657327821f5187409311d1cdac28ddb",
+        "seconds": 1229.8149384069984,
+        "graph": "87b3b20b8e30eb69e11afa1c660faacd089538bde7d38ee3dff992a155f73fe2"
+      },
+      "root_cost": {
+        "gates": 169,
+        "cx": 74,
+        "depth": 66
+      },
+      "proposal_counts": {
+        "LC": 364,
+        "PVB": 2483,
+        "ID": 14287,
+        "PVG": 1222,
+        "PV": 678
+      },
+      "accepted_counts": {
+        "LC": 364,
+        "PVB": 2483,
+        "ID": 14286,
+        "PVG": 1222,
+        "PV": 678
+      },
+      "unscored_counts": {},
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 3803,
+        "evictions": 3740,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          148,
+          68
+        ]
+      },
+      "checked_qasm": 4634,
+      "view_cache": {
+        "hits": 19990,
+        "misses": 18659
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 18419,
+        "primary_successes": 18419,
+        "cache_hits": 615,
+        "unique_valid_qasm": 4634,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 601251,
+        "calls": 19034,
+        "proposed": 609088,
+        "eligible": 429891,
+        "resource_masks": 177431,
+        "cache_hits": 7837,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 102870,
+          "PV": 5108,
+          "PVG": 49617,
+          "LC": 20600,
+          "ID": 1002
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "168": 2.4277561560011236,
+        "167": 16.77972786600003,
+        "166": 106.58688095399702,
+        "165": 106.58688095399702,
+        "164": 120.40469069300161
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 12029.815941388995,
+      "timers": {
+        "checkpoint": 10.873247244016966,
+        "matching": 336.1197625091445,
+        "feasibility": 4174.987432069902,
+        "inference": 252.1993886334676,
+        "rewrite_verify": 3000.3954209939257,
+        "score": 3518.285721582448,
+        "improvement_model": 0.01725521699700039,
+        "ppo": 334.4172868319147
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 148,
+        "last_improvement_unix": 1792330958.707307
+      },
+      "certificate_stats": {
+        "passed": 39133,
+        "cache_hits": 2819
+      },
+      "finished_unix": 1792341758.983481,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "csla_mux_3/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 1135,
+      "accepted": 1134,
+      "unscored": 26,
+      "recovered": 3,
+      "updates": 35,
+      "best": {
+        "cost": {
+          "gates": 665,
+          "cx": 381,
+          "depth": 235
+        },
+        "sha256": "cbe547d01cca81a162530a78b88302acdf153d6e4bd4b01252eeb96b961e84f4",
+        "seconds": 1502.9357209570007,
+        "graph": "a5dc0639e23d75e23279836d1037317d282e53f3ae0cb077fedb4696e2b94d84"
+      },
+      "root_cost": {
+        "gates": 667,
+        "cx": 383,
+        "depth": 228
+      },
+      "proposal_counts": {
+        "ID": 387,
+        "PVG": 323,
+        "PV": 357,
+        "PVB": 68
+      },
+      "accepted_counts": {
+        "ID": 387,
+        "PVG": 323,
+        "PV": 357,
+        "PVB": 67
+      },
+      "unscored_counts": {
+        "PVG": 5,
+        "ID": 11,
+        "PV": 7,
+        "PVB": 3
+      },
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 24,
+        "latent_capacity": 128,
+        "insertions": 68,
+        "evictions": 5,
+        "latent_insertions": 24,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          665,
+          381
+        ]
+      },
+      "checked_qasm": 610,
+      "view_cache": {
+        "hits": 1164,
+        "misses": 1142
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 1135,
+        "primary_successes": 1109,
+        "primary_failures": 26,
+        "unscorable": 26,
+        "unique_valid_qasm": 610,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 36297,
+        "resource_masks": 7538,
+        "calls": 1135,
+        "proposed": 36320,
+        "eligible": 28777,
+        "cache_hits": 23,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 7054,
+          "PV": 244,
+          "PVG": 245
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "666": 1502.9357209570007,
+        "665": 1502.9357209570007,
+        "664": null,
+        "663": null,
+        "662": null
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 12302.937560220991,
+      "timers": {
+        "checkpoint": 33.656597685054294,
+        "matching": 143.5681379341404,
+        "feasibility": 1833.3330265179538,
+        "inference": 54.36508874720312,
+        "rewrite_verify": 4191.737000480076,
+        "score": 5881.421348877106,
+        "ppo": 108.04854933396564,
+        "improvement_model": 0.003547661006450653
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 665,
+        "last_improvement_unix": 1792331245.885674
+      },
+      "certificate_stats": {
+        "passed": 1990,
+        "cache_hits": 904
+      },
+      "finished_unix": 1792342047.445834,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "gf2^8_mult/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 23183,
+      "accepted": 23183,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 724,
+      "best": {
+        "cost": {
+          "gates": 156,
+          "cx": 71,
+          "depth": 92
+        },
+        "sha256": "7c448feda70afc8570a810a3cac8af55bc20a78be82f12df544dc7eb1c41db5f",
+        "seconds": 3290.243581415998,
+        "graph": "35a2751f7f9764116b41ce451c207e18a5589951d7c5dae1d7a5e3c9cfd247ec"
+      },
+      "root_cost": {
+        "gates": 168,
+        "cx": 73,
+        "depth": 98
+      },
+      "proposal_counts": {
+        "PVB": 1678,
+        "ID": 17996,
+        "PVG": 1304,
+        "PV": 1578,
+        "LC": 627
+      },
+      "accepted_counts": {
+        "PVB": 1678,
+        "ID": 17996,
+        "PVG": 1304,
+        "PV": 1578,
+        "LC": 627
+      },
+      "unscored_counts": {},
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 5405,
+        "evictions": 5342,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          156,
+          71
+        ]
+      },
+      "checked_qasm": 4245,
+      "view_cache": {
+        "hits": 24697,
+        "misses": 22384
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 22147,
+        "primary_successes": 22147,
+        "cache_hits": 1037,
+        "unique_valid_qasm": 4245,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 731625,
+        "resource_masks": 64187,
+        "calls": 23183,
+        "proposed": 741856,
+        "eligible": 676826,
+        "cache_hits": 10234,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "LC": 12045,
+          "PVB": 26321,
+          "PVG": 21374,
+          "PV": 5199,
+          "ID": 91
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "167": 6.933222353996825,
+        "166": 6.933222353996825,
+        "165": 6.933222353996825,
+        "164": 583.0856552049954,
+        "163": 625.9911668109999
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 14090.244626350992,
+      "timers": {
+        "checkpoint": 13.308006054008729,
+        "matching": 422.0892479696777,
+        "feasibility": 5550.28318046128,
+        "inference": 342.9829748898628,
+        "rewrite_verify": 3829.724247063452,
+        "score": 2924.9598334241746,
+        "improvement_model": 0.024143423972418532,
+        "ppo": 426.76742660703894
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 156,
+        "last_improvement_unix": 1792333019.4365096
+      },
+      "certificate_stats": {
+        "passed": 46204,
+        "cache_hits": 2810
+      },
+      "finished_unix": 1792343819.7409995,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "rc_adder_6/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 21621,
+      "accepted": 21620,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 675,
+      "best": {
+        "cost": {
+          "gates": 188,
+          "cx": 76,
+          "depth": 123
+        },
+        "sha256": "8226c588f67d43811cc8031df1757b7c8879f36f70a631e01e72b72ce6710943",
+        "seconds": 5186.828451727008,
+        "graph": "28d61f56331da27075d506db1cf5d556d97fec96d81c0f788281f77e10dce786"
+      },
+      "root_cost": {
+        "gates": 197,
+        "cx": 78,
+        "depth": 139
+      },
+      "proposal_counts": {
+        "PVG": 1012,
+        "PV": 1781,
+        "PVB": 1016,
+        "ID": 17812
+      },
+      "accepted_counts": {
+        "PVG": 1012,
+        "PV": 1781,
+        "PVB": 1016,
+        "ID": 17811
+      },
+      "unscored_counts": {},
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 10316,
+        "evictions": 10253,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          188,
+          76
+        ]
+      },
+      "checked_qasm": 2429,
+      "view_cache": {
+        "hits": 23267,
+        "misses": 20632
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 20508,
+        "primary_successes": 20507,
+        "cache_hits": 1114,
+        "primary_failures": 1,
+        "unscorable": 1,
+        "unique_valid_qasm": 2429,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 678123,
+        "calls": 21621,
+        "proposed": 691872,
+        "eligible": 671523,
+        "resource_masks": 20284,
+        "cache_hits": 13749,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 9223,
+          "PVG": 8630,
+          "PV": 2416,
+          "ID": 80
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "196": 10.796881070011295,
+        "195": 10.796881070011295,
+        "194": 12.106721177013242,
+        "193": 12.106721177013242,
+        "192": 511.9471532190073
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 15986.832304485011,
+      "timers": {
+        "checkpoint": 17.49651175600593,
+        "matching": 460.74633555342734,
+        "feasibility": 5848.247538384996,
+        "inference": 356.55406691304233,
+        "rewrite_verify": 5287.662165541304,
+        "score": 2547.3746433841297,
+        "improvement_model": 0.017218584005604498,
+        "ppo": 457.3023890720797
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 188,
+        "last_improvement_unix": 1792334916.1418793
+      },
+      "certificate_stats": {
+        "passed": 38079,
+        "cache_hits": 5615
+      },
+      "finished_unix": 1792345716.4849288,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "mod_red_21/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 20893,
+      "accepted": 20893,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 652,
+      "best": {
+        "cost": {
+          "gates": 173,
+          "cx": 68,
+          "depth": 128
+        },
+        "sha256": "ab65956710230e18432b0b237ada2348ec8405c725e164a1cb69c90270f879ce",
+        "seconds": 5810.734523553008,
+        "graph": "53629e8b306f8f4d12a148c77d1e2a0deccb6c4d2ada356834c571173e993e9e"
+      },
+      "root_cost": {
+        "gates": 175,
+        "cx": 70,
+        "depth": 129
+      },
+      "proposal_counts": {
+        "PVB": 1444,
+        "PV": 1678,
+        "ID": 16386,
+        "PVG": 1385
+      },
+      "accepted_counts": {
+        "PVB": 1444,
+        "PV": 1678,
+        "ID": 16386,
+        "PVG": 1385
+      },
+      "unscored_counts": {},
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 10246,
+        "evictions": 10183,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          173,
+          68
+        ]
+      },
+      "checked_qasm": 2212,
+      "view_cache": {
+        "hits": 21953,
+        "misses": 20469
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 20364,
+        "primary_successes": 20364,
+        "cache_hits": 530,
+        "unique_valid_qasm": 2212,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 664828,
+        "calls": 20893,
+        "proposed": 668576,
+        "eligible": 593760,
+        "resource_masks": 74213,
+        "cache_hits": 3751,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 43698,
+          "PVG": 18454,
+          "PV": 12464,
+          "ID": 200
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "174": 5473.532069195004,
+        "173": 5810.734523553008,
+        "172": null,
+        "171": null,
+        "170": null
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 16610.734992984,
+      "timers": {
+        "checkpoint": 19.11369996004214,
+        "matching": 480.88289713900303,
+        "feasibility": 6302.767467798476,
+        "inference": 367.5130014750757,
+        "rewrite_verify": 4772.472698634796,
+        "score": 3180.0431343038945,
+        "ppo": 485.5901527209935,
+        "improvement_model": 0.007511748015531339
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 173,
+        "last_improvement_unix": 1792335540.2652762
+      },
+      "certificate_stats": {
+        "passed": 38254,
+        "cache_hits": 4897
+      },
+      "finished_unix": 1792346340.6368153,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "tof_10/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 2908,
+      "accepted": 2907,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 90,
+      "best": {
+        "cost": {
+          "gates": 677,
+          "cx": 287,
+          "depth": 185
+        },
+        "sha256": "063b3b05f2053c4f3f43c9d65fae4426eebd26ba8222dcde8279ea54979d131b",
+        "seconds": 10794.180088501991,
+        "graph": "3e4bf1a35c014e1af7470381158849312c437225ee1a0fe600f250f075980775"
+      },
+      "root_cost": {
+        "gates": 694,
+        "cx": 295,
+        "depth": 188
+      },
+      "proposal_counts": {
+        "PVB": 331,
+        "PVG": 597,
+        "LC": 571,
+        "ID": 795,
+        "PV": 614
+      },
+      "accepted_counts": {
+        "PVB": 331,
+        "PVG": 597,
+        "LC": 570,
+        "ID": 795,
+        "PV": 614
+      },
+      "unscored_counts": {},
+      "rejections": {
+        "TimeoutError: candidate operation exceeded deadline": 1
+      },
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 237,
+        "evictions": 174,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          677,
+          287
+        ]
+      },
+      "checked_qasm": 1708,
+      "view_cache": {
+        "hits": 2982,
+        "misses": 2923
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 2905,
+        "primary_successes": 2905,
+        "cache_hits": 3,
+        "unique_valid_qasm": 1708,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 92948,
+        "calls": 2908,
+        "proposed": 93056,
+        "eligible": 75344,
+        "resource_masks": 17675,
+        "cache_hits": 108,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PV": 2353,
+          "PVB": 8295,
+          "LC": 3558,
+          "PVG": 3506
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "693": 192.69622534399969,
+        "692": 192.69622534399969,
+        "691": 192.69622534399969,
+        "690": 192.69622534399969,
+        "689": 724.1441936609917
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 21594.180986886,
+      "timers": {
+        "checkpoint": 79.08809621501132,
+        "matching": 281.84059956854617,
+        "feasibility": 4355.308309440123,
+        "inference": 142.56271528478828,
+        "rewrite_verify": 5493.176005351779,
+        "score": 10793.792205132078,
+        "ppo": 255.39998160203686,
+        "improvement_model": 0.028857662007794715
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 677,
+        "last_improvement_unix": 1792340528.74075
+      },
+      "certificate_stats": {
+        "passed": 6997,
+        "cache_hits": 556
+      },
+      "finished_unix": 1792351329.8537095,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "qcla_mod_7/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 4650,
+      "accepted": 4649,
+      "unscored": 79,
+      "recovered": 25,
+      "updates": 145,
+      "best": {
+        "cost": {
+          "gates": 375,
+          "cx": 205,
+          "depth": 155
+        },
+        "sha256": "b8ff7a64d136525ece7df6c928cf8c0a4886ef8998747001eefde853c9d52409",
+        "seconds": 10919.934438365002,
+        "graph": "31f6064937a1060af7d9b8bbada055af3d9e2a3f983c9c9ec0fe64665205d435"
+      },
+      "root_cost": {
+        "gates": 380,
+        "cx": 210,
+        "depth": 158
+      },
+      "proposal_counts": {
+        "ID": 1506,
+        "PVG": 1382,
+        "PV": 1384,
+        "PVB": 378
+      },
+      "accepted_counts": {
+        "ID": 1506,
+        "PVG": 1382,
+        "PV": 1383,
+        "PVB": 378
+      },
+      "unscored_counts": {
+        "PV": 24,
+        "ID": 31,
+        "PVG": 17,
+        "PVB": 7
+      },
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 74,
+        "latent_capacity": 128,
+        "insertions": 670,
+        "evictions": 607,
+        "latent_insertions": 74,
+        "latent_evictions": 0,
+        "latent_restarts": 10,
+        "best": [
+          375,
+          205
+        ]
+      },
+      "checked_qasm": 2710,
+      "view_cache": {
+        "hits": 4764,
+        "misses": 4679
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 4636,
+        "primary_successes": 4556,
+        "cache_hits": 15,
+        "primary_failures": 81,
+        "unscorable": 80,
+        "unique_valid_qasm": 2710,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 148680,
+        "calls": 4650,
+        "proposed": 148800,
+        "eligible": 115147,
+        "resource_masks": 33637,
+        "cache_hits": 120,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 27691,
+          "PVG": 3368,
+          "PV": 2577,
+          "LC": 3,
+          "ID": 14
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "379": 950.9728162310057,
+        "378": 5008.987675986995,
+        "377": 10899.081395859,
+        "376": 10899.081395859,
+        "375": 10919.934438365002
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 21719.941789733013,
+      "timers": {
+        "checkpoint": 73.27004557990585,
+        "matching": 291.61683072461165,
+        "feasibility": 3482.0031891367253,
+        "inference": 147.7600078391406,
+        "rewrite_verify": 4012.8700587377098,
+        "score": 13255.836646307944,
+        "ppo": 229.357615760091,
+        "improvement_model": 0.01420423599483911
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 375,
+        "last_improvement_unix": 1792340651.8293197
+      },
+      "certificate_stats": {
+        "passed": 8687,
+        "cache_hits": 3382
+      },
+      "finished_unix": 1792351453.2278934,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "gf2^6_mult/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 15005,
+      "accepted": 15005,
+      "unscored": 0,
+      "recovered": 0,
+      "updates": 468,
+      "best": {
+        "cost": {
+          "gates": 289,
+          "cx": 144,
+          "depth": 64
+        },
+        "sha256": "01932afc03e57d409e725f4f18797cf9dfee907e4899c74397c73e2f29d1e850",
+        "seconds": 18585.584685752998,
+        "graph": "dfb08619eaad5dc5b695789b0966b425f9d3ca0e6130ca2010318d0f18ca675e"
+      },
+      "root_cost": {
+        "gates": 300,
+        "cx": 148,
+        "depth": 76
+      },
+      "proposal_counts": {
+        "PVB": 936,
+        "ID": 10270,
+        "LC": 1401,
+        "PVG": 1100,
+        "PV": 1298
+      },
+      "accepted_counts": {
+        "PVB": 936,
+        "ID": 10270,
+        "LC": 1401,
+        "PVG": 1100,
+        "PV": 1298
+      },
+      "unscored_counts": {},
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 0,
+        "latent_capacity": 128,
+        "insertions": 6683,
+        "evictions": 6620,
+        "latent_insertions": 0,
+        "latent_evictions": 0,
+        "latent_restarts": 0,
+        "best": [
+          289,
+          144
+        ]
+      },
+      "checked_qasm": 3863,
+      "view_cache": {
+        "hits": 15646,
+        "misses": 14820
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 14745,
+        "primary_successes": 14745,
+        "cache_hits": 261,
+        "unique_valid_qasm": 3863,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 477681,
+        "calls": 15005,
+        "proposed": 480160,
+        "eligible": 464599,
+        "resource_masks": 15551,
+        "cache_hits": 2479,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 10212,
+          "PVG": 2451,
+          "PV": 1134,
+          "LC": 1752,
+          "ID": 12
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "299": 276.7978440470033,
+        "298": 276.7978440470033,
+        "297": 945.1032263140078,
+        "296": 1117.6082861680043,
+        "295": 1307.2879897390085
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 26130.111800854007,
+      "timers": {
+        "checkpoint": 44.08261058505741,
+        "matching": 539.102307753812,
+        "feasibility": 7774.156978855521,
+        "inference": 379.4369219451619,
+        "rewrite_verify": 4891.870859911898,
+        "score": 10733.16799212675,
+        "ppo": 541.0849155305914,
+        "improvement_model": 0.024892718021874316
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 289,
+        "last_improvement_unix": 1792345059.5255897
+      },
+      "certificate_stats": {
+        "passed": 32158,
+        "cache_hits": 1346
+      },
+      "finished_unix": 1792355860.346741,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "csum_mux_9/rules_native_online_s11"
+    },
+    {
+      "status": "no_improvement_timeout",
+      "transitions": 5343,
+      "accepted": 5343,
+      "unscored": 61,
+      "recovered": 10,
+      "updates": 166,
+      "best": {
+        "cost": {
+          "gates": 362,
+          "cx": 204,
+          "depth": 222
+        },
+        "sha256": "d9c0926c69adc152b4516701fa0242c06077fe13a67658fdf6e539e9f575f092",
+        "seconds": 17559.846574558003,
+        "graph": "0cca7ae34e1621d097eb4b3af3ac45679f0f1973fbc975212528764f0efaa8bb"
+      },
+      "root_cost": {
+        "gates": 387,
+        "cx": 214,
+        "depth": 230
+      },
+      "proposal_counts": {
+        "PV": 1250,
+        "LC": 239,
+        "PVB": 807,
+        "PVG": 1098,
+        "ID": 1949
+      },
+      "accepted_counts": {
+        "PV": 1250,
+        "LC": 239,
+        "PVB": 807,
+        "PVG": 1098,
+        "ID": 1949
+      },
+      "unscored_counts": {
+        "PVG": 11,
+        "ID": 27,
+        "PV": 9,
+        "PVB": 14
+      },
+      "rejections": {},
+      "buffer": {
+        "scored_size": 64,
+        "scored_capacity": 64,
+        "latent_size": 54,
+        "latent_capacity": 128,
+        "insertions": 590,
+        "evictions": 527,
+        "latent_insertions": 54,
+        "latent_evictions": 0,
+        "latent_restarts": 5,
+        "best": [
+          362,
+          204
+        ]
+      },
+      "checked_qasm": 2935,
+      "view_cache": {
+        "hits": 5472,
+        "misses": 5378
+      },
+      "jpv_proposals": null,
+      "anchor_stats": {},
+      "completion": {
+        "requests": 5324,
+        "primary_successes": 5264,
+        "cache_hits": 20,
+        "primary_failures": 60,
+        "unscorable": 60,
+        "unique_valid_qasm": 2935,
+        "unique_invalid_qasm": 0,
+        "max_valid_operator_error": 0.0,
+        "max_rejected_operator_error": 0.0
+      },
+      "feasibility": {
+        "previews": 170707,
+        "calls": 5343,
+        "proposed": 170976,
+        "eligible": 117144,
+        "resource_masks": 53773,
+        "cache_hits": 298,
+        "mode": "bounds",
+        "cache_size": 8192,
+        "cache_capacity": 8192,
+        "masked_families": {
+          "PVB": 20215,
+          "PVG": 15780,
+          "LC": 5598,
+          "PV": 12158,
+          "ID": 93
+        }
+      },
+      "max_graph_operator_error": 0.0,
+      "max_qasm_operator_error": 0.0,
+      "first_passage_seconds": {
+        "386": 5.738400778005598,
+        "385": 156.89046674799465,
+        "384": 156.89046674799465,
+        "383": 325.1362901109969,
+        "382": 325.1362901109969
+      },
+      "budget_seconds": 0.0,
+      "total_loop_seconds": 28359.847400385013,
+      "timers": {
+        "checkpoint": 61.807986640080344,
+        "matching": 269.0504830786085,
+        "feasibility": 3338.5721326537314,
+        "inference": 149.104480402224,
+        "rewrite_verify": 3941.183333783876,
+        "score": 20163.3447268561,
+        "improvement_model": 0.04342513701703865,
+        "ppo": 233.4341441867582
+      },
+      "verification": "passed",
+      "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+      "patience": {
+        "seconds": 10800.0,
+        "gates": 362,
+        "last_improvement_unix": 1792347292.0662367
+      },
+      "certificate_stats": {
+        "passed": 11055,
+        "cache_hits": 2637
+      },
+      "finished_unix": 1792358093.1887677,
+      "arm": "rules_native_online",
+      "seed": 11,
+      "folder": "ham15-low/rules_native_online_s11"
+    }
+  ]
+}

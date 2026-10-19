@@ -1,0 +1,30 @@
+基础规则 NAM 全集训练结果快照（2026-10-19）
+
+26个电路全部训练搜索结束，各自严格总门数连续10800秒无改善后停止。
+没有整体三小时上限；CX/depth平局不重置计时。
+训练封存代码为26b4e8eff8625219c253820a7ad0a6903c18bdca。
+node22/23各13个电路，每个电路独立online PPO，seed11，无预训练迁移。
+rule_profile=native，新增公理、非线性公理和扩图宏在生成候选前关闭。
+global选择，候选上限32，rollout32，学习率0.0003；每节点16CPU/48GiB，13训练worker，无GPU。
+每300秒原子检查点，每次最优改进另存模型。两台节点启动时各140项测试通过。
+
+results.csv列出26个电路的原始输入、固定优化基线、最终门数、训练步数、PPO更新及停止计时。
+总门数：原始输入8741，固定优化基线6460，搜索结果6195；相对固定基线额外减少265门，即4.10%。
+固定优化基线包含当前实现的预处理、提取/cflow和NAM后处理，不是原论文原样流程。
+本轮只有一个online种子，没有同预算frozen对照，不能将搜索收益全部归因于学习。
+
+审计状态：训练中的等价验证通过，但全量独立事件/QASM/模型回放尚在进行。
+summary.json和node*/comparison/audit/progress.json保留采集时的进度。
+不得将本快照描述为26项独立回放已全部通过，也不覆盖已有论文对照结果表。
+
+每个node目录保留远端实际campaign、controller、ownership、launch和测试记录。
+每个电路目录保留实际protocol、最终report、input/baseline/best QASM、best-history、
+完整updates.jsonl及initial.pt/final.pt；其中final.pt为模型/Adam胶囊，不是完整搜索状态。
+snapshot.json逐文件登记字节数和SHA256，已逐项核对；manifest.sha256覆盖整个提交快照。
+
+较大的完整search-state.pt、events.jsonl、原图对象、全部中间QASM及改进模型保留远端：
+/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison
+/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node23_20261018/source/runs/comparison
+每个snapshot.json中的trials字段登记完整状态和事件的位置与大小。
+完成独立审计后，原控制器会封存完整归档及SHA256，并停止本任务容器。
+恢复入口和停机计时说明另见reports/native-nam-recovery-20261018/instructions.txt。

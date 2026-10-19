@@ -1,0 +1,10 @@
+{
+  "cost": {
+    "gates": 259,
+    "cx": 117,
+    "depth": 66
+  },
+  "sha256": "9b5a727fe905da73176fa11396cd3cf66d4ea6361ae4faba3fff78373115cecb",
+  "seconds": 21075.426188451936,
+  "graph": "81809a4264f711284117e7ace5a49a18cb10b29150435eeeb70ac413ddccc2ea"
+}

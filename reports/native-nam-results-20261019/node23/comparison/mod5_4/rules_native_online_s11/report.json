@@ -1,0 +1,117 @@
+{
+  "status": "no_improvement_timeout",
+  "transitions": 248672,
+  "accepted": 248672,
+  "unscored": 0,
+  "recovered": 0,
+  "updates": 7771,
+  "best": {
+    "cost": {
+      "gates": 23,
+      "cx": 12,
+      "depth": 13
+    },
+    "sha256": "33a42a86f99c3a525af8188e65c7a63e574b816e3b014b817e803d665eb00cda",
+    "seconds": 311.24221347399,
+    "graph": "4f565fdce0ec9bc648f73e9782d837c485774d0b612b73b302a05803ae6a2a48"
+  },
+  "root_cost": {
+    "gates": 40,
+    "cx": 21,
+    "depth": 35
+  },
+  "proposal_counts": {
+    "PVB": 1798,
+    "PV": 57238,
+    "LC": 138,
+    "ID": 188359,
+    "PVG": 1139
+  },
+  "accepted_counts": {
+    "PVB": 1798,
+    "PV": 57238,
+    "LC": 138,
+    "ID": 188359,
+    "PVG": 1139
+  },
+  "unscored_counts": {},
+  "rejections": {},
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 0,
+    "latent_capacity": 128,
+    "insertions": 105750,
+    "evictions": 105687,
+    "latent_insertions": 0,
+    "latent_evictions": 0,
+    "latent_restarts": 0,
+    "best": [
+      23,
+      12
+    ]
+  },
+  "checked_qasm": 3797,
+  "view_cache": {
+    "hits": 385169,
+    "misses": 119797
+  },
+  "jpv_proposals": null,
+  "anchor_stats": {},
+  "completion": {
+    "requests": 119309,
+    "primary_successes": 119309,
+    "cache_hits": 129364,
+    "unique_valid_qasm": 3797,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 1.777170651644396e-15,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 2576414,
+    "calls": 248672,
+    "proposed": 5535560,
+    "eligible": 5533568,
+    "resource_masks": 1964,
+    "cache_hits": 2959146,
+    "mode": "bounds",
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "PVG": 455,
+      "PVB": 1351,
+      "PV": 174,
+      "LC": 12
+    }
+  },
+  "max_graph_operator_error": 9.770760951138452e-15,
+  "max_qasm_operator_error": 1.777170651644396e-15,
+  "first_passage_seconds": {
+    "39": 0.6934942049992969,
+    "38": 0.6934942049992969,
+    "37": 0.6934942049992969,
+    "36": 0.6934942049992969,
+    "35": 0.6934942049992969
+  },
+  "budget_seconds": 0.0,
+  "total_loop_seconds": 11111.246066998996,
+  "timers": {
+    "checkpoint": 2.709402036984102,
+    "matching": 937.5813008338155,
+    "feasibility": 3557.0468084500317,
+    "inference": 1116.7847026626841,
+    "rewrite_verify": 1504.8344116750377,
+    "score": 821.5323051862651,
+    "improvement_model": 0.00494839801103808,
+    "ppo": 991.8331928038097
+  },
+  "verification": "passed",
+  "verification_method": "independent full fixed-wire Qiskit operator, tolerance2e-8",
+  "patience": {
+    "seconds": 10800.0,
+    "gates": 23,
+    "last_improvement_unix": 1792330039.837311
+  },
+  "certificate_stats": null,
+  "finished_unix": 1792340839.926694
+}

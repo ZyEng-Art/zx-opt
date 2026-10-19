@@ -1,0 +1,14 @@
+{
+  "container_name": "dengzengyong_rlzx_native_nam_v3_node22_20261018",
+  "container_id": "ffe2a6649b2a9a7efe0e088e2ca3993c339220e087b3af2eecce7192cf12b0e1",
+  "started_at": "2026-10-18T13:21:15.842302674Z",
+  "image": "sha256:c5b2f0efd63bef5670ff1f2b0c791f07804a10e46b8b3715be6d97be2acbca1a",
+  "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "cpus": 16,
+  "memory_gib": 48,
+  "workers": 13,
+  "gpu": false,
+  "node": 22,
+  "experiment": "search",
+  "probe_source": null
+}

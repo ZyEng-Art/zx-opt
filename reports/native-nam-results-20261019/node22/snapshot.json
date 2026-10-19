@@ -1,0 +1,968 @@
+{
+  "snapshot_unix": 1792369673.6984525,
+  "source_commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "node": 22,
+  "scope": "All training finished; independent replay audit may still be running. Full search-state, events and graph objects retained remotely.",
+  "entries": [
+    {
+      "path": "controller.json",
+      "bytes": 661,
+      "sha256": "0d93110b2e21a7fb1d6a326f63e2e600a6bd000553955b9b45341856b45e2a64"
+    },
+    {
+      "path": "ownership.json",
+      "bytes": 490,
+      "sha256": "a458994562d3a640afb0d46f116855abecea3db1df0e3b919058df585c6443da"
+    },
+    {
+      "path": "launch.json",
+      "bytes": 519,
+      "sha256": "3c6b6766e3a1f11b8344888c5e3451d6222091b1a0bfab680b934901245900ae"
+    },
+    {
+      "path": "unit-tests.log",
+      "bytes": 13923,
+      "sha256": "c560f43e50da56bd9d31358aac9dc0d8151310dd4d470745fa49250b12dff607"
+    },
+    {
+      "path": "pyzx-pin.log",
+      "bytes": 141,
+      "sha256": "6302c89e6f73adc600c0d564b94a4b2ec6711b4e73f1249dee036b8d46838cfb"
+    },
+    {
+      "path": "comparison/campaign.json",
+      "bytes": 4757,
+      "sha256": "76356be2021af2c63d0766cc34f7bca8874ef50cfc1de1b70edec8e6e2654149"
+    },
+    {
+      "path": "comparison/summary.json",
+      "bytes": 44761,
+      "sha256": "3cddf0623b8000c94e483ce30a7c045bf209587110108480dad95fb55b3d2185"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/protocol.json",
+      "bytes": 10721,
+      "sha256": "49be68573e379cc70b83918455facda52fd21e7db7e3045b3e77d81ab843f9cf"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/report.json",
+      "bytes": 2918,
+      "sha256": "627613791b54b0c2e259313f013659681f51d33ac84948cd6803e0947c76ed9e"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/best.json",
+      "bytes": 262,
+      "sha256": "0e21bac8d3bb54901b62521a942e7d33afaf46c1514739b01d24fd5e777985cc"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/input.qasm",
+      "bytes": 16260,
+      "sha256": "4620e911d0dfb6709d84f0bee954791831ee43825358735964f5bf0cf04d8d80"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/baseline.qasm",
+      "bytes": 8208,
+      "sha256": "23be9e36d261860ee1e841a1626f72e82f21944f5d98acdc0c16aac6dd1321c2"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/best.qasm",
+      "bytes": 7909,
+      "sha256": "ced7713f630d0bc52556ad086d3741754879deef3c8924eb8e7310a80d815ae0"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/best-history.jsonl",
+      "bytes": 8587,
+      "sha256": "7ca443483dfad6541f9c52cb78578c33e57bf1a69da3de359e5e9ddd2042ca07"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/updates.jsonl",
+      "bytes": 187405,
+      "sha256": "422417af1a674672a4186ff338060662ffeaadc5c12abbe65bf3dbb75713532f"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/checkpoint.json",
+      "bytes": 305,
+      "sha256": "688b83d66d1f5f96e930d6252460957cdce51693bc6ede44cb44e5ca11e85f66"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "cd75b254fae204ea10743ea9cec8e6a468bff5b1de4d2cb00ad3a05b8e95b12a"
+    },
+    {
+      "path": "comparison/adder_8/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/protocol.json",
+      "bytes": 10748,
+      "sha256": "871a55c7ecd972fd600ef08c7c24bf6ad302dd594a66f9b6d7fb740f0825a5f9"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/report.json",
+      "bytes": 2868,
+      "sha256": "eeb0053c8262f299cbb165f25edc3b6da6fc1775cf8ad6d4b9cd24588f264c15"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/best.json",
+      "bytes": 261,
+      "sha256": "a5d53491edfa6ad8c28683d35a6625700c2c54ed4b2124996a3d3952d7e4bca5"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/input.qasm",
+      "bytes": 8518,
+      "sha256": "623eb1f277dc7c2966b5ac836cefb93bf12ec234fb5f1dbc16168e03ca308d21"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/baseline.qasm",
+      "bytes": 3975,
+      "sha256": "3acfe9e431917b20a9ceee9d5540d6f03eeef1f9ce6836bc35f84ebc0338935a"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/best.qasm",
+      "bytes": 3834,
+      "sha256": "6580465c426d09dcbe84ecdf563ff8b5f9937d62c5fea469977922e165104729"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/best-history.jsonl",
+      "bytes": 3230,
+      "sha256": "dda75bee79d1a5cc1c8ca3544455b337f93e5c3feecd3f97b37f42ad2b6b7577"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/updates.jsonl",
+      "bytes": 237694,
+      "sha256": "bd40c24ebe1f2e708acb4b7c3c3adcb4e227f8a8378b3d790ae63e7484a31472"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/checkpoint.json",
+      "bytes": 305,
+      "sha256": "5b3382527a9d5689d55aa9f9c3e438f57adc0a715edbd9ec5ea16c6fd8014204"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "f406572b28e7d61adf983681fc7528535aebf573962da97b91c390e68ff3b35a"
+    },
+    {
+      "path": "comparison/barenco_tof_10/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/protocol.json",
+      "bytes": 10619,
+      "sha256": "0a8028343e0dede10bce31829afd13d67a9aba9d39e80a15724c8f89aa4c1635"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/report.json",
+      "bytes": 2812,
+      "sha256": "b9e5e006bfb34b04b5049ac2e708fe453d18f6878eafcf7b7c9467df5b1a0d12"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/best.json",
+      "bytes": 259,
+      "sha256": "a972f9ba7cc0176ded27f06458446ac658f39a6c9ec22f1d34318d362d213d36"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/input.qasm",
+      "bytes": 2059,
+      "sha256": "51708309fc33830f148ff22567e97135c33f103b2969d2fb812d137f9157fae9"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/baseline.qasm",
+      "bytes": 1065,
+      "sha256": "92ee234dc744a7602467013b9a8c7be5c0553c08ae8570d787b1d9e99402613f"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/best.qasm",
+      "bytes": 925,
+      "sha256": "3ecd0e651c81193fba01e79e3e600290abf57a5fd1caa81757e82162f2e74f33"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/best-history.jsonl",
+      "bytes": 5309,
+      "sha256": "5d8b7583bcffa38b173fa0f8c319e7b0bc9e2efdbf77afd190a2392693d6f841"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/updates.jsonl",
+      "bytes": 3836303,
+      "sha256": "08d364583630f97dd2e2bc5c04cc22d80ab02e3d62857d6a95c9e6b348b6f26a"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/checkpoint.json",
+      "bytes": 307,
+      "sha256": "eb80a86efed4473941b42b07d3aca60cb882322bed4d8cef21b4f955cabac599"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "dd22d3c4bd2f170a8e386ebdcf466e7324ba621dabd06a5dcaa6232b930b93cc"
+    },
+    {
+      "path": "comparison/barenco_tof_4/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/protocol.json",
+      "bytes": 10739,
+      "sha256": "14a13cdd158e914481c97286c8ded38b6434a400047d0866a6cbda8ddd537bf6"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/report.json",
+      "bytes": 2898,
+      "sha256": "1f869d65bd6cdd2e1e3e505836a5a1dd13e236c5d31507bc414f1872c01165f1"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/best.json",
+      "bytes": 258,
+      "sha256": "bd8b3575f68d251df6efcec6703017e633386865a585a242b0d69f0f58ddb55f"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/input.qasm",
+      "bytes": 3057,
+      "sha256": "a2869353fab91cfaa7026f9e061358eeff06a9a7f1f13e544886f0ca075046d6"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/baseline.qasm",
+      "bytes": 1493,
+      "sha256": "f91da9db58e5107c9c1ead0cf0146d2746d7ac39cc1df6175d1f12ba103505b6"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/best.qasm",
+      "bytes": 1409,
+      "sha256": "c524635d5812476e0fbcc0c89484cd2a46381da26bf45efc69f5ef2cc38dca4e"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/best-history.jsonl",
+      "bytes": 2084,
+      "sha256": "c018414b8bea79190934e729ddcbe21b5c208597cce86499940fcabfde16d4f4"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/updates.jsonl",
+      "bytes": 974690,
+      "sha256": "317e59bef02f1bfd03e7840a3798e84f04f25d04006c4de628d530c33311c190"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/checkpoint.json",
+      "bytes": 306,
+      "sha256": "3ef86f22c969008e8a53a1efccb738c5f83e14437878c966e72b858f62cdaff1"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "213957006bb1b8294e22e384cf1eb91a03d0887a631027b26ce5f38d370b007e"
+    },
+    {
+      "path": "comparison/barenco_tof_5/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/protocol.json",
+      "bytes": 10728,
+      "sha256": "e50a2c51fd8c36d32c6ace91c1a1c8c795ced25baa7d0f131c0f9a2e858f081b"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/report.json",
+      "bytes": 2835,
+      "sha256": "438b8c29abdcf04bfdcef0eb9b2fe7707ffb85503a90ca6faabdf36e1cb34a68"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/best.json",
+      "bytes": 259,
+      "sha256": "2f4f6012011d3e1e4f2212ae3162ae2a6aec52d2ffd1664d699957e8fb657104"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/input.qasm",
+      "bytes": 4137,
+      "sha256": "aac240d9414afc35eb927d0e2154f7558f8c184d46d7777a4606e468421ede53"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/baseline.qasm",
+      "bytes": 2629,
+      "sha256": "55ca75ccdc9d1b1ac44ee677e9453d49aa699406a8e12fbca23047d9782ca9d8"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/best.qasm",
+      "bytes": 2511,
+      "sha256": "aebc59cd3faa8b297228d118e790d670b50ffb1506d023569d07ef850302c145"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/best-history.jsonl",
+      "bytes": 4920,
+      "sha256": "0f87aa92fd8e6510065f4686dcd85169f3e8db32e51600a1c1267751017adec1"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/updates.jsonl",
+      "bytes": 700611,
+      "sha256": "631da6cb1709408ba80ac4e72744ef2daa41bf840d238a326e8db52f1f147c82"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/checkpoint.json",
+      "bytes": 306,
+      "sha256": "cbf302263b1ae8f85127b975e7840f63f4ee6764ba6637c9ffb87c141e0a5cad"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "dca06119200d4416b5bdd4650854c536bd6d17a665e7ac8ad08a2384a3647c4e"
+    },
+    {
+      "path": "comparison/gf2^4_mult/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/protocol.json",
+      "bytes": 10730,
+      "sha256": "1e54d983542b7f2e0abbb0cb0329effca9bb4ddf0167800672b1a52e3fdcf21a"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/report.json",
+      "bytes": 2817,
+      "sha256": "f30e654bb0fe1c38953664452db4945c2bb8a09d43f2ed0eee1485b9df4e65d0"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/best.json",
+      "bytes": 261,
+      "sha256": "c27cee9453c189e998a26ab8578d783d27c056621660fcdac0d78545810b6ce9"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/input.qasm",
+      "bytes": 6509,
+      "sha256": "59408663a930ed8d7ac30c0187439c963f83f1b93f4ba74b297a717273b486a4"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/baseline.qasm",
+      "bytes": 4167,
+      "sha256": "e8917cb772514953ffe03bf2ca31a13882aa2358b994a7c0d8697d0b08d9d6ec"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/best.qasm",
+      "bytes": 4105,
+      "sha256": "e908f410a8e50617a1a680759dc1400de3ab0ed688c09b919e5aa8ebc46fb698"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/best-history.jsonl",
+      "bytes": 1712,
+      "sha256": "69ec8b45985a985f93ba839066d4fbf7c095aa18255ec65fb69678d150f6138a"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/updates.jsonl",
+      "bytes": 296246,
+      "sha256": "8f958d4580abc08f93d41e407a11916d7da571be4993c4cc0e87374c6edb08be"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/checkpoint.json",
+      "bytes": 306,
+      "sha256": "2e387d14084d087677e7fd5ce0eb1c6753b09b8f9a897f5f62803b780b2f9fca"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "21e560ffea10b739ceb40e8045d929bbfa340d43f80bff94e6a5c3a9c292decb"
+    },
+    {
+      "path": "comparison/gf2^5_mult/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/protocol.json",
+      "bytes": 10732,
+      "sha256": "8beb56a43b26c40bbfe719616cbb0e10a3d5a934a2d45edd3c7969edc6f13c25"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/report.json",
+      "bytes": 2865,
+      "sha256": "faa10625ee8e96060f31bdea8cc566d7d16e97733a7989e36e097d94d9bf710b"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/best.json",
+      "bytes": 261,
+      "sha256": "3c1ab74e7e7c7fc3691e03b814b8abd9742763fa28112a926979d5558a42cc29"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/input.qasm",
+      "bytes": 12768,
+      "sha256": "a46e7f91303e9a4fbd89a7496ad4a3fe1c75beca2827ca23c0a1e3381fea0eb2"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/baseline.qasm",
+      "bytes": 7989,
+      "sha256": "ef7e48924bea4d960df4bcf3635dd080017c04bccffe4706709306f833594cd6"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/best.qasm",
+      "bytes": 7971,
+      "sha256": "65613c6b326daf4ec30e9c64a534fc38760397d6be913aa433ca01f5964f26a7"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/best-history.jsonl",
+      "bytes": 568,
+      "sha256": "155568c4e0b29bbf3126c9faa3273d637202981428947b7141db326da3045479"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/updates.jsonl",
+      "bytes": 58390,
+      "sha256": "f416c57db52e1326cee0a2e353c4769e4f7528890669d91c263488e18b16b9cf"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/checkpoint.json",
+      "bytes": 304,
+      "sha256": "15999f904f827c4c7105dcd4f7e93b14081b6362b085f564f189cce2e7ad7d37"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "c70be291fbddf9e3916880ab6467c860cf4355704804f57b389661191d2d1c2c"
+    },
+    {
+      "path": "comparison/gf2^7_mult/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/protocol.json",
+      "bytes": 10585,
+      "sha256": "da5a7dd56463cc09bb9c666aa4322cc93dbe3d5f496030562656a783fe8f4eaf"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/report.json",
+      "bytes": 2916,
+      "sha256": "f67550963b9894449ac56c113c2f67f09ce16fe4bec2a73d79ff6fd44722aa02"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/best.json",
+      "bytes": 261,
+      "sha256": "d1d9dd7ae0249cfee0889a8a4b52e0ec6649b209140900bd2212d298eeb21b02"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/input.qasm",
+      "bytes": 4335,
+      "sha256": "b40302894129713a6e20e81d1827e480db8fed42c02d208df41d9595b60045c3"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/baseline.qasm",
+      "bytes": 3012,
+      "sha256": "f23d3834441f66fe2056f9aefe0eb16a69a8bb8f36fbcf9172bda761338b5275"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/best.qasm",
+      "bytes": 2784,
+      "sha256": "3a5d7c0cb6883d11d2684812b95a861f253bf6ccfe77725e2ed59a500b892a3b"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/best-history.jsonl",
+      "bytes": 3406,
+      "sha256": "7b02d1cf149c5b913402ee120c177ddbfb84abe18677aec9a8d4481570d5204e"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/updates.jsonl",
+      "bytes": 1270479,
+      "sha256": "24a09b024c1656f0b3fcee4e6684f9791526c67f24cee399158045153e2dee45"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/checkpoint.json",
+      "bytes": 306,
+      "sha256": "e096691bb2ecf76df5e8635ca67d3baddad50eeede17cd5d5b0700dcc08b30d3"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "b315705810aa155bc637c2208297afa8fafe34ae8faf630bad3b1d0cc8dad88d"
+    },
+    {
+      "path": "comparison/hwb6/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/protocol.json",
+      "bytes": 10743,
+      "sha256": "083c65aa8fa900a47ede8f9d23f1eee3a4e4f78ccda39c432418722f92f45527"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/report.json",
+      "bytes": 2922,
+      "sha256": "368177d1f88e4e340427c573ecc91f951f66dfd6481368fa8a9f25ebd4a841c4"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/best.json",
+      "bytes": 260,
+      "sha256": "39a2c2a022e82c9cd461a8b7eeabcc34be721ec8436b786156f11c7a903e8988"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/input.qasm",
+      "bytes": 9647,
+      "sha256": "63ee8b3d9b4f59d629dd4d9152c3166c1b1489be86a7f6b91e6ad35219b77938"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/baseline.qasm",
+      "bytes": 6342,
+      "sha256": "4c0dcb36c4c937ee5eec369d9006698e7d178a3d1b5733a4b77fd04aca6ba8b1"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/best.qasm",
+      "bytes": 6167,
+      "sha256": "b093f98d44f55c34f9a6d8ec3bbdfe4156a9c85c901efe30ad2efda0c0bf7775"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/best-history.jsonl",
+      "bytes": 6639,
+      "sha256": "8252db899ffc16578135c49864c0022d217a174040fe9fe1ec74f2bfd49655c7"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/updates.jsonl",
+      "bytes": 223890,
+      "sha256": "0fc98c66eec3aadcaf140e368c238bf9a56b5da725194681506bc47c7a8c4c35"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/checkpoint.json",
+      "bytes": 304,
+      "sha256": "14b0d48abfca1038de28f3046c7319d31185f06cd058b0c95b1cc6cb2d10facf"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "323c4c717a76e3d31c0a2acad234a32c98b63b867570d223ebf9c2a41fed14a2"
+    },
+    {
+      "path": "comparison/qcla_adder_10/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/protocol.json",
+      "bytes": 10731,
+      "sha256": "e99a17471259f599d5f99b5c039ab52a6846d2dbdb72e5d4577f27dd36494977"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/report.json",
+      "bytes": 2882,
+      "sha256": "a96e1b9f94b4fdf913bd86730890d09fe80f6079da80c3ff0444bfd427cfc641"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/best.json",
+      "bytes": 261,
+      "sha256": "769012f02c900eb9023efaeb704fa270dcc88394995eff96d53f31f2239422b2"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/input.qasm",
+      "bytes": 8039,
+      "sha256": "c9796142b4b8efe5ecc89d8bf3fa91a9bfbdd9d1bbb4db2106e24c7a249b04fd"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/baseline.qasm",
+      "bytes": 4023,
+      "sha256": "ae84a8f21519c47fdb954d042061cb9814505fbd53627fbfb9a2b10adf3c68c1"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/best.qasm",
+      "bytes": 3809,
+      "sha256": "9b5a727fe905da73176fa11396cd3cf66d4ea6361ae4faba3fff78373115cecb"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/best-history.jsonl",
+      "bytes": 7654,
+      "sha256": "4439ef0718a5dfa7f11dd438d41ab8270ff1e9f838aa11991afc61a8bbfbe647"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/updates.jsonl",
+      "bytes": 584137,
+      "sha256": "c810177c30df61dede08e6886703bb71906f55062b0a2807e0121a69bfe67085"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/checkpoint.json",
+      "bytes": 306,
+      "sha256": "b081518bbc782a6c41608733d1e41248f6934aaa670891a43b15efd68799d15d"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "a959ada61b9796fe446181eff1d1f2f031e30a12a45454ba226e39a2f2b398ec"
+    },
+    {
+      "path": "comparison/qcla_com_7/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/protocol.json",
+      "bytes": 10585,
+      "sha256": "ca4e3c698a415bfe9b462ee9cc1ad733e47af02e221d84ab4b57afcfd3f05448"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/report.json",
+      "bytes": 2754,
+      "sha256": "217954b25f0fdf59a11ac799e23f172bf5953cfe1aafe0088e1fb2636b98a705"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/best.json",
+      "bytes": 258,
+      "sha256": "6e3fdc5d765fd377d2829d9e863663be377a6604b6cd3a873916c30cdc572c1c"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/input.qasm",
+      "bytes": 819,
+      "sha256": "1ef85ff33abe0849d7397718a0469a5b4667e47842e4ecb54688c8db76de94d6"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/baseline.qasm",
+      "bytes": 523,
+      "sha256": "6440376383de678851669db9df175e6725367bfc1893277e1048c70004ae60aa"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/best.qasm",
+      "bytes": 495,
+      "sha256": "6d5241c87bbd8a0ebfbe7526edf3d4db2c066d4d9dfb435d2512b96c00ac7a20"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/best-history.jsonl",
+      "bytes": 953,
+      "sha256": "3e61de39cc32a8b5e71b79f120d131b1049ce94a1f09d26a3d7a339a2c8b8bf5"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/updates.jsonl",
+      "bytes": 10323585,
+      "sha256": "02fd55b63ea53244eece4069b21d3d9f4178e13987022a8fafb2aeee3ffbe202"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/checkpoint.json",
+      "bytes": 308,
+      "sha256": "0f82a72a44088800a2277a0e8fd257a73cdc9d42501bc3748923e6a135f8948b"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "48a365522b4e7ebecf70287c17efc6637d2d88384eeb63c9207708b322d84984"
+    },
+    {
+      "path": "comparison/tof_3/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/protocol.json",
+      "bytes": 10586,
+      "sha256": "7411c246ffb82ae4db5a58ee08bae2e124c550f7031f1a0d9c0784b135d2577c"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/report.json",
+      "bytes": 2693,
+      "sha256": "e19efb96c1ff39f47cac62a7b0cf21b32bf3bc2cb9d9f02c16f2d880f2a5bbc5"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/best.json",
+      "bytes": 259,
+      "sha256": "f3dc0a9b242ab4eafcec9bccc94c0233e5c5c67de243c87f100de5f9a6d3c7f4"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/input.qasm",
+      "bytes": 1334,
+      "sha256": "1510fc43fe60ab2e0ad02e654585aa86b962e90be434edd06b03d8e92f4ab0bc"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/baseline.qasm",
+      "bytes": 791,
+      "sha256": "40026b80b3d09a41f79d9579acecc0d38af9b6f5e7711e459cd811fda56d2ca6"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/best.qasm",
+      "bytes": 763,
+      "sha256": "9dee23b09034322056369f3fc7f3e1cfb755d8487b277608aecf96ac6e2d02ba"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/best-history.jsonl",
+      "bytes": 568,
+      "sha256": "17d3c0d7ecf628cc8bf2597617cf7d473a4fadb9fdcb7742fb20d643a8dce943"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/updates.jsonl",
+      "bytes": 2408945,
+      "sha256": "f2af9649a7b5e08836cda7d484e42f657eafc45805c13f35fce92ee60bebdfa1"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/checkpoint.json",
+      "bytes": 306,
+      "sha256": "9dfb7457db37d3a37081671a2447d4af93abff7a93cc718197faf8cdba81a100"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "d06b60d1a87be08400339efa7c6f92a8ec5495ca30a176736744b757e255548f"
+    },
+    {
+      "path": "comparison/tof_4/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/protocol.json",
+      "bytes": 10731,
+      "sha256": "009250fed2fe83e8f8fee505c13fc728ad60bfd0cd1698538227f22ff627cb54"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/report.json",
+      "bytes": 2877,
+      "sha256": "afd9ce82b6714484922a346708dfd21c6932a4c3ec2cbd4f4974e27d1a340064"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/best.json",
+      "bytes": 259,
+      "sha256": "bee36d78c9c3f1c7a1987a5ec340df44f94c1516bb946585d3130a17165bfe63"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/input.qasm",
+      "bytes": 2682,
+      "sha256": "dd404097d3af94cc126391265a4710694e99fa6b3c9008ddcb17cb1ff36f6bcf"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/baseline.qasm",
+      "bytes": 1190,
+      "sha256": "60e0b854dcdfb615112607a1174fccc7759012fa5302b5e3bcb79eaf8dfe2680"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/best.qasm",
+      "bytes": 1071,
+      "sha256": "195056b3b2664f716506da0d73e185237001338bf3dd7017e4104abd0d2c0b92"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/best-history.jsonl",
+      "bytes": 2809,
+      "sha256": "7fbfe1fd62e7bfb22ce309632b79b9c44ee059b777a07a81ab7e407171b728e9"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/updates.jsonl",
+      "bytes": 774917,
+      "sha256": "f03ded1a691a285106f1d6a99c5bbe727c2ba933a67c49c5c6c2793bc2ed34fb"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/checkpoint.json",
+      "bytes": 305,
+      "sha256": "a37030a07145f6a07070125691ee85e2dcc2fe62ea8f6dab4620bc44d9fc27de"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/initial.pt",
+      "bytes": 72225,
+      "sha256": "f3434b28c507a965874fee9cb7896374a42e4ada062fa2e1aa947788f9ea2af8"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/final.pt",
+      "bytes": 216671,
+      "sha256": "6d1237e98935ddd7ea121a62de31eba84750d12503a5fb41392561ccdfbfe538"
+    },
+    {
+      "path": "comparison/vbe_adder_3/rules_native_online_s11/hh-derivation.json",
+      "bytes": 2657,
+      "sha256": "9f929cf7ec49ae17a3e6254690610308d5e840f724310bccd359dd11f86183fb"
+    }
+  ],
+  "trials": [
+    {
+      "folder": "adder_8/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/adder_8/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 11218768,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/adder_8/rules_native_online_s11/events.jsonl",
+      "events_bytes": 11916663,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/adder_8/rules_native_online_s11/objects",
+      "original_input_gates": 900,
+      "root_gates": 568,
+      "best_gates": 541
+    },
+    {
+      "folder": "barenco_tof_10/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_10/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 7521841,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_10/rules_native_online_s11/events.jsonl",
+      "events_bytes": 15199251,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_10/rules_native_online_s11/objects",
+      "original_input_gates": 450,
+      "root_gates": 264,
+      "best_gates": 254
+    },
+    {
+      "folder": "barenco_tof_4/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_4/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 12389463,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_4/rules_native_online_s11/events.jsonl",
+      "events_bytes": 245915009,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_4/rules_native_online_s11/objects",
+      "original_input_gates": 114,
+      "root_gates": 74,
+      "best_gates": 64
+    },
+    {
+      "folder": "barenco_tof_5/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_5/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 7438999,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_5/rules_native_online_s11/events.jsonl",
+      "events_bytes": 61817230,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/barenco_tof_5/rules_native_online_s11/objects",
+      "original_input_gates": 170,
+      "root_gates": 105,
+      "best_gates": 99
+    },
+    {
+      "folder": "gf2^4_mult/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^4_mult/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 14966583,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^4_mult/rules_native_online_s11/events.jsonl",
+      "events_bytes": 44294969,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^4_mult/rules_native_online_s11/objects",
+      "original_input_gates": 225,
+      "root_gates": 176,
+      "best_gates": 167
+    },
+    {
+      "folder": "gf2^5_mult/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^5_mult/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 15341915,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^5_mult/rules_native_online_s11/events.jsonl",
+      "events_bytes": 18820274,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^5_mult/rules_native_online_s11/objects",
+      "original_input_gates": 347,
+      "root_gates": 272,
+      "best_gates": 268
+    },
+    {
+      "folder": "gf2^7_mult/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^7_mult/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 32084221,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^7_mult/rules_native_online_s11/events.jsonl",
+      "events_bytes": 3722541,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/gf2^7_mult/rules_native_online_s11/objects",
+      "original_input_gates": 669,
+      "root_gates": 514,
+      "best_gates": 513
+    },
+    {
+      "folder": "hwb6/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/hwb6/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 8678665,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/hwb6/rules_native_online_s11/events.jsonl",
+      "events_bytes": 80900260,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/hwb6/rules_native_online_s11/objects",
+      "original_input_gates": 259,
+      "root_gates": 219,
+      "best_gates": 198
+    },
+    {
+      "folder": "qcla_adder_10/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/qcla_adder_10/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 7220368,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/qcla_adder_10/rules_native_online_s11/events.jsonl",
+      "events_bytes": 14153736,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/qcla_adder_10/rules_native_online_s11/objects",
+      "original_input_gates": 521,
+      "root_gates": 432,
+      "best_gates": 419
+    },
+    {
+      "folder": "qcla_com_7/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/qcla_com_7/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 25548343,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/qcla_com_7/rules_native_online_s11/events.jsonl",
+      "events_bytes": 37041314,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/qcla_com_7/rules_native_online_s11/objects",
+      "original_input_gates": 443,
+      "root_gates": 278,
+      "best_gates": 259
+    },
+    {
+      "folder": "tof_3/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/tof_3/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 2137447,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/tof_3/rules_native_online_s11/events.jsonl",
+      "events_bytes": 657524608,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/tof_3/rules_native_online_s11/objects",
+      "original_input_gates": 45,
+      "root_gates": 35,
+      "best_gates": 33
+    },
+    {
+      "folder": "tof_4/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/tof_4/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 7606793,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/tof_4/rules_native_online_s11/events.jsonl",
+      "events_bytes": 153959094,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/tof_4/rules_native_online_s11/objects",
+      "original_input_gates": 75,
+      "root_gates": 55,
+      "best_gates": 53
+    },
+    {
+      "folder": "vbe_adder_3/rules_native_online_s11",
+      "complete_state_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/vbe_adder_3/rules_native_online_s11/search-state.pt",
+      "complete_state_bytes": 7660429,
+      "events_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/vbe_adder_3/rules_native_online_s11/events.jsonl",
+      "events_bytes": 48725854,
+      "objects_remote": "/ssd2/dengzengyong-rlzx-native-20261018/dengzengyong_rlzx_native_nam_v3_node22_20261018/source/runs/comparison/vbe_adder_3/rules_native_online_s11/objects",
+      "original_input_gates": 150,
+      "root_gates": 84,
+      "best_gates": 74
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "status": "no_improvement_timeout",
+  "transitions": 2005,
+  "accepted": 2004,
+  "unscored": 13,
+  "recovered": 4,
+  "updates": 62,
+  "best": {
+    "cost": {
+      "gates": 513,
+      "cx": 282,
+      "depth": 229
+    },
+    "sha256": "65613c6b326daf4ec30e9c64a534fc38760397d6be913aa433ca01f5964f26a7",
+    "seconds": 2404.698065889068,
+    "graph": "1e7f6cd17e2361ff78bee41b539a52319af29ffbbaa8db586d641fa6812e6484"
+  },
+  "root_cost": {
+    "gates": 514,
+    "cx": 283,
+    "depth": 189
+  },
+  "proposal_counts": {
+    "PV": 575,
+    "ID": 695,
+    "PVG": 585,
+    "PVB": 150
+  },
+  "accepted_counts": {
+    "PV": 575,
+    "ID": 695,
+    "PVG": 584,
+    "PVB": 150
+  },
+  "unscored_counts": {
+    "PVB": 1,
+    "PV": 3,
+    "PVG": 6,
+    "ID": 3
+  },
+  "rejections": {},
+  "buffer": {
+    "scored_size": 64,
+    "scored_capacity": 64,
+    "latent_size": 11,
+    "latent_capacity": 128,
+    "insertions": 166,
+    "evictions": 103,
+    "latent_insertions": 11,
+    "latent_evictions": 0,
+    "latent_restarts": 1,
+    "best": [
+      513,
+      282
+    ]
+  },
+  "checked_qasm": 1265,
+  "view_cache": {
+    "hits": 2055,
+    "misses": 2018
+  },
+  "jpv_proposals": null,
+  "anchor_stats": {},
+  "completion": {
+    "requests": 2000,
+    "primary_successes": 1986,
+    "cache_hits": 6,
+    "primary_failures": 14,
+    "unscorable": 14,
+    "unique_valid_qasm": 1265,
+    "unique_invalid_qasm": 0,
+    "max_valid_operator_error": 0.0,
+    "max_rejected_operator_error": 0.0
+  },
+  "feasibility": {
+    "previews": 64118,
+    "resource_masks": 15314,
+    "calls": 2005,
+    "proposed": 64160,
+    "eligible": 48839,
+    "cache_hits": 42,
+    "mode": "bounds",
+    "cache_size": 8192,
+    "cache_capacity": 8192,
+    "masked_families": {
+      "PVB": 12636,
+      "PVG": 1341,
+      "PV": 1327,
+      "ID": 17
+    }
+  },
+  "max_graph_operator_error": 0.0,
+  "max_qasm_operator_error": 0.0,
+  "first_passage_seconds": {
+    "513": 2404.698065889068,
+    "512": null,
+    "511": null,
+    "510": null,
+    "509": null
+  },
+  "budget_seconds": 0.0,
+  "total_loop_seconds": 13204.708550204057,
+  "timers": {
+    "checkpoint": 40.532824790803716,
+    "matching": 162.34347818698734,
+    "feasibility": 2028.8556390230078,
+    "inference": 70.36201987694949,
+    "rewrite_verify": 3041.1676266849972,
+    "score": 7679.18920354126,
+    "ppo": 94.50380411976948,
+    "improvement_model": 0.0036923710722476244
+  },
+  "verification": "passed",
+  "verification_method": "fixed-wire ZX identity reduction; scalar modulus tolerance1e-9; failure is inconclusive; zero errors in numeric fields are certificate placeholders, not measured operator errors",
+  "patience": {
+    "seconds": 10800.0,
+    "gates": 513,
+    "last_improvement_unix": 1792332136.3151805
+  },
+  "certificate_stats": {
+    "passed": 3822,
+    "cache_hits": 1480
+  },
+  "finished_unix": 1792342937.2807527
+}

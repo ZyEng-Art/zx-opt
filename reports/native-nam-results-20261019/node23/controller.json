@@ -1,0 +1,34 @@
+{
+  "phase": "comparison",
+  "commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "container_id": "06d891d85eefdba65f2220e9a79386c4521bfb2549bcfbb1a5dd1a7d892c6636",
+  "time": "2026-10-18T21:22:01.978977+08:00",
+  "experiment": "search",
+  "circuits": [
+    "barenco_tof_3",
+    "csla_mux_3",
+    "csum_mux_9",
+    "gf2^6_mult",
+    "gf2^8_mult",
+    "ham15-low",
+    "mod5_4",
+    "mod_mult_55",
+    "mod_red_21",
+    "qcla_mod_7",
+    "rc_adder_6",
+    "tof_10",
+    "tof_5"
+  ],
+  "seeds": [
+    "11"
+  ],
+  "modes": [
+    "rules_native"
+  ],
+  "policies": [
+    "online"
+  ],
+  "seconds": 0.0,
+  "no_improvement_seconds": 10800.0,
+  "workers": 13
+}

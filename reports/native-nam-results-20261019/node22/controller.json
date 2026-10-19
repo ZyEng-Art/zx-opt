@@ -1,0 +1,34 @@
+{
+  "phase": "comparison",
+  "commit": "26b4e8eff8625219c253820a7ad0a6903c18bdca",
+  "container_id": "ffe2a6649b2a9a7efe0e088e2ca3993c339220e087b3af2eecce7192cf12b0e1",
+  "time": "2026-10-18T21:22:00.723211+08:00",
+  "experiment": "search",
+  "circuits": [
+    "adder_8",
+    "barenco_tof_10",
+    "barenco_tof_4",
+    "barenco_tof_5",
+    "gf2^4_mult",
+    "gf2^5_mult",
+    "gf2^7_mult",
+    "hwb6",
+    "qcla_adder_10",
+    "qcla_com_7",
+    "tof_3",
+    "tof_4",
+    "vbe_adder_3"
+  ],
+  "seeds": [
+    "11"
+  ],
+  "modes": [
+    "rules_native"
+  ],
+  "policies": [
+    "online"
+  ],
+  "seconds": 0.0,
+  "no_improvement_seconds": 10800.0,
+  "workers": 13
+}

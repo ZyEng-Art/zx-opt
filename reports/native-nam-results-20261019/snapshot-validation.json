@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "trials": 26,
+  "model_files": 52,
+  "all_model_and_optimizer_tensors_finite": true,
+  "all_snapshot_entry_hashes_verified": true,
+  "all_plateau_stops_at_least_10800_seconds": true,
+  "scope": "Artifact consistency validation; independent trajectory replay still pending"
+}

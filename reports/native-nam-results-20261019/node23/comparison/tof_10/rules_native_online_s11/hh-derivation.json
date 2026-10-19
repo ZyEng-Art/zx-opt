@@ -1,0 +1,171 @@
+{
+  "source": {
+    "nodes": {
+      "0": {
+        "kind": "H",
+        "phase": "0"
+      },
+      "1": {
+        "kind": "H",
+        "phase": "0"
+      },
+      "2": {
+        "kind": "B",
+        "phase": "0"
+      },
+      "3": {
+        "kind": "B",
+        "phase": "0"
+      }
+    },
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "ports": [
+      2,
+      3
+    ],
+    "loops": 0
+  },
+  "target": {
+    "nodes": {
+      "0": {
+        "kind": "B",
+        "phase": "0"
+      },
+      "1": {
+        "kind": "B",
+        "phase": "0"
+      }
+    },
+    "edges": [
+      [
+        0,
+        1
+      ]
+    ],
+    "ports": [
+      0,
+      1
+    ],
+    "loops": 0
+  },
+  "proof": [
+    {
+      "axiom": {
+        "name": "I",
+        "parameters": {
+          "color": "X"
+        }
+      },
+      "direction": "backward",
+      "match": {
+        "vertices": [],
+        "internal_edges": [],
+        "port_halves": [],
+        "wire_edges": [
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "parent_sha256": "f08b46080d714c7e652af962e2d90ca02c3d1c8b13097866accfef0d31613f49"
+    },
+    {
+      "axiom": {
+        "name": "H",
+        "parameters": {
+          "color": "Z",
+          "alpha": "0",
+          "arity": 2
+        }
+      },
+      "direction": "forward",
+      "match": {
+        "vertices": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "internal_edges": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "port_halves": [
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            4,
+            1,
+            0
+          ]
+        ],
+        "wire_edges": []
+      },
+      "parent_sha256": "adf3900f547eb547974ef0ef869989b684fed1e1ff3c3ecc4b2e2dfb654abac6"
+    },
+    {
+      "axiom": {
+        "name": "I",
+        "parameters": {
+          "color": "Z"
+        }
+      },
+      "direction": "forward",
+      "match": {
+        "vertices": [
+          [
+            0,
+            6
+          ]
+        ],
+        "internal_edges": [],
+        "port_halves": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "wire_edges": []
+      },
+      "parent_sha256": "78fe29bb4d425ec4c5f15d88f38c3385838b3440f48239d4064aebdbaab3d648"
+    }
+  ]
+}
